@@ -1,5 +1,6 @@
 import { decorateOverview } from './region-overview.js';
 import { decorateRegionMaps } from './region-map.js';
+import { mountTableScroll } from './table-scroll.js';
 // Layout enhancements preserve the application's existing data and event handlers.
 window.addEventListener('load', () => {
   const $ = selector => document.querySelector(selector);
@@ -32,6 +33,7 @@ window.addEventListener('load', () => {
   guide.append(guideIntro, guidePrice, guideNote);
   $('#vp-origin .table-frame').before(guide);
   const pickers = new Map();
+  const tableScrolls = new Map();
   const columnObserver = new ResizeObserver(entries => {
     for (const entry of entries) {
       const frame = entry.target.closest('.table-frame');
@@ -124,7 +126,7 @@ window.addEventListener('load', () => {
         caption.textContent = sentences.join('。');
       }
     }
-    for(const [key,ja,english] of [['inRegion','起点リージョン内','Within origin'],['geo','地理圏内','Within geography'],['global','世界の対応リージョン','Worldwide']]) {
+    for(const [key,ja,english] of [['inRegion','特定リージョン内での推論','Within a specific region'],['geo','特定地理圏内での推論','Within a specific geography'],['global','グローバルでの推論','Across supported regions worldwide']]) {
       const cell = $(`.table-frame th[data-key="${key}"]`);
       if (cell) cell.dataset.description = words(ja,english);
     }
@@ -132,6 +134,10 @@ window.addEventListener('load', () => {
     for (const cell of document.querySelectorAll('#models-table th.sticky-provider,#regions-matrix th.sticky-1')) columnObserver.observe(cell);
     decorateOverview();
     decorateRegionMaps();
+    for (const frame of document.querySelectorAll('#models-table, #regions-matrix')) {
+      if (!tableScrolls.has(frame)) tableScrolls.set(frame, mountTableScroll(frame));
+      tableScrolls.get(frame).update();
+    }
     observer.observe($('#main'),{childList:true,subtree:true});
   }
   const observer = new MutationObserver(decorate);

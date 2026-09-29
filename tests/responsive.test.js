@@ -16,7 +16,7 @@ const tokens = read("styles/tokens.css");
 
 describe("AC-NFR-001 スマートフォン幅", () => {
   it("ページ本体は横スクロールしない", () => {
-    expect(base).toMatch(/html,\s*body\s*\{[^}]*overflow-x:\s*hidden/);
+    expect(base).toMatch(/html,\s*body\s*\{[^}]*overflow-x:\s*clip/);
     expect(base).toMatch(/html,\s*body\s*\{[^}]*max-width:\s*100%/);
   });
 

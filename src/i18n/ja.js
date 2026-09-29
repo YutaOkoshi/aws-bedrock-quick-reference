@@ -2,7 +2,7 @@
 // リージョンの表示名はここに持たない。data/region-notes.json の ja / en が正 (AC-005)。
 export const ja = {
   rowSort: {
-    label: "並び順",
+    label: "モデルの並び順",
     pinned: "提供元の優先順",
     alpha: "提供元・モデル名順",
     newest: "新しい順",
@@ -31,9 +31,9 @@ export const ja = {
     modelName: "モデル名",
     modelId: "モデル ID",
     capability: "モダリティ",
-    inRegion: "In-Region",
-    geo: "Geo",
-    global: "Global",
+    inRegion: "In-Region推論",
+    geo: "Geo推論",
+    global: "Global推論",
     notes: "備考",
     mantle: "Mantle",
     legacyTag: "旧版",

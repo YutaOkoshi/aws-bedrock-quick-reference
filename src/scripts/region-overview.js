@@ -1,6 +1,6 @@
 // Called with the presentation observer disconnected to avoid recursive renders.
 export const decorateOverview = (() => {
-  let context, regionTitle, regionCode, stats, contextNote, advanced, advancedSummary, advancedBody, advancedFields, mobileState;
+  let context, advanced, advancedSummary, advancedBody, advancedFields, mobileState;
   const mobileQuery=matchMedia("(max-width:768px)");
   mobileQuery.addEventListener("change",()=>decorateOverview());
   const text = (el,value) => { if(el.textContent!==value)el.textContent=value; };
@@ -11,25 +11,15 @@ export const decorateOverview = (() => {
     if(!context){
       context=document.createElement('section');context.className='region-overview';
       const origin=document.createElement('div');origin.className='origin-context';
-      const heading=document.createElement('div');heading.className='origin-heading';
-      regionTitle=document.createElement('h2');regionCode=document.createElement('span');regionCode.className='region-code';
-      heading.append(regionTitle,regionCode);origin.append(heading);
       const bar=document.querySelector('#source-bar');bar.before(context);origin.append(bar);
       const connection=bar.querySelector('.connection-details');
-      stats=document.createElement('div');stats.className='availability-summary';
-      for(const [key,label] of [['local','In-Region'],['geo','Geo'],['global','Global']]){
-        const card=document.createElement('div');card.className=`availability-stat stat-${key}`;
-        const title=document.createElement('span');title.className='stat-label';title.textContent=label;
-        const number=document.createElement('strong');number.className='stat-value';
-        const description=document.createElement('span');description.className='stat-description';
-        card.append(title,number,description);stats.append(card);
-      }
-      contextNote=document.createElement('p');contextNote.className='context-note';stats.append(contextNote);
-      context.append(origin,stats,connection);
+      context.append(origin,connection);
       const callable=document.querySelector('.filter-field:has(#filter-callable)');
       document.querySelector('.filter-summary').append(callable);
       const filterHeading=document.createElement('h2');filterHeading.className='filter-heading';
-      document.querySelector('#filter-bar').prepend(filterHeading);
+      const toolbar=document.createElement('div');toolbar.className='model-toolbar';
+      toolbar.append(filterHeading,document.querySelector('.row-sort-controls'));
+      document.querySelector('#filter-bar').prepend(toolbar);
       advanced=document.createElement('details');advanced.className='advanced-filters';
       advancedSummary=document.createElement('summary');advancedBody=document.createElement('div');advancedBody.className='advanced-filter-fields';
       advanced.append(advancedSummary,advancedBody);document.querySelector('.filter-controls').append(advanced);
@@ -41,20 +31,8 @@ export const decorateOverview = (() => {
       for(const field of advancedFields)(mobileState?advancedBody:document.querySelector('.filter-controls')).append(field);
       advanced.hidden=!mobileState;
     }
-    const select=document.querySelector('#source-region');
-    const option=select.selectedOptions[0];
-    const place=(option?.textContent||select.value).split(' — ').slice(1).join(' — ').replace(/（未取得）|\(not fetched\)/g,'');
-    text(regionTitle,place||select.value);text(regionCode,select.value);
     text(document.querySelector('.filter-heading'),t('モデルを絞り込む','Filter models'));
     const rows=[...document.querySelectorAll('#models-table>table>tbody>tr:not(.detail-row)')];
-    const denied=!document.querySelector('#denied-banner').hidden;
-    const definitions=[['local','.cell-inregion:not(.out-of-limit) .flag-yes',t('起点リージョン内','Within this region')],['geo','.geo-entry:not(.out-of-limit)',t('定義された地理圏内','Within a defined geography')],['global','.cell-global:not(.out-of-limit) .flag-yes',t('世界の対応リージョン','Worldwide supported regions')]];
-    for(const [key,selector,label]of definitions){
-      const card=stats.querySelector(`.stat-${key}`);
-      text(card.querySelector('.stat-value'),denied?'—':String(rows.filter(row=>row.querySelector(selector)).length));
-      text(card.querySelector('.stat-description'),label);
-    }
-    text(contextNote,denied?t('提供件数は未取得です','Availability data has not been fetched'):t('絞り込み結果の利用可能モデル数 · 複数の方式に対応するモデルは重複して集計','Available models in filtered results · A model can support multiple modes'));
     const thead=document.querySelector('#models-table>table>thead');
     let groups=thead.querySelector('.column-groups');
     if(!groups){

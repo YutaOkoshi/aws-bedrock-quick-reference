@@ -2,7 +2,7 @@
 // Region display names do not live here — data/region-notes.json ja / en is the source (AC-005).
 export const en = {
   rowSort: {
-    label: "Sort by",
+    label: "Model sort order",
     pinned: "Preferred providers",
     alpha: "Provider / model name",
     newest: "Newest first",
@@ -31,9 +31,9 @@ export const en = {
     modelName: "Model",
     modelId: "Model ID",
     capability: "Modalities",
-    inRegion: "In-Region",
-    geo: "Geo",
-    global: "Global",
+    inRegion: "In-Region inference",
+    geo: "Geo inference",
+    global: "Global inference",
     notes: "Notes",
     mantle: "Mantle",
     legacyTag: "Legacy",

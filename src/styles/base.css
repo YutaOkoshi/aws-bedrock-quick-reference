@@ -9,7 +9,8 @@ html,
 body {
   /* ページ全体は横に伸ばさない。横スクロールは表の枠だけが持つ (AC-NFR-001) */
   max-width: 100%;
-  overflow-x: hidden;
+  /* clip は縦方向の scroll container を作らず、表の操作欄の sticky を維持する。 */
+  overflow-x: clip;
 }
 
 body {

@@ -28,7 +28,7 @@ describe("AC-007 入力 / 出力 の価格列", () => {
   it("Global の右に 入力単価 と 出力単価 の 2 列が並ぶ", () => {
     mountFixtureApp();
     const headers = headerTexts();
-    expect(headers[GLOBAL]).toBe("Global");
+    expect(headers[GLOBAL]).toBe("Global推論");
     expect(headers[PRICE_INPUT]).toBe("入力単価");
     expect(headers[PRICE_OUTPUT]).toBe("出力単価");
   });
