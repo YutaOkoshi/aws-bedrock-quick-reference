@@ -13,11 +13,22 @@ const COHERE = "cohere.embed-v4:0";
 const PRICE_OUTPUT = 7;
 const FIRST_FEATURE = 8;
 
-const headers = () => [...document.querySelectorAll("#models-table thead th")];
+// 列の見出しは 2 段ヘッダの下段 (1 段のときはその行)。
+const headers = () => [...document.querySelectorAll("#models-table thead tr:last-child th")];
 const headerKeys = () => headers().map((th) => th.dataset.key);
 const headerText = (th) => (th.querySelector(".sort-btn") ?? th).textContent.replace(/[▼▲]/g, "").trim();
-const featureCellOf = (modelId, key) => {
-  const index = headerKeys().indexOf(`feature:${key}`);
+// 表に出ている機能キー (子列 2 つで 1 機能)。
+const shownFeatures = () => [
+  ...new Set(
+    headerKeys()
+      .filter((key) => key?.startsWith("feature:"))
+      .map((key) => key.replace(/^feature:/, "").replace(/:(runtime|mantle)$/, "")),
+  ),
+];
+const groupLabels = () =>
+  [...document.querySelectorAll("#models-table thead tr.column-groups th.feature-group")].map((th) => th.textContent);
+const featureCellOf = (modelId, key, side) => {
+  const index = headerKeys().indexOf(`feature:${key}:${side}`);
   return index < 0 ? null : cells(rowFor(modelId))[index];
 };
 const pickerBox = (key) => document.querySelector(`#feature-picker input[data-feature-key="${key}"]`);
@@ -33,34 +44,41 @@ beforeEach(() => {
 });
 
 describe("FEATURE-001 表の機能列", () => {
-  it("既定 4 列が価格 2 列の右に、defaultColumns の順で並ぶ", () => {
+  it("価格 2 列の右に、機能ごとの子列 Runtime / Mantle が defaultColumns の順で並ぶ", () => {
     mountFixtureApp({ features: sample });
     const keys = headerKeys();
     expect(keys[PRICE_OUTPUT]).toBe("priceOutput");
-    expect(keys.slice(FIRST_FEATURE)).toEqual([
-      "feature:explicitPromptCaching",
-      "feature:structuredOutputs",
-      "feature:clientToolCalling",
-      "feature:guardrails",
+    expect(keys.slice(FIRST_FEATURE)).toEqual(
+      sample.defaultColumns.flatMap((key) => [`feature:${key}:runtime`, `feature:${key}:mantle`]),
+    );
+    expect(headers().slice(FIRST_FEATURE).map(headerText)).toEqual(
+      sample.defaultColumns.flatMap(() => ["Runtime", "Mantle"]),
+    );
+  });
+
+  it("1 段目は モデル / 推論が実行される場所 / 価格 と、機能名の親見出し (colspan 2)", () => {
+    mountFixtureApp({ features: sample });
+    const top = [...document.querySelectorAll("#models-table thead tr.column-groups th")];
+    expect(top.map((th) => [th.textContent, th.colSpan])).toEqual([
+      ["モデル", 3],
+      ["推論が実行される場所", 3],
+      ["価格 · USD", 2],
+      ["Explicit Prompt Caching", 2],
+      ["Structured outputs", 2],
+      ["Client-side tool calling", 2],
+      ["Guardrails", 2],
     ]);
+    expect(document.querySelectorAll("#models-table thead tr")).toHaveLength(2);
   });
 
   // 言語切替は先に組み立てた画面も描き直すので、ファイルの先頭近くで 1 回だけ切り替える。
-  it("列見出しと詳細パネルの機能名は ja でも en でも docs の英語名のまま", () => {
+  it("親見出しと詳細パネルの機能名は ja でも en でも docs の英語名のまま", () => {
     const app = mountFixtureApp({ features: sample });
-    expect(headers().slice(FIRST_FEATURE).map(headerText)).toEqual([
-      "Explicit Prompt Caching",
-      "Structured outputs",
-      "Client-side tool calling",
-      "Guardrails",
-    ]);
+    const names = ["Explicit Prompt Caching", "Structured outputs", "Client-side tool calling", "Guardrails"];
+    expect(groupLabels()).toEqual(names);
     setLang("en");
-    expect(headers().slice(FIRST_FEATURE).map(headerText)).toEqual([
-      "Explicit Prompt Caching",
-      "Structured outputs",
-      "Client-side tool calling",
-      "Guardrails",
-    ]);
+    expect(groupLabels()).toEqual(names);
+    expect(headers().slice(FIRST_FEATURE, FIRST_FEATURE + 2).map(headerText)).toEqual(["Runtime", "Mantle"]);
     app.detail.openRow(CLAUDE);
     const section = document.querySelector(`#${panelId(CLAUDE)} .detail-feature`);
     expect(section.querySelector("h4").textContent).toBe("Capabilities and Features");
@@ -69,36 +87,47 @@ describe("FEATURE-001 表の機能列", () => {
     setLang("ja");
   });
 
-  it("セルは runtime と mantle を並べ、3 状態を区別する", () => {
+  it("セルは子列ごとに 1 記号で、3 状態を区別する", () => {
     mountFixtureApp({ features: sample });
     // 対応 / 非対応
-    expect(featureCellOf(CLAUDE, "guardrails").textContent).toBe("runtime ✓ / mantle ✕");
-    // 片側だけ記載なし (mantle の表が無い)
-    expect(featureCellOf(NOVA_LITE, "guardrails").textContent).toBe("runtime ✓ / mantle —");
-    // 両方記載なしは「—」1 つ。✕ にしない
-    const none = featureCellOf(COHERE, "guardrails");
-    expect(none.textContent).toBe("—");
-    expect(none.classList.contains("dim")).toBe(true);
-    expect(featureCellOf(CLAUDE, "clientToolCalling").textContent).toBe("—");
+    expect(featureCellOf(CLAUDE, "guardrails", "runtime").textContent).toBe("✓");
+    expect(featureCellOf(CLAUDE, "guardrails", "mantle").textContent).toBe("✕");
+    // 片側だけ記載なし (mantle の表が無い)。もう片方は値どおり
+    expect(featureCellOf(NOVA_LITE, "guardrails", "runtime").textContent).toBe("✓");
+    expect(featureCellOf(NOVA_LITE, "guardrails", "mantle").textContent).toBe("—");
+    // 両方記載なしは両子列とも「—」。✕ にしない
+    for (const side of ["runtime", "mantle"]) {
+      const none = featureCellOf(COHERE, "guardrails", side);
+      expect(none.textContent).toBe("—");
+      expect(none.classList.contains("dim")).toBe(true);
+    }
   });
 
-  it("セルの aria-label に両エンドポイントの状態を言葉で書く", () => {
+  it("セルの aria-label に接続先と対応可否を言葉で書く", () => {
     mountFixtureApp({ features: sample });
-    const mark = featureCellOf(CLAUDE, "guardrails").querySelector(".feature-cell");
-    expect(mark.getAttribute("aria-label")).toBe("bedrock-runtime: 対応 / bedrock-mantle: 非対応");
-    const half = featureCellOf(NOVA_LITE, "guardrails").querySelector(".feature-cell");
-    expect(half.getAttribute("aria-label")).toBe("bedrock-runtime: 対応 / bedrock-mantle: 記載なし");
+    const label = (modelId, side) =>
+      featureCellOf(modelId, "guardrails", side).querySelector(".feature-mark").getAttribute("aria-label");
+    expect(label(CLAUDE, "runtime")).toBe("bedrock-runtime: 対応");
+    expect(label(CLAUDE, "mantle")).toBe("bedrock-mantle: 非対応");
+    expect(label(NOVA_LITE, "mantle")).toBe("bedrock-mantle: 記載なし");
   });
 
-  it("機能列は並べ替えできる (runtime ✓ > ✕ > 記載なし)", () => {
+  it("子列ごとに並べ替えできる (✓ > ✕ > 記載なし)", () => {
     mountFixtureApp({ features: sample });
-    const th = headers()[headerKeys().indexOf("feature:structuredOutputs")];
-    expect(th.classList.contains("sortable")).toBe(true);
-    th.querySelector("button.sort-btn").click();
-    const order = [...document.querySelectorAll("#models-table tbody tr[data-model-id]")].map((tr) => tr.dataset.modelId);
-    // nova-lite (runtime ✓) → claude (runtime ✕) → 記載なし
-    expect(order.indexOf(NOVA_LITE)).toBeLessThan(order.indexOf(CLAUDE));
-    expect(order.indexOf(CLAUDE)).toBeLessThan(order.indexOf(COHERE));
+    const order = () =>
+      [...document.querySelectorAll("#models-table tbody tr[data-model-id]")].map((tr) => tr.dataset.modelId);
+    const sortBy = (key) => {
+      const th = headers()[headerKeys().indexOf(key)];
+      expect(th.classList.contains("sortable")).toBe(true);
+      th.querySelector("button.sort-btn").click();
+    };
+    // Runtime: nova-lite (✓) → claude (✕) → 記載なし
+    sortBy("feature:structuredOutputs:runtime");
+    expect(order().indexOf(NOVA_LITE)).toBeLessThan(order().indexOf(CLAUDE));
+    expect(order().indexOf(CLAUDE)).toBeLessThan(order().indexOf(COHERE));
+    // Mantle: claude (✕) → nova-lite (記載なし)
+    sortBy("feature:structuredOutputs:mantle");
+    expect(order().indexOf(CLAUDE)).toBeLessThan(order().indexOf(NOVA_LITE));
   });
 });
 
@@ -117,10 +146,12 @@ describe("FEATURE-001 列ピッカー", () => {
     const seen = [];
     document.addEventListener(FEATURE_COLUMNS_EVENT, (event) => seen.push(event.detail.columns));
     toggleBox("countTokens", true);
-    expect(headerKeys()).toContain("feature:countTokens");
-    expect(featureCellOf(CLAUDE, "countTokens").textContent).toBe("runtime ✕ / mantle ✓");
+    expect(shownFeatures()).toContain("countTokens");
+    // 1 機能で Runtime / Mantle の 2 子列がそろって出る
+    expect(featureCellOf(CLAUDE, "countTokens", "runtime").textContent).toBe("✕");
+    expect(featureCellOf(CLAUDE, "countTokens", "mantle").textContent).toBe("✓");
     toggleBox("guardrails", false);
-    expect(headerKeys()).not.toContain("feature:guardrails");
+    expect(headerKeys().filter((key) => key?.startsWith("feature:guardrails"))).toEqual([]);
     // 列の並びは features の順に揃える
     expect(app.view.getFeatureColumns()).toEqual([
       "explicitPromptCaching",
@@ -129,6 +160,14 @@ describe("FEATURE-001 列ピッカー", () => {
       "countTokens",
     ]);
     expect(seen.length).toBe(2);
+  });
+
+  it("並べ替え中の機能を外すと、その子列での並べ替えも外れる", () => {
+    mountFixtureApp({ features: sample });
+    headers()[headerKeys().indexOf("feature:guardrails:mantle")].querySelector("button.sort-btn").click();
+    expect(document.querySelector("#models-table thead th.sorted")?.dataset.key).toBe("feature:guardrails:mantle");
+    toggleBox("guardrails", false);
+    expect(document.querySelector("#models-table thead th.sorted")).toBeNull();
   });
 
   it("「既定に戻す」で defaultColumns に戻る", () => {
@@ -147,12 +186,14 @@ describe("FEATURE-001 列ピッカー", () => {
     document.addEventListener(FEATURE_COLUMNS_EVENT, () => fired++);
     app.view.setFeatureColumns(["guardrails", "nope"], { silent: true });
     expect(app.view.getFeatureColumns()).toEqual(["guardrails"]);
-    expect(headerKeys().slice(FIRST_FEATURE)).toEqual(["feature:guardrails"]);
+    expect(headerKeys().slice(FIRST_FEATURE)).toEqual(["feature:guardrails:runtime", "feature:guardrails:mantle"]);
     expect(pickerBox("guardrails").checked).toBe(true);
     expect(pickerBox("structuredOutputs").checked).toBe(false);
     expect(fired).toBe(0);
     app.view.setFeatureColumns([]);
-    expect(headerKeys().some((key) => key.startsWith("feature:"))).toBe(false);
+    expect(shownFeatures()).toEqual([]);
+    // 機能列が無くなれば 1 段ヘッダに戻る
+    expect(document.querySelectorAll("#models-table thead tr")).toHaveLength(1);
     expect(fired).toBe(1);
   });
 });
@@ -169,8 +210,9 @@ describe("FEATURE-001 脚注", () => {
 describe("FEATURE-001 features が空", () => {
   it("機能列・ピッカー・脚注が出ず、例外にならない", () => {
     expect(() => mountFixtureApp({ features: {} })).not.toThrow();
-    expect(headerKeys().some((key) => key?.startsWith("feature:"))).toBe(false);
+    expect(shownFeatures()).toEqual([]);
     expect(headers()).toHaveLength(8);
+    expect(document.querySelectorAll("#models-table thead tr")).toHaveLength(1);
     expect($("#feature-picker")?.hidden ?? true).toBe(true);
     expect($("#footnote .footnote-feature-generated")).toBeNull();
   });
@@ -186,14 +228,14 @@ describe("FEATURE-001 / SHARE-001 cols= の復元と書き戻し", () => {
     const app = mountFixtureApp({ features: sample, search: "?cols=guardrails,streaming" });
     // 並びは features の順に揃える
     expect(app.view.getFeatureColumns()).toEqual(["streaming", "guardrails"]);
-    expect(headerKeys().slice(FIRST_FEATURE)).toEqual(["feature:streaming", "feature:guardrails"]);
+    expect(shownFeatures()).toEqual(["streaming", "guardrails"]);
     expect(pickerBox("streaming").checked).toBe(true);
   });
 
   it("cols= (空) は機能列なし", () => {
     const app = mountFixtureApp({ features: sample, search: "?cols=" });
     expect(app.view.getFeatureColumns()).toEqual([]);
-    expect(headerKeys().some((key) => key.startsWith("feature:"))).toBe(false);
+    expect(shownFeatures()).toEqual([]);
     expect(app.location.search).toBe("?cols=");
   });
 
@@ -329,7 +371,9 @@ describe("FEATURE-001 既定が全機能のとき", () => {
 
   it("全機能の列が features の順で価格の右に並ぶ", () => {
     mountFixtureApp({ features: everything });
-    expect(headerKeys().slice(FIRST_FEATURE)).toEqual(allKeys.map((key) => `feature:${key}`));
+    expect(shownFeatures()).toEqual(allKeys);
+    expect(headerKeys().slice(FIRST_FEATURE)).toHaveLength(allKeys.length * 2);
+    expect(groupLabels()).toEqual(allKeys.map((key) => sample.features[key].label));
   });
 
   it("ピッカーは全部チェック済みで始まり、外せる", () => {
@@ -337,7 +381,7 @@ describe("FEATURE-001 既定が全機能のとき", () => {
     const boxes = [...document.querySelectorAll("#feature-picker input[type=checkbox]")];
     expect(boxes.every((box) => box.checked)).toBe(true);
     toggleBox("guardrails", false);
-    expect(headerKeys()).not.toContain("feature:guardrails");
+    expect(shownFeatures()).not.toContain("guardrails");
     expect(app.view.getFeatureColumns()).toEqual(allKeys.filter((key) => key !== "guardrails"));
     expect(new URLSearchParams(app.location.search).get("cols")).toBe(
       allKeys.filter((key) => key !== "guardrails").join(","),

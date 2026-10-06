@@ -333,17 +333,18 @@
 .price-sort-help { flex-basis: 100%; line-height: 1.7; }
 .comparison-price > .price-value { justify-self: end; text-align: right; }
 
-/* FEATURE-001: 機能列。runtime / mantle を 1 セルに並べる。記載なし (—) は淡色で ✕ と区別する。 */
-/* 既定で全機能 (20 列超) を出すので、見出しは折り返して列幅を最小限にし、セルは runtime / mantle を縦 2 行に積む。 */
-.table-frame > table > thead th.feature-col { white-space: normal; min-width: 76px; max-width: 104px; line-height: 1.3; vertical-align: bottom; }
-.table-frame > table > thead th.feature-col .sort-btn { white-space: normal; text-align: left; overflow-wrap: anywhere; }
-td.feature-col { white-space: nowrap; }
-.feature-cell { display: inline-grid; gap: 1px; font: 11px var(--font-mono, monospace); line-height: 1.35; }
-/* 区切りの " / " は読み上げ・コピー用に残し、見た目は縦積みにする。 */
-.feature-cell .feature-sep { display: none; }
+/* FEATURE-001: 機能列。機能名の親見出し (colspan 2) の下に子列 Runtime / Mantle。
+   既定で全機能 (20 列超) を出すので、親見出しは折り返し、子列は 1 記号ぶんの最小幅にする。 */
+.table-frame > table > thead tr.column-groups th.feature-group { white-space: normal; min-width: 92px; max-width: 132px; line-height: 1.3; text-align: center; overflow-wrap: anywhere; border-left: 1px solid var(--line); }
+.table-frame > table > thead th.feature-col { white-space: nowrap; min-width: 0; padding-left: 6px; padding-right: 6px; text-align: center; }
+.table-frame > table > thead th.feature-col-runtime,
+.table-frame > table > tbody td.feature-col-runtime { border-left: 1px solid var(--line); }
+.table-frame > table > thead th.feature-col .sort-btn { text-align: center; }
+td.feature-col { text-align: center; white-space: nowrap; padding-left: 6px; padding-right: 6px; }
+.feature-mark { font: 600 12px var(--font-mono, monospace); }
 .feature-mark.feature-yes { color: var(--yes-fg); }
 .feature-mark.feature-no { color: var(--no-fg); }
-.feature-mark.feature-none { color: var(--fg-muted); }
+.feature-mark.feature-none { color: var(--fg-muted); font-weight: 400; }
 
 /* 機能の列ピッカー。並べ替え UI と同じ行に置き、狭い幅では折り返す。 */
 .feature-picker { position: relative; }

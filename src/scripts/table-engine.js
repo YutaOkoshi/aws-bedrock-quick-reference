@@ -144,7 +144,7 @@ function buildHeaderCell(column, state, i18n) {
  * 表示中の列を受け取って同じ配列を返す関数。グループに覆われない先頭の列
  * (= 列数 - colspan の合計) は rowspan=2 で 2 行ぶち抜きにする。
  */
-function buildHead(columns, state, i18n, headerGroups) {
+function buildHead(columns, state, i18n, headerGroups, groupRowClass) {
   const groups = typeof headerGroups === "function" ? headerGroups(columns) : headerGroups;
   const top = document.createElement("tr");
   if (!groups) {
@@ -152,6 +152,8 @@ function buildHead(columns, state, i18n, headerGroups) {
     return [top];
   }
 
+  // グループの行に付ける class (見た目の側がその行を見つけられるように)。
+  if (groupRowClass) top.className = groupRowClass;
   const spanned = groups.reduce((sum, group) => sum + (group.colspan ?? 1), 0);
   const leading = Math.max(columns.length - spanned, 0);
   const bottom = document.createElement("tr");
@@ -240,6 +242,8 @@ export function createTable({
   rowAttrs,
   // 2 段ヘッダ (列グループ) を使う表だけが渡す。無ければヘッダは 1 行。
   headerGroups,
+  // 2 段ヘッダの 1 行目 (グループの行) の tr に付ける class。
+  groupRowClass,
   // 枠と table に足す class。見た目の違う表を同じエンジンで描けるようにする。
   frameClass,
   tableClass,
@@ -271,7 +275,7 @@ export function createTable({
     currentState = nextState;
     const shown = visibleColumns(currentColumns, nextState.hiddenGroups);
     const sortColumn = shown.find((column) => column.key === nextState.sortKey) || null;
-    thead.replaceChildren(...buildHead(shown, nextState, i18n, headerGroups));
+    thead.replaceChildren(...buildHead(shown, nextState, i18n, headerGroups, groupRowClass));
     tbody.replaceChildren(
       buildBody(shown, sortRows(nextRows, sortColumn, nextState.sortDir), nextState, { rowAttrs }),
     );

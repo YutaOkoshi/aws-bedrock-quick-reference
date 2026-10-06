@@ -37,6 +37,7 @@ export const ja = {
     notes: "備考",
     mantle: "Mantle",
     legacyTag: "旧版",
+    group: { model: "モデル", location: "推論が実行される場所", price: "価格 · USD" },
   },
   // AC-011: 列挙子を出さず、その言語の平易な語に置き換える。
   modality: {
@@ -168,7 +169,7 @@ export const ja = {
     pickerLabel: "機能の列 ({count})",
     pickerGroup: "表に出す機能の列",
     pickerReset: "既定に戻す",
-    cellAria: "bedrock-runtime: {runtime} / bedrock-mantle: {mantle}",
+    sideAria: "{endpoint}: {state}",
     state: { yes: "対応", no: "非対応", none: "記載なし" },
     fetchedAt: "機能表の取得日: {date}",
     sourceLabel: "公式 docs のモデルカード (Capabilities and Features)",

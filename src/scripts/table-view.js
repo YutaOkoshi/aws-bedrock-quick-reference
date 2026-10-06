@@ -21,12 +21,11 @@ import { geoAreaLabel } from "./geo-labels.js";
 import { t, getLang, applyTranslations } from "./i18n.js";
 import { regionName, regionOptionLabel } from "./region-names.js";
 import {
-  FEATURE_STATES,
   MODEL_CARDS_URL,
   defaultFeatureColumns,
   featureCell,
   featureOptions,
-  featureSortValue,
+  featureStateRank,
 } from "./feature-model.mjs";
 import { createFeaturePicker } from "./feature-picker.js";
 
@@ -260,50 +259,68 @@ function globalCell(row) {
   return wrap;
 }
 
-// FEATURE-001: 機能の 1 セル。runtime と mantle を並べ、記載なしは「—」。
-// 両方とも記載なしなら「—」1 つ (エンジンが dim を付ける)。記載なしを ✕ にしない。
+// FEATURE-001: 機能列は機能ごとに子列 Runtime / Mantle の 2 列。セルは子列ごとに 1 記号。
+// 記載なしは「—」(エンジンが dim を付ける)。記載なしを ✕ にしない。
 const FEATURE_SYMBOL = { yes: "✓", no: "✕", none: EMPTY };
+const FEATURE_SIDES = Object.freeze([
+  { side: "runtime", label: "Runtime", endpoint: "bedrock-runtime" },
+  { side: "mantle", label: "Mantle", endpoint: "bedrock-mantle" },
+]);
 
 function featureMark(endpoint, state) {
-  return el("span", `feature-mark feature-${state}`, `${endpoint} ${FEATURE_SYMBOL[state]}`);
-}
-
-function featureCellNode(cell) {
-  if (cell.runtime === FEATURE_STATES.NONE && cell.mantle === FEATURE_STATES.NONE) return EMPTY;
-  const wrap = el("span", "feature-cell");
-  wrap.append(
-    featureMark("runtime", cell.runtime),
-    el("span", "feature-sep", " / "),
-    featureMark("mantle", cell.mantle),
-  );
-  wrap.setAttribute(
+  const mark = el("span", `feature-mark feature-${state}`, FEATURE_SYMBOL[state]);
+  mark.setAttribute(
     "aria-label",
-    t("feature.cellAria", {
-      runtime: t(`feature.state.${cell.runtime}`),
-      mantle: t(`feature.state.${cell.mantle}`),
-    }),
+    t("feature.sideAria", { endpoint, state: t(`feature.state.${state}`) }),
   );
-  return wrap;
+  return mark;
 }
 
-// 機能列。見出しは docs の英語名のまま (訳さない) なので labelKey ではなく label に持たせ、
-// mountTableView が表エンジンに渡す i18n でそのまま返す。
+// 子列の見出し (Runtime / Mantle) と親見出しの機能名は docs の英語のまま (訳さない) なので
+// labelKey ではなく label に持たせ、mountTableView が表エンジンに渡す i18n でそのまま返す。
 function featureColumns(features, keys) {
   const known = features?.features ?? {};
   return keys
     .filter((key) => Object.hasOwn(known, key))
-    .map((key) => ({
-      key: `${FEATURE_PREFIX}${key}`,
-      group: "feature",
-      labelKey: `${FEATURE_PREFIX}${key}`,
-      label: known[key].label ?? key,
-      title: known[key].label ?? key,
-      type: "number",
-      align: "left",
-      className: "feature-col",
-      sortValue: (row) => featureSortValue(featureCell(features, row.modelId, key)),
-      format: (_value, row) => featureCellNode(featureCell(features, row.modelId, key)),
-    }));
+    .flatMap((key) =>
+      FEATURE_SIDES.map(({ side, label, endpoint }) => ({
+        key: `${FEATURE_PREFIX}${key}:${side}`,
+        group: "feature",
+        featureKey: key,
+        featureLabel: known[key].label ?? key,
+        labelKey: `${FEATURE_PREFIX}${key}:${side}`,
+        label,
+        title: `${known[key].label ?? key} · ${endpoint}`,
+        type: "number",
+        align: "left",
+        className: `feature-col feature-col-${side}`,
+        sortValue: (row) => featureStateRank(featureCell(features, row.modelId, key)[side]),
+        format: (_value, row) => featureMark(endpoint, featureCell(features, row.modelId, key)[side]),
+      })),
+    );
+}
+
+// 2 段ヘッダの 1 行目。機能列があるときだけ使う (無ければ従来どおり 1 行)。
+// 先頭の 3 グループ (モデル / 推論が実行される場所 / 価格) と、機能ごとの親見出し (colspan 2)。
+const BASE_GROUPS = { id: "model", spec: "model", judge: "location", price: "price" };
+
+export function featureHeaderGroups(shown) {
+  if (!shown.some((column) => column.group === "feature")) return null;
+  const groups = [];
+  for (const column of shown) {
+    const id = column.group === "feature" ? `feature:${column.featureKey}` : BASE_GROUPS[column.group] ?? column.group;
+    const last = groups.at(-1);
+    if (last && last.id === id) {
+      last.colspan += 1;
+      continue;
+    }
+    groups.push(
+      column.group === "feature"
+        ? { id, colspan: 1, label: column.featureLabel, className: "feature-group" }
+        : { id, colspan: 1, label: t(`table.group.${id}`) },
+    );
+  }
+  return groups;
 }
 
 // 比較に使うモデル情報・推論場所・価格を表示する。接続方法と備考は詳細へ。
@@ -499,6 +516,9 @@ export function mountTableView({
     rows: [],
     state,
     i18n: headerText,
+    // 機能列があるときだけ 2 段ヘッダにする。1 行目は見た目側 (region-overview.js) も使う。
+    headerGroups: featureHeaderGroups,
+    groupRowClass: "column-groups",
     onStateChange(next) {
       // プロバイダ列のヘッダは列の並べ替えではなく pinned ⇄ alpha の切り替えに使う (AC-014)。
       if (next.sortKey === SORT_TOGGLE_KEY) {
@@ -769,7 +789,10 @@ export function mountTableView({
     featurePicker.setSelected(featureKeys);
     if (!changed) return;
     // 外した列で並べ替えていたら、その指定も外す。
-    if (state.sortKey?.startsWith(FEATURE_PREFIX) && !featureKeys.includes(state.sortKey.slice(FEATURE_PREFIX.length))) {
+    const sortedFeature = state.sortKey?.startsWith(FEATURE_PREFIX)
+      ? state.sortKey.slice(FEATURE_PREFIX.length).replace(/:(runtime|mantle)$/, "")
+      : null;
+    if (sortedFeature != null && !featureKeys.includes(sortedFeature)) {
       state = { ...state, sortKey: null, sortDir: null };
     }
     columns = buildColumns(regionNotes, { features, featureColumns: featureKeys });

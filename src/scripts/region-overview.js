@@ -41,7 +41,8 @@ export const decorateOverview = (() => {
       thead.prepend(groups);
     }
     const labels=[t('モデル','MODEL'),t('推論が実行される場所','INFERENCE LOCATION'),t('価格 · USD','PRICE · USD')];
-    [...groups.children].forEach((th,i)=>text(th,labels[i]));
+    // 機能列があるときは表エンジンがこの行を作る (FEATURE-001)。先頭 3 つのグループだけ書き換える。
+    labels.forEach((label,i)=>{if(groups.children[i])text(groups.children[i],label)});
     for(const row of rows){
       const cell=row.querySelector('.sticky-provider');
       if(cell&&!cell.querySelector('.provider-text')){

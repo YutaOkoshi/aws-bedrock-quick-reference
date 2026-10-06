@@ -40,6 +40,11 @@ export function featureCell(features, modelId, key) {
   };
 }
 
+/** 子列 (Runtime / Mantle の片側) の並べ替えの値。yes=2 > no=1 > none=0。 */
+export function featureStateRank(state) {
+  return RANK[state] ?? 0;
+}
+
 /** 並べ替えの値。runtime を優先し、同順なら mantle。 */
 export function featureSortValue(cell) {
   return (RANK[cell?.runtime] ?? 0) * 3 + (RANK[cell?.mantle] ?? 0);

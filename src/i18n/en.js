@@ -37,6 +37,7 @@ export const en = {
     notes: "Notes",
     mantle: "Mantle",
     legacyTag: "Legacy",
+    group: { model: "MODEL", location: "INFERENCE LOCATION", price: "PRICE · USD" },
   },
   // AC-011: plain words instead of the API enum values.
   modality: {
@@ -168,7 +169,7 @@ export const en = {
     pickerLabel: "Feature columns ({count})",
     pickerGroup: "Feature columns shown in the table",
     pickerReset: "Reset to default",
-    cellAria: "bedrock-runtime: {runtime} / bedrock-mantle: {mantle}",
+    sideAria: "{endpoint}: {state}",
     state: { yes: "supported", no: "not supported", none: "not documented" },
     fetchedAt: "Features fetched: {date}",
     sourceLabel: "Model cards in the official docs (Capabilities and Features)",
