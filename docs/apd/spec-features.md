@@ -46,7 +46,7 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
 - **Then**: I/O・時刻・ネットワークを一切持たない。取得日時は呼び出し側が渡す。ファイルの取得と書き出しは `scripts/fetch-bedrock-features.mjs` だけが行う（`prices.mjs` / `fetch-bedrock-prices.mjs` と同じ分け方、D-001 / D-009）
 
 ### AC-004 (機能表のパースと機能名の正規化)
-- **Given**: モデルカードの `## Capabilities and Features` 節（2026-10-06 時点で 134 本中 116 本にある）
+- **Given**: モデルカードの `## Capabilities and Features` 節（2026-10-06 の取得で 134 本中 118 本にある）
 - **When**: パースする
 - **Then**: 次の 4 つの表を読む
   - 太字見出し「Features supported using `bedrock-runtime` endpoint」の直後の表 → `runtime`、同 `bedrock-mantle` → `mantle`。各セルを `<br />` で割り、`icon-yes.png` を true、`icon-no.png` を false とし、機能名は `[名前](リンク)` の名前
@@ -65,6 +65,7 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
 - **And**: 前方一致で、文脈長違いの ID（`amazon.nova-2-lite-v1:0` に対する `amazon.nova-2-lite-v1:0:256k`）にも同じ機能表が入る
 - **And**: どの段でも引けないカードは `byModel` に入らず `unmatchedCards` に `{ card, modelId }` で残る。複数のカードが同じ ID に当たったときは後勝ちにせず、`unmatchedCards` に `reason: "duplicate"` で積む
 - **And**: `feature-model-map.json` の値に `null` と書いた鍵は「`models.json` に該当なしを確認済み」の意味で、`unmatchedCards` に数えない
+- **And**: 2026-10-06 の取得では 110 モデルが `byModel` に入り、`unmatchedCards` は 24 件。内訳は `models.json` に未収録の新モデル 15 件と、`bedrock-runtime` の Model ID を持たない mantle 専用カード 9 件。**どちらも `models.json` を取り直せば自動で引けるので、`feature-model-map.json` に `null` は書かない**
 
 ### AC-006 (値は 3 状態)
 - **Given**: 正規化キー K、モデル M の `runtime` / `mantle`
@@ -196,7 +197,7 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
 {
   "generatedAt": "2026-10-06T00:00:00.000Z",
   "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/toc-contents.json",
-  "cards": 134, "cardsWithFeatures": 116, "failedCards": 0,
+  "cards": 134, "cardsWithFeatures": 118, "failedCards": 0,
   "features": { "guardrails": { "label": "Guardrails", "docs": "guardrails.html" } },
   "defaultColumns": ["explicitPromptCaching", "structuredOutputs", "clientToolCalling", "guardrails"],
   "byModel": {
@@ -225,7 +226,7 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
 ## Notes
 
 - 一次情報は**英語版の公式 docs**。日本語版は翻訳の遅れがあるので使わない。サードパーティの DB（models.dev / LiteLLM など）も使わない（D-015）
-- 機能名は表記が揺れる（2026-10-06 時点で観測 26 種）。新しい表記は `unknown:<slug>` として自動で画面に出るので、`summary.md` の `unknownFeatures` を見て `feature-names.json` に寄せるかをメンテナが判断する
+- 機能名は表記が揺れる。2026-10-06 の取得では docs 上の表記が 26 種で、正規化後のキーは 23。`Server-side tool use` は本文で同じ機能と確認して `serverToolCalling` に寄せ、`Projects (default project only)` は限定を消さないため別キー `projectsDefaultOnly` にした。`unknownFeatures` は 0 件。新しい表記は `unknown:<slug>` として自動で画面に出るので、`summary.md` の `unknownFeatures` を見て `feature-names.json` に寄せるかをメンテナが判断する
 - 範囲外: Model Details の値（Context window / Max output / Reasoning / Knowledge cutoff）、機能での絞り込み、日本語版 docs、判定データ（`models.json` 等）の自動取得（従来どおり手元の SSO で行う。D-002）
 
 ## 変更履歴

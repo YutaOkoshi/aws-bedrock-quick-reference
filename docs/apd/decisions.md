@@ -33,14 +33,14 @@ D-001〜D-005 は brainstorming の対話で内容が固まり、技術設計
 ## D-015: 機能表の取得元を英語版の公式 docs の `.md` にする
 
 - **Date**: 2026-10-06
-- **Context**: 公式 docs のモデルカードにある **Capabilities and Features**（Guardrails / Prompt caching / Structured outputs / Tool calling などの対応可否を `bedrock-runtime` / `bedrock-mantle` 別に示す表）を、モデルごとに表と詳細パネルで見せたい。どこから取るかを決める必要がある。2026-10-06 に確認した事実: 機能の対応可否を返す API は無い（`ListFoundationModels` / `GetFoundationModel` が返すのはモダリティ・`responseStreamingSupported`・`customizationsSupported`・`inferenceTypesSupported`・ライフサイクルだけ。us-east-1 で実際に呼んで確認し、botocore の bedrock 108 操作・bedrock-runtime 11 操作にも該当が無い）。Pricing の `index.json`（D-009）に当たる機械可読の配信も無い。一方で docs の各ページは `.html` を `.md` に替えると `text/markdown` で取れ（認証不要、`Last-Modified` / `ETag` 付き）、全ページは `toc-contents.json` で列挙できる。モデルカード 134 本中 116 本に機能の節がある。
+- **Context**: 公式 docs のモデルカードにある **Capabilities and Features**（Guardrails / Prompt caching / Structured outputs / Tool calling などの対応可否を `bedrock-runtime` / `bedrock-mantle` 別に示す表）を、モデルごとに表と詳細パネルで見せたい。どこから取るかを決める必要がある。2026-10-06 に確認した事実: 機能の対応可否を返す API は無い（`ListFoundationModels` / `GetFoundationModel` が返すのはモダリティ・`responseStreamingSupported`・`customizationsSupported`・`inferenceTypesSupported`・ライフサイクルだけ。us-east-1 で実際に呼んで確認し、botocore の bedrock 108 操作・bedrock-runtime 11 操作にも該当が無い）。Pricing の `index.json`（D-009）に当たる機械可読の配信も無い。一方で docs の各ページは `.html` を `.md` に替えると `text/markdown` で取れ（認証不要、`Last-Modified` / `ETag` 付き）、全ページは `toc-contents.json` で列挙できる。モデルカード 134 本中 118 本に機能の節がある。
 - **Options**:
   - A: **API から取る。** 該当する API が無いので選べない
   - B: **docs の HTML を scrape する。** 取れるが、D-002 / D-003 / D-009 で B を退けたのと同じ理由（HTML 構造の変更に弱い）が当てはまる
   - C: **サードパーティの DB（models.dev / LiteLLM など）を使う。** JSON で配信されていて取り込みは楽だが、AWS の一次情報ではなく、値が docs と食い違う。実例: **Sonnet 5.5 の Structured outputs は、公式 docs と models.dev では非対応だが、LiteLLM は `supports_response_schema: true`**。どちらが正しいかを確かめるには結局 docs を読むことになる
-  - D: **手書きで転記する**（`mantle.json` 方式、D-010）。出典は正しいが、134 本 × 26 種の機能を手で追うのは更新頻度に見合わず、転記の誤りも入る
+  - D: **手書きで転記する**（`mantle.json` 方式、D-010）。出典は正しいが、134 本 × 26 種の表記（正規化後 23 キー）の機能を手で追うのは更新頻度に見合わず、転記の誤りも入る
   - E: **英語版の公式 docs の `.md` を取ってパースする。** `toc-contents.json` で `model-card-*.html` を列挙し、各ページの `.md` を `Accept-Language: en-US` で取る。Markdown の表は HTML より構造が単純で、AWS 自身が配信している
-- **AI Recommendation**: **E**。一次情報そのもので、認証が要らず CI からも取れる（D-016）。Markdown の表は Supported / Not Supported の 2 セルと `icon-yes.png` / `icon-no.png` の画像で書かれていて機械的に読める。機能名の表記揺れ（観測 26 種）は手書きの対応表で寄せ、対応表に無い名前は推測で寄せずに `unknown:<slug>` として出す（D-009 の `price-model-map.json` と同じ規約）
+- **AI Recommendation**: **E**。一次情報そのもので、認証が要らず CI からも取れる（D-016）。Markdown の表は Supported / Not Supported の 2 セルと `icon-yes.png` / `icon-no.png` の画像で書かれていて機械的に読める。機能名の表記揺れ（docs 上 26 種、正規化後 23 キー）は手書きの対応表で寄せ、対応表に無い名前は推測で寄せずに `unknown:<slug>` として出す（D-009 の `price-model-map.json` と同じ規約）
 - **Decision**: **E**（2026-10-06、オーナー承認）
 - **Reason**: **最も信頼できる情報源は英語版の AWS 公式 docs** であり、それを機械可読に近い形（`.md`）で、認証なしに取れるため。サードパーティの DB は Sonnet 5.5 の Structured outputs のように docs と食い違う値を持ち、正誤の判定に結局 docs が要る。日本語版の docs は翻訳の遅れがあるので使わない
 - **取り込みの規約**:

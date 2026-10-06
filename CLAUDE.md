@@ -185,10 +185,14 @@ node scripts/fetch-bedrock-features.mjs
   機能名が出ている。画面には `unknown:<slug>` のキーで docs の英語名のまま出ている。
   該当カードの本文を読んで既存の機能と同じものを指すと確認できたときだけ
   `feature-names.json` の `names` に寄せる。新しい機能なら `labels` にキーと表示名を足す。
-  **推測で寄せない**
+  **推測で寄せない**。限定の付いた表記 (`Projects (default project only)`) は限定を消さないよう
+  別キー (`projectsDefaultOnly`) にする。2026-10-06 の取得では docs 上 26 種 → 正規化後 23 キー
 - `unmatchedCards` に残ったカードは、`models.json` の ID に自動で引けなかったもの。
   docs の本文で ID を確かめたものだけ `feature-model-map.json` にカード名 → ID の配列で足す。
-  `models.json` に該当が無いと確認できたものは値を `null` にする (`unmatchedCards` に数えない)
+  `models.json` に該当が無いと確認できたものは値を `null` にする (`unmatchedCards` に数えない)。
+  ただし **`models.json` に未収録の新モデルと、`bedrock-runtime` の Model ID を持たない mantle 専用カードには
+  `null` を書かない**。`models.json` を取り直せば自動で引けるため
+  (2026-10-06 の取得では unmatched 24 件 = 新モデル 15 + mantle 専用 9)
 - 既定で表に出す列は `feature-names.json` の `defaultColumns`
 - 直したら `--from-raw <日付>` で作り直す。取り直しは要らない
 
