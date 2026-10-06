@@ -141,6 +141,15 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
 - **Then**: `permissions` は `contents: write` と `pull-requests: write` の 2 つだけ。**AWS の認証要素を一切持たない**（`aws-` で始まる action、`AWS_` の env、`role-to-assume` が無い。D-002）
 - **And**: 前提として、リポジトリ設定 *Allow GitHub Actions to create and approve pull requests* が有効になっている（オーナー作業。D-016）
 
+### AC-017 (Explicit Prompt Caching を Prompt caching の表から補う)
+- **Given**: カードの機能一覧（`runtime` / `mantle`）に `Explicit Prompt Caching` が無く、Prompt caching の表の `Explicit Prompt Caching supported` が `Yes` / `No`
+- **When**: 正規化する
+- **Then**: **その表の見出しに書かれた接続先**（`bedrock-runtime` / `bedrock-mantle`）に限って、`explicitPromptCaching` をその値（Yes → true / No → false）で補う。見出しの接続先は `promptCaching.endpoints` に持つ
+  - **見出しに接続先が無ければ補わない**。例: Claude Haiku 4.5 は詳細パネルの Prompt caching の表に `Yes` と出るが、表の機能列のセルは「—」（記載なし）のまま
+  - 機能一覧に値があれば**そちらを優先**する。表の値と食い違っても上書きせず、`summary.md` に conflict として出す
+  - `Implicit Prompt Caching` は補わない（表に明記が無いため）
+- **And**: 2026-10-06 の取得では補完 18 件（モデル × 接続先）、conflict 0 件
+
 ## UI Description
 
 - **表**: 価格 2 列の右に機能列（既定 4 列）。見出しは docs の英語名。セルは `runtime ✓ / mantle ✕`、記載なしは「—」
@@ -179,6 +188,7 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
 | AC-005 | unit (vitest, node) | Sonnet 5.5（Model ID 列）、Haiku 4.5（`N/A` → inference ID から接頭辞を外す）、Nova 2 Lite（`:256k` の前方一致で 2 件）、機能節の無い Titan Text Embeddings V2（ID は取れる）の 4 経路を検証 |
 | AC-006 | unit (vitest, node) | true / false / キーなし が区別されて出ること、表の無い側が `null` になることを検証 |
 | AC-007 | unit (vitest, node) | 同内容の `previous` を渡すと `generatedAt` が据え置かれ、内容が違えば新しい値になることを検証 |
+| AC-017 | unit (vitest, node) | `tests/features.test.js` の describe「Explicit Prompt Caching を Prompt caching の表から補う」で、見出しの接続先を `endpoints` に持つこと、見出しにある接続先だけ補い implicit は補わないこと、見出しに接続先が無ければ補わないこと、機能一覧の値を優先し食い違いを上書きせず summary に conflict で出すことを検証 |
 | AC-008 | unit (vitest, node) | `previous.cardsWithFeatures = 100` に対し新しい値 40 で `guardTripped` が true になることを検証 |
 | AC-009 | unit + integration (vitest, jsdom) | `defaultFeatureColumns` / `featureSortValue` を検証。描画側で既定 4 列が価格の右に並ぶこと、見出しが ja / en とも docs の英語名であること、並べ替えを検証（`tests/feature-model.test.js` / `tests/feature-render.test.js`） |
 | AC-010 | integration (jsdom, vitest) | ピッカーで列を足す・外す・既定に戻すと表の列が追随することを検証 |

@@ -172,6 +172,9 @@ node scripts/fetch-bedrock-features.mjs
   ```
 
 - 内容が前回と同じなら `generatedAt` は据え置かれる (空の差分を作らない)
+- 機能一覧に `Explicit Prompt Caching` が無いカードは、Prompt caching の表の見出しにある接続先に限って
+  `Explicit Prompt Caching supported` の値で補う (見出しに接続先が無ければ補わない。一覧の値を優先し、
+  食い違いは summary の Conflicts に出す。Implicit は補わない。FEATURE-001 AC-017)
 - **安全弁**: `cardsWithFeatures` が前回の `data/features.json` の半分未満になったら、
   書き出さずに終了コード 1 で終わる。docs の書式が変わってパースが空振りした兆候なので、
   `data/raw/<日付>/features/` の `.md` を開いて書式の変化を確かめ、パーサ
