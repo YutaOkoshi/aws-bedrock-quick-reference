@@ -2,7 +2,9 @@
 // FEATURE-001 / D-016: docs の機能表を毎日取り直して PR を作るワークフローの定義を検証する。
 // AWS の認証要素を持たないこと (D-002) と、権限が PR 作成に要る 2 つだけであることを固定する。
 import { describe, it, expect } from "vitest";
-import { readFileSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdtempSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { execFileSync } from "node:child_process";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseYaml } from "./helpers/mini-yaml.js";
@@ -34,9 +36,9 @@ describe("FEATURE-001 定期取得ワークフロー (refresh-features.yml)", ()
     for (const job of Object.values(workflow.jobs)) expect(job.permissions).toBeUndefined();
   });
 
-  it("使う action は checkout と setup-node だけ (Node 22 + npm キャッシュ)", () => {
+  it("使う action は公式の checkout / setup-node / upload-artifact だけ (Node 22 + npm キャッシュ)", () => {
     const uses = steps.filter((step) => typeof step.uses === "string").map((step) => step.uses);
-    expect(uses).toEqual(["actions/checkout@v4", "actions/setup-node@v4"]);
+    expect(uses).toEqual(["actions/checkout@v4", "actions/setup-node@v4", "actions/upload-artifact@v4"]);
     const setup = steps.find((step) => step.uses === "actions/setup-node@v4");
     expect(setup.with["node-version"]).toBe(22);
     expect(setup.with.cache).toBe("npm");
@@ -84,6 +86,43 @@ describe("FEATURE-001 定期取得ワークフロー (refresh-features.yml)", ()
       expect(prStep.run).toContain('BODY="data/raw/$DATE/features/summary.md"');
       expect(prStep.run).toContain('if [ ! -f "$BODY" ]; then');
       expect(prStep.run).toContain("$RUNNER_TEMP");
+    });
+
+    it("summary.md を artifact に残す (無くても失敗しない)", () => {
+      const upload = steps.find((step) => step.uses === "actions/upload-artifact@v4");
+      expect(steps.indexOf(upload)).toBeLessThan(steps.indexOf(prStep));
+      expect(upload.with.path).toBe("data/raw/${{ env.DATE }}/features/summary.md");
+      expect(upload.with["if-no-files-found"]).toBe("ignore");
+    });
+
+    describe("本文の 65,536 文字上限への対策", () => {
+      const line = prStep.run.split("\n").find((text) => text.startsWith("node -e '"));
+      const script = line.slice("node -e '".length, line.indexOf("' ", "node -e '".length));
+      const dir = mkdtempSync(join(tmpdir(), "bqr-body-"));
+      const shrink = (text) => {
+        writeFileSync(join(dir, "in.md"), text);
+        execFileSync("node", ["-e", script, join(dir, "in.md"), join(dir, "out.md"), "60000"]);
+        return readFileSync(join(dir, "out.md"), "utf8");
+      };
+
+      it("切り詰めた本文で PR を作る", () => {
+        expect(line).toMatch(/"\$BODY" "\$RUNNER_TEMP\/pr-body-final\.md" 60000$/);
+        expect(prStep.run.indexOf(line)).toBeGreaterThan(prStep.run.indexOf('if [ ! -f "$BODY" ]'));
+        expect(prStep.run.indexOf(line)).toBeLessThan(prStep.run.indexOf("gh pr create"));
+      });
+
+      it("60,000 文字以下はそのまま", () => {
+        const text = "あ".repeat(60000);
+        expect(shrink(text)).toBe(text);
+      });
+
+      it("超えたら先頭 60,000 文字 (コードポイント単位) で切り、末尾に注記を付ける", () => {
+        const out = shrink("あ".repeat(59999) + "😀".repeat(10));
+        expect(out.startsWith("あ".repeat(59999) + "😀")).toBe(true);
+        expect(out).not.toContain("😀😀");
+        expect(out.trimEnd().endsWith("(truncated; full summary in workflow artifact)")).toBe(true);
+        expect(out.length).toBeLessThan(65536);
+      });
     });
 
     it("開いている PR があれば edit、無ければ create (base は main)", () => {
