@@ -60,7 +60,8 @@ describe("FEATURE-001 表の機能列", () => {
     mountFixtureApp({ features: sample });
     const top = [...document.querySelectorAll("#models-table thead tr.column-groups th")];
     expect(top.map((th) => [th.textContent, th.colSpan])).toEqual([
-      ["モデル", 3],
+      ["モデル", 2],
+      ["", 1],
       ["推論が実行される場所", 3],
       ["価格 · USD", 2],
       ["Explicit Prompt Caching", 2],
@@ -69,6 +70,20 @@ describe("FEATURE-001 表の機能列", () => {
       ["Guardrails", 2],
     ]);
     expect(document.querySelectorAll("#models-table thead tr")).toHaveLength(2);
+  });
+
+  it("上段の「モデル」見出しは固定列 2 列 (プロバイダ / モデル名) の上だけを sticky にする", () => {
+    mountFixtureApp({ features: sample });
+    const [model, rest] = document.querySelectorAll("#models-table thead tr.column-groups th");
+    expect(model.classList.contains("sticky")).toBe(true);
+    expect(model.classList.contains("sticky-group-model")).toBe(true);
+    // 下段の固定列の数と colspan が一致する
+    const stickyBelow = [...headers()].filter((th) => th.classList.contains("sticky"));
+    expect(stickyBelow.map((th) => th.dataset.key)).toEqual(["provider", "name"]);
+    expect(model.colSpan).toBe(stickyBelow.length);
+    // モダリティの上は固定しない
+    expect(rest.classList.contains("sticky")).toBe(false);
+    expect(headers()[2].dataset.key).toBe("capability");
   });
 
   // 言語切替は先に組み立てた画面も描き直すので、ファイルの先頭近くで 1 回だけ切り替える。

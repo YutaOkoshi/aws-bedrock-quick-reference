@@ -42,7 +42,8 @@ export const decorateOverview = (() => {
     }
     const labels=[t('モデル','MODEL'),t('推論が実行される場所','INFERENCE LOCATION'),t('価格 · USD','PRICE · USD')];
     // 機能列があるときは表エンジンがこの行を作る (FEATURE-001)。先頭 3 つのグループだけ書き換える。
-    labels.forEach((label,i)=>{if(groups.children[i])text(groups.children[i],label)});
+    // その行は表エンジンが i18n で見出しを書くので、ここで作った行のときだけ書き換える。
+    if(!groups.querySelector('.group-model'))labels.forEach((label,i)=>{if(groups.children[i])text(groups.children[i],label)});
     for(const row of rows){
       const cell=row.querySelector('.sticky-provider');
       if(cell&&!cell.querySelector('.provider-text')){

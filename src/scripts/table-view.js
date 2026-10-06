@@ -302,7 +302,15 @@ function featureColumns(features, keys) {
 
 // 2 段ヘッダの 1 行目。機能列があるときだけ使う (無ければ従来どおり 1 行)。
 // 先頭の 3 グループ (モデル / 推論が実行される場所 / 価格) と、機能ごとの親見出し (colspan 2)。
-const BASE_GROUPS = { id: "model", spec: "model", judge: "location", price: "price" };
+// 「モデル」は左固定の列 (プロバイダ / モデル名) の上だけを sticky のセルにし、モダリティの上は
+// 見出しなしの別セルにする。横スクロールで機能名の親見出しが固定列の上に重ならないようにするため。
+const BASE_GROUPS = { id: "model", spec: "modelRest", judge: "location", price: "price" };
+const BASE_GROUP_CLASS = {
+  model: "group-model sticky sticky-group-model",
+  modelRest: "group-model-rest",
+  location: "group-location",
+  price: "group-price",
+};
 
 export function featureHeaderGroups(shown) {
   if (!shown.some((column) => column.group === "feature")) return null;
@@ -317,7 +325,12 @@ export function featureHeaderGroups(shown) {
     groups.push(
       column.group === "feature"
         ? { id, colspan: 1, label: column.featureLabel, className: "feature-group" }
-        : { id, colspan: 1, label: t(`table.group.${id}`) },
+        : {
+            id,
+            colspan: 1,
+            label: id === "modelRest" ? "" : t(`table.group.${id}`),
+            className: BASE_GROUP_CLASS[id],
+          },
     );
   }
   return groups;
