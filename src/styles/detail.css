@@ -269,9 +269,8 @@ tr.expanded > td {
 .detail-feature table { border-collapse: collapse; font-size: var(--fs-sm, 12px); }
 .detail-feature th,
 .detail-feature td { padding: 4px 10px; border-bottom: 1px solid var(--line); text-align: left; }
-.detail-feature-mark { text-align: center; }
-.detail-feature-mark.feature-yes { color: var(--yes-fg); font-weight: 600; }
-.detail-feature-mark.feature-no { color: var(--no-fg); font-weight: 600; }
+.detail-feature-mark { text-align: center; white-space: nowrap; }
+.detail-feature-mark > .flag-yes, .detail-feature-mark > .flag-no { justify-content: center; }
 .detail-feature-mark.feature-none { color: var(--fg-muted); }
 .detail-no-feature { color: var(--fg-muted); }
 .detail-feature-source { margin-top: 6px; }

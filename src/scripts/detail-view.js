@@ -19,7 +19,7 @@ import { geoAreaLabel } from "./geo-labels.js";
 import { t, getLang, LANG_CHANGED_EVENT } from "./i18n.js";
 import { regionName } from "./region-names.js";
 import { DOCS_BASE, buildFeatureRows } from "./feature-model.mjs";
-import { featureLegend } from "./table-view.js";
+import { featureLegend, markNo, markYes } from "./table-view.js";
 
 // 出典: bedrock-mantle の対応モデル表 (MANTLE-001 AC-006)。
 const MANTLE_AVAILABILITY_DOC =
@@ -270,7 +270,6 @@ function priceSection(modelId, { prices, region, regionNotes, lane, available })
 }
 
 // FEATURE-001: 機能の節。機能名・Prompt caching / Computer use の値は docs の英語のまま出す (訳さない)。
-const FEATURE_SYMBOL = { yes: "✓", no: "✕", none: "—" };
 const CACHING_FIELDS = ["explicit", "minTokens", "maxCheckpoints", "ttl", "fields"];
 
 function smallTable(className, headers) {
@@ -319,7 +318,15 @@ function featureSection(modelId, { features }) {
       tr.dataset.key = row.key;
       tr.appendChild(el("td", "detail-feature-name", row.label));
       for (const state of [row.runtime, row.mantle]) {
-        const td = el("td", `detail-feature-mark feature-${state}`, FEATURE_SYMBOL[state]);
+        // 表の機能列と同じ印 (✓ 対応 / ✕ 非対応 のピル)。記載なしは「—」。
+        const td = el("td", `detail-feature-mark feature-${state}`);
+        td.appendChild(
+          state === "yes"
+            ? markYes("feature.mark.yes")
+            : state === "no"
+              ? markNo("feature.mark.no")
+              : document.createTextNode("—"),
+        );
         td.setAttribute("aria-label", t(`feature.state.${state}`));
         tr.appendChild(td);
       }

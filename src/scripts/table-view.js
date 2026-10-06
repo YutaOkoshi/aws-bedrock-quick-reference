@@ -83,13 +83,13 @@ function el(tag, className, text) {
 }
 
 // labelKey は機能列 (FEATURE-001) が「対応 / 非対応」に差し替えるときに渡す。既定は判定列の文言。
-function markNo(labelKey = "value.no") {
+export function markNo(labelKey = "value.no") {
   const span = el("span", "flag-no");
   span.append(el("span", "mark", "✕"), el("span", "label", t(labelKey)));
   return span;
 }
 
-function markYes(labelKey = "value.yes") {
+export function markYes(labelKey = "value.yes") {
   const span = el("span", "flag-yes");
   span.append(el("span", "mark", "✓"), el("span", "label", t(labelKey)));
   return span;

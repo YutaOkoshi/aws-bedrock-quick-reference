@@ -324,14 +324,22 @@ describe("FEATURE-001 / DETAIL-001 詳細パネルの機能の節", () => {
       "guardrails",
     ]);
     const guardrails = rows.find((tr) => tr.dataset.key === "guardrails");
-    expect([...guardrails.children].map((td) => td.textContent)).toEqual(["Guardrails", "✓", "✕"]);
+    expect([...guardrails.children].map((td) => td.textContent)).toEqual(["Guardrails", "✓対応", "✕非対応"]);
+    // 表の機能列と同じピル (markYes / markNo)
+    const [, runtime, mantle] = guardrails.children;
+    expect(runtime.querySelector(".flag-yes .mark").textContent).toBe("✓");
+    expect(runtime.querySelector(".flag-yes .label").textContent).toBe("対応");
+    expect(mantle.querySelector(".flag-no .mark").textContent).toBe("✕");
+    expect(mantle.querySelector(".flag-no .label").textContent).toBe("非対応");
   });
 
   it("mantle の表が無いモデルは mantle 側を「—」(記載なし) にする", () => {
     const app = mountFixtureApp({ features: sample });
     const section = sectionOf(app, NOVA_LITE);
     const guardrails = section.querySelector('.detail-feature-table tr[data-key="guardrails"]');
-    expect([...guardrails.children].map((td) => td.textContent)).toEqual(["Guardrails", "✓", "—"]);
+    expect([...guardrails.children].map((td) => td.textContent)).toEqual(["Guardrails", "✓対応", "—"]);
+    // 記載なしはピルにしない (✕ にしない)
+    expect(guardrails.children[2].querySelector(".flag-no, .flag-yes")).toBeNull();
     expect(section.querySelector(".detail-caching-table")).toBeNull();
     expect(section.querySelector(".detail-computer-use-table")).toBeNull();
   });
