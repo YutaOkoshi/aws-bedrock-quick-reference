@@ -109,7 +109,7 @@ decision_refs:
 - **Given**: 起点リージョン R でモデル M の行を開く
 - **When**: 詳細パネルのレーンのパネル群の下を見る
 - **Then**: 見出し「機能（Capabilities and Features）」の節が**パネルに 1 回だけ**出る。レーンのパネルごとに繰り返さず、レーンのタブを切り替えても中身は変わらない。中身は上から（FEATURE-001 AC-013）
-  1. 機能 × `bedrock-runtime` / `bedrock-mantle` の表。値は ✓ / ✕ / —（記載なし）。行は `features.json` の `features` の順で、どちらかの側に記載がある機能だけ。機能名は ja / en とも docs の英語名のまま
+  1. 機能 × `bedrock-runtime` / `bedrock-mantle` の表。値は表のセルと同じ「✓ 対応」/「✕ 非対応」のピルと「—」（記載なし）で、表の下に凡例を置く（FEATURE-001 AC-018）。行は `features.json` の `features` の順で、どちらかの側に記載がある機能だけ。機能名は ja / en とも docs の英語名のまま
   2. `promptCaching` があれば Prompt caching の表（Explicit 対応 / Min tokens per checkpoint / Max checkpoints per request / Supported TTL / Fields）。見出しは辞書、値は docs の文字列のまま
   3. `computerUse` があれば Computer use の表（Tool type / Beta header）
   4. 公式 docs のモデルカードへのリンク
