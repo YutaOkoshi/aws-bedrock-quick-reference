@@ -252,3 +252,16 @@ tr.expanded > td {
 .detail-notes ul { margin: 8px 0 0; padding-left: 20px; }
 .detail-note + .detail-note { margin-top: 8px; }
 .detail-note-profile { display: block; font-size: 10px; color: var(--fg-muted); overflow-wrap: anywhere; }
+
+/* FEATURE-001: 機能の節。表は価格の小表と同じ枠 (.price-wrap) で、狭い幅では枠内で横スクロールする。 */
+.detail-feature { margin-top: var(--sp-3, 12px); }
+.detail-feature-sub { margin: 10px 0 4px; font-size: var(--fs-sm, 12px); color: var(--fg-muted); }
+.detail-feature table { border-collapse: collapse; font-size: var(--fs-sm, 12px); }
+.detail-feature th,
+.detail-feature td { padding: 4px 10px; border-bottom: 1px solid var(--line); text-align: left; }
+.detail-feature-mark { text-align: center; }
+.detail-feature-mark.feature-yes { color: var(--yes-fg); font-weight: 600; }
+.detail-feature-mark.feature-no { color: var(--no-fg); font-weight: 600; }
+.detail-feature-mark.feature-none { color: var(--fg-muted); }
+.detail-no-feature { color: var(--fg-muted); }
+.detail-feature-source { margin-top: 6px; }

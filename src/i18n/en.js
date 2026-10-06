@@ -152,6 +152,19 @@ export const en = {
   },
   // FEATURE-001: Capabilities and Features. Feature names stay in the docs' English, so they are not in the dictionary.
   feature: {
+    heading: "Capabilities and Features",
+    nameColumn: "Feature",
+    itemColumn: "Item",
+    valueColumn: "Value",
+    caching: {
+      explicit: "Explicit Prompt Caching supported",
+      minTokens: "Min tokens per cache checkpoint",
+      maxCheckpoints: "Max cache checkpoints per request",
+      ttl: "Supported TTL",
+      fields: "Fields that accept prompt cache checkpoints",
+    },
+    cardLink: "Model card in the official docs",
+    none: "The model card in the official docs lists no capabilities or features for this model",
     pickerLabel: "Feature columns ({count})",
     pickerGroup: "Feature columns shown in the table",
     pickerReset: "Reset to default",

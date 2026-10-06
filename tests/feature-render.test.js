@@ -3,6 +3,7 @@ import { describe, it, expect, beforeEach } from "vitest";
 import { mountFixtureApp, rowFor, cells, $ } from "./app-harness.js";
 import { FEATURE_COLUMNS_EVENT } from "../src/scripts/table-view.js";
 import { setLang } from "../src/scripts/i18n.js";
+import { panelId } from "../src/scripts/detail-view.js";
 import sample from "./fixtures/features/features.sample.json";
 
 const CLAUDE = "anthropic.claude-sonnet-4-5-20250929-v1:0";
@@ -214,5 +215,99 @@ describe("FEATURE-001 / SHARE-001 cols= の復元と書き戻し", () => {
     $("#feature-picker-reset").click();
     expect(app.location.search).toBe("");
     expect(app.history.pushState.mock.calls.length).toBe(pushes);
+  });
+});
+
+describe("FEATURE-001 / DETAIL-001 詳細パネルの機能の節", () => {
+  const sectionOf = (app, modelId) => {
+    app.detail.openRow(modelId);
+    const panel = document.getElementById(panelId(modelId));
+    return panel.querySelector(".lane-panel:not([hidden]) .detail-feature");
+  };
+
+  it("価格の節の後に置き、機能 × runtime / mantle の表を features の順で出す", () => {
+    const app = mountFixtureApp({ features: sample });
+    const section = sectionOf(app, CLAUDE);
+    expect(section).not.toBeNull();
+    expect(section.previousElementSibling?.classList.contains("detail-price")).toBe(true);
+    expect(section.querySelector("h4").textContent).toBe("機能 (Capabilities and Features)");
+    const head = [...section.querySelectorAll(".detail-feature-table thead th")].map((th) => th.textContent);
+    expect(head).toEqual(["機能", "bedrock-runtime", "bedrock-mantle"]);
+    const rows = [...section.querySelectorAll(".detail-feature-table tbody tr")];
+    expect(rows.map((tr) => tr.dataset.key)).toEqual([
+      "streaming",
+      "explicitPromptCaching",
+      "structuredOutputs",
+      "countTokens",
+      "guardrails",
+    ]);
+    const guardrails = rows.find((tr) => tr.dataset.key === "guardrails");
+    expect([...guardrails.children].map((td) => td.textContent)).toEqual(["Guardrails", "✓", "✕"]);
+  });
+
+  it("mantle の表が無いモデルは mantle 側を「—」(記載なし) にする", () => {
+    const app = mountFixtureApp({ features: sample });
+    const section = sectionOf(app, NOVA_LITE);
+    const guardrails = section.querySelector('.detail-feature-table tr[data-key="guardrails"]');
+    expect([...guardrails.children].map((td) => td.textContent)).toEqual(["Guardrails", "✓", "—"]);
+    expect(section.querySelector(".detail-caching-table")).toBeNull();
+    expect(section.querySelector(".detail-computer-use-table")).toBeNull();
+  });
+
+  it("Prompt caching の表は docs の値のまま", () => {
+    const app = mountFixtureApp({ features: sample });
+    const table = sectionOf(app, CLAUDE).querySelector(".detail-caching-table");
+    const pairs = [...table.querySelectorAll(":scope > tbody > tr")].map((tr) => [tr.dataset.field, tr.querySelector("td").textContent]);
+    expect(pairs).toEqual([
+      ["explicit", "Yes"],
+      ["minTokens", "512"],
+      ["maxCheckpoints", "4"],
+      ["ttl", "5 minutes, 1 hour"],
+      ["fields", "system, messages, and tools"],
+    ]);
+  });
+
+  it("Computer use の表に Tool type / Beta header を出す", () => {
+    const app = mountFixtureApp({ features: sample });
+    const table = sectionOf(app, CLAUDE).querySelector(".detail-computer-use-table");
+    expect([...table.querySelectorAll("thead th")].map((th) => th.textContent)).toEqual(["Tool type", "Beta header"]);
+    expect([...table.querySelectorAll(":scope > tbody td")].map((td) => td.textContent)).toEqual([
+      "computer_20251124",
+      "computer-use-2025-11-24",
+    ]);
+  });
+
+  it("docs のモデルカードへのリンクを出す", () => {
+    const app = mountFixtureApp({ features: sample });
+    const link = sectionOf(app, CLAUDE).querySelector("a.detail-feature-card");
+    expect(link.href).toBe(
+      "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-sonnet-5-5.html",
+    );
+    expect(link.target).toBe("_blank");
+  });
+
+  it("byModel に無いモデルは記載なしの文言を出す", () => {
+    const app = mountFixtureApp({ features: sample });
+    const section = sectionOf(app, COHERE);
+    expect(section.querySelector(".detail-no-feature").textContent).toBe(
+      "公式 docs のモデルカードに機能の記載がありません",
+    );
+    expect(section.querySelector(".detail-feature-table")).toBeNull();
+  });
+
+  it("features が空なら節を出さず、例外にもならない", () => {
+    const app = mountFixtureApp({ features: {} });
+    expect(() => app.detail.openRow(CLAUDE)).not.toThrow();
+    expect(document.querySelector(".detail-feature")).toBeNull();
+  });
+
+  it("英語でも機能名と docs の値は訳さない", () => {
+    const app = mountFixtureApp({ features: sample });
+    setLang("en");
+    const section = sectionOf(app, CLAUDE);
+    expect(section.querySelector("h4").textContent).toBe("Capabilities and Features");
+    expect(section.querySelector('tr[data-key="guardrails"] td').textContent).toBe("Guardrails");
+    expect(section.querySelector(".detail-no-feature")).toBeNull();
+    setLang("ja");
   });
 });

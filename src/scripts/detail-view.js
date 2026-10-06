@@ -18,6 +18,7 @@ import { createCopyable } from "./copy.js";
 import { geoAreaLabel } from "./geo-labels.js";
 import { t, getLang, LANG_CHANGED_EVENT } from "./i18n.js";
 import { regionName } from "./region-names.js";
+import { DOCS_BASE, buildFeatureRows } from "./feature-model.mjs";
 
 // 出典: bedrock-mantle の対応モデル表 (MANTLE-001 AC-006)。
 const MANTLE_AVAILABILITY_DOC =
@@ -267,6 +268,107 @@ function priceSection(modelId, { prices, region, regionNotes, lane, available })
   return section;
 }
 
+// FEATURE-001: 機能の節。機能名・Prompt caching / Computer use の値は docs の英語のまま出す (訳さない)。
+const FEATURE_SYMBOL = { yes: "✓", no: "✕", none: "—" };
+const CACHING_FIELDS = ["explicit", "minTokens", "maxCheckpoints", "ttl", "fields"];
+
+function smallTable(className, headers) {
+  const table = el("table", className);
+  const thead = document.createElement("thead");
+  const headRow = document.createElement("tr");
+  for (const text of headers) {
+    const th = el("th", null, text);
+    th.setAttribute("scope", "col");
+    headRow.appendChild(th);
+  }
+  thead.appendChild(headRow);
+  const tbody = document.createElement("tbody");
+  table.append(thead, tbody);
+  return { table, tbody };
+}
+
+function wrapped(table) {
+  const wrap = el("div", "price-wrap feature-wrap");
+  wrap.appendChild(table);
+  return wrap;
+}
+
+function cachingValue(field, value) {
+  if (value == null || value === "") return "—";
+  // docs の表では Yes / No。features.json では true / false に直してあるので戻す。
+  if (field === "explicit") return value === true ? "Yes" : value === false ? "No" : String(value);
+  return String(value);
+}
+
+function featureSection(modelId, { features }) {
+  // features.json が無い (空) ときは節ごと出さない。記載なしの文言は「データはあるがこのモデルに無い」ときだけ。
+  if (!features?.byModel) return null;
+  const section = el("section", "detail-feature");
+  section.appendChild(el("h4", null, t("feature.heading")));
+  const entry = features.byModel[modelId];
+  const rows = buildFeatureRows(features, modelId);
+
+  if (rows.length > 0) {
+    const { table, tbody } = smallTable("detail-feature-table", [
+      t("feature.nameColumn"),
+      "bedrock-runtime",
+      "bedrock-mantle",
+    ]);
+    for (const row of rows) {
+      const tr = el("tr", "detail-feature-row");
+      tr.dataset.key = row.key;
+      tr.appendChild(el("td", "detail-feature-name", row.label));
+      for (const state of [row.runtime, row.mantle]) {
+        const td = el("td", `detail-feature-mark feature-${state}`, FEATURE_SYMBOL[state]);
+        td.setAttribute("aria-label", t(`feature.state.${state}`));
+        tr.appendChild(td);
+      }
+      tbody.appendChild(tr);
+    }
+    section.appendChild(wrapped(table));
+  }
+
+  if (entry?.promptCaching) {
+    section.appendChild(el("h5", "detail-feature-sub", "Prompt caching"));
+    const { table, tbody } = smallTable("detail-caching-table", [t("feature.itemColumn"), t("feature.valueColumn")]);
+    for (const field of CACHING_FIELDS) {
+      const tr = el("tr");
+      tr.dataset.field = field;
+      const th = el("th", null, t(`feature.caching.${field}`));
+      th.setAttribute("scope", "row");
+      tr.append(th, el("td", "mono", cachingValue(field, entry.promptCaching[field])));
+      tbody.appendChild(tr);
+    }
+    section.appendChild(wrapped(table));
+  }
+
+  if (Array.isArray(entry?.computerUse) && entry.computerUse.length > 0) {
+    section.appendChild(el("h5", "detail-feature-sub", "Computer use"));
+    const { table, tbody } = smallTable("detail-computer-use-table", ["Tool type", "Beta header"]);
+    for (const tool of entry.computerUse) {
+      const tr = el("tr");
+      tr.append(el("td", "mono", tool.toolType ?? "—"), el("td", "mono", tool.betaHeader ?? "—"));
+      tbody.appendChild(tr);
+    }
+    section.appendChild(wrapped(table));
+  }
+
+  if (rows.length === 0 && !entry?.promptCaching && !entry?.computerUse?.length) {
+    section.appendChild(el("p", "detail-no-feature", t("feature.none")));
+  }
+
+  if (entry?.card) {
+    const link = el("a", "doc-link detail-feature-card", t("feature.cardLink"));
+    link.href = `${DOCS_BASE}${entry.card}`;
+    link.target = "_blank";
+    link.rel = "noreferrer";
+    const line = el("p", "detail-feature-source");
+    line.appendChild(link);
+    section.appendChild(line);
+  }
+  return section;
+}
+
 /** 図 + 指定する ID + 推論先 の 3 点セット (AC-017 / AC-018 の 1 ブロック)。 */
 function laneBlock(lane, { modelId, detail, regionNotes, profile, available, heading }) {
   const block = el("div", "lane-block");
@@ -292,7 +394,7 @@ function laneBlock(lane, { modelId, detail, regionNotes, profile, available, hea
   return block;
 }
 
-function lanePanel(lane, { modelId, detail, regionNotes, prices }) {
+function lanePanel(lane, { modelId, detail, regionNotes, prices, features }) {
   const summary = detail.summaries[lane];
   const panel = el("div", "lane-panel");
   panel.id = laneId(modelId, lane);
@@ -351,6 +453,9 @@ function lanePanel(lane, { modelId, detail, regionNotes, prices }) {
       available: summary.available,
     }),
   );
+  // FEATURE-001: 価格の下に機能の節。レーンに依らない内容なので各レーンで同じものを出す。
+  const feature = featureSection(modelId, { features });
+  if (feature) panel.appendChild(feature);
   return panel;
 }
 
@@ -415,6 +520,7 @@ export function mountDetailView({
   regionNotes,
   mantle = null,
   prices = {},
+  features = {},
 } = {}) {
   const open = new Set();
 
@@ -468,7 +574,7 @@ export function mountDetailView({
     const tabs = laneTabs(modelId, detail, { onSelect: select });
     panel.appendChild(tabs.tablist);
     for (const lane of LANE_ORDER) {
-      const element = lanePanel(lane, { modelId, detail, regionNotes, prices });
+      const element = lanePanel(lane, { modelId, detail, regionNotes, prices, features });
       panels.set(lane, element);
       panel.appendChild(element);
     }

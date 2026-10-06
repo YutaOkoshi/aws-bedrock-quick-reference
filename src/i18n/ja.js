@@ -152,6 +152,19 @@ export const ja = {
   },
   // FEATURE-001: 機能 (Capabilities and Features)。機能名そのものは docs の英語名のまま出すので辞書に置かない。
   feature: {
+    heading: "機能 (Capabilities and Features)",
+    nameColumn: "機能",
+    itemColumn: "項目",
+    valueColumn: "値",
+    caching: {
+      explicit: "Explicit Prompt Caching の対応",
+      minTokens: "チェックポイントあたりの最小トークン数",
+      maxCheckpoints: "1 リクエストあたりの最大チェックポイント数",
+      ttl: "対応する TTL",
+      fields: "チェックポイントを置けるフィールド",
+    },
+    cardLink: "公式 docs のモデルカード",
+    none: "公式 docs のモデルカードに機能の記載がありません",
     pickerLabel: "機能の列 ({count})",
     pickerGroup: "表に出す機能の列",
     pickerReset: "既定に戻す",
