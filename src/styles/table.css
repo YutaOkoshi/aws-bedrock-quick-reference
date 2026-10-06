@@ -351,6 +351,10 @@ td.feature-col { text-align: center; white-space: nowrap; padding-left: 6px; pad
 .table-frame > table > thead tr.column-groups th.group-model-rest { background: var(--table-group-bg); color: var(--table-group-fg); border-bottom: 0; }
 .table-frame > table > thead tr.column-groups th.group-location { background: var(--chrome-bg); color: var(--chrome-fg); border-bottom: 2px solid var(--brand-orange); }
 
+/* 機能列の凡例。ピルは判定列と同じ .flag-yes / .flag-no。 */
+.feature-legend-host[hidden] { display: none; }
+.feature-legend { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+
 /* 機能の列ピッカー。並べ替え UI と同じ行に置き、狭い幅では折り返す。 */
 .feature-picker { position: relative; }
 .feature-picker[hidden] { display: none; }

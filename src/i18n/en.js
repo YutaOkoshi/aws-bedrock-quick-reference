@@ -170,6 +170,12 @@ export const en = {
     pickerGroup: "Feature columns shown in the table",
     pickerReset: "Reset to default",
     sideAria: "{endpoint}: {state}",
+    legend: {
+      prefix: "Features: ",
+      yes: " = marked supported on the official model card / ",
+      no: " = marked not supported / ",
+      none: "— = not listed (no table for that endpoint, or not in the list)",
+    },
     mark: { yes: "Supported", no: "Not supported" },
     state: { yes: "supported", no: "not supported", none: "not documented" },
     fetchedAt: "Features fetched: {date}",

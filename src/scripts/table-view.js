@@ -267,6 +267,23 @@ const FEATURE_SIDES = Object.freeze([
   { side: "mantle", label: "Mantle", endpoint: "bedrock-mantle" },
 ]);
 
+/**
+ * 機能列の凡例 (FEATURE-001)。✓ / ✕ は表と同じ markYes / markNo のピルを実際に描く。
+ * 表の直上の説明と、詳細パネルの機能表の下で共用する。
+ */
+export function featureLegend(className = "feature-legend") {
+  const line = el("span", className);
+  line.append(
+    document.createTextNode(t("feature.legend.prefix")),
+    markYes("feature.mark.yes"),
+    document.createTextNode(t("feature.legend.yes")),
+    markNo("feature.mark.no"),
+    document.createTextNode(t("feature.legend.no")),
+    document.createTextNode(t("feature.legend.none")),
+  );
+  return line;
+}
+
 function featureMark(endpoint, state) {
   const mark =
     state === "yes"
@@ -592,7 +609,12 @@ export function mountTableView({
     onReset: () => setFeatureColumns(defaultColumns),
   });
   if (featureChoices.length > 0) sortControls.appendChild(featurePicker.el);
-  host.replaceChildren(bar, filterHost, banner, sortControls, table.el, emptyState, detailHost, footnote);
+
+  // 機能列の凡例。表の直上の説明 (presentation.js の .compare-guide) に移される。
+  // 機能列が 1 つも出ていなければ隠す。
+  const legendHost = el("span", "feature-legend-host");
+  legendHost.id = "feature-legend";
+  host.replaceChildren(bar, filterHost, banner, sortControls, legendHost, table.el, emptyState, detailHost, footnote);
 
   let model = null;
   function current() {
@@ -708,6 +730,8 @@ export function mountTableView({
     sortHint.textContent = t("rowSort.hint");
     sortHint.hidden = sort !== SORT_NEWEST;
     featurePicker.refresh();
+    legendHost.hidden = featureKeys.length === 0;
+    legendHost.replaceChildren(...(featureKeys.length === 0 ? [] : [featureLegend()]));
     model = buildViewModel({
       models,
       profiles,

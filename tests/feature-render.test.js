@@ -430,3 +430,51 @@ describe("FEATURE-001 既定が全機能のとき", () => {
     expect(real.defaultColumns.every((key) => known.includes(key))).toBe(true);
   });
 });
+
+describe("FEATURE-001 機能列の凡例", () => {
+  const legendText = (root) => root.textContent;
+
+  it("機能列があれば表の直上に、表と同じピルで凡例を出す", () => {
+    mountFixtureApp({ features: sample });
+    const legend = $("#feature-legend");
+    expect(legend.hidden).toBe(false);
+    expect(legend.nextElementSibling?.id).toBe("models-table");
+    expect(legend.querySelector(".flag-yes .mark").textContent).toBe("✓");
+    expect(legend.querySelector(".flag-yes .label").textContent).toBe("対応");
+    expect(legend.querySelector(".flag-no .label").textContent).toBe("非対応");
+    expect(legendText(legend)).toBe(
+      "機能: ✓対応 = 公式 docs のモデルカードに対応と明記 / ✕非対応 = 非対応と明記 / — = 記載なし（その接続先の表が無い、または一覧に載っていない）",
+    );
+  });
+
+  it("機能列が 1 つも出ていなければ凡例を出さない", () => {
+    const app = mountFixtureApp({ features: sample });
+    app.view.setFeatureColumns([]);
+    expect($("#feature-legend").hidden).toBe(true);
+    expect($("#feature-legend").children).toHaveLength(0);
+    app.view.setFeatureColumns(["guardrails"]);
+    expect($("#feature-legend").hidden).toBe(false);
+    mountFixtureApp({ features: {} });
+    expect($("#feature-legend").hidden).toBe(true);
+  });
+
+  it("英語の凡例", () => {
+    mountFixtureApp({ features: sample, lang: "en-US" });
+    expect(legendText($("#feature-legend"))).toBe(
+      "Features: ✓Supported = marked supported on the official model card / ✕Not supported = marked not supported / — = not listed (no table for that endpoint, or not in the list)",
+    );
+  });
+
+  it("詳細パネルの機能表の下にも同じ凡例を 1 行", () => {
+    const app = mountFixtureApp({ features: sample });
+    app.detail.openRow(CLAUDE);
+    const section = document.querySelector(`#${panelId(CLAUDE)} .detail-feature`);
+    const legends = section.querySelectorAll(".detail-feature-legend");
+    expect(legends).toHaveLength(1);
+    expect(legends[0].previousElementSibling.querySelector(".detail-feature-table")).not.toBeNull();
+    expect(legends[0].querySelector(".flag-yes .label").textContent).toBe("対応");
+    // 機能の記載が無いモデルには凡例を出さない
+    app.detail.openRow(COHERE);
+    expect(document.querySelector(`#${panelId(COHERE)} .detail-feature-legend`)).toBeNull();
+  });
+});

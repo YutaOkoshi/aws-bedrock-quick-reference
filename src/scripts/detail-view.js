@@ -19,6 +19,7 @@ import { geoAreaLabel } from "./geo-labels.js";
 import { t, getLang, LANG_CHANGED_EVENT } from "./i18n.js";
 import { regionName } from "./region-names.js";
 import { DOCS_BASE, buildFeatureRows } from "./feature-model.mjs";
+import { featureLegend } from "./table-view.js";
 
 // 出典: bedrock-mantle の対応モデル表 (MANTLE-001 AC-006)。
 const MANTLE_AVAILABILITY_DOC =
@@ -325,6 +326,10 @@ function featureSection(modelId, { features }) {
       tbody.appendChild(tr);
     }
     section.appendChild(wrapped(table));
+    // 表と同じ凡例を 1 行 (✓ / ✕ / — の意味)。
+    const legend = el("p", "detail-feature-legend");
+    legend.appendChild(featureLegend());
+    section.appendChild(legend);
   }
 
   if (entry?.promptCaching) {

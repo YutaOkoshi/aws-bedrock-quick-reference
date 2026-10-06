@@ -170,6 +170,12 @@ export const ja = {
     pickerGroup: "表に出す機能の列",
     pickerReset: "既定に戻す",
     sideAria: "{endpoint}: {state}",
+    legend: {
+      prefix: "機能: ",
+      yes: " = 公式 docs のモデルカードに対応と明記 / ",
+      no: " = 非対応と明記 / ",
+      none: "— = 記載なし（その接続先の表が無い、または一覧に載っていない）",
+    },
     mark: { yes: "対応", no: "非対応" },
     state: { yes: "対応", no: "非対応", none: "記載なし" },
     fetchedAt: "機能表の取得日: {date}",
