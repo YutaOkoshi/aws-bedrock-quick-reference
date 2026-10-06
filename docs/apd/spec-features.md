@@ -113,8 +113,8 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
 
 ### AC-013 (詳細パネルの機能の節)
 - **Given**: 起点リージョン R でモデル M の行を開く
-- **When**: 詳細パネルのレーンのパネルを見る
-- **Then**: 価格の節の下に **機能** の節が出る（DETAIL-001 AC-023）
+- **When**: 詳細パネルを見る
+- **Then**: レーンのタブパネル群の下に **機能** の節が 1 回だけ出る（DETAIL-001 AC-023）。レーンのパネルごとには繰り返さない
   - 機能 × `bedrock-runtime` / `bedrock-mantle` の表（✓ / ✕ / —）。行は `features` の順で、どちらかの側に記載がある機能だけ
   - `promptCaching` があれば Prompt caching の表（docs の値のまま）
   - `computerUse` があれば Computer use の表（Tool type / Beta header）
@@ -144,7 +144,7 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
 
 - **表**: 価格 2 列の右に機能列（既定 4 列）。見出しは docs の英語名。セルは `runtime ✓ / mantle ✕`、記載なしは「—」
 - **列ピッカー**: 表の上、並べ替えの UI の近くに「機能の列」ボタン。開くと `features` の全キーのチェックボックス一覧と「既定に戻す」
-- **詳細パネル**: 各レーンのパネルで、価格の節の下に「機能（Capabilities and Features）」の節。機能 × 接続先の表 → Prompt caching の表 → Computer use の表 → モデルカードへのリンク
+- **詳細パネル**: レーンのタブパネル群の下に 1 回だけ「機能（Capabilities and Features）」の節。機能 × 接続先の表 → Prompt caching の表 → Computer use の表 → モデルカードへのリンク
 - **脚注**: 既存の脚注の下に、機能表の取得日（`generatedAt`）と出典リンク
 - 375px 幅では機能列も表の横スクロールの中に収まる（TABLE-001 AC-NFR-001 の枠組みをそのまま使う）
 
