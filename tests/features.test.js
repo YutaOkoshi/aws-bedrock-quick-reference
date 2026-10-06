@@ -93,6 +93,7 @@ describe("AC-003 モデルカードのパース", () => {
       maxCheckpoints: "4",
       ttl: "5 minutes, 1 hour",
       fields: "system, messages, and tools",
+      endpoints: ["runtime", "mantle"],
     });
     expect(parsed.computerUse).toEqual([
       { toolType: "computer_20251124", betaHeader: "computer-use-2025-11-24" },
@@ -350,5 +351,85 @@ describe("summary (PR 本文)", () => {
   it("差分が無ければ No changes.", () => {
     const first = build().features;
     expect(build({ previous: first }).summary).toContain("No changes.");
+  });
+});
+
+// 機能一覧に Explicit Prompt Caching が無く、Prompt caching の表にだけ Yes があるカード (sonnet-4-5 相当)。
+function cachingCard({ heading, listExplicit = null, explicit = "Yes" }) {
+  const icon = (yes) =>
+    `![x](https://docs.aws.amazon.com/bedrock/latest/userguide/images/icons/icon-${yes ? "yes" : "no"}.png)`;
+  const runtimeItems = [`+ ${icon(true)} [Guardrails](guardrails.html)`];
+  if (listExplicit !== null)
+    runtimeItems.push(`+ ${icon(listExplicit)} [Explicit Prompt Caching](prompt-caching.html)`);
+  return [
+    "# Claude Sonnet 4.5",
+    "## Capabilities and Features",
+    "**Features supported using `bedrock-runtime` endpoint**",
+    "",
+    "| **Supported** | **Not Supported** | ",
+    "| --- | --- | ",
+    `|  ${runtimeItems.join("<br />")}  |  + ${icon(false)} [Count tokens](count-tokens.html)  | `,
+    "",
+    "**Features supported using `bedrock-mantle` endpoint**",
+    "",
+    "| **Supported** | **Not Supported** | ",
+    "| --- | --- | ",
+    `|  + ${icon(true)} [Count tokens](count-tokens.html)  |  + ${icon(false)} [Guardrails](guardrails.html)  | `,
+    "",
+    heading,
+    "",
+    "| **Explicit Prompt Caching supported** | **Min tokens per cache checkpoint** | **Max cache checkpoints per request** | **Supported TTL** | **Fields that accept prompt cache checkpoints** | ",
+    "| --- | --- | --- | --- | --- | ",
+    `| ${explicit} | 1,024 | 4 | 5 minutes | system, messages, and tools | `,
+    "",
+    "## Programmatic Access",
+    "| **Endpoint** | **Model ID** | **In-Region endpoint URL** | **Geo inference ID** | **Global inference ID** | ",
+    "| --- | --- | --- | --- | --- | ",
+    "| bedrock-runtime | anthropic.claude-sonnet-4-5-20250929-v1:0 | N/A | N/A | N/A | ",
+    "",
+  ].join("\n");
+}
+
+describe("Explicit Prompt Caching を Prompt caching の表から補う", () => {
+  const CARD = "model-card-anthropic-claude-sonnet-4-5.html";
+  const ID = "anthropic.claude-sonnet-4-5-20250929-v1:0";
+  const models = { [ID]: {} };
+  const run = (md) =>
+    normalizeFeatures({ cards: { [CARD]: md }, models, names: featureNames, map: {}, previous: null, generatedAt: "t" });
+
+  it("見出しの接続先を endpoints に持つ (*** の見出しも読む)", () => {
+    const both = parseModelCard(
+      cachingCard({ heading: "***Implicit and Explicit Prompt Caching using `bedrock-runtime` and `bedrock-mantle` endpoints***" }),
+    );
+    expect(both.promptCaching.endpoints).toEqual(["runtime", "mantle"]);
+    const none = parseModelCard(cachingCard({ heading: "**Implicit and Explicit Prompt Caching**" }));
+    expect(none.promptCaching.endpoints).toEqual([]);
+  });
+
+  it("見出しにある接続先だけ explicitPromptCaching を補う。implicit は補わない", () => {
+    const { features } = run(
+      cachingCard({ heading: "**Implicit and Explicit Prompt Caching using `bedrock-runtime` endpoint**" }),
+    );
+    expect(features.byModel[ID].runtime.explicitPromptCaching).toBe(true);
+    expect(features.byModel[ID].mantle).not.toHaveProperty("explicitPromptCaching");
+    expect(features.byModel[ID].runtime).not.toHaveProperty("implicitPromptCaching");
+  });
+
+  it("見出しに接続先が無ければ補わない", () => {
+    const { features } = run(cachingCard({ heading: "**Implicit and Explicit Prompt Caching**" }));
+    expect(features.byModel[ID].runtime).not.toHaveProperty("explicitPromptCaching");
+  });
+
+  it("機能一覧の値を優先し、食い違いは上書きせず summary に conflict で出す", () => {
+    const { features, summary } = run(
+      cachingCard({
+        heading: "**Prompt Caching using `bedrock-runtime` and `bedrock-mantle` endpoints**",
+        listExplicit: false,
+      }),
+    );
+    expect(features.byModel[ID].runtime.explicitPromptCaching).toBe(false);
+    expect(features.byModel[ID].mantle.explicitPromptCaching).toBe(true);
+    expect(summary).toContain("### Conflicts");
+    expect(summary).toContain(`- ${CARD}: runtime:Explicit Prompt Caching`);
   });
 });

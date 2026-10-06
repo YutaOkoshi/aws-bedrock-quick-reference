@@ -156,7 +156,14 @@ function parsePromptCaching(table) {
     fields: pick(/fields/i),
   };
   // Implicit だけの表など、5 項目のどれも無い表は持たない。
-  return Object.values(result).every((v) => v === null) ? null : result;
+  if (Object.values(result).every((v) => v === null)) return null;
+  // 表の対象の接続先は見出しに書いてある。書いていなければ空 (どこにも補わない)。
+  const heading = table.heading ?? "";
+  result.endpoints = [
+    ...(/bedrock-runtime/.test(heading) ? ["runtime"] : []),
+    ...(/bedrock-mantle/.test(heading) ? ["mantle"] : []),
+  ];
+  return result;
 }
 
 function parseComputerUse(table) {
@@ -265,6 +272,8 @@ export function sameContent(a, b) {
   return JSON.stringify(withoutGeneratedAt(a)) === JSON.stringify(withoutGeneratedAt(b));
 }
 
+const EXPLICIT_KEY = "explicitPromptCaching";
+
 const STATE_MARK = { true: "+", false: "-" };
 
 function diffTable(scope, before = {}, after = {}, labelOf) {
@@ -281,7 +290,7 @@ function diffTable(scope, before = {}, after = {}, labelOf) {
   return changes;
 }
 
-function buildSummary({ previous, features, failedList }) {
+function buildSummary({ previous, features, failedList, filled, conflicts }) {
   const labelOf = (key) =>
     features.features[key]?.label ?? previous?.features?.[key]?.label ?? key;
   const before = previous?.byModel ?? {};
@@ -327,6 +336,21 @@ function buildSummary({ previous, features, failedList }) {
         )
       : ["None."]),
   );
+  const label = features.features[EXPLICIT_KEY]?.label ?? EXPLICIT_KEY;
+  out.push(
+    "",
+    "### Filled from Prompt caching table",
+    "",
+    ...(filled.length > 0 ? filled.map((f) => `- ${f.card}: ${f.scope}:${label} = ${f.value}`) : ["None."]),
+    "",
+    "### Conflicts",
+    "",
+    ...(conflicts.length > 0
+      ? conflicts.map(
+          (c) => `- ${c.card}: ${c.scope}:${label} (list: ${c.list}, prompt caching table: ${c.table})`,
+        )
+      : ["None."]),
+  );
   if (failedList.length > 0) out.push("", "### Failed cards", "", ...failedList.map((c) => `- ${c}`));
   return `${out.join("\n")}\n`;
 }
@@ -339,6 +363,8 @@ export function normalizeFeatures({ cards, models, names, map = {}, previous = n
   const unknown = new Set();
   const seen = new Map(); // featureKey -> { label, docs }
   const failedList = [];
+  const filled = [];
+  const conflicts = [];
   let cardsWithFeatures = 0;
 
   const toKeys = (table, card, links) => {
@@ -376,6 +402,24 @@ export function normalizeFeatures({ cards, models, names, map = {}, previous = n
       promptCaching: parsed.promptCaching,
       computerUse: parsed.computerUse,
     };
+
+    // 機能一覧に Explicit Prompt Caching が無いカードは、Prompt caching の表の値で補う。
+    // 補うのは見出しにある接続先だけ。一覧に値があれば一覧を優先し、食い違いは上書きせず残す。
+    const caching = parsed.promptCaching;
+    if (caching && typeof caching.explicit === "boolean") {
+      for (const scope of caching.endpoints ?? []) {
+        const table = entry[scope];
+        if (!table) continue;
+        if (!Object.hasOwn(table, EXPLICIT_KEY)) {
+          table[EXPLICIT_KEY] = caching.explicit;
+          filled.push({ card, scope, value: caching.explicit });
+          if (!seen.has(EXPLICIT_KEY))
+            seen.set(EXPLICIT_KEY, { label: labels[EXPLICIT_KEY] ?? "Explicit Prompt Caching", docs: "prompt-caching.html" });
+        } else if (table[EXPLICIT_KEY] !== caching.explicit) {
+          conflicts.push({ card, scope, list: table[EXPLICIT_KEY], table: caching.explicit });
+        }
+      }
+    }
 
     const ids = resolveModelIds(card, parsed, { models, map });
     if (ids.length === 0) {
@@ -435,5 +479,5 @@ export function normalizeFeatures({ cards, models, names, map = {}, previous = n
   const guardTripped =
     Number(previous?.cardsWithFeatures) > 0 && cardsWithFeatures < previous.cardsWithFeatures / 2;
 
-  return { features: result, summary: buildSummary({ previous, features: result, failedList }), guardTripped };
+  return { features: result, summary: buildSummary({ previous, features: result, failedList, filled, conflicts }), guardTripped };
 }

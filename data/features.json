@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T07:44:18.152Z",
+  "generatedAt": "2026-10-06T07:52:46.433Z",
   "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/toc-contents.json",
   "cards": 134,
   "cardsWithFeatures": 118,
@@ -15,7 +15,7 @@
     },
     "explicitPromptCaching": {
       "label": "Explicit Prompt Caching",
-      "docs": "prompt-caching.html#prompt-caching-explicit"
+      "docs": "prompt-caching.html"
     },
     "structuredOutputs": {
       "label": "Structured outputs",
@@ -121,6 +121,7 @@
       "card": "model-card-amazon-nova-2-lite.html",
       "runtime": {
         "streaming": true,
+        "explicitPromptCaching": true,
         "structuredOutputs": false,
         "clientToolCalling": true,
         "countTokens": false,
@@ -140,7 +141,10 @@
         "minTokens": "1K*",
         "maxCheckpoints": "4",
         "ttl": "5 minutes",
-        "fields": "system and messages"
+        "fields": "system and messages",
+        "endpoints": [
+          "runtime"
+        ]
       },
       "computerUse": null
     },
@@ -148,6 +152,7 @@
       "card": "model-card-amazon-nova-2-lite.html",
       "runtime": {
         "streaming": true,
+        "explicitPromptCaching": true,
         "structuredOutputs": false,
         "clientToolCalling": true,
         "countTokens": false,
@@ -167,7 +172,10 @@
         "minTokens": "1K*",
         "maxCheckpoints": "4",
         "ttl": "5 minutes",
-        "fields": "system and messages"
+        "fields": "system and messages",
+        "endpoints": [
+          "runtime"
+        ]
       },
       "computerUse": null
     },
@@ -213,6 +221,7 @@
       "card": "model-card-amazon-nova-lite.html",
       "runtime": {
         "streaming": true,
+        "explicitPromptCaching": true,
         "structuredOutputs": false,
         "clientToolCalling": true,
         "guardrails": true
@@ -223,7 +232,10 @@
         "minTokens": "1K*",
         "maxCheckpoints": "4",
         "ttl": "5 minutes",
-        "fields": "system and messages"
+        "fields": "system and messages",
+        "endpoints": [
+          "runtime"
+        ]
       },
       "computerUse": null
     },
@@ -231,6 +243,7 @@
       "card": "model-card-amazon-nova-lite.html",
       "runtime": {
         "streaming": true,
+        "explicitPromptCaching": true,
         "structuredOutputs": false,
         "clientToolCalling": true,
         "guardrails": true
@@ -241,7 +254,10 @@
         "minTokens": "1K*",
         "maxCheckpoints": "4",
         "ttl": "5 minutes",
-        "fields": "system and messages"
+        "fields": "system and messages",
+        "endpoints": [
+          "runtime"
+        ]
       },
       "computerUse": null
     },
@@ -249,6 +265,7 @@
       "card": "model-card-amazon-nova-lite.html",
       "runtime": {
         "streaming": true,
+        "explicitPromptCaching": true,
         "structuredOutputs": false,
         "clientToolCalling": true,
         "guardrails": true
@@ -259,7 +276,10 @@
         "minTokens": "1K*",
         "maxCheckpoints": "4",
         "ttl": "5 minutes",
-        "fields": "system and messages"
+        "fields": "system and messages",
+        "endpoints": [
+          "runtime"
+        ]
       },
       "computerUse": null
     },
@@ -267,6 +287,7 @@
       "card": "model-card-amazon-nova-micro.html",
       "runtime": {
         "streaming": true,
+        "explicitPromptCaching": true,
         "structuredOutputs": false,
         "clientToolCalling": true,
         "guardrails": true
@@ -277,7 +298,10 @@
         "minTokens": "1K*",
         "maxCheckpoints": "4",
         "ttl": "5 minutes",
-        "fields": "system and messages"
+        "fields": "system and messages",
+        "endpoints": [
+          "runtime"
+        ]
       },
       "computerUse": null
     },
@@ -285,6 +309,7 @@
       "card": "model-card-amazon-nova-micro.html",
       "runtime": {
         "streaming": true,
+        "explicitPromptCaching": true,
         "structuredOutputs": false,
         "clientToolCalling": true,
         "guardrails": true
@@ -295,7 +320,10 @@
         "minTokens": "1K*",
         "maxCheckpoints": "4",
         "ttl": "5 minutes",
-        "fields": "system and messages"
+        "fields": "system and messages",
+        "endpoints": [
+          "runtime"
+        ]
       },
       "computerUse": null
     },
@@ -303,6 +331,7 @@
       "card": "model-card-amazon-nova-micro.html",
       "runtime": {
         "streaming": true,
+        "explicitPromptCaching": true,
         "structuredOutputs": false,
         "clientToolCalling": true,
         "guardrails": true
@@ -313,7 +342,10 @@
         "minTokens": "1K*",
         "maxCheckpoints": "4",
         "ttl": "5 minutes",
-        "fields": "system and messages"
+        "fields": "system and messages",
+        "endpoints": [
+          "runtime"
+        ]
       },
       "computerUse": null
     },
@@ -341,7 +373,10 @@
         "minTokens": "1K*",
         "maxCheckpoints": "4",
         "ttl": "5 minutes",
-        "fields": "system and messages"
+        "fields": "system and messages",
+        "endpoints": [
+          "runtime"
+        ]
       },
       "computerUse": null
     },
@@ -369,7 +404,10 @@
         "minTokens": "1K*",
         "maxCheckpoints": "4",
         "ttl": "5 minutes",
-        "fields": "system and messages"
+        "fields": "system and messages",
+        "endpoints": [
+          "runtime"
+        ]
       },
       "computerUse": null
     },
@@ -397,20 +435,31 @@
         "minTokens": "1K*",
         "maxCheckpoints": "4",
         "ttl": "5 minutes",
-        "fields": "system and messages"
+        "fields": "system and messages",
+        "endpoints": [
+          "runtime"
+        ]
       },
       "computerUse": null
     },
     "anthropic.claude-fable-5": {
       "card": "model-card-anthropic-claude-fable-5.html",
-      "runtime": {},
-      "mantle": {},
+      "runtime": {
+        "explicitPromptCaching": true
+      },
+      "mantle": {
+        "explicitPromptCaching": true
+      },
       "promptCaching": {
         "explicit": true,
         "minTokens": "512",
         "maxCheckpoints": "4",
         "ttl": "5 minutes, 1 hour",
-        "fields": "system, messages, and tools"
+        "fields": "system, messages, and tools",
+        "endpoints": [
+          "runtime",
+          "mantle"
+        ]
       },
       "computerUse": null
     },
@@ -423,7 +472,11 @@
         "minTokens": "512",
         "maxCheckpoints": "4",
         "ttl": "5 minutes, 1 hour",
-        "fields": "system, messages, and tools"
+        "fields": "system, messages, and tools",
+        "endpoints": [
+          "runtime",
+          "mantle"
+        ]
       },
       "computerUse": null
     },
@@ -465,7 +518,8 @@
         "minTokens": "4,096",
         "maxCheckpoints": "4",
         "ttl": "5 minutes, 1 hour",
-        "fields": "system, messages, and tools"
+        "fields": "system, messages, and tools",
+        "endpoints": []
       },
       "computerUse": [
         {
@@ -478,6 +532,7 @@
       "card": "model-card-anthropic-claude-opus-4-1.html",
       "runtime": {
         "streaming": true,
+        "explicitPromptCaching": true,
         "computerUse": true,
         "countTokens": true,
         "guardrails": true,
@@ -496,7 +551,10 @@
         "minTokens": "1,024",
         "maxCheckpoints": "4",
         "ttl": "5 minutes",
-        "fields": "system, messages, and tools"
+        "fields": "system, messages, and tools",
+        "endpoints": [
+          "runtime"
+        ]
       },
       "computerUse": [
         {
@@ -509,6 +567,7 @@
       "card": "model-card-anthropic-claude-opus-4-5.html",
       "runtime": {
         "streaming": true,
+        "explicitPromptCaching": true,
         "structuredOutputs": true,
         "computerUse": true,
         "countTokens": true,
@@ -528,7 +587,10 @@
         "minTokens": "4,096",
         "maxCheckpoints": "4",
         "ttl": "5 minutes, 1 hour",
-        "fields": "system, messages, and tools"
+        "fields": "system, messages, and tools",
+        "endpoints": [
+          "runtime"
+        ]
       },
       "computerUse": [
         {
@@ -545,6 +607,7 @@
       "card": "model-card-anthropic-claude-opus-4-6.html",
       "runtime": {
         "streaming": true,
+        "explicitPromptCaching": true,
         "structuredOutputs": true,
         "computerUse": true,
         "countTokens": true,
@@ -564,7 +627,10 @@
         "minTokens": "4,096",
         "maxCheckpoints": "4",
         "ttl": "5 minutes, 1 hour",
-        "fields": "system, messages, and tools"
+        "fields": "system, messages, and tools",
+        "endpoints": [
+          "runtime"
+        ]
       },
       "computerUse": [
         {
@@ -614,7 +680,11 @@
         "minTokens": "4,096",
         "maxCheckpoints": "4",
         "ttl": "5 minutes, 1 hour",
-        "fields": "system, messages, and tools"
+        "fields": "system, messages, and tools",
+        "endpoints": [
+          "runtime",
+          "mantle"
+        ]
       },
       "computerUse": [
         {
@@ -664,7 +734,11 @@
         "minTokens": "1,024",
         "maxCheckpoints": "4",
         "ttl": "5 minutes, 1 hour",
-        "fields": "system, messages, and tools"
+        "fields": "system, messages, and tools",
+        "endpoints": [
+          "runtime",
+          "mantle"
+        ]
       },
       "computerUse": [
         {
@@ -714,7 +788,11 @@
         "minTokens": "512",
         "maxCheckpoints": "4",
         "ttl": "5 minutes, 1 hour",
-        "fields": "system, messages, and tools"
+        "fields": "system, messages, and tools",
+        "endpoints": [
+          "runtime",
+          "mantle"
+        ]
       },
       "computerUse": [
         {
@@ -727,6 +805,7 @@
       "card": "model-card-anthropic-claude-sonnet-4.html",
       "runtime": {
         "streaming": true,
+        "explicitPromptCaching": true,
         "clientToolCalling": true,
         "countTokens": true,
         "guardrails": true,
@@ -745,7 +824,10 @@
         "minTokens": "1,024",
         "maxCheckpoints": "4",
         "ttl": "5 minutes",
-        "fields": "system, messages, and tools"
+        "fields": "system, messages, and tools",
+        "endpoints": [
+          "runtime"
+        ]
       },
       "computerUse": null
     },
@@ -753,6 +835,7 @@
       "card": "model-card-anthropic-claude-sonnet-4.html",
       "runtime": {
         "streaming": true,
+        "explicitPromptCaching": true,
         "clientToolCalling": true,
         "countTokens": true,
         "guardrails": true,
@@ -771,7 +854,10 @@
         "minTokens": "1,024",
         "maxCheckpoints": "4",
         "ttl": "5 minutes",
-        "fields": "system, messages, and tools"
+        "fields": "system, messages, and tools",
+        "endpoints": [
+          "runtime"
+        ]
       },
       "computerUse": null
     },
@@ -779,6 +865,7 @@
       "card": "model-card-anthropic-claude-sonnet-4.html",
       "runtime": {
         "streaming": true,
+        "explicitPromptCaching": true,
         "clientToolCalling": true,
         "countTokens": true,
         "guardrails": true,
@@ -797,7 +884,10 @@
         "minTokens": "1,024",
         "maxCheckpoints": "4",
         "ttl": "5 minutes",
-        "fields": "system, messages, and tools"
+        "fields": "system, messages, and tools",
+        "endpoints": [
+          "runtime"
+        ]
       },
       "computerUse": null
     },
@@ -805,6 +895,7 @@
       "card": "model-card-anthropic-claude-sonnet-4-5.html",
       "runtime": {
         "streaming": true,
+        "explicitPromptCaching": true,
         "structuredOutputs": true,
         "computerUse": true,
         "countTokens": true,
@@ -824,7 +915,10 @@
         "minTokens": "1,024",
         "maxCheckpoints": "4",
         "ttl": "5 minutes, 1 hour",
-        "fields": "system, messages, and tools"
+        "fields": "system, messages, and tools",
+        "endpoints": [
+          "runtime"
+        ]
       },
       "computerUse": [
         {
@@ -837,6 +931,7 @@
       "card": "model-card-anthropic-claude-sonnet-4-6.html",
       "runtime": {
         "streaming": true,
+        "explicitPromptCaching": true,
         "structuredOutputs": true,
         "clientToolCalling": true,
         "computerUse": true,
@@ -857,7 +952,10 @@
         "minTokens": "1,024",
         "maxCheckpoints": "4",
         "ttl": "5 minutes, 1 hour",
-        "fields": "system, messages, and tools"
+        "fields": "system, messages, and tools",
+        "endpoints": [
+          "runtime"
+        ]
       },
       "computerUse": [
         {
@@ -907,7 +1005,11 @@
         "minTokens": "1,024",
         "maxCheckpoints": "4",
         "ttl": "5 minutes, 1 hour",
-        "fields": "system, messages, and tools"
+        "fields": "system, messages, and tools",
+        "endpoints": [
+          "runtime",
+          "mantle"
+        ]
       },
       "computerUse": [
         {
@@ -1789,7 +1891,10 @@
         "minTokens": "1,024",
         "maxCheckpoints": null,
         "ttl": "At least 30 minutes",
-        "fields": null
+        "fields": null,
+        "endpoints": [
+          "runtime"
+        ]
       },
       "computerUse": null
     },
