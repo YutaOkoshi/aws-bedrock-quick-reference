@@ -196,7 +196,8 @@ node scripts/fetch-bedrock-features.mjs
   ただし **`models.json` に未収録の新モデルと、`bedrock-runtime` の Model ID を持たない mantle 専用カードには
   `null` を書かない**。`models.json` を取り直せば自動で引けるため
   (2026-10-06 の取得では unmatched 24 件 = 新モデル 15 + mantle 専用 9)
-- 既定で表に出す列は `feature-names.json` の `defaultColumns`
+- 既定で表に出す列は `feature-names.json` の `defaultColumns`。現在は `"all"` (全機能、unknown を含む。
+  2026-10-06 時点で 23 列) で、`features.json` には全キーの配列に展開されて書かれる
 - 直したら `--from-raw <日付>` で作り直す。取り直しは要らない
 
 #### 定期実行 (D-016)

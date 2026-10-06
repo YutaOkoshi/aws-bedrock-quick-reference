@@ -52,7 +52,7 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
   - 太字見出し「Features supported using `bedrock-runtime` endpoint」の直後の表 → `runtime`、同 `bedrock-mantle` → `mantle`。各セルを `<br />` で割り、`icon-yes.png` を true、`icon-no.png` を false とし、機能名は `[名前](リンク)` の名前
   - `Prompt Caching` を含む太字見出しの直後の表 → `promptCaching`（Explicit 対応 / Min tokens per checkpoint / Max checkpoints per request / Supported TTL / Fields）
   - `Computer use` を含む太字見出しの直後の表 → `computerUse`（Tool type / Beta header の行の配列）
-- **And**: docs の機能名は表記が揺れる（`Knowledge base` / `Knowledge Bases`、`Structured outputs` / `Structured outputs (JSON Schema; see API configuration)` など）。手書きの `data/feature-names.json` の `names` で正規化キーに寄せ、キーごとの表示名を `labels`、既定で表に出す列を `defaultColumns` に持つ
+- **And**: docs の機能名は表記が揺れる（`Knowledge base` / `Knowledge Bases`、`Structured outputs` / `Structured outputs (JSON Schema; see API configuration)` など）。手書きの `data/feature-names.json` の `names` で正規化キーに寄せ、キーごとの表示名を `labels`、既定で表に出す列を `defaultColumns` に持つ。`defaultColumns` は `"all"`（全機能）で、`features.json` には `features` の順に展開したキーの配列として書く
 - **And**: **対応表に無い機能名は推測で寄せない。** 名前から機械的に作ったキー `unknown:<slug>` で `features` に載せ、表示名は docs の英語名のまま、`unknownFeatures` に docs の名前を数える。新しい機能は自動で画面に出て、寄せるかどうかはメンテナが PR で判断する
 
 ### AC-005 (モデル ID の解決)
@@ -89,7 +89,7 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
 ### AC-009 (表の機能列)
 - **Given**: 起点リージョン R で表が描画されている
 - **When**: 列を見る
-- **Then**: **価格 2 列（入力 $/1M / 出力 $/1M）の右**に機能列が並ぶ。既定は `defaultColumns` の 4 列（Explicit Prompt Caching / Structured outputs / Client-side tool calling / Guardrails）で、`features` に在るものだけ
+- **Then**: **価格 2 列（入力 $/1M / 出力 $/1M）の右**に機能列が並ぶ。既定は**全機能**（`features` の全キー、`unknown:<slug>` を含む。2026-10-06 時点で 23 列）。ピッカーで減らせる
   - 列見出しは **docs の英語名**。**ja / en のどちらでも機能名は訳さない**（訳すと解釈が入る）
   - 並べ替えられる。順序は runtime（✓ > ✕ > 記載なし）、同順なら mantle（同じ順）
   - 機能列は判定（In-Region / Geo / Global）にも絞り込みにも影響しない。機能での絞り込みはこの仕様の範囲外
@@ -152,11 +152,11 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
 
 ## UI Description
 
-- **表**: 価格 2 列の右に機能列（既定 4 列）。見出しは docs の英語名。セルは `runtime ✓ / mantle ✕`、記載なしは「—」
+- **表**: 価格 2 列の右に機能列（既定は全機能、2026-10-06 時点で 23 列）。見出しは docs の英語名。セルは `runtime ✓ / mantle ✕`、記載なしは「—」
 - **列ピッカー**: 表の上、並べ替えの UI の近くに「機能の列」ボタン。開くと `features` の全キーのチェックボックス一覧と「既定に戻す」
 - **詳細パネル**: レーンのタブパネル群の下に 1 回だけ「機能（Capabilities and Features）」の節。機能 × 接続先の表 → Prompt caching の表 → Computer use の表 → モデルカードへのリンク
 - **脚注**: 既存の脚注の下に、機能表の取得日（`generatedAt`）と出典リンク
-- 375px 幅では機能列も表の横スクロールの中に収まる（TABLE-001 AC-NFR-001 の枠組みをそのまま使う）
+- 機能列は表の横スクロールの中に入る（TABLE-001 AC-NFR-001 の枠組みをそのまま使う）。モバイル幅での見やすさは考慮しない（Notes）
 
 ## Context Boundary
 
@@ -190,7 +190,7 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
 | AC-007 | unit (vitest, node) | 同内容の `previous` を渡すと `generatedAt` が据え置かれ、内容が違えば新しい値になることを検証 |
 | AC-017 | unit (vitest, node) | `tests/features.test.js` の describe「Explicit Prompt Caching を Prompt caching の表から補う」で、見出しの接続先を `endpoints` に持つこと、見出しにある接続先だけ補い implicit は補わないこと、見出しに接続先が無ければ補わないこと、機能一覧の値を優先し食い違いを上書きせず summary に conflict で出すことを検証 |
 | AC-008 | unit (vitest, node) | `previous.cardsWithFeatures = 100` に対し新しい値 40 で `guardTripped` が true になることを検証 |
-| AC-009 | unit + integration (vitest, jsdom) | `defaultFeatureColumns` / `featureSortValue` を検証。描画側で既定 4 列が価格の右に並ぶこと、見出しが ja / en とも docs の英語名であること、並べ替えを検証（`tests/feature-model.test.js` / `tests/feature-render.test.js`） |
+| AC-009 | unit + integration (vitest, jsdom) | `defaultFeatureColumns` / `featureSortValue` を検証。描画側で既定の全機能列が価格の右に `features` の順で並ぶこと、見出しが ja / en とも docs の英語名であること、並べ替えを検証（`tests/feature-model.test.js` / `tests/feature-render.test.js`） |
 | AC-010 | integration (jsdom, vitest) | ピッカーで列を足す・外す・既定に戻すと表の列が追随することを検証 |
 | AC-011 | unit + integration (vitest, jsdom) | `featureCell` の 3 状態と、描画された文言（片側「—」・両方記載なしで「—」1 つ）を検証 |
 | AC-012 | integration (jsdom, vitest) | 脚注に `generatedAt` と出典リンクが出ること、`features` が空なら出ないことを検証 |
@@ -209,7 +209,7 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
   "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/toc-contents.json",
   "cards": 134, "cardsWithFeatures": 118, "failedCards": 0,
   "features": { "guardrails": { "label": "Guardrails", "docs": "guardrails.html" } },
-  "defaultColumns": ["explicitPromptCaching", "structuredOutputs", "clientToolCalling", "guardrails"],
+  "defaultColumns": ["streaming", "implicitPromptCaching", "explicitPromptCaching", "..."],   // feature-names.json の "all" を展開した全キー
   "byModel": {
     "anthropic.claude-sonnet-5-5": {
       "card": "model-card-anthropic-claude-sonnet-5-5.html",
@@ -225,7 +225,7 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
 }
 ```
 
-- 起点 `ap-northeast-1` で既定 4 列の機能列が出た表のスクリーンショット
+- 起点 `ap-northeast-1` で既定の全機能列が出た表のスクリーンショット
 - Sonnet 5.5 の詳細パネルの機能の節のスクリーンショット
 
 ## 委譲する非機能要件
@@ -235,6 +235,7 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
 
 ## Notes
 
+- **既定で全機能（23 列）を出すので、モバイル幅での表の見やすさは考慮しない**（ユーザー指示、2026-10-06）。列はピッカーで減らせる
 - 一次情報は**英語版の公式 docs**。日本語版は翻訳の遅れがあるので使わない。サードパーティの DB（models.dev / LiteLLM など）も使わない（D-015）
 - 機能名は表記が揺れる。2026-10-06 の取得では docs 上の表記が 26 種で、正規化後のキーは 23。`Server-side tool use` は本文で同じ機能と確認して `serverToolCalling` に寄せ、`Projects (default project only)` は限定を消さないため別キー `projectsDefaultOnly` にした。`unknownFeatures` は 0 件。新しい表記は `unknown:<slug>` として自動で画面に出るので、`summary.md` の `unknownFeatures` を見て `feature-names.json` に寄せるかをメンテナが判断する
 - 範囲外: Model Details の値（Context window / Max output / Reasoning / Knowledge cutoff）、機能での絞り込み、日本語版 docs、判定データ（`models.json` 等）の自動取得（従来どおり手元の SSO で行う。D-002）

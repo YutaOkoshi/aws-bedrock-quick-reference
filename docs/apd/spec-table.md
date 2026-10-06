@@ -69,7 +69,7 @@ decision_refs:
 - **Given**: 起点リージョンが選択されている
 - **When**: 表を描画する
 - **Then**: 列が左から **プロバイダ / モデル名 / モダリティ / In-Region / Geo / Global / 入力 $/1M / 出力 $/1M / Mantle / 備考** の順で並ぶ。**価格 2 列は Global の右**、**Mantle 列は備考の 1 つ手前**で、判定と表示は MANTLE-001 AC-003 が定める。1 行 = 1 モデル。モデル名は API の `modelName`（例: `Claude Sonnet 4.5`）、備考は `overrides.json` の該当エントリ（無ければ空）。行の並びは AC-014 が定める。**Model ID 列と lifecycle 列は表に持たない**（AWS を知らない人が最初に読む情報から並べるため。技術的な識別子は DETAIL-001 の詳細パネルへ移す）
-- **And**: 価格 2 列の右に **機能列** が入る（既定 4 列、列ピッカーで増減。AC-016）
+- **And**: 価格 2 列の右に **機能列** が入る（既定は全機能、列ピッカーで増減。AC-016）
 
 ### AC-007 (表にコピーボタンを置かない)
 - **Given**: 起点リージョンが選択され、表が描画されている
@@ -138,7 +138,7 @@ decision_refs:
 ### AC-016 (機能列)
 - **Given**: 起点リージョンが選択され、`data/features.json` に中身がある
 - **When**: 表を描画する
-- **Then**: 価格 2 列（入力 $/1M / 出力 $/1M）の右に、`features.json` の `defaultColumns` の 4 列（Explicit Prompt Caching / Structured outputs / Client-side tool calling / Guardrails）が既定で出る。表の上の「機能の列」ピッカーで `features` の全キーから表に出す列を選べる（FEATURE-001 AC-009 / AC-010）
+- **Then**: 価格 2 列（入力 $/1M / 出力 $/1M）の右に、`features.json` の `defaultColumns`、つまり**全機能**（`features` の全キー、`unknown:<slug>` を含む。2026-10-06 時点で 23 列）が既定で出る。表の上の「機能の列」ピッカーで `features` の全キーから表に出す列を選べる（FEATURE-001 AC-009 / AC-010）
   - 列見出しは docs の英語名で、ja / en とも訳さない
   - セルは `runtime ✓ / mantle ✕` の形で両方の接続先を並べる。記載なしの側は「—」、両方とも記載なしなら「—」1 つ（FEATURE-001 AC-011）
   - 並べ替えられる。順序は runtime（✓ > ✕ > 記載なし）、同順なら mantle
@@ -213,7 +213,7 @@ decision_refs:
 | AC-013 | integration (jsdom, vitest) | 価格 2 列のヘッダ・キー・`num` クラス・並べ替えと、`$16.50` / `$0.288` の桁、単価が無い行の「—」を検証。`prices` を空にしても行数と判定が変わらないことを検証 |
 | AC-014 | unit + integration (vitest, jsdom) | `sortRows(rows, { sort, lang })` が `pinned` で Anthropic → OpenAI → 残り昇順、`alpha` で全件昇順を返すことを検証（Anthropic / OpenAI がデータに無いケース、同名プロバイダ内のモデル名昇順、ja / en の照合順を含む）。描画側でヘッダのクリックで値が切り替わり `aria-sort` が変わること、REGIONS-001 の行列と同じ並びになることを検証 |
 | AC-015 | integration (jsdom, vitest) | `pinned` のとき脚注に固定したプロバイダ名 2 つを含む 1 文が出て、`alpha` では出ないことを検証。どちらの値でも行数・判定・絞り込み結果・価格が変わらないことを検証 |
-| AC-016 | unit + integration (vitest, jsdom) | 既定 4 列が価格の右に並ぶこと、見出しが ja / en とも docs の英語名であること、セルの 3 状態の文言、ピッカーで列を足す・外すと表が追随すること、並べ替え、`features` が空で列も脚注も出ず例外にならないことを検証（`tests/feature-render.test.js`、純関数は `tests/feature-model.test.js`） |
+| AC-016 | unit + integration (vitest, jsdom) | 既定の全機能列が価格の右に並ぶこと、見出しが ja / en とも docs の英語名であること、セルの 3 状態の文言、ピッカーで列を足す・外すと表が追随すること、並べ替え、`features` が空で列も脚注も出ず例外にならないことを検証（`tests/feature-render.test.js`、純関数は `tests/feature-model.test.js`） |
 | AC-NFR-001 | e2e（Playwright MCP で 375px のスクリーンショットを手動確認） | `document.documentElement.scrollWidth <= clientWidth` を評価し、スクリーンショットでセルの重なりが無いことを目視。結果はリポジトリに入れない |
 | AC-NFR-002 | 計測 (vitest, jsdom) | 68 モデルの fixture で再描画時間を `performance.now()` で 5 回測り中央値 < 200ms |
 
@@ -236,7 +236,7 @@ decision_refs:
 
 ## 変更履歴
 
-- **version 10** (2026-10-06): 価格 2 列の右に、公式 docs のモデルカードから取った **機能列**（既定 4 列、列ピッカーで増減）を足した（AC-016 を追加、AC-006 / AC-008 に And を追記）。値は FEATURE-001 が作る `data/features.json` から取り、選んだ列は URL の `cols=` に載る（SHARE-001 v5 AC-014）。判定ルール・既存の列・絞り込み・価格・denied バナーは変更しない。理由: モデルカードを一枚ずつ開かずに「この接続先でどの機能が使えるか」を同じ表で比べられるようにするため（D-015 / D-016）
+- **version 10** (2026-10-06): 価格 2 列の右に、公式 docs のモデルカードから取った **機能列**（既定は全機能、列ピッカーで増減）を足した（AC-016 を追加、AC-006 / AC-008 に And を追記）。値は FEATURE-001 が作る `data/features.json` から取り、選んだ列は URL の `cols=` に載る（SHARE-001 v5 AC-014）。判定ルール・既存の列・絞り込み・価格・denied バナーは変更しない。理由: モデルカードを一枚ずつ開かずに「この接続先でどの機能が使えるか」を同じ表で比べられるようにするため（D-015 / D-016）
 - **version 9** (2026-09-15): 行の既定の並びを「Anthropic → OpenAI を先頭に固定し、残りのプロバイダを昇順」に変え、その並びを `alpha`（純粋な昇順）へ**切り替えられる**ようにした（AC-014 を追加、AC-006 の並びの記述を AC-014 に委譲）。固定しているプロバイダ名を脚注で明かす 1 文を足した（AC-015 を追加）。値は URL の `sort=` に載る（SHARE-001 v4 AC-013）。併せて Geo の判定を接頭辞の固定 5 種から「`global` 以外の接頭辞はすべて地理圏」に改めた（AC-004、D-012）。列構成・判定ルール・絞り込み・価格・denied バナーは変更しない。理由: よく参照される 2 社を既定で上に置きたいという編集上の判断を、隠さず・戻せる形（切り替え + 脚注）で入れるため（D-011）
 - **version 8** (2026-09-14): Global 列の右に「入力 $/1M」「出力 $/1M」の 2 列を足し（AC-013 を追加、AC-006 の列構成を 10 列に改訂）、Global セルに Global の単価「$入力 / $出力」を添え、脚注に価格の取得日・価格表の発行日・出典リンクを足した（AC-005 / AC-008 に追記）。価格 2 列は Global と Mantle の間に入り、version 7 の Mantle 列は備考の 1 つ手前のまま。値は PRICE-001 が作る `data/prices.json` から取り、判定・絞り込み・URL 共有・denied バナーは変更しない。理由: Design v2 の「価格の目安が同じ行で分かる」に対応し、「どこで推論するか」と「いくらか」を同じ行で比べられるようにするため（D-009）
 - **version 7** (2026-09-14): 備考の 1 つ手前に「Mantle」列を追加し、エンドポイント行の下に `bedrock-mantle` の行と cross-region inference の注記を追加した（AC-002 に And を追記、AC-006 の列構成を 8 列に改訂）。判定と表示の内容は MANTLE-001 AC-001 〜 AC-004 が定める。In-Region / Geo / Global の判定ルール（D-003）・絞り込み・URL 共有・脚注・denied バナーは変更しない

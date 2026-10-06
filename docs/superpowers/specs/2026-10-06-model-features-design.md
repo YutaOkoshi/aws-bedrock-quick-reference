@@ -88,7 +88,7 @@ node scripts/fetch-bedrock-features.mjs --from-raw YYYY-MM-DD
   ```jsonc
   {
     "names": { "Knowledge base": "knowledgeBase", "Knowledge Bases": "knowledgeBase", ... },
-    "defaultColumns": ["explicitPromptCaching", "structuredOutputs", "clientToolCalling", "guardrails"]
+    "defaultColumns": "all"   // 全機能。features.json には全キーの配列に展開して書く
   }
   ```
 
@@ -111,8 +111,8 @@ docs の書式が変わってパースが空振りしたときに、全データ
 ### 4.1 表の機能列
 
 - 列の並び: プロバイダ / モデル名 / モダリティ / In-Region / Geo / Global / 入力 $/1M / 出力 $/1M / **機能列…**
-- 既定の列は `defaultColumns` の 4 つ（Explicit Prompt Caching / Structured outputs /
-  Client-side tool calling / Guardrails）
+- 既定の列は**全機能**（`defaultColumns: "all"`。`unknown:<slug>` を含む。2026-10-06 時点で 23 列）。
+  モバイル幅での見やすさは考慮しない（2026-10-06 ユーザー指示で 4 列から変更）
 - 表の上の「機能の列」ピッカーで、`features` の全キーから表に出す列を選べる（チェックボックスの一覧）
 - セルは `runtime ✓ / mantle ✕` のように両方を並べる。記載なしの側は「—」。
   両方とも記載なし（カードが無い等）なら「—」1 つ
