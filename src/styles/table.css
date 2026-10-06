@@ -348,7 +348,9 @@ td.feature-col { text-align: center; white-space: nowrap; padding-left: 6px; pad
 
 /* 上段を分けたので、reference-*.css の `column-groups th:nth-child(2)` (推論が実行される場所の強調) が
    モダリティ上の空セルに当たる。強調は class で付け直す。 */
-.table-frame > table > thead tr.column-groups th.group-model-rest { background: var(--table-group-bg); color: var(--table-group-fg); border-bottom: 0; }
+/* 既存の `column-groups th:nth-child(2)` (reference-overview.css / reference-polish.css) と詳細度が同じだと
+   後から読まれる側が勝つので、:nth-child(n) を足して 1 段上げる。背景は「モデル」の見出しと同じ。 */
+.table-frame > table > thead tr.column-groups th.group-model-rest:nth-child(n) { background: var(--table-group-bg); color: var(--table-group-fg); border: 0; border-bottom: 1px solid var(--line); }
 .table-frame > table > thead tr.column-groups th.group-location { background: var(--chrome-bg); color: var(--chrome-fg); border-bottom: 2px solid var(--brand-orange); }
 
 /* 機能列の凡例。ピルは判定列と同じ .flag-yes / .flag-no。 */
