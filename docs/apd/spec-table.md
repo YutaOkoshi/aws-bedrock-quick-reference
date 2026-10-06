@@ -139,10 +139,10 @@ decision_refs:
 - **Given**: 起点リージョンが選択され、`data/features.json` に中身がある
 - **When**: 表を描画する
 - **Then**: 価格 2 列（入力 $/1M / 出力 $/1M）の右に、`features.json` の `defaultColumns`、つまり**全機能**（`features` の全キー、`unknown:<slug>` を含む。2026-10-06 時点で 23 列）が既定で出る。表の上の「機能の列」ピッカーで `features` の全キーから表に出す列を選べる（FEATURE-001 AC-009 / AC-010）
-  - 列見出しは docs の英語名で、ja / en とも訳さない
-  - セルは `runtime ✓ / mantle ✕` の形で両方の接続先を並べる。記載なしの側は「—」、両方とも記載なしなら「—」1 つ（FEATURE-001 AC-011）
-  - 並べ替えられる。順序は runtime（✓ > ✕ > 記載なし）、同順なら mantle
-  - 選んだ列は URL の `cols=` に載る（SHARE-001 AC-014）
+  - 各機能は、機能名を親見出しにした 2 つの子列「Runtime」「Mantle」に分かれる（全機能共通）。親見出しは docs の英語名で、ja / en とも訳さない
+  - セルは子列ごとに ✓ / ✕ / —（記載なし）の 1 記号（FEATURE-001 AC-011）
+  - 子列ごとに並べ替えられる。順序は ✓ > ✕ > 記載なし
+  - ピッカーと URL の `cols=` は機能単位のまま（SHARE-001 AC-014）。1 つの機能で Runtime / Mantle の 2 子列がそろって出る
 - **And**: 機能列は判定（In-Region / Geo / Global）にも絞り込みにも価格にも影響しない。`features.json` が空なら機能列は出ず、表は同じ行数で描画される（FEATURE-001 AC-014）
 
 ### AC-NFR-001 (スマートフォン幅)
@@ -165,7 +165,7 @@ decision_refs:
   - Geo セル: プロファイルごとのブロック。見出しが地理圏の平易な名前、本文が推論先の地名の並び（「 ・ 」区切り）。起点の国の外の地名は注意色にし、末尾に「（国外 N）」を添える。リージョンコードは出さない
   - Global セル: ✓ + 「全世界の対応リージョン」注記（docs リンク付き）。Global の単価があれば「$入力 / $出力」を淡色で添える
   - 価格セル: 右寄せ・等幅で `$` 付き。値なしは「—」
-  - 機能セル: 価格の右。`runtime ✓ / mantle ✕` の形で、記載なしは「—」。見出しは docs の英語名（FEATURE-001）
+  - 機能セル: 価格の右。機能名（docs の英語名）の親見出しの下に子列 Runtime / Mantle があり、セルは ✓ / ✕ / — の 1 記号（FEATURE-001）
   - Mantle セル: ✓ / 「—」のみ（MANTLE-001 AC-003）。ID はツールチップと詳細パネルで見る
   - 不可のセルは ✕ または「—」で、未取得とは別の見た目
   - 表の中に ID とコピーボタンは置かない。行を開くと DETAIL-001 が技術的な識別子を出す
@@ -213,7 +213,7 @@ decision_refs:
 | AC-013 | integration (jsdom, vitest) | 価格 2 列のヘッダ・キー・`num` クラス・並べ替えと、`$16.50` / `$0.288` の桁、単価が無い行の「—」を検証。`prices` を空にしても行数と判定が変わらないことを検証 |
 | AC-014 | unit + integration (vitest, jsdom) | `sortRows(rows, { sort, lang })` が `pinned` で Anthropic → OpenAI → 残り昇順、`alpha` で全件昇順を返すことを検証（Anthropic / OpenAI がデータに無いケース、同名プロバイダ内のモデル名昇順、ja / en の照合順を含む）。描画側でヘッダのクリックで値が切り替わり `aria-sort` が変わること、REGIONS-001 の行列と同じ並びになることを検証 |
 | AC-015 | integration (jsdom, vitest) | `pinned` のとき脚注に固定したプロバイダ名 2 つを含む 1 文が出て、`alpha` では出ないことを検証。どちらの値でも行数・判定・絞り込み結果・価格が変わらないことを検証 |
-| AC-016 | unit + integration (vitest, jsdom) | 既定の全機能列が価格の右に並ぶこと、見出しが ja / en とも docs の英語名であること、セルの 3 状態の文言、ピッカーで列を足す・外すと表が追随すること、並べ替え、`features` が空で列も脚注も出ず例外にならないことを検証（`tests/feature-render.test.js`、純関数は `tests/feature-model.test.js`） |
+| AC-016 | unit + integration (vitest, jsdom) | 既定の全機能列が価格の右に並ぶこと、機能ごとに子列 Runtime / Mantle があり親見出しが ja / en とも docs の英語名であること、子列ごとの 3 状態の記号、ピッカーで機能を足す・外すと 2 子列がそろって追随すること、子列ごとの並べ替え、`features` が空で列も脚注も出ず例外にならないことを検証（`tests/feature-render.test.js`、純関数は `tests/feature-model.test.js`） |
 | AC-NFR-001 | e2e（Playwright MCP で 375px のスクリーンショットを手動確認） | `document.documentElement.scrollWidth <= clientWidth` を評価し、スクリーンショットでセルの重なりが無いことを目視。結果はリポジトリに入れない |
 | AC-NFR-002 | 計測 (vitest, jsdom) | 68 モデルの fixture で再描画時間を `performance.now()` で 5 回測り中央値 < 200ms |
 

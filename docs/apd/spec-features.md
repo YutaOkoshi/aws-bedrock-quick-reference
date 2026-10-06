@@ -90,8 +90,10 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
 - **Given**: 起点リージョン R で表が描画されている
 - **When**: 列を見る
 - **Then**: **価格 2 列（入力 $/1M / 出力 $/1M）の右**に機能列が並ぶ。既定は**全機能**（`features` の全キー、`unknown:<slug>` を含む。2026-10-06 時点で 23 列）。ピッカーで減らせる
-  - 列見出しは **docs の英語名**。**ja / en のどちらでも機能名は訳さない**（訳すと解釈が入る）
-  - 並べ替えられる。順序は runtime（✓ > ✕ > 記載なし）、同順なら mantle（同じ順）
+  - 各機能は、機能名を親見出しにした **2 つの子列「Runtime」「Mantle」** に分かれる（全機能共通。AC-011）
+  - 親見出しは **docs の英語名**。**ja / en のどちらでも機能名は訳さない**（訳すと解釈が入る）
+  - **子列ごとに**並べ替えられる。順序は ✓ > ✕ > 記載なし
+  - 列ピッカー（AC-010）と URL の `cols=` は**機能単位**のまま。1 つの機能を選ぶと Runtime / Mantle の 2 子列がそろって出る
   - 機能列は判定（In-Region / Geo / Global）にも絞り込みにも影響しない。機能での絞り込みはこの仕様の範囲外
 
 ### AC-010 (機能の列ピッカー)
@@ -103,8 +105,9 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
 ### AC-011 (セルの表記)
 - **Given**: 機能列のセル
 - **When**: 描画する
-- **Then**: `runtime ✓ / mantle ✕` のように両方の接続先を並べる。記載なしの側は「—」。両方とも記載なし（カードが無い等）なら「—」1 つ
-- **And**: 読み上げ用に「bedrock-runtime: 対応 / bedrock-mantle: 非対応」の形のラベルを持つ（文言は I18N-001 の辞書）
+- **Then**: 子列「Runtime」は `bedrock-runtime`、「Mantle」は `bedrock-mantle` の値を、それぞれ **1 記号**で出す。✓（対応）/ ✕（非対応）/ —（記載なし）
+- **And**: 片方の接続先が記載なしでも、もう片方の子列は値どおりに出る。両方とも記載なし（カードが無い等）なら両方の子列が「—」
+- **And**: 読み上げ用に、接続先と対応可否が分かるラベルを持つ（文言は I18N-001 の辞書）
 
 ### AC-012 (脚注)
 - **Given**: `data/features.json` に中身がある
@@ -152,7 +155,7 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
 
 ## UI Description
 
-- **表**: 価格 2 列の右に機能列（既定は全機能、2026-10-06 時点で 23 列）。見出しは docs の英語名。セルは `runtime ✓ / mantle ✕`、記載なしは「—」
+- **表**: 価格 2 列の右に機能列（既定は全機能、2026-10-06 時点で 23 列）。機能名の親見出し（docs の英語名）の下に子列「Runtime」「Mantle」。セルは子列ごとに ✓ / ✕ / — の 1 記号
 - **列ピッカー**: 表の上、並べ替えの UI の近くに「機能の列」ボタン。開くと `features` の全キーのチェックボックス一覧と「既定に戻す」
 - **詳細パネル**: レーンのタブパネル群の下に 1 回だけ「機能（Capabilities and Features）」の節。機能 × 接続先の表 → Prompt caching の表 → Computer use の表 → モデルカードへのリンク
 - **脚注**: 既存の脚注の下に、機能表の取得日（`generatedAt`）と出典リンク
@@ -190,9 +193,9 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
 | AC-007 | unit (vitest, node) | 同内容の `previous` を渡すと `generatedAt` が据え置かれ、内容が違えば新しい値になることを検証 |
 | AC-017 | unit (vitest, node) | `tests/features.test.js` の describe「Explicit Prompt Caching を Prompt caching の表から補う」で、見出しの接続先を `endpoints` に持つこと、見出しにある接続先だけ補い implicit は補わないこと、見出しに接続先が無ければ補わないこと、機能一覧の値を優先し食い違いを上書きせず summary に conflict で出すことを検証 |
 | AC-008 | unit (vitest, node) | `previous.cardsWithFeatures = 100` に対し新しい値 40 で `guardTripped` が true になることを検証 |
-| AC-009 | unit + integration (vitest, jsdom) | `defaultFeatureColumns` / `featureSortValue` を検証。描画側で既定の全機能列が価格の右に `features` の順で並ぶこと、見出しが ja / en とも docs の英語名であること、並べ替えを検証（`tests/feature-model.test.js` / `tests/feature-render.test.js`） |
+| AC-009 | unit + integration (vitest, jsdom) | `defaultFeatureColumns` / `featureSortValue` を検証。描画側で既定の全機能列が価格の右に `features` の順で並び、機能ごとに子列 Runtime / Mantle があること、親見出しが ja / en とも docs の英語名であること、子列ごとの並べ替えを検証（`tests/feature-model.test.js` / `tests/feature-render.test.js`） |
 | AC-010 | integration (jsdom, vitest) | ピッカーで列を足す・外す・既定に戻すと表の列が追随することを検証 |
-| AC-011 | unit + integration (vitest, jsdom) | `featureCell` の 3 状態と、描画された文言（片側「—」・両方記載なしで「—」1 つ）を検証 |
+| AC-011 | unit + integration (vitest, jsdom) | `featureCell` の 3 状態と、描画された子列ごとの 1 記号（片側だけ記載なし・両方記載なしで両子列「—」）を検証 |
 | AC-012 | integration (jsdom, vitest) | 脚注に `generatedAt` と出典リンクが出ること、`features` が空なら出ないことを検証 |
 | AC-013 | unit + integration (vitest, jsdom) | `buildFeatureRows` の並びと絞り方を検証。Sonnet 5.5 で Guardrails が runtime ✓ / mantle ✕、Prompt caching の 512、Computer use の行、モデルカードへのリンク先を検証 |
 | AC-014 | integration (jsdom, vitest) | `byModel` に無いモデルで「記載がありません」が出ること、`features` が空で列も脚注も出ず例外にならず、行数が変わらないことを検証。取得失敗（カードの値 `null`）が `failedCards` に数えられ例外にならないことを検証（node） |
