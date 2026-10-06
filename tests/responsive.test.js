@@ -110,3 +110,14 @@ describe("テーマ", () => {
     expect(base).not.toContain("data-theme");
   });
 });
+
+// FEATURE-001: 2 段ヘッダの上段「モデル」見出しは固定列と一緒に左に留まる。
+// 上段の th を position: static にする既存ルールより詳細度の高いセレクタで sticky に戻す
+// (jsdom では詳細度を計算できないので、CSS の取り決めを固定する)。
+describe("FEATURE-001 上段の固定見出し", () => {
+  it("column-groups の sticky セルを position: sticky; left: 0 にするセレクタがある", () => {
+    expect(table).toMatch(
+      /\.table-frame > table > thead tr\.column-groups th\.sticky\.sticky-group-model\s*\{[^}]*position:\s*sticky;[^}]*left:\s*0/,
+    );
+  });
+});

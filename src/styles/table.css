@@ -347,7 +347,13 @@ td.feature-col { text-align: center; white-space: nowrap; padding-left: 6px; pad
 .feature-mark.feature-none { color: var(--fg-muted); font-weight: 400; }
 
 /* 上段の「モデル」見出しは左固定の 2 列 (プロバイダ / モデル名) と同じ幅で左に留める。 */
-.table-frame thead tr.column-groups th.sticky-group-model { left: 0; z-index: 3; background: var(--bg-raised); box-shadow: 1px 0 0 var(--line); }
+/* 既存の `.table-frame > table > thead tr.column-groups th { position: static }` より詳細度を上げて勝たせる。 */
+.table-frame > table > thead tr.column-groups th.sticky.sticky-group-model { position: sticky; left: 0; z-index: 3; background: var(--table-group-bg); box-shadow: 1px 0 0 var(--line); }
+
+/* 上段を分けたので、reference-*.css の `column-groups th:nth-child(2)` (推論が実行される場所の強調) が
+   モダリティ上の空セルに当たる。強調は class で付け直す。 */
+.table-frame > table > thead tr.column-groups th.group-model-rest { background: var(--table-group-bg); color: var(--table-group-fg); border-bottom: 0; }
+.table-frame > table > thead tr.column-groups th.group-location { background: var(--chrome-bg); color: var(--chrome-fg); border-bottom: 2px solid var(--brand-orange); }
 
 /* 機能の列ピッカー。並べ替え UI と同じ行に置き、狭い幅では折り返す。 */
 .feature-picker { position: relative; }
