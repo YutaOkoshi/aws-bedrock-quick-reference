@@ -170,6 +170,7 @@ export const ja = {
     pickerGroup: "表に出す機能の列",
     pickerReset: "既定に戻す",
     sideAria: "{endpoint}: {state}",
+    mark: { yes: "対応", no: "非対応" },
     state: { yes: "対応", no: "非対応", none: "記載なし" },
     fetchedAt: "機能表の取得日: {date}",
     sourceLabel: "公式 docs のモデルカード (Capabilities and Features)",

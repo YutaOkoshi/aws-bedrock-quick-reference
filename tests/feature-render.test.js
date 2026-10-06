@@ -102,20 +102,32 @@ describe("FEATURE-001 表の機能列", () => {
     setLang("ja");
   });
 
-  it("セルは子列ごとに 1 記号で、3 状態を区別する", () => {
+  it("セルは判定列と同じ印 (✓ 対応 / ✕ 非対応) で、3 状態を区別する", () => {
     mountFixtureApp({ features: sample });
-    // 対応 / 非対応
-    expect(featureCellOf(CLAUDE, "guardrails", "runtime").textContent).toBe("✓");
-    expect(featureCellOf(CLAUDE, "guardrails", "mantle").textContent).toBe("✕");
+    const cell = (modelId, side) => featureCellOf(modelId, "guardrails", side);
+    // 対応: 判定列の markYes と同じ形 (span.flag-yes > span.mark + span.label)
+    const yes = cell(CLAUDE, "runtime").querySelector(".flag-yes");
+    expect(yes.querySelector(".mark").textContent).toBe("✓");
+    expect(yes.querySelector(".label").textContent).toBe("対応");
+    // 非対応: markNo と同じ形
+    const no = cell(CLAUDE, "mantle").querySelector(".flag-no");
+    expect(no.querySelector(".mark").textContent).toBe("✕");
+    expect(no.querySelector(".label").textContent).toBe("非対応");
     // 片側だけ記載なし (mantle の表が無い)。もう片方は値どおり
-    expect(featureCellOf(NOVA_LITE, "guardrails", "runtime").textContent).toBe("✓");
-    expect(featureCellOf(NOVA_LITE, "guardrails", "mantle").textContent).toBe("—");
+    expect(cell(NOVA_LITE, "runtime").querySelector(".flag-yes")).not.toBeNull();
+    expect(cell(NOVA_LITE, "mantle").textContent).toBe("—");
+    expect(cell(NOVA_LITE, "mantle").querySelector(".flag-no")).toBeNull();
     // 両方記載なしは両子列とも「—」。✕ にしない
     for (const side of ["runtime", "mantle"]) {
-      const none = featureCellOf(COHERE, "guardrails", side);
-      expect(none.textContent).toBe("—");
-      expect(none.classList.contains("dim")).toBe(true);
+      expect(cell(COHERE, side).textContent).toBe("—");
+      expect(cell(COHERE, side).classList.contains("dim")).toBe(true);
     }
+  });
+
+  it("英語のラベルは Supported / Not supported", () => {
+    mountFixtureApp({ features: sample, lang: "en-US" });
+    expect(featureCellOf(CLAUDE, "guardrails", "runtime").querySelector(".label").textContent).toBe("Supported");
+    expect(featureCellOf(CLAUDE, "guardrails", "mantle").querySelector(".label").textContent).toBe("Not supported");
   });
 
   it("セルの aria-label に接続先と対応可否を言葉で書く", () => {
@@ -163,8 +175,8 @@ describe("FEATURE-001 列ピッカー", () => {
     toggleBox("countTokens", true);
     expect(shownFeatures()).toContain("countTokens");
     // 1 機能で Runtime / Mantle の 2 子列がそろって出る
-    expect(featureCellOf(CLAUDE, "countTokens", "runtime").textContent).toBe("✕");
-    expect(featureCellOf(CLAUDE, "countTokens", "mantle").textContent).toBe("✓");
+    expect(featureCellOf(CLAUDE, "countTokens", "runtime").querySelector(".flag-no")).not.toBeNull();
+    expect(featureCellOf(CLAUDE, "countTokens", "mantle").querySelector(".flag-yes")).not.toBeNull();
     toggleBox("guardrails", false);
     expect(headerKeys().filter((key) => key?.startsWith("feature:guardrails"))).toEqual([]);
     // 列の並びは features の順に揃える

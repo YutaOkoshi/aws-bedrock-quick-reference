@@ -82,15 +82,16 @@ function el(tag, className, text) {
   return node;
 }
 
-function markNo() {
+// labelKey は機能列 (FEATURE-001) が「対応 / 非対応」に差し替えるときに渡す。既定は判定列の文言。
+function markNo(labelKey = "value.no") {
   const span = el("span", "flag-no");
-  span.append(el("span", "mark", "✕"), el("span", "label", t("value.no")));
+  span.append(el("span", "mark", "✕"), el("span", "label", t(labelKey)));
   return span;
 }
 
-function markYes() {
+function markYes(labelKey = "value.yes") {
   const span = el("span", "flag-yes");
-  span.append(el("span", "mark", "✓"), el("span", "label", t("value.yes")));
+  span.append(el("span", "mark", "✓"), el("span", "label", t(labelKey)));
   return span;
 }
 
@@ -259,16 +260,21 @@ function globalCell(row) {
   return wrap;
 }
 
-// FEATURE-001: 機能列は機能ごとに子列 Runtime / Mantle の 2 列。セルは子列ごとに 1 記号。
-// 記載なしは「—」(エンジンが dim を付ける)。記載なしを ✕ にしない。
-const FEATURE_SYMBOL = { yes: "✓", no: "✕", none: EMPTY };
+// FEATURE-001: 機能列は機能ごとに子列 Runtime / Mantle の 2 列。セルは判定列と同じ印
+// (✓ 対応 / ✕ 非対応)。記載なしは「—」(エンジンが dim を付ける)。記載なしを ✕ にしない。
 const FEATURE_SIDES = Object.freeze([
   { side: "runtime", label: "Runtime", endpoint: "bedrock-runtime" },
   { side: "mantle", label: "Mantle", endpoint: "bedrock-mantle" },
 ]);
 
 function featureMark(endpoint, state) {
-  const mark = el("span", `feature-mark feature-${state}`, FEATURE_SYMBOL[state]);
+  const mark =
+    state === "yes"
+      ? markYes("feature.mark.yes")
+      : state === "no"
+        ? markNo("feature.mark.no")
+        : el("span", null, EMPTY);
+  mark.classList.add("feature-mark", `feature-${state}`);
   mark.setAttribute(
     "aria-label",
     t("feature.sideAria", { endpoint, state: t(`feature.state.${state}`) }),
