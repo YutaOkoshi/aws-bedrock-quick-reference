@@ -45,8 +45,9 @@ describe("FEATURE-001 表の機能列", () => {
     ]);
   });
 
-  it("列見出しは ja でも en でも docs の英語名のまま", () => {
-    mountFixtureApp({ features: sample });
+  // 言語切替は先に組み立てた画面も描き直すので、ファイルの先頭近くで 1 回だけ切り替える。
+  it("列見出しと詳細パネルの機能名は ja でも en でも docs の英語名のまま", () => {
+    const app = mountFixtureApp({ features: sample });
     expect(headers().slice(FIRST_FEATURE).map(headerText)).toEqual([
       "Explicit Prompt Caching",
       "Structured outputs",
@@ -60,6 +61,11 @@ describe("FEATURE-001 表の機能列", () => {
       "Client-side tool calling",
       "Guardrails",
     ]);
+    app.detail.openRow(CLAUDE);
+    const section = document.querySelector(`#${panelId(CLAUDE)} .detail-feature`);
+    expect(section.querySelector("h4").textContent).toBe("Capabilities and Features");
+    expect(section.querySelector('tr[data-key="guardrails"] td').textContent).toBe("Guardrails");
+    expect(section.querySelector('.detail-caching-table tr[data-field="ttl"] td').textContent).toBe("5 minutes, 1 hour");
     setLang("ja");
   });
 
@@ -222,15 +228,22 @@ describe("FEATURE-001 / DETAIL-001 詳細パネルの機能の節", () => {
   const sectionOf = (app, modelId) => {
     app.detail.openRow(modelId);
     const panel = document.getElementById(panelId(modelId));
-    return panel.querySelector(".lane-panel:not([hidden]) .detail-feature");
+    return panel.querySelector(".detail-panel > .detail-feature");
   };
 
-  it("価格の節の後に置き、機能 × runtime / mantle の表を features の順で出す", () => {
+  it("レーンのパネル群の下に 1 回だけ置き、機能 × runtime / mantle の表を features の順で出す", () => {
     const app = mountFixtureApp({ features: sample });
     const section = sectionOf(app, CLAUDE);
     expect(section).not.toBeNull();
-    expect(section.previousElementSibling?.classList.contains("detail-price")).toBe(true);
-    expect(section.querySelector("h4").textContent).toBe("機能 (Capabilities and Features)");
+    const panel = document.getElementById(panelId(CLAUDE));
+    // レーンのパネルごとには繰り返さない (DETAIL-001 AC-023)
+    expect(panel.querySelectorAll(".detail-feature")).toHaveLength(1);
+    expect(panel.querySelector(".lane-panel .detail-feature")).toBeNull();
+    expect(section.previousElementSibling?.classList.contains("lane-panel")).toBe(true);
+    // タブを切り替えても同じ節が見えたまま
+    panel.querySelector('.lane-tab[data-lane="global"]').click();
+    expect(section.isConnected && !section.hidden).toBe(true);
+    expect(section.querySelector("h4").textContent).toBe("機能（Capabilities and Features）");
     const head = [...section.querySelectorAll(".detail-feature-table thead th")].map((th) => th.textContent);
     expect(head).toEqual(["機能", "bedrock-runtime", "bedrock-mantle"]);
     const rows = [...section.querySelectorAll(".detail-feature-table tbody tr")];
@@ -295,19 +308,16 @@ describe("FEATURE-001 / DETAIL-001 詳細パネルの機能の節", () => {
     expect(section.querySelector(".detail-feature-table")).toBeNull();
   });
 
-  it("features が空なら節を出さず、例外にもならない", () => {
+  it("features が空でも例外にならず、記載なしの文言を出す (FEATURE-001 AC-014)", () => {
     const app = mountFixtureApp({ features: {} });
     expect(() => app.detail.openRow(CLAUDE)).not.toThrow();
-    expect(document.querySelector(".detail-feature")).toBeNull();
+    const section = document.querySelector(`#${panelId(CLAUDE)} .detail-feature`);
+    expect(section.querySelector(".detail-no-feature").textContent).toBe(
+      "公式 docs のモデルカードに機能の記載がありません",
+    );
+    expect(section.querySelector("a.detail-feature-card")).toBeNull();
+    // 価格の節はそのまま出る
+    expect(document.querySelector(`#${panelId(CLAUDE)} .detail-price`)).not.toBeNull();
   });
 
-  it("英語でも機能名と docs の値は訳さない", () => {
-    const app = mountFixtureApp({ features: sample });
-    setLang("en");
-    const section = sectionOf(app, CLAUDE);
-    expect(section.querySelector("h4").textContent).toBe("Capabilities and Features");
-    expect(section.querySelector('tr[data-key="guardrails"] td').textContent).toBe("Guardrails");
-    expect(section.querySelector(".detail-no-feature")).toBeNull();
-    setLang("ja");
-  });
 });

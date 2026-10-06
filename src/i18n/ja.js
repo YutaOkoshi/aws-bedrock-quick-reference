@@ -152,7 +152,7 @@ export const ja = {
   },
   // FEATURE-001: 機能 (Capabilities and Features)。機能名そのものは docs の英語名のまま出すので辞書に置かない。
   feature: {
-    heading: "機能 (Capabilities and Features)",
+    heading: "機能（Capabilities and Features）",
     nameColumn: "機能",
     itemColumn: "項目",
     valueColumn: "値",

@@ -301,11 +301,10 @@ function cachingValue(field, value) {
 }
 
 function featureSection(modelId, { features }) {
-  // features.json が無い (空) ときは節ごと出さない。記載なしの文言は「データはあるがこのモデルに無い」ときだけ。
-  if (!features?.byModel) return null;
+  // byModel にモデルが無い・features.json が空でも節は出し、記載なしの文言にする (FEATURE-001 AC-014)。
   const section = el("section", "detail-feature");
   section.appendChild(el("h4", null, t("feature.heading")));
-  const entry = features.byModel[modelId];
+  const entry = features?.byModel?.[modelId];
   const rows = buildFeatureRows(features, modelId);
 
   if (rows.length > 0) {
@@ -394,7 +393,7 @@ function laneBlock(lane, { modelId, detail, regionNotes, profile, available, hea
   return block;
 }
 
-function lanePanel(lane, { modelId, detail, regionNotes, prices, features }) {
+function lanePanel(lane, { modelId, detail, regionNotes, prices }) {
   const summary = detail.summaries[lane];
   const panel = el("div", "lane-panel");
   panel.id = laneId(modelId, lane);
@@ -453,9 +452,6 @@ function lanePanel(lane, { modelId, detail, regionNotes, prices, features }) {
       available: summary.available,
     }),
   );
-  // FEATURE-001: 価格の下に機能の節。レーンに依らない内容なので各レーンで同じものを出す。
-  const feature = featureSection(modelId, { features });
-  if (feature) panel.appendChild(feature);
   return panel;
 }
 
@@ -574,10 +570,13 @@ export function mountDetailView({
     const tabs = laneTabs(modelId, detail, { onSelect: select });
     panel.appendChild(tabs.tablist);
     for (const lane of LANE_ORDER) {
-      const element = lanePanel(lane, { modelId, detail, regionNotes, prices, features });
+      const element = lanePanel(lane, { modelId, detail, regionNotes, prices });
       panels.set(lane, element);
       panel.appendChild(element);
     }
+    // DETAIL-001 AC-023 / FEATURE-001 AC-013: 機能はレーンに依らないので、
+    // レーンのパネル群の下に 1 回だけ置く。
+    panel.appendChild(featureSection(modelId, { features }));
     select(selected);
 
     td.appendChild(panel);
