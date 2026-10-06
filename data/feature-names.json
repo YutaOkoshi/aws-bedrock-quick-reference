@@ -53,5 +53,5 @@
     "Projects": "projects",
     "Projects (default project only)": "projectsDefaultOnly"
   },
-  "defaultColumns": ["explicitPromptCaching", "structuredOutputs", "clientToolCalling", "guardrails"]
+  "defaultColumns": "all"
 }

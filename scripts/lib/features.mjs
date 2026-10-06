@@ -272,6 +272,12 @@ export function sameContent(a, b) {
   return JSON.stringify(withoutGeneratedAt(a)) === JSON.stringify(withoutGeneratedAt(b));
 }
 
+// 既定で表に出す列。"all" は features の全キー (unknown も含む) を同じ順で。配列ならそのまま。
+export function defaultColumnsOf(spec, keys) {
+  if (spec === "all") return [...keys];
+  return Array.isArray(spec) ? [...spec] : [];
+}
+
 const EXPLICIT_KEY = "explicitPromptCaching";
 
 const STATE_MARK = { true: "+", false: "-" };
@@ -466,7 +472,7 @@ export function normalizeFeatures({ cards, models, names, map = {}, previous = n
     cardsWithFeatures,
     failedCards: failedList.length,
     features,
-    defaultColumns: [...(names?.defaultColumns ?? [])],
+    defaultColumns: defaultColumnsOf(names?.defaultColumns, order),
     byModel: sortedByModel,
     unmatchedCards: unmatchedCards.sort(
       (a, b) => a.card.localeCompare(b.card) || String(a.modelId).localeCompare(String(b.modelId)),

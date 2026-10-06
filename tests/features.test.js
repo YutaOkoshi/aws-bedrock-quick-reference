@@ -8,6 +8,7 @@ import {
   DOCS_BASE,
   TOC_URL,
   cardMarkdownUrl,
+  defaultColumnsOf,
   featureKey,
   listModelCards,
   normalizeFeatures,
@@ -242,7 +243,18 @@ describe("AC-004 機能名の正規化", () => {
     const keys = Object.keys(features.features);
     expect(keys).toEqual(order.filter((k) => keys.includes(k)));
     expect(features.features.guardrails).toEqual({ label: "Guardrails", docs: "guardrails.html" });
-    expect(features.defaultColumns).toEqual(featureNames.defaultColumns);
+    expect(featureNames.defaultColumns).toBe("all");
+    expect(features.defaultColumns).toEqual(keys);
+  });
+
+  it("defaultColumns: all は unknown も含む全キーに展開し、配列指定はそのまま", () => {
+    const md = markdownOf(SONNET).replace("[Flows](flows.html)", "[Foo bar](foo.html)");
+    const { features } = build({ cards: { ...allCards(), [SONNET]: md } });
+    expect(features.defaultColumns).toEqual(Object.keys(features.features));
+    expect(features.defaultColumns).toContain("unknown:foo-bar");
+    const listed = build({ names: { ...featureNames, defaultColumns: ["guardrails", "countTokens"] } });
+    expect(listed.features.defaultColumns).toEqual(["guardrails", "countTokens"]);
+    expect(defaultColumnsOf(undefined, ["a"])).toEqual([]);
   });
 });
 
