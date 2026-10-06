@@ -426,6 +426,22 @@ export function buildColumns(regionNotes, { features = {}, featureColumns: keys 
   ];
 }
 
+// 表のスクロール領域の「見える幅」を CSS 変数に流す。機能列で表が見える幅より広くなっても、
+// 詳細パネル (DETAIL-001) はこの幅に収めて左に留める (detail.css)。幅 0 (隠れている間) は上書きしない。
+export const VISIBLE_WIDTH_VAR = "--table-visible-w";
+
+export function syncVisibleWidth(frame) {
+  const width = frame?.clientWidth ?? 0;
+  if (width > 0) frame.style.setProperty(VISIBLE_WIDTH_VAR, `${width}px`);
+  return width;
+}
+
+function trackVisibleWidth(frame) {
+  syncVisibleWidth(frame);
+  if (typeof ResizeObserver !== "function") return;
+  new ResizeObserver(() => syncVisibleWidth(frame)).observe(frame);
+}
+
 /**
  * 画面を組み立てて DOM に取り付ける。
  * 返り値の setRegion / rerender で再描画する。データは引数で受け取り、
@@ -573,6 +589,7 @@ export function mountTableView({
     rowAttrs: (row) => ({ "data-model-id": row.modelId }),
   });
   table.el.id = "models-table";
+  trackVisibleWidth(table.el);
 
   const emptyState = el("p", "empty");
   emptyState.id = "empty-state";

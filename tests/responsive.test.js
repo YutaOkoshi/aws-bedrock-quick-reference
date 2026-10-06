@@ -129,3 +129,12 @@ describe("FEATURE-001 上段の固定見出し", () => {
     );
   });
 });
+
+describe("詳細パネルは表の見える幅に収まる", () => {
+  it("detail-panel は sticky; left: 0 で幅を --table-visible-w にする", () => {
+    const detail = read("styles/detail.css");
+    expect(detail).toMatch(
+      /\.table-frame \.detail-panel\s*\{[^}]*position:\s*sticky;[^}]*left:\s*0;[^}]*width:\s*var\(--table-visible-w/,
+    );
+  });
+});

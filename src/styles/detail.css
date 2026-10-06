@@ -37,6 +37,16 @@ tr.expanded > td {
   padding: var(--sp-4);
 }
 
+/* 機能列で表が見える幅より広くなっても、詳細パネルは表のスクロール領域の見える幅に収め、
+   横スクロールしても左に留める。幅は table-view.js が枠の clientWidth から流す。 */
+.table-frame .detail-panel {
+  position: sticky;
+  left: 0;
+  box-sizing: border-box;
+  width: var(--table-visible-w, auto);
+  max-width: var(--table-visible-w, none);
+}
+
 .detail-panel h4 {
   margin: 0 0 var(--sp-2);
   font-size: var(--fs-xs);

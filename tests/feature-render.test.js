@@ -1,7 +1,7 @@
 // FEATURE-001 の結合テスト (jsdom)。表の機能列・列ピッカー・脚注・詳細パネルの機能の節。
 import { describe, it, expect, beforeEach } from "vitest";
 import { mountFixtureApp, rowFor, cells, $ } from "./app-harness.js";
-import { FEATURE_COLUMNS_EVENT } from "../src/scripts/table-view.js";
+import { FEATURE_COLUMNS_EVENT, syncVisibleWidth } from "../src/scripts/table-view.js";
 import { setLang } from "../src/scripts/i18n.js";
 import { panelId } from "../src/scripts/detail-view.js";
 import sample from "./fixtures/features/features.sample.json";
@@ -476,5 +476,59 @@ describe("FEATURE-001 機能列の凡例", () => {
     // 機能の記載が無いモデルには凡例を出さない
     app.detail.openRow(COHERE);
     expect(document.querySelector(`#${panelId(COHERE)} .detail-feature-legend`)).toBeNull();
+  });
+});
+
+// 機能列で表が見える幅より広くなっても、詳細パネルは見える幅に収めて左に留める。
+describe("詳細パネルを表のスクロール領域の見える幅に収める", () => {
+  it("syncVisibleWidth は枠の clientWidth を --table-visible-w に流す", () => {
+    const frame = document.createElement("div");
+    Object.defineProperty(frame, "clientWidth", { value: 1511, configurable: true });
+    expect(syncVisibleWidth(frame)).toBe(1511);
+    expect(frame.style.getPropertyValue("--table-visible-w")).toBe("1511px");
+    Object.defineProperty(frame, "clientWidth", { value: 0, configurable: true });
+    // 幅 0 (隠れている間) は上書きしない
+    expect(syncVisibleWidth(frame)).toBe(0);
+    expect(frame.style.getPropertyValue("--table-visible-w")).toBe("1511px");
+  });
+
+  it("表の枠の大きさが変わるたびに CSS 変数を更新する (ResizeObserver)", () => {
+    const observers = [];
+    const original = globalThis.ResizeObserver;
+    globalThis.ResizeObserver = class {
+      constructor(callback) {
+        this.callback = callback;
+        this.targets = [];
+        observers.push(this);
+      }
+      observe(target) {
+        this.targets.push(target);
+      }
+      disconnect() {}
+    };
+    try {
+      const app = mountFixtureApp({ features: sample });
+      const frame = app.view.table;
+      const observer = observers.find((entry) => entry.targets.includes(frame));
+      expect(observer).toBeDefined();
+      Object.defineProperty(frame, "clientWidth", { value: 1200, configurable: true });
+      observer.callback([{ target: frame }]);
+      expect(frame.style.getPropertyValue("--table-visible-w")).toBe("1200px");
+      Object.defineProperty(frame, "clientWidth", { value: 900, configurable: true });
+      observer.callback([{ target: frame }]);
+      expect(frame.style.getPropertyValue("--table-visible-w")).toBe("900px");
+    } finally {
+      globalThis.ResizeObserver = original;
+    }
+  });
+
+  it("ResizeObserver が無い環境でも例外にならない", () => {
+    const original = globalThis.ResizeObserver;
+    globalThis.ResizeObserver = undefined;
+    try {
+      expect(() => mountFixtureApp({ features: sample })).not.toThrow();
+    } finally {
+      globalThis.ResizeObserver = original;
+    }
   });
 });
