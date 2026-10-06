@@ -1,7 +1,7 @@
 ---
 spec_id: "DETAIL-001"
 context: "detail"
-version: 9
+version: 10
 issue_ref: null
 title: "行の展開による使い方ごとのデータの流れの表示"
 decision_refs:
@@ -12,6 +12,7 @@ decision_refs:
   - D-010
   - D-013
   - D-014
+  - D-015
 ---
 
 ## User Story
@@ -76,6 +77,7 @@ decision_refs:
   2. **指定する ID**: そのレーンで指定する ID とコピーボタン。In-Region はモデル ID、Geo / Global はプロファイル ID
   3. **推論先**: 下記 AC-018 / AC-019 の形
   4. **価格**: **そのレーンの分だけ**（下記 AC-013）
+- **And**: 価格の下に **機能** の節が続く（AC-023）。4 節の並びと AC-016 の例外は変えない
 
 ### AC-019 (推論先の表示)
 - **Given**: あるレーンのタブパネルの「推論先」節を描画する
@@ -103,6 +105,17 @@ decision_refs:
   - そのレーンに対応する単価が 1 つも無ければ、空欄にせず「この起点リージョンの価格データがありません」と表示する
   - SKU・`usagetype`・offer code は出さない（PRICE-001 AC-012）
 
+### AC-023 (機能の節)
+- **Given**: 起点リージョン R でモデル M のレーンのパネルを描画する
+- **When**: 価格の節の下を見る
+- **Then**: 見出し「機能（Capabilities and Features）」の節が出る。中身は上から（FEATURE-001 AC-013）
+  1. 機能 × `bedrock-runtime` / `bedrock-mantle` の表。値は ✓ / ✕ / —（記載なし）。行は `features.json` の `features` の順で、どちらかの側に記載がある機能だけ。機能名は ja / en とも docs の英語名のまま
+  2. `promptCaching` があれば Prompt caching の表（Explicit 対応 / Min tokens per checkpoint / Max checkpoints per request / Supported TTL / Fields）。見出しは辞書、値は docs の文字列のまま
+  3. `computerUse` があれば Computer use の表（Tool type / Beta header）
+  4. 公式 docs のモデルカードへのリンク
+- **And**: 機能はモデルと接続先で決まり、起点リージョンとレーンには依らない
+- **And** (Error Case): `features.json.byModel` に M が無い、または `features.json` が空のときは、空欄にせず「公式 docs のモデルカードに機能の記載がありません」と表示する。例外で描画が止まらない（FEATURE-001 AC-014）
+
 ### AC-020 (選んだレーンはセッション内で覚える)
 - **Given**: あるモデルの行で Global のタブを選ぶ
 - **When**: 別のモデルの行を開く
@@ -125,7 +138,7 @@ decision_refs:
 - 詳細パネルの構造は上から 3 段:
   1. **共通の見出し行**（`div.head-grid`）: モデル ID（コピー可）/ 接続先 `bedrock-runtime` / 接続先 `bedrock-mantle`（あれば）
   2. **レーンのタブ**（`div.lane-tabs`、`role="tablist"`）: 見出しと要約の 2 行。選択中は下線がアクセント色、使えないレーンは淡色
-  3. **レーンのタブパネル**: 図 → 指定する ID → 推論先 → 価格
+  3. **レーンのタブパネル**: 図 → 指定する ID → 推論先 → 価格 → 機能（AC-023）
 - 375px では見出し行を 1 列に積み、タブは折り返す。図は横スクロールの入れ物に入る（FLOW-001 AC-NFR-001）
 - **「提供状況」節と「推論プロファイル」節はパネルに無い**。前者は REGIONS-001 の行列、後者は将来の「プロファイル」ビューが持つ（D-013）
 
@@ -135,6 +148,7 @@ decision_refs:
 - **From**: TABLE-001 — 展開対象のモデル ID、現在の起点リージョン
 - **From**: DATA-001 — `data/models.json`（In-Region 判定）、`data/profiles.json`（`sources`）、`data/region-notes.json`（表示名・`country`・`endpoint`）、`data/mantle.json`
 - **From**: PRICE-001 — `data/prices.json`（レーンごとの単価）
+- **From**: FEATURE-001 — `data/features.json`（機能の節）
 - **From**: FLOW-001 — 各レーンのデータの流れ図
 - **From**: I18N-001 — レーン名・要約・節の見出し・注記
 
@@ -163,6 +177,7 @@ decision_refs:
 | AC-019 | unit + integration (vitest, jsdom) | `buildDestinationLines(lane, ...)` が地名だけを返し、リージョンコードを含まないことを検証（ja / en）。Geo の国外行の warn クラス、Global の 1 行と注記、In-Region 不可時の文言を検証 |
 | AC-018 | unit + integration (vitest, jsdom) | `sortGeoProfiles(profiles, R)` が件数の昇順（同数は接頭辞昇順）になることを検証。東京起点の `jp.` + `apac.` の fixture で図が 2 枚・ID が 2 つ・価格節が 1 つになることを検証 |
 | AC-013 | unit + integration (vitest, jsdom) | `buildPriceRows(M, { prices, region, lane })` がレーンごとに行を絞ること（Global は `global` のみ）、単価 0 件で空配列になることを検証。描画側で 3 列の小表の中身（ja / en）、出力の無い種別の「—」、注記の出し分けを検証 |
+| AC-023 | unit + integration (vitest, jsdom) | `buildFeatureRows(features, M)` の並びと、どちらかに記載がある行だけになることを検証。描画側で Sonnet 5.5 の Guardrails が runtime ✓ / mantle ✕、Prompt caching の Min tokens が `512`、Computer use の行、モデルカードへのリンク先、`byModel` に無いモデルで「記載がありません」が出ることを検証（`tests/feature-render.test.js`） |
 | AC-020 | integration (jsdom, vitest) | 行 A で Global を選び行 B を開くと Global が選ばれること、Global 不可の行 C では既定に戻ること、`location.search` と `localStorage` が変わらないことを検証 |
 | AC-021 | integration (jsdom, vitest) | 全不可の fixture で 3 タブが淡色になり説明文が出ることを検証 |
 | AC-022 | integration (jsdom, vitest) | denied 起点で詳細パネルが 1 つも開かないこと、パネルのコードに `cause` の参照が無いことを検証 |
@@ -188,6 +203,7 @@ decision_refs:
 
 ## 変更履歴
 
+- **version 10** (2026-10-06): レーンのパネルの価格の下に **機能** の節を足した（AC-023 を追加、AC-017 に And を追記、UI Description の並びに追記）。機能 × 接続先の表・Prompt caching の表・Computer use の表・モデルカードへのリンクで、値は FEATURE-001 が作る `data/features.json` から取る。既存の AC-001 〜 AC-022 は変更しない。理由: 表の機能列（TABLE-001 v10 AC-016）は既定 4 列だけなので、全機能と Prompt caching / Computer use の詳細を行を開いたときに見られるようにするため（D-015）
 - **version 9** (2026-09-15): 不可の Geo / Global のレーンでは「指定する ID」の節を出さないことを AC-016 の And として明文化し、AC-017 の 4 節の並びにその例外を書き添えた（図は内側を淡色にした 1 枚、推論先は「提供なし」の 1 行、価格は AC-016 の And のとおり）。判定・データ・他の AC は変更しない。理由: 対応する推論プロファイルが無いレーンでモデル ID を「指定する ID」として出すと、そのモデル ID を推論プロファイルの代わりに指定できると読めて誤誘導になるため。実装はそのようになっていたが仕様側が AC-017 の「4 つがこの順に出る」のままで食い違っていた（PR #13 のレビューで判明）
 - **version 8** (2026-09-15): パネルを**使い方（レーン）ごとのデータの流れ**を見せる形に作り替えた。共通の見出し行（モデル ID / 接続先）＋ In-Region / Geo / Global の 3 タブ（常時見える 1 行の要約付き）＋ タブごとの 図・指定する ID・推論先・価格 の構成にし、AC-014 〜 AC-022 を追加、AC-010 / AC-011 / AC-012 / AC-013 を作り替えた（AC-011 の「使い方ごとの小さな表」はレーンのタブに置き換わったため廃止）。**「提供状況」節（旧 AC-002 / AC-003 / AC-004 / AC-007 / AC-008）は REGIONS-001 の行列へ移し、「推論プロファイル」節（旧 AC-005 / AC-006 / AC-009）はパネルから外して将来の「プロファイル」ビューへ先送りした**（D-013）。図の内容と根拠は FLOW-001 が持つ（D-014）。理由: 1 枚のパネルに 6 節を積むと「このモデルをこう使うと国の外に出るか」という中心の問いが読み取れず、リージョンコードの一覧が答えの代わりになっていたため
 - **version 7** (2026-09-14): パネルに **価格** の節を足した（AC-013 を追加）。「この起点からの使い方」の下・「提供状況」の上に 種別 × 入力 / 出力 の小さな表を置き、値は PRICE-001 が作る `data/prices.json` から取る。version 6 で足した「接続先」節はパネル末尾のままで、節の並びは モデル ID → 使い方 → 価格 → 提供状況 → 推論プロファイル → 接続先（価格を接続先より前に置く）。既存の AC-001〜AC-012 は変更しない。理由: Design v2 の「バッチ・キャッシュ・優先度別などの細かい価格は、行を開いたときに見られる」に対応するため（D-009）

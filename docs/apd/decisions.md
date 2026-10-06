@@ -2,12 +2,54 @@
 
 技術選択の記録。**新しい判断ほど上に積む。** 最終決定はユーザーが行い、AI の推奨は参考情報。
 
+D-015・D-016 はモデル別の機能表（FEATURE-001、設計 `docs/superpowers/specs/2026-10-06-model-features-design.md`）の取り込みに伴って 2026-10-06 に決定した。
 D-011〜D-014 は Design v3（画面ビュー・リージョン行列・データの流れ図・並び順）に伴って
 2026-09-15 に起案し、同日ユーザーが推奨案どおりに決定した。
 D-009 は Design v2 で価格が範囲に入ったことを受けて 2026-09-14 に決定した。
 D-001〜D-005 は brainstorming の対話で内容が固まり、技術設計
 （`docs/superpowers/specs/2026-09-14-bedrock-quick-reference-design.md`）から転記したものを
 2026-09-14 にユーザーが確定した。D-006・D-007 は Spec フェーズで決定した。D-008 は Build 中に発生した矛盾の解消で、暫定決定 B をオーナーの指示で D に差し替えた。
+
+---
+
+## D-016: 機能表を定期取得し、差分を PR で取り込む
+
+- **Date**: 2026-10-06
+- **Context**: D-015 で機能表の取得元を英語版 docs の `.md` に決めた。docs のモデルカードは頻繁に変わる（新モデルのカードの追加、機能の Supported / Not Supported の切り替え、機能名の表記の変更）ので、判定データ（D-002）のように「新しいモデルが出たとき」に手で取り直す運用では古さが溜まる。一方で取得は認証が要らず（D-015）、CI に AWS の権限を置かずに自動化できる。ただし docs の変化をそのまま公開すると、書式の変更でパースが空振りしたときに全データが消えたページが公開されうる。
+- **Options**:
+  - A: **手動で取り直す。** 価格（D-009）と同じく、メンテナが気づいたときに CLI を走らせてコミットする。仕組みは要らないが、docs の更新に追随できない
+  - B: **GitHub Actions で毎日取り直し、差分があれば PR を作る。** 公開は人が PR を merge したときだけ。PR 本文に機能の増減・未知の機能名・引けないカードの要約を載せ、メンテナが確認してから入れる
+  - C: **GitHub Actions で毎日取り直し、main に直接 commit する。** 人手が要らないが、パースの空振りや誤った寄せ方がレビューなしで公開される
+- **AI Recommendation**: **B**。取得の自動化で追随の遅れを解消しつつ、公開の前に人の確認を 1 回挟める。未知の機能名（`unknown:<slug>`）を寄せるかどうかはメンテナの判断で、それを PR の場で行える。C ではパースの失敗や誤った寄せ方が公開まで素通りする
+- **Decision**: **B**（2026-10-06、オーナー承認）
+- **Reason**: docs の更新に毎日追随でき、公開の前に PR のレビューを 1 回挟める。workflow は AWS の認証要素を持たず（D-002 を崩さない）、GitHub の権限も `contents: write` と `pull-requests: write` だけで足りる
+- **運用**:
+  - `.github/workflows/refresh-features.yml` が `schedule`（毎日 UTC 21:00 = JST 06:00）と `workflow_dispatch` で走り、`node scripts/fetch-bedrock-features.mjs` → `npm test` の後、`data/features.json` に差分があれば固定ブランチ `bot/refresh-features` に force push して PR を作る（既に開いていれば本文だけ更新）
+  - 空の差分を作らないため、内容が前回と同じなら `generatedAt` を据え置く（FEATURE-001 AC-007）。パースの空振りで全データを消す PR を作らないため、`cardsWithFeatures` が前回の半分未満なら書き出さずに失敗する（同 AC-008）
+  - GITHUB_TOKEN で作った PR は他の workflow を起動しないが、テストはこの job の中で走らせ済み。公開は従来どおり main への merge で `deploy.yml` が行う
+- **オーナー作業**: リポジトリ設定 **Settings → Actions → General → Workflow permissions** の *Allow GitHub Actions to create and approve pull requests* を有効にする。これが無効だと GITHUB_TOKEN で `gh pr create` ができず、workflow は PR 作成の段で失敗する
+- **Refs**: `spec-features.md`（FEATURE-001 AC-015 / AC-016）、workflow は `.github/workflows/refresh-features.yml`、テストは `tests/refresh-features-workflow.test.js`
+
+## D-015: 機能表の取得元を英語版の公式 docs の `.md` にする
+
+- **Date**: 2026-10-06
+- **Context**: 公式 docs のモデルカードにある **Capabilities and Features**（Guardrails / Prompt caching / Structured outputs / Tool calling などの対応可否を `bedrock-runtime` / `bedrock-mantle` 別に示す表）を、モデルごとに表と詳細パネルで見せたい。どこから取るかを決める必要がある。2026-10-06 に確認した事実: 機能の対応可否を返す API は無い（`ListFoundationModels` / `GetFoundationModel` が返すのはモダリティ・`responseStreamingSupported`・`customizationsSupported`・`inferenceTypesSupported`・ライフサイクルだけ。us-east-1 で実際に呼んで確認し、botocore の bedrock 108 操作・bedrock-runtime 11 操作にも該当が無い）。Pricing の `index.json`（D-009）に当たる機械可読の配信も無い。一方で docs の各ページは `.html` を `.md` に替えると `text/markdown` で取れ（認証不要、`Last-Modified` / `ETag` 付き）、全ページは `toc-contents.json` で列挙できる。モデルカード 134 本中 116 本に機能の節がある。
+- **Options**:
+  - A: **API から取る。** 該当する API が無いので選べない
+  - B: **docs の HTML を scrape する。** 取れるが、D-002 / D-003 / D-009 で B を退けたのと同じ理由（HTML 構造の変更に弱い）が当てはまる
+  - C: **サードパーティの DB（models.dev / LiteLLM など）を使う。** JSON で配信されていて取り込みは楽だが、AWS の一次情報ではなく、値が docs と食い違う。実例: **Sonnet 5.5 の Structured outputs は、公式 docs と models.dev では非対応だが、LiteLLM は `supports_response_schema: true`**。どちらが正しいかを確かめるには結局 docs を読むことになる
+  - D: **手書きで転記する**（`mantle.json` 方式、D-010）。出典は正しいが、134 本 × 26 種の機能を手で追うのは更新頻度に見合わず、転記の誤りも入る
+  - E: **英語版の公式 docs の `.md` を取ってパースする。** `toc-contents.json` で `model-card-*.html` を列挙し、各ページの `.md` を `Accept-Language: en-US` で取る。Markdown の表は HTML より構造が単純で、AWS 自身が配信している
+- **AI Recommendation**: **E**。一次情報そのもので、認証が要らず CI からも取れる（D-016）。Markdown の表は Supported / Not Supported の 2 セルと `icon-yes.png` / `icon-no.png` の画像で書かれていて機械的に読める。機能名の表記揺れ（観測 26 種）は手書きの対応表で寄せ、対応表に無い名前は推測で寄せずに `unknown:<slug>` として出す（D-009 の `price-model-map.json` と同じ規約）
+- **Decision**: **E**（2026-10-06、オーナー承認）
+- **Reason**: **最も信頼できる情報源は英語版の AWS 公式 docs** であり、それを機械可読に近い形（`.md`）で、認証なしに取れるため。サードパーティの DB は Sonnet 5.5 の Structured outputs のように docs と食い違う値を持ち、正誤の判定に結局 docs が要る。日本語版の docs は翻訳の遅れがあるので使わない
+- **取り込みの規約**:
+  - 取得元は `https://docs.aws.amazon.com/bedrock/latest/userguide/` の `toc-contents.json` と `model-card-*.md` だけ。日本語版の docs とサードパーティは使わない
+  - 機能名は `data/feature-names.json` で正規化キーに寄せる。**対応表に無い名前は推測で寄せず**、`unknown:<slug>` で画面に出して `unknownFeatures` に数える
+  - モデル ID は Programmatic Access 表の `bedrock-runtime` 行の Model ID 列（`N/A` なら同じ行の inference ID から接頭辞を外す）で引き、自動で引けないものは `data/feature-model-map.json` に書く。どちらでも引けないカードは `unmatchedCards` に残す（推測で結び付けない）
+  - 値は true / false / キーなし の 3 状態。「記載なし」を false に倒さない（D-003 の「提供なし」と「データなし」の区別）
+  - 画面の機能名は ja / en とも docs の英語名のまま出す（訳すと解釈が入る）
+- **Refs**: `spec-features.md`（FEATURE-001）、`spec-table.md`（TABLE-001 v10 AC-016）、`spec-detail.md`（DETAIL-001 v10 AC-023）、`spec-share.md`（SHARE-001 v5 AC-014）、実装は `scripts/lib/features.mjs` と `scripts/fetch-bedrock-features.mjs`、設計 `docs/superpowers/specs/2026-10-06-model-features-design.md` の 2 節
 
 ---
 

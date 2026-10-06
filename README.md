@@ -17,6 +17,8 @@ Amazon Bedrock の **モデル × 起点リージョン × 推論が実際に行
 - 提供元・モダリティ・名前の部分一致・「この起点から呼べるものだけ」の絞り込み
 - 行を展開すると、そのモデルの **全リージョン横断の提供状況** と推論プロファイルの起点 → 推論先を表示
 - **「提供なし」と「データなし」を区別して表示**（取得できなかったリージョンは理由の原文付き）
+- 公式 docs のモデルカードにある **機能の対応可否**（Guardrails / Prompt caching / Structured outputs / Tool calling など）を
+  `bedrock-runtime` / `bedrock-mantle` 別に表の列と詳細パネルで表示。表に出す機能の列は選べる
 - 日本語 / 英語の切り替え、ライト / ダークテーマ
 - 起点リージョンと絞り込み条件が URL に載るので、そのまま共有できる
 
@@ -56,6 +58,9 @@ aws sso login --profile <名前>
 node scripts/fetch-bedrock-snapshot.mjs --profile <名前> --account-kind sandbox
 ```
 
+機能表（`data/features.json`）は英語版の公式 docs のモデルカードから認証なしで取り、
+GitHub Actions（`.github/workflows/refresh-features.yml`）が毎日取り直して差分を PR にします。
+
 対象リージョンの列挙・`region-notes.json` / `overrides.json` の直し方・denied リージョンの
 扱いなど、更新手順の詳細は [`CLAUDE.md`](./CLAUDE.md) の「データ更新」節にまとめてあります。
 
@@ -69,7 +74,7 @@ node scripts/fetch-bedrock-snapshot.mjs --profile <名前> --account-kind sandbo
 
 - 仕様: `docs/apd/spec-*.md`（DATA-001 / TABLE-001 / FILTER-001 / DETAIL-001 / I18N-001 / SHARE-001 / DEPLOY-001）
 - プロダクト設計: `docs/apd/design.md`
-- 判断の記録: `docs/apd/decisions.md`（D-001〜D-008）
+- 判断の記録: `docs/apd/decisions.md`（D-001〜D-016）
 - 成果物プレビュー: `docs/apd/previews/`
 - 技術設計: `docs/superpowers/specs/2026-09-14-bedrock-quick-reference-design.md`
 

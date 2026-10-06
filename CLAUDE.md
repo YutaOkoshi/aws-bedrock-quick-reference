@@ -18,18 +18,23 @@ data/
 ├── overrides.json      # 手書き。モデル ID / プロファイル ID ごとの備考 (ja/en)
 ├── mantle.json         # 手書き。bedrock-mantle の提供リージョンと対応モデル (D-010)
 ├── price-model-map.json # 手書き。価格表のモデル名 → モデル ID (D-009)
+├── feature-names.json  # 手書き。docs の機能名 → 正規化キー・表示名・既定の列 (D-015)
+├── feature-model-map.json # 手書き。自動で引けないモデルカード → モデル ID (D-015)
 ├── models.json         # 生成物。手編集禁止
 ├── profiles.json       # 生成物。手編集禁止
 ├── fetch-log.json      # 生成物。手編集禁止
 ├── prices.json         # 生成物。手編集禁止
+├── features.json       # 生成物。手編集禁止 (FEATURE-001)
 └── raw/<日付>/         # 取得した生 JSON と stderr。gitignore 対象
 scripts/
 ├── fetch-bedrock-snapshot.mjs  # 薄い CLI。引数を読んで lib/ を呼ぶだけ
 ├── fetch-bedrock-prices.mjs    # 価格の CLI。引数・fetch・書き出しだけを持つ
+├── fetch-bedrock-features.mjs  # 機能表の CLI。同上
 └── lib/
     ├── cli-args.mjs    # 引数解析 (純関数)
     ├── normalize.mjs   # 正規化 (純関数。I/O・時刻・ネットワークを持たない)
     ├── prices.mjs      # 価格の正規化 (純関数。同上)
+    ├── features.mjs    # モデルカードのパースと機能表の正規化 (純関数。同上)
     ├── aws-cli.mjs     # aws を子プロセスで起動する唯一のモジュール
     └── snapshot.mjs    # 取得の段取りとファイル書き出し (唯一の I/O 層)
 src/
@@ -40,9 +45,19 @@ tests/
 ├── fetch-bedrock-snapshot.test.js
 ├── prices.test.js          # 価格の正規化 (node 環境)
 ├── price-render.test.js    # 価格列・Global の単価・詳細の価格 (jsdom)
+├── features.test.js        # モデルカードのパースと機能表の正規化 (node 環境)
+├── fetch-bedrock-features.test.js # 機能表の CLI の引数と --from-raw (node 環境)
+├── feature-model.test.js   # 機能列の純関数
+├── feature-render.test.js  # 機能列・列ピッカー・詳細の機能の節 (jsdom)
+├── refresh-features-workflow.test.js # 定期取得 workflow の権限とトリガー (node 環境)
+├── helpers/mini-yaml.js    # workflow のテストが使う極小 YAML パーサ
 ├── no-runtime-deps.test.js
 ├── fixtures/bedrock/   # spike 出力を 5 モデル・4 プロファイルに間引いた固定入力
-└── fixtures/prices/    # 東京の価格表を 20 SKU に間引いた固定入力
+├── fixtures/prices/    # 東京の価格表を 20 SKU に間引いた固定入力
+└── fixtures/features/  # モデルカード 5 本と toc-contents.json の固定入力
+.github/workflows/
+├── deploy.yml              # main への push で test → build → GitHub Pages
+└── refresh-features.yml    # 毎日 docs から機能表を取り直し、差分を PR にする (D-016)
 ```
 
 ### 開発コマンド
@@ -58,7 +73,8 @@ tests/
 
 `data/models.json` / `data/profiles.json` / `data/fetch-log.json` は
 `scripts/fetch-bedrock-snapshot.mjs` の、`data/prices.json` は
-`scripts/fetch-bedrock-prices.mjs` の出力。**手編集は禁止**。値が間違っていると思ったら、
+`scripts/fetch-bedrock-prices.mjs` の、`data/features.json` は
+`scripts/fetch-bedrock-features.mjs` の出力。**手編集は禁止**。値が間違っていると思ったら、
 生成物ではなく取得スクリプトか `data/region-notes.json` を直してから取り直す。
 表示上の補足を足したいときは `data/overrides.json` に書く。
 
@@ -132,6 +148,62 @@ node scripts/fetch-bedrock-prices.mjs
 - 地図を直したら `--from-raw <日付>` で作り直す。取り直しは要らない
 - `model` 属性を持たない SKU (Titan 系) の鍵は `usagetype:<token>` の形
 
+### 機能表の取り直し方 (FEATURE-001 / D-015)
+
+機能表 (`data/features.json`) は英語版の公式 docs のモデルカード (`model-card-*.md`) から取る。
+**認証は要らない**。機能の対応可否を返す API は無く、日本語版 docs とサードパーティの DB
+(models.dev / LiteLLM など) は使わない。通常は GitHub Actions が毎日取り直して差分を PR に
+するので (D-016)、手で走らせるのは対応表を直したときや PR の中身を確かめたいとき。
+
+```
+node scripts/fetch-bedrock-features.mjs
+```
+
+- `toc-contents.json` から `model-card-*.html` を列挙し、各ページの `.md` を
+  `Accept-Language: en-US` で取る (同時 4 本)。1 本の失敗で全体を止めず `failedCards` に数える
+- `--date YYYY-MM-DD` で `data/raw/<日付>/` の日付を上書きできる。既定は JST の今日
+- `--dry-run` は取得と生データの保存だけ行い `data/features.json` を書かない
+- 生データは `data/raw/<日付>/features/` (`toc-contents.json` と `<カード名>.md`、gitignore 対象)。
+  機能の増減の要約は同じ場所の `summary.md` に書かれ、定期実行の PR 本文になる。
+  パースの規則や対応表を変えたときは、取り直さずに作り直せる:
+
+  ```
+  node scripts/fetch-bedrock-features.mjs --from-raw 2026-10-06
+  ```
+
+- 内容が前回と同じなら `generatedAt` は据え置かれる (空の差分を作らない)
+- **安全弁**: `cardsWithFeatures` が前回の `data/features.json` の半分未満になったら、
+  書き出さずに終了コード 1 で終わる。docs の書式が変わってパースが空振りした兆候なので、
+  `data/raw/<日付>/features/` の `.md` を開いて書式の変化を確かめ、パーサ
+  (`scripts/lib/features.mjs`) を直してから `--from-raw` で作り直す
+- **Node の組み込み `fetch` を使うので、エージェントから実行するときは Bash の
+  サンドボックスを外す必要がある** (サンドボックス下では `fetch failed` になる)
+
+#### feature-names.json / feature-model-map.json を直すとき
+
+- 実行後に `data/features.json` の `unknownFeatures` が空でなければ、docs に対応表に無い
+  機能名が出ている。画面には `unknown:<slug>` のキーで docs の英語名のまま出ている。
+  該当カードの本文を読んで既存の機能と同じものを指すと確認できたときだけ
+  `feature-names.json` の `names` に寄せる。新しい機能なら `labels` にキーと表示名を足す。
+  **推測で寄せない**
+- `unmatchedCards` に残ったカードは、`models.json` の ID に自動で引けなかったもの。
+  docs の本文で ID を確かめたものだけ `feature-model-map.json` にカード名 → ID の配列で足す。
+  `models.json` に該当が無いと確認できたものは値を `null` にする (`unmatchedCards` に数えない)
+- 既定で表に出す列は `feature-names.json` の `defaultColumns`
+- 直したら `--from-raw <日付>` で作り直す。取り直しは要らない
+
+#### 定期実行 (D-016)
+
+`.github/workflows/refresh-features.yml` が毎日 UTC 21:00 (JST 06:00) と `workflow_dispatch` で
+走り、`npm test` の後、`data/features.json` に差分があれば固定ブランチ `bot/refresh-features`
+に force push して PR を作る (既に開いていれば本文だけ更新)。公開は PR を main に merge した
+ときに `deploy.yml` が行う。workflow は AWS の認証要素を持たない (D-002)。
+
+- 前提: リポジトリ設定 *Allow GitHub Actions to create and approve pull requests* が有効
+  (オーナー作業。無効だと PR 作成の段で失敗する)
+- `bot/refresh-features` は毎回 force push されるので、手でコミットを積まない。
+  対応表を直したいときは別のブランチで直す
+
 ### denied リージョンは消さない
 
 取得に失敗したリージョンは **`fetch-log.json` に `status: "denied"` と `cause` (取得失敗の分類) を
@@ -185,6 +257,7 @@ source region R、モデル M について:
 | Global | 同じく接頭辞 `global`。destination は API から取れないので `["*"]` で、画面では注記にする |
 | データなし | `fetch-log.json.regions[R].status` が `denied` |
 | 入力 / 出力 $/1M | `prices.json.byModel[M][R].standard` の `input` / `output`。無ければ「—」 |
+| 機能列 | `features.json.byModel[M].runtime[K]` / `.mantle[K]` が true / false / キーなし (記載なし)。記載なしを false に倒さない。起点リージョンには依らない |
 
 `PROVISIONED` は `availability` に保持するが、3 列の判定には使わない。
 `inferenceTypesSupported` には API Reference の enum に無い `INFERENCE_PROFILE` が返るので、
