@@ -48,7 +48,7 @@ describe("SHARE-001 AC-003 絞り込み条件が URL に載る", () => {
     expect(serializeState({ callable: false, limit: "none", q: "" })).toBe("");
   });
 
-  it("パラメータの並び順は view / region / sort / provider / modality / q / callable / limit", () => {
+  it("パラメータの並び順は view / region / sort / provider / modality / q / callable / limit / cols", () => {
     const query = serializeState({
       view: "regions",
       sort: "alpha",
@@ -58,6 +58,7 @@ describe("SHARE-001 AC-003 絞り込み条件が URL に載る", () => {
       q: "nova",
       callable: true,
       limit: "geo:apac",
+      cols: ["guardrails"],
     });
     expect([...new URLSearchParams(query).keys()]).toEqual([...PARAM_ORDER]);
   });
@@ -103,6 +104,7 @@ describe("SHARE-001 AC-004 URL からの絞り込み復元", () => {
       q: "claude",
       callable: true,
       limit: "geo:eu",
+      cols: null,
     };
     const { state } = parseState(`?${serializeState(before)}`, vocab);
     expect(state).toEqual(before);
@@ -202,6 +204,7 @@ describe("SHARE-001 AC-010 limit のカスタム集合", () => {
       q: "",
       callable: false,
       limit: "custom:ap-northeast-1+us-east-1",
+      cols: null,
     };
     const query = serializeState(before);
     expect(query).toBe("limit=custom%3Aap-northeast-1%2Bus-east-1");
@@ -240,5 +243,53 @@ describe("SHARE-001 AC-010 limit のカスタム集合", () => {
     const { state, ignored } = parseState("?limit=geo:jp", vocab);
     expect(state.limit).toBe("country:jp");
     expect(ignored).toEqual([]);
+  });
+});
+
+// --- FEATURE-001 / SHARE-001 機能列 (cols=) ---
+describe("FEATURE-001 cols= に表の機能列を載せる", () => {
+  const featureKeys = ["streaming", "explicitPromptCaching", "structuredOutputs", "clientToolCalling", "guardrails"];
+  const defaultCols = ["explicitPromptCaching", "structuredOutputs", "clientToolCalling", "guardrails"];
+  const withKeys = { ...vocab, featureKeys };
+
+  it("既定は cols: null (既定列) で、パラメータが無ければ null のまま", () => {
+    expect(DEFAULT_STATE.cols).toBeNull();
+    expect(PARAM_ORDER.at(-1)).toBe("cols");
+    expect(parseState("", withKeys).state.cols).toBeNull();
+  });
+
+  it("cols=a,b を復元する", () => {
+    const { state, ignored } = parseState("?cols=guardrails,streaming", withKeys);
+    expect(state.cols).toEqual(["guardrails", "streaming"]);
+    expect(ignored).toEqual([]);
+  });
+
+  it("cols= (空) は機能列なし", () => {
+    const { state, ignored } = parseState("?cols=", withKeys);
+    expect(state.cols).toEqual([]);
+    expect(ignored).toEqual([]);
+    expect(serializeState({ cols: [] }, { defaultCols })).toBe("cols=");
+  });
+
+  it("未知のキーは捨てて ignored に積む (AC-008 と同じ扱い)", () => {
+    const { state, ignored } = parseState("?cols=guardrails,nope", withKeys);
+    expect(state.cols).toEqual(["guardrails"]);
+    expect(ignored).toEqual([{ param: "cols", value: "nope" }]);
+  });
+
+  it("null と既定と同じ並びは省き、それ以外はカンマ区切りで載せる", () => {
+    expect(serializeState({ cols: null }, { defaultCols })).toBe("");
+    expect(serializeState({ cols: [...defaultCols] }, { defaultCols })).toBe("");
+    expect(serializeState({ cols: ["guardrails"] }, { defaultCols })).toBe("cols=guardrails");
+    expect(serializeState({ cols: ["guardrails", "streaming"] }, { defaultCols })).toBe("cols=guardrails%2Cstreaming");
+    expect(shareUrl({ cols: ["guardrails"] }, "https://example.com/x/", { defaultCols })).toBe("https://example.com/x/?cols=guardrails");
+    expect(searchString({ cols: [] }, { defaultCols })).toBe("?cols=");
+  });
+
+  it("serializeState → parseState で往復する", () => {
+    for (const cols of [["guardrails", "streaming"], []]) {
+      const query = serializeState({ cols }, { defaultCols });
+      expect(parseState(`?${query}`, withKeys).state.cols).toEqual(cols);
+    }
   });
 });

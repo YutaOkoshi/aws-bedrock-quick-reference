@@ -29,6 +29,8 @@ export const PARAM_ORDER = Object.freeze([
   "q",
   "callable",
   "limit",
+  // FEATURE-001: 表に出す機能列。null (= パラメータなし) は既定列、[] は機能列なし。
+  "cols",
 ]);
 
 export const DEFAULT_STATE = Object.freeze({
@@ -36,6 +38,7 @@ export const DEFAULT_STATE = Object.freeze({
   region: DEFAULT_REGION,
   sort: DEFAULT_SORT,
   ...DEFAULT_FILTERS,
+  cols: null,
 });
 
 const CALLABLE_ON = "1";
@@ -57,7 +60,10 @@ function splitList(value) {
  * limit は FILTER-001 の選択肢 (buildLimitOptions の返り値) で検査する。集合が同じで
  * 畳まれた値 (`geo:jp` など) は残った選択肢の値に直して適用する (FILTER-001 AC-019)。
  */
-export function parseState(search, { regions = [], providers = [], limitOptions = [] } = {}) {
+export function parseState(
+  search,
+  { regions = [], providers = [], limitOptions = [], featureKeys = [] } = {},
+) {
   const params = new URLSearchParams(String(search ?? "").replace(/^\?/, ""));
   const state = { ...DEFAULT_STATE, provider: [], modality: [] };
   const ignored = [];
@@ -129,14 +135,28 @@ export function parseState(search, { regions = [], providers = [], limitOptions 
     }
   }
 
+  // FEATURE-001: 機能列。features.json に無いキーは落として報告する (AC-008 と同じ)。
+  const cols = params.get("cols");
+  if (cols != null) {
+    const wanted = splitList(cols);
+    state.cols = wanted.filter((entry) => featureKeys.includes(entry));
+    for (const entry of wanted) {
+      if (!featureKeys.includes(entry)) ignored.push({ param: "cols", value: entry });
+    }
+  }
+
   return { state, ignored };
+}
+
+function sameList(a, b) {
+  return a.length === b.length && a.every((entry, index) => entry === b[index]);
 }
 
 /**
  * 状態をクエリ文字列にする (AC-003 / AC-006)。既定値と同じ項目は省く。
  * 返り値は "?" を含まない。既定状態なら空文字列。
  */
-export function serializeState(state = {}) {
+export function serializeState(state = {}, { defaultCols = [] } = {}) {
   const merged = { ...DEFAULT_STATE, ...state };
   const params = new URLSearchParams();
   for (const name of PARAM_ORDER) {
@@ -167,6 +187,13 @@ export function serializeState(state = {}) {
     }
     if (name === "limit") {
       if (merged.limit && merged.limit !== NO_LIMIT) params.set("limit", merged.limit);
+      continue;
+    }
+    if (name === "cols") {
+      // null と既定と同じ並びは省く。[] は「機能列なし」なので cols= (空) で載せる。
+      if (Array.isArray(merged.cols) && !sameList(merged.cols, defaultCols)) {
+        params.set("cols", merged.cols.join(","));
+      }
     }
   }
   return params.toString();
@@ -177,16 +204,16 @@ export function serializeState(state = {}) {
  * GitHub Pages のサブパス配下で動くよう、パスは href のものをそのまま使い、
  * 先頭スラッシュの絶対パスを組み立てない (Spec Notes)。
  */
-export function shareUrl(state, href) {
+export function shareUrl(state, href, options) {
   const url = new URL(String(href));
-  const query = serializeState(state);
+  const query = serializeState(state, options);
   url.search = query === "" ? "" : `?${query}`;
   url.hash = "";
   return url.toString();
 }
 
 /** history に積むためのパス + クエリ。相対のまま返す。 */
-export function searchString(state) {
-  const query = serializeState(state);
+export function searchString(state, options) {
+  const query = serializeState(state, options);
   return query === "" ? "" : `?${query}`;
 }

@@ -173,3 +173,46 @@ describe("FEATURE-001 features が空", () => {
     expect(headers()).toHaveLength(8);
   });
 });
+
+describe("FEATURE-001 / SHARE-001 cols= の復元と書き戻し", () => {
+  it("cols= の指定を表の機能列に復元する", () => {
+    const app = mountFixtureApp({ features: sample, search: "?cols=guardrails,streaming" });
+    // 並びは features の順に揃える
+    expect(app.view.getFeatureColumns()).toEqual(["streaming", "guardrails"]);
+    expect(headerKeys().slice(FIRST_FEATURE)).toEqual(["feature:streaming", "feature:guardrails"]);
+    expect(pickerBox("streaming").checked).toBe(true);
+  });
+
+  it("cols= (空) は機能列なし", () => {
+    const app = mountFixtureApp({ features: sample, search: "?cols=" });
+    expect(app.view.getFeatureColumns()).toEqual([]);
+    expect(headerKeys().some((key) => key.startsWith("feature:"))).toBe(false);
+    expect(app.location.search).toBe("?cols=");
+  });
+
+  it("既定の列のままなら URL に cols を載せない", () => {
+    const app = mountFixtureApp({ features: sample });
+    expect(app.location.search).toBe("");
+    expect(app.share.currentUrl()).not.toContain("cols");
+  });
+
+  it("未知のキーは通知して捨て、URL からも落とす", () => {
+    const app = mountFixtureApp({ features: sample, search: "?cols=guardrails,nope" });
+    expect(app.view.getFeatureColumns()).toEqual(["guardrails"]);
+    expect($("#share-notice").hidden).toBe(false);
+    expect($("#share-notice").textContent).toContain("cols=nope");
+    expect(app.location.search).toBe("?cols=guardrails");
+  });
+
+  it("ピッカーで列を変えると URL が replaceState で書き換わる", () => {
+    const app = mountFixtureApp({ features: sample });
+    const pushes = app.history.pushState.mock.calls.length;
+    toggleBox("guardrails", false);
+    expect(app.location.search).toBe(
+      `?cols=${encodeURIComponent("explicitPromptCaching,structuredOutputs,clientToolCalling")}`,
+    );
+    $("#feature-picker-reset").click();
+    expect(app.location.search).toBe("");
+    expect(app.history.pushState.mock.calls.length).toBe(pushes);
+  });
+});
