@@ -321,3 +321,41 @@ describe("FEATURE-001 / DETAIL-001 詳細パネルの機能の節", () => {
   });
 
 });
+
+// 仕様変更 (2026-10-06): 既定の機能列は全機能。data/features.json の defaultColumns が全キーになる。
+describe("FEATURE-001 既定が全機能のとき", () => {
+  const allKeys = Object.keys(sample.features);
+  const everything = { ...sample, defaultColumns: allKeys };
+
+  it("全機能の列が features の順で価格の右に並ぶ", () => {
+    mountFixtureApp({ features: everything });
+    expect(headerKeys().slice(FIRST_FEATURE)).toEqual(allKeys.map((key) => `feature:${key}`));
+  });
+
+  it("ピッカーは全部チェック済みで始まり、外せる", () => {
+    const app = mountFixtureApp({ features: everything });
+    const boxes = [...document.querySelectorAll("#feature-picker input[type=checkbox]")];
+    expect(boxes.every((box) => box.checked)).toBe(true);
+    toggleBox("guardrails", false);
+    expect(headerKeys()).not.toContain("feature:guardrails");
+    expect(app.view.getFeatureColumns()).toEqual(allKeys.filter((key) => key !== "guardrails"));
+    expect(new URLSearchParams(app.location.search).get("cols")).toBe(
+      allKeys.filter((key) => key !== "guardrails").join(","),
+    );
+  });
+
+  it("既定 (全機能) のままなら URL に cols を載せず、戻せば消える", () => {
+    const app = mountFixtureApp({ features: everything });
+    expect(app.location.search).toBe("");
+    toggleBox("streaming", false);
+    expect(app.location.search).toContain("cols=");
+    toggleBox("streaming", true);
+    expect(app.location.search).toBe("");
+  });
+
+  it("実データの defaultColumns も features のキーだけを指す", async () => {
+    const real = (await import("../data/features.json")).default;
+    const known = Object.keys(real.features);
+    expect(real.defaultColumns.every((key) => known.includes(key))).toBe(true);
+  });
+});
