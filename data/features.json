@@ -1,0 +1,2828 @@
+{
+  "generatedAt": "2026-10-06T07:40:56.134Z",
+  "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/toc-contents.json",
+  "cards": 134,
+  "cardsWithFeatures": 118,
+  "failedCards": 0,
+  "features": {
+    "streaming": {
+      "label": "Response streaming",
+      "docs": "/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html"
+    },
+    "implicitPromptCaching": {
+      "label": "Implicit Prompt Caching",
+      "docs": "prompt-caching.html#prompt-caching-implicit"
+    },
+    "explicitPromptCaching": {
+      "label": "Explicit Prompt Caching",
+      "docs": "prompt-caching.html#prompt-caching-explicit"
+    },
+    "structuredOutputs": {
+      "label": "Structured outputs",
+      "docs": "structured-output.html"
+    },
+    "clientToolCalling": {
+      "label": "Client-side tool calling",
+      "docs": "tool-use.html"
+    },
+    "serverToolCalling": {
+      "label": "Server-side tool calling",
+      "docs": "tool-use.html"
+    },
+    "serverSystemTools": {
+      "label": "Server-side system tools",
+      "docs": "tool-use.html"
+    },
+    "computerUse": {
+      "label": "Computer use",
+      "docs": "computer-use.html"
+    },
+    "reasoning": {
+      "label": "Reasoning",
+      "docs": "reasoning.html"
+    },
+    "countTokens": {
+      "label": "Count tokens",
+      "docs": "count-tokens.html"
+    },
+    "guardrails": {
+      "label": "Guardrails",
+      "docs": "guardrails.html"
+    },
+    "abuseDetection": {
+      "label": "Abuse detection",
+      "docs": "abuse-detection.html"
+    },
+    "knowledgeBase": {
+      "label": "Knowledge base",
+      "docs": "knowledge-base.html"
+    },
+    "agents": {
+      "label": "Agents",
+      "docs": "agents.html"
+    },
+    "flows": {
+      "label": "Flows",
+      "docs": "flows.html"
+    },
+    "promptManagement": {
+      "label": "Prompt management",
+      "docs": "prompt-management.html"
+    },
+    "promptOptimization": {
+      "label": "Prompt optimization",
+      "docs": "prompt-management-optimize.html"
+    },
+    "promptRouting": {
+      "label": "Intelligent prompt routing",
+      "docs": "prompt-routing.html"
+    },
+    "modelEvaluation": {
+      "label": "Model evaluation",
+      "docs": "evaluation.html"
+    },
+    "applicationInferenceProfiles": {
+      "label": "Application inference profiles",
+      "docs": "cost-mgmt-application-inference-profiles.html"
+    },
+    "invocationLogs": {
+      "label": "Invocation logs",
+      "docs": "model-invocation-logging.html"
+    },
+    "projects": {
+      "label": "Projects",
+      "docs": "projects.html"
+    }
+  },
+  "defaultColumns": [
+    "explicitPromptCaching",
+    "structuredOutputs",
+    "clientToolCalling",
+    "guardrails"
+  ],
+  "byModel": {
+    "ai21.jamba-1-5-large-v1:0": {
+      "card": "model-card-ai21-labs-jamba-1-5-large.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "clientToolCalling": true,
+        "guardrails": true
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "amazon.nova-2-lite-v1:0": {
+      "card": "model-card-amazon-nova-2-lite.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "clientToolCalling": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1K*",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes",
+        "fields": "system and messages"
+      },
+      "computerUse": null
+    },
+    "amazon.nova-2-lite-v1:0:256k": {
+      "card": "model-card-amazon-nova-2-lite.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "clientToolCalling": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1K*",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes",
+        "fields": "system and messages"
+      },
+      "computerUse": null
+    },
+    "amazon.nova-2-multimodal-embeddings-v1:0": {
+      "card": "model-card-amazon-amazon-nova-multimodal-embeddings.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": false,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "amazon.nova-2-sonic-v1:0": {
+      "card": "model-card-amazon-nova-2-sonic.html",
+      "runtime": {
+        "streaming": true,
+        "countTokens": false,
+        "guardrails": false,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "amazon.nova-lite-v1:0": {
+      "card": "model-card-amazon-nova-lite.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "clientToolCalling": true,
+        "guardrails": true
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1K*",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes",
+        "fields": "system and messages"
+      },
+      "computerUse": null
+    },
+    "amazon.nova-lite-v1:0:24k": {
+      "card": "model-card-amazon-nova-lite.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "clientToolCalling": true,
+        "guardrails": true
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1K*",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes",
+        "fields": "system and messages"
+      },
+      "computerUse": null
+    },
+    "amazon.nova-lite-v1:0:300k": {
+      "card": "model-card-amazon-nova-lite.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "clientToolCalling": true,
+        "guardrails": true
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1K*",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes",
+        "fields": "system and messages"
+      },
+      "computerUse": null
+    },
+    "amazon.nova-micro-v1:0": {
+      "card": "model-card-amazon-nova-micro.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "clientToolCalling": true,
+        "guardrails": true
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1K*",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes",
+        "fields": "system and messages"
+      },
+      "computerUse": null
+    },
+    "amazon.nova-micro-v1:0:128k": {
+      "card": "model-card-amazon-nova-micro.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "clientToolCalling": true,
+        "guardrails": true
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1K*",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes",
+        "fields": "system and messages"
+      },
+      "computerUse": null
+    },
+    "amazon.nova-micro-v1:0:24k": {
+      "card": "model-card-amazon-nova-micro.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "clientToolCalling": true,
+        "guardrails": true
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1K*",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes",
+        "fields": "system and messages"
+      },
+      "computerUse": null
+    },
+    "amazon.nova-pro-v1:0": {
+      "card": "model-card-amazon-nova-pro.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": true,
+        "modelEvaluation": true
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1K*",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes",
+        "fields": "system and messages"
+      },
+      "computerUse": null
+    },
+    "amazon.nova-pro-v1:0:24k": {
+      "card": "model-card-amazon-nova-pro.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": true,
+        "modelEvaluation": true
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1K*",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes",
+        "fields": "system and messages"
+      },
+      "computerUse": null
+    },
+    "amazon.nova-pro-v1:0:300k": {
+      "card": "model-card-amazon-nova-pro.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": true,
+        "modelEvaluation": true
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1K*",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes",
+        "fields": "system and messages"
+      },
+      "computerUse": null
+    },
+    "anthropic.claude-fable-5": {
+      "card": "model-card-anthropic-claude-fable-5.html",
+      "runtime": {},
+      "mantle": {},
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "512",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes, 1 hour",
+        "fields": "system, messages, and tools"
+      },
+      "computerUse": null
+    },
+    "anthropic.claude-fable-5-1": {
+      "card": "model-card-anthropic-claude-fable-5-1.html",
+      "runtime": {},
+      "mantle": {},
+      "promptCaching": {
+        "explicit": null,
+        "minTokens": "512",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes, 1 hour",
+        "fields": "system, messages, and tools"
+      },
+      "computerUse": null
+    },
+    "anthropic.claude-haiku-4-5-20251001-v1:0": {
+      "card": "model-card-anthropic-claude-haiku-4-5.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "clientToolCalling": true,
+        "computerUse": true,
+        "countTokens": true,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": true,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "computerUse": true,
+        "countTokens": true,
+        "guardrails": false,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "4,096",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes, 1 hour",
+        "fields": "system, messages, and tools"
+      },
+      "computerUse": [
+        {
+          "toolType": "computer_20250124",
+          "betaHeader": "computer-use-2025-01-24"
+        }
+      ]
+    },
+    "anthropic.claude-opus-4-1-20250805-v1:0": {
+      "card": "model-card-anthropic-claude-opus-4-1.html",
+      "runtime": {
+        "streaming": true,
+        "computerUse": true,
+        "countTokens": true,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1,024",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes",
+        "fields": "system, messages, and tools"
+      },
+      "computerUse": [
+        {
+          "toolType": "computer_20250124",
+          "betaHeader": "computer-use-2025-01-24"
+        }
+      ]
+    },
+    "anthropic.claude-opus-4-5-20251101-v1:0": {
+      "card": "model-card-anthropic-claude-opus-4-5.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "computerUse": true,
+        "countTokens": true,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": true,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "4,096",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes, 1 hour",
+        "fields": "system, messages, and tools"
+      },
+      "computerUse": [
+        {
+          "toolType": "computer_20251124",
+          "betaHeader": "computer-use-2025-11-24"
+        },
+        {
+          "toolType": "computer_20250124",
+          "betaHeader": "computer-use-2025-01-24"
+        }
+      ]
+    },
+    "anthropic.claude-opus-4-6-v1": {
+      "card": "model-card-anthropic-claude-opus-4-6.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "computerUse": true,
+        "countTokens": true,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": true,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "4,096",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes, 1 hour",
+        "fields": "system, messages, and tools"
+      },
+      "computerUse": [
+        {
+          "toolType": "computer_20251124",
+          "betaHeader": "computer-use-2025-11-24"
+        }
+      ]
+    },
+    "anthropic.claude-opus-4-7": {
+      "card": "model-card-anthropic-claude-opus-4-7.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": false,
+        "computerUse": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": true,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": false,
+        "computerUse": true,
+        "countTokens": true,
+        "guardrails": false,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "4,096",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes, 1 hour",
+        "fields": "system, messages, and tools"
+      },
+      "computerUse": [
+        {
+          "toolType": "computer_20251124",
+          "betaHeader": "computer-use-2025-11-24"
+        }
+      ]
+    },
+    "anthropic.claude-opus-4-8": {
+      "card": "model-card-anthropic-claude-opus-4-8.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": false,
+        "computerUse": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": true,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": false,
+        "computerUse": true,
+        "countTokens": true,
+        "guardrails": false,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1,024",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes, 1 hour",
+        "fields": "system, messages, and tools"
+      },
+      "computerUse": [
+        {
+          "toolType": "computer_20251124",
+          "betaHeader": "computer-use-2025-11-24"
+        }
+      ]
+    },
+    "anthropic.claude-opus-5": {
+      "card": "model-card-anthropic-claude-opus-5.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": false,
+        "computerUse": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": true,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": false,
+        "computerUse": true,
+        "countTokens": true,
+        "guardrails": false,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "512",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes, 1 hour",
+        "fields": "system, messages, and tools"
+      },
+      "computerUse": [
+        {
+          "toolType": "computer_20251124",
+          "betaHeader": "computer-use-2025-11-24"
+        }
+      ]
+    },
+    "anthropic.claude-sonnet-4-20250514-v1:0": {
+      "card": "model-card-anthropic-claude-sonnet-4.html",
+      "runtime": {
+        "streaming": true,
+        "clientToolCalling": true,
+        "countTokens": true,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": true,
+        "agents": false,
+        "flows": false,
+        "promptManagement": true,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1,024",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes",
+        "fields": "system, messages, and tools"
+      },
+      "computerUse": null
+    },
+    "anthropic.claude-sonnet-4-20250514-v1:0:200k": {
+      "card": "model-card-anthropic-claude-sonnet-4.html",
+      "runtime": {
+        "streaming": true,
+        "clientToolCalling": true,
+        "countTokens": true,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": true,
+        "agents": false,
+        "flows": false,
+        "promptManagement": true,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1,024",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes",
+        "fields": "system, messages, and tools"
+      },
+      "computerUse": null
+    },
+    "anthropic.claude-sonnet-4-20250514-v1:0:32k": {
+      "card": "model-card-anthropic-claude-sonnet-4.html",
+      "runtime": {
+        "streaming": true,
+        "clientToolCalling": true,
+        "countTokens": true,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": true,
+        "agents": false,
+        "flows": false,
+        "promptManagement": true,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1,024",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes",
+        "fields": "system, messages, and tools"
+      },
+      "computerUse": null
+    },
+    "anthropic.claude-sonnet-4-5-20250929-v1:0": {
+      "card": "model-card-anthropic-claude-sonnet-4-5.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "computerUse": true,
+        "countTokens": true,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": true,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1,024",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes, 1 hour",
+        "fields": "system, messages, and tools"
+      },
+      "computerUse": [
+        {
+          "toolType": "computer_20250124",
+          "betaHeader": "computer-use-2025-01-24"
+        }
+      ]
+    },
+    "anthropic.claude-sonnet-4-6": {
+      "card": "model-card-anthropic-claude-sonnet-4-6.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "clientToolCalling": true,
+        "computerUse": true,
+        "countTokens": true,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": true,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1,024",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes, 1 hour",
+        "fields": "system, messages, and tools"
+      },
+      "computerUse": [
+        {
+          "toolType": "computer_20251124",
+          "betaHeader": "computer-use-2025-11-24"
+        }
+      ]
+    },
+    "anthropic.claude-sonnet-5": {
+      "card": "model-card-anthropic-claude-sonnet-5.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": false,
+        "computerUse": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": true,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": false,
+        "computerUse": true,
+        "countTokens": true,
+        "guardrails": false,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1,024",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes, 1 hour",
+        "fields": "system, messages, and tools"
+      },
+      "computerUse": [
+        {
+          "toolType": "computer_20251124",
+          "betaHeader": "computer-use-2025-11-24"
+        }
+      ]
+    },
+    "cohere.embed-v4:0": {
+      "card": "model-card-cohere-embed-v4.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": false,
+        "abuseDetection": true,
+        "knowledgeBase": true,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "deepseek.r1-v1:0": {
+      "card": "model-card-deepseek-deepseek-r1.html",
+      "runtime": {
+        "streaming": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "deepseek.v3-v1:0": {
+      "card": "model-card-deepseek-deepseek-v3-1.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "clientToolCalling": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "deepseek.v3.2": {
+      "card": "model-card-deepseek-deepseek-v3-2.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "google.gemma-3-12b-it": {
+      "card": "model-card-google-gemma-3-12b-it.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "google.gemma-3-27b-it": {
+      "card": "model-card-google-gemma-3-27b-pt.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "google.gemma-3-4b-it": {
+      "card": "model-card-google-gemma-3-4b-it.html",
+      "runtime": {
+        "streaming": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "meta.llama3-1-70b-instruct-v1:0": {
+      "card": "model-card-meta-llama-3-1-70b-instruct.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "clientToolCalling": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "meta.llama3-1-70b-instruct-v1:0:128k": {
+      "card": "model-card-meta-llama-3-1-70b-instruct.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "clientToolCalling": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "meta.llama3-1-8b-instruct-v1:0": {
+      "card": "model-card-meta-llama-3-1-8b-instruct.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "clientToolCalling": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "meta.llama3-1-8b-instruct-v1:0:128k": {
+      "card": "model-card-meta-llama-3-1-8b-instruct.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "clientToolCalling": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "meta.llama3-3-70b-instruct-v1:0": {
+      "card": "model-card-meta-llama-3-3-70b-instruct.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "meta.llama3-3-70b-instruct-v1:0:128k": {
+      "card": "model-card-meta-llama-3-3-70b-instruct.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "meta.llama3-70b-instruct-v1:0": {
+      "card": "model-card-meta-llama-3-70b-instruct.html",
+      "runtime": {
+        "streaming": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "meta.llama3-8b-instruct-v1:0": {
+      "card": "model-card-meta-llama-3-8b-instruct.html",
+      "runtime": {
+        "streaming": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "meta.llama4-maverick-17b-instruct-v1:0": {
+      "card": "model-card-meta-llama-4-maverick-17b-instruct.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "clientToolCalling": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "meta.llama4-maverick-17b-instruct-v1:0:128k": {
+      "card": "model-card-meta-llama-4-maverick-17b-instruct.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "clientToolCalling": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "meta.llama4-maverick-17b-instruct-v1:0:1m": {
+      "card": "model-card-meta-llama-4-maverick-17b-instruct.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "clientToolCalling": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "meta.llama4-scout-17b-instruct-v1:0": {
+      "card": "model-card-meta-llama-4-scout-17b-instruct.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "meta.llama4-scout-17b-instruct-v1:0:10m": {
+      "card": "model-card-meta-llama-4-scout-17b-instruct.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "meta.llama4-scout-17b-instruct-v1:0:128k": {
+      "card": "model-card-meta-llama-4-scout-17b-instruct.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "minimax.minimax-m2": {
+      "card": "model-card-minimax-minimax-m2.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "minimax.minimax-m2.1": {
+      "card": "model-card-minimax-minimax-m2-1.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "minimax.minimax-m2.5": {
+      "card": "model-card-minimax-minimax-m2-5.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "mistral.devstral-2-123b": {
+      "card": "model-card-mistral-ai-devstral-2-123b.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "mistral.magistral-small-2509": {
+      "card": "model-card-mistral-ai-magistral-small-2509.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "mistral.ministral-3-14b-instruct": {
+      "card": "model-card-mistral-ai-ministral-14b-3-0.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "mistral.ministral-3-3b-instruct": {
+      "card": "model-card-mistral-ai-ministral-3b.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "mistral.ministral-3-8b-instruct": {
+      "card": "model-card-mistral-ai-ministral-3-8b.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "mistral.mistral-7b-instruct-v0:2": {
+      "card": "model-card-mistral-ai-mistral-7b-instruct.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "clientToolCalling": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "mistral.mistral-large-2402-v1:0": {
+      "card": "model-card-mistral-ai-mistral-large.html",
+      "runtime": {
+        "streaming": true,
+        "clientToolCalling": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "mistral.mistral-large-3-675b-instruct": {
+      "card": "model-card-mistral-ai-mistral-large-3.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "mistral.mistral-small-2402-v1:0": {
+      "card": "model-card-mistral-ai-mistral-small.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "clientToolCalling": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "mistral.mixtral-8x7b-instruct-v0:1": {
+      "card": "model-card-mistral-ai-mixtral-8x7b-instruct.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "clientToolCalling": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "mistral.pixtral-large-2502-v1:0": {
+      "card": "model-card-mistral-ai-pixtral-large.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "clientToolCalling": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "mistral.voxtral-mini-3b-2507": {
+      "card": "model-card-mistral-ai-voxtral-mini-3b-2507.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "mistral.voxtral-small-24b-2507": {
+      "card": "model-card-mistral-ai-voxtral-small-24b-2507.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "moonshot.kimi-k2-thinking": {
+      "card": "model-card-moonshot-ai-kimi-k2-thinking.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "moonshotai.kimi-k2.5": {
+      "card": "model-card-moonshot-ai-kimi-k2-5.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "moonshotai.kimi-k3": {
+      "card": "model-card-moonshot-ai-kimi-k3.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": true,
+        "clientToolCalling": true,
+        "knowledgeBase": false,
+        "promptRouting": false,
+        "invocationLogs": true
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1,024",
+        "maxCheckpoints": null,
+        "ttl": "At least 30 minutes",
+        "fields": null
+      },
+      "computerUse": null
+    },
+    "nvidia.nemotron-nano-12b-v2": {
+      "card": "model-card-nvidia-nvidia-nemotron-nano-12b-v2-vl-bf16.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "nvidia.nemotron-nano-3-30b": {
+      "card": "model-card-nvidia-nemotron-nano-3-30b.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "nvidia.nemotron-nano-9b-v2": {
+      "card": "model-card-nvidia-nvidia-nemotron-nano-9b-v2.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "nvidia.nemotron-super-3-120b": {
+      "card": "model-card-nvidia-nemotron-super-3-120b.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "openai.gpt-5.6-luna": {
+      "card": "model-card-openai-gpt-56-luna.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": true,
+        "serverToolCalling": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "promptRouting": false,
+        "applicationInferenceProfiles": true,
+        "invocationLogs": true,
+        "projects": true
+      },
+      "mantle": {
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "serverToolCalling": true,
+        "applicationInferenceProfiles": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "openai.gpt-5.6-sol": {
+      "card": "model-card-openai-gpt-56-sol.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": true,
+        "serverToolCalling": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "promptRouting": false,
+        "applicationInferenceProfiles": true,
+        "invocationLogs": true,
+        "projects": true
+      },
+      "mantle": {
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "serverToolCalling": true,
+        "applicationInferenceProfiles": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "openai.gpt-5.6-terra": {
+      "card": "model-card-openai-gpt-56-terra.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": true,
+        "serverToolCalling": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "promptRouting": false,
+        "applicationInferenceProfiles": true,
+        "invocationLogs": true,
+        "projects": true
+      },
+      "mantle": {
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "serverToolCalling": true,
+        "applicationInferenceProfiles": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "openai.gpt-6-astra": {
+      "card": "model-card-openai-gpt-6-astra.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "serverToolCalling": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "promptRouting": false,
+        "applicationInferenceProfiles": true,
+        "invocationLogs": true,
+        "projects": true
+      },
+      "mantle": {
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "serverToolCalling": true,
+        "applicationInferenceProfiles": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "openai.gpt-oss-120b-1:0": {
+      "card": "model-card-openai-gpt-oss-120b.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": true,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "openai.gpt-oss-20b-1:0": {
+      "card": "model-card-openai-gpt-oss-20b.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": true,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "openai.gpt-oss-safeguard-120b": {
+      "card": "model-card-openai-gpt-oss-safeguard-120b.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": true,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "openai.gpt-oss-safeguard-20b": {
+      "card": "model-card-openai-gpt-oss-safeguard-20b.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": true,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "qwen.qwen3-235b-a22b-2507-v1:0": {
+      "card": "model-card-qwen-qwen3-235b-a22b-2507.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "clientToolCalling": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "qwen.qwen3-32b-v1:0": {
+      "card": "model-card-qwen-qwen3-32b.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "qwen.qwen3-coder-30b-a3b-v1:0": {
+      "card": "model-card-qwen-qwen3-coder-30b-a3b-instruct.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "qwen.qwen3-coder-480b-a35b-v1:0": {
+      "card": "model-card-qwen-qwen3-coder-480b-a35b-instruct.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "clientToolCalling": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "qwen.qwen3-coder-next": {
+      "card": "model-card-qwen-qwen3-coder-next.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "qwen.qwen3-next-80b-a3b": {
+      "card": "model-card-qwen-qwen3-next-80b-a3b.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "qwen.qwen3-vl-235b-a22b": {
+      "card": "model-card-qwen-qwen3-vl-235b-a22b.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "stability.stable-conservative-upscale-v1:0": {
+      "card": "model-card-stability-ai-stable-image-conservative-upscale.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "stability.stable-creative-upscale-v1:0": {
+      "card": "model-card-stability-ai-stable-image-creative-upscale.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "stability.stable-fast-upscale-v1:0": {
+      "card": "model-card-stability-ai-stable-image-fast-upscale.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "stability.stable-image-control-sketch-v1:0": {
+      "card": "model-card-stability-ai-stable-image-control-sketch.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "stability.stable-image-control-structure-v1:0": {
+      "card": "model-card-stability-ai-stable-image-control-structure.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "stability.stable-image-erase-object-v1:0": {
+      "card": "model-card-stability-ai-stable-image-erase-object.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "stability.stable-image-inpaint-v1:0": {
+      "card": "model-card-stability-ai-stable-image-inpaint.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "stability.stable-image-remove-background-v1:0": {
+      "card": "model-card-stability-ai-stable-image-remove-background.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "stability.stable-image-search-recolor-v1:0": {
+      "card": "model-card-stability-ai-stable-image-search-and-recolor.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "stability.stable-image-search-replace-v1:0": {
+      "card": "model-card-stability-ai-stable-image-search-and-replace.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "stability.stable-image-style-guide-v1:0": {
+      "card": "model-card-stability-ai-stable-image-style-guide.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "stability.stable-outpaint-v1:0": {
+      "card": "model-card-stability-ai-stable-image-outpaint.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "stability.stable-style-transfer-v1:0": {
+      "card": "model-card-stability-ai-stable-image-style-transfer.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "twelvelabs.marengo-embed-3-0-v1:0": {
+      "card": "model-card-twelvelabs-marengo-embed-3-0.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": false,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "twelvelabs.pegasus-1-2-v1:0": {
+      "card": "model-card-twelvelabs-pegasus-v1-2.html",
+      "runtime": {
+        "streaming": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "writer.palmyra-vision-7b": {
+      "card": "model-card-writer-palmyra-vision-7b.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "writer.palmyra-x4-v1:0": {
+      "card": "model-card-writer-palmyra-x4.html",
+      "runtime": {
+        "streaming": true,
+        "clientToolCalling": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "writer.palmyra-x5-v1:0": {
+      "card": "model-card-writer-palmyra-x5.html",
+      "runtime": {
+        "streaming": true,
+        "clientToolCalling": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "xai.grok-4.6": {
+      "card": "model-card-xai-grok-4-6.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "structuredOutputs": false,
+        "serverToolCalling": false,
+        "reasoning": true,
+        "countTokens": false,
+        "promptRouting": false,
+        "applicationInferenceProfiles": true,
+        "invocationLogs": true,
+        "projects": true
+      },
+      "mantle": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "structuredOutputs": true,
+        "clientToolCalling": true,
+        "reasoning": true,
+        "abuseDetection": true,
+        "applicationInferenceProfiles": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "zai.glm-4.7": {
+      "card": "model-card-zai-glm-4-7.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "zai.glm-4.7-flash": {
+      "card": "model-card-zai-glm-4-7-flash.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "zai.glm-5": {
+      "card": "model-card-zai-glm-5.html",
+      "runtime": {
+        "streaming": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    }
+  },
+  "unmatchedCards": [
+    {
+      "card": "model-card-anthropic-claude-mythos-5-1.html",
+      "modelId": "anthropic.claude-mythos-5-1",
+      "reason": "not-found"
+    },
+    {
+      "card": "model-card-anthropic-claude-mythos-5.html",
+      "modelId": null,
+      "reason": "no-runtime-id"
+    },
+    {
+      "card": "model-card-anthropic-claude-opus-5-5.html",
+      "modelId": "anthropic.claude-opus-5-5",
+      "reason": "not-found"
+    },
+    {
+      "card": "model-card-anthropic-claude-sonnet-5-5.html",
+      "modelId": "anthropic.claude-sonnet-5-5",
+      "reason": "not-found"
+    },
+    {
+      "card": "model-card-cohere-command-r-plus.html",
+      "modelId": "cohere.command-r-plus-v1:0",
+      "reason": "not-found"
+    },
+    {
+      "card": "model-card-cohere-command-r.html",
+      "modelId": "cohere.command-r-v1:0",
+      "reason": "not-found"
+    },
+    {
+      "card": "model-card-google-gemma-4-26b-a4b.html",
+      "modelId": null,
+      "reason": "no-runtime-id"
+    },
+    {
+      "card": "model-card-google-gemma-4-31b.html",
+      "modelId": null,
+      "reason": "no-runtime-id"
+    },
+    {
+      "card": "model-card-google-gemma-4-e2b.html",
+      "modelId": null,
+      "reason": "no-runtime-id"
+    },
+    {
+      "card": "model-card-meta-llama-3-1-405b-instruct.html",
+      "modelId": "meta.llama3-1-405b-instruct-v1:0",
+      "reason": "not-found"
+    },
+    {
+      "card": "model-card-meta-llama-3-2-11b-instruct.html",
+      "modelId": "meta.llama3-2-11b-instruct-v1:0",
+      "reason": "not-found"
+    },
+    {
+      "card": "model-card-meta-llama-3-2-1b-instruct.html",
+      "modelId": "meta.llama3-2-1b-instruct-v1:0",
+      "reason": "not-found"
+    },
+    {
+      "card": "model-card-meta-llama-3-2-3b-instruct.html",
+      "modelId": "meta.llama3-2-3b-instruct-v1:0",
+      "reason": "not-found"
+    },
+    {
+      "card": "model-card-meta-llama-3-2-90b-instruct.html",
+      "modelId": "meta.llama3-2-90b-instruct-v1:0",
+      "reason": "not-found"
+    },
+    {
+      "card": "model-card-openai-gpt-54.html",
+      "modelId": null,
+      "reason": "no-runtime-id"
+    },
+    {
+      "card": "model-card-openai-gpt-55.html",
+      "modelId": null,
+      "reason": "no-runtime-id"
+    },
+    {
+      "card": "model-card-openai-gpt-56-cyber.html",
+      "modelId": null,
+      "reason": "no-runtime-id"
+    },
+    {
+      "card": "model-card-openai-gpt-6-1-sol.html",
+      "modelId": "openai.gpt-6.1-sol",
+      "reason": "not-found"
+    },
+    {
+      "card": "model-card-openai-gpt-6-luna.html",
+      "modelId": "openai.gpt-6-luna",
+      "reason": "not-found"
+    },
+    {
+      "card": "model-card-openai-gpt-6-sol.html",
+      "modelId": "openai.gpt-6-sol",
+      "reason": "not-found"
+    },
+    {
+      "card": "model-card-openai-gpt-daybreak-blue-56-sol.html",
+      "modelId": null,
+      "reason": "no-runtime-id"
+    },
+    {
+      "card": "model-card-xai-grok-4-3.html",
+      "modelId": null,
+      "reason": "no-runtime-id"
+    },
+    {
+      "card": "model-card-xai-grok-4-7.html",
+      "modelId": "xai.grok-4.7",
+      "reason": "not-found"
+    },
+    {
+      "card": "model-card-zai-glm-5-3.html",
+      "modelId": "zai.glm-5.3",
+      "reason": "not-found"
+    }
+  ],
+  "unknownFeatures": []
+}
