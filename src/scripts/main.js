@@ -6,6 +6,7 @@ import regionNotes from "../../data/region-notes.json";
 import overrides from "../../data/overrides.json";
 import mantle from "../../data/mantle.json";
 import prices from "../../data/prices.json";
+import features from "../../data/features.json";
 
 import { initI18n, setupLangToggle } from "./i18n.js";
 import { initTheme, setupThemeToggle } from "./theme.js";
@@ -29,7 +30,7 @@ function boot() {
   const host = document.getElementById("main");
   if (!host) return;
 
-  mountApp({ host, models, profiles, fetchLog, regionNotes, overrides, mantle, prices });
+  mountApp({ host, models, profiles, fetchLog, regionNotes, overrides, mantle, prices, features });
 }
 
 if (document.readyState === "loading") {
