@@ -1,0 +1,75 @@
+name: Refresh model features
+
+# docs のモデルカード (英語版 .md) から機能表を取り直し、差分があれば PR を作る (FEATURE-001 / D-016)。
+# AWS の認証情報は使わない (D-002)。取得先は公開の docs だけ。
+# 前提: リポジトリ設定 "Allow GitHub Actions to create and approve pull requests" を有効にする。
+# GITHUB_TOKEN で作った PR は他の workflow を起動しないので、テストはこの job の中で走らせる。
+on:
+  schedule:
+    - cron: "0 21 * * *"   # JST 06:00
+  workflow_dispatch:
+
+# bot ブランチへの push と PR の作成・更新に要る範囲のみ
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: refresh-features
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # 安全弁 (guard) が働くと終了コード 1 で落ち、以降のステップは走らない (PR を作らない)
+      - name: Fetch features from docs
+        run: |
+          DATE=$(TZ=Asia/Tokyo date +%F)
+          echo "DATE=$DATE" >> "$GITHUB_ENV"
+          node scripts/fetch-bedrock-features.mjs --date "$DATE"
+
+      - run: npm test
+
+      - name: Open or update PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: bot/refresh-features
+        run: |
+          if [ -z "$(git status --porcelain -- data/features.json)" ]; then
+            echo "no changes"
+            exit 0
+          fi
+          TITLE="chore(features): モデル機能表の更新 ($DATE)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C "$BRANCH"
+          git add -- data/features.json
+          git commit -m "chore(features): docs のモデルカードから機能表を更新 ($DATE)"
+          git push --force origin "$BRANCH"
+          BODY="data/raw/$DATE/features/summary.md"
+          if [ ! -f "$BODY" ]; then
+            BODY="$RUNNER_TEMP/pr-body.md"
+            {
+              echo "docs のモデルカードから data/features.json を取り直しました ($DATE)。"
+              echo ""
+              echo "summary.md が見つからなかったため、変更の要約はありません。差分は Files changed で確認してください。"
+              echo ""
+              echo "実行ログ: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            } > "$BODY"
+          fi
+          PR=$(gh pr list --head "$BRANCH" --base main --state open --json number --jq '.[].number')
+          if [ -n "$PR" ]; then
+            gh pr edit "$PR" --title "$TITLE" --body-file "$BODY"
+          else
+            gh pr create --head "$BRANCH" --base main --title "$TITLE" --body-file "$BODY"
+          fi
