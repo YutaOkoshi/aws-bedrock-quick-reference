@@ -23,6 +23,8 @@ export function mountApp({
   overrides = {},
   mantle = null,
   prices = {},
+  // FEATURE-001: data/features.json。無ければ {} で機能列も機能の節も出さない。
+  features = {},
   location: loc = typeof window !== "undefined" ? window.location : undefined,
   history: hist = typeof window !== "undefined" ? window.history : undefined,
   // 画面ビュー (REGIONS-001) の入口。タブの UI ができるまでは既定の "origin" のまま。
@@ -41,6 +43,7 @@ export function mountApp({
     overrides,
     mantle,
     prices,
+    features,
   });
 
   const filter = mountFilterBar({
@@ -57,6 +60,7 @@ export function mountApp({
     regionNotes,
     mantle,
     prices,
+    features,
   });
 
   // 取得日時・出典の脚注は 2 つのビューで共用する 1 つにする (REGIONS-001 UI Description)。

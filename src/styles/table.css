@@ -332,3 +332,20 @@
 .table-frame td.sorted .comparison-price .price-value { color: var(--accent); }
 .price-sort-help { flex-basis: 100%; line-height: 1.7; }
 .comparison-price > .price-value { justify-self: end; text-align: right; }
+
+/* FEATURE-001: 機能列。runtime / mantle を 1 セルに並べる。記載なし (—) は淡色で ✕ と区別する。 */
+.feature-col { white-space: nowrap; }
+.feature-cell { display: inline-flex; gap: 2px; align-items: baseline; font: 11px var(--font-mono, monospace); }
+.feature-mark.feature-yes { color: var(--yes-fg); }
+.feature-mark.feature-no { color: var(--no-fg); }
+.feature-mark.feature-none { color: var(--fg-muted); }
+.feature-sep { color: var(--fg-muted); }
+
+/* 機能の列ピッカー。並べ替え UI と同じ行に置き、狭い幅では折り返す。 */
+.feature-picker { position: relative; }
+.feature-picker[hidden] { display: none; }
+.feature-picker > summary { cursor: pointer; list-style: none; border: 1px solid var(--line); border-radius: 6px; padding: 7px 10px; background: var(--bg-panel); color: var(--fg); }
+.feature-picker > summary::-webkit-details-marker { display: none; }
+.feature-picker-menu { position: absolute; right: 0; z-index: 20; margin-top: 4px; min-width: 240px; max-width: min(320px, 90vw); max-height: 60vh; overflow-y: auto; padding: 8px; background: var(--bg-panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--panel-shadow); }
+.feature-picker-list { display: grid; gap: 4px; margin-bottom: 8px; }
+.feature-picker-option { display: flex; gap: 6px; align-items: center; color: var(--fg); }

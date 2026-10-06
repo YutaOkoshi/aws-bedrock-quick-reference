@@ -150,6 +150,16 @@ export const en = {
       flex: "Flex",
     },
   },
+  // FEATURE-001: Capabilities and Features. Feature names stay in the docs' English, so they are not in the dictionary.
+  feature: {
+    pickerLabel: "Feature columns ({count})",
+    pickerGroup: "Feature columns shown in the table",
+    pickerReset: "Reset to default",
+    cellAria: "bedrock-runtime: {runtime} / bedrock-mantle: {mantle}",
+    state: { yes: "supported", no: "not supported", none: "not documented" },
+    fetchedAt: "Features fetched: {date}",
+    sourceLabel: "Model cards in the official docs (Capabilities and Features)",
+  },
   copy: {
     action: "Copy",
     done: "Copied",

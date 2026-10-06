@@ -49,6 +49,8 @@ export function mountFixtureApp({
   setView,
   // 取得の記録の差し替え (REGIONS-001 AC-007 / AC-014)。関数なら snapshot のものを渡す。
   fetchLog,
+  // FEATURE-001 の機能表。省くと {} (機能列なし) で組み立てる。
+  features,
 } = {}) {
   Object.defineProperty(navigator, "language", { value: lang, configurable: true });
   document.body.innerHTML = '<main id="main"></main>';
@@ -72,6 +74,7 @@ export function mountFixtureApp({
     overrides: overrides ?? {},
     mantle,
     prices: prices ?? buildPrices(),
+    features: features ?? {},
     location: loc,
     history: hist,
     getView,

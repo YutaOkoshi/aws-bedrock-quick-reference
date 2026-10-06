@@ -150,6 +150,16 @@ export const ja = {
       flex: "Flex",
     },
   },
+  // FEATURE-001: 機能 (Capabilities and Features)。機能名そのものは docs の英語名のまま出すので辞書に置かない。
+  feature: {
+    pickerLabel: "機能の列 ({count})",
+    pickerGroup: "表に出す機能の列",
+    pickerReset: "既定に戻す",
+    cellAria: "bedrock-runtime: {runtime} / bedrock-mantle: {mantle}",
+    state: { yes: "対応", no: "非対応", none: "記載なし" },
+    fetchedAt: "機能表の取得日: {date}",
+    sourceLabel: "公式 docs のモデルカード (Capabilities and Features)",
+  },
   copy: {
     action: "コピー",
     done: "コピーしました",
