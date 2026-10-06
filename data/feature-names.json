@@ -22,7 +22,8 @@
     "modelEvaluation": "Model evaluation",
     "applicationInferenceProfiles": "Application inference profiles",
     "invocationLogs": "Invocation logs",
-    "projects": "Projects"
+    "projects": "Projects",
+    "projectsDefaultOnly": "Projects (default project only)"
   },
   "names": {
     "Response streaming": "streaming",
@@ -50,7 +51,7 @@
     "Application inference profiles": "applicationInferenceProfiles",
     "Invocation logs": "invocationLogs",
     "Projects": "projects",
-    "Projects (default project only)": "projects"
+    "Projects (default project only)": "projectsDefaultOnly"
   },
   "defaultColumns": ["explicitPromptCaching", "structuredOutputs", "clientToolCalling", "guardrails"]
 }
