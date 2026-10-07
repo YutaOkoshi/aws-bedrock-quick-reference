@@ -50,6 +50,7 @@ tests/
 ├── feature-model.test.js   # 機能列の純関数
 ├── feature-render.test.js  # 機能列・列ピッカー・詳細の機能の節 (jsdom)
 ├── refresh-features-workflow.test.js # 定期取得 workflow の権限とトリガー (node 環境)
+├── pr-preview-workflow.test.js # PR プレビュー workflow の権限とトリガー (node 環境)
 ├── helpers/mini-yaml.js    # workflow のテストが使う極小 YAML パーサ
 ├── no-runtime-deps.test.js
 ├── fixtures/bedrock/   # spike 出力を 5 モデル・4 プロファイルに間引いた固定入力
@@ -57,7 +58,8 @@ tests/
 └── fixtures/features/  # モデルカード 5 本と toc-contents.json の固定入力
 .github/workflows/
 ├── deploy.yml              # main への push で test → build → GitHub Pages
-└── refresh-features.yml    # 毎日 docs から機能表を取り直し、差分を PR にする (D-016)
+├── refresh-features.yml    # 毎日 docs から機能表を取り直し、差分を PR にする (D-016)
+└── pr-preview.yml          # main 向けの PR で test → build し、dist/index.html を artifact に添付する
 ```
 
 ### 開発コマンド

@@ -57,6 +57,16 @@ decision_refs:
 - **When**: コミットとビルドを行う
 - **Then**: `data/raw/` は `.gitignore` されておりリポジトリに入らず、`dist/index.html` にも含まれない（AWS アカウント ID を含む ARN が公開物に出ない）
 
+### AC-009 (PR のプレビューを artifact で添付する)
+- **Given**: `.github/workflows/pr-preview.yml` が設定済み
+- **When**: main 向けの PR を作る、またはその PR に push する
+- **Then**: ワークフローが `npm ci` → `npm test` → `npm run build` → `dist/index.html` を artifact `pr-preview-<PR 番号>` として upload の順で実行する。artifact の URL を job summary に書き、保持期間は 14 日。Pages には deploy しない（Pages は 1 リポジトリに 1 サイトで、PR から deploy すると公開中のページを上書きするため）
+
+### AC-010 (PR プレビューの権限と失敗の扱い)
+- **Given**: PR プレビューのワークフロー
+- **When**: `permissions` と失敗時の挙動を確認する
+- **Then**: `permissions` は `contents: read` だけで、fork からの PR の読み取り専用トークンでも動く。`npm test` が落ちたら build と upload は走らず、PR のチェックは失敗として記録される。同じ PR への新しい push は進行中の実行を取り消す
+
 ### AC-NFR-001 (公開までの所要時間)
 - **Given**: 通常の変更を main に push する
 - **When**: ワークフローが走る
@@ -71,11 +81,12 @@ decision_refs:
 ### Inputs
 - **From**: DATA-001 — コミット済みの `data/models.json` / `profiles.json` / `fetch-log.json` / `region-notes.json` / `overrides.json`
 - **From**: TABLE-001 / FILTER-001 / DETAIL-001 / I18N-001 / SHARE-001 — `src/` 配下のソースとテスト
-- **From**: 外部（GitHub） — push イベント
+- **From**: 外部（GitHub） — push イベント、main 向けの pull_request イベント
 
 ### Outputs
 - **To**: 外部（GitHub Pages） — `dist/index.html`（単一 HTML）
 - **To**: 外部（閲覧者） — `https://koyakimu.github.io/aws-bedrock-quick-reference/`
+- **To**: 外部（PR のレビュー担当） — Actions の artifact `pr-preview-<PR 番号>`（`dist/index.html` の zip）
 
 ### Dependencies
 - **全コンテキスト**: `npm test` が全 Spec の unit / integration テストを実行する。1 つでも失敗すれば公開しない
@@ -94,6 +105,8 @@ decision_refs:
 | AC-006 | integration（ワークフロー実行の確認） | 意図的にテストを落としたブランチで、deploy ステップが skip され公開が変わらないことを確認 |
 | AC-007 | integration (vitest) | データファイルを削除・破損させた一時ディレクトリでビルドを走らせ、非ゼロ終了とメッセージを検証 |
 | AC-008 | unit (vitest) | `.gitignore` に `data/raw/` があること、`git ls-files data/raw` が空であること、ビルド成果物に 12 桁の数字列（アカウント ID）が無いことを検証 |
+| AC-009 | unit (vitest) | `tests/pr-preview-workflow.test.js` で、トリガーが main 向けの `pull_request` だけであること、ステップ順、artifact の `name` / `path` / `retention-days`、job summary への URL 出力を検証 |
+| AC-010 | unit (vitest) | 同じテストで `permissions` が `contents: read` だけであること、`continue-on-error` / `if` が無いこと、`concurrency` が PR 番号単位で `cancel-in-progress: true` であることを検証 |
 | AC-NFR-001 | 計測 | Actions の run の所要時間を確認（3 回の実測で中央値 < 5 分） |
 
 ## Deliverable Previews
