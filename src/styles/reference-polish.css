@@ -1,6 +1,7 @@
 /* Final visual layer: navy surfaces, orange accents, and a compact comparison table. */
 body { padding: 0 36px 40px; line-height: 1.6; }
-.app { max-width: 1720px; }
+/* 機能列で表が横に長いので、上限を設けずウィンドウ幅いっぱいに広げる (FEATURE-001)。 */
+.app { max-width: none; }
 .top { position: relative; min-height: 108px; padding: 22px 0; background: var(--chrome-bg); box-shadow: 0 0 0 100vmax var(--chrome-bg); clip-path: inset(0 -100vmax); border: 0; }
 .brand { position: relative; padding-left: 58px; gap: 6px 18px; }
 .brand::before { content: 'B'; position: absolute; left: 0; top: 1px; width: 40px; height: 44px; display: grid; place-items: center; border: 1px solid var(--chrome-line); border-bottom: 3px solid var(--brand-orange); border-radius: 10px; color: var(--brand-orange); font: 650 24px var(--font-sans); }
