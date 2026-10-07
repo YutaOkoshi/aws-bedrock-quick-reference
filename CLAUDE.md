@@ -58,7 +58,7 @@ tests/
 └── fixtures/features/  # モデルカード 5 本と toc-contents.json の固定入力
 .github/workflows/
 ├── deploy.yml              # main への push で test → build → GitHub Pages
-├── refresh-features.yml    # 毎日 docs から機能表を取り直し、差分を PR にする (D-016)
+├── refresh-features.yml    # 週 1 回 docs から機能表を取り直し、差分を PR にする (D-016)
 └── pr-preview.yml          # main 向けの PR で test → build し、dist/index.html を artifact に添付する
 ```
 
@@ -154,7 +154,7 @@ node scripts/fetch-bedrock-prices.mjs
 
 機能表 (`data/features.json`) は英語版の公式 docs のモデルカード (`model-card-*.md`) から取る。
 **認証は要らない**。機能の対応可否を返す API は無く、日本語版 docs とサードパーティの DB
-(models.dev / LiteLLM など) は使わない。通常は GitHub Actions が毎日取り直して差分を PR に
+(models.dev / LiteLLM など) は使わない。通常は GitHub Actions が週 1 回取り直して差分を PR に
 するので (D-016)、手で走らせるのは対応表を直したときや PR の中身を確かめたいとき。
 
 ```
@@ -204,7 +204,7 @@ node scripts/fetch-bedrock-features.mjs
 
 #### 定期実行 (D-016)
 
-`.github/workflows/refresh-features.yml` が毎日 UTC 21:00 (JST 06:00) と `workflow_dispatch` で
+`.github/workflows/refresh-features.yml` が毎週日曜 UTC 21:00 (月曜 JST 06:00) と `workflow_dispatch` で
 走り、`npm test` の後、`data/features.json` に差分があれば固定ブランチ `bot/refresh-features`
 に force push して PR を作る (既に開いていれば本文だけ更新)。公開は PR を main に merge した
 ときに `deploy.yml` が行う。workflow は AWS の認証要素を持たない (D-002)。

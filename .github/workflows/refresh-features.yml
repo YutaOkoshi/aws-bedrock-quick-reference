@@ -6,7 +6,7 @@ name: Refresh model features
 # GITHUB_TOKEN で作った PR は他の workflow を起動しないので、テストはこの job の中で走らせる。
 on:
   schedule:
-    - cron: "0 21 * * *"   # JST 06:00
+    - cron: "0 21 * * 0"   # 月曜 JST 06:00 (週 1 回)
   workflow_dispatch:
 
 # bot ブランチへの push と PR の作成・更新に要る範囲のみ

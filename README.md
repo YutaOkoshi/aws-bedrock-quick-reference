@@ -59,7 +59,7 @@ node scripts/fetch-bedrock-snapshot.mjs --profile <名前> --account-kind sandbo
 ```
 
 機能表（`data/features.json`）は英語版の公式 docs のモデルカードから認証なしで取り、
-GitHub Actions（`.github/workflows/refresh-features.yml`）が毎日取り直して差分を PR にします。
+GitHub Actions（`.github/workflows/refresh-features.yml`）が週 1 回（月曜 JST 06:00）取り直して差分を PR にします。
 
 対象リージョンの列挙・`region-notes.json` / `overrides.json` の直し方・denied リージョンの
 扱いなど、更新手順の詳細は [`CLAUDE.md`](./CLAUDE.md) の「データ更新」節にまとめてあります。

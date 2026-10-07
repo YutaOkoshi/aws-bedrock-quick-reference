@@ -24,8 +24,9 @@ D-001〜D-005 は brainstorming の対話で内容が固まり、技術設計
 - **Decision**: **B**（2026-10-06、オーナー承認）
 - **Reason**: docs の更新に毎日追随でき、公開の前に PR のレビューを 1 回挟める。workflow は AWS の認証要素を持たず（D-002 を崩さない）、GitHub の権限も `contents: write` と `pull-requests: write` だけで足りる
 - **運用**:
-  - `.github/workflows/refresh-features.yml` が `schedule`（毎日 UTC 21:00 = JST 06:00）と `workflow_dispatch` で走り、`node scripts/fetch-bedrock-features.mjs` → `npm test` の後、`data/features.json` に差分があれば固定ブランチ `bot/refresh-features` に force push して PR を作る（既に開いていれば本文だけ更新）
+  - `.github/workflows/refresh-features.yml` が `schedule`（毎週日曜 UTC 21:00 = 月曜 JST 06:00。当初は毎日、2026-10-07 に週 1 回へ変更）と `workflow_dispatch` で走り、`node scripts/fetch-bedrock-features.mjs` → `npm test` の後、`data/features.json` に差分があれば固定ブランチ `bot/refresh-features` に force push して PR を作る（既に開いていれば本文だけ更新）
   - 空の差分を作らないため、内容が前回と同じなら `generatedAt` を据え置く（FEATURE-001 AC-007）。パースの空振りで全データを消す PR を作らないため、`cardsWithFeatures` が前回の半分未満なら書き出さずに失敗する（同 AC-008）
+  - 頻度は週 1 回にする（2026-10-07、オーナー判断）。毎日では PR の確認が追いつかず、`bot/refresh-features` の PR は開いている間に本文が上書きされるだけなので、週 1 回でも取りこぼしは無い。急ぐときは `workflow_dispatch` で手動実行する
   - GITHUB_TOKEN で作った PR は他の workflow を起動しないが、テストはこの job の中で走らせ済み。公開は従来どおり main への merge で `deploy.yml` が行う
 - **オーナー作業**: リポジトリ設定 **Settings → Actions → General → Workflow permissions** の *Allow GitHub Actions to create and approve pull requests* を有効にする。これが無効だと GITHUB_TOKEN で `gh pr create` ができず、workflow は PR 作成の段で失敗する
 - **Refs**: `spec-features.md`（FEATURE-001 AC-015 / AC-016）、workflow は `.github/workflows/refresh-features.yml`、テストは `tests/refresh-features-workflow.test.js`

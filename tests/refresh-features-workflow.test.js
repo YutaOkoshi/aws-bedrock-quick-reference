@@ -1,5 +1,5 @@
 // @vitest-environment node
-// FEATURE-001 / D-016: docs の機能表を毎日取り直して PR を作るワークフローの定義を検証する。
+// FEATURE-001 / D-016: docs の機能表を週 1 回 (月曜 JST 06:00) 取り直して PR を作るワークフローの定義を検証する。
 // AWS の認証要素を持たないこと (D-002) と、権限が PR 作成に要る 2 つだけであることを固定する。
 import { describe, it, expect } from "vitest";
 import { readFileSync, writeFileSync, mkdtempSync } from "node:fs";
@@ -26,8 +26,8 @@ describe("mini-yaml のブロックスカラー", () => {
 });
 
 describe("FEATURE-001 定期取得ワークフロー (refresh-features.yml)", () => {
-  it("毎日 UTC 21:00 (JST 06:00) と手動実行で動く", () => {
-    expect(workflow.on.schedule[0].cron).toBe("0 21 * * *");
+  it("毎週日曜 UTC 21:00 (月曜 JST 06:00) と手動実行で動く", () => {
+    expect(workflow.on.schedule[0].cron).toBe("0 21 * * 0");
     expect(workflow.on).toHaveProperty("workflow_dispatch");
   });
 

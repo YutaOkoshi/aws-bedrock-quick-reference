@@ -18,7 +18,7 @@ decision_refs:
 **So that** モデルカードを一枚ずつ開かずに「このモデルはこの接続先で、どの機能が使えるか」に答えられる
 
 機能の対応可否を返す API も機械可読の配信も無いため、英語版の公式 docs のモデルカード（`.md`）を機械取得して正規化する（D-015）。
-docs は頻繁に変わるので、手で転記せず **毎日取り直して差分を PR にする**（D-016）。
+docs は頻繁に変わるので、手で転記せず **週 1 回取り直して差分を PR にする**（D-016）。
 
 ## Acceptance Criteria
 
@@ -133,7 +133,7 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
 
 ### AC-015 (定期取得と差分の PR)
 - **Given**: `.github/workflows/refresh-features.yml`
-- **When**: `schedule`（毎日 UTC 21:00 = JST 06:00）または `workflow_dispatch` で起動する
+- **When**: `schedule`（毎週日曜 UTC 21:00 = 月曜 JST 06:00）または `workflow_dispatch` で起動する
 - **Then**: checkout → setup-node 22 → `npm ci` → `node scripts/fetch-bedrock-features.mjs` → `npm test` の順に走り、`data/features.json` に差分があれば固定ブランチ `bot/refresh-features` に commit して force push し、PR を作る（既に開いていれば本文だけ更新する）。差分が無ければ何もしない
   - PR 本文は AC-002 の `summary.md`（モデルごとの機能の増減、`unknownFeatures`、`unmatchedCards`）
   - `npm test` が PR 作成より前にあるので、テストが落ちれば PR は作られない
@@ -208,7 +208,7 @@ docs は頻繁に変わるので、手で転記せず **毎日取り直して差
 | AC-012 | integration (jsdom, vitest) | 脚注に `generatedAt` と出典リンクが出ること、`features` が空なら出ないことを検証 |
 | AC-013 | unit + integration (vitest, jsdom) | `buildFeatureRows` の並びと絞り方を検証。Sonnet 5.5 で Guardrails が runtime ✓ / mantle ✕、Prompt caching の 512、Computer use の行、モデルカードへのリンク先を検証 |
 | AC-014 | integration (jsdom, vitest) | `byModel` に無いモデルで「記載がありません」が出ること、`features` が空で列も脚注も出ず例外にならず、行数が変わらないことを検証。取得失敗（カードの値 `null`）が `failedCards` に数えられ例外にならないことを検証（node） |
-| AC-015 | unit (vitest, node) | `tests/refresh-features-workflow.test.js` で `on.schedule[0].cron === "0 21 * * *"`、`workflow_dispatch` があること、fetch のステップがあり `npm test` が PR 作成より前にあることを検証 |
+| AC-015 | unit (vitest, node) | `tests/refresh-features-workflow.test.js` で `on.schedule[0].cron === "0 21 * * 0"`、`workflow_dispatch` があること、fetch のステップがあり `npm test` が PR 作成より前にあることを検証 |
 | AC-016 | unit (vitest, node) | 同ファイルで `permissions` が `{ contents: "write", "pull-requests": "write" }` と完全一致し、AWS の認証要素が無いことを検証。既存の「どの YAML にも AWS 認証要素が無い」テストが新ファイルも対象にすることを確認 |
 
 ## Deliverable Previews
