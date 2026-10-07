@@ -1,0 +1,52 @@
+name: PR preview
+
+# PR ごとに test と build を走らせ、dist/index.html を artifact として添付する (DEPLOY-001 AC-009 / AC-010)。
+# Pages は 1 リポジトリに 1 サイトなので PR からは deploy しない。単一 HTML なので
+# artifact を落として展開し、ブラウザで開けばそのままプレビューになる。
+# AWS の認証情報は使わない (D-002)。fork からの PR の読み取り専用トークンでも動く範囲に留める。
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+# 同じ PR に push し直したら、古い実行は結果を待たずに取り消す
+concurrency:
+  group: pr-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      # テストが落ちたら build も artifact も作らない
+      - run: npm test
+      - run: npm run build
+
+      - id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr-preview-${{ github.event.pull_request.number }}
+          path: dist/index.html
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Write summary
+        env:
+          ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
+        run: |
+          {
+            echo "## PR preview"
+            echo
+            echo "[dist/index.html をダウンロード]($ARTIFACT_URL) (zip。展開してブラウザで開く。14 日で消える)"
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "artifact: $ARTIFACT_URL"

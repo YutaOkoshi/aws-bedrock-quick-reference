@@ -20,6 +20,14 @@ import { copyText } from "./copy.js";
 import { geoAreaLabel } from "./geo-labels.js";
 import { t, getLang, applyTranslations } from "./i18n.js";
 import { regionName, regionOptionLabel } from "./region-names.js";
+import {
+  MODEL_CARDS_URL,
+  defaultFeatureColumns,
+  featureCell,
+  featureOptions,
+  featureStateRank,
+} from "./feature-model.mjs";
+import { createFeaturePicker } from "./feature-picker.js";
 
 export const DEFAULT_REGION = "ap-northeast-1";
 
@@ -58,6 +66,12 @@ export const SOURCE_REGION_EVENT = "source-region-changed";
 // 行の並び順が変わったことを外に知らせるイベント (SHARE-001 AC-013 の入口)。
 export const SORT_CHANGED_EVENT = "row-sort-changed";
 
+// 表に出す機能列が変わったことを外に知らせるイベント (FEATURE-001 / SHARE-001 の cols=)。
+export const FEATURE_COLUMNS_EVENT = "bqr:feature-columns-changed";
+
+// 機能列のキーの接頭辞。列のキーは "feature:<正規化キー>"。
+const FEATURE_PREFIX = "feature:";
+
 // 並べ替えを切り替えるヘッダの列 (AC-014)。プロバイダ列のヘッダのクリックで pinned ⇄ alpha。
 const SORT_TOGGLE_KEY = "provider";
 
@@ -68,15 +82,16 @@ function el(tag, className, text) {
   return node;
 }
 
-function markNo() {
+// labelKey は機能列 (FEATURE-001) が「対応 / 非対応」に差し替えるときに渡す。既定は判定列の文言。
+export function markNo(labelKey = "value.no") {
   const span = el("span", "flag-no");
-  span.append(el("span", "mark", "✕"), el("span", "label", t("value.no")));
+  span.append(el("span", "mark", "✕"), el("span", "label", t(labelKey)));
   return span;
 }
 
-function markYes() {
+export function markYes(labelKey = "value.yes") {
   const span = el("span", "flag-yes");
-  span.append(el("span", "mark", "✓"), el("span", "label", t("value.yes")));
+  span.append(el("span", "mark", "✓"), el("span", "label", t(labelKey)));
   return span;
 }
 
@@ -245,8 +260,108 @@ function globalCell(row) {
   return wrap;
 }
 
+// FEATURE-001: 機能列は機能ごとに子列 Runtime / Mantle の 2 列。セルは判定列と同じ印
+// (✓ 対応 / ✕ 非対応)。記載なしは「—」(エンジンが dim を付ける)。記載なしを ✕ にしない。
+const FEATURE_SIDES = Object.freeze([
+  { side: "runtime", label: "Runtime", endpoint: "bedrock-runtime" },
+  { side: "mantle", label: "Mantle", endpoint: "bedrock-mantle" },
+]);
+
+/**
+ * 機能列の凡例 (FEATURE-001)。✓ / ✕ は表と同じ markYes / markNo のピルを実際に描く。
+ * 表の直上の説明と、詳細パネルの機能表の下で共用する。
+ */
+export function featureLegend(className = "feature-legend") {
+  const line = el("span", className);
+  line.append(
+    document.createTextNode(t("feature.legend.prefix")),
+    markYes("feature.mark.yes"),
+    document.createTextNode(t("feature.legend.yes")),
+    markNo("feature.mark.no"),
+    document.createTextNode(t("feature.legend.no")),
+    document.createTextNode(t("feature.legend.none")),
+  );
+  return line;
+}
+
+function featureMark(endpoint, state) {
+  const mark =
+    state === "yes"
+      ? markYes("feature.mark.yes")
+      : state === "no"
+        ? markNo("feature.mark.no")
+        : el("span", null, EMPTY);
+  mark.classList.add("feature-mark", `feature-${state}`);
+  mark.setAttribute(
+    "aria-label",
+    t("feature.sideAria", { endpoint, state: t(`feature.state.${state}`) }),
+  );
+  return mark;
+}
+
+// 子列の見出し (Runtime / Mantle) と親見出しの機能名は docs の英語のまま (訳さない) なので
+// labelKey ではなく label に持たせ、mountTableView が表エンジンに渡す i18n でそのまま返す。
+function featureColumns(features, keys) {
+  const known = features?.features ?? {};
+  return keys
+    .filter((key) => Object.hasOwn(known, key))
+    .flatMap((key) =>
+      FEATURE_SIDES.map(({ side, label, endpoint }) => ({
+        key: `${FEATURE_PREFIX}${key}:${side}`,
+        group: "feature",
+        featureKey: key,
+        featureLabel: known[key].label ?? key,
+        labelKey: `${FEATURE_PREFIX}${key}:${side}`,
+        label,
+        title: `${known[key].label ?? key} · ${endpoint}`,
+        type: "number",
+        align: "left",
+        className: `feature-col feature-col-${side}`,
+        sortValue: (row) => featureStateRank(featureCell(features, row.modelId, key)[side]),
+        format: (_value, row) => featureMark(endpoint, featureCell(features, row.modelId, key)[side]),
+      })),
+    );
+}
+
+// 2 段ヘッダの 1 行目。機能列があるときだけ使う (無ければ従来どおり 1 行)。
+// 先頭の 3 グループ (モデル / 推論が実行される場所 / 価格) と、機能ごとの親見出し (colspan 2)。
+// 「モデル」は左固定の列 (プロバイダ / モデル名) の上だけを sticky のセルにし、モダリティの上は
+// 見出しなしの別セルにする。横スクロールで機能名の親見出しが固定列の上に重ならないようにするため。
+const BASE_GROUPS = { id: "model", spec: "modelRest", judge: "location", price: "price" };
+const BASE_GROUP_CLASS = {
+  model: "group-model sticky sticky-group-model",
+  modelRest: "group-model-rest",
+  location: "group-location",
+  price: "group-price",
+};
+
+export function featureHeaderGroups(shown) {
+  if (!shown.some((column) => column.group === "feature")) return null;
+  const groups = [];
+  for (const column of shown) {
+    const id = column.group === "feature" ? `feature:${column.featureKey}` : BASE_GROUPS[column.group] ?? column.group;
+    const last = groups.at(-1);
+    if (last && last.id === id) {
+      last.colspan += 1;
+      continue;
+    }
+    groups.push(
+      column.group === "feature"
+        ? { id, colspan: 1, label: column.featureLabel, className: "feature-group" }
+        : {
+            id,
+            colspan: 1,
+            label: id === "modelRest" ? "" : t(`table.group.${id}`),
+            className: BASE_GROUP_CLASS[id],
+          },
+    );
+  }
+  return groups;
+}
+
 // 比較に使うモデル情報・推論場所・価格を表示する。接続方法と備考は詳細へ。
-export function buildColumns(regionNotes) {
+// FEATURE-001: 価格 2 列の右に、選んだ機能列を足す。
+export function buildColumns(regionNotes, { features = {}, featureColumns: keys = [] } = {}) {
   return [
     { key: "provider", group: "id", labelKey: "table.provider", type: "text", sticky: true },
     {
@@ -307,7 +422,24 @@ export function buildColumns(regionNotes) {
       align: "right",
       format: (_value, row) => priceCell(row, "output"),
     },
+    ...featureColumns(features, keys),
   ];
+}
+
+// 表のスクロール領域の「見える幅」を CSS 変数に流す。機能列で表が見える幅より広くなっても、
+// 詳細パネル (DETAIL-001) はこの幅に収めて左に留める (detail.css)。幅 0 (隠れている間) は上書きしない。
+export const VISIBLE_WIDTH_VAR = "--table-visible-w";
+
+export function syncVisibleWidth(frame) {
+  const width = frame?.clientWidth ?? 0;
+  if (width > 0) frame.style.setProperty(VISIBLE_WIDTH_VAR, `${width}px`);
+  return width;
+}
+
+function trackVisibleWidth(frame) {
+  syncVisibleWidth(frame);
+  if (typeof ResizeObserver !== "function") return;
+  new ResizeObserver(() => syncVisibleWidth(frame)).observe(frame);
 }
 
 /**
@@ -324,8 +456,17 @@ export function mountTableView({
   overrides = {},
   mantle = null,
   prices = {},
+  features = {},
 }) {
   const regions = selectableRegions(regionNotes);
+  // FEATURE-001: 表に出す機能列。並びは features の順に揃える。
+  const featureChoices = featureOptions(features);
+  const defaultColumns = defaultFeatureColumns(features);
+  let featureKeys = [...defaultColumns];
+  function normalizeFeatureKeys(keys) {
+    const wanted = new Set(keys ?? []);
+    return featureChoices.map((option) => option.key).filter((key) => wanted.has(key));
+  }
   let region = regions.includes(DEFAULT_REGION) ? DEFAULT_REGION : regions[0];
   let state = { sortKey: null, sortDir: null, hiddenGroups: [] };
   // 行の並び順 (AC-014)。既定は pinned。列ヘッダでの並べ替え (table-engine) とは別物。
@@ -416,11 +557,20 @@ export function mountTableView({
   banner.append(bannerTitle, bannerBody);
 
   // --- 表と空状態 ---
+  let columns = buildColumns(regionNotes, { features, featureColumns: featureKeys });
+  // 機能列の見出しは訳さない。それ以外の列は従来どおり辞書を引く。
+  const headerText = (key) => {
+    const column = columns.find((entry) => entry.labelKey === key && entry.label != null);
+    return column ? column.label : t(key);
+  };
   const table = createTable({
-    columns: buildColumns(regionNotes),
+    columns,
     rows: [],
     state,
-    i18n: t,
+    i18n: headerText,
+    // 機能列があるときだけ 2 段ヘッダにする。1 行目は見た目側 (region-overview.js) も使う。
+    headerGroups: featureHeaderGroups,
+    groupRowClass: "column-groups",
     onStateChange(next) {
       // プロバイダ列のヘッダは列の並べ替えではなく pinned ⇄ alpha の切り替えに使う (AC-014)。
       if (next.sortKey === SORT_TOGGLE_KEY) {
@@ -439,6 +589,7 @@ export function mountTableView({
     rowAttrs: (row) => ({ "data-model-id": row.modelId }),
   });
   table.el.id = "models-table";
+  trackVisibleWidth(table.el);
 
   const emptyState = el("p", "empty");
   emptyState.id = "empty-state";
@@ -466,7 +617,21 @@ export function mountTableView({
   sortSelect.setAttribute("aria-describedby", sortHint.id);
   sortSelect.addEventListener("change", () => setSort(sortSelect.value));
   sortControls.append(sortLabel, sortSelect, sortHint);
-  host.replaceChildren(bar, filterHost, banner, sortControls, table.el, emptyState, detailHost, footnote);
+
+  // FEATURE-001: 機能の列ピッカー。並べ替え UI と同じ行に置く。
+  const featurePicker = createFeaturePicker({
+    options: featureChoices,
+    selected: featureKeys,
+    onChange: (keys) => setFeatureColumns(keys),
+    onReset: () => setFeatureColumns(defaultColumns),
+  });
+  if (featureChoices.length > 0) sortControls.appendChild(featurePicker.el);
+
+  // 機能列の凡例。表の直上の説明 (presentation.js の .compare-guide) に移される。
+  // 機能列が 1 つも出ていなければ隠す。
+  const legendHost = el("span", "feature-legend-host");
+  legendHost.id = "feature-legend";
+  host.replaceChildren(bar, filterHost, banner, sortControls, legendHost, table.el, emptyState, detailHost, footnote);
 
   let model = null;
   function current() {
@@ -542,6 +707,19 @@ export function mountTableView({
       const line = el("li", "footnote-pinned", t("footnote.pinnedProviders", { providers: pinned }));
       list.appendChild(line);
     }
+    // FEATURE-001: 機能表の取得日と出典。features が空なら出さない。
+    if (features?.generatedAt) {
+      list.appendChild(
+        el("li", "footnote-feature-generated", t("feature.fetchedAt", { date: features.generatedAt })),
+      );
+      const item = el("li", "footnote-feature-source");
+      const anchor = el("a", "doc-link feature-source-link", t("feature.sourceLabel"));
+      anchor.href = MODEL_CARDS_URL;
+      anchor.target = "_blank";
+      anchor.rel = "noreferrer";
+      item.appendChild(anchor);
+      list.appendChild(item);
+    }
     footnote.appendChild(list);
 
     footnote.appendChild(el("h4", null, t("footnote.sources")));
@@ -568,6 +746,9 @@ export function mountTableView({
     sortSelect.value = sort;
     sortHint.textContent = t("rowSort.hint");
     sortHint.hidden = sort !== SORT_NEWEST;
+    featurePicker.refresh();
+    legendHost.hidden = featureKeys.length === 0;
+    legendHost.replaceChildren(...(featureKeys.length === 0 ? [] : [featureLegend()]));
     model = buildViewModel({
       models,
       profiles,
@@ -657,6 +838,33 @@ export function mountTableView({
     );
   }
 
+  /**
+   * 表に出す機能列を変える (FEATURE-001)。features に無いキーは捨て、並びは features の順。
+   * silent なら FEATURE_COLUMNS_EVENT を出さない (URL からの復元で使う)。
+   */
+  function setFeatureColumns(keys, { silent = false } = {}) {
+    const next = normalizeFeatureKeys(keys);
+    const changed = next.join(",") !== featureKeys.join(",");
+    featureKeys = next;
+    featurePicker.setSelected(featureKeys);
+    if (!changed) return;
+    // 外した列で並べ替えていたら、その指定も外す。
+    const sortedFeature = state.sortKey?.startsWith(FEATURE_PREFIX)
+      ? state.sortKey.slice(FEATURE_PREFIX.length).replace(/:(runtime|mantle)$/, "")
+      : null;
+    if (sortedFeature != null && !featureKeys.includes(sortedFeature)) {
+      state = { ...state, sortKey: null, sortDir: null };
+    }
+    columns = buildColumns(regionNotes, { features, featureColumns: featureKeys });
+    table.setColumns(columns);
+    render();
+    if (!silent) {
+      document.dispatchEvent(
+        new CustomEvent(FEATURE_COLUMNS_EVENT, { detail: { columns: [...featureKeys] } }),
+      );
+    }
+  }
+
   function rerender() {
     renderOptions();
     render();
@@ -673,6 +881,10 @@ export function mountTableView({
     getSort: () => sort,
     setSort,
     getModel: () => model,
+    getFeatureColumns: () => [...featureKeys],
+    getDefaultFeatureColumns: () => [...defaultColumns],
+    getFeatureKeys: () => featureChoices.map((option) => option.key),
+    setFeatureColumns,
     getShownRows: () => shownRows,
     setRegion,
     rerender,

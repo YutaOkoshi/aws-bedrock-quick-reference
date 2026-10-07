@@ -41,5 +41,9 @@ export default defineConfig({
     // worktree (.claude/worktrees/) やビルド生成物の中のテストを拾わない。
     // vitest の既定 (node_modules / .git) に dist と .claude を足す。
     exclude: [...configDefaults.exclude, "**/dist/**", "**/.claude/**"],
+    // GitHub Actions の runner では jsdom で画面全体を組む結合テストが手元の 20 倍前後遅い
+    // (言語切替の結合テストが 2026-09-29 の main で 3.7 秒、機能列の追加後に 5.2 秒)。
+    // 既定の 5 秒では落ちるので、ハングの検出は残したまま 15 秒に広げる。
+    testTimeout: 15000,
   },
 });

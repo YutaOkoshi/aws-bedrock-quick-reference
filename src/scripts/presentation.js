@@ -31,6 +31,9 @@ window.addEventListener('load', () => {
   guideNote.target = '_blank';
   guideNote.rel = 'noreferrer';
   guide.append(guideIntro, guidePrice, guideNote);
+  // 機能列の凡例 (FEATURE-001)。中身と表示の有無は table-view.js が持つ。
+  const featureLegend = $('#feature-legend');
+  if (featureLegend) guide.append(featureLegend);
   $('#vp-origin .table-frame').before(guide);
   const pickers = new Map();
   const tableScrolls = new Map();

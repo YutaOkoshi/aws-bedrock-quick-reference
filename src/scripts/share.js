@@ -11,7 +11,7 @@ import { providerOptions } from "./filter-model.mjs";
 import { copyText } from "./copy.js";
 import { t, getLang, applyTranslations, LANG_CHANGED_EVENT } from "./i18n.js";
 import { regionOptionLabel } from "./region-names.js";
-import { SORT_CHANGED_EVENT, SOURCE_REGION_EVENT } from "./table-view.js";
+import { FEATURE_COLUMNS_EVENT, SORT_CHANGED_EVENT, SOURCE_REGION_EVENT } from "./table-view.js";
 import { FILTER_CHANGED_EVENT } from "./filter-bar.js";
 import { VIEW_CHANGED_EVENT } from "./view-tabs.js";
 
@@ -90,16 +90,23 @@ export function mountShare({
       // 並び順は表が持つ (TABLE-001 AC-014)。まだ setSort を持たない画面でも落ちないようにする。
       sort: view.getSort?.(),
       ...(filter ? filter.getState() : {}),
+      // 表に出す機能列 (FEATURE-001)。まだ機能列を持たない画面では null (= 既定列)。
+      cols: view.getFeatureColumns?.() ?? null,
     };
   }
 
+  // 既定の機能列と同じなら cols を URL から省くための比較相手。
+  function serializeOptions() {
+    return { defaultCols: view.getDefaultFeatureColumns?.() ?? [] };
+  }
+
   function currentUrl() {
-    return shareUrl(currentState(), loc.href);
+    return shareUrl(currentState(), loc.href, serializeOptions());
   }
 
   // 絞り込み操作で戻るボタンの履歴を埋めない。常に replaceState (AC-001)。
   function syncUrl() {
-    const query = searchString(currentState());
+    const query = searchString(currentState(), serializeOptions());
     // 先頭スラッシュの絶対パスを作らない。GitHub Pages のサブパス配下でも動くように
     // 現在のパスをそのまま使う (Spec Notes)。
     const path = `${loc.pathname}${query}`;
@@ -144,12 +151,15 @@ export function mountShare({
       regions,
       providers: validProviders,
       limitOptions,
+      featureKeys: view.getFeatureKeys?.() ?? [],
     });
 
     if (state.region !== view.getRegion()) view.setRegion(state.region);
     // 並び順は表に、ビューは呼び出し側に当てる (AC-011 / AC-013)。
     if (typeof view.setSort === "function") view.setSort(state.sort);
     setView(state.view);
+    // 機能列 (FEATURE-001)。null は既定列。復元なのでイベントは出さない。
+    view.setFeatureColumns?.(state.cols ?? view.getDefaultFeatureColumns?.() ?? [], { silent: true });
 
     if (filter) {
       // 起点を当てた後の母集団で判定し直す。providers が渡されていれば起点に依らない。
@@ -180,6 +190,8 @@ export function mountShare({
   document.addEventListener(SORT_CHANGED_EVENT, syncUrl);
   // ビューの切り替えも URL に載せる (AC-011)。
   document.addEventListener(VIEW_CHANGED_EVENT, syncUrl);
+  // 機能列の選択も URL に載せる (FEATURE-001)。
+  document.addEventListener(FEATURE_COLUMNS_EVENT, syncUrl);
 
   document.addEventListener(LANG_CHANGED_EVENT, () => {
     applyTranslations(notice);
@@ -193,6 +205,6 @@ export function mountShare({
     syncUrl,
     currentUrl,
     currentState,
-    serialize: () => serializeState(currentState()),
+    serialize: () => serializeState(currentState(), serializeOptions()),
   };
 }

@@ -110,3 +110,31 @@ describe("テーマ", () => {
     expect(base).not.toContain("data-theme");
   });
 });
+
+// FEATURE-001: 2 段ヘッダの上段「モデル」見出しは固定列と一緒に左に留まる。
+// 上段の th を position: static にする既存ルールより詳細度の高いセレクタで sticky に戻す
+// (jsdom では詳細度を計算できないので、CSS の取り決めを固定する)。
+describe("FEATURE-001 上段の固定見出し", () => {
+  it("モダリティ上の空セルは nth-child(2) の強調より詳細度の高いセレクタで「モデル」と同じ背景にする", () => {
+    expect(table).toMatch(
+      /\.table-frame > table > thead tr\.column-groups th\.group-model-rest:nth-child\(n\)\s*\{[^}]*background:\s*var\(--table-group-bg\)/,
+    );
+    // 「モデル」の固定見出しも同じ背景
+    expect(table).toMatch(/th\.sticky\.sticky-group-model\s*\{[^}]*background:\s*var\(--table-group-bg\)/);
+  });
+
+  it("column-groups の sticky セルを position: sticky; left: 0 にするセレクタがある", () => {
+    expect(table).toMatch(
+      /\.table-frame > table > thead tr\.column-groups th\.sticky\.sticky-group-model\s*\{[^}]*position:\s*sticky;[^}]*left:\s*0/,
+    );
+  });
+});
+
+describe("詳細パネルは表の見える幅に収まる", () => {
+  it("detail-panel は sticky; left: 0 で幅を --table-visible-w にする", () => {
+    const detail = read("styles/detail.css");
+    expect(detail).toMatch(
+      /\.table-frame \.detail-panel\s*\{[^}]*position:\s*sticky;[^}]*left:\s*0;[^}]*width:\s*var\(--table-visible-w/,
+    );
+  });
+});

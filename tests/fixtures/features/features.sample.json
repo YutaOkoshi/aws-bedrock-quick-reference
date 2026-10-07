@@ -1,0 +1,36 @@
+{
+  "_note": "ui のテスト専用の手書き sample (FEATURE-001)。形は data/features.json と同じ。byModel のキーは tests/fixtures/bedrock の東京のモデル ID に合わせ、中身は docs の fixture カード (Sonnet 5.5 / Haiku 4.5) から写した",
+  "generatedAt": "2026-10-06T00:00:00.000Z",
+  "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/toc-contents.json",
+  "cards": 3,
+  "cardsWithFeatures": 2,
+  "failedCards": 0,
+  "features": {
+    "streaming": { "label": "Response streaming", "docs": "/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html" },
+    "explicitPromptCaching": { "label": "Explicit Prompt Caching", "docs": "prompt-caching.html#prompt-caching-explicit" },
+    "structuredOutputs": { "label": "Structured outputs", "docs": "structured-output.md" },
+    "clientToolCalling": { "label": "Client-side tool calling", "docs": "tool-use.html" },
+    "countTokens": { "label": "Count tokens", "docs": "count-tokens.html" },
+    "guardrails": { "label": "Guardrails", "docs": "guardrails.html" },
+    "unknown:batch-mode": { "label": "Batch mode", "docs": "batch-inference.html" }
+  },
+  "defaultColumns": ["explicitPromptCaching", "structuredOutputs", "clientToolCalling", "guardrails"],
+  "byModel": {
+    "anthropic.claude-sonnet-4-5-20250929-v1:0": {
+      "card": "model-card-anthropic-claude-sonnet-5-5.html",
+      "runtime": { "streaming": true, "explicitPromptCaching": true, "structuredOutputs": false, "countTokens": false, "guardrails": true },
+      "mantle": { "streaming": true, "explicitPromptCaching": true, "structuredOutputs": false, "countTokens": true, "guardrails": false },
+      "promptCaching": { "explicit": true, "minTokens": "512", "maxCheckpoints": "4", "ttl": "5 minutes, 1 hour", "fields": "system, messages, and tools" },
+      "computerUse": [{ "toolType": "computer_20251124", "betaHeader": "computer-use-2025-11-24" }]
+    },
+    "amazon.nova-lite-v1:0": {
+      "card": "model-card-amazon-nova-lite.html",
+      "runtime": { "streaming": true, "clientToolCalling": true, "guardrails": true, "structuredOutputs": true },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    }
+  },
+  "unmatchedCards": [],
+  "unknownFeatures": ["Batch mode"]
+}

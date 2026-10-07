@@ -18,6 +18,8 @@ import { createCopyable } from "./copy.js";
 import { geoAreaLabel } from "./geo-labels.js";
 import { t, getLang, LANG_CHANGED_EVENT } from "./i18n.js";
 import { regionName } from "./region-names.js";
+import { DOCS_BASE, buildFeatureRows } from "./feature-model.mjs";
+import { featureLegend, markNo, markYes } from "./table-view.js";
 
 // 出典: bedrock-mantle の対応モデル表 (MANTLE-001 AC-006)。
 const MANTLE_AVAILABILITY_DOC =
@@ -267,6 +269,117 @@ function priceSection(modelId, { prices, region, regionNotes, lane, available })
   return section;
 }
 
+// FEATURE-001: 機能の節。機能名・Prompt caching / Computer use の値は docs の英語のまま出す (訳さない)。
+const CACHING_FIELDS = ["explicit", "minTokens", "maxCheckpoints", "ttl", "fields"];
+
+function smallTable(className, headers) {
+  const table = el("table", className);
+  const thead = document.createElement("thead");
+  const headRow = document.createElement("tr");
+  for (const text of headers) {
+    const th = el("th", null, text);
+    th.setAttribute("scope", "col");
+    headRow.appendChild(th);
+  }
+  thead.appendChild(headRow);
+  const tbody = document.createElement("tbody");
+  table.append(thead, tbody);
+  return { table, tbody };
+}
+
+function wrapped(table) {
+  const wrap = el("div", "price-wrap feature-wrap");
+  wrap.appendChild(table);
+  return wrap;
+}
+
+function cachingValue(field, value) {
+  if (value == null || value === "") return "—";
+  // docs の表では Yes / No。features.json では true / false に直してあるので戻す。
+  if (field === "explicit") return value === true ? "Yes" : value === false ? "No" : String(value);
+  return String(value);
+}
+
+function featureSection(modelId, { features }) {
+  // byModel にモデルが無い・features.json が空でも節は出し、記載なしの文言にする (FEATURE-001 AC-014)。
+  const section = el("section", "detail-feature");
+  section.appendChild(el("h4", null, t("feature.heading")));
+  const entry = features?.byModel?.[modelId];
+  const rows = buildFeatureRows(features, modelId);
+
+  if (rows.length > 0) {
+    const { table, tbody } = smallTable("detail-feature-table", [
+      t("feature.nameColumn"),
+      "bedrock-runtime",
+      "bedrock-mantle",
+    ]);
+    for (const row of rows) {
+      const tr = el("tr", "detail-feature-row");
+      tr.dataset.key = row.key;
+      tr.appendChild(el("td", "detail-feature-name", row.label));
+      for (const state of [row.runtime, row.mantle]) {
+        // 表の機能列と同じ印 (✓ 対応 / ✕ 非対応 のピル)。記載なしは「—」。
+        const td = el("td", `detail-feature-mark feature-${state}`);
+        td.appendChild(
+          state === "yes"
+            ? markYes("feature.mark.yes")
+            : state === "no"
+              ? markNo("feature.mark.no")
+              : document.createTextNode("—"),
+        );
+        td.setAttribute("aria-label", t(`feature.state.${state}`));
+        tr.appendChild(td);
+      }
+      tbody.appendChild(tr);
+    }
+    section.appendChild(wrapped(table));
+    // 表と同じ凡例を 1 行 (✓ / ✕ / — の意味)。
+    const legend = el("p", "detail-feature-legend");
+    legend.appendChild(featureLegend());
+    section.appendChild(legend);
+  }
+
+  if (entry?.promptCaching) {
+    section.appendChild(el("h5", "detail-feature-sub", "Prompt caching"));
+    const { table, tbody } = smallTable("detail-caching-table", [t("feature.itemColumn"), t("feature.valueColumn")]);
+    for (const field of CACHING_FIELDS) {
+      const tr = el("tr");
+      tr.dataset.field = field;
+      const th = el("th", null, t(`feature.caching.${field}`));
+      th.setAttribute("scope", "row");
+      tr.append(th, el("td", "mono", cachingValue(field, entry.promptCaching[field])));
+      tbody.appendChild(tr);
+    }
+    section.appendChild(wrapped(table));
+  }
+
+  if (Array.isArray(entry?.computerUse) && entry.computerUse.length > 0) {
+    section.appendChild(el("h5", "detail-feature-sub", "Computer use"));
+    const { table, tbody } = smallTable("detail-computer-use-table", ["Tool type", "Beta header"]);
+    for (const tool of entry.computerUse) {
+      const tr = el("tr");
+      tr.append(el("td", "mono", tool.toolType ?? "—"), el("td", "mono", tool.betaHeader ?? "—"));
+      tbody.appendChild(tr);
+    }
+    section.appendChild(wrapped(table));
+  }
+
+  if (rows.length === 0 && !entry?.promptCaching && !entry?.computerUse?.length) {
+    section.appendChild(el("p", "detail-no-feature", t("feature.none")));
+  }
+
+  if (entry?.card) {
+    const link = el("a", "doc-link detail-feature-card", t("feature.cardLink"));
+    link.href = `${DOCS_BASE}${entry.card}`;
+    link.target = "_blank";
+    link.rel = "noreferrer";
+    const line = el("p", "detail-feature-source");
+    line.appendChild(link);
+    section.appendChild(line);
+  }
+  return section;
+}
+
 /** 図 + 指定する ID + 推論先 の 3 点セット (AC-017 / AC-018 の 1 ブロック)。 */
 function laneBlock(lane, { modelId, detail, regionNotes, profile, available, heading }) {
   const block = el("div", "lane-block");
@@ -415,6 +528,7 @@ export function mountDetailView({
   regionNotes,
   mantle = null,
   prices = {},
+  features = {},
 } = {}) {
   const open = new Set();
 
@@ -472,6 +586,9 @@ export function mountDetailView({
       panels.set(lane, element);
       panel.appendChild(element);
     }
+    // DETAIL-001 AC-023 / FEATURE-001 AC-013: 機能はレーンに依らないので、
+    // レーンのパネル群の下に 1 回だけ置く。
+    panel.appendChild(featureSection(modelId, { features }));
     select(selected);
 
     td.appendChild(panel);

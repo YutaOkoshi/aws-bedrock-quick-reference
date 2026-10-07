@@ -332,3 +332,36 @@
 .table-frame td.sorted .comparison-price .price-value { color: var(--accent); }
 .price-sort-help { flex-basis: 100%; line-height: 1.7; }
 .comparison-price > .price-value { justify-self: end; text-align: right; }
+
+/* FEATURE-001: 機能列。機能名の親見出し (colspan 2) の下に子列 Runtime / Mantle。
+   既定で全機能 (20 列超) を出すので、親見出しは折り返し、子列は 1 記号ぶんの最小幅にする。 */
+.table-frame > table > thead tr.column-groups th.feature-group { white-space: normal; min-width: 92px; max-width: 132px; line-height: 1.3; text-align: center; overflow-wrap: anywhere; border-left: 1px solid var(--line); }
+.table-frame > table > thead th.feature-col { white-space: nowrap; min-width: 72px; padding-left: 6px; padding-right: 6px; text-align: center; }
+.table-frame > table > thead th.feature-col-runtime,
+.table-frame > table > tbody td.feature-col-runtime { border-left: 1px solid var(--line); }
+.table-frame > table > thead th.feature-col .sort-btn { text-align: center; }
+td.feature-col { text-align: center; white-space: nowrap; padding-left: 6px; padding-right: 6px; }
+
+/* 上段の「モデル」見出しは左固定の 2 列 (プロバイダ / モデル名) と同じ幅で左に留める。 */
+/* 既存の `.table-frame > table > thead tr.column-groups th { position: static }` より詳細度を上げて勝たせる。 */
+.table-frame > table > thead tr.column-groups th.sticky.sticky-group-model { position: sticky; left: 0; z-index: 3; background: var(--table-group-bg); box-shadow: 1px 0 0 var(--line); }
+
+/* 上段を分けたので、reference-*.css の `column-groups th:nth-child(2)` (推論が実行される場所の強調) が
+   モダリティ上の空セルに当たる。強調は class で付け直す。 */
+/* 既存の `column-groups th:nth-child(2)` (reference-overview.css / reference-polish.css) と詳細度が同じだと
+   後から読まれる側が勝つので、:nth-child(n) を足して 1 段上げる。背景は「モデル」の見出しと同じ。 */
+.table-frame > table > thead tr.column-groups th.group-model-rest:nth-child(n) { background: var(--table-group-bg); color: var(--table-group-fg); border: 0; border-bottom: 1px solid var(--line); }
+.table-frame > table > thead tr.column-groups th.group-location { background: var(--chrome-bg); color: var(--chrome-fg); border-bottom: 2px solid var(--brand-orange); }
+
+/* 機能列の凡例。ピルは判定列と同じ .flag-yes / .flag-no。 */
+.feature-legend-host[hidden] { display: none; }
+.feature-legend { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+
+/* 機能の列ピッカー。並べ替え UI と同じ行に置き、狭い幅では折り返す。 */
+.feature-picker { position: relative; }
+.feature-picker[hidden] { display: none; }
+.feature-picker > summary { cursor: pointer; list-style: none; border: 1px solid var(--line); border-radius: 6px; padding: 7px 10px; background: var(--bg-panel); color: var(--fg); }
+.feature-picker > summary::-webkit-details-marker { display: none; }
+.feature-picker-menu { position: absolute; right: 0; z-index: 20; margin-top: 4px; min-width: 240px; max-width: min(320px, 90vw); max-height: 60vh; overflow-y: auto; padding: 8px; background: var(--bg-panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--panel-shadow); }
+.feature-picker-list { display: grid; gap: 4px; margin-bottom: 8px; }
+.feature-picker-option { display: flex; gap: 6px; align-items: center; color: var(--fg); }

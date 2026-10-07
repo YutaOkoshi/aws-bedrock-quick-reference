@@ -37,6 +37,7 @@ export const ja = {
     notes: "備考",
     mantle: "Mantle",
     legacyTag: "旧版",
+    group: { model: "モデル", location: "推論が実行される場所", price: "価格 · USD" },
   },
   // AC-011: 列挙子を出さず、その言語の平易な語に置き換える。
   modality: {
@@ -149,6 +150,36 @@ export const ja = {
       priority: "優先",
       flex: "Flex",
     },
+  },
+  // FEATURE-001: 機能 (Capabilities and Features)。機能名そのものは docs の英語名のまま出すので辞書に置かない。
+  feature: {
+    heading: "機能（Capabilities and Features）",
+    nameColumn: "機能",
+    itemColumn: "項目",
+    valueColumn: "値",
+    caching: {
+      explicit: "Explicit Prompt Caching の対応",
+      minTokens: "チェックポイントあたりの最小トークン数",
+      maxCheckpoints: "1 リクエストあたりの最大チェックポイント数",
+      ttl: "対応する TTL",
+      fields: "チェックポイントを置けるフィールド",
+    },
+    cardLink: "公式 docs のモデルカード",
+    none: "公式 docs のモデルカードに機能の記載がありません",
+    pickerLabel: "機能の列 ({count})",
+    pickerGroup: "表に出す機能の列",
+    pickerReset: "既定に戻す",
+    sideAria: "{endpoint}: {state}",
+    legend: {
+      prefix: "機能: ",
+      yes: " = 公式 docs のモデルカードに対応と明記 / ",
+      no: " = 非対応と明記 / ",
+      none: "— = 記載なし（その接続先の表が無い、または一覧に載っていない）",
+    },
+    mark: { yes: "対応", no: "非対応" },
+    state: { yes: "対応", no: "非対応", none: "記載なし" },
+    fetchedAt: "機能表の取得日: {date}",
+    sourceLabel: "公式 docs のモデルカード (Capabilities and Features)",
   },
   copy: {
     action: "コピー",
