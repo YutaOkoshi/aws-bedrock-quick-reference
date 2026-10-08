@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-20T15:12:31.337Z",
-  "accountKind": "sandbox-readonly",
+  "generatedAt": "2026-10-07T09:36:03.833Z",
+  "accountKind": "sandbox",
   "regions": {
     "af-south-1": {
       "status": "denied",
@@ -12,23 +12,23 @@
     },
     "ap-northeast-1": {
       "status": "ok",
-      "models": 69,
-      "profiles": 35
+      "models": 77,
+      "profiles": 45
     },
     "ap-northeast-2": {
       "status": "ok",
-      "models": 31,
-      "profiles": 30
+      "models": 40,
+      "profiles": 39
     },
     "ap-northeast-3": {
       "status": "ok",
-      "models": 22,
-      "profiles": 26
+      "models": 31,
+      "profiles": 36
     },
     "ap-south-1": {
       "status": "ok",
-      "models": 76,
-      "profiles": 31
+      "models": 85,
+      "profiles": 44
     },
     "ap-south-2": {
       "status": "denied",
@@ -36,13 +36,13 @@
     },
     "ap-southeast-1": {
       "status": "ok",
-      "models": 32,
-      "profiles": 28
+      "models": 41,
+      "profiles": 37
     },
     "ap-southeast-2": {
       "status": "ok",
-      "models": 68,
-      "profiles": 36
+      "models": 77,
+      "profiles": 46
     },
     "ap-southeast-3": {
       "status": "denied",
@@ -66,8 +66,8 @@
     },
     "ca-central-1": {
       "status": "ok",
-      "models": 37,
-      "profiles": 39
+      "models": 46,
+      "profiles": 56
     },
     "ca-west-1": {
       "status": "denied",
@@ -75,8 +75,8 @@
     },
     "eu-central-1": {
       "status": "ok",
-      "models": 44,
-      "profiles": 41
+      "models": 53,
+      "profiles": 52
     },
     "eu-central-2": {
       "status": "denied",
@@ -84,8 +84,8 @@
     },
     "eu-north-1": {
       "status": "ok",
-      "models": 43,
-      "profiles": 37
+      "models": 53,
+      "profiles": 48
     },
     "eu-south-1": {
       "status": "denied",
@@ -97,18 +97,18 @@
     },
     "eu-west-1": {
       "status": "ok",
-      "models": 63,
-      "profiles": 44
+      "models": 70,
+      "profiles": 55
     },
     "eu-west-2": {
       "status": "ok",
-      "models": 73,
-      "profiles": 31
+      "models": 82,
+      "profiles": 42
     },
     "eu-west-3": {
       "status": "ok",
-      "models": 33,
-      "profiles": 41
+      "models": 42,
+      "profiles": 52
     },
     "il-central-1": {
       "status": "denied",
@@ -128,28 +128,28 @@
     },
     "sa-east-1": {
       "status": "ok",
-      "models": 63,
-      "profiles": 19
+      "models": 72,
+      "profiles": 28
     },
     "us-east-1": {
       "status": "ok",
-      "models": 115,
-      "profiles": 77
+      "models": 122,
+      "profiles": 95
     },
     "us-east-2": {
       "status": "ok",
-      "models": 86,
-      "profiles": 75
+      "models": 95,
+      "profiles": 93
     },
     "us-west-1": {
       "status": "ok",
-      "models": 33,
-      "profiles": 47
+      "models": 42,
+      "profiles": 65
     },
     "us-west-2": {
       "status": "ok",
-      "models": 109,
-      "profiles": 75
+      "models": 119,
+      "profiles": 93
     }
   }
 }

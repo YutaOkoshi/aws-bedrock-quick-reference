@@ -35,6 +35,35 @@
       ]
     }
   },
+  "amazon.nova-2-5-sonic": {
+    "provider": "Amazon",
+    "name": "Nova 2.5 Sonic",
+    "input": [
+      "SPEECH",
+      "TEXT"
+    ],
+    "output": [
+      "SPEECH",
+      "TEXT"
+    ],
+    "streaming": true,
+    "lifecycle": "ACTIVE",
+    "releasedAt": "2026-09-11T00:00:00.000Z",
+    "availability": {
+      "ap-northeast-1": [
+        "ON_DEMAND"
+      ],
+      "eu-north-1": [
+        "ON_DEMAND"
+      ],
+      "us-east-1": [
+        "ON_DEMAND"
+      ],
+      "us-west-2": [
+        "ON_DEMAND"
+      ]
+    }
+  },
   "amazon.nova-2-lite-v1:0": {
     "provider": "Amazon",
     "name": "Nova 2 Lite",
@@ -163,32 +192,6 @@
       ],
       "us-west-2": [
         "ON_DEMAND"
-      ]
-    }
-  },
-  "amazon.nova-canvas-v1:0": {
-    "provider": "Amazon",
-    "name": "Nova Canvas",
-    "input": [
-      "TEXT",
-      "IMAGE"
-    ],
-    "output": [
-      "IMAGE"
-    ],
-    "streaming": false,
-    "lifecycle": "LEGACY",
-    "releasedAt": "2024-12-03T08:00:00.000Z",
-    "availability": {
-      "ap-northeast-1": [
-        "ON_DEMAND"
-      ],
-      "eu-west-1": [
-        "ON_DEMAND"
-      ],
-      "us-east-1": [
-        "ON_DEMAND",
-        "PROVISIONED"
       ]
     }
   },
@@ -496,50 +499,6 @@
       ],
       "us-east-1": [
         "PROVISIONED"
-      ]
-    }
-  },
-  "amazon.nova-reel-v1:0": {
-    "provider": "Amazon",
-    "name": "Nova Reel",
-    "input": [
-      "TEXT",
-      "IMAGE"
-    ],
-    "output": [
-      "VIDEO"
-    ],
-    "streaming": false,
-    "lifecycle": "LEGACY",
-    "releasedAt": "2024-12-03T08:00:00.000Z",
-    "availability": {
-      "ap-northeast-1": [
-        "ON_DEMAND"
-      ],
-      "eu-west-1": [
-        "ON_DEMAND"
-      ],
-      "us-east-1": [
-        "ON_DEMAND"
-      ]
-    }
-  },
-  "amazon.nova-reel-v1:1": {
-    "provider": "Amazon",
-    "name": "Nova Reel",
-    "input": [
-      "TEXT",
-      "IMAGE"
-    ],
-    "output": [
-      "VIDEO"
-    ],
-    "streaming": false,
-    "lifecycle": "LEGACY",
-    "releasedAt": "2024-12-03T08:00:00.000Z",
-    "availability": {
-      "us-east-1": [
-        "ON_DEMAND"
       ]
     }
   },
@@ -1530,6 +1489,7 @@
         "INFERENCE_PROFILE"
       ],
       "ap-northeast-2": [
+        "ON_DEMAND",
         "INFERENCE_PROFILE"
       ],
       "ap-northeast-3": [
@@ -1557,6 +1517,74 @@
         "INFERENCE_PROFILE"
       ],
       "eu-west-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-3": [
+        "INFERENCE_PROFILE"
+      ],
+      "sa-east-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-east-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-east-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-west-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-west-2": [
+        "INFERENCE_PROFILE"
+      ]
+    }
+  },
+  "anthropic.claude-opus-5-5": {
+    "provider": "Anthropic",
+    "name": "Claude Opus 5.5",
+    "input": [
+      "TEXT",
+      "IMAGE"
+    ],
+    "output": [
+      "TEXT"
+    ],
+    "streaming": true,
+    "lifecycle": "ACTIVE",
+    "releasedAt": "2026-09-22T10:00:00.000Z",
+    "availability": {
+      "ap-northeast-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-northeast-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-northeast-3": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-south-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-southeast-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-southeast-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "ca-central-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-central-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-north-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-2": [
+        "ON_DEMAND",
         "INFERENCE_PROFILE"
       ],
       "eu-west-3": [
@@ -1819,6 +1847,76 @@
     "streaming": true,
     "lifecycle": "ACTIVE",
     "releasedAt": "2026-06-30T10:00:00.000Z",
+    "availability": {
+      "ap-northeast-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-northeast-2": [
+        "ON_DEMAND",
+        "INFERENCE_PROFILE"
+      ],
+      "ap-northeast-3": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-south-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-southeast-1": [
+        "ON_DEMAND",
+        "INFERENCE_PROFILE"
+      ],
+      "ap-southeast-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "ca-central-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-central-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-north-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-2": [
+        "ON_DEMAND",
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-3": [
+        "INFERENCE_PROFILE"
+      ],
+      "sa-east-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-east-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-east-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-west-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-west-2": [
+        "INFERENCE_PROFILE"
+      ]
+    }
+  },
+  "anthropic.claude-sonnet-5-5": {
+    "provider": "Anthropic",
+    "name": "Claude Sonnet 5.5",
+    "input": [
+      "TEXT",
+      "IMAGE"
+    ],
+    "output": [
+      "TEXT"
+    ],
+    "streaming": true,
+    "lifecycle": "ACTIVE",
+    "releasedAt": "2026-09-28T10:00:00.000Z",
     "availability": {
       "ap-northeast-1": [
         "INFERENCE_PROFILE"
@@ -3698,6 +3796,140 @@
       ]
     }
   },
+  "openai.gpt-5.4": {
+    "provider": "OpenAI",
+    "name": "GPT 5.4",
+    "input": [
+      "TEXT",
+      "IMAGE"
+    ],
+    "output": [
+      "TEXT"
+    ],
+    "streaming": true,
+    "lifecycle": "ACTIVE",
+    "releasedAt": "2026-04-30T00:00:00.000Z",
+    "availability": {
+      "ap-northeast-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-northeast-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-northeast-3": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-south-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-southeast-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-southeast-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "ca-central-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-central-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-north-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-3": [
+        "INFERENCE_PROFILE"
+      ],
+      "sa-east-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-east-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-east-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-west-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-west-2": [
+        "INFERENCE_PROFILE"
+      ]
+    }
+  },
+  "openai.gpt-5.5": {
+    "provider": "OpenAI",
+    "name": "GPT 5.5",
+    "input": [
+      "TEXT",
+      "IMAGE"
+    ],
+    "output": [
+      "TEXT"
+    ],
+    "streaming": true,
+    "lifecycle": "ACTIVE",
+    "releasedAt": "2026-05-21T00:00:00.000Z",
+    "availability": {
+      "ap-northeast-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-northeast-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-northeast-3": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-south-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-southeast-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-southeast-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "ca-central-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-central-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-north-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-3": [
+        "INFERENCE_PROFILE"
+      ],
+      "sa-east-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-east-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-east-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-west-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-west-2": [
+        "INFERENCE_PROFILE"
+      ]
+    }
+  },
   "openai.gpt-5.6-luna": {
     "provider": "OpenAI",
     "name": "GPT-5.6 Luna",
@@ -3912,6 +4144,207 @@
     "streaming": true,
     "lifecycle": "ACTIVE",
     "releasedAt": "2026-09-08T17:00:00.000Z",
+    "availability": {
+      "ap-northeast-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-northeast-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-northeast-3": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-south-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-southeast-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-southeast-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "ca-central-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-central-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-north-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-3": [
+        "INFERENCE_PROFILE"
+      ],
+      "sa-east-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-east-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-east-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-west-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-west-2": [
+        "INFERENCE_PROFILE"
+      ]
+    }
+  },
+  "openai.gpt-6-luna": {
+    "provider": "OpenAI",
+    "name": "GPT-6 Luna",
+    "input": [
+      "TEXT",
+      "IMAGE"
+    ],
+    "output": [
+      "TEXT"
+    ],
+    "streaming": true,
+    "lifecycle": "ACTIVE",
+    "releasedAt": "2026-09-22T17:00:00.000Z",
+    "availability": {
+      "ap-northeast-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-northeast-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-northeast-3": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-south-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-southeast-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-southeast-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "ca-central-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-central-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-north-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-3": [
+        "INFERENCE_PROFILE"
+      ],
+      "sa-east-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-east-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-east-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-west-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-west-2": [
+        "INFERENCE_PROFILE"
+      ]
+    }
+  },
+  "openai.gpt-6-sol": {
+    "provider": "OpenAI",
+    "name": "GPT-6 Sol",
+    "input": [
+      "TEXT",
+      "IMAGE"
+    ],
+    "output": [
+      "TEXT"
+    ],
+    "streaming": true,
+    "lifecycle": "ACTIVE",
+    "releasedAt": "2026-09-22T17:00:00.000Z",
+    "availability": {
+      "ap-northeast-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-northeast-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-northeast-3": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-south-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-southeast-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-southeast-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "ca-central-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-central-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-north-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-3": [
+        "INFERENCE_PROFILE"
+      ],
+      "sa-east-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-east-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-east-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-west-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-west-2": [
+        "INFERENCE_PROFILE"
+      ]
+    }
+  },
+  "openai.gpt-6.1-sol": {
+    "provider": "OpenAI",
+    "name": "GPT-6.1 Sol",
+    "input": [
+      "TEXT",
+      "IMAGE"
+    ],
+    "output": [
+      "TEXT"
+    ],
+    "streaming": true,
+    "lifecycle": "ACTIVE",
+    "releasedAt": "2026-10-15T10:00:00.000Z",
     "availability": {
       "ap-northeast-1": [
         "INFERENCE_PROFILE"
@@ -5076,6 +5509,73 @@
       ]
     }
   },
+  "xai.grok-4.7": {
+    "provider": "xAI",
+    "name": "Grok 4.7",
+    "input": [
+      "TEXT",
+      "IMAGE"
+    ],
+    "output": [
+      "TEXT"
+    ],
+    "streaming": true,
+    "lifecycle": "ACTIVE",
+    "releasedAt": "2026-09-28T17:00:00.000Z",
+    "availability": {
+      "ap-northeast-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-northeast-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-northeast-3": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-south-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-southeast-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-southeast-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "ca-central-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-central-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-north-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-3": [
+        "INFERENCE_PROFILE"
+      ],
+      "sa-east-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-east-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-east-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-west-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-west-2": [
+        "INFERENCE_PROFILE"
+      ]
+    }
+  },
   "zai.glm-4.7": {
     "provider": "Z.AI",
     "name": "GLM 4.7",
@@ -5205,6 +5705,72 @@
       ],
       "us-west-2": [
         "ON_DEMAND"
+      ]
+    }
+  },
+  "zai.glm-5.3": {
+    "provider": "Z.AI",
+    "name": "GLM 5.3",
+    "input": [
+      "TEXT"
+    ],
+    "output": [
+      "TEXT"
+    ],
+    "streaming": true,
+    "lifecycle": "ACTIVE",
+    "releasedAt": "2026-09-29T10:00:00.000Z",
+    "availability": {
+      "ap-northeast-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-northeast-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-northeast-3": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-south-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-southeast-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-southeast-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "ca-central-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-central-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-north-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-3": [
+        "INFERENCE_PROFILE"
+      ],
+      "sa-east-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-east-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-east-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-west-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-west-2": [
+        "INFERENCE_PROFILE"
       ]
     }
   }

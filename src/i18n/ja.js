@@ -121,11 +121,11 @@ export const ja = {
 
     "shortContext": "入力 {count} tokens 以下",
     "longContext": "入力 {count} tokens 超",
+    "longContextTier": "長文コンテキスト",
     "units": {"image": "画像", "second": "秒", "request": "リクエスト", "searchUnit": "検索単位"},
 
     unrecorded: "価格未収録",
     referenceRegion: "参考: {region}",
-    modelCardSource: "AWS公式情報による補完価格（確認: {date}）",
     inputColumn: "入力単価",
     outputColumn: "出力単価",
     heading: "価格",

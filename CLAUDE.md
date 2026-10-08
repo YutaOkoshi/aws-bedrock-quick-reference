@@ -135,6 +135,9 @@ node scripts/fetch-bedrock-prices.mjs
   `AmazonBedrockFoundationModels` の `1M tokens` はそのまま
 - 取り込むのは 2 offer (`AmazonBedrock` / `AmazonBedrockFoundationModels`)。
   `AmazonBedrockService` と `AmazonBedrockAgentCore` はトークン単価を持たないので対象外
+- **価格は Price List の値だけを使う。手書きの補完 JSON は作らない**。載っていないモデルは「価格未収録」のままにし、
+  なぜ無いかは生 JSON の全文検索で確かめる (Marketplace 製品は掲載が遅れることがある)。Mantle の SKU は
+  通常の SKU が無い軸だけ使い、`long_ctx` は `longContext` として読む (spec-price.md の「Price List の書き方の揺れ」)
 
 #### price-model-map.json を直すとき
 

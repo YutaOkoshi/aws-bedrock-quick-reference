@@ -8,7 +8,6 @@
 //
 // --regions を省くと data/fetch-log.json の status: "ok" のリージョン全件。
 
-import { applyPriceSupplements } from "./lib/price-supplements.mjs";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -148,11 +147,6 @@ async function main(argv) {
     map,
     generatedAt: new Date().toISOString(),
   });
-
-  const supplementPath = join(dataDir, "price-supplements.json");
-  if (existsSync(supplementPath)) {
-    applyPriceSupplements(prices, readJson(join(dataDir, "profiles.json")), readJson(supplementPath));
-  }
 
   // 未マッピングの SKU はメンテナが地図を足すための材料。生データ側に残す (AC-006)。
   mkdirSync(rawDir, { recursive: true });

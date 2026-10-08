@@ -18,6 +18,10 @@ it('shows Kimi K3 as Global-only in Tokyo with sourced prices and release date',
 });
 it('uses the API US Geo destinations and newest ordering',()=>{
   expect(profiles['us.moonshotai.kimi-k3'].sources['us-east-1']).toEqual(['us-east-1','us-east-2','us-west-2']);
+  // 新しいモデルが増えると先頭は入れ替わるので、Kimi K3 より新しいものだけが前に来ることを確かめる
   const rows=Object.entries(models).map(([modelId,model])=>({...model,modelId}));
-  expect(orderRows(rows,{sort:'newest'})[0].modelId).toBe(modelId);
+  const ordered=orderRows(rows,{sort:'newest'});
+  const kimiAt=ordered.findIndex(row=>row.modelId===modelId);
+  const newer=rows.filter(row=>row.releasedAt>models[modelId].releasedAt).length;
+  expect(kimiAt).toBe(newer);
 });

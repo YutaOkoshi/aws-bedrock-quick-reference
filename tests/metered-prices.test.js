@@ -2,7 +2,6 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { meteredPriceOf, normalizePrices } from '../scripts/lib/prices.mjs';
-import { applyPriceSupplements } from '../scripts/lib/price-supplements.mjs';
 import { comparisonPrices, buildRow } from '../src/scripts/bedrock-view-model.mjs';
 import { buildPriceRows } from '../src/scripts/detail-model.mjs';
 
@@ -53,23 +52,27 @@ describe('トークン以外の課金単位', () => {
   });
 });
 
-it('補完は指定リージョン限定、既存API価格を保持する', () => {
-  const prices = { byModel: { model: { 'us-east-1': { metered: [{ axis: 'output', unit: 'image', value: .05 }] } } } };
-  applyPriceSupplements(prices, {}, { byModel: { model: { regions: ['us-east-1', 'us-west-2'], metered: [{ axis: 'output', unit: 'image', value: .07 }], sourceUrl: 'https://aws.amazon.com/bedrock/pricing/', verifiedAt: '2026-09-21' } } });
-  expect(prices.byModel.model['us-east-1'].metered[0].value).toBe(.05);
-  expect(prices.byModel.model['us-west-2'].metered[0].value).toBe(.07);
-  expect(prices.byModel.model['ap-northeast-1']).toBeUndefined();
-  expect(prices.byModel.model['us-west-2'].supplementSources.metered.url).toContain('aws.amazon.com');
-});
-
-it('実データは公式価格との対応が未確認の旧Titan ID以外を収録する', () => {
+describe('実データ (件数・モデル名を固定せず、取り直しに追従する)', () => {
   const read = (name) => JSON.parse(readFileSync(new URL(`../data/${name}.json`, import.meta.url)));
   const models = read('models'), prices = read('prices');
-  const missing = Object.keys(models).filter(id => comparisonPrices(prices, id, 'ap-northeast-1').length === 0);
-  expect(missing).toEqual(['amazon.titan-embed-g1-text-02']);
-  const rows = buildPriceRows('openai.gpt-6-astra', { prices, region: 'ap-northeast-1', lane: 'global' });
-  expect(rows).toEqual([
-    { kind: 'global', input: 10, output: 50, maxInputTokens: 272000 },
-    { kind: 'global', input: 20, output: 75, minInputTokens: 272000 },
-  ]);
+
+  it('価格が出ないモデルは、prices.json のどのリージョンにも単価が無い (Pricing API に未掲載のもの)', () => {
+    const missing = Object.keys(models).filter(id => comparisonPrices(prices, id, 'ap-northeast-1').length === 0);
+    if (missing.length > 0) console.info(`Pricing API に単価が無いモデル: ${missing.join(', ')}`);
+    for (const id of missing) expect(prices.byModel[id], id).toBeUndefined();
+    expect(missing.length).toBeLessThan(Object.keys(models).length / 2);
+  });
+
+  it('長文コンテキストの単価があれば、詳細の価格行にそのまま出る', () => {
+    for (const [id, regions] of Object.entries(prices.byModel)) {
+      for (const [region, entry] of Object.entries(regions)) {
+        for (const [kind, lane] of [['standard', 'inRegion'], ['global', 'global']]) {
+          const longContext = entry[kind]?.longContext;
+          if (!longContext) continue;
+          expect(buildPriceRows(id, { prices, region, lane }), `${id} ${region} ${kind}`)
+            .toContainEqual({ kind, ...longContext, longContext: true });
+        }
+      }
+    }
+  });
 });

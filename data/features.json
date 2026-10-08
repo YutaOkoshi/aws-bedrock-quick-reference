@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-06T08:02:50.232Z",
+  "generatedAt": "2026-10-07T11:46:04.679Z",
   "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/toc-contents.json",
-  "cards": 134,
+  "cards": 133,
   "cardsWithFeatures": 118,
   "failedCards": 0,
   "features": {
@@ -820,6 +820,60 @@
         }
       ]
     },
+    "anthropic.claude-opus-5-5": {
+      "card": "model-card-anthropic-claude-opus-5-5.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": false,
+        "computerUse": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": true,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": false,
+        "computerUse": true,
+        "countTokens": true,
+        "guardrails": false,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "512",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes, 1 hour",
+        "fields": "system, messages, and tools",
+        "endpoints": [
+          "runtime",
+          "mantle"
+        ]
+      },
+      "computerUse": [
+        {
+          "toolType": "computer_20251124",
+          "betaHeader": "computer-use-2025-11-24"
+        }
+      ]
+    },
     "anthropic.claude-sonnet-4-20250514-v1:0": {
       "card": "model-card-anthropic-claude-sonnet-4.html",
       "runtime": {
@@ -1022,6 +1076,60 @@
       "promptCaching": {
         "explicit": true,
         "minTokens": "1,024",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes, 1 hour",
+        "fields": "system, messages, and tools",
+        "endpoints": [
+          "runtime",
+          "mantle"
+        ]
+      },
+      "computerUse": [
+        {
+          "toolType": "computer_20251124",
+          "betaHeader": "computer-use-2025-11-24"
+        }
+      ]
+    },
+    "anthropic.claude-sonnet-5-5": {
+      "card": "model-card-anthropic-claude-sonnet-5-5.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": false,
+        "computerUse": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": true,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": false,
+        "computerUse": true,
+        "countTokens": true,
+        "guardrails": false,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "512",
         "maxCheckpoints": "4",
         "ttl": "5 minutes, 1 hour",
         "fields": "system, messages, and tools",
@@ -2115,6 +2223,112 @@
       "promptCaching": null,
       "computerUse": null
     },
+    "openai.gpt-6-luna": {
+      "card": "model-card-openai-gpt-6-luna.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": true,
+        "serverToolCalling": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "promptRouting": false,
+        "applicationInferenceProfiles": true,
+        "invocationLogs": true,
+        "projectsDefaultOnly": true
+      },
+      "mantle": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": true,
+        "serverToolCalling": true,
+        "countTokens": false,
+        "guardrails": false,
+        "knowledgeBase": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "applicationInferenceProfiles": false,
+        "invocationLogs": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "openai.gpt-6-sol": {
+      "card": "model-card-openai-gpt-6-sol.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": true,
+        "serverToolCalling": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "promptRouting": false,
+        "applicationInferenceProfiles": true,
+        "invocationLogs": true,
+        "projectsDefaultOnly": true
+      },
+      "mantle": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": true,
+        "serverToolCalling": true,
+        "countTokens": false,
+        "guardrails": false,
+        "knowledgeBase": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "applicationInferenceProfiles": false,
+        "invocationLogs": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "openai.gpt-6.1-sol": {
+      "card": "model-card-openai-gpt-6-1-sol.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": true,
+        "serverSystemTools": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "applicationInferenceProfiles": true,
+        "invocationLogs": true,
+        "projectsDefaultOnly": true
+      },
+      "mantle": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": true,
+        "serverSystemTools": false,
+        "countTokens": false,
+        "guardrails": false,
+        "knowledgeBase": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "applicationInferenceProfiles": false,
+        "invocationLogs": false,
+        "projects": true
+      },
+      "promptCaching": null,
+      "computerUse": null
+    },
     "openai.gpt-oss-120b-1:0": {
       "card": "model-card-openai-gpt-oss-120b.html",
       "runtime": {
@@ -2757,6 +2971,25 @@
       "promptCaching": null,
       "computerUse": null
     },
+    "xai.grok-4.7": {
+      "card": "model-card-xai-grok-4-7.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "structuredOutputs": true,
+        "serverToolCalling": false,
+        "reasoning": true,
+        "countTokens": false,
+        "guardrails": true,
+        "promptRouting": false,
+        "applicationInferenceProfiles": true,
+        "invocationLogs": true,
+        "projectsDefaultOnly": true
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
     "zai.glm-4.7": {
       "card": "model-card-zai-glm-4-7.html",
       "runtime": {
@@ -2828,6 +3061,37 @@
       },
       "promptCaching": null,
       "computerUse": null
+    },
+    "zai.glm-5.3": {
+      "card": "model-card-zai-glm-5-3.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": null,
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "1,024",
+        "maxCheckpoints": null,
+        "ttl": "At least 30 minutes",
+        "fields": null,
+        "endpoints": [
+          "runtime"
+        ]
+      },
+      "computerUse": null
     }
   },
   "unmatchedCards": [
@@ -2840,16 +3104,6 @@
       "card": "model-card-anthropic-claude-mythos-5.html",
       "modelId": null,
       "reason": "no-runtime-id"
-    },
-    {
-      "card": "model-card-anthropic-claude-opus-5-5.html",
-      "modelId": "anthropic.claude-opus-5-5",
-      "reason": "not-found"
-    },
-    {
-      "card": "model-card-anthropic-claude-sonnet-5-5.html",
-      "modelId": "anthropic.claude-sonnet-5-5",
-      "reason": "not-found"
     },
     {
       "card": "model-card-cohere-command-r-plus.html",
@@ -2917,21 +3171,6 @@
       "reason": "no-runtime-id"
     },
     {
-      "card": "model-card-openai-gpt-6-1-sol.html",
-      "modelId": "openai.gpt-6.1-sol",
-      "reason": "not-found"
-    },
-    {
-      "card": "model-card-openai-gpt-6-luna.html",
-      "modelId": "openai.gpt-6-luna",
-      "reason": "not-found"
-    },
-    {
-      "card": "model-card-openai-gpt-6-sol.html",
-      "modelId": "openai.gpt-6-sol",
-      "reason": "not-found"
-    },
-    {
       "card": "model-card-openai-gpt-daybreak-blue-56-sol.html",
       "modelId": null,
       "reason": "no-runtime-id"
@@ -2940,16 +3179,6 @@
       "card": "model-card-xai-grok-4-3.html",
       "modelId": null,
       "reason": "no-runtime-id"
-    },
-    {
-      "card": "model-card-xai-grok-4-7.html",
-      "modelId": "xai.grok-4.7",
-      "reason": "not-found"
-    },
-    {
-      "card": "model-card-zai-glm-5-3.html",
-      "modelId": "zai.glm-5.3",
-      "reason": "not-found"
     }
   ],
   "unknownFeatures": []

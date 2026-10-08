@@ -121,11 +121,11 @@ export const en = {
 
     "shortContext": "Input ≤ {count} tokens",
     "longContext": "Input > {count} tokens",
+    "longContextTier": "long context",
     "units": {"image": "image", "second": "second", "request": "request", "searchUnit": "search unit"},
 
     unrecorded: "Price not recorded",
     referenceRegion: "Reference: {region}",
-    modelCardSource: "Supplemental AWS price (verified: {date})",
     inputColumn: "Input price",
     outputColumn: "Output price",
     heading: "Pricing",

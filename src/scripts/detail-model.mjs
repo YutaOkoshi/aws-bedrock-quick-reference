@@ -45,7 +45,10 @@ export function buildPriceRows(modelId, { prices, region, lane = LANE_IN_REGION 
       ...(entry[kind]?.maxInputTokens ? { maxInputTokens: entry[kind].maxInputTokens } : {}),
     }));
   for (const kind of kinds) {
-    if (entry[kind]?.longContext) rows.push({ kind, ...entry[kind].longContext, minInputTokens: entry[kind].maxInputTokens });
+    // 長文コンテキストの単価。境界のトークン数は価格表に無いので、あるときだけ添える。
+    if (entry[kind]?.longContext) {
+      rows.push({ kind, ...entry[kind].longContext, longContext: true, ...(entry[kind].maxInputTokens ? { minInputTokens: entry[kind].maxInputTokens } : {}) });
+    }
   }
   for (const rate of entry.metered ?? []) {
     if ((rate.scope ?? "standard") !== (lane === LANE_GLOBAL ? "global" : "standard")) continue;

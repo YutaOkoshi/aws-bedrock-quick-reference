@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-21T08:02:17.258Z",
-  "publicationDate": "2026-09-17T23:16:09Z",
+  "generatedAt": "2026-10-07T14:44:56.232Z",
+  "publicationDate": "2026-10-06T14:47:26Z",
   "source": {
     "index": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/index.json",
     "offers": {
@@ -9,7 +9,7 @@
     }
   },
   "unmapped": 0,
-  "outOfScope": 6194,
+  "outOfScope": 2947,
   "ignored": 513,
   "byModel": {
     "ai21.jamba-1-5-large-v1:0": {
@@ -37,6 +37,32 @@
         "standard": {
           "input": 0.2,
           "output": 0.4
+        }
+      }
+    },
+    "amazon.nova-2-5-sonic": {
+      "ap-northeast-1": {
+        "standard": {
+          "input": 0.396,
+          "output": 3.311
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 0.363,
+          "output": 2.992
+        }
+      },
+      "us-east-1": {
+        "standard": {
+          "input": 0.33,
+          "output": 2.75
+        }
+      },
+      "us-west-2": {
+        "standard": {
+          "input": 0.319,
+          "output": 2.651
         }
       }
     },
@@ -5323,9 +5349,23 @@
         }
       },
       "ap-south-1": {
+        "standard": {
+          "input": 1.1,
+          "output": 5.5
+        },
         "global": {
           "input": 1,
           "output": 5
+        },
+        "batch": {
+          "input": 0.55,
+          "output": 2.75
+        },
+        "cacheRead": {
+          "input": 0.11
+        },
+        "cacheWrite": {
+          "input": 1.375
         }
       },
       "ap-southeast-1": {
@@ -6559,9 +6599,23 @@
         }
       },
       "ap-northeast-2": {
+        "standard": {
+          "input": 5.5,
+          "output": 27.5
+        },
         "global": {
           "input": 5,
           "output": 25
+        },
+        "batch": {
+          "input": 2.75,
+          "output": 13.75
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "cacheWrite": {
+          "input": 6.875
         }
       },
       "ap-northeast-3": {
@@ -6585,9 +6639,23 @@
         }
       },
       "ap-south-1": {
+        "standard": {
+          "input": 5.5,
+          "output": 27.5
+        },
         "global": {
           "input": 5,
           "output": 25
+        },
+        "batch": {
+          "input": 2.75,
+          "output": 13.75
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "cacheWrite": {
+          "input": 6.875
         }
       },
       "ap-southeast-1": {
@@ -6820,6 +6888,240 @@
         },
         "cacheWrite": {
           "input": 6.875
+        }
+      }
+    },
+    "anthropic.claude-opus-5-5": {
+      "ap-northeast-1": {
+        "standard": {
+          "input": 4.4,
+          "output": 22
+        },
+        "global": {
+          "input": 4,
+          "output": 20
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 5.5
+        }
+      },
+      "ap-northeast-2": {
+        "global": {
+          "input": 4,
+          "output": 20
+        }
+      },
+      "ap-northeast-3": {
+        "standard": {
+          "input": 4.4,
+          "output": 22
+        },
+        "global": {
+          "input": 4,
+          "output": 20
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 5.5
+        }
+      },
+      "ap-south-1": {
+        "global": {
+          "input": 4,
+          "output": 20
+        }
+      },
+      "ap-southeast-1": {
+        "global": {
+          "input": 4,
+          "output": 20
+        }
+      },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 4.4,
+          "output": 22
+        },
+        "global": {
+          "input": 4,
+          "output": 20
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 5.5
+        }
+      },
+      "ca-central-1": {
+        "standard": {
+          "input": 4.4,
+          "output": 22
+        },
+        "global": {
+          "input": 4,
+          "output": 20
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 5.5
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 4.4,
+          "output": 22
+        },
+        "global": {
+          "input": 4,
+          "output": 20
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 5.5
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 4.4,
+          "output": 22
+        },
+        "global": {
+          "input": 4,
+          "output": 20
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 5.5
+        }
+      },
+      "eu-west-1": {
+        "standard": {
+          "input": 4.4,
+          "output": 22
+        },
+        "global": {
+          "input": 4,
+          "output": 20
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 5.5
+        }
+      },
+      "eu-west-2": {
+        "standard": {
+          "input": 4.4,
+          "output": 22
+        },
+        "global": {
+          "input": 4,
+          "output": 20
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 5.5
+        }
+      },
+      "eu-west-3": {
+        "standard": {
+          "input": 4.4,
+          "output": 22
+        },
+        "global": {
+          "input": 4,
+          "output": 20
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 5.5
+        }
+      },
+      "sa-east-1": {
+        "global": {
+          "input": 4,
+          "output": 20
+        }
+      },
+      "us-east-1": {
+        "standard": {
+          "input": 4.4,
+          "output": 22
+        },
+        "global": {
+          "input": 4,
+          "output": 20
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 5.5
+        }
+      },
+      "us-east-2": {
+        "standard": {
+          "input": 4.4,
+          "output": 22
+        },
+        "global": {
+          "input": 4,
+          "output": 20
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 5.5
+        }
+      },
+      "us-west-1": {
+        "standard": {
+          "input": 4.4,
+          "output": 22
+        },
+        "global": {
+          "input": 4,
+          "output": 20
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 5.5
+        }
+      },
+      "us-west-2": {
+        "standard": {
+          "input": 4.4,
+          "output": 22
+        },
+        "global": {
+          "input": 4,
+          "output": 20
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 5.5
         }
       }
     },
@@ -8091,9 +8393,19 @@
         }
       },
       "ap-northeast-2": {
+        "standard": {
+          "input": 2.2,
+          "output": 11
+        },
         "global": {
           "input": 2,
           "output": 10
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 2.75
         }
       },
       "ap-northeast-3": {
@@ -8110,6 +8422,228 @@
         },
         "cacheWrite": {
           "input": 2.75
+        }
+      },
+      "ap-south-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 2.75
+        }
+      },
+      "ap-southeast-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 2.75
+        }
+      },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 2.2,
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 2.75
+        }
+      },
+      "ca-central-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 2.75
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 2.75
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 2.75
+        }
+      },
+      "eu-west-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 2.75
+        }
+      },
+      "eu-west-2": {
+        "standard": {
+          "input": 2.2,
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 2.75
+        }
+      },
+      "eu-west-3": {
+        "standard": {
+          "input": 2.2,
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 2.75
+        }
+      },
+      "sa-east-1": {
+        "global": {
+          "input": 2,
+          "output": 10
+        }
+      },
+      "us-east-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 2.75
+        }
+      },
+      "us-east-2": {
+        "standard": {
+          "input": 2.2,
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 2.75
+        }
+      },
+      "us-west-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 2.75
+        }
+      },
+      "us-west-2": {
+        "standard": {
+          "input": 2.2,
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 2.75
+        }
+      }
+    },
+    "anthropic.claude-sonnet-5-5": {
+      "ap-northeast-2": {
+        "global": {
+          "input": 2,
+          "output": 10
         }
       },
       "ap-south-1": {
@@ -9188,6 +9722,42 @@
           "output": 0.988339
         }
       },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.5974,
+          "output": 1.7304
+        },
+        "batch": {
+          "input": 0.2987,
+          "output": 0.8652
+        },
+        "priority": {
+          "input": 1.04545,
+          "output": 3.0282
+        },
+        "flex": {
+          "input": 0.2987,
+          "output": 0.8652
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.696,
+          "output": 2.016
+        },
+        "batch": {
+          "input": 0.348,
+          "output": 1.008
+        },
+        "priority": {
+          "input": 1.218,
+          "output": 3.528
+        },
+        "flex": {
+          "input": 0.348,
+          "output": 1.008
+        }
+      },
       "eu-north-1": {
         "standard": {
           "input": 0.58,
@@ -9206,6 +9776,24 @@
           "output": 0.84
         }
       },
+      "eu-west-1": {
+        "standard": {
+          "input": 0.696,
+          "output": 2.016
+        },
+        "batch": {
+          "input": 0.348,
+          "output": 1.008
+        },
+        "priority": {
+          "input": 1.218,
+          "output": 3.528
+        },
+        "flex": {
+          "input": 0.348,
+          "output": 1.008
+        }
+      },
       "eu-west-2": {
         "standard": {
           "input": 0.899985,
@@ -9222,6 +9810,42 @@
         "flex": {
           "input": 0.449993,
           "output": 1.303427
+        }
+      },
+      "sa-east-1": {
+        "standard": {
+          "input": 0.696,
+          "output": 2.016
+        },
+        "batch": {
+          "input": 0.348,
+          "output": 1.008
+        },
+        "priority": {
+          "input": 1.218,
+          "output": 3.528
+        },
+        "flex": {
+          "input": 0.348,
+          "output": 1.008
+        }
+      },
+      "us-east-1": {
+        "standard": {
+          "input": 0.58,
+          "output": 1.68
+        },
+        "batch": {
+          "input": 0.29,
+          "output": 0.84
+        },
+        "priority": {
+          "input": 1.015,
+          "output": 2.94
+        },
+        "flex": {
+          "input": 0.29,
+          "output": 0.84
         }
       },
       "us-east-2": {
@@ -9498,6 +10122,60 @@
           "output": 0.17
         }
       },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.0927,
+          "output": 0.2987
+        },
+        "batch": {
+          "input": 0.04635,
+          "output": 0.14935
+        },
+        "priority": {
+          "input": 0.162225,
+          "output": 0.522725
+        },
+        "flex": {
+          "input": 0.04635,
+          "output": 0.14935
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.108,
+          "output": 0.348
+        },
+        "batch": {
+          "input": 0.054,
+          "output": 0.174
+        },
+        "priority": {
+          "input": 0.189,
+          "output": 0.609
+        },
+        "flex": {
+          "input": 0.054,
+          "output": 0.174
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 0.108,
+          "output": 0.348
+        },
+        "batch": {
+          "input": 0.054,
+          "output": 0.174
+        },
+        "priority": {
+          "input": 0.189,
+          "output": 0.609
+        },
+        "flex": {
+          "input": 0.054,
+          "output": 0.174
+        }
+      },
       "eu-west-1": {
         "standard": {
           "input": 0.11,
@@ -9644,6 +10322,60 @@
           "output": 0.22
         }
       },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.2369,
+          "output": 0.3914
+        },
+        "batch": {
+          "input": 0.11845,
+          "output": 0.1957
+        },
+        "priority": {
+          "input": 0.414575,
+          "output": 0.68495
+        },
+        "flex": {
+          "input": 0.11845,
+          "output": 0.1957
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.276,
+          "output": 0.456
+        },
+        "batch": {
+          "input": 0.138,
+          "output": 0.228
+        },
+        "priority": {
+          "input": 0.483,
+          "output": 0.798
+        },
+        "flex": {
+          "input": 0.138,
+          "output": 0.228
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 0.276,
+          "output": 0.456
+        },
+        "batch": {
+          "input": 0.138,
+          "output": 0.228
+        },
+        "priority": {
+          "input": 0.483,
+          "output": 0.798
+        },
+        "flex": {
+          "input": 0.138,
+          "output": 0.228
+        }
+      },
       "eu-west-1": {
         "standard": {
           "input": 0.27,
@@ -9788,6 +10520,60 @@
         "flex": {
           "input": 0.03,
           "output": 0.05
+        }
+      },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.0412,
+          "output": 0.0824
+        },
+        "batch": {
+          "input": 0.0206,
+          "output": 0.0412
+        },
+        "priority": {
+          "input": 0.0721,
+          "output": 0.1442
+        },
+        "flex": {
+          "input": 0.0206,
+          "output": 0.0412
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.048,
+          "output": 0.096
+        },
+        "batch": {
+          "input": 0.024,
+          "output": 0.048
+        },
+        "priority": {
+          "input": 0.084,
+          "output": 0.168
+        },
+        "flex": {
+          "input": 0.024,
+          "output": 0.048
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 0.048,
+          "output": 0.096
+        },
+        "batch": {
+          "input": 0.024,
+          "output": 0.048
+        },
+        "priority": {
+          "input": 0.084,
+          "output": 0.168
+        },
+        "flex": {
+          "input": 0.024,
+          "output": 0.048
         }
       },
       "eu-west-1": {
@@ -10474,6 +11260,60 @@
         "flex": {
           "input": 0.17,
           "output": 0.71
+        }
+      },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.309,
+          "output": 1.236
+        },
+        "batch": {
+          "input": 0.1545,
+          "output": 0.618
+        },
+        "priority": {
+          "input": 0.54075,
+          "output": 2.163
+        },
+        "flex": {
+          "input": 0.1545,
+          "output": 0.618
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.36,
+          "output": 1.44
+        },
+        "batch": {
+          "input": 0.18,
+          "output": 0.72
+        },
+        "priority": {
+          "input": 0.63,
+          "output": 2.52
+        },
+        "flex": {
+          "input": 0.18,
+          "output": 0.72
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 0.36,
+          "output": 1.44
+        },
+        "batch": {
+          "input": 0.18,
+          "output": 0.72
+        },
+        "priority": {
+          "input": 0.63,
+          "output": 2.52
+        },
+        "flex": {
+          "input": 0.18,
+          "output": 0.72
         }
       },
       "eu-west-1": {
@@ -11222,6 +12062,60 @@
           "output": 0.88
         }
       },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.515,
+          "output": 1.545
+        },
+        "batch": {
+          "input": 0.2575,
+          "output": 0.7725
+        },
+        "priority": {
+          "input": 0.90125,
+          "output": 2.70375
+        },
+        "flex": {
+          "input": 0.2575,
+          "output": 0.7725
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.6,
+          "output": 1.8
+        },
+        "batch": {
+          "input": 0.3,
+          "output": 0.9
+        },
+        "priority": {
+          "input": 1.05,
+          "output": 3.15
+        },
+        "flex": {
+          "input": 0.3,
+          "output": 0.9
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 0.6,
+          "output": 1.8
+        },
+        "batch": {
+          "input": 0.3,
+          "output": 0.9
+        },
+        "priority": {
+          "input": 1.05,
+          "output": 3.15
+        },
+        "flex": {
+          "input": 0.3,
+          "output": 0.9
+        }
+      },
       "eu-west-1": {
         "standard": {
           "input": 0.59,
@@ -11351,6 +12245,60 @@
         }
       },
       "ap-south-1": {
+        "standard": {
+          "input": 0.24,
+          "output": 0.24
+        },
+        "batch": {
+          "input": 0.12,
+          "output": 0.12
+        },
+        "priority": {
+          "input": 0.42,
+          "output": 0.42
+        },
+        "flex": {
+          "input": 0.12,
+          "output": 0.12
+        }
+      },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.206,
+          "output": 0.206
+        },
+        "batch": {
+          "input": 0.103,
+          "output": 0.103
+        },
+        "priority": {
+          "input": 0.3605,
+          "output": 0.3605
+        },
+        "flex": {
+          "input": 0.103,
+          "output": 0.103
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.24,
+          "output": 0.24
+        },
+        "batch": {
+          "input": 0.12,
+          "output": 0.12
+        },
+        "priority": {
+          "input": 0.42,
+          "output": 0.42
+        },
+        "flex": {
+          "input": 0.12,
+          "output": 0.12
+        }
+      },
+      "eu-north-1": {
         "standard": {
           "input": 0.24,
           "output": 0.24
@@ -11514,6 +12462,60 @@
           "output": 0.06
         }
       },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.103,
+          "output": 0.103
+        },
+        "batch": {
+          "input": 0.0515,
+          "output": 0.0515
+        },
+        "priority": {
+          "input": 0.18025,
+          "output": 0.18025
+        },
+        "flex": {
+          "input": 0.0515,
+          "output": 0.0515
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.12,
+          "output": 0.12
+        },
+        "batch": {
+          "input": 0.06,
+          "output": 0.06
+        },
+        "priority": {
+          "input": 0.21,
+          "output": 0.21
+        },
+        "flex": {
+          "input": 0.06,
+          "output": 0.06
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 0.12,
+          "output": 0.12
+        },
+        "batch": {
+          "input": 0.06,
+          "output": 0.06
+        },
+        "priority": {
+          "input": 0.21,
+          "output": 0.21
+        },
+        "flex": {
+          "input": 0.06,
+          "output": 0.06
+        }
+      },
       "eu-west-1": {
         "standard": {
           "input": 0.12,
@@ -11654,6 +12656,60 @@
         "priority": {
           "input": 0.32,
           "output": 0.32
+        },
+        "flex": {
+          "input": 0.09,
+          "output": 0.09
+        }
+      },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.1545,
+          "output": 0.1545
+        },
+        "batch": {
+          "input": 0.07725,
+          "output": 0.07725
+        },
+        "priority": {
+          "input": 0.270375,
+          "output": 0.270375
+        },
+        "flex": {
+          "input": 0.07725,
+          "output": 0.07725
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.18,
+          "output": 0.18
+        },
+        "batch": {
+          "input": 0.09,
+          "output": 0.09
+        },
+        "priority": {
+          "input": 0.315,
+          "output": 0.315
+        },
+        "flex": {
+          "input": 0.09,
+          "output": 0.09
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 0.18,
+          "output": 0.18
+        },
+        "batch": {
+          "input": 0.09,
+          "output": 0.09
+        },
+        "priority": {
+          "input": 0.315,
+          "output": 0.315
         },
         "flex": {
           "input": 0.09,
@@ -11930,6 +12986,96 @@
           "output": 0.88
         }
       },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.515,
+          "output": 1.545
+        },
+        "batch": {
+          "input": 0.2575,
+          "output": 0.7725
+        },
+        "priority": {
+          "input": 0.90125,
+          "output": 2.70375
+        },
+        "flex": {
+          "input": 0.2575,
+          "output": 0.7725
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.6,
+          "output": 1.8
+        },
+        "batch": {
+          "input": 0.3,
+          "output": 0.9
+        },
+        "priority": {
+          "input": 1.05,
+          "output": 3.15
+        },
+        "flex": {
+          "input": 0.3,
+          "output": 0.9
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 0.6,
+          "output": 1.8
+        },
+        "batch": {
+          "input": 0.3,
+          "output": 0.9
+        },
+        "priority": {
+          "input": 1.05,
+          "output": 3.15
+        },
+        "flex": {
+          "input": 0.3,
+          "output": 0.9
+        }
+      },
+      "eu-west-1": {
+        "standard": {
+          "input": 0.6,
+          "output": 1.8
+        },
+        "batch": {
+          "input": 0.3,
+          "output": 0.9
+        },
+        "priority": {
+          "input": 1.05,
+          "output": 3.15
+        },
+        "flex": {
+          "input": 0.3,
+          "output": 0.9
+        }
+      },
+      "eu-west-2": {
+        "standard": {
+          "input": 0.775,
+          "output": 2.325
+        },
+        "batch": {
+          "input": 0.3875,
+          "output": 1.1625
+        },
+        "priority": {
+          "input": 1.35625,
+          "output": 4.06875
+        },
+        "flex": {
+          "input": 0.3875,
+          "output": 1.1625
+        }
+      },
       "sa-east-1": {
         "standard": {
           "input": 0.61,
@@ -12152,6 +13298,60 @@
           "output": 0.03
         }
       },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.0412,
+          "output": 0.0412
+        },
+        "batch": {
+          "input": 0.0206,
+          "output": 0.0206
+        },
+        "priority": {
+          "input": 0.0721,
+          "output": 0.0721
+        },
+        "flex": {
+          "input": 0.0206,
+          "output": 0.0206
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.048,
+          "output": 0.048
+        },
+        "batch": {
+          "input": 0.024,
+          "output": 0.024
+        },
+        "priority": {
+          "input": 0.084,
+          "output": 0.084
+        },
+        "flex": {
+          "input": 0.024,
+          "output": 0.024
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 0.048,
+          "output": 0.048
+        },
+        "batch": {
+          "input": 0.024,
+          "output": 0.024
+        },
+        "priority": {
+          "input": 0.084,
+          "output": 0.084
+        },
+        "flex": {
+          "input": 0.024,
+          "output": 0.024
+        }
+      },
       "eu-west-1": {
         "standard": {
           "input": 0.05,
@@ -12298,6 +13498,60 @@
           "output": 0.17
         }
       },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.103,
+          "output": 0.309
+        },
+        "batch": {
+          "input": 0.0515,
+          "output": 0.1545
+        },
+        "priority": {
+          "input": 0.18025,
+          "output": 0.54075
+        },
+        "flex": {
+          "input": 0.0515,
+          "output": 0.1545
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.12,
+          "output": 0.36
+        },
+        "batch": {
+          "input": 0.06,
+          "output": 0.18
+        },
+        "priority": {
+          "input": 0.21,
+          "output": 0.63
+        },
+        "flex": {
+          "input": 0.06,
+          "output": 0.18
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 0.12,
+          "output": 0.36
+        },
+        "batch": {
+          "input": 0.06,
+          "output": 0.18
+        },
+        "priority": {
+          "input": 0.21,
+          "output": 0.63
+        },
+        "flex": {
+          "input": 0.06,
+          "output": 0.18
+        }
+      },
       "eu-west-1": {
         "standard": {
           "input": 0.12,
@@ -12442,6 +13696,96 @@
         "flex": {
           "input": 0.36,
           "output": 1.47
+        }
+      },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.618,
+          "output": 2.575
+        },
+        "batch": {
+          "input": 0.309,
+          "output": 1.2875
+        },
+        "priority": {
+          "input": 1.0815,
+          "output": 4.50625
+        },
+        "flex": {
+          "input": 0.309,
+          "output": 1.2875
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.72,
+          "output": 3
+        },
+        "batch": {
+          "input": 0.36,
+          "output": 1.5
+        },
+        "priority": {
+          "input": 1.26,
+          "output": 5.25
+        },
+        "flex": {
+          "input": 0.36,
+          "output": 1.5
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 0.72,
+          "output": 3
+        },
+        "batch": {
+          "input": 0.36,
+          "output": 1.5
+        },
+        "priority": {
+          "input": 1.26,
+          "output": 5.25
+        },
+        "flex": {
+          "input": 0.36,
+          "output": 1.5
+        }
+      },
+      "eu-west-1": {
+        "standard": {
+          "input": 0.72,
+          "output": 3
+        },
+        "batch": {
+          "input": 0.36,
+          "output": 1.5
+        },
+        "priority": {
+          "input": 1.26,
+          "output": 5.25
+        },
+        "flex": {
+          "input": 0.36,
+          "output": 1.5
+        }
+      },
+      "eu-west-2": {
+        "standard": {
+          "input": 0.93,
+          "output": 3.875
+        },
+        "batch": {
+          "input": 0.465,
+          "output": 1.9375
+        },
+        "priority": {
+          "input": 1.6275,
+          "output": 6.78125
+        },
+        "flex": {
+          "input": 0.465,
+          "output": 1.9375
         }
       },
       "sa-east-1": {
@@ -12717,6 +14061,484 @@
         }
       }
     },
+    "moonshotai.kimi-k3": {
+      "ap-northeast-1": {
+        "standard": {
+          "input": 3.3,
+          "output": 16.5
+        },
+        "global": {
+          "input": 3,
+          "output": 15
+        },
+        "batch": {
+          "input": 1.65,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.33
+        },
+        "cacheWrite": {
+          "input": 4.125
+        },
+        "priority": {
+          "input": 5.775,
+          "output": 28.875
+        },
+        "flex": {
+          "input": 1.65,
+          "output": 8.25
+        }
+      },
+      "ap-northeast-2": {
+        "standard": {
+          "input": 3.3,
+          "output": 16.5
+        },
+        "global": {
+          "input": 3,
+          "output": 15
+        },
+        "batch": {
+          "input": 1.65,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.33
+        },
+        "cacheWrite": {
+          "input": 4.125
+        },
+        "priority": {
+          "input": 5.775,
+          "output": 28.875
+        },
+        "flex": {
+          "input": 1.65,
+          "output": 8.25
+        }
+      },
+      "ap-northeast-3": {
+        "standard": {
+          "input": 3.3,
+          "output": 16.5
+        },
+        "global": {
+          "input": 3,
+          "output": 15
+        },
+        "batch": {
+          "input": 1.65,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.33
+        },
+        "cacheWrite": {
+          "input": 4.125
+        },
+        "priority": {
+          "input": 5.775,
+          "output": 28.875
+        },
+        "flex": {
+          "input": 1.65,
+          "output": 8.25
+        }
+      },
+      "ap-south-1": {
+        "standard": {
+          "input": 3.3,
+          "output": 16.5
+        },
+        "global": {
+          "input": 3,
+          "output": 15
+        },
+        "batch": {
+          "input": 1.65,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.33
+        },
+        "cacheWrite": {
+          "input": 4.125
+        },
+        "priority": {
+          "input": 5.775,
+          "output": 28.875
+        },
+        "flex": {
+          "input": 1.65,
+          "output": 8.25
+        }
+      },
+      "ap-southeast-1": {
+        "standard": {
+          "input": 3.3,
+          "output": 16.5
+        },
+        "global": {
+          "input": 3,
+          "output": 15
+        },
+        "batch": {
+          "input": 1.65,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.33
+        },
+        "cacheWrite": {
+          "input": 4.125
+        },
+        "priority": {
+          "input": 5.775,
+          "output": 28.875
+        },
+        "flex": {
+          "input": 1.65,
+          "output": 8.25
+        }
+      },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 3.3,
+          "output": 16.5
+        },
+        "global": {
+          "input": 3,
+          "output": 15
+        },
+        "batch": {
+          "input": 1.65,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.33
+        },
+        "cacheWrite": {
+          "input": 4.125
+        },
+        "priority": {
+          "input": 5.775,
+          "output": 28.875
+        },
+        "flex": {
+          "input": 1.65,
+          "output": 8.25
+        }
+      },
+      "ca-central-1": {
+        "standard": {
+          "input": 3.3,
+          "output": 16.5
+        },
+        "global": {
+          "input": 3,
+          "output": 15
+        },
+        "batch": {
+          "input": 1.65,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.33
+        },
+        "cacheWrite": {
+          "input": 4.125
+        },
+        "priority": {
+          "input": 5.775,
+          "output": 28.875
+        },
+        "flex": {
+          "input": 1.65,
+          "output": 8.25
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 3.3,
+          "output": 16.5
+        },
+        "global": {
+          "input": 3,
+          "output": 15
+        },
+        "batch": {
+          "input": 1.65,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.33
+        },
+        "cacheWrite": {
+          "input": 4.125
+        },
+        "priority": {
+          "input": 5.775,
+          "output": 28.875
+        },
+        "flex": {
+          "input": 1.65,
+          "output": 8.25
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 3.3,
+          "output": 16.5
+        },
+        "global": {
+          "input": 3,
+          "output": 15
+        },
+        "batch": {
+          "input": 1.65,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.33
+        },
+        "cacheWrite": {
+          "input": 4.125
+        },
+        "priority": {
+          "input": 5.775,
+          "output": 28.875
+        },
+        "flex": {
+          "input": 1.65,
+          "output": 8.25
+        }
+      },
+      "eu-west-1": {
+        "standard": {
+          "input": 3.3,
+          "output": 16.5
+        },
+        "global": {
+          "input": 3,
+          "output": 15
+        },
+        "batch": {
+          "input": 1.65,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.33
+        },
+        "cacheWrite": {
+          "input": 4.125
+        },
+        "priority": {
+          "input": 5.775,
+          "output": 28.875
+        },
+        "flex": {
+          "input": 1.65,
+          "output": 8.25
+        }
+      },
+      "eu-west-2": {
+        "standard": {
+          "input": 3.3,
+          "output": 16.5
+        },
+        "global": {
+          "input": 3,
+          "output": 15
+        },
+        "batch": {
+          "input": 1.65,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.33
+        },
+        "cacheWrite": {
+          "input": 4.125
+        },
+        "priority": {
+          "input": 5.775,
+          "output": 28.875
+        },
+        "flex": {
+          "input": 1.65,
+          "output": 8.25
+        }
+      },
+      "eu-west-3": {
+        "standard": {
+          "input": 3.3,
+          "output": 16.5
+        },
+        "global": {
+          "input": 3,
+          "output": 15
+        },
+        "batch": {
+          "input": 1.65,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.33
+        },
+        "cacheWrite": {
+          "input": 4.125
+        },
+        "priority": {
+          "input": 5.775,
+          "output": 28.875
+        },
+        "flex": {
+          "input": 1.65,
+          "output": 8.25
+        }
+      },
+      "sa-east-1": {
+        "standard": {
+          "input": 3.3,
+          "output": 16.5
+        },
+        "global": {
+          "input": 3,
+          "output": 15
+        },
+        "batch": {
+          "input": 1.65,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.33
+        },
+        "cacheWrite": {
+          "input": 4.125
+        },
+        "priority": {
+          "input": 5.775,
+          "output": 28.875
+        },
+        "flex": {
+          "input": 1.65,
+          "output": 8.25
+        }
+      },
+      "us-east-1": {
+        "standard": {
+          "input": 3.3,
+          "output": 16.5
+        },
+        "global": {
+          "input": 3,
+          "output": 15
+        },
+        "batch": {
+          "input": 1.65,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.33
+        },
+        "cacheWrite": {
+          "input": 4.125
+        },
+        "priority": {
+          "input": 5.775,
+          "output": 28.875
+        },
+        "flex": {
+          "input": 1.65,
+          "output": 8.25
+        }
+      },
+      "us-east-2": {
+        "standard": {
+          "input": 3.3,
+          "output": 16.5
+        },
+        "global": {
+          "input": 3,
+          "output": 15
+        },
+        "batch": {
+          "input": 1.65,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.33
+        },
+        "cacheWrite": {
+          "input": 4.125
+        },
+        "priority": {
+          "input": 5.775,
+          "output": 28.875
+        },
+        "flex": {
+          "input": 1.65,
+          "output": 8.25
+        }
+      },
+      "us-west-1": {
+        "standard": {
+          "input": 3.3,
+          "output": 16.5
+        },
+        "global": {
+          "input": 3,
+          "output": 15
+        },
+        "batch": {
+          "input": 1.65,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.33
+        },
+        "cacheWrite": {
+          "input": 4.125
+        },
+        "priority": {
+          "input": 5.775,
+          "output": 28.875
+        },
+        "flex": {
+          "input": 1.65,
+          "output": 8.25
+        }
+      },
+      "us-west-2": {
+        "standard": {
+          "input": 3.3,
+          "output": 16.5
+        },
+        "global": {
+          "input": 3,
+          "output": 15
+        },
+        "batch": {
+          "input": 1.65,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.33
+        },
+        "cacheWrite": {
+          "input": 4.125
+        },
+        "priority": {
+          "input": 5.775,
+          "output": 28.875
+        },
+        "flex": {
+          "input": 1.65,
+          "output": 8.25
+        }
+      }
+    },
     "nvidia.nemotron-nano-12b-v2": {
       "ap-northeast-1": {
         "standard": {
@@ -12748,6 +14570,60 @@
         "priority": {
           "input": 0.42,
           "output": 1.24
+        },
+        "flex": {
+          "input": 0.12,
+          "output": 0.36
+        }
+      },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.206,
+          "output": 0.618
+        },
+        "batch": {
+          "input": 0.103,
+          "output": 0.309
+        },
+        "priority": {
+          "input": 0.3605,
+          "output": 1.0815
+        },
+        "flex": {
+          "input": 0.103,
+          "output": 0.309
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.24,
+          "output": 0.72
+        },
+        "batch": {
+          "input": 0.12,
+          "output": 0.36
+        },
+        "priority": {
+          "input": 0.42,
+          "output": 1.26
+        },
+        "flex": {
+          "input": 0.12,
+          "output": 0.36
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 0.24,
+          "output": 0.72
+        },
+        "batch": {
+          "input": 0.12,
+          "output": 0.36
+        },
+        "priority": {
+          "input": 0.42,
+          "output": 1.26
         },
         "flex": {
           "input": 0.12,
@@ -12900,6 +14776,60 @@
           "output": 0.14
         }
       },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.0618,
+          "output": 0.2472
+        },
+        "batch": {
+          "input": 0.0309,
+          "output": 0.1236
+        },
+        "priority": {
+          "input": 0.10815,
+          "output": 0.4326
+        },
+        "flex": {
+          "input": 0.0309,
+          "output": 0.1236
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.072,
+          "output": 0.288
+        },
+        "batch": {
+          "input": 0.036,
+          "output": 0.144
+        },
+        "priority": {
+          "input": 0.126,
+          "output": 0.504
+        },
+        "flex": {
+          "input": 0.036,
+          "output": 0.144
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 0.072,
+          "output": 0.288
+        },
+        "batch": {
+          "input": 0.036,
+          "output": 0.144
+        },
+        "priority": {
+          "input": 0.126,
+          "output": 0.504
+        },
+        "flex": {
+          "input": 0.036,
+          "output": 0.144
+        }
+      },
       "eu-west-1": {
         "standard": {
           "input": 0.07,
@@ -13044,6 +14974,60 @@
         "flex": {
           "input": 0.03,
           "output": 0.14
+        }
+      },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.0618,
+          "output": 0.2369
+        },
+        "batch": {
+          "input": 0.0309,
+          "output": 0.11845
+        },
+        "priority": {
+          "input": 0.10815,
+          "output": 0.414575
+        },
+        "flex": {
+          "input": 0.0309,
+          "output": 0.11845
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.072,
+          "output": 0.276
+        },
+        "batch": {
+          "input": 0.036,
+          "output": 0.138
+        },
+        "priority": {
+          "input": 0.126,
+          "output": 0.483
+        },
+        "flex": {
+          "input": 0.036,
+          "output": 0.138
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 0.072,
+          "output": 0.276
+        },
+        "batch": {
+          "input": 0.036,
+          "output": 0.138
+        },
+        "priority": {
+          "input": 0.126,
+          "output": 0.483
+        },
+        "flex": {
+          "input": 0.036,
+          "output": 0.138
         }
       },
       "eu-west-1": {
@@ -13355,6 +15339,248 @@
         }
       }
     },
+    "openai.gpt-6-astra": {
+      "ap-northeast-1": {
+        "global": {
+          "input": 10,
+          "output": 50,
+          "longContext": {
+            "input": 20,
+            "output": 75
+          }
+        }
+      },
+      "ap-northeast-2": {
+        "global": {
+          "input": 10,
+          "output": 50,
+          "longContext": {
+            "input": 20,
+            "output": 75
+          }
+        }
+      },
+      "ap-northeast-3": {
+        "global": {
+          "input": 10,
+          "output": 50,
+          "longContext": {
+            "input": 20,
+            "output": 75
+          }
+        }
+      },
+      "ap-south-1": {
+        "global": {
+          "input": 10,
+          "output": 50,
+          "longContext": {
+            "input": 20,
+            "output": 75
+          }
+        }
+      },
+      "ap-southeast-1": {
+        "global": {
+          "input": 10,
+          "output": 50,
+          "longContext": {
+            "input": 20,
+            "output": 75
+          }
+        }
+      },
+      "ap-southeast-2": {
+        "global": {
+          "input": 10,
+          "output": 50,
+          "longContext": {
+            "input": 20,
+            "output": 75
+          }
+        }
+      },
+      "ca-central-1": {
+        "standard": {
+          "input": 11,
+          "output": 55,
+          "longContext": {
+            "input": 22,
+            "output": 82.5
+          }
+        },
+        "global": {
+          "input": 10,
+          "output": 50,
+          "longContext": {
+            "input": 20,
+            "output": 75
+          }
+        },
+        "cacheRead": {
+          "input": 1.1
+        },
+        "cacheWrite": {
+          "input": 13.75
+        }
+      },
+      "eu-central-1": {
+        "global": {
+          "input": 10,
+          "output": 50,
+          "longContext": {
+            "input": 20,
+            "output": 75
+          }
+        }
+      },
+      "eu-north-1": {
+        "global": {
+          "input": 10,
+          "output": 50,
+          "longContext": {
+            "input": 20,
+            "output": 75
+          }
+        }
+      },
+      "eu-west-1": {
+        "global": {
+          "input": 10,
+          "output": 50,
+          "longContext": {
+            "input": 20,
+            "output": 75
+          }
+        }
+      },
+      "eu-west-2": {
+        "global": {
+          "input": 10,
+          "output": 50,
+          "longContext": {
+            "input": 20,
+            "output": 75
+          }
+        }
+      },
+      "eu-west-3": {
+        "global": {
+          "input": 10,
+          "output": 50,
+          "longContext": {
+            "input": 20,
+            "output": 75
+          }
+        }
+      },
+      "sa-east-1": {
+        "global": {
+          "input": 10,
+          "output": 50,
+          "longContext": {
+            "input": 20,
+            "output": 75
+          }
+        }
+      },
+      "us-east-1": {
+        "standard": {
+          "input": 11,
+          "output": 55,
+          "longContext": {
+            "input": 22,
+            "output": 82.5
+          }
+        },
+        "global": {
+          "input": 10,
+          "output": 50,
+          "longContext": {
+            "input": 20,
+            "output": 75
+          }
+        },
+        "cacheRead": {
+          "input": 1.1
+        },
+        "cacheWrite": {
+          "input": 13.75
+        }
+      },
+      "us-east-2": {
+        "standard": {
+          "input": 11,
+          "output": 55,
+          "longContext": {
+            "input": 22,
+            "output": 82.5
+          }
+        },
+        "global": {
+          "input": 10,
+          "output": 50,
+          "longContext": {
+            "input": 20,
+            "output": 75
+          }
+        },
+        "cacheRead": {
+          "input": 1.1
+        },
+        "cacheWrite": {
+          "input": 13.75
+        }
+      },
+      "us-west-1": {
+        "standard": {
+          "input": 11,
+          "output": 55,
+          "longContext": {
+            "input": 22,
+            "output": 82.5
+          }
+        },
+        "global": {
+          "input": 10,
+          "output": 50,
+          "longContext": {
+            "input": 20,
+            "output": 75
+          }
+        },
+        "cacheRead": {
+          "input": 1.1
+        },
+        "cacheWrite": {
+          "input": 13.75
+        }
+      },
+      "us-west-2": {
+        "standard": {
+          "input": 11,
+          "output": 55,
+          "longContext": {
+            "input": 22,
+            "output": 82.5
+          }
+        },
+        "global": {
+          "input": 10,
+          "output": 50,
+          "longContext": {
+            "input": 20,
+            "output": 75
+          }
+        },
+        "cacheRead": {
+          "input": 1.1
+        },
+        "cacheWrite": {
+          "input": 13.75
+        }
+      }
+    },
     "openai.gpt-oss-120b-1:0": {
       "ap-northeast-1": {
         "standard": {
@@ -13390,6 +15616,24 @@
         "flex": {
           "input": 0.09,
           "output": 0.355
+        }
+      },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.1545,
+          "output": 0.618
+        },
+        "batch": {
+          "input": 0.07725,
+          "output": 0.309
+        },
+        "priority": {
+          "input": 0.270375,
+          "output": 1.0815
+        },
+        "flex": {
+          "input": 0.07725,
+          "output": 0.309
         }
       },
       "eu-central-1": {
@@ -13574,6 +15818,24 @@
           "output": 0.175
         }
       },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.0721,
+          "output": 0.309
+        },
+        "batch": {
+          "input": 0.03605,
+          "output": 0.1545
+        },
+        "priority": {
+          "input": 0.126175,
+          "output": 0.54075
+        },
+        "flex": {
+          "input": 0.03605,
+          "output": 0.1545
+        }
+      },
       "eu-central-1": {
         "standard": {
           "input": 0.09,
@@ -13756,6 +16018,60 @@
           "output": 0.36
         }
       },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.1545,
+          "output": 0.618
+        },
+        "batch": {
+          "input": 0.07725,
+          "output": 0.309
+        },
+        "priority": {
+          "input": 0.270375,
+          "output": 1.0815
+        },
+        "flex": {
+          "input": 0.07725,
+          "output": 0.309
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.18,
+          "output": 0.72
+        },
+        "batch": {
+          "input": 0.09,
+          "output": 0.36
+        },
+        "priority": {
+          "input": 0.315,
+          "output": 1.26
+        },
+        "flex": {
+          "input": 0.09,
+          "output": 0.36
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 0.18,
+          "output": 0.72
+        },
+        "batch": {
+          "input": 0.09,
+          "output": 0.36
+        },
+        "priority": {
+          "input": 0.315,
+          "output": 1.26
+        },
+        "flex": {
+          "input": 0.09,
+          "output": 0.36
+        }
+      },
       "eu-west-1": {
         "standard": {
           "input": 0.18,
@@ -13899,6 +16215,60 @@
         },
         "flex": {
           "input": 0.04,
+          "output": 0.12
+        }
+      },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.0721,
+          "output": 0.206
+        },
+        "batch": {
+          "input": 0.03605,
+          "output": 0.103
+        },
+        "priority": {
+          "input": 0.126175,
+          "output": 0.3605
+        },
+        "flex": {
+          "input": 0.03605,
+          "output": 0.103
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.084,
+          "output": 0.24
+        },
+        "batch": {
+          "input": 0.042,
+          "output": 0.12
+        },
+        "priority": {
+          "input": 0.147,
+          "output": 0.42
+        },
+        "flex": {
+          "input": 0.042,
+          "output": 0.12
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 0.084,
+          "output": 0.24
+        },
+        "batch": {
+          "input": 0.042,
+          "output": 0.12
+        },
+        "priority": {
+          "input": 0.147,
+          "output": 0.42
+        },
+        "flex": {
+          "input": 0.042,
           "output": 0.12
         }
       },
@@ -14048,6 +16418,24 @@
           "output": 0.52
         }
       },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.2266,
+          "output": 0.9064
+        },
+        "batch": {
+          "input": 0.1133,
+          "output": 0.4532
+        },
+        "priority": {
+          "input": 0.39655,
+          "output": 1.5862
+        },
+        "flex": {
+          "input": 0.1133,
+          "output": 0.4532
+        }
+      },
       "eu-central-1": {
         "standard": {
           "input": 0.29,
@@ -14084,6 +16472,24 @@
           "output": 0.44
         }
       },
+      "eu-west-1": {
+        "standard": {
+          "input": 0.264,
+          "output": 1.056
+        },
+        "batch": {
+          "input": 0.132,
+          "output": 0.528
+        },
+        "priority": {
+          "input": 0.462,
+          "output": 1.848
+        },
+        "flex": {
+          "input": 0.132,
+          "output": 0.528
+        }
+      },
       "eu-west-2": {
         "standard": {
           "input": 0.34,
@@ -14100,6 +16506,42 @@
         "flex": {
           "input": 0.17,
           "output": 0.685
+        }
+      },
+      "sa-east-1": {
+        "standard": {
+          "input": 0.264,
+          "output": 1.056
+        },
+        "batch": {
+          "input": 0.132,
+          "output": 0.528
+        },
+        "priority": {
+          "input": 0.462,
+          "output": 1.848
+        },
+        "flex": {
+          "input": 0.132,
+          "output": 0.528
+        }
+      },
+      "us-east-1": {
+        "standard": {
+          "input": 0.22,
+          "output": 0.88
+        },
+        "batch": {
+          "input": 0.11,
+          "output": 0.44
+        },
+        "priority": {
+          "input": 0.385,
+          "output": 1.54
+        },
+        "flex": {
+          "input": 0.11,
+          "output": 0.44
         }
       },
       "us-east-2": {
@@ -14174,6 +16616,24 @@
         "flex": {
           "input": 0.09,
           "output": 0.355
+        }
+      },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.1545,
+          "output": 0.618
+        },
+        "batch": {
+          "input": 0.07725,
+          "output": 0.309
+        },
+        "priority": {
+          "input": 0.270375,
+          "output": 1.0815
+        },
+        "flex": {
+          "input": 0.07725,
+          "output": 0.309
         }
       },
       "eu-central-1": {
@@ -14358,6 +16818,24 @@
           "output": 0.355
         }
       },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.1545,
+          "output": 0.618
+        },
+        "batch": {
+          "input": 0.07725,
+          "output": 0.309
+        },
+        "priority": {
+          "input": 0.270375,
+          "output": 1.0815
+        },
+        "flex": {
+          "input": 0.07725,
+          "output": 0.309
+        }
+      },
       "eu-central-1": {
         "standard": {
           "input": 0.2,
@@ -14540,6 +17018,42 @@
           "output": 1.06
         }
       },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.4635,
+          "output": 1.854
+        },
+        "batch": {
+          "input": 0.23175,
+          "output": 0.927
+        },
+        "priority": {
+          "input": 0.811125,
+          "output": 3.2445
+        },
+        "flex": {
+          "input": 0.23175,
+          "output": 0.927
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.54,
+          "output": 2.16
+        },
+        "batch": {
+          "input": 0.27,
+          "output": 1.08
+        },
+        "priority": {
+          "input": 0.945,
+          "output": 3.78
+        },
+        "flex": {
+          "input": 0.27,
+          "output": 1.08
+        }
+      },
       "eu-north-1": {
         "standard": {
           "input": 0.45,
@@ -14558,6 +17072,24 @@
           "output": 0.9
         }
       },
+      "eu-west-1": {
+        "standard": {
+          "input": 0.54,
+          "output": 2.16
+        },
+        "batch": {
+          "input": 0.27,
+          "output": 1.08
+        },
+        "priority": {
+          "input": 0.945,
+          "output": 3.78
+        },
+        "flex": {
+          "input": 0.27,
+          "output": 1.08
+        }
+      },
       "eu-west-2": {
         "standard": {
           "input": 0.7,
@@ -14574,6 +17106,42 @@
         "flex": {
           "input": 0.35,
           "output": 1.395
+        }
+      },
+      "sa-east-1": {
+        "standard": {
+          "input": 0.54,
+          "output": 2.16
+        },
+        "batch": {
+          "input": 0.27,
+          "output": 1.08
+        },
+        "priority": {
+          "input": 0.945,
+          "output": 3.78
+        },
+        "flex": {
+          "input": 0.27,
+          "output": 1.08
+        }
+      },
+      "us-east-1": {
+        "standard": {
+          "input": 0.45,
+          "output": 1.8
+        },
+        "batch": {
+          "input": 0.225,
+          "output": 0.9
+        },
+        "priority": {
+          "input": 0.7875,
+          "output": 3.15
+        },
+        "flex": {
+          "input": 0.225,
+          "output": 0.9
         }
       },
       "us-east-2": {
@@ -14815,6 +17383,14 @@
     },
     "qwen.qwen3-next-80b-a3b": {
       "ap-northeast-1": {
+        "standard": {
+          "input": 0.168,
+          "output": 1.44
+        },
+        "batch": {
+          "input": 0.084,
+          "output": 0.72
+        },
         "priority": {
           "input": 0.32,
           "output": 2.54
@@ -14842,7 +17418,69 @@
           "output": 0.71
         }
       },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.1442,
+          "output": 1.236
+        },
+        "batch": {
+          "input": 0.0721,
+          "output": 0.618
+        },
+        "priority": {
+          "input": 0.25235,
+          "output": 2.163
+        },
+        "flex": {
+          "input": 0.0721,
+          "output": 0.618
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.168,
+          "output": 1.44
+        },
+        "batch": {
+          "input": 0.084,
+          "output": 0.72
+        },
+        "priority": {
+          "input": 0.294,
+          "output": 2.52
+        },
+        "flex": {
+          "input": 0.084,
+          "output": 0.72
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 0.168,
+          "output": 1.44
+        },
+        "batch": {
+          "input": 0.084,
+          "output": 0.72
+        },
+        "priority": {
+          "input": 0.294,
+          "output": 2.52
+        },
+        "flex": {
+          "input": 0.084,
+          "output": 0.72
+        }
+      },
       "eu-west-1": {
+        "standard": {
+          "input": 0.168,
+          "output": 1.44
+        },
+        "batch": {
+          "input": 0.084,
+          "output": 0.72
+        },
         "priority": {
           "input": 0.32,
           "output": 2.47
@@ -14853,6 +17491,14 @@
         }
       },
       "eu-west-2": {
+        "standard": {
+          "input": 0.217,
+          "output": 1.86
+        },
+        "batch": {
+          "input": 0.1085,
+          "output": 0.93
+        },
         "priority": {
           "input": 0.4,
           "output": 3.26
@@ -14863,6 +17509,14 @@
         }
       },
       "sa-east-1": {
+        "standard": {
+          "input": 0.168,
+          "output": 1.44
+        },
+        "batch": {
+          "input": 0.084,
+          "output": 0.72
+        },
         "priority": {
           "input": 0.32,
           "output": 2.54
@@ -14873,6 +17527,14 @@
         }
       },
       "us-east-1": {
+        "standard": {
+          "input": 0.14,
+          "output": 1.2
+        },
+        "batch": {
+          "input": 0.07,
+          "output": 0.6
+        },
         "priority": {
           "input": 0.26,
           "output": 2.1
@@ -14883,6 +17545,14 @@
         }
       },
       "us-east-2": {
+        "standard": {
+          "input": 0.14,
+          "output": 1.2
+        },
+        "batch": {
+          "input": 0.07,
+          "output": 0.6
+        },
         "priority": {
           "input": 0.26,
           "output": 2.1
@@ -14893,6 +17563,14 @@
         }
       },
       "us-west-2": {
+        "standard": {
+          "input": 0.14,
+          "output": 1.2
+        },
+        "batch": {
+          "input": 0.07,
+          "output": 0.6
+        },
         "priority": {
           "input": 0.26,
           "output": 2.1
@@ -14938,6 +17616,60 @@
         "flex": {
           "input": 0.31,
           "output": 1.56
+        }
+      },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 0.5459,
+          "output": 2.7398
+        },
+        "batch": {
+          "input": 0.27295,
+          "output": 1.3699
+        },
+        "priority": {
+          "input": 0.955325,
+          "output": 4.79465
+        },
+        "flex": {
+          "input": 0.27295,
+          "output": 1.3699
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 0.636,
+          "output": 3.192
+        },
+        "batch": {
+          "input": 0.318,
+          "output": 1.596
+        },
+        "priority": {
+          "input": 1.113,
+          "output": 5.586
+        },
+        "flex": {
+          "input": 0.318,
+          "output": 1.596
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 0.636,
+          "output": 3.192
+        },
+        "batch": {
+          "input": 0.318,
+          "output": 1.596
+        },
+        "priority": {
+          "input": 1.113,
+          "output": 5.586
+        },
+        "flex": {
+          "input": 0.318,
+          "output": 1.596
         }
       },
       "eu-west-1": {
@@ -15861,6 +18593,792 @@
         }
       }
     },
+    "xai.grok-4.6": {
+      "ap-northeast-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "ap-northeast-2": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "ap-northeast-3": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "ap-south-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "ap-southeast-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "ca-central-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "eu-west-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "eu-west-2": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "eu-west-3": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "sa-east-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "us-east-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "us-east-2": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "us-west-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "us-west-2": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      }
+    },
+    "xai.grok-4.7": {
+      "ap-northeast-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 3.3
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "ap-northeast-2": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 3.3
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "ap-northeast-3": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 3.3
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "ap-south-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 3.3
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "ap-southeast-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 3.3
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 3.3
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "ca-central-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 3.3
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 3.3
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 3.3
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "eu-west-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 3.3
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "eu-west-2": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 3.3
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "eu-west-3": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 3.3
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "sa-east-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 3.3
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "us-east-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 3.3
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "us-east-2": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 3.3
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "us-west-1": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 3.3
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      },
+      "us-west-2": {
+        "standard": {
+          "input": 2.2,
+          "output": 6.6
+        },
+        "global": {
+          "input": 2,
+          "output": 6
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 3.3
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 3.85,
+          "output": 11.55
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 3.3
+        }
+      }
+    },
     "zai.glm-4.7": {
       "ap-northeast-1": {
         "standard": {
@@ -16458,2598 +19976,6 @@
         "flex": {
           "input": 0.5,
           "output": 1.6
-        }
-      }
-    },
-    "moonshotai.kimi-k3": {
-      "ap-northeast-1": {
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-northeast-2": {
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-northeast-3": {
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-south-1": {
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-southeast-1": {
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-southeast-2": {
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ca-central-1": {
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 3.3,
-          "output": 16.5
-        }
-      },
-      "eu-central-1": {
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-north-1": {
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-west-1": {
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-west-2": {
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-west-3": {
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "sa-east-1": {
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-east-1": {
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 3.3,
-          "output": 16.5
-        }
-      },
-      "us-east-2": {
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 3.3,
-          "output": 16.5
-        }
-      },
-      "us-west-1": {
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 3.3,
-          "output": 16.5
-        }
-      },
-      "us-west-2": {
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 3.3,
-          "output": 16.5
-        }
-      }
-    },
-    "openai.gpt-5.6-luna": {
-      "ap-northeast-1": {
-        "global": {
-          "input": 0.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.4,
-            "output": 1.8
-          },
-          "output": 1.2
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-northeast-2": {
-        "global": {
-          "input": 0.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.4,
-            "output": 1.8
-          },
-          "output": 1.2
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-northeast-3": {
-        "global": {
-          "input": 0.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.4,
-            "output": 1.8
-          },
-          "output": 1.2
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-south-1": {
-        "global": {
-          "input": 0.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.4,
-            "output": 1.8
-          },
-          "output": 1.2
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 0.22,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.44,
-            "output": 1.98
-          },
-          "output": 1.32
-        }
-      },
-      "ap-southeast-1": {
-        "global": {
-          "input": 0.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.4,
-            "output": 1.8
-          },
-          "output": 1.2
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-southeast-2": {
-        "global": {
-          "input": 0.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.4,
-            "output": 1.8
-          },
-          "output": 1.2
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ca-central-1": {
-        "global": {
-          "input": 0.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.4,
-            "output": 1.8
-          },
-          "output": 1.2
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 0.22,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.44,
-            "output": 1.98
-          },
-          "output": 1.32
-        }
-      },
-      "eu-central-1": {
-        "global": {
-          "input": 0.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.4,
-            "output": 1.8
-          },
-          "output": 1.2
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-north-1": {
-        "global": {
-          "input": 0.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.4,
-            "output": 1.8
-          },
-          "output": 1.2
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-west-1": {
-        "global": {
-          "input": 0.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.4,
-            "output": 1.8
-          },
-          "output": 1.2
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-west-2": {
-        "global": {
-          "input": 0.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.4,
-            "output": 1.8
-          },
-          "output": 1.2
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-west-3": {
-        "global": {
-          "input": 0.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.4,
-            "output": 1.8
-          },
-          "output": 1.2
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "sa-east-1": {
-        "global": {
-          "input": 0.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.4,
-            "output": 1.8
-          },
-          "output": 1.2
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-east-1": {
-        "global": {
-          "input": 0.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.4,
-            "output": 1.8
-          },
-          "output": 1.2
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 0.22,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.44,
-            "output": 1.98
-          },
-          "output": 1.32
-        }
-      },
-      "us-east-2": {
-        "global": {
-          "input": 0.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.4,
-            "output": 1.8
-          },
-          "output": 1.2
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 0.22,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.44,
-            "output": 1.98
-          },
-          "output": 1.32
-        }
-      },
-      "us-west-1": {
-        "global": {
-          "input": 0.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.4,
-            "output": 1.8
-          },
-          "output": 1.2
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 0.22,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.44,
-            "output": 1.98
-          },
-          "output": 1.32
-        }
-      },
-      "us-west-2": {
-        "global": {
-          "input": 0.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.4,
-            "output": 1.8
-          },
-          "output": 1.2
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 0.22,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 0.44,
-            "output": 1.98
-          },
-          "output": 1.32
-        }
-      }
-    },
-    "openai.gpt-5.6-sol": {
-      "ap-northeast-1": {
-        "global": {
-          "input": 4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8,
-            "output": 30
-          },
-          "output": 20
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-northeast-2": {
-        "global": {
-          "input": 4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8,
-            "output": 30
-          },
-          "output": 20
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-northeast-3": {
-        "global": {
-          "input": 4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8,
-            "output": 30
-          },
-          "output": 20
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-south-1": {
-        "global": {
-          "input": 4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8,
-            "output": 30
-          },
-          "output": 20
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-southeast-1": {
-        "global": {
-          "input": 4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8,
-            "output": 30
-          },
-          "output": 20
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-southeast-2": {
-        "global": {
-          "input": 4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8,
-            "output": 30
-          },
-          "output": 20
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ca-central-1": {
-        "global": {
-          "input": 4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8,
-            "output": 30
-          },
-          "output": 20
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 4.4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8.8,
-            "output": 33
-          },
-          "output": 22
-        }
-      },
-      "eu-central-1": {
-        "global": {
-          "input": 4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8,
-            "output": 30
-          },
-          "output": 20
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-north-1": {
-        "global": {
-          "input": 4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8,
-            "output": 30
-          },
-          "output": 20
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-west-1": {
-        "global": {
-          "input": 4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8,
-            "output": 30
-          },
-          "output": 20
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-west-2": {
-        "global": {
-          "input": 4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8,
-            "output": 30
-          },
-          "output": 20
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-west-3": {
-        "global": {
-          "input": 4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8,
-            "output": 30
-          },
-          "output": 20
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "sa-east-1": {
-        "global": {
-          "input": 4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8,
-            "output": 30
-          },
-          "output": 20
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-east-1": {
-        "global": {
-          "input": 4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8,
-            "output": 30
-          },
-          "output": 20
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 4.4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8.8,
-            "output": 33
-          },
-          "output": 22
-        }
-      },
-      "us-east-2": {
-        "global": {
-          "input": 4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8,
-            "output": 30
-          },
-          "output": 20
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 4.4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8.8,
-            "output": 33
-          },
-          "output": 22
-        }
-      },
-      "us-west-1": {
-        "global": {
-          "input": 4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8,
-            "output": 30
-          },
-          "output": 20
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 4.4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8.8,
-            "output": 33
-          },
-          "output": 22
-        }
-      },
-      "us-west-2": {
-        "global": {
-          "input": 4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8,
-            "output": 30
-          },
-          "output": 20
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 4.4,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 8.8,
-            "output": 33
-          },
-          "output": 22
-        }
-      }
-    },
-    "openai.gpt-5.6-terra": {
-      "ap-northeast-1": {
-        "global": {
-          "input": 2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4,
-            "output": 18
-          },
-          "output": 12
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-northeast-2": {
-        "global": {
-          "input": 2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4,
-            "output": 18
-          },
-          "output": 12
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-northeast-3": {
-        "global": {
-          "input": 2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4,
-            "output": 18
-          },
-          "output": 12
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-south-1": {
-        "global": {
-          "input": 2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4,
-            "output": 18
-          },
-          "output": 12
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 2.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4.4,
-            "output": 19.8
-          },
-          "output": 13.2
-        }
-      },
-      "ap-southeast-1": {
-        "global": {
-          "input": 2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4,
-            "output": 18
-          },
-          "output": 12
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-southeast-2": {
-        "global": {
-          "input": 2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4,
-            "output": 18
-          },
-          "output": 12
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ca-central-1": {
-        "global": {
-          "input": 2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4,
-            "output": 18
-          },
-          "output": 12
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 2.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4.4,
-            "output": 19.8
-          },
-          "output": 13.2
-        }
-      },
-      "eu-central-1": {
-        "global": {
-          "input": 2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4,
-            "output": 18
-          },
-          "output": 12
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-north-1": {
-        "global": {
-          "input": 2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4,
-            "output": 18
-          },
-          "output": 12
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-west-1": {
-        "global": {
-          "input": 2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4,
-            "output": 18
-          },
-          "output": 12
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-west-2": {
-        "global": {
-          "input": 2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4,
-            "output": 18
-          },
-          "output": 12
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-west-3": {
-        "global": {
-          "input": 2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4,
-            "output": 18
-          },
-          "output": 12
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "sa-east-1": {
-        "global": {
-          "input": 2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4,
-            "output": 18
-          },
-          "output": 12
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-east-1": {
-        "global": {
-          "input": 2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4,
-            "output": 18
-          },
-          "output": 12
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 2.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4.4,
-            "output": 19.8
-          },
-          "output": 13.2
-        }
-      },
-      "us-east-2": {
-        "global": {
-          "input": 2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4,
-            "output": 18
-          },
-          "output": 12
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 2.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4.4,
-            "output": 19.8
-          },
-          "output": 13.2
-        }
-      },
-      "us-west-1": {
-        "global": {
-          "input": 2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4,
-            "output": 18
-          },
-          "output": 12
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 2.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4.4,
-            "output": 19.8
-          },
-          "output": 13.2
-        }
-      },
-      "us-west-2": {
-        "global": {
-          "input": 2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4,
-            "output": 18
-          },
-          "output": 12
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 2.2,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 4.4,
-            "output": 19.8
-          },
-          "output": 13.2
-        }
-      }
-    },
-    "openai.gpt-6-astra": {
-      "ap-northeast-1": {
-        "global": {
-          "input": 10,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 20,
-            "output": 75
-          },
-          "output": 50
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-northeast-2": {
-        "global": {
-          "input": 10,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 20,
-            "output": 75
-          },
-          "output": 50
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-northeast-3": {
-        "global": {
-          "input": 10,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 20,
-            "output": 75
-          },
-          "output": 50
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-south-1": {
-        "global": {
-          "input": 10,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 20,
-            "output": 75
-          },
-          "output": 50
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-southeast-1": {
-        "global": {
-          "input": 10,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 20,
-            "output": 75
-          },
-          "output": 50
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-southeast-2": {
-        "global": {
-          "input": 10,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 20,
-            "output": 75
-          },
-          "output": 50
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ca-central-1": {
-        "global": {
-          "input": 10,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 20,
-            "output": 75
-          },
-          "output": 50
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 11,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 22,
-            "output": 82.5
-          },
-          "output": 55
-        }
-      },
-      "eu-central-1": {
-        "global": {
-          "input": 10,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 20,
-            "output": 75
-          },
-          "output": 50
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-north-1": {
-        "global": {
-          "input": 10,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 20,
-            "output": 75
-          },
-          "output": 50
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-west-1": {
-        "global": {
-          "input": 10,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 20,
-            "output": 75
-          },
-          "output": 50
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-west-2": {
-        "global": {
-          "input": 10,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 20,
-            "output": 75
-          },
-          "output": 50
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-west-3": {
-        "global": {
-          "input": 10,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 20,
-            "output": 75
-          },
-          "output": 50
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "sa-east-1": {
-        "global": {
-          "input": 10,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 20,
-            "output": 75
-          },
-          "output": 50
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-east-1": {
-        "global": {
-          "input": 10,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 20,
-            "output": 75
-          },
-          "output": 50
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 11,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 22,
-            "output": 82.5
-          },
-          "output": 55
-        }
-      },
-      "us-east-2": {
-        "global": {
-          "input": 10,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 20,
-            "output": 75
-          },
-          "output": 50
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 11,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 22,
-            "output": 82.5
-          },
-          "output": 55
-        }
-      },
-      "us-west-1": {
-        "global": {
-          "input": 10,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 20,
-            "output": 75
-          },
-          "output": 50
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 11,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 22,
-            "output": 82.5
-          },
-          "output": 55
-        }
-      },
-      "us-west-2": {
-        "global": {
-          "input": 10,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 20,
-            "output": 75
-          },
-          "output": 50
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 11,
-          "maxInputTokens": 272000,
-          "longContext": {
-            "input": 22,
-            "output": 82.5
-          },
-          "output": 55
-        }
-      }
-    },
-    "xai.grok-4.6": {
-      "ap-northeast-1": {
-        "global": {
-          "input": 2,
-          "output": 6
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-northeast-2": {
-        "global": {
-          "input": 2,
-          "output": 6
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-northeast-3": {
-        "global": {
-          "input": 2,
-          "output": 6
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-south-1": {
-        "global": {
-          "input": 2,
-          "output": 6
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-southeast-1": {
-        "global": {
-          "input": 2,
-          "output": 6
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ap-southeast-2": {
-        "global": {
-          "input": 2,
-          "output": 6
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "ca-central-1": {
-        "global": {
-          "input": 2,
-          "output": 6
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 2.2,
-          "output": 6.6
-        }
-      },
-      "eu-central-1": {
-        "global": {
-          "input": 2,
-          "output": 6
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-north-1": {
-        "global": {
-          "input": 2,
-          "output": 6
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-west-1": {
-        "global": {
-          "input": 2,
-          "output": 6
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-west-2": {
-        "global": {
-          "input": 2,
-          "output": 6
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "eu-west-3": {
-        "global": {
-          "input": 2,
-          "output": 6
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "sa-east-1": {
-        "global": {
-          "input": 2,
-          "output": 6
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-east-1": {
-        "global": {
-          "input": 2,
-          "output": 6
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 2.2,
-          "output": 6.6
-        }
-      },
-      "us-east-2": {
-        "global": {
-          "input": 2,
-          "output": 6
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 2.2,
-          "output": 6.6
-        }
-      },
-      "us-west-1": {
-        "global": {
-          "input": 2,
-          "output": 6
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 2.2,
-          "output": 6.6
-        }
-      },
-      "us-west-2": {
-        "global": {
-          "input": 2,
-          "output": 6
-        },
-        "supplementSources": {
-          "global": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          },
-          "standard": {
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-6.html",
-            "verifiedAt": "2026-09-21"
-          }
-        },
-        "standard": {
-          "input": 2.2,
-          "output": 6.6
-        }
-      }
-    },
-    "stability.stable-image-remove-background-v1:0": {
-      "us-east-1": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-east-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-west-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      }
-    },
-    "stability.stable-image-erase-object-v1:0": {
-      "us-east-1": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-east-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-west-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      }
-    },
-    "stability.stable-image-control-structure-v1:0": {
-      "us-east-1": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-east-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-west-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      }
-    },
-    "stability.stable-image-control-sketch-v1:0": {
-      "us-east-1": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-east-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-west-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      }
-    },
-    "stability.stable-image-style-guide-v1:0": {
-      "us-east-1": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-east-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-west-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      }
-    },
-    "stability.stable-image-search-replace-v1:0": {
-      "us-east-1": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-east-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-west-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      }
-    },
-    "stability.stable-image-inpaint-v1:0": {
-      "us-east-1": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-east-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-west-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      }
-    },
-    "stability.stable-image-search-recolor-v1:0": {
-      "us-east-1": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-east-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-west-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.07
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      }
-    },
-    "stability.stable-style-transfer-v1:0": {
-      "us-east-1": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.08
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-east-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.08
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-west-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.08
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      }
-    },
-    "stability.stable-conservative-upscale-v1:0": {
-      "us-east-1": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.4
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-east-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.4
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-west-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.4
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      }
-    },
-    "stability.stable-creative-upscale-v1:0": {
-      "us-east-1": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.6
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-east-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.6
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-west-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.6
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      }
-    },
-    "stability.stable-fast-upscale-v1:0": {
-      "us-east-1": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.03
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-east-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.03
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-west-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.03
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      }
-    },
-    "stability.stable-outpaint-v1:0": {
-      "us-east-1": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.06
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-east-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.06
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
-        }
-      },
-      "us-west-2": {
-        "metered": [
-          {
-            "axis": "output",
-            "label": "Image",
-            "unit": "image",
-            "value": 0.06
-          }
-        ],
-        "supplementSources": {
-          "metered": {
-            "url": "https://aws.amazon.com/bedrock/pricing/",
-            "verifiedAt": "2026-09-21"
-          }
         }
       }
     }

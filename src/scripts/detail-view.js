@@ -237,6 +237,7 @@ function priceSection(modelId, { prices, region, regionNotes, lane, available })
     let label = row.kind === "metered" ? row.label : t(`price.kind.${row.kind}`);
     if (row.maxInputTokens) label += ` · ${t("price.shortContext", { count: row.maxInputTokens.toLocaleString("en-US") })}`;
     if (row.minInputTokens) label += ` · ${t("price.longContext", { count: row.minInputTokens.toLocaleString("en-US") })}`;
+    else if (row.longContext) label += ` · ${t("price.longContextTier")}`;
     tr.appendChild(el("td", "detail-price-kind", label));
     for (const value of [row.input, row.output]) {
       const text = formatPrice(value);
@@ -257,15 +258,6 @@ function priceSection(modelId, { prices, region, regionNotes, lane, available })
   // AC-016: 使えないレーンでも単価があれば表は出す。呼べないことを注記で足す。
   if (!available) notes.push(t("price.unavailableLane"));
   section.appendChild(el("p", "detail-price-unit price-unit", notes.join(" ")));
-  const supplement = prices?.byModel?.[modelId]?.[region]?.supplementSources?.[lane === LANE_GLOBAL ? "global" : "standard"];
-  const meteredSupplement = prices?.byModel?.[modelId]?.[region]?.supplementSources?.metered;
-  for (const sourceInfo of [supplement, ...(lane === LANE_GLOBAL ? [] : [meteredSupplement])].filter(Boolean)) {
-    const source = el("a", "detail-price-source", t("price.modelCardSource", { date: sourceInfo.verifiedAt }));
-    source.href = sourceInfo.url;
-    source.target = "_blank";
-    source.rel = "noreferrer";
-    section.appendChild(source);
-  }
   return section;
 }
 

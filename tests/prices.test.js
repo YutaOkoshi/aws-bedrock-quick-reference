@@ -116,6 +116,11 @@ describe("AC-004 USD / 100 万トークンに揃える", () => {
     expect(toPerMillion("0.0000180000", "1K tokens")).toBe(0.018);
   });
 
+  it("単位の大文字小文字は問わない (Nova 2.5 Sonic は 1k tokens)", () => {
+    expect(toPerMillion("0.0003300000", "1k tokens")).toBe(0.33);
+    expect(toPerMillion("5.5000000000", "1m tokens")).toBe(5.5);
+  });
+
   it("1M tokens の単価はそのまま", () => {
     expect(toPerMillion("5.5000000000", "1M tokens")).toBe(5.5);
   });
@@ -196,6 +201,22 @@ describe("AC-004 USD / 100 万トークンに揃える", () => {
       },
     });
     expect(row).toMatchObject({ sourceName: "Claude Opus 5", axis: "output", kind: "global" });
+    // 長文コンテキスト (long_ctx) は standard / global の longContext として読む。
+    // キャッシュの long_ctx は範囲外 (読む順で cache の値に混ざらないように)
+    const longOut = readProduct("AmazonBedrockFoundationModels", {
+      attributes: { servicename: "OpenAI GPT-6 Astra (Amazon Bedrock Edition)", usagetype: "USE1-MP:USE1_output_tokens_long_ctx_standard-Units" },
+    });
+    expect(longOut).toMatchObject({ axis: "output", kind: "standard", longContext: true });
+    const longGlobal = readProduct("AmazonBedrockFoundationModels", {
+      attributes: { servicename: "OpenAI GPT-6 Astra (Amazon Bedrock Edition)", usagetype: "USE1-MP:USE1_input_tokens_long_ctx_global_standard-Units" },
+    });
+    expect(longGlobal).toMatchObject({ axis: "input", kind: "global", longContext: true });
+    for (const dimension of ["cache_read_tokens_long_ctx_standard", "cache_write_tokens_30m_long_ctx_standard"]) {
+      const longCache = readProduct("AmazonBedrockFoundationModels", {
+        attributes: { servicename: "OpenAI GPT-6 Astra (Amazon Bedrock Edition)", usagetype: `USE1-MP:USE1_${dimension}-Units` },
+      });
+      expect(longCache.kind, dimension).toBeNull();
+    }
     // 旧い Claude は CamelCase の寸法
     expect(
       readProduct("AmazonBedrockFoundationModels", {
@@ -311,6 +332,94 @@ describe("AC-004 / AC-006 prices.json の中身", () => {
       output: 27.5,
     });
     expect(real.byModel["anthropic.claude-opus-5"][TOKYO].global).toEqual({ input: 5, output: 25 });
+  });
+});
+
+// --- 価格表の書き方の揺れ (2026-10-07 の取得で見つかったもの) ---
+describe("AC-004 / AC-005 価格表の揺れを API の値のまま取り込む", () => {
+  // 最小の offer ファイルを組み立てる。rows は [sku 属性, USD, 単位]
+  const offerFile = (rows) => {
+    const products = {};
+    const OnDemand = {};
+    rows.forEach(([attributes, usd, unit], index) => {
+      const sku = `SKU${index}`;
+      products[sku] = { sku, attributes };
+      OnDemand[sku] = { [`${sku}.T`]: { priceDimensions: { [`${sku}.T.D`]: { pricePerUnit: { USD: usd }, unit } } } };
+    });
+    return { publicationDate: "2026-10-06T00:00:00Z", products, terms: { OnDemand } };
+  };
+  const normalize = (files, models) => normalizePrices({ files, models, map: {}, generatedAt: "x" });
+
+  it("long_ctx の SKU は standard / global の longContext に入り、標準の単価を上書きしない", () => {
+    const bfm = (dimension) => ({ servicename: "OpenAI GPT-6 Astra (Amazon Bedrock Edition)", usagetype: `USE1-MP:USE1_${dimension}-Units` });
+    const rows = [
+      [bfm("output_tokens_long_ctx_standard"), "82.5", "1M tokens"],
+      [bfm("output_tokens_standard"), "55", "1M tokens"],
+      [bfm("input_tokens_long_ctx_standard"), "22", "1M tokens"],
+      [bfm("input_tokens_standard"), "11", "1M tokens"],
+      [bfm("input_tokens_long_ctx_global_standard"), "20", "1M tokens"],
+      [bfm("input_tokens_global_standard"), "10", "1M tokens"],
+      [bfm("output_tokens_long_ctx_global_standard"), "75", "1M tokens"],
+      [bfm("output_tokens_global_standard"), "50", "1M tokens"],
+      [bfm("cache_read_tokens_long_ctx_standard"), "2.2", "1M tokens"],
+      [bfm("cache_read_tokens_standard"), "1.1", "1M tokens"],
+    ];
+    const { prices } = normalize(
+      { AmazonBedrockFoundationModels: { "us-east-1": offerFile(rows) } },
+      { "openai.gpt-6-astra": { provider: "OpenAI", name: "GPT-6 Astra" } },
+    );
+    expect(prices.byModel["openai.gpt-6-astra"]["us-east-1"]).toEqual({
+      standard: { input: 11, output: 55, longContext: { input: 22, output: 82.5 } },
+      global: { input: 10, output: 50, longContext: { input: 20, output: 75 } },
+      cacheRead: { input: 1.1 },
+    });
+    expect(prices.unmapped).toBe(0);
+  });
+
+  it("価格表の名前の先頭にプロバイダ名が付いていても自動で引ける", () => {
+    const models = { "openai.gpt-6-astra": { provider: "OpenAI", name: "GPT-6 Astra" } };
+    expect(resolveModelIds("OpenAI GPT-6 Astra", { nameIndex: buildNameIndex(models) })).toEqual(["openai.gpt-6-astra"]);
+  });
+
+  it("model 属性がモデル ID そのもの (xai.grok-4.6) でも引ける", () => {
+    const models = { "xai.grok-4.6": { provider: "xAI", name: "Grok 4.6" } };
+    expect(resolveModelIds("xai.grok-4.6", { nameIndex: buildNameIndex(models) })).toEqual(["xai.grok-4.6"]);
+  });
+
+  it("Mantle の SKU しか無い軸は Mantle の単価で埋め、通常の SKU があればそちらを採る", () => {
+    const sku = (model, tail, service_tier) => ({ model, usagetype: `USE1-${tail}`, service_tier });
+    const rows = [
+      [sku("Grok 4.7", "xai.grok-4.7-mantle-input-tokens-standard", "standard"), "2.2", "1M tokens"],
+      [sku("Grok 4.7", "xai.grok-4.7-mantle-output-tokens-standard", "standard"), "6.6", "1M tokens"],
+      [sku("Grok 4.7", "xai.grok-4.7-mantle-input-tokens-global-standard", "global-standard"), "2", "1M tokens"],
+      [sku("Grok 4.6", "xai.grok-4.6-mantle-input-tokens-standard", "standard"), "9.9", "1M tokens"],
+      [sku("Grok 4.6", "xai.grok-4.6-input-tokens-standard", "standard"), "1.1", "1M tokens"],
+    ];
+    const { prices } = normalize(
+      { AmazonBedrock: { "us-east-1": offerFile(rows) } },
+      { "xai.grok-4.7": { provider: "xAI", name: "Grok 4.7" }, "xai.grok-4.6": { provider: "xAI", name: "Grok 4.6" } },
+    );
+    expect(prices.byModel["xai.grok-4.7"]["us-east-1"]).toEqual({ standard: { input: 2.2, output: 6.6 }, global: { input: 2 } });
+    expect(prices.byModel["xai.grok-4.6"]["us-east-1"]).toEqual({ standard: { input: 1.1 } });
+  });
+
+  it("models.json に無いモデルの Mantle の SKU は unmapped に数えない (Mantle 専用モデル)", () => {
+    const rows = [[{ model: "xai.grok-4.3", usagetype: "USE1-xai.grok-4.3-mantle-input-tokens-standard", service_tier: "standard" }, "1", "1M tokens"]];
+    const { prices } = normalize({ AmazonBedrock: { "us-east-1": offerFile(rows) } }, {});
+    expect(prices.unmapped).toBe(0);
+    expect(prices.byModel).toEqual({});
+  });
+
+  it("単位が小文字の 1k tokens でも単価が入る (Nova 2.5 Sonic)", () => {
+    const rows = [
+      [{ model: "Nova 2.5 Sonic", usagetype: "USE1-NovaSonic2.5-text-input-tokens", inferenceType: "Text Input Token" }, "0.00033", "1k tokens"],
+      [{ model: "Nova 2.5 Sonic", usagetype: "USE1-NovaSonic2.5-speech-input-tokens", inferenceType: "Speech Understanding input token" }, "0.003", "1k tokens"],
+    ];
+    const { prices } = normalize(
+      { AmazonBedrock: { "us-east-1": offerFile(rows) } },
+      { "amazon.nova-2-5-sonic": { provider: "Amazon", name: "Nova 2.5 Sonic" } },
+    );
+    expect(prices.byModel["amazon.nova-2-5-sonic"]["us-east-1"]).toEqual({ standard: { input: 0.33 } });
   });
 });
 
