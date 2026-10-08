@@ -115,6 +115,16 @@ export const ja = {
     docs: "Endpoint availability (公式 docs)",
   },
 
+  // docs のモデルカードと ListInferenceProfiles の推論 ID の食い違い。
+  mismatch: {
+    mark: "docs と相違",
+    heading: "docs のモデルカードと食い違いがあります（表の判定は API に従う）。",
+    detail: "ListInferenceProfiles: {api} / docs（bedrock-runtime）: {docs}",
+    none: "なし",
+    notSupported: "記載なし（Not supported）",
+    docs: "モデルカード（docs）",
+  },
+
   // PRICE-001: 価格。単価は USD / 100 万トークン。
   price: {
     sort: { none: "表示単価で並べ替え ↕", asc: "安い順 ↑", desc: "高い順 ↓" },

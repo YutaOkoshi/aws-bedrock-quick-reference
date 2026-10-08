@@ -253,6 +253,24 @@ function priceCell(row, direction) {
 }
 
 // Global 列は利用可否を示し、単価は入力・出力の価格欄にまとめる。
+// docs のモデルカードと ListInferenceProfiles の推論 ID が食い違うときの注釈。判定はそのまま API に従う。
+export function mismatchText(mismatch) {
+  const list = (ids) => (ids.length ? ids.join(", ") : null);
+  return t("mismatch.detail", {
+    api: list(mismatch.api) ?? t("mismatch.none"),
+    docs: list(mismatch.docs) ?? t("mismatch.notSupported"),
+  });
+}
+
+function withMismatch(node, mismatch) {
+  if (!mismatch) return node;
+  const wrap = el("span", "cell-with-mismatch");
+  const mark = el("span", "docs-mismatch", t("mismatch.mark"));
+  mark.title = mismatchText(mismatch);
+  wrap.append(node, mark);
+  return wrap;
+}
+
 function globalCell(row) {
   if (!row.global) return markNo();
   const wrap = el("span", "cell-global");
@@ -406,7 +424,7 @@ export function buildColumns(regionNotes, { features = {}, featureColumns: keys 
       labelKey: "table.geo",
       type: "text",
       sortable: false,
-      format: (_value, row) => geoCell(row, regionNotes),
+      format: (_value, row) => withMismatch(geoCell(row, regionNotes), row.inferenceMismatch?.geo),
     },
     {
       key: "global",
@@ -414,7 +432,7 @@ export function buildColumns(regionNotes, { features = {}, featureColumns: keys 
       labelKey: "table.global",
       type: "text",
       sortable: false,
-      format: (_value, row) => globalCell(row),
+      format: (_value, row) => withMismatch(globalCell(row), row.inferenceMismatch?.global),
     },
     // 標準・Global の比較価格を入力 / 出力にまとめる (USD / 100 万トークン)。
     {

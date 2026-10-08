@@ -118,6 +118,43 @@ function parseIds(allSections) {
   return { runtime: null, inference: [] };
 }
 
+// 推論 ID (接頭辞.プロバイダ.モデル) を、<br /> 区切りや文の中からも拾う (Kimi K3 は
+// "us.moonshotai.kimi-k3 in the commercial AWS Regions, in.moonshotai.kimi-k3 in the India Regions")。
+const INFERENCE_ID = /^[a-z][a-z-]*\.[a-z0-9-]+\.[a-z0-9.:-]+$/;
+function inferenceIdsIn(cell) {
+  const ids = String(cell ?? "")
+    .split(/<br\s*\/?>|[\s,]+/)
+    .map((part) => unescape(part).replace(/`/g, "").replace(/[.,;]+$/, "").trim())
+    .filter((part) => INFERENCE_ID.test(part));
+  return [...new Set(ids)];
+}
+
+// Programmatic Access の表を接続先ごとに読む: { "<endpoint>": { modelId, geo: [...], global: [...] } }。
+// Not supported / N/A は空の配列。食い違いの注釈 (feature-model.mjs の inferenceMismatches) に使う。
+function parseEndpoints(allSections) {
+  for (const section of allSections) {
+    for (const table of headedTables(section.lines)) {
+      const endpointCol = column(table.header, /^endpoint$/i);
+      const idCol = column(table.header, /^model id$/i);
+      if (endpointCol < 0 || idCol < 0) continue;
+      const geoCol = column(table.header, /geo inference id/i);
+      const globalCol = column(table.header, /global inference id/i);
+      const endpoints = {};
+      for (const row of table.body) {
+        const endpoint = cleanCell(row[endpointCol]);
+        if (!/^bedrock-(runtime|mantle)$/.test(endpoint) || endpoints[endpoint]) continue;
+        endpoints[endpoint] = {
+          modelId: idsInCell(row[idCol])[0] ?? null,
+          geo: geoCol >= 0 ? inferenceIdsIn(row[geoCol]) : [],
+          global: globalCol >= 0 ? inferenceIdsIn(row[globalCol]) : [],
+        };
+      }
+      if (Object.keys(endpoints).length > 0) return endpoints;
+    }
+  }
+  return null;
+}
+
 const ITEM =
   /icon-(yes|no)\.png\)\s*(?:\[([^\]]+)\]\(([^)\s]*)\)|([^<]+))/;
 
@@ -182,6 +219,7 @@ export function parseModelCard(markdown) {
   const all = sections(markdown);
   const parsed = {
     ids: parseIds(all),
+    endpoints: parseEndpoints(all),
     runtime: null,
     mantle: null,
     promptCaching: null,
@@ -235,6 +273,9 @@ export function resolveModelIds(card, parsed, { models, map }) {
   }
   if (parsed?.ids?.runtime) stages.push([parsed.ids.runtime]);
   if (parsed?.ids?.inference?.length) stages.push([...new Set(parsed.ids.inference.map(stripPrefix))]);
+  // bedrock-runtime の行が無いカード (GPT-5.4 / 5.5) は bedrock-mantle の行のモデル ID で引く。
+  // models.json (bedrock-runtime の一覧) にある ID のときだけ当たる。
+  if (!parsed?.ids?.runtime && parsed?.endpoints?.["bedrock-mantle"]?.modelId) stages.push([parsed.endpoints["bedrock-mantle"].modelId]);
   for (const candidates of stages) {
     const hits = matchModels(candidates, modelIds);
     if (hits.length > 0) return hits;
@@ -407,6 +448,7 @@ export function normalizeFeatures({ cards, models, names, map = {}, previous = n
       mantle: toKeys(parsed.mantle, card, parsed.links),
       promptCaching: parsed.promptCaching,
       computerUse: parsed.computerUse,
+      ...(parsed.endpoints ? { endpoints: parsed.endpoints } : {}),
     };
 
     // 機能一覧に Explicit Prompt Caching が無いカードは、Prompt caching の表の値で補う。

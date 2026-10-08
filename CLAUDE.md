@@ -286,6 +286,7 @@ source region R、モデル M について:
 | In-Region | R の `models.json[M].availability[R]` が `ON_DEMAND` を含む |
 | Geo | `profiles.json` に接頭辞が `global` **以外**で M を対象とし `sources[R]` を持つものがある（接頭辞の固定リストは持たない、D-012） |
 | Global | 同じく接頭辞 `global`。destination は API から取れないので `["*"]` で、画面では注記にする |
+| docs と相違 | Geo / Global の推論 ID が、`features.json` の `endpoints` (docs のモデルカードの Programmatic Access の bedrock-runtime の行) と食い違う。判定は API のまま変えず、注釈だけ出す (D-019) |
 | データなし | `fetch-log.json.regions[R].status` が `denied` |
 | 入力 / 出力 $/1M | `prices.json.byModel[M][R].standard` の `input` / `output` (bedrock-runtime)。無ければ「—」。`.mantle` の下は bedrock-mantle の単価で、詳細パネルにだけ出す (D-017) |
 | 機能列 | `features.json.byModel[M].runtime[K]` / `.mantle[K]` が true / false / キーなし (記載なし)。記載なしを false に倒さない。起点リージョンには依らない |

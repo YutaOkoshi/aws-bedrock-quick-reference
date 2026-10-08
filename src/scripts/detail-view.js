@@ -19,8 +19,8 @@ import { createCopyable } from "./copy.js";
 import { geoAreaLabel } from "./geo-labels.js";
 import { t, getLang, LANG_CHANGED_EVENT } from "./i18n.js";
 import { regionName } from "./region-names.js";
-import { DOCS_BASE, buildFeatureRows, modelDocsUrl } from "./feature-model.mjs";
-import { featureLegend, markNo, markYes } from "./table-view.js";
+import { DOCS_BASE, buildFeatureRows, inferenceMismatches, modelDocsUrl } from "./feature-model.mjs";
+import { featureLegend, markNo, markYes, mismatchText } from "./table-view.js";
 
 // 出典: bedrock-mantle の対応モデル表 (MANTLE-001 AC-006)。
 const MANTLE_AVAILABILITY_DOC =
@@ -439,7 +439,20 @@ function laneBlock(lane, { modelId, detail, regionNotes, profile, available, hea
   return block;
 }
 
-function lanePanel(lane, { modelId, detail, regionNotes, prices, features }) {
+// docs のモデルカードと ListInferenceProfiles の推論 ID の食い違い。表の判定は API に従い、ここで注釈する。
+function mismatchNote(modelId, lane, { features, profiles }) {
+  const mismatch = inferenceMismatches(features, profiles, modelId)[lane === LANE_GEO ? "geo" : "global"];
+  if (!mismatch) return null;
+  const note = el("p", "note-warn inference-mismatch", `${t("mismatch.heading")} ${mismatchText(mismatch)} `);
+  const link = el("a", "doc-link", t("mismatch.docs"));
+  link.href = modelDocsUrl(features, modelId);
+  link.target = "_blank";
+  link.rel = "noreferrer";
+  note.appendChild(link);
+  return note;
+}
+
+function lanePanel(lane, { modelId, detail, regionNotes, prices, features, profiles }) {
   const summary = detail.summaries[lane];
   const panel = el("div", "lane-panel");
   panel.id = laneId(modelId, lane);
@@ -486,6 +499,11 @@ function lanePanel(lane, { modelId, detail, regionNotes, prices, features }) {
     panel.appendChild(
       laneBlock(lane, { modelId, detail, regionNotes, profile: null, available: summary.available }),
     );
+  }
+
+  if (lane === LANE_GEO || lane === LANE_GLOBAL) {
+    const note = mismatchNote(modelId, lane, { features, profiles });
+    if (note) panel.appendChild(note);
   }
 
   // AC-018: 価格の節はブロックごとに繰り返さず、パネルの末尾に 1 つだけ。
@@ -617,7 +635,7 @@ export function mountDetailView({
     const tabs = laneTabs(modelId, detail, { onSelect: select });
     panel.appendChild(tabs.tablist);
     for (const lane of LANE_ORDER) {
-      const element = lanePanel(lane, { modelId, detail, regionNotes, prices, features });
+      const element = lanePanel(lane, { modelId, detail, regionNotes, prices, features, profiles });
       panels.set(lane, element);
       panel.appendChild(element);
     }

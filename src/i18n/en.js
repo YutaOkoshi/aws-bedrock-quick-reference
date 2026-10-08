@@ -116,6 +116,15 @@ export const en = {
   },
 
   // PRICE-001: pricing. All unit prices are USD per 1M tokens.
+  mismatch: {
+    mark: "differs from docs",
+    heading: "This differs from the docs model card (the table follows the API).",
+    detail: "ListInferenceProfiles: {api} / docs (bedrock-runtime): {docs}",
+    none: "none",
+    notSupported: "not listed (Not supported)",
+    docs: "Model card (docs)",
+  },
+
   price: {
     sort: { none: "Sort by displayed price ↕", asc: "Low to high ↑", desc: "High to low ↓" },
 

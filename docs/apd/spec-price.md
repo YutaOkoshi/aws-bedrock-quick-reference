@@ -1,7 +1,7 @@
 ---
 spec_id: "PRICE-001"
 context: "price"
-version: 3
+version: 4
 issue_ref: null
 title: "公開価格表の取り込みと、同じ行で見える価格の目安"
 decision_refs:
@@ -10,6 +10,7 @@ decision_refs:
   - D-004
   - D-017
   - D-018
+  - D-019
 ---
 
 ## User Story
@@ -238,6 +239,7 @@ Design の「価格の目安が同じ行で分かる」に対応する。
 ## 変更履歴
 
 - **version 1** (2026-09-14): 初版
+- **version 4** (2026-10-08): Global のバッチ・キャッシュ (`globalBatch` / `globalCacheRead` / `globalCacheWrite`) を取り込み、詳細の Global のタブに出す (D-019)
 - **version 3** (2026-10-08): Price List に bedrock-runtime の単価が無いモデルだけ AWS Marketplace の offer の rateCard で補い、出典を出す。価格未収録のモデルに docs のリンクを出す (D-018)
 - **version 2** (2026-10-08): 手書きの補完 (`price-supplements.json`) を廃止し、Price List の書き方の揺れを取り込み側で吸収する。bedrock-runtime と bedrock-mantle の単価を分けて持つ (D-017)
 

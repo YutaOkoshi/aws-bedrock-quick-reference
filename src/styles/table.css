@@ -365,3 +365,7 @@ td.feature-col { text-align: center; white-space: nowrap; padding-left: 6px; pad
 .feature-picker-menu { position: absolute; right: 0; z-index: 20; margin-top: 4px; min-width: 240px; max-width: min(320px, 90vw); max-height: 60vh; overflow-y: auto; padding: 8px; background: var(--bg-panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--panel-shadow); }
 .feature-picker-list { display: grid; gap: 4px; margin-bottom: 8px; }
 .feature-picker-option { display: flex; gap: 6px; align-items: center; color: var(--fg); }
+
+/* docs のモデルカードと ListInferenceProfiles の推論 ID の食い違い */
+.cell-with-mismatch { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 2px; }
+.docs-mismatch { font-size: 9px; color: var(--warn, #b45309); border-bottom: 1px dotted currentColor; cursor: help; white-space: nowrap; }

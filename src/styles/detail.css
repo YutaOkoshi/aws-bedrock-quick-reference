@@ -286,3 +286,5 @@ tr.expanded > td {
 .detail-feature-mark.feature-none { color: var(--fg-muted); }
 .detail-no-feature { color: var(--fg-muted); }
 .detail-feature-source { margin-top: 6px; }
+
+.inference-mismatch { margin: 8px 0 0; font-size: 0.85em; color: var(--warn, #b45309); }

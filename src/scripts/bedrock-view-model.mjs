@@ -1,7 +1,7 @@
 // 起点リージョンから見た表の行を組み立てる純関数群 (TABLE-001 / D-003)。
 // DOM も i18n も知らない。入力は data/*.json をそのまま渡す形にしてある。
 
-import { modelDocsUrl } from "./feature-model.mjs";
+import { inferenceMismatches, modelDocsUrl } from "./feature-model.mjs";
 import { isMantleRegion, judgeMantle, mantleEndpointOf } from "./mantle-model.mjs";
 
 // Global の接頭辞 (D-003)。これ以外の接頭辞はすべて地理圏 (Geo) として扱う (D-012)。
@@ -275,6 +275,8 @@ export function buildRow({ modelId, model, profiles, region, overrides, mantle =
     comparisonPrices: comparison,
     // D-018: 価格未収録のときに案内する docs (モデルカード、無ければ料金ページ)。
     docsUrl: modelDocsUrl(features, modelId),
+    // docs のモデルカードと ListInferenceProfiles の Geo / Global の推論 ID の食い違い (無ければ null)。
+    inferenceMismatch: inferenceMismatches(features, profiles, modelId),
     priceInput: comparison[0]?.input ?? null,
     priceOutput: comparison[0]?.output ?? null,
     // 備考はモデル ID のものに、そのモデルに紐づくプロファイル ID のものを続ける。

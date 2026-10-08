@@ -5,6 +5,32 @@ export const DOCS_BASE = "https://docs.aws.amazon.com/bedrock/latest/userguide/"
 // モデルカードが分からないモデルの行き先 (D-018)。
 export const PRICING_PAGE_URL = "https://aws.amazon.com/bedrock/pricing/";
 
+/**
+ * docs のモデルカード (Programmatic Access の表) と ListInferenceProfiles の、Geo / Global の推論 ID の食い違い。
+ * 判定に使うのは bedrock-runtime の行 (表の Geo / Global の列は bedrock-runtime の推論プロファイルで決まる)。
+ * 行が無ければ docs では「無い」として比べる。カードの表自体が分からないモデルは比べない (null)。
+ * 戻り値: { geo: { api, docs } | null, global: { api, docs } | null }。一致していれば null
+ */
+export function inferenceMismatches(features, profiles, modelId) {
+  const endpoints = features?.byModel?.[modelId]?.endpoints;
+  if (!endpoints) return { geo: null, global: null };
+  const runtime = endpoints["bedrock-runtime"] ?? { geo: [], global: [] };
+  // カードの行が別の ID (文脈長の付いた Provisioned 専用の ID は基の ID のカードを共有する) なら比べない。
+  if (runtime.modelId && runtime.modelId !== modelId) return { geo: null, global: null };
+  const api = { geo: [], global: [] };
+  for (const [profileId, profile] of Object.entries(profiles ?? {})) {
+    if (profile?.modelId !== modelId) continue;
+    (profileId.startsWith("global.") ? api.global : api.geo).push(profileId);
+  }
+  const compare = (lane) => {
+    const a = [...api[lane]].sort();
+    // GovCloud (us-gov.) はこのサイトの対象外。
+    const d = [...new Set(runtime[lane] ?? [])].filter((id) => !id.startsWith("us-gov.")).sort();
+    return a.length === d.length && a.every((id, index) => id === d[index]) ? null : { api: a, docs: d };
+  };
+  return { geo: compare("geo"), global: compare("global") };
+}
+
 /** 価格未収録のときに案内する docs の URL。モデルカード (features.json の card) が無ければ料金ページ。 */
 export function modelDocsUrl(features, modelId) {
   const card = features?.byModel?.[modelId]?.card;

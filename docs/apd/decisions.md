@@ -2,6 +2,7 @@
 
 技術選択の記録。**新しい判断ほど上に積む。** 最終決定はユーザーが行い、AI の推奨は参考情報。
 
+D-019 は同日、Global のバッチ・キャッシュの取り込みと、docs と API の食い違いの扱いとしてオーナーが決定した。
 D-018 は同日、Price List に無いモデルの単価の取り方としてオーナーが決定した。
 D-017 は 2026-10-08 の価格の取り直しで、Mantle と Runtime の単価が違うモデルが見つかったことを受けてオーナーが決定した。
 D-015・D-016 はモデル別の機能表（FEATURE-001、設計 `docs/superpowers/specs/2026-10-06-model-features-design.md`）の取り込みに伴って 2026-10-06 に決定した。
@@ -11,6 +12,18 @@ D-009 は Design v2 で価格が範囲に入ったことを受けて 2026-09-14 
 D-001〜D-005 は brainstorming の対話で内容が固まり、技術設計
 （`docs/superpowers/specs/2026-09-14-bedrock-quick-reference-design.md`）から転記したものを
 2026-09-14 にユーザーが確定した。D-006・D-007 は Spec フェーズで決定した。D-008 は Build 中に発生した矛盾の解消で、暫定決定 B をオーナーの指示で D に差し替えた。
+
+---
+
+## D-019: Global のバッチ・キャッシュを取り込み、docs と API の推論 ID の食い違いを注釈する
+
+- **Date**: 2026-10-08
+- **Context**: PRICE-001 v1 では Global とバッチ・キャッシュの組み合わせを範囲外にしていたが、Price List（東京だけで 91 SKU）と Marketplace の rateCard に値がある。また GPT-5.4 / 5.5 は ListInferenceProfiles に `us.` / `global.` があるのに、docs のモデルカードでは bedrock-mantle 専用（Geo / Global は Not supported）。Nova Lite / Micro は API に `apac.`（Lite は `ca.` も）があるが、docs の表は `us.` / `eu.` だけ
+- **Decision**（2026-10-08、オーナー指示「Global のバッチ・キャッシュも取り込んで」「食い違いがある場合は注釈をいれてほしい」）:
+  - 価格の種別に `globalBatch` / `globalCacheRead` / `globalCacheWrite` を足し、詳細の Global のタブに出す。Global と priority / flex の組み合わせは引き続き範囲外
+  - 表の Geo / Global の判定は API（ListInferenceProfiles）に従ったまま変えない。docs のモデルカードの Programmatic Access の表（bedrock-runtime の行）と推論 ID が食い違うときは、一覧のセルに「docs と相違」、詳細の Geo / Global のタブに両方の ID とモデルカードへのリンクを出す
+  - 比べない: カードの行が別の ID（文脈長の付いた Provisioned 専用の ID）、GovCloud（`us-gov.`）の ID、カードの表が読めないモデル
+- **Refs**: `spec-price.md`、`scripts/lib/features.mjs`（`parseEndpoints`）、`src/scripts/feature-model.mjs`（`inferenceMismatches`）
 
 ---
 
