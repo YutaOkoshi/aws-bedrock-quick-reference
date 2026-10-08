@@ -2,6 +2,14 @@
 // data/features.json の値は true / false / キーなし の 3 状態。「記載なし」を false に倒さない (D-003 と同じ方針)。
 
 export const DOCS_BASE = "https://docs.aws.amazon.com/bedrock/latest/userguide/";
+// モデルカードが分からないモデルの行き先 (D-018)。
+export const PRICING_PAGE_URL = "https://aws.amazon.com/bedrock/pricing/";
+
+/** 価格未収録のときに案内する docs の URL。モデルカード (features.json の card) が無ければ料金ページ。 */
+export function modelDocsUrl(features, modelId) {
+  const card = features?.byModel?.[modelId]?.card;
+  return typeof card === "string" && card ? `${DOCS_BASE}${card}` : PRICING_PAGE_URL;
+}
 
 // 脚注の出典。モデルカードの一覧ページ。
 export const MODEL_CARDS_URL = `${DOCS_BASE}model-cards.html`;

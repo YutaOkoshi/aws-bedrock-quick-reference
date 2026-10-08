@@ -11,7 +11,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { PRICE_OFFERS, checkPriceGuard, normalizePrices, priceFileUrl } from "./lib/prices.mjs";
+import { PRICE_OFFERS, applyMarketplacePrices, buildPrefixIndex, checkPriceGuard, normalizePrices, priceFileUrl } from "./lib/prices.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, "..");
@@ -147,6 +147,20 @@ async function main(argv) {
     map,
     generatedAt: new Date().toISOString(),
   });
+
+  // Price List に bedrock-runtime の単価が無いモデルだけ、Marketplace の offer の単価で埋める (D-018)。
+  // data/marketplace-prices.json は scripts/fetch-bedrock-marketplace-prices.mjs の出力 (SSO で手動取得)。
+  const marketplacePath = join(dataDir, "marketplace-prices.json");
+  if (existsSync(marketplacePath)) {
+    applyMarketplacePrices(prices, {
+      marketplace: readJson(marketplacePath),
+      models,
+      profiles: readJson(join(dataDir, "profiles.json")),
+      regions: Object.keys(files.AmazonBedrock ?? {}),
+      prefixIndex: buildPrefixIndex(files),
+    });
+    log(`filled from Marketplace offers: ${prices.marketplace?.models?.length ?? 0} models\n`);
+  }
 
   // 未マッピングの SKU はメンテナが地図を足すための材料。生データ側に残す (AC-006)。
   mkdirSync(rawDir, { recursive: true });

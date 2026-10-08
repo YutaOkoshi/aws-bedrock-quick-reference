@@ -110,3 +110,28 @@ describe('実データ (件数・モデル名を固定せず、取り直しに�
     expect(checked).toBeGreaterThan(0);
   });
 });
+
+describe('実データ: AWS Marketplace の offer で補った単価 (D-018)', () => {
+  const read = (name) => JSON.parse(readFileSync(new URL(`../data/${name}.json`, import.meta.url)));
+  const prices = read('prices'), marketplace = read('marketplace-prices');
+
+  it('出典が marketplace のリージョンは、prices.marketplace.models のモデルだけにあり、offerId を持つ', () => {
+    const listed = new Set(prices.marketplace?.models ?? []);
+    let checked = 0;
+    for (const [id, regions] of Object.entries(prices.byModel)) {
+      for (const [region, entry] of Object.entries(regions)) {
+        if (entry.source?.type !== 'marketplace') continue;
+        expect(listed.has(id), `${id} ${region}`).toBe(true);
+        expect(entry.source.offerId, `${id} ${region}`).toBe(marketplace.byModel[id]?.offerId);
+        checked += 1;
+      }
+    }
+    expect(checked).toBeGreaterThan(0);
+  });
+
+  it('marketplace-prices.json に offer のトークンやアカウント ID が入っていない', () => {
+    const text = JSON.stringify(marketplace);
+    expect(text).not.toMatch(/offerToken/);
+    expect(text).not.toMatch(/\b\d{12}\b/);
+  });
+});

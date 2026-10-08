@@ -19,7 +19,7 @@ import { createCopyable } from "./copy.js";
 import { geoAreaLabel } from "./geo-labels.js";
 import { t, getLang, LANG_CHANGED_EVENT } from "./i18n.js";
 import { regionName } from "./region-names.js";
-import { DOCS_BASE, buildFeatureRows } from "./feature-model.mjs";
+import { DOCS_BASE, buildFeatureRows, modelDocsUrl } from "./feature-model.mjs";
 import { featureLegend, markNo, markYes } from "./table-view.js";
 
 // 出典: bedrock-mantle の対応モデル表 (MANTLE-001 AC-006)。
@@ -244,7 +244,18 @@ function priceTable(rows) {
 }
 
 // AC-013: レーンごとの価格。bedrock-mantle の単価は Runtime と別に決まるので、別の表にする。
-function priceSection(modelId, { prices, region, regionNotes, lane, available }) {
+// D-018: 価格未収録のときに docs のモデルカード (無ければ料金ページ) へ案内するリンク。
+function docsLink(modelId, features) {
+  const wrap = el("p", "detail-price-docs");
+  const link = el("a", "doc-link price-docs-link", t("price.docsLinkDetail"));
+  link.href = modelDocsUrl(features, modelId);
+  link.target = "_blank";
+  link.rel = "noreferrer";
+  wrap.appendChild(link);
+  return wrap;
+}
+
+function priceSection(modelId, { prices, features, region, regionNotes, lane, available }) {
   const section = el("section", "detail-price");
   section.appendChild(el("h4", null, t("price.heading")));
   const rows = buildPriceRows(modelId, { prices, region, lane });
@@ -252,13 +263,24 @@ function priceSection(modelId, { prices, region, regionNotes, lane, available })
 
   if (rows.length === 0 && mantleRows.length === 0) {
     section.appendChild(el("p", "detail-no-price", t("price.none")));
+    section.appendChild(docsLink(modelId, features));
     return section;
   }
 
   const runtime = el("div", "detail-price-runtime");
   // Mantle の表があるときだけ、どちらの接続先の単価かを見出しで分ける。
   if (mantleRows.length > 0) runtime.appendChild(el("h5", "detail-price-endpoint mono", t("price.runtimeHeading")));
-  runtime.appendChild(rows.length > 0 ? priceTable(rows) : el("p", "detail-no-price", t("price.none")));
+  if (rows.length > 0) {
+    runtime.appendChild(priceTable(rows));
+  } else {
+    runtime.appendChild(el("p", "detail-no-price", t("price.none")));
+    runtime.appendChild(docsLink(modelId, features));
+  }
+  // D-018: Price List に無く、AWS Marketplace の offer の単価を出しているときは出典を書く。
+  const source = prices?.byModel?.[modelId]?.[region]?.source;
+  if (rows.length > 0 && source?.type === "marketplace") {
+    runtime.appendChild(el("p", "note-muted detail-price-source", t("price.sourceMarketplaceDetail", { offerId: source.offerId ?? "—" })));
+  }
   section.appendChild(runtime);
 
   if (mantleRows.length > 0) {
@@ -417,7 +439,7 @@ function laneBlock(lane, { modelId, detail, regionNotes, profile, available, hea
   return block;
 }
 
-function lanePanel(lane, { modelId, detail, regionNotes, prices }) {
+function lanePanel(lane, { modelId, detail, regionNotes, prices, features }) {
   const summary = detail.summaries[lane];
   const panel = el("div", "lane-panel");
   panel.id = laneId(modelId, lane);
@@ -470,6 +492,7 @@ function lanePanel(lane, { modelId, detail, regionNotes, prices }) {
   panel.appendChild(
     priceSection(modelId, {
       prices,
+      features,
       region: detail.region,
       regionNotes,
       lane,
@@ -594,7 +617,7 @@ export function mountDetailView({
     const tabs = laneTabs(modelId, detail, { onSelect: select });
     panel.appendChild(tabs.tablist);
     for (const lane of LANE_ORDER) {
-      const element = lanePanel(lane, { modelId, detail, regionNotes, prices });
+      const element = lanePanel(lane, { modelId, detail, regionNotes, prices, features });
       panels.set(lane, element);
       panel.appendChild(element);
     }

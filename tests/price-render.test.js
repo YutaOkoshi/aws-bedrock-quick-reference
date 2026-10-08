@@ -187,7 +187,9 @@ describe("AC-011 価格が無いモデル", () => {
   it("価格が未収録なら一覧に明示し、詳細パネルは「価格データなし」", () => {
     // 価格を持たない (空の) prices を渡すと全モデルが「—」
     mountFixtureApp({ prices: {} });
-    expect(cells(rowFor(CLAUDE))[PRICE_INPUT].textContent).toBe("価格未収録");
+    // D-018: 「価格未収録」の後ろに docs へのリンクが付く
+    expect(cells(rowFor(CLAUDE))[PRICE_INPUT].querySelector(".dim").textContent).toBe("価格未収録");
+    expect(cells(rowFor(CLAUDE))[PRICE_INPUT].querySelector("a.price-docs-link")).not.toBeNull();
     expect(cells(rowFor(CLAUDE))[PRICE_INPUT].querySelector(".dim")).not.toBeNull();
 
     rowFor(CLAUDE).querySelector(".detail-toggle").click();
@@ -341,5 +343,52 @@ describe("詳細の価格: レビュー (2026-10-08) で見つかった表示の
     const notes = global.querySelector(".detail-price-unit").textContent;
     expect(notes).toContain("bedrock-runtime の Global 用のバッチ・キャッシュ価格は未収録");
     expect(notes.split("Global 用のバッチ・キャッシュ価格は未収録")).toHaveLength(2);
+  });
+});
+
+// D-018: Price List に無いモデルは AWS Marketplace の offer の単価を出し、出典を書く。
+// それでも単価が無いモデルは、docs のモデルカードへのリンクを出す。
+describe("Marketplace の単価の出典と、価格未収録のときの docs リンク", () => {
+  const marketplace = { byModel: { [CLAUDE]: { [TOKYO]: {
+    standard: { input: 2.2, output: 13.2 }, global: { input: 2, output: 12 },
+    source: { type: "marketplace", offerId: "offer-3dvyrx3okd4lq" },
+  } } } };
+
+  it("一覧の価格に「出典: Marketplace」が添えられる", () => {
+    mountFixtureApp({ prices: marketplace });
+    const cell = cells(rowFor(CLAUDE))[PRICE_INPUT];
+    expect(cell.querySelector(".price-value").textContent).toBe("$2.00");
+    expect(cell.querySelector(".price-source").textContent).toBe("出典: Marketplace");
+  });
+
+  it("Price List の単価には出典の注記を付けない", () => {
+    mountFixtureApp();
+    expect(cells(rowFor(CLAUDE))[PRICE_INPUT].querySelector(".price-source")).toBeNull();
+  });
+
+  it("詳細の価格の節に、offer ID 付きの出典が出る", () => {
+    mountFixtureApp({ prices: marketplace });
+    rowFor(CLAUDE).querySelector(".detail-toggle").click();
+    const source = panelOf(CLAUDE).querySelector('[data-lane="inRegion"] .detail-price .detail-price-source');
+    expect(source.textContent).toContain("AWS Marketplace");
+    expect(source.textContent).toContain("offer-3dvyrx3okd4lq");
+    expect(source.textContent).toContain("Price List");
+  });
+
+  it("価格未収録のモデルは、一覧と詳細に docs のモデルカードへのリンクが出る", () => {
+    const features = { byModel: { [CLAUDE]: { card: "model-card-xai-grok-4-7.html", runtime: {}, mantle: {} } } };
+    mountFixtureApp({ prices: { byModel: {} }, features });
+    const link = cells(rowFor(CLAUDE))[PRICE_INPUT].querySelector("a.price-docs-link");
+    expect(link.href).toBe("https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-7.html");
+    expect(cells(rowFor(CLAUDE))[PRICE_INPUT].textContent).toContain("価格未収録");
+    rowFor(CLAUDE).querySelector(".detail-toggle").click();
+    const detailLink = panelOf(CLAUDE).querySelector('[data-lane="inRegion"] .detail-price a.price-docs-link');
+    expect(detailLink.href).toBe("https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-xai-grok-4-7.html");
+  });
+
+  it("モデルカードが分からないモデルは、Bedrock の料金ページへのリンクにする", () => {
+    mountFixtureApp({ prices: { byModel: {} } });
+    const link = cells(rowFor(CLAUDE))[PRICE_INPUT].querySelector("a.price-docs-link");
+    expect(link.href).toBe("https://aws.amazon.com/bedrock/pricing/");
   });
 });

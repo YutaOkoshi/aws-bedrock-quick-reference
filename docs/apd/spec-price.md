@@ -1,7 +1,7 @@
 ---
 spec_id: "PRICE-001"
 context: "price"
-version: 2
+version: 3
 issue_ref: null
 title: "公開価格表の取り込みと、同じ行で見える価格の目安"
 decision_refs:
@@ -9,6 +9,7 @@ decision_refs:
   - D-001
   - D-004
   - D-017
+  - D-018
 ---
 
 ## User Story
@@ -237,6 +238,7 @@ Design の「価格の目安が同じ行で分かる」に対応する。
 ## 変更履歴
 
 - **version 1** (2026-09-14): 初版
+- **version 3** (2026-10-08): Price List に bedrock-runtime の単価が無いモデルだけ AWS Marketplace の offer の rateCard で補い、出典を出す。価格未収録のモデルに docs のリンクを出す (D-018)
 - **version 2** (2026-10-08): 手書きの補完 (`price-supplements.json`) を廃止し、Price List の書き方の揺れを取り込み側で吸収する。bedrock-runtime と bedrock-mantle の単価を分けて持つ (D-017)
 
 ## Price List の書き方の揺れ (2026-10-07)
@@ -257,3 +259,20 @@ Price List に載っていないモデルは推測で埋めない。2026-10-07 �
 無いと確認したもの: GPT-5.4 / 5.5 / 5.6 Luna / 5.6 Sol / 5.6 Terra / 6 Luna / 6 Sol / 6.1 Sol (Marketplace 製品。GPT-5.4 は GovCloud にだけある)、
 GLM-5.3、Stability の画像編集系 13 モデル。`amazon.titan-embed-g1-text-02` は API の名前が `amazon.titan-embed-text-v2:0` と同じで、
 Price List に別の SKU が無い (`TitanEmbeddingV2-Text` は `v2:0` に結び付く)。
+
+## AWS Marketplace の offer による補完 (D-018)
+
+Price List に bedrock-runtime の単価が 1 つも無いモデルだけ、Bedrock の `ListFoundationModelAgreementOffers` が返す
+rateCard の単価で埋める。Price List に単価があるモデルは触らない。
+
+- 取得: `node scripts/fetch-bedrock-marketplace-prices.mjs --profile <名前>` (SSO 必須) → `data/marketplace-prices.json`。
+  生データは `data/raw/<日付>/marketplace/` (gitignore 対象)。`--from-raw <日付>` で作り直せる
+- 反映: `node scripts/fetch-bedrock-prices.mjs` (または `--from-raw`) が読み込んで `data/prices.json` に入れる
+- dimension の読み方: `[略号_]<軸>_tokens_[30m_|1h_][long_ctx_][global_]<階層>`。種別の規則は Price List と同じ。
+  ultrafast と 1 時間 TTL のキャッシュ書き込みは範囲外。画像の課金 (`CreatedImage<名前>`) は、13 モデルで 1 つの offer を共有する
+  Stability に合わせ、名前の語で 1 つに決まるモデルにだけ入れる (決まらなければ `unmatchedImages` に残す)
+- 当てるリージョン: 略号付きはそのリージョン。略号無しの標準系は In-Region (ON_DEMAND) か Geo のプロファイルの起点、global は Global の
+  プロファイルの起点。いずれも Price List の取得対象リージョンに限る
+- 画面: 一覧の価格に「出典: Marketplace」、詳細に offer ID 付きの出典を出す
+- それでも単価が無いモデル (2026-10-08 時点で Grok 4.6 / 4.7・Kimi K3 の Runtime、GLM-5.3、Titan Embeddings g1-text-02) は、
+  一覧の「価格未収録」と詳細の「価格データがありません」に、docs のモデルカード (features.json の `card`。無ければ料金ページ) へのリンクを付ける

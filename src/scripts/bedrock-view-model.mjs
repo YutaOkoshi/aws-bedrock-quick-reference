@@ -1,6 +1,7 @@
 // 起点リージョンから見た表の行を組み立てる純関数群 (TABLE-001 / D-003)。
 // DOM も i18n も知らない。入力は data/*.json をそのまま渡す形にしてある。
 
+import { modelDocsUrl } from "./feature-model.mjs";
 import { isMantleRegion, judgeMantle, mantleEndpointOf } from "./mantle-model.mjs";
 
 // Global の接頭辞 (D-003)。これ以外の接頭辞はすべて地理圏 (Geo) として扱う (D-012)。
@@ -169,14 +170,14 @@ export function comparisonPrices(prices, modelId, region, globalAvailable = true
     const rows = (globalAvailable ? ["global", "standard"] : ["standard"]).flatMap((kind) => {
       const value = entries[source]?.[kind];
       return value && [value.input, value.output].some((amount) => formatPrice(amount) !== null)
-        ? [{ ...value, kind, region: source, reference: source !== region }]
+        ? [{ ...value, kind, region: source, reference: source !== region, ...(entries[source]?.source ? { source: entries[source].source } : {}) }]
         : [];
     });
     const selected = rows.slice(0, 1);
     const scope = selected[0]?.kind ?? (globalAvailable && entries[source]?.metered?.some(rate => rate.scope === "global") ? "global" : "standard");
     for (const rate of entries[source]?.metered ?? []) {
       if ((rate.scope ?? "standard") !== scope) continue;
-      selected.push({ ...rate, kind: "metered", region: source, reference: source !== region });
+      selected.push({ ...rate, kind: "metered", region: source, reference: source !== region, ...(entries[source]?.source ? { source: entries[source].source } : {}) });
     }
     if (selected.length) return selected;
   }
@@ -247,7 +248,7 @@ function modelsVisibleFrom(models, region) {
 }
 
 // 1 行分。table-engine に渡すプレーンオブジェクト。
-export function buildRow({ modelId, model, profiles, region, overrides, mantle = null, prices }) {
+export function buildRow({ modelId, model, profiles, region, overrides, mantle = null, prices, features = {} }) {
   const geo = judgeGeo(profiles, modelId, region);
   const globalProfile = judgeGlobal(profiles, modelId, region);
   const price = priceFor(prices, modelId, region);
@@ -272,6 +273,8 @@ export function buildRow({ modelId, model, profiles, region, overrides, mantle =
     // 一覧は先頭に表示する比較価格で並べ替える。詳細は起点の価格を使う。
     price,
     comparisonPrices: comparison,
+    // D-018: 価格未収録のときに案内する docs (モデルカード、無ければ料金ページ)。
+    docsUrl: modelDocsUrl(features, modelId),
     priceInput: comparison[0]?.input ?? null,
     priceOutput: comparison[0]?.output ?? null,
     // 備考はモデル ID のものに、そのモデルに紐づくプロファイル ID のものを続ける。
@@ -299,6 +302,7 @@ export function buildViewModel({
   overrides = {},
   mantle = null,
   prices = {},
+  features = {},
   region,
 }) {
   const fetch = regionStatus(fetchLog, region);
@@ -306,7 +310,7 @@ export function buildViewModel({
     fetch.status === "ok"
       ? modelsVisibleFrom(models, region)
           .map(([modelId, model]) =>
-            buildRow({ modelId, model, profiles, region, overrides, mantle, prices }),
+            buildRow({ modelId, model, profiles, region, overrides, mantle, prices, features }),
           )
           // 一覧は プロバイダ → モデル名 の昇順 (TABLE-001 v2 AC-006)。
           // 同名のモデルが複数あるときだけモデル ID で決着させる。

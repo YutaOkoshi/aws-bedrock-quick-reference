@@ -75,3 +75,31 @@ export function listInferenceProfiles(runner, { profile, region, maxPages = 100 
 
   return { ok: false, raws, pages, stderr: `nextToken did not terminate after ${maxPages} pages` };
 }
+
+// ListFoundationModelAgreementOffers: Marketplace 経由のモデルの offer と単価表 (rateCard) を返す (D-018)。
+// Marketplace 経由でないモデルは ValidationException "Agreement not supported for this model" になる。
+// これは取得失敗ではなく「offer が無い」なので notSupported として返す。
+// 戻り値: { ok, raw, json, notSupported, stderr }
+export function listAgreementOffers(runner, { profile, region, modelId }) {
+  const result = runner([
+    "bedrock",
+    "list-foundation-model-agreement-offers",
+    "--model-id",
+    modelId,
+    "--profile",
+    profile,
+    "--region",
+    region,
+    "--output",
+    "json",
+  ]);
+  if (result.status !== 0) {
+    const notSupported = /Agreement not supported for this model/.test(result.stderr ?? "");
+    return { ok: false, raw: result.stdout, json: null, notSupported, stderr: result.stderr };
+  }
+  try {
+    return { ok: true, raw: result.stdout, json: JSON.parse(result.stdout), notSupported: false, stderr: result.stderr };
+  } catch (error) {
+    return { ok: false, raw: result.stdout, json: null, notSupported: false, stderr: `JSON parse failed: ${error.message}` };
+  }
+}

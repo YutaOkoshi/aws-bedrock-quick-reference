@@ -1,0 +1,7320 @@
+{
+  "fetchedAt": "2026-10-08T04:03:18.793Z",
+  "source": "bedrock:ListFoundationModelAgreementOffers",
+  "unmatchedImages": [],
+  "byModel": {
+    "anthropic.claude-fable-5": {
+      "offerId": "offer-vk3fuman5qwzy",
+      "kinds": {},
+      "byPrefix": {
+        "AFS1": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "APE2": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "APN1": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 1.1
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "APN2": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 1.1
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "APN3": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 1.1
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "APS1": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 1.1
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "APS2": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 1.1
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "APS3": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 1.1
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "APS4": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "APS5": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "APS6": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 1.1
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "APS7": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "APS8": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "APS9": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "CAN1": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 1.1
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "CAN2": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 1.1
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "EUC1": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 1.1
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "EUC2": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 1.1
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "EUN1": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 1.1
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "EUS1": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 1.1
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "EUS2": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 1.1
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "EUW2": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 1.1
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "EUW3": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 1.1
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "ILC1": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "MEC1": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "MES1": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "MXC1": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "SAE1": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "UGE1": {
+          "standard": {
+            "input": 12,
+            "output": 60
+          },
+          "cacheRead": {
+            "input": 1.2
+          },
+          "cacheWrite": {
+            "input": 15
+          }
+        },
+        "UGW1": {
+          "standard": {
+            "input": 12,
+            "output": 60
+          },
+          "cacheRead": {
+            "input": 1.2
+          },
+          "cacheWrite": {
+            "input": 15
+          }
+        },
+        "USE1": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 1.1
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "USE2": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 1.1
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "USW1": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 1.1
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "USW2": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 1.1
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        }
+      },
+      "outOfScope": 128
+    },
+    "anthropic.claude-fable-5-1": {
+      "offerId": "offer-icq4574v6gz3i",
+      "kinds": {},
+      "byPrefix": {
+        "AFS1": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "APE2": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "APN1": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "APN2": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "APN3": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "APS1": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "APS2": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "APS3": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "APS4": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "APS5": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "APS6": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "APS7": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "APS8": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "APS9": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "CAN1": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "CAN2": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "EUC1": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "EUC2": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "EUN1": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "EUS1": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "EUS2": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "EUW2": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "EUW3": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "ILC1": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "MEC1": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "MES1": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "MXC1": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "SAE1": {
+          "global": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        "UGE1": {
+          "standard": {
+            "input": 12,
+            "output": 60
+          },
+          "cacheRead": {
+            "input": 0.3
+          },
+          "cacheWrite": {
+            "input": 15
+          }
+        },
+        "UGW1": {
+          "standard": {
+            "input": 12,
+            "output": 60
+          },
+          "cacheRead": {
+            "input": 0.3
+          },
+          "cacheWrite": {
+            "input": 15
+          }
+        },
+        "USE1": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "USE2": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "USW1": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        },
+        "USW2": {
+          "standard": {
+            "input": 11,
+            "output": 55
+          },
+          "global": {
+            "input": 10,
+            "output": 50
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "cacheWrite": {
+            "input": 13.75
+          }
+        }
+      },
+      "outOfScope": 109
+    },
+    "anthropic.claude-haiku-4-5-20251001-v1:0": {
+      "offerId": "offer-fudwqbphlos64",
+      "kinds": {},
+      "byPrefix": {
+        "AFS1": {
+          "global": {
+            "input": 1,
+            "output": 5
+          }
+        },
+        "APE2": {
+          "global": {
+            "input": 1,
+            "output": 5
+          }
+        },
+        "APN1": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        },
+        "APN2": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        },
+        "APN3": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        },
+        "APS1": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        },
+        "APS2": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        },
+        "APS3": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        },
+        "APS4": {
+          "global": {
+            "input": 1,
+            "output": 5
+          }
+        },
+        "APS5": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        },
+        "APS6": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        },
+        "APS7": {
+          "global": {
+            "input": 1,
+            "output": 5
+          }
+        },
+        "APS8": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        },
+        "APS9": {
+          "global": {
+            "input": 1,
+            "output": 5
+          }
+        },
+        "CAN1": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        },
+        "CAN2": {
+          "global": {
+            "input": 1,
+            "output": 5
+          }
+        },
+        "EUC1": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        },
+        "EUC2": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        },
+        "EUN1": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        },
+        "EUS1": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        },
+        "EUS2": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        },
+        "EUW2": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        },
+        "EUW3": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        },
+        "ILC1": {
+          "global": {
+            "input": 1,
+            "output": 5
+          }
+        },
+        "MEC1": {
+          "global": {
+            "input": 1,
+            "output": 5
+          }
+        },
+        "MES1": {
+          "global": {
+            "input": 1,
+            "output": 5
+          }
+        },
+        "MXC1": {
+          "global": {
+            "input": 1,
+            "output": 5
+          }
+        },
+        "SAE1": {
+          "global": {
+            "input": 1,
+            "output": 5
+          }
+        },
+        "USE1": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        },
+        "USE2": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        },
+        "USW1": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        },
+        "USW2": {
+          "standard": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "global": {
+            "input": 1,
+            "output": 5
+          },
+          "batch": {
+            "input": 0.55,
+            "output": 2.75
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 1.375
+          }
+        }
+      },
+      "outOfScope": 764
+    },
+    "anthropic.claude-haiku-5-5": {
+      "offerId": "offer-u3aih6zr7uw5u",
+      "kinds": {},
+      "byPrefix": {
+        "AFS1": {
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          }
+        },
+        "APE2": {
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          }
+        },
+        "APN1": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        },
+        "APN2": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        },
+        "APN3": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        },
+        "APS1": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        },
+        "APS2": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        },
+        "APS3": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        },
+        "APS4": {
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          }
+        },
+        "APS5": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        },
+        "APS6": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        },
+        "APS7": {
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          }
+        },
+        "APS8": {
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          }
+        },
+        "APS9": {
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          }
+        },
+        "CAN1": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        },
+        "CAN2": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        },
+        "EUC1": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        },
+        "EUC2": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        },
+        "EUN1": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        },
+        "EUS1": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        },
+        "EUS2": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        },
+        "EUW2": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        },
+        "EUW3": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        },
+        "ILC1": {
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          }
+        },
+        "MEC1": {
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          }
+        },
+        "MES1": {
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          }
+        },
+        "MXC1": {
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          }
+        },
+        "SAE1": {
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          }
+        },
+        "UGE1": {
+          "standard": {
+            "input": 0.12,
+            "output": 0.6,
+            "longContext": {
+              "input": 0.6,
+              "output": 3
+            }
+          },
+          "cacheRead": {
+            "input": 0.012
+          },
+          "cacheWrite": {
+            "input": 0.15
+          }
+        },
+        "UGW1": {
+          "standard": {
+            "input": 0.12,
+            "output": 0.6,
+            "longContext": {
+              "input": 0.6,
+              "output": 3
+            }
+          },
+          "cacheRead": {
+            "input": 0.012
+          },
+          "cacheWrite": {
+            "input": 0.15
+          }
+        },
+        "USE1": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        },
+        "USE2": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        },
+        "USW1": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        },
+        "USW2": {
+          "standard": {
+            "input": 0.11,
+            "output": 0.55,
+            "longContext": {
+              "input": 0.55,
+              "output": 2.75
+            }
+          },
+          "global": {
+            "input": 0.1,
+            "output": 0.5,
+            "longContext": {
+              "input": 0.5,
+              "output": 2.5
+            }
+          },
+          "cacheRead": {
+            "input": 0.011
+          },
+          "cacheWrite": {
+            "input": 0.1375
+          }
+        }
+      },
+      "outOfScope": 304
+    },
+    "anthropic.claude-opus-4-7": {
+      "offerId": "offer-sltne4evyuyeu",
+      "kinds": {},
+      "byPrefix": {
+        "AFS1": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APE2": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APN1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "APN2": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APN3": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "APS1": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APS2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "APS3": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APS4": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APS5": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APS6": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "APS7": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APS8": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APS9": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "CAN1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "CAN2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUC1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUC2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUN1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUS1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUS2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUW2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUW3": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "ILC1": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "MEC1": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "MES1": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "MXC1": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "SAE1": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "USE1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "USE2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "USW1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "USW2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        }
+      },
+      "outOfScope": 191
+    },
+    "anthropic.claude-opus-4-8": {
+      "offerId": "offer-wdkl4yk6s7uu4",
+      "kinds": {},
+      "byPrefix": {
+        "AFS1": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APE2": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APN1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "APN2": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APN3": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "APS1": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APS2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "APS3": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APS4": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APS5": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APS6": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "APS7": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APS8": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APS9": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "CAN1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "CAN2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUC1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUC2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUN1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUS1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUS2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUW2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUW3": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "ILC1": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "MEC1": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "MES1": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "MXC1": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "SAE1": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "UGE1": {
+          "standard": {
+            "input": 6,
+            "output": 30
+          },
+          "batch": {
+            "input": 3,
+            "output": 15
+          },
+          "cacheRead": {
+            "input": 0.6
+          },
+          "cacheWrite": {
+            "input": 7.5
+          }
+        },
+        "UGW1": {
+          "standard": {
+            "input": 6,
+            "output": 30
+          },
+          "batch": {
+            "input": 3,
+            "output": 15
+          },
+          "cacheRead": {
+            "input": 0.6
+          },
+          "cacheWrite": {
+            "input": 7.5
+          }
+        },
+        "USE1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "USE2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "USW1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "USW2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        }
+      },
+      "outOfScope": 193
+    },
+    "anthropic.claude-opus-5": {
+      "offerId": "offer-f3u6lgbrem3zs",
+      "kinds": {},
+      "byPrefix": {
+        "AFS1": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APE2": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APN1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "APN2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "APN3": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "APS1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "APS2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "APS3": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "APS4": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APS5": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "APS6": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "APS7": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APS8": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "APS9": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "CAN1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "CAN2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUC1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUC2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUN1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUS1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUS2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUW2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "EUW3": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "ILC1": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "MEC1": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "MES1": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "MXC1": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "SAE1": {
+          "global": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        "UGE1": {
+          "standard": {
+            "input": 6,
+            "output": 30
+          },
+          "batch": {
+            "input": 3,
+            "output": 15
+          },
+          "cacheRead": {
+            "input": 0.6
+          },
+          "cacheWrite": {
+            "input": 7.5
+          }
+        },
+        "UGW1": {
+          "standard": {
+            "input": 6,
+            "output": 30
+          },
+          "batch": {
+            "input": 3,
+            "output": 15
+          },
+          "cacheRead": {
+            "input": 0.6
+          },
+          "cacheWrite": {
+            "input": 7.5
+          }
+        },
+        "USE1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "USE2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "USW1": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        },
+        "USW2": {
+          "standard": {
+            "input": 5.5,
+            "output": 27.5
+          },
+          "global": {
+            "input": 5,
+            "output": 25
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 13.75
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "cacheWrite": {
+            "input": 6.875
+          }
+        }
+      },
+      "outOfScope": 197
+    },
+    "anthropic.claude-opus-5-5": {
+      "offerId": "offer-7sp77cpl4rveu",
+      "kinds": {},
+      "byPrefix": {
+        "AFS1": {
+          "global": {
+            "input": 4,
+            "output": 20
+          }
+        },
+        "APE2": {
+          "global": {
+            "input": 4,
+            "output": 20
+          }
+        },
+        "APN1": {
+          "standard": {
+            "input": 4.4,
+            "output": 22
+          },
+          "global": {
+            "input": 4,
+            "output": 20
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 5.5
+          }
+        },
+        "APN2": {
+          "global": {
+            "input": 4,
+            "output": 20
+          }
+        },
+        "APN3": {
+          "standard": {
+            "input": 4.4,
+            "output": 22
+          },
+          "global": {
+            "input": 4,
+            "output": 20
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 5.5
+          }
+        },
+        "APS1": {
+          "global": {
+            "input": 4,
+            "output": 20
+          }
+        },
+        "APS2": {
+          "standard": {
+            "input": 4.4,
+            "output": 22
+          },
+          "global": {
+            "input": 4,
+            "output": 20
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 5.5
+          }
+        },
+        "APS3": {
+          "global": {
+            "input": 4,
+            "output": 20
+          }
+        },
+        "APS4": {
+          "global": {
+            "input": 4,
+            "output": 20
+          }
+        },
+        "APS5": {
+          "global": {
+            "input": 4,
+            "output": 20
+          }
+        },
+        "APS6": {
+          "standard": {
+            "input": 4.4,
+            "output": 22
+          },
+          "global": {
+            "input": 4,
+            "output": 20
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 5.5
+          }
+        },
+        "APS7": {
+          "global": {
+            "input": 4,
+            "output": 20
+          }
+        },
+        "APS8": {
+          "global": {
+            "input": 4,
+            "output": 20
+          }
+        },
+        "APS9": {
+          "global": {
+            "input": 4,
+            "output": 20
+          }
+        },
+        "CAN1": {
+          "standard": {
+            "input": 4.4,
+            "output": 22
+          },
+          "global": {
+            "input": 4,
+            "output": 20
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 5.5
+          }
+        },
+        "CAN2": {
+          "standard": {
+            "input": 4.4,
+            "output": 22
+          },
+          "global": {
+            "input": 4,
+            "output": 20
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 5.5
+          }
+        },
+        "EUC1": {
+          "standard": {
+            "input": 4.4,
+            "output": 22
+          },
+          "global": {
+            "input": 4,
+            "output": 20
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 5.5
+          }
+        },
+        "EUC2": {
+          "standard": {
+            "input": 4.4,
+            "output": 22
+          },
+          "global": {
+            "input": 4,
+            "output": 20
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 5.5
+          }
+        },
+        "EUN1": {
+          "standard": {
+            "input": 4.4,
+            "output": 22
+          },
+          "global": {
+            "input": 4,
+            "output": 20
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 5.5
+          }
+        },
+        "EUS1": {
+          "standard": {
+            "input": 4.4,
+            "output": 22
+          },
+          "global": {
+            "input": 4,
+            "output": 20
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 5.5
+          }
+        },
+        "EUS2": {
+          "standard": {
+            "input": 4.4,
+            "output": 22
+          },
+          "global": {
+            "input": 4,
+            "output": 20
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 5.5
+          }
+        },
+        "EUW2": {
+          "standard": {
+            "input": 4.4,
+            "output": 22
+          },
+          "global": {
+            "input": 4,
+            "output": 20
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 5.5
+          }
+        },
+        "EUW3": {
+          "standard": {
+            "input": 4.4,
+            "output": 22
+          },
+          "global": {
+            "input": 4,
+            "output": 20
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 5.5
+          }
+        },
+        "ILC1": {
+          "global": {
+            "input": 4,
+            "output": 20
+          }
+        },
+        "MEC1": {
+          "global": {
+            "input": 4,
+            "output": 20
+          }
+        },
+        "MES1": {
+          "global": {
+            "input": 4,
+            "output": 20
+          }
+        },
+        "MXC1": {
+          "global": {
+            "input": 4,
+            "output": 20
+          }
+        },
+        "SAE1": {
+          "global": {
+            "input": 4,
+            "output": 20
+          }
+        },
+        "UGE1": {
+          "standard": {
+            "input": 4.8,
+            "output": 24
+          },
+          "cacheRead": {
+            "input": 0.24
+          },
+          "cacheWrite": {
+            "input": 6
+          }
+        },
+        "UGW1": {
+          "standard": {
+            "input": 4.8,
+            "output": 24
+          },
+          "cacheRead": {
+            "input": 0.24
+          },
+          "cacheWrite": {
+            "input": 6
+          }
+        },
+        "USE1": {
+          "standard": {
+            "input": 4.4,
+            "output": 22
+          },
+          "global": {
+            "input": 4,
+            "output": 20
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 5.5
+          }
+        },
+        "USE2": {
+          "standard": {
+            "input": 4.4,
+            "output": 22
+          },
+          "global": {
+            "input": 4,
+            "output": 20
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 5.5
+          }
+        },
+        "USW1": {
+          "standard": {
+            "input": 4.4,
+            "output": 22
+          },
+          "global": {
+            "input": 4,
+            "output": 20
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 5.5
+          }
+        },
+        "USW2": {
+          "standard": {
+            "input": 4.4,
+            "output": 22
+          },
+          "global": {
+            "input": 4,
+            "output": 20
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 5.5
+          }
+        }
+      },
+      "outOfScope": 125
+    },
+    "anthropic.claude-sonnet-5": {
+      "offerId": "offer-2ykemehpsyf7g",
+      "kinds": {},
+      "byPrefix": {
+        "AFS1": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "APE2": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "APN1": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "APN2": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "APN3": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "APS1": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "APS2": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "APS3": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "APS4": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "APS5": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "APS6": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "APS7": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "APS8": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "APS9": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "CAN1": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "CAN2": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "EUC1": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "EUC2": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "EUN1": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "EUS1": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "EUS2": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "EUW2": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "EUW3": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "ILC1": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "MEC1": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "MES1": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "MXC1": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "SAE1": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "UGE1": {
+          "standard": {
+            "input": 2.4,
+            "output": 12
+          },
+          "batch": {
+            "input": 1.2,
+            "output": 6
+          },
+          "cacheRead": {
+            "input": 0.24
+          },
+          "cacheWrite": {
+            "input": 3
+          }
+        },
+        "UGW1": {
+          "standard": {
+            "input": 2.4,
+            "output": 12
+          },
+          "batch": {
+            "input": 1.2,
+            "output": 6
+          },
+          "cacheRead": {
+            "input": 0.24
+          },
+          "cacheWrite": {
+            "input": 3
+          }
+        },
+        "USE1": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "USE2": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "USW1": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "USW2": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "batch": {
+            "input": 1.1,
+            "output": 5.5
+          },
+          "cacheRead": {
+            "input": 0.22
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        }
+      },
+      "outOfScope": 197
+    },
+    "anthropic.claude-sonnet-5-5": {
+      "offerId": "offer-5fu2rhus3byrs",
+      "kinds": {},
+      "byPrefix": {
+        "AFS1": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "APE2": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "APN1": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "APN2": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "APN3": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "APS1": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "APS2": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "APS3": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "APS4": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "APS5": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "APS6": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "APS7": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "APS8": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "APS9": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "CAN1": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "CAN2": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "EUC1": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "EUC2": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "EUN1": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "EUS1": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "EUS2": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "EUW2": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "EUW3": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "ILC1": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "MEC1": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "MES1": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "MXC1": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "SAE1": {
+          "global": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        "UGE1": {
+          "standard": {
+            "input": 2.4,
+            "output": 12
+          },
+          "cacheRead": {
+            "input": 0.12
+          },
+          "cacheWrite": {
+            "input": 3
+          }
+        },
+        "UGW1": {
+          "standard": {
+            "input": 2.4,
+            "output": 12
+          },
+          "cacheRead": {
+            "input": 0.12
+          },
+          "cacheWrite": {
+            "input": 3
+          }
+        },
+        "USE1": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "USE2": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "USW1": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        },
+        "USW2": {
+          "standard": {
+            "input": 2.2,
+            "output": 11
+          },
+          "global": {
+            "input": 2,
+            "output": 10
+          },
+          "cacheRead": {
+            "input": 0.11
+          },
+          "cacheWrite": {
+            "input": 2.75
+          }
+        }
+      },
+      "outOfScope": 125
+    },
+    "openai.gpt-5.4": {
+      "offerId": "offer-5l5a5izq5fbec",
+      "kinds": {},
+      "byPrefix": {
+        "AFS1": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "APN1": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "APN2": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "APN3": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "APS1": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "APS2": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "APS3": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "APS4": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "APS5": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "APS6": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "APS7": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "APS9": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "CAN1": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "CAN2": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "EUC1": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "EUC2": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "EUN1": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "EUS1": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "EUS2": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "EUW2": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "EUW3": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "MEC1": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "MES1": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "MXC1": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "SAE1": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "USE1": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "USE2": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "USW1": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        },
+        "USW2": {
+          "standard": {
+            "longContext": {
+              "input": 5.5,
+              "output": 24.75
+            },
+            "input": 2.75,
+            "output": 16.5
+          },
+          "global": {
+            "longContext": {
+              "input": 5,
+              "output": 22.5
+            },
+            "input": 2.5,
+            "output": 15
+          },
+          "batch": {
+            "input": 1.375,
+            "output": 8.25
+          },
+          "cacheRead": {
+            "input": 0.275
+          },
+          "priority": {
+            "input": 5.5,
+            "output": 33
+          },
+          "flex": {
+            "input": 1.375,
+            "output": 8.25
+          }
+        }
+      },
+      "outOfScope": 1022
+    },
+    "openai.gpt-5.5": {
+      "offerId": "offer-rtwlbb46hcxpw",
+      "kinds": {},
+      "byPrefix": {
+        "AFS1": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "APN1": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "APN2": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "APN3": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "APS1": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "APS2": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "APS3": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "APS4": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "APS5": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "APS6": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "APS7": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "APS9": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "CAN1": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "CAN2": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "EUC1": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "EUC2": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "EUN1": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "EUS1": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "EUS2": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "EUW2": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "EUW3": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "MEC1": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "MES1": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "MXC1": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "SAE1": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "USE1": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "USE2": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "USW1": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        },
+        "USW2": {
+          "standard": {
+            "longContext": {
+              "input": 11,
+              "output": 49.5
+            },
+            "input": 5.5,
+            "output": 33
+          },
+          "global": {
+            "longContext": {
+              "input": 10,
+              "output": 45
+            },
+            "input": 5,
+            "output": 30
+          },
+          "batch": {
+            "input": 2.75,
+            "output": 16.5
+          },
+          "cacheRead": {
+            "input": 0.55
+          },
+          "priority": {
+            "input": 13.75,
+            "output": 82.5
+          },
+          "flex": {
+            "input": 2.75,
+            "output": 16.5
+          }
+        }
+      },
+      "outOfScope": 1005
+    },
+    "openai.gpt-5.6-luna": {
+      "offerId": "offer-bklbyf2ewuawu",
+      "kinds": {
+        "standard": {
+          "longContext": {
+            "input": 0.44,
+            "output": 1.98
+          },
+          "input": 0.22,
+          "output": 1.32
+        },
+        "global": {
+          "longContext": {
+            "input": 0.4,
+            "output": 1.8
+          },
+          "input": 0.2,
+          "output": 1.2
+        },
+        "batch": {
+          "input": 0.11,
+          "output": 0.66
+        },
+        "cacheRead": {
+          "input": 0.11
+        },
+        "cacheWrite": {
+          "input": 1.375
+        },
+        "priority": {
+          "input": 0.44,
+          "output": 2.64
+        },
+        "flex": {
+          "input": 0.11,
+          "output": 0.66
+        }
+      },
+      "byPrefix": {},
+      "outOfScope": 66
+    },
+    "openai.gpt-5.6-sol": {
+      "offerId": "offer-gnqokrqqvdbgw",
+      "kinds": {
+        "standard": {
+          "longContext": {
+            "input": 8.8,
+            "output": 33
+          },
+          "input": 4.4,
+          "output": 22
+        },
+        "global": {
+          "longContext": {
+            "input": 8,
+            "output": 30
+          },
+          "input": 4,
+          "output": 20
+        },
+        "batch": {
+          "input": 2.2,
+          "output": 11
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "cacheWrite": {
+          "input": 6.875
+        },
+        "priority": {
+          "input": 8.8,
+          "output": 44
+        },
+        "flex": {
+          "input": 2.2,
+          "output": 11
+        }
+      },
+      "byPrefix": {},
+      "outOfScope": 74
+    },
+    "openai.gpt-5.6-terra": {
+      "offerId": "offer-3dvyrx3okd4lq",
+      "kinds": {
+        "standard": {
+          "longContext": {
+            "input": 4.4,
+            "output": 19.8
+          },
+          "input": 2.2,
+          "output": 13.2
+        },
+        "global": {
+          "longContext": {
+            "input": 4,
+            "output": 18
+          },
+          "input": 2,
+          "output": 12
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 6.6
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "cacheWrite": {
+          "input": 3.4375
+        },
+        "priority": {
+          "input": 4.4,
+          "output": 26.4
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 6.6
+        }
+      },
+      "byPrefix": {},
+      "outOfScope": 66
+    },
+    "openai.gpt-6-astra": {
+      "offerId": "offer-7epta7rbw5aws",
+      "kinds": {
+        "standard": {
+          "input": 11,
+          "output": 55,
+          "longContext": {
+            "input": 22,
+            "output": 82.5
+          }
+        },
+        "global": {
+          "input": 10,
+          "output": 50,
+          "longContext": {
+            "input": 20,
+            "output": 75
+          }
+        },
+        "cacheRead": {
+          "input": 1.1
+        },
+        "cacheWrite": {
+          "input": 13.75
+        },
+        "priority": {
+          "input": 22,
+          "output": 110
+        },
+        "flex": {
+          "input": 5.5,
+          "output": 27.5
+        }
+      },
+      "byPrefix": {},
+      "outOfScope": 42
+    },
+    "openai.gpt-6-luna": {
+      "offerId": "offer-gmo53nkzc5or6",
+      "kinds": {
+        "standard": {
+          "input": 0.11,
+          "output": 0.55,
+          "longContext": {
+            "input": 0.22,
+            "output": 0.825
+          }
+        },
+        "global": {
+          "input": 0.1,
+          "output": 0.5,
+          "longContext": {
+            "input": 0.2,
+            "output": 0.75
+          }
+        },
+        "cacheRead": {
+          "input": 0.011
+        },
+        "cacheWrite": {
+          "input": 0.1375
+        },
+        "priority": {
+          "input": 0.22,
+          "output": 1.1
+        },
+        "flex": {
+          "input": 0.055,
+          "output": 0.275
+        }
+      },
+      "byPrefix": {},
+      "outOfScope": 26
+    },
+    "openai.gpt-6-sol": {
+      "offerId": "offer-pycji3sz5gpcc",
+      "kinds": {
+        "standard": {
+          "input": 2.2,
+          "output": 11,
+          "longContext": {
+            "input": 4.4,
+            "output": 16.5
+          }
+        },
+        "global": {
+          "input": 2,
+          "output": 10,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          }
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 2.75
+        },
+        "priority": {
+          "input": 4.4,
+          "output": 22
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 5.5
+        }
+      },
+      "byPrefix": {},
+      "outOfScope": 26
+    },
+    "openai.gpt-6.1-sol": {
+      "offerId": "offer-wbhj4kycntgkk",
+      "kinds": {
+        "standard": {
+          "input": 2.2,
+          "output": 11,
+          "longContext": {
+            "input": 4.4,
+            "output": 16.5
+          }
+        },
+        "global": {
+          "input": 2,
+          "output": 10,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          }
+        },
+        "cacheRead": {
+          "input": 0.11
+        },
+        "cacheWrite": {
+          "input": 2.75
+        },
+        "priority": {
+          "input": 4.4,
+          "output": 22
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 5.5
+        }
+      },
+      "byPrefix": {},
+      "outOfScope": 26
+    },
+    "stability.stable-conservative-upscale-v1:0": {
+      "offerId": "offer-o5xgl2bohfa56",
+      "kinds": {},
+      "byPrefix": {
+        "USE1": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.4
+            }
+          ]
+        },
+        "USE2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.4
+            }
+          ]
+        },
+        "USW2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.4
+            }
+          ]
+        }
+      },
+      "outOfScope": 0
+    },
+    "stability.stable-creative-upscale-v1:0": {
+      "offerId": "offer-o5xgl2bohfa56",
+      "kinds": {},
+      "byPrefix": {
+        "USE1": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.6
+            }
+          ]
+        },
+        "USE2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.6
+            }
+          ]
+        },
+        "USW2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.6
+            }
+          ]
+        }
+      },
+      "outOfScope": 0
+    },
+    "stability.stable-fast-upscale-v1:0": {
+      "offerId": "offer-o5xgl2bohfa56",
+      "kinds": {},
+      "byPrefix": {
+        "USE1": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.03
+            }
+          ]
+        },
+        "USE2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.03
+            }
+          ]
+        },
+        "USW2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.03
+            }
+          ]
+        }
+      },
+      "outOfScope": 0
+    },
+    "stability.stable-image-control-sketch-v1:0": {
+      "offerId": "offer-o5xgl2bohfa56",
+      "kinds": {},
+      "byPrefix": {
+        "USE1": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        },
+        "USE2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        },
+        "USW2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        }
+      },
+      "outOfScope": 0
+    },
+    "stability.stable-image-control-structure-v1:0": {
+      "offerId": "offer-o5xgl2bohfa56",
+      "kinds": {},
+      "byPrefix": {
+        "USE1": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        },
+        "USE2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        },
+        "USW2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        }
+      },
+      "outOfScope": 0
+    },
+    "stability.stable-image-erase-object-v1:0": {
+      "offerId": "offer-o5xgl2bohfa56",
+      "kinds": {},
+      "byPrefix": {
+        "USE1": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        },
+        "USE2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        },
+        "USW2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        }
+      },
+      "outOfScope": 0
+    },
+    "stability.stable-image-inpaint-v1:0": {
+      "offerId": "offer-o5xgl2bohfa56",
+      "kinds": {},
+      "byPrefix": {
+        "USE1": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        },
+        "USE2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        },
+        "USW2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        }
+      },
+      "outOfScope": 0
+    },
+    "stability.stable-image-remove-background-v1:0": {
+      "offerId": "offer-o5xgl2bohfa56",
+      "kinds": {},
+      "byPrefix": {
+        "USE1": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        },
+        "USE2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        },
+        "USW2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        }
+      },
+      "outOfScope": 0
+    },
+    "stability.stable-image-search-recolor-v1:0": {
+      "offerId": "offer-o5xgl2bohfa56",
+      "kinds": {},
+      "byPrefix": {
+        "USE1": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        },
+        "USE2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        },
+        "USW2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        }
+      },
+      "outOfScope": 0
+    },
+    "stability.stable-image-search-replace-v1:0": {
+      "offerId": "offer-o5xgl2bohfa56",
+      "kinds": {},
+      "byPrefix": {
+        "USE1": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        },
+        "USE2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        },
+        "USW2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        }
+      },
+      "outOfScope": 0
+    },
+    "stability.stable-image-style-guide-v1:0": {
+      "offerId": "offer-o5xgl2bohfa56",
+      "kinds": {},
+      "byPrefix": {
+        "USE1": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        },
+        "USE2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        },
+        "USW2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.07
+            }
+          ]
+        }
+      },
+      "outOfScope": 0
+    },
+    "stability.stable-outpaint-v1:0": {
+      "offerId": "offer-o5xgl2bohfa56",
+      "kinds": {},
+      "byPrefix": {
+        "USE1": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.06
+            }
+          ]
+        },
+        "USE2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.06
+            }
+          ]
+        },
+        "USW2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.06
+            }
+          ]
+        }
+      },
+      "outOfScope": 0
+    },
+    "stability.stable-style-transfer-v1:0": {
+      "offerId": "offer-o5xgl2bohfa56",
+      "kinds": {},
+      "byPrefix": {
+        "USE1": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.08
+            }
+          ]
+        },
+        "USE2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.08
+            }
+          ]
+        },
+        "USW2": {
+          "metered": [
+            {
+              "scope": "standard",
+              "label": "Image",
+              "axis": "output",
+              "unit": "image",
+              "value": 0.08
+            }
+          ]
+        }
+      },
+      "outOfScope": 0
+    }
+  }
+}

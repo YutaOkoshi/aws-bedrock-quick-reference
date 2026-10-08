@@ -2,6 +2,7 @@
 
 技術選択の記録。**新しい判断ほど上に積む。** 最終決定はユーザーが行い、AI の推奨は参考情報。
 
+D-018 は同日、Price List に無いモデルの単価の取り方としてオーナーが決定した。
 D-017 は 2026-10-08 の価格の取り直しで、Mantle と Runtime の単価が違うモデルが見つかったことを受けてオーナーが決定した。
 D-015・D-016 はモデル別の機能表（FEATURE-001、設計 `docs/superpowers/specs/2026-10-06-model-features-design.md`）の取り込みに伴って 2026-10-06 に決定した。
 D-011〜D-014 は Design v3（画面ビュー・リージョン行列・データの流れ図・並び順）に伴って
@@ -10,6 +11,25 @@ D-009 は Design v2 で価格が範囲に入ったことを受けて 2026-09-14 
 D-001〜D-005 は brainstorming の対話で内容が固まり、技術設計
 （`docs/superpowers/specs/2026-09-14-bedrock-quick-reference-design.md`）から転記したものを
 2026-09-14 にユーザーが確定した。D-006・D-007 は Spec フェーズで決定した。D-008 は Build 中に発生した矛盾の解消で、暫定決定 B をオーナーの指示で D に差し替えた。
+
+---
+
+## D-018: Price List に無いモデルの単価を AWS Marketplace の offer から取る
+
+- **Date**: 2026-10-08
+- **Context**: 2026-10-08 時点で、GPT-5.4 / 5.5 / 5.6 系 / 6 系と Stability の画像編集系 13 件は、商用リージョンの Price List（Bulk API・Query API とも）に SKU が無い。docs のモデルカードと料金ページには価格がある。手書きの補完 JSON は D-017 と同日に廃止した。Bedrock の `ListFoundationModelAgreementOffers` と Marketplace Discovery の `GetOfferTerms` を実際に呼ぶと、同じ単価表（rateCard）が返り、Price List にある GPT-6 Astra では値が Price List と完全に一致した
+- **Options**:
+  - A: Price List だけを使い、無いモデルは価格未収録にする
+  - B: docs のモデルカードの Pricing の節をパースして補う
+  - C: **Price List を優先し、Price List に bedrock-runtime の単価が無いモデルだけ Marketplace の offer の rateCard で補う。出典を書く。それでも無いモデルは docs のモデルカードへリンクする**
+- **Decision**: **C**（2026-10-08、オーナー承認）
+- **Reason**: AWS の API が返す値で、Price List と同じ値になることを確かめられた。docs のパースより機械的で、表の書式変更に左右されない
+- **運用**:
+  - `scripts/fetch-bedrock-marketplace-prices.mjs` が models.json の全モデルに `ListFoundationModelAgreementOffers` を呼び、`data/marketplace-prices.json` を出す。認証が要るので手元の SSO で手動実行する（D-002。CI では走らせない）
+  - `scripts/fetch-bedrock-prices.mjs` が `data/marketplace-prices.json` を読み、Price List に bedrock-runtime の単価が 1 つも無いモデルだけを埋める。埋めたリージョンには `source: { type: "marketplace", offerId }` を付け、画面に出典を出す
+  - rateCard の単位は "Units" としか書かれないが、値は docs の USD / 100 万トークンと一致する。リージョンの区別が無い単価は、In-Region（ON_DEMAND）か Geo のプロファイルの起点に標準系を、Global のプロファイルの起点に global を当てる。リージョンの略号付きの単価（GPT-5.4 / 5.5）は Price List の usagetype から作った略号の索引でリージョンに戻す
+  - Marketplace 経由でないモデル（Grok、Kimi、GLM、Titan など）は `Agreement not supported for this model` で offer が無い。これらで Runtime の単価が無いものは、表と詳細に docs のモデルカード（無ければ料金ページ）へのリンクを出す
+- **Refs**: `spec-price.md`（「AWS Marketplace の offer による補完」）、`docs/price-list-api.md`、D-002、D-017
 
 ---
 

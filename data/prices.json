@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T02:02:34.272Z",
+  "generatedAt": "2026-10-08T04:04:56.335Z",
   "publicationDate": "2026-10-07T18:37:33Z",
   "source": {
     "index": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/index.json",
@@ -18989,6 +18989,2356 @@
         }
       }
     },
+    "openai.gpt-5.4": {
+      "ap-northeast-1": {
+        "standard": {
+          "input": 2.75,
+          "longContext": {
+            "input": 5.5,
+            "output": 24.75
+          },
+          "output": 16.5
+        },
+        "global": {
+          "input": 2.5,
+          "longContext": {
+            "input": 5,
+            "output": 22.5
+          },
+          "output": 15
+        },
+        "batch": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "priority": {
+          "input": 5.5,
+          "output": 33
+        },
+        "flex": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-5l5a5izq5fbec"
+        }
+      },
+      "ap-northeast-2": {
+        "standard": {
+          "input": 2.75,
+          "longContext": {
+            "input": 5.5,
+            "output": 24.75
+          },
+          "output": 16.5
+        },
+        "global": {
+          "input": 2.5,
+          "longContext": {
+            "input": 5,
+            "output": 22.5
+          },
+          "output": 15
+        },
+        "batch": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "priority": {
+          "input": 5.5,
+          "output": 33
+        },
+        "flex": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-5l5a5izq5fbec"
+        }
+      },
+      "ap-northeast-3": {
+        "standard": {
+          "input": 2.75,
+          "longContext": {
+            "input": 5.5,
+            "output": 24.75
+          },
+          "output": 16.5
+        },
+        "global": {
+          "input": 2.5,
+          "longContext": {
+            "input": 5,
+            "output": 22.5
+          },
+          "output": 15
+        },
+        "batch": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "priority": {
+          "input": 5.5,
+          "output": 33
+        },
+        "flex": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-5l5a5izq5fbec"
+        }
+      },
+      "ap-south-1": {
+        "standard": {
+          "input": 2.75,
+          "longContext": {
+            "input": 5.5,
+            "output": 24.75
+          },
+          "output": 16.5
+        },
+        "global": {
+          "input": 2.5,
+          "longContext": {
+            "input": 5,
+            "output": 22.5
+          },
+          "output": 15
+        },
+        "batch": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "priority": {
+          "input": 5.5,
+          "output": 33
+        },
+        "flex": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-5l5a5izq5fbec"
+        }
+      },
+      "ap-southeast-1": {
+        "standard": {
+          "input": 2.75,
+          "longContext": {
+            "input": 5.5,
+            "output": 24.75
+          },
+          "output": 16.5
+        },
+        "global": {
+          "input": 2.5,
+          "longContext": {
+            "input": 5,
+            "output": 22.5
+          },
+          "output": 15
+        },
+        "batch": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "priority": {
+          "input": 5.5,
+          "output": 33
+        },
+        "flex": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-5l5a5izq5fbec"
+        }
+      },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 2.75,
+          "longContext": {
+            "input": 5.5,
+            "output": 24.75
+          },
+          "output": 16.5
+        },
+        "global": {
+          "input": 2.5,
+          "longContext": {
+            "input": 5,
+            "output": 22.5
+          },
+          "output": 15
+        },
+        "batch": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "priority": {
+          "input": 5.5,
+          "output": 33
+        },
+        "flex": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-5l5a5izq5fbec"
+        }
+      },
+      "ca-central-1": {
+        "standard": {
+          "input": 2.75,
+          "longContext": {
+            "input": 5.5,
+            "output": 24.75
+          },
+          "output": 16.5
+        },
+        "global": {
+          "input": 2.5,
+          "longContext": {
+            "input": 5,
+            "output": 22.5
+          },
+          "output": 15
+        },
+        "batch": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "priority": {
+          "input": 5.5,
+          "output": 33
+        },
+        "flex": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-5l5a5izq5fbec"
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 2.75,
+          "longContext": {
+            "input": 5.5,
+            "output": 24.75
+          },
+          "output": 16.5
+        },
+        "global": {
+          "input": 2.5,
+          "longContext": {
+            "input": 5,
+            "output": 22.5
+          },
+          "output": 15
+        },
+        "batch": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "priority": {
+          "input": 5.5,
+          "output": 33
+        },
+        "flex": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-5l5a5izq5fbec"
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 2.75,
+          "longContext": {
+            "input": 5.5,
+            "output": 24.75
+          },
+          "output": 16.5
+        },
+        "global": {
+          "input": 2.5,
+          "longContext": {
+            "input": 5,
+            "output": 22.5
+          },
+          "output": 15
+        },
+        "batch": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "priority": {
+          "input": 5.5,
+          "output": 33
+        },
+        "flex": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-5l5a5izq5fbec"
+        }
+      },
+      "eu-west-2": {
+        "standard": {
+          "input": 2.75,
+          "longContext": {
+            "input": 5.5,
+            "output": 24.75
+          },
+          "output": 16.5
+        },
+        "global": {
+          "input": 2.5,
+          "longContext": {
+            "input": 5,
+            "output": 22.5
+          },
+          "output": 15
+        },
+        "batch": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "priority": {
+          "input": 5.5,
+          "output": 33
+        },
+        "flex": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-5l5a5izq5fbec"
+        }
+      },
+      "eu-west-3": {
+        "standard": {
+          "input": 2.75,
+          "longContext": {
+            "input": 5.5,
+            "output": 24.75
+          },
+          "output": 16.5
+        },
+        "global": {
+          "input": 2.5,
+          "longContext": {
+            "input": 5,
+            "output": 22.5
+          },
+          "output": 15
+        },
+        "batch": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "priority": {
+          "input": 5.5,
+          "output": 33
+        },
+        "flex": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-5l5a5izq5fbec"
+        }
+      },
+      "sa-east-1": {
+        "standard": {
+          "input": 2.75,
+          "longContext": {
+            "input": 5.5,
+            "output": 24.75
+          },
+          "output": 16.5
+        },
+        "global": {
+          "input": 2.5,
+          "longContext": {
+            "input": 5,
+            "output": 22.5
+          },
+          "output": 15
+        },
+        "batch": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "priority": {
+          "input": 5.5,
+          "output": 33
+        },
+        "flex": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-5l5a5izq5fbec"
+        }
+      },
+      "us-east-1": {
+        "standard": {
+          "input": 2.75,
+          "longContext": {
+            "input": 5.5,
+            "output": 24.75
+          },
+          "output": 16.5
+        },
+        "global": {
+          "input": 2.5,
+          "longContext": {
+            "input": 5,
+            "output": 22.5
+          },
+          "output": 15
+        },
+        "batch": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "priority": {
+          "input": 5.5,
+          "output": 33
+        },
+        "flex": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-5l5a5izq5fbec"
+        }
+      },
+      "us-east-2": {
+        "standard": {
+          "input": 2.75,
+          "longContext": {
+            "input": 5.5,
+            "output": 24.75
+          },
+          "output": 16.5
+        },
+        "global": {
+          "input": 2.5,
+          "longContext": {
+            "input": 5,
+            "output": 22.5
+          },
+          "output": 15
+        },
+        "batch": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "priority": {
+          "input": 5.5,
+          "output": 33
+        },
+        "flex": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-5l5a5izq5fbec"
+        }
+      },
+      "us-west-1": {
+        "standard": {
+          "input": 2.75,
+          "longContext": {
+            "input": 5.5,
+            "output": 24.75
+          },
+          "output": 16.5
+        },
+        "global": {
+          "input": 2.5,
+          "longContext": {
+            "input": 5,
+            "output": 22.5
+          },
+          "output": 15
+        },
+        "batch": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "priority": {
+          "input": 5.5,
+          "output": 33
+        },
+        "flex": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-5l5a5izq5fbec"
+        }
+      },
+      "us-west-2": {
+        "standard": {
+          "input": 2.75,
+          "longContext": {
+            "input": 5.5,
+            "output": 24.75
+          },
+          "output": 16.5
+        },
+        "global": {
+          "input": 2.5,
+          "longContext": {
+            "input": 5,
+            "output": 22.5
+          },
+          "output": 15
+        },
+        "batch": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "priority": {
+          "input": 5.5,
+          "output": 33
+        },
+        "flex": {
+          "input": 1.375,
+          "output": 8.25
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-5l5a5izq5fbec"
+        }
+      }
+    },
+    "openai.gpt-5.5": {
+      "ap-northeast-1": {
+        "standard": {
+          "input": 5.5,
+          "longContext": {
+            "input": 11,
+            "output": 49.5
+          },
+          "output": 33
+        },
+        "global": {
+          "input": 5,
+          "longContext": {
+            "input": 10,
+            "output": 45
+          },
+          "output": 30
+        },
+        "batch": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 13.75,
+          "output": 82.5
+        },
+        "flex": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-rtwlbb46hcxpw"
+        }
+      },
+      "ap-northeast-2": {
+        "standard": {
+          "input": 5.5,
+          "longContext": {
+            "input": 11,
+            "output": 49.5
+          },
+          "output": 33
+        },
+        "global": {
+          "input": 5,
+          "longContext": {
+            "input": 10,
+            "output": 45
+          },
+          "output": 30
+        },
+        "batch": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 13.75,
+          "output": 82.5
+        },
+        "flex": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-rtwlbb46hcxpw"
+        }
+      },
+      "ap-northeast-3": {
+        "standard": {
+          "input": 5.5,
+          "longContext": {
+            "input": 11,
+            "output": 49.5
+          },
+          "output": 33
+        },
+        "global": {
+          "input": 5,
+          "longContext": {
+            "input": 10,
+            "output": 45
+          },
+          "output": 30
+        },
+        "batch": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 13.75,
+          "output": 82.5
+        },
+        "flex": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-rtwlbb46hcxpw"
+        }
+      },
+      "ap-south-1": {
+        "standard": {
+          "input": 5.5,
+          "longContext": {
+            "input": 11,
+            "output": 49.5
+          },
+          "output": 33
+        },
+        "global": {
+          "input": 5,
+          "longContext": {
+            "input": 10,
+            "output": 45
+          },
+          "output": 30
+        },
+        "batch": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 13.75,
+          "output": 82.5
+        },
+        "flex": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-rtwlbb46hcxpw"
+        }
+      },
+      "ap-southeast-1": {
+        "standard": {
+          "input": 5.5,
+          "longContext": {
+            "input": 11,
+            "output": 49.5
+          },
+          "output": 33
+        },
+        "global": {
+          "input": 5,
+          "longContext": {
+            "input": 10,
+            "output": 45
+          },
+          "output": 30
+        },
+        "batch": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 13.75,
+          "output": 82.5
+        },
+        "flex": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-rtwlbb46hcxpw"
+        }
+      },
+      "ap-southeast-2": {
+        "standard": {
+          "input": 5.5,
+          "longContext": {
+            "input": 11,
+            "output": 49.5
+          },
+          "output": 33
+        },
+        "global": {
+          "input": 5,
+          "longContext": {
+            "input": 10,
+            "output": 45
+          },
+          "output": 30
+        },
+        "batch": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 13.75,
+          "output": 82.5
+        },
+        "flex": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-rtwlbb46hcxpw"
+        }
+      },
+      "ca-central-1": {
+        "standard": {
+          "input": 5.5,
+          "longContext": {
+            "input": 11,
+            "output": 49.5
+          },
+          "output": 33
+        },
+        "global": {
+          "input": 5,
+          "longContext": {
+            "input": 10,
+            "output": 45
+          },
+          "output": 30
+        },
+        "batch": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 13.75,
+          "output": 82.5
+        },
+        "flex": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-rtwlbb46hcxpw"
+        }
+      },
+      "eu-central-1": {
+        "standard": {
+          "input": 5.5,
+          "longContext": {
+            "input": 11,
+            "output": 49.5
+          },
+          "output": 33
+        },
+        "global": {
+          "input": 5,
+          "longContext": {
+            "input": 10,
+            "output": 45
+          },
+          "output": 30
+        },
+        "batch": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 13.75,
+          "output": 82.5
+        },
+        "flex": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-rtwlbb46hcxpw"
+        }
+      },
+      "eu-north-1": {
+        "standard": {
+          "input": 5.5,
+          "longContext": {
+            "input": 11,
+            "output": 49.5
+          },
+          "output": 33
+        },
+        "global": {
+          "input": 5,
+          "longContext": {
+            "input": 10,
+            "output": 45
+          },
+          "output": 30
+        },
+        "batch": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 13.75,
+          "output": 82.5
+        },
+        "flex": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-rtwlbb46hcxpw"
+        }
+      },
+      "eu-west-2": {
+        "standard": {
+          "input": 5.5,
+          "longContext": {
+            "input": 11,
+            "output": 49.5
+          },
+          "output": 33
+        },
+        "global": {
+          "input": 5,
+          "longContext": {
+            "input": 10,
+            "output": 45
+          },
+          "output": 30
+        },
+        "batch": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 13.75,
+          "output": 82.5
+        },
+        "flex": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-rtwlbb46hcxpw"
+        }
+      },
+      "eu-west-3": {
+        "standard": {
+          "input": 5.5,
+          "longContext": {
+            "input": 11,
+            "output": 49.5
+          },
+          "output": 33
+        },
+        "global": {
+          "input": 5,
+          "longContext": {
+            "input": 10,
+            "output": 45
+          },
+          "output": 30
+        },
+        "batch": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 13.75,
+          "output": 82.5
+        },
+        "flex": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-rtwlbb46hcxpw"
+        }
+      },
+      "sa-east-1": {
+        "standard": {
+          "input": 5.5,
+          "longContext": {
+            "input": 11,
+            "output": 49.5
+          },
+          "output": 33
+        },
+        "global": {
+          "input": 5,
+          "longContext": {
+            "input": 10,
+            "output": 45
+          },
+          "output": 30
+        },
+        "batch": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 13.75,
+          "output": 82.5
+        },
+        "flex": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-rtwlbb46hcxpw"
+        }
+      },
+      "us-east-1": {
+        "standard": {
+          "input": 5.5,
+          "longContext": {
+            "input": 11,
+            "output": 49.5
+          },
+          "output": 33
+        },
+        "global": {
+          "input": 5,
+          "longContext": {
+            "input": 10,
+            "output": 45
+          },
+          "output": 30
+        },
+        "batch": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 13.75,
+          "output": 82.5
+        },
+        "flex": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-rtwlbb46hcxpw"
+        }
+      },
+      "us-east-2": {
+        "standard": {
+          "input": 5.5,
+          "longContext": {
+            "input": 11,
+            "output": 49.5
+          },
+          "output": 33
+        },
+        "global": {
+          "input": 5,
+          "longContext": {
+            "input": 10,
+            "output": 45
+          },
+          "output": 30
+        },
+        "batch": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 13.75,
+          "output": 82.5
+        },
+        "flex": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-rtwlbb46hcxpw"
+        }
+      },
+      "us-west-1": {
+        "standard": {
+          "input": 5.5,
+          "longContext": {
+            "input": 11,
+            "output": 49.5
+          },
+          "output": 33
+        },
+        "global": {
+          "input": 5,
+          "longContext": {
+            "input": 10,
+            "output": 45
+          },
+          "output": 30
+        },
+        "batch": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 13.75,
+          "output": 82.5
+        },
+        "flex": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-rtwlbb46hcxpw"
+        }
+      },
+      "us-west-2": {
+        "standard": {
+          "input": 5.5,
+          "longContext": {
+            "input": 11,
+            "output": 49.5
+          },
+          "output": 33
+        },
+        "global": {
+          "input": 5,
+          "longContext": {
+            "input": 10,
+            "output": 45
+          },
+          "output": 30
+        },
+        "batch": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "priority": {
+          "input": 13.75,
+          "output": 82.5
+        },
+        "flex": {
+          "input": 2.75,
+          "output": 16.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-rtwlbb46hcxpw"
+        }
+      }
+    },
+    "openai.gpt-5.6-luna": {
+      "ap-northeast-1": {
+        "global": {
+          "input": 0.2,
+          "longContext": {
+            "input": 0.4,
+            "output": 1.8
+          },
+          "output": 1.2
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-bklbyf2ewuawu"
+        }
+      },
+      "ap-northeast-2": {
+        "global": {
+          "input": 0.2,
+          "longContext": {
+            "input": 0.4,
+            "output": 1.8
+          },
+          "output": 1.2
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-bklbyf2ewuawu"
+        }
+      },
+      "ap-northeast-3": {
+        "global": {
+          "input": 0.2,
+          "longContext": {
+            "input": 0.4,
+            "output": 1.8
+          },
+          "output": 1.2
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-bklbyf2ewuawu"
+        }
+      },
+      "ap-south-1": {
+        "standard": {
+          "input": 0.22,
+          "longContext": {
+            "input": 0.44,
+            "output": 1.98
+          },
+          "output": 1.32
+        },
+        "global": {
+          "input": 0.2,
+          "longContext": {
+            "input": 0.4,
+            "output": 1.8
+          },
+          "output": 1.2
+        },
+        "batch": {
+          "input": 0.11,
+          "output": 0.66
+        },
+        "cacheRead": {
+          "input": 0.11
+        },
+        "cacheWrite": {
+          "input": 1.375
+        },
+        "priority": {
+          "input": 0.44,
+          "output": 2.64
+        },
+        "flex": {
+          "input": 0.11,
+          "output": 0.66
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-bklbyf2ewuawu"
+        }
+      },
+      "ap-southeast-1": {
+        "global": {
+          "input": 0.2,
+          "longContext": {
+            "input": 0.4,
+            "output": 1.8
+          },
+          "output": 1.2
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-bklbyf2ewuawu"
+        }
+      },
+      "ap-southeast-2": {
+        "global": {
+          "input": 0.2,
+          "longContext": {
+            "input": 0.4,
+            "output": 1.8
+          },
+          "output": 1.2
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-bklbyf2ewuawu"
+        }
+      },
+      "ca-central-1": {
+        "standard": {
+          "input": 0.22,
+          "longContext": {
+            "input": 0.44,
+            "output": 1.98
+          },
+          "output": 1.32
+        },
+        "global": {
+          "input": 0.2,
+          "longContext": {
+            "input": 0.4,
+            "output": 1.8
+          },
+          "output": 1.2
+        },
+        "batch": {
+          "input": 0.11,
+          "output": 0.66
+        },
+        "cacheRead": {
+          "input": 0.11
+        },
+        "cacheWrite": {
+          "input": 1.375
+        },
+        "priority": {
+          "input": 0.44,
+          "output": 2.64
+        },
+        "flex": {
+          "input": 0.11,
+          "output": 0.66
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-bklbyf2ewuawu"
+        }
+      },
+      "eu-central-1": {
+        "global": {
+          "input": 0.2,
+          "longContext": {
+            "input": 0.4,
+            "output": 1.8
+          },
+          "output": 1.2
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-bklbyf2ewuawu"
+        }
+      },
+      "eu-north-1": {
+        "global": {
+          "input": 0.2,
+          "longContext": {
+            "input": 0.4,
+            "output": 1.8
+          },
+          "output": 1.2
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-bklbyf2ewuawu"
+        }
+      },
+      "eu-west-1": {
+        "global": {
+          "input": 0.2,
+          "longContext": {
+            "input": 0.4,
+            "output": 1.8
+          },
+          "output": 1.2
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-bklbyf2ewuawu"
+        }
+      },
+      "eu-west-2": {
+        "global": {
+          "input": 0.2,
+          "longContext": {
+            "input": 0.4,
+            "output": 1.8
+          },
+          "output": 1.2
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-bklbyf2ewuawu"
+        }
+      },
+      "eu-west-3": {
+        "global": {
+          "input": 0.2,
+          "longContext": {
+            "input": 0.4,
+            "output": 1.8
+          },
+          "output": 1.2
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-bklbyf2ewuawu"
+        }
+      },
+      "sa-east-1": {
+        "global": {
+          "input": 0.2,
+          "longContext": {
+            "input": 0.4,
+            "output": 1.8
+          },
+          "output": 1.2
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-bklbyf2ewuawu"
+        }
+      },
+      "us-east-1": {
+        "standard": {
+          "input": 0.22,
+          "longContext": {
+            "input": 0.44,
+            "output": 1.98
+          },
+          "output": 1.32
+        },
+        "global": {
+          "input": 0.2,
+          "longContext": {
+            "input": 0.4,
+            "output": 1.8
+          },
+          "output": 1.2
+        },
+        "batch": {
+          "input": 0.11,
+          "output": 0.66
+        },
+        "cacheRead": {
+          "input": 0.11
+        },
+        "cacheWrite": {
+          "input": 1.375
+        },
+        "priority": {
+          "input": 0.44,
+          "output": 2.64
+        },
+        "flex": {
+          "input": 0.11,
+          "output": 0.66
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-bklbyf2ewuawu"
+        }
+      },
+      "us-east-2": {
+        "standard": {
+          "input": 0.22,
+          "longContext": {
+            "input": 0.44,
+            "output": 1.98
+          },
+          "output": 1.32
+        },
+        "global": {
+          "input": 0.2,
+          "longContext": {
+            "input": 0.4,
+            "output": 1.8
+          },
+          "output": 1.2
+        },
+        "batch": {
+          "input": 0.11,
+          "output": 0.66
+        },
+        "cacheRead": {
+          "input": 0.11
+        },
+        "cacheWrite": {
+          "input": 1.375
+        },
+        "priority": {
+          "input": 0.44,
+          "output": 2.64
+        },
+        "flex": {
+          "input": 0.11,
+          "output": 0.66
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-bklbyf2ewuawu"
+        }
+      },
+      "us-west-1": {
+        "standard": {
+          "input": 0.22,
+          "longContext": {
+            "input": 0.44,
+            "output": 1.98
+          },
+          "output": 1.32
+        },
+        "global": {
+          "input": 0.2,
+          "longContext": {
+            "input": 0.4,
+            "output": 1.8
+          },
+          "output": 1.2
+        },
+        "batch": {
+          "input": 0.11,
+          "output": 0.66
+        },
+        "cacheRead": {
+          "input": 0.11
+        },
+        "cacheWrite": {
+          "input": 1.375
+        },
+        "priority": {
+          "input": 0.44,
+          "output": 2.64
+        },
+        "flex": {
+          "input": 0.11,
+          "output": 0.66
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-bklbyf2ewuawu"
+        }
+      },
+      "us-west-2": {
+        "standard": {
+          "input": 0.22,
+          "longContext": {
+            "input": 0.44,
+            "output": 1.98
+          },
+          "output": 1.32
+        },
+        "global": {
+          "input": 0.2,
+          "longContext": {
+            "input": 0.4,
+            "output": 1.8
+          },
+          "output": 1.2
+        },
+        "batch": {
+          "input": 0.11,
+          "output": 0.66
+        },
+        "cacheRead": {
+          "input": 0.11
+        },
+        "cacheWrite": {
+          "input": 1.375
+        },
+        "priority": {
+          "input": 0.44,
+          "output": 2.64
+        },
+        "flex": {
+          "input": 0.11,
+          "output": 0.66
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-bklbyf2ewuawu"
+        }
+      }
+    },
+    "openai.gpt-5.6-sol": {
+      "ap-northeast-1": {
+        "global": {
+          "input": 4,
+          "longContext": {
+            "input": 8,
+            "output": 30
+          },
+          "output": 20
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gnqokrqqvdbgw"
+        }
+      },
+      "ap-northeast-2": {
+        "global": {
+          "input": 4,
+          "longContext": {
+            "input": 8,
+            "output": 30
+          },
+          "output": 20
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gnqokrqqvdbgw"
+        }
+      },
+      "ap-northeast-3": {
+        "global": {
+          "input": 4,
+          "longContext": {
+            "input": 8,
+            "output": 30
+          },
+          "output": 20
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gnqokrqqvdbgw"
+        }
+      },
+      "ap-south-1": {
+        "global": {
+          "input": 4,
+          "longContext": {
+            "input": 8,
+            "output": 30
+          },
+          "output": 20
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gnqokrqqvdbgw"
+        }
+      },
+      "ap-southeast-1": {
+        "global": {
+          "input": 4,
+          "longContext": {
+            "input": 8,
+            "output": 30
+          },
+          "output": 20
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gnqokrqqvdbgw"
+        }
+      },
+      "ap-southeast-2": {
+        "global": {
+          "input": 4,
+          "longContext": {
+            "input": 8,
+            "output": 30
+          },
+          "output": 20
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gnqokrqqvdbgw"
+        }
+      },
+      "ca-central-1": {
+        "standard": {
+          "input": 4.4,
+          "longContext": {
+            "input": 8.8,
+            "output": 33
+          },
+          "output": 22
+        },
+        "global": {
+          "input": 4,
+          "longContext": {
+            "input": 8,
+            "output": 30
+          },
+          "output": 20
+        },
+        "batch": {
+          "input": 2.2,
+          "output": 11
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "cacheWrite": {
+          "input": 6.875
+        },
+        "priority": {
+          "input": 8.8,
+          "output": 44
+        },
+        "flex": {
+          "input": 2.2,
+          "output": 11
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gnqokrqqvdbgw"
+        }
+      },
+      "eu-central-1": {
+        "global": {
+          "input": 4,
+          "longContext": {
+            "input": 8,
+            "output": 30
+          },
+          "output": 20
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gnqokrqqvdbgw"
+        }
+      },
+      "eu-north-1": {
+        "global": {
+          "input": 4,
+          "longContext": {
+            "input": 8,
+            "output": 30
+          },
+          "output": 20
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gnqokrqqvdbgw"
+        }
+      },
+      "eu-west-1": {
+        "global": {
+          "input": 4,
+          "longContext": {
+            "input": 8,
+            "output": 30
+          },
+          "output": 20
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gnqokrqqvdbgw"
+        }
+      },
+      "eu-west-2": {
+        "global": {
+          "input": 4,
+          "longContext": {
+            "input": 8,
+            "output": 30
+          },
+          "output": 20
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gnqokrqqvdbgw"
+        }
+      },
+      "eu-west-3": {
+        "global": {
+          "input": 4,
+          "longContext": {
+            "input": 8,
+            "output": 30
+          },
+          "output": 20
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gnqokrqqvdbgw"
+        }
+      },
+      "sa-east-1": {
+        "global": {
+          "input": 4,
+          "longContext": {
+            "input": 8,
+            "output": 30
+          },
+          "output": 20
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gnqokrqqvdbgw"
+        }
+      },
+      "us-east-1": {
+        "standard": {
+          "input": 4.4,
+          "longContext": {
+            "input": 8.8,
+            "output": 33
+          },
+          "output": 22
+        },
+        "global": {
+          "input": 4,
+          "longContext": {
+            "input": 8,
+            "output": 30
+          },
+          "output": 20
+        },
+        "batch": {
+          "input": 2.2,
+          "output": 11
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "cacheWrite": {
+          "input": 6.875
+        },
+        "priority": {
+          "input": 8.8,
+          "output": 44
+        },
+        "flex": {
+          "input": 2.2,
+          "output": 11
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gnqokrqqvdbgw"
+        }
+      },
+      "us-east-2": {
+        "standard": {
+          "input": 4.4,
+          "longContext": {
+            "input": 8.8,
+            "output": 33
+          },
+          "output": 22
+        },
+        "global": {
+          "input": 4,
+          "longContext": {
+            "input": 8,
+            "output": 30
+          },
+          "output": 20
+        },
+        "batch": {
+          "input": 2.2,
+          "output": 11
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "cacheWrite": {
+          "input": 6.875
+        },
+        "priority": {
+          "input": 8.8,
+          "output": 44
+        },
+        "flex": {
+          "input": 2.2,
+          "output": 11
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gnqokrqqvdbgw"
+        }
+      },
+      "us-west-1": {
+        "standard": {
+          "input": 4.4,
+          "longContext": {
+            "input": 8.8,
+            "output": 33
+          },
+          "output": 22
+        },
+        "global": {
+          "input": 4,
+          "longContext": {
+            "input": 8,
+            "output": 30
+          },
+          "output": 20
+        },
+        "batch": {
+          "input": 2.2,
+          "output": 11
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "cacheWrite": {
+          "input": 6.875
+        },
+        "priority": {
+          "input": 8.8,
+          "output": 44
+        },
+        "flex": {
+          "input": 2.2,
+          "output": 11
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gnqokrqqvdbgw"
+        }
+      },
+      "us-west-2": {
+        "standard": {
+          "input": 4.4,
+          "longContext": {
+            "input": 8.8,
+            "output": 33
+          },
+          "output": 22
+        },
+        "global": {
+          "input": 4,
+          "longContext": {
+            "input": 8,
+            "output": 30
+          },
+          "output": 20
+        },
+        "batch": {
+          "input": 2.2,
+          "output": 11
+        },
+        "cacheRead": {
+          "input": 0.55
+        },
+        "cacheWrite": {
+          "input": 6.875
+        },
+        "priority": {
+          "input": 8.8,
+          "output": 44
+        },
+        "flex": {
+          "input": 2.2,
+          "output": 11
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gnqokrqqvdbgw"
+        }
+      }
+    },
+    "openai.gpt-5.6-terra": {
+      "ap-northeast-1": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 18
+          },
+          "output": 12
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-3dvyrx3okd4lq"
+        }
+      },
+      "ap-northeast-2": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 18
+          },
+          "output": 12
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-3dvyrx3okd4lq"
+        }
+      },
+      "ap-northeast-3": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 18
+          },
+          "output": 12
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-3dvyrx3okd4lq"
+        }
+      },
+      "ap-south-1": {
+        "standard": {
+          "input": 2.2,
+          "longContext": {
+            "input": 4.4,
+            "output": 19.8
+          },
+          "output": 13.2
+        },
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 18
+          },
+          "output": 12
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 6.6
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "cacheWrite": {
+          "input": 3.4375
+        },
+        "priority": {
+          "input": 4.4,
+          "output": 26.4
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 6.6
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-3dvyrx3okd4lq"
+        }
+      },
+      "ap-southeast-1": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 18
+          },
+          "output": 12
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-3dvyrx3okd4lq"
+        }
+      },
+      "ap-southeast-2": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 18
+          },
+          "output": 12
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-3dvyrx3okd4lq"
+        }
+      },
+      "ca-central-1": {
+        "standard": {
+          "input": 2.2,
+          "longContext": {
+            "input": 4.4,
+            "output": 19.8
+          },
+          "output": 13.2
+        },
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 18
+          },
+          "output": 12
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 6.6
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "cacheWrite": {
+          "input": 3.4375
+        },
+        "priority": {
+          "input": 4.4,
+          "output": 26.4
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 6.6
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-3dvyrx3okd4lq"
+        }
+      },
+      "eu-central-1": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 18
+          },
+          "output": 12
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-3dvyrx3okd4lq"
+        }
+      },
+      "eu-north-1": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 18
+          },
+          "output": 12
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-3dvyrx3okd4lq"
+        }
+      },
+      "eu-west-1": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 18
+          },
+          "output": 12
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-3dvyrx3okd4lq"
+        }
+      },
+      "eu-west-2": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 18
+          },
+          "output": 12
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-3dvyrx3okd4lq"
+        }
+      },
+      "eu-west-3": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 18
+          },
+          "output": 12
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-3dvyrx3okd4lq"
+        }
+      },
+      "sa-east-1": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 18
+          },
+          "output": 12
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-3dvyrx3okd4lq"
+        }
+      },
+      "us-east-1": {
+        "standard": {
+          "input": 2.2,
+          "longContext": {
+            "input": 4.4,
+            "output": 19.8
+          },
+          "output": 13.2
+        },
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 18
+          },
+          "output": 12
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 6.6
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "cacheWrite": {
+          "input": 3.4375
+        },
+        "priority": {
+          "input": 4.4,
+          "output": 26.4
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 6.6
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-3dvyrx3okd4lq"
+        }
+      },
+      "us-east-2": {
+        "standard": {
+          "input": 2.2,
+          "longContext": {
+            "input": 4.4,
+            "output": 19.8
+          },
+          "output": 13.2
+        },
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 18
+          },
+          "output": 12
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 6.6
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "cacheWrite": {
+          "input": 3.4375
+        },
+        "priority": {
+          "input": 4.4,
+          "output": 26.4
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 6.6
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-3dvyrx3okd4lq"
+        }
+      },
+      "us-west-1": {
+        "standard": {
+          "input": 2.2,
+          "longContext": {
+            "input": 4.4,
+            "output": 19.8
+          },
+          "output": 13.2
+        },
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 18
+          },
+          "output": 12
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 6.6
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "cacheWrite": {
+          "input": 3.4375
+        },
+        "priority": {
+          "input": 4.4,
+          "output": 26.4
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 6.6
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-3dvyrx3okd4lq"
+        }
+      },
+      "us-west-2": {
+        "standard": {
+          "input": 2.2,
+          "longContext": {
+            "input": 4.4,
+            "output": 19.8
+          },
+          "output": 13.2
+        },
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 18
+          },
+          "output": 12
+        },
+        "batch": {
+          "input": 1.1,
+          "output": 6.6
+        },
+        "cacheRead": {
+          "input": 0.275
+        },
+        "cacheWrite": {
+          "input": 3.4375
+        },
+        "priority": {
+          "input": 4.4,
+          "output": 26.4
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 6.6
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-3dvyrx3okd4lq"
+        }
+      }
+    },
     "openai.gpt-6-astra": {
       "ap-northeast-1": {
         "global": {
@@ -19228,6 +21578,1056 @@
         },
         "cacheWrite": {
           "input": 13.75
+        }
+      }
+    },
+    "openai.gpt-6-luna": {
+      "ap-northeast-1": {
+        "global": {
+          "input": 0.1,
+          "longContext": {
+            "input": 0.2,
+            "output": 0.75
+          },
+          "output": 0.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gmo53nkzc5or6"
+        }
+      },
+      "ap-northeast-2": {
+        "global": {
+          "input": 0.1,
+          "longContext": {
+            "input": 0.2,
+            "output": 0.75
+          },
+          "output": 0.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gmo53nkzc5or6"
+        }
+      },
+      "ap-northeast-3": {
+        "global": {
+          "input": 0.1,
+          "longContext": {
+            "input": 0.2,
+            "output": 0.75
+          },
+          "output": 0.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gmo53nkzc5or6"
+        }
+      },
+      "ap-south-1": {
+        "global": {
+          "input": 0.1,
+          "longContext": {
+            "input": 0.2,
+            "output": 0.75
+          },
+          "output": 0.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gmo53nkzc5or6"
+        }
+      },
+      "ap-southeast-1": {
+        "global": {
+          "input": 0.1,
+          "longContext": {
+            "input": 0.2,
+            "output": 0.75
+          },
+          "output": 0.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gmo53nkzc5or6"
+        }
+      },
+      "ap-southeast-2": {
+        "global": {
+          "input": 0.1,
+          "longContext": {
+            "input": 0.2,
+            "output": 0.75
+          },
+          "output": 0.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gmo53nkzc5or6"
+        }
+      },
+      "ca-central-1": {
+        "standard": {
+          "input": 0.11,
+          "longContext": {
+            "input": 0.22,
+            "output": 0.825
+          },
+          "output": 0.55
+        },
+        "global": {
+          "input": 0.1,
+          "longContext": {
+            "input": 0.2,
+            "output": 0.75
+          },
+          "output": 0.5
+        },
+        "cacheRead": {
+          "input": 0.011
+        },
+        "cacheWrite": {
+          "input": 0.1375
+        },
+        "priority": {
+          "input": 0.22,
+          "output": 1.1
+        },
+        "flex": {
+          "input": 0.055,
+          "output": 0.275
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gmo53nkzc5or6"
+        }
+      },
+      "eu-central-1": {
+        "global": {
+          "input": 0.1,
+          "longContext": {
+            "input": 0.2,
+            "output": 0.75
+          },
+          "output": 0.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gmo53nkzc5or6"
+        }
+      },
+      "eu-north-1": {
+        "global": {
+          "input": 0.1,
+          "longContext": {
+            "input": 0.2,
+            "output": 0.75
+          },
+          "output": 0.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gmo53nkzc5or6"
+        }
+      },
+      "eu-west-1": {
+        "global": {
+          "input": 0.1,
+          "longContext": {
+            "input": 0.2,
+            "output": 0.75
+          },
+          "output": 0.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gmo53nkzc5or6"
+        }
+      },
+      "eu-west-2": {
+        "global": {
+          "input": 0.1,
+          "longContext": {
+            "input": 0.2,
+            "output": 0.75
+          },
+          "output": 0.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gmo53nkzc5or6"
+        }
+      },
+      "eu-west-3": {
+        "global": {
+          "input": 0.1,
+          "longContext": {
+            "input": 0.2,
+            "output": 0.75
+          },
+          "output": 0.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gmo53nkzc5or6"
+        }
+      },
+      "sa-east-1": {
+        "global": {
+          "input": 0.1,
+          "longContext": {
+            "input": 0.2,
+            "output": 0.75
+          },
+          "output": 0.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gmo53nkzc5or6"
+        }
+      },
+      "us-east-1": {
+        "standard": {
+          "input": 0.11,
+          "longContext": {
+            "input": 0.22,
+            "output": 0.825
+          },
+          "output": 0.55
+        },
+        "global": {
+          "input": 0.1,
+          "longContext": {
+            "input": 0.2,
+            "output": 0.75
+          },
+          "output": 0.5
+        },
+        "cacheRead": {
+          "input": 0.011
+        },
+        "cacheWrite": {
+          "input": 0.1375
+        },
+        "priority": {
+          "input": 0.22,
+          "output": 1.1
+        },
+        "flex": {
+          "input": 0.055,
+          "output": 0.275
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gmo53nkzc5or6"
+        }
+      },
+      "us-east-2": {
+        "standard": {
+          "input": 0.11,
+          "longContext": {
+            "input": 0.22,
+            "output": 0.825
+          },
+          "output": 0.55
+        },
+        "global": {
+          "input": 0.1,
+          "longContext": {
+            "input": 0.2,
+            "output": 0.75
+          },
+          "output": 0.5
+        },
+        "cacheRead": {
+          "input": 0.011
+        },
+        "cacheWrite": {
+          "input": 0.1375
+        },
+        "priority": {
+          "input": 0.22,
+          "output": 1.1
+        },
+        "flex": {
+          "input": 0.055,
+          "output": 0.275
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gmo53nkzc5or6"
+        }
+      },
+      "us-west-1": {
+        "standard": {
+          "input": 0.11,
+          "longContext": {
+            "input": 0.22,
+            "output": 0.825
+          },
+          "output": 0.55
+        },
+        "global": {
+          "input": 0.1,
+          "longContext": {
+            "input": 0.2,
+            "output": 0.75
+          },
+          "output": 0.5
+        },
+        "cacheRead": {
+          "input": 0.011
+        },
+        "cacheWrite": {
+          "input": 0.1375
+        },
+        "priority": {
+          "input": 0.22,
+          "output": 1.1
+        },
+        "flex": {
+          "input": 0.055,
+          "output": 0.275
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gmo53nkzc5or6"
+        }
+      },
+      "us-west-2": {
+        "standard": {
+          "input": 0.11,
+          "longContext": {
+            "input": 0.22,
+            "output": 0.825
+          },
+          "output": 0.55
+        },
+        "global": {
+          "input": 0.1,
+          "longContext": {
+            "input": 0.2,
+            "output": 0.75
+          },
+          "output": 0.5
+        },
+        "cacheRead": {
+          "input": 0.011
+        },
+        "cacheWrite": {
+          "input": 0.1375
+        },
+        "priority": {
+          "input": 0.22,
+          "output": 1.1
+        },
+        "flex": {
+          "input": 0.055,
+          "output": 0.275
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-gmo53nkzc5or6"
+        }
+      }
+    },
+    "openai.gpt-6-sol": {
+      "ap-northeast-1": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-pycji3sz5gpcc"
+        }
+      },
+      "ap-northeast-2": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-pycji3sz5gpcc"
+        }
+      },
+      "ap-northeast-3": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-pycji3sz5gpcc"
+        }
+      },
+      "ap-south-1": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-pycji3sz5gpcc"
+        }
+      },
+      "ap-southeast-1": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-pycji3sz5gpcc"
+        }
+      },
+      "ap-southeast-2": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-pycji3sz5gpcc"
+        }
+      },
+      "ca-central-1": {
+        "standard": {
+          "input": 2.2,
+          "longContext": {
+            "input": 4.4,
+            "output": 16.5
+          },
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 2.75
+        },
+        "priority": {
+          "input": 4.4,
+          "output": 22
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 5.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-pycji3sz5gpcc"
+        }
+      },
+      "eu-central-1": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-pycji3sz5gpcc"
+        }
+      },
+      "eu-north-1": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-pycji3sz5gpcc"
+        }
+      },
+      "eu-west-1": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-pycji3sz5gpcc"
+        }
+      },
+      "eu-west-2": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-pycji3sz5gpcc"
+        }
+      },
+      "eu-west-3": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-pycji3sz5gpcc"
+        }
+      },
+      "sa-east-1": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-pycji3sz5gpcc"
+        }
+      },
+      "us-east-1": {
+        "standard": {
+          "input": 2.2,
+          "longContext": {
+            "input": 4.4,
+            "output": 16.5
+          },
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 2.75
+        },
+        "priority": {
+          "input": 4.4,
+          "output": 22
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 5.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-pycji3sz5gpcc"
+        }
+      },
+      "us-east-2": {
+        "standard": {
+          "input": 2.2,
+          "longContext": {
+            "input": 4.4,
+            "output": 16.5
+          },
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 2.75
+        },
+        "priority": {
+          "input": 4.4,
+          "output": 22
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 5.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-pycji3sz5gpcc"
+        }
+      },
+      "us-west-1": {
+        "standard": {
+          "input": 2.2,
+          "longContext": {
+            "input": 4.4,
+            "output": 16.5
+          },
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 2.75
+        },
+        "priority": {
+          "input": 4.4,
+          "output": 22
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 5.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-pycji3sz5gpcc"
+        }
+      },
+      "us-west-2": {
+        "standard": {
+          "input": 2.2,
+          "longContext": {
+            "input": 4.4,
+            "output": 16.5
+          },
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.22
+        },
+        "cacheWrite": {
+          "input": 2.75
+        },
+        "priority": {
+          "input": 4.4,
+          "output": 22
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 5.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-pycji3sz5gpcc"
+        }
+      }
+    },
+    "openai.gpt-6.1-sol": {
+      "ap-northeast-1": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-wbhj4kycntgkk"
+        }
+      },
+      "ap-northeast-2": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-wbhj4kycntgkk"
+        }
+      },
+      "ap-northeast-3": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-wbhj4kycntgkk"
+        }
+      },
+      "ap-south-1": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-wbhj4kycntgkk"
+        }
+      },
+      "ap-southeast-1": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-wbhj4kycntgkk"
+        }
+      },
+      "ap-southeast-2": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-wbhj4kycntgkk"
+        }
+      },
+      "ca-central-1": {
+        "standard": {
+          "input": 2.2,
+          "longContext": {
+            "input": 4.4,
+            "output": 16.5
+          },
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.11
+        },
+        "cacheWrite": {
+          "input": 2.75
+        },
+        "priority": {
+          "input": 4.4,
+          "output": 22
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 5.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-wbhj4kycntgkk"
+        }
+      },
+      "eu-central-1": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-wbhj4kycntgkk"
+        }
+      },
+      "eu-north-1": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-wbhj4kycntgkk"
+        }
+      },
+      "eu-west-1": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-wbhj4kycntgkk"
+        }
+      },
+      "eu-west-2": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-wbhj4kycntgkk"
+        }
+      },
+      "eu-west-3": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-wbhj4kycntgkk"
+        }
+      },
+      "sa-east-1": {
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-wbhj4kycntgkk"
+        }
+      },
+      "us-east-1": {
+        "standard": {
+          "input": 2.2,
+          "longContext": {
+            "input": 4.4,
+            "output": 16.5
+          },
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.11
+        },
+        "cacheWrite": {
+          "input": 2.75
+        },
+        "priority": {
+          "input": 4.4,
+          "output": 22
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 5.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-wbhj4kycntgkk"
+        }
+      },
+      "us-east-2": {
+        "standard": {
+          "input": 2.2,
+          "longContext": {
+            "input": 4.4,
+            "output": 16.5
+          },
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.11
+        },
+        "cacheWrite": {
+          "input": 2.75
+        },
+        "priority": {
+          "input": 4.4,
+          "output": 22
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 5.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-wbhj4kycntgkk"
+        }
+      },
+      "us-west-1": {
+        "standard": {
+          "input": 2.2,
+          "longContext": {
+            "input": 4.4,
+            "output": 16.5
+          },
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.11
+        },
+        "cacheWrite": {
+          "input": 2.75
+        },
+        "priority": {
+          "input": 4.4,
+          "output": 22
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 5.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-wbhj4kycntgkk"
+        }
+      },
+      "us-west-2": {
+        "standard": {
+          "input": 2.2,
+          "longContext": {
+            "input": 4.4,
+            "output": 16.5
+          },
+          "output": 11
+        },
+        "global": {
+          "input": 2,
+          "longContext": {
+            "input": 4,
+            "output": 15
+          },
+          "output": 10
+        },
+        "cacheRead": {
+          "input": 0.11
+        },
+        "cacheWrite": {
+          "input": 2.75
+        },
+        "priority": {
+          "input": 4.4,
+          "output": 22
+        },
+        "flex": {
+          "input": 1.1,
+          "output": 5.5
+        },
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-wbhj4kycntgkk"
         }
       }
     },
@@ -23177,6 +26577,241 @@
         ]
       }
     },
+    "stability.stable-conservative-upscale-v1:0": {
+      "us-east-1": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.4
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-east-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.4
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-west-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.4
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      }
+    },
+    "stability.stable-creative-upscale-v1:0": {
+      "us-east-1": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.6
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-east-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.6
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-west-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.6
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      }
+    },
+    "stability.stable-fast-upscale-v1:0": {
+      "us-east-1": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.03
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-east-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.03
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-west-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.03
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      }
+    },
+    "stability.stable-image-control-sketch-v1:0": {
+      "us-east-1": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-east-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-west-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      }
+    },
+    "stability.stable-image-control-structure-v1:0": {
+      "us-east-1": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-east-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-west-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      }
+    },
     "stability.stable-image-core-v1:1": {
       "us-east-1": {
         "metered": [
@@ -23201,6 +26836,288 @@
         ]
       }
     },
+    "stability.stable-image-erase-object-v1:0": {
+      "us-east-1": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-east-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-west-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      }
+    },
+    "stability.stable-image-inpaint-v1:0": {
+      "us-east-1": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-east-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-west-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      }
+    },
+    "stability.stable-image-remove-background-v1:0": {
+      "us-east-1": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-east-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-west-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      }
+    },
+    "stability.stable-image-search-recolor-v1:0": {
+      "us-east-1": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-east-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-west-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      }
+    },
+    "stability.stable-image-search-replace-v1:0": {
+      "us-east-1": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-east-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-west-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      }
+    },
+    "stability.stable-image-style-guide-v1:0": {
+      "us-east-1": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-east-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-west-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.07
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      }
+    },
     "stability.stable-image-ultra-v1:1": {
       "us-east-1": {
         "metered": [
@@ -23223,6 +27140,100 @@
             "scope": "standard"
           }
         ]
+      }
+    },
+    "stability.stable-outpaint-v1:0": {
+      "us-east-1": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.06
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-east-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.06
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-west-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.06
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      }
+    },
+    "stability.stable-style-transfer-v1:0": {
+      "us-east-1": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.08
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-east-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.08
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
+      },
+      "us-west-2": {
+        "metered": [
+          {
+            "scope": "standard",
+            "label": "Image",
+            "axis": "output",
+            "unit": "image",
+            "value": 0.08
+          }
+        ],
+        "source": {
+          "type": "marketplace",
+          "offerId": "offer-o5xgl2bohfa56"
+        }
       }
     },
     "twelvelabs.marengo-embed-2-7-v1:0": {
@@ -26211,5 +30222,31 @@
         }
       }
     }
+  },
+  "marketplace": {
+    "fetchedAt": "2026-10-08T04:03:18.793Z",
+    "models": [
+      "openai.gpt-5.4",
+      "openai.gpt-5.5",
+      "openai.gpt-5.6-luna",
+      "openai.gpt-5.6-sol",
+      "openai.gpt-5.6-terra",
+      "openai.gpt-6-luna",
+      "openai.gpt-6-sol",
+      "openai.gpt-6.1-sol",
+      "stability.stable-conservative-upscale-v1:0",
+      "stability.stable-creative-upscale-v1:0",
+      "stability.stable-fast-upscale-v1:0",
+      "stability.stable-image-control-sketch-v1:0",
+      "stability.stable-image-control-structure-v1:0",
+      "stability.stable-image-erase-object-v1:0",
+      "stability.stable-image-inpaint-v1:0",
+      "stability.stable-image-remove-background-v1:0",
+      "stability.stable-image-search-recolor-v1:0",
+      "stability.stable-image-search-replace-v1:0",
+      "stability.stable-image-style-guide-v1:0",
+      "stability.stable-outpaint-v1:0",
+      "stability.stable-style-transfer-v1:0"
+    ]
   }
 }

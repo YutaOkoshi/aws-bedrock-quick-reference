@@ -18,6 +18,7 @@ data/
 ├── overrides.json      # 手書き。モデル ID / プロファイル ID ごとの備考 (ja/en)
 ├── mantle.json         # 手書き。bedrock-mantle の提供リージョンと対応モデル (D-010)
 ├── price-model-map.json # 手書き。価格表のモデル名 → モデル ID (D-009)
+├── marketplace-prices.json # 生成物。手編集禁止。Marketplace の offer の単価 (D-018)
 ├── feature-names.json  # 手書き。docs の機能名 → 正規化キー・表示名・既定の列 (D-015)
 ├── feature-model-map.json # 手書き。自動で引けないモデルカード → モデル ID (D-015)
 ├── models.json         # 生成物。手編集禁止
@@ -29,11 +30,13 @@ data/
 scripts/
 ├── fetch-bedrock-snapshot.mjs  # 薄い CLI。引数を読んで lib/ を呼ぶだけ
 ├── fetch-bedrock-prices.mjs    # 価格の CLI。引数・fetch・書き出しだけを持つ
+├── fetch-bedrock-marketplace-prices.mjs # Marketplace の offer の CLI (SSO 必須。D-018)
 ├── fetch-bedrock-features.mjs  # 機能表の CLI。同上
 └── lib/
     ├── cli-args.mjs    # 引数解析 (純関数)
     ├── normalize.mjs   # 正規化 (純関数。I/O・時刻・ネットワークを持たない)
     ├── prices.mjs      # 価格の正規化 (純関数。同上)
+    ├── marketplace-prices.mjs # Marketplace の rateCard の正規化 (純関数。同上)
     ├── features.mjs    # モデルカードのパースと機能表の正規化 (純関数。同上)
     ├── aws-cli.mjs     # aws を子プロセスで起動する唯一のモジュール
     └── snapshot.mjs    # 取得の段取りとファイル書き出し (唯一の I/O 層)
@@ -109,6 +112,20 @@ node scripts/fetch-bedrock-snapshot.mjs --profile <名前> --account-kind sandbo
 Bash のサンドボックスを外す必要がある。
 
 ### 価格の取り直し方 (PRICE-001 / D-009)
+
+Price List の JSON の構造と、Bedrock の価格表での書き方 (usagetype・unit の揺れ、検証のしかた) は
+`docs/price-list-api.md` にまとめてある。読み方を変える前に読む。
+
+Price List に bedrock-runtime の単価が無いモデルは、AWS Marketplace の offer の単価で補う (D-018)。
+こちらは**認証が要る**ので、Price List の取り直しの前に手元の SSO で走らせる:
+
+```
+node scripts/fetch-bedrock-marketplace-prices.mjs --profile <名前>
+node scripts/fetch-bedrock-prices.mjs
+```
+
+`aws` を呼ぶので、エージェントから実行するときは Bash のサンドボックスを外す。Marketplace 経由でないモデルは
+`Agreement not supported for this model` になり、数えるだけで失敗にしない。
 
 価格は AWS Price List Bulk API から取る。**認証は要らない**ので `aws sso login` も
 `--profile` も不要。判定データ (`models.json` 等) を取り直した後に走らせる。

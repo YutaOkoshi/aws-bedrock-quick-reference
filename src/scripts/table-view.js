@@ -212,7 +212,19 @@ function geoCell(row, notes) {
 
 // PRICE-001 AC-007 / AC-008: 単価は $ 付きで右寄せ。値が無ければ「—」。
 function priceCell(row, direction) {
-  if (!row.comparisonPrices.length) return el("span", "dim", t("price.unrecorded"));
+  if (!row.comparisonPrices.length) {
+    // D-018: Price List にも Marketplace にも単価が無い。docs のモデルカード (無ければ料金ページ) へ案内する。
+    const wrap = el("span", "comparison-prices price-unrecorded");
+    wrap.append(el("span", "dim", t("price.unrecorded")));
+    if (row.docsUrl) {
+      const link = el("a", "doc-link price-docs-link", t("price.docsLink"));
+      link.href = row.docsUrl;
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      wrap.append(link);
+    }
+    return wrap;
+  }
   const wrap = el("span", "comparison-prices");
   const token = row.comparisonPrices.find(price => price.kind !== "metered" && formatPrice(price[direction]) != null);
   const allRates = row.comparisonPrices.filter(price => price.kind === "metered" && price.axis === direction);
@@ -235,6 +247,7 @@ function priceCell(row, direction) {
   }
   if (price.maxInputTokens) line.append(el("span", "comparison-price-region", t("price.shortContext", { count: price.maxInputTokens.toLocaleString("en-US") })));
   if (price.reference) line.append(el("span", "comparison-price-region", t("price.referenceRegion", { region: price.region })));
+  if (price.source?.type === "marketplace") line.append(el("span", "comparison-price-region price-source", t("price.sourceMarketplace")));
   wrap.append(line);
   return wrap;
 }
@@ -757,6 +770,7 @@ export function mountTableView({
       overrides,
       mantle,
       prices,
+      features,
       region,
     });
 

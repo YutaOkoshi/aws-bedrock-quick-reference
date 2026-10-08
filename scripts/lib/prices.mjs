@@ -163,7 +163,7 @@ const OUT_OF_SCOPE_USAGETYPE = /latency-?optimized|custom-model/i;
 // キャッシュの long_ctx は範囲外にする。境界のトークン数は価格表に無い。
 const LONG_CONTEXT_USAGETYPE = /long_ctx/i;
 
-function longContextKind(kind) {
+export function longContextKind(kind) {
   return kind === "standard" || kind === "global" ? kind : null;
 }
 
@@ -324,6 +324,105 @@ function sortKinds(bucket) {
   }
   if (bucket.metered) kinds.metered = bucket.metered.sort((a, b) => a.axis.localeCompare(b.axis) || a.label.localeCompare(b.label) || a.value - b.value);
   return kinds;
+}
+
+// --- AWS Marketplace の offer による補完 (D-018) ---------------------------
+
+// bedrock-runtime の単価の種別。mantle の下は含めない。
+const RUNTIME_KINDS = Object.freeze([...PRICE_KINDS, "metered"]);
+
+function hasRuntimePrice(regions) {
+  return Object.values(regions ?? {}).some((entry) => RUNTIME_KINDS.some((kind) => entry?.[kind]));
+}
+
+// In-Region / Geo の単価 (global 以外) を当てる種別。
+const REGIONAL_KINDS = Object.freeze(PRICE_KINDS.filter((kind) => kind !== "global"));
+
+/**
+ * Price List の usagetype の先頭 (APN1- / USE1- / MP:USE1_) と regionCode を対にした索引。
+ * Marketplace の rateCard の略号 (APN1_input_tokens_standard) をリージョンに戻すのに使う。
+ */
+export function buildPrefixIndex(files) {
+  const index = {};
+  for (const byRegion of Object.values(files ?? {})) {
+    for (const file of Object.values(byRegion ?? {})) {
+      for (const product of Object.values(file?.products ?? {})) {
+        const { usagetype, regionCode } = product?.attributes ?? {};
+        const match = /^([A-Z]{2,4}\d)-/.exec(String(usagetype ?? ""));
+        if (match && regionCode && !index[match[1]]) index[match[1]] = regionCode;
+      }
+    }
+  }
+  return Object.fromEntries(Object.entries(index).sort(([a], [b]) => a.localeCompare(b)));
+}
+
+/**
+ * Price List に bedrock-runtime の単価が 1 つも無いモデルだけ、Marketplace の offer の単価で埋める。
+ * Price List に単価があるモデルは触らない (Price List を優先する)。埋めたリージョンには
+ * `source: { type: "marketplace", offerId }` を付け、prices.marketplace に対象モデルを記録する。
+ *
+ * リージョンの区別が無い単価は、そのモデルを使えるリージョンに当てる:
+ * global は Global のプロファイルの起点、それ以外は models.json の availability が ON_DEMAND のリージョンか Geo のプロファイルの起点。
+ * 略号付きの単価は prefixIndex で引いたリージョンに当てる。どちらも regions (取得対象) に限る。
+ */
+export function applyMarketplacePrices(prices, { marketplace, models, profiles, regions, prefixIndex }) {
+  if (!marketplace?.byModel) return prices;
+  const target = new Set(regions ?? []);
+  const applied = [];
+  prices.byModel ??= {};
+
+  for (const [modelId, offer] of Object.entries(marketplace.byModel)) {
+    if (!models?.[modelId] || hasRuntimePrice(prices.byModel[modelId])) continue;
+
+    // In-Region (ON_DEMAND) か Geo のプロファイルの起点だけが、標準系の単価を使えるリージョン。
+    // availability の INFERENCE_PROFILE は Global 経由でしか呼べない場合も含むので数えない。
+    const regional = new Set(
+      Object.entries(models[modelId].availability ?? {})
+        .filter(([, types]) => Array.isArray(types) && types.includes("ON_DEMAND"))
+        .map(([region]) => region),
+    );
+    const global = new Set();
+    for (const [profileId, profile] of Object.entries(profiles ?? {})) {
+      if (profile?.modelId !== modelId) continue;
+      for (const region of Object.keys(profile.sources ?? {})) (profileId.startsWith("global.") ? global : regional).add(region);
+    }
+
+    const fills = {}; // region -> kinds
+    const put = (region, kind, values) => {
+      if (!target.has(region) || !values) return;
+      const bucket = (fills[region] ??= {});
+      bucket[kind] = kind === "metered" ? [...values] : JSON.parse(JSON.stringify(values));
+    };
+    for (const [kind, values] of Object.entries(offer.kinds ?? {})) {
+      const where = kind === "global" ? global : REGIONAL_KINDS.includes(kind) || kind === "metered" ? regional : new Set();
+      for (const region of where) put(region, kind, values);
+    }
+    for (const [prefix, kinds] of Object.entries(offer.byPrefix ?? {})) {
+      const region = prefixIndex?.[prefix];
+      if (!region) continue;
+      for (const [kind, values] of Object.entries(kinds)) put(region, kind, values);
+    }
+    if (Object.keys(fills).length === 0) continue;
+
+    const entries = (prices.byModel[modelId] ??= {});
+    for (const region of Object.keys(fills).sort()) {
+      const entry = (entries[region] ??= {});
+      const { mantle } = entry;
+      const merged = sortKinds({ ...fills[region] });
+      for (const key of Object.keys(entry)) delete entry[key];
+      Object.assign(entry, merged);
+      if (mantle) entry.mantle = mantle;
+      entry.source = { type: "marketplace", offerId: offer.offerId ?? null };
+    }
+    prices.byModel[modelId] = Object.fromEntries(Object.entries(entries).sort(([a], [b]) => a.localeCompare(b)));
+    applied.push(modelId);
+  }
+
+  if (applied.length > 0) {
+    prices.marketplace = { fetchedAt: marketplace.fetchedAt ?? null, models: applied.sort() };
+    prices.byModel = Object.fromEntries(Object.entries(prices.byModel).sort(([a], [b]) => a.localeCompare(b)));
+  }
+  return prices;
 }
 
 /**

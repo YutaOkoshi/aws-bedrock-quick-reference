@@ -109,7 +109,9 @@ Geoはプロファイルの推論先、In-Regionは起点内の経路、Global�
 画像生成・動画生成・リランキング・マルチモーダル埋め込みの料金も収録します。
 トークン以外の料金は画像・秒・リクエスト・検索単位を表示し、トークン価格の
 並べ替え対象には含めません。価格はすべて AWS Price List API から取り、手書きの補完はしません。
-Price List に載っていないモデル（Marketplace 経由で未掲載の OpenAI モデルなど）は「価格未収録」になります。
+Price List に載っていないモデル（Marketplace 経由の OpenAI モデルや Stability の画像編集系など）は、
+AWS Marketplace の offer の単価表（Bedrock の `ListFoundationModelAgreementOffers`）で補い、「出典: Marketplace」と表示します。
+それでも単価が無いモデルは「価格未収録」とし、docs のモデルカードへのリンクを付けます。
 長文コンテキストの料金が Price List にあるモデルは、詳細に「長文コンテキスト」の行として表示します。
 
 `amazon.titan-embed-g1-text-02` は公式料金SKUとの対応が未確認のため未収録です。
