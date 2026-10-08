@@ -450,6 +450,17 @@
       ]
     }
   },
+  "au.anthropic.claude-haiku-5-5": {
+    "prefix": "au",
+    "modelId": "anthropic.claude-haiku-5-5",
+    "name": "AU Anthropic Claude Haiku 5.5",
+    "sources": {
+      "ap-southeast-2": [
+        "ap-southeast-2",
+        "ap-southeast-4"
+      ]
+    }
+  },
   "au.anthropic.claude-opus-4-6-v1": {
     "prefix": "au",
     "modelId": "anthropic.claude-opus-4-6-v1",
@@ -729,6 +740,54 @@
     "prefix": "eu",
     "modelId": "anthropic.claude-haiku-4-5-20251001-v1:0",
     "name": "EU Anthropic Claude Haiku 4.5",
+    "sources": {
+      "eu-central-1": [
+        "eu-central-1",
+        "eu-north-1",
+        "eu-south-1",
+        "eu-south-2",
+        "eu-west-1",
+        "eu-west-3"
+      ],
+      "eu-north-1": [
+        "eu-central-1",
+        "eu-north-1",
+        "eu-south-1",
+        "eu-south-2",
+        "eu-west-1",
+        "eu-west-3"
+      ],
+      "eu-west-1": [
+        "eu-central-1",
+        "eu-north-1",
+        "eu-south-1",
+        "eu-south-2",
+        "eu-west-1",
+        "eu-west-3"
+      ],
+      "eu-west-2": [
+        "eu-central-1",
+        "eu-north-1",
+        "eu-south-1",
+        "eu-south-2",
+        "eu-west-1",
+        "eu-west-2",
+        "eu-west-3"
+      ],
+      "eu-west-3": [
+        "eu-central-1",
+        "eu-north-1",
+        "eu-south-1",
+        "eu-south-2",
+        "eu-west-1",
+        "eu-west-3"
+      ]
+    }
+  },
+  "eu.anthropic.claude-haiku-5-5": {
+    "prefix": "eu",
+    "modelId": "anthropic.claude-haiku-5-5",
+    "name": "EU Anthropic Claude Haiku 5.5",
     "sources": {
       "eu-central-1": [
         "eu-central-1",
@@ -1665,6 +1724,64 @@
     "prefix": "global",
     "modelId": "anthropic.claude-haiku-4-5-20251001-v1:0",
     "name": "Global Anthropic Claude Haiku 4.5",
+    "sources": {
+      "ap-northeast-1": [
+        "*"
+      ],
+      "ap-northeast-2": [
+        "*"
+      ],
+      "ap-northeast-3": [
+        "*"
+      ],
+      "ap-south-1": [
+        "*"
+      ],
+      "ap-southeast-1": [
+        "*"
+      ],
+      "ap-southeast-2": [
+        "*"
+      ],
+      "ca-central-1": [
+        "*"
+      ],
+      "eu-central-1": [
+        "*"
+      ],
+      "eu-north-1": [
+        "*"
+      ],
+      "eu-west-1": [
+        "*"
+      ],
+      "eu-west-2": [
+        "*"
+      ],
+      "eu-west-3": [
+        "*"
+      ],
+      "sa-east-1": [
+        "*"
+      ],
+      "us-east-1": [
+        "*"
+      ],
+      "us-east-2": [
+        "*"
+      ],
+      "us-west-1": [
+        "*"
+      ],
+      "us-west-2": [
+        "*"
+      ]
+    }
+  },
+  "global.anthropic.claude-haiku-5-5": {
+    "prefix": "global",
+    "modelId": "anthropic.claude-haiku-5-5",
+    "name": "Global Anthropic Claude Haiku 5.5",
     "sources": {
       "ap-northeast-1": [
         "*"
@@ -3283,6 +3400,21 @@
       ]
     }
   },
+  "jp.anthropic.claude-haiku-5-5": {
+    "prefix": "jp",
+    "modelId": "anthropic.claude-haiku-5-5",
+    "name": "JP Anthropic Claude Haiku 5.5",
+    "sources": {
+      "ap-northeast-1": [
+        "ap-northeast-1",
+        "ap-northeast-3"
+      ],
+      "ap-northeast-3": [
+        "ap-northeast-1",
+        "ap-northeast-3"
+      ]
+    }
+  },
   "jp.anthropic.claude-opus-4-7": {
     "prefix": "jp",
     "modelId": "anthropic.claude-opus-4-7",
@@ -3599,6 +3731,40 @@
     "prefix": "us",
     "modelId": "anthropic.claude-haiku-4-5-20251001-v1:0",
     "name": "US Anthropic Claude Haiku 4.5",
+    "sources": {
+      "ca-central-1": [
+        "ca-central-1",
+        "us-east-1",
+        "us-east-2",
+        "us-west-2"
+      ],
+      "us-east-1": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-2"
+      ],
+      "us-east-2": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-2"
+      ],
+      "us-west-1": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-1",
+        "us-west-2"
+      ],
+      "us-west-2": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-2"
+      ]
+    }
+  },
+  "us.anthropic.claude-haiku-5-5": {
+    "prefix": "us",
+    "modelId": "anthropic.claude-haiku-5-5",
+    "name": "US Anthropic Claude Haiku 5.5",
     "sources": {
       "ca-central-1": [
         "ca-central-1",

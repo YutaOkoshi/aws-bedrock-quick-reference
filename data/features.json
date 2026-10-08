@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-07T11:46:04.679Z",
+  "generatedAt": "2026-10-08T01:32:51.916Z",
   "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/toc-contents.json",
-  "cards": 133,
-  "cardsWithFeatures": 118,
+  "cards": 137,
+  "cardsWithFeatures": 122,
   "failedCards": 0,
   "features": {
     "streaming": {
@@ -544,6 +544,60 @@
         {
           "toolType": "computer_20250124",
           "betaHeader": "computer-use-2025-01-24"
+        }
+      ]
+    },
+    "anthropic.claude-haiku-5-5": {
+      "card": "model-card-anthropic-claude-haiku-5-5.html",
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": false,
+        "computerUse": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": true,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": true
+      },
+      "mantle": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
+        "structuredOutputs": false,
+        "computerUse": true,
+        "countTokens": true,
+        "guardrails": false,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "promptCaching": {
+        "explicit": true,
+        "minTokens": "512",
+        "maxCheckpoints": "4",
+        "ttl": "5 minutes, 1 hour",
+        "fields": "system, messages, and tools",
+        "endpoints": [
+          "runtime",
+          "mantle"
+        ]
+      },
+      "computerUse": [
+        {
+          "toolType": "computer_20251124",
+          "betaHeader": "computer-use-2025-11-24"
         }
       ]
     },
@@ -2595,6 +2649,25 @@
       "promptCaching": null,
       "computerUse": null
     },
+    "stability.sd3-5-large-v1:0": {
+      "card": "model-card-stability-ai-stable-diffusion-3-5-large.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
     "stability.stable-conservative-upscale-v1:0": {
       "card": "model-card-stability-ai-stable-image-conservative-upscale.html",
       "runtime": {
@@ -2673,6 +2746,25 @@
     },
     "stability.stable-image-control-structure-v1:0": {
       "card": "model-card-stability-ai-stable-image-control-structure.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "stability.stable-image-core-v1:1": {
+      "card": "model-card-stability-ai-stable-image-core-1-0.html",
       "runtime": {
         "streaming": false,
         "countTokens": false,
@@ -2787,6 +2879,25 @@
     },
     "stability.stable-image-style-guide-v1:0": {
       "card": "model-card-stability-ai-stable-image-style-guide.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "stability.stable-image-ultra-v1:1": {
+      "card": "model-card-stability-ai-stable-image-ultra-1-0.html",
       "runtime": {
         "streaming": false,
         "countTokens": false,
