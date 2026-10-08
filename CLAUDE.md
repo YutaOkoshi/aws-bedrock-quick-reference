@@ -11,6 +11,9 @@ Amazon Bedrock の **モデル × リージョン × 推論が実際に行われ
 - フレームワーク無しの DOM 描画。`package.json` の `dependencies` は**空のまま**にする (AC-009)
 - テストは vitest。DOM を触るテストは jsdom、ファイルを読むテストは先頭に
   `// @vitest-environment node` を書いて node 環境で走らせる
+- **実データ (`data/*.json`) を読むテストに件数・モデル名・単価の固定値を書かない**。取り直しで変わるので、
+  性質 (行数がビューモデルと一致、並びが日時の降順、価格の無いモデルはどのリージョンにも単価が無い、
+  確かめた件数が 0 より多い など) で確かめる。固定値は fixture (`tests/fixtures/`) を使うテストに書く (2026-10-08)
 
 ```
 data/
@@ -152,7 +155,8 @@ node scripts/fetch-bedrock-prices.mjs
   `AmazonBedrockFoundationModels` の `1M tokens` はそのまま
 - 取り込むのは 2 offer (`AmazonBedrock` / `AmazonBedrockFoundationModels`)。
   `AmazonBedrockService` と `AmazonBedrockAgentCore` はトークン単価を持たないので対象外
-- **価格は Price List の値だけを使う。手書きの補完 JSON は作らない**。載っていないモデルは「価格未収録」のままにし、
+- **価格は Price List を優先し、手書きの補完 JSON は作らない**。Price List に bedrock-runtime の単価が無いモデルは
+  Marketplace の offer で補い出典を出す (D-018)。それでも無いモデルは「価格未収録」と docs のリンクにし、
   なぜ無いかは生 JSON の全文検索で確かめる (Marketplace 製品は掲載が遅れることがある)。`-mantle-` の SKU は
   `byModel[M][R].mantle` に Runtime と分けて入れ (D-017)、`long_ctx` は `longContext` として読む
   (spec-price.md の「Price List の書き方の揺れ」)。価格のあるモデルが前回の半分未満なら書き出さずに失敗する

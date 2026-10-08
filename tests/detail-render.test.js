@@ -169,13 +169,15 @@ describe("AC-016 使えないレーンも開ける", () => {
     expect(lane.textContent).toContain("このモデルは東京で直接提供なし");
   });
 
-  it("単価があれば価格の節を出し、呼べない旨を注記に足す", () => {
+  // 2026-10-08 変更: 呼べないレーンに単価の表を出すと「提供なしなのに価格がある」と読めるので出さない。
+  // 東京の標準の単価は Geo (jp.) で呼んだときの価格なので、使えるレーンを案内する。
+  it("単価があっても表は出さず、呼べない旨と、同じ単価が出ている使えるレーンを案内する", () => {
     const panel = open(CLAUDE_45);
     const price = laneOf(panel, "inRegion").querySelector(".detail-price");
-    expect(price.querySelector(".detail-price-table")).not.toBeNull();
-    expect(price.querySelector(".detail-price-unit").textContent).toContain(
-      "価格は掲載されているが、この使い方では呼べない",
-    );
+    expect(price.querySelector(".detail-price-table")).toBeNull();
+    const note = price.querySelector(".detail-price-unavailable").textContent;
+    expect(note).toContain("この使い方では呼べないため、価格は出していません");
+    expect(note).toContain("Geo");
   });
 });
 

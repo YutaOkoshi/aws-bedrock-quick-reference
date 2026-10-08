@@ -255,11 +255,22 @@ function docsLink(modelId, features) {
   return wrap;
 }
 
-function priceSection(modelId, { prices, features, region, regionNotes, lane, available }) {
+function priceSection(modelId, { prices, features, region, regionNotes, lane, available, summaries }) {
   const section = el("section", "detail-price");
   section.appendChild(el("h4", null, t("price.heading")));
   const rows = buildPriceRows(modelId, { prices, region, lane });
   const mantleRows = buildMantlePriceRows(modelId, { prices, region });
+
+  // AC-016 (2026-10-08 変更): 呼べないレーンには単価の表を出さない。東京の標準の単価は Geo で呼んだときの価格でも
+  // あるので、In-Region の不可のタブに並べると「提供なしなのに価格がある」と読める。同じ標準の単価を使えるレーンを案内する。
+  if (!available && (rows.length > 0 || mantleRows.length > 0)) {
+    const alternatives = lane === LANE_GLOBAL ? [] : [LANE_IN_REGION, LANE_GEO].filter((other) => other !== lane && summaries?.[other]?.available);
+    const text = alternatives.length > 0
+      ? t("price.unavailableLaneSeeOther", { lane: alternatives.map((other) => laneTitle(other, summaries[other])).join(" / ") })
+      : t("price.unavailableLaneHidden");
+    section.appendChild(el("p", "detail-price-unavailable note-muted", text));
+    return section;
+  }
 
   if (rows.length === 0 && mantleRows.length === 0) {
     section.appendChild(el("p", "detail-no-price", t("price.none")));
@@ -297,8 +308,6 @@ function priceSection(modelId, { prices, features, region, regionNotes, lane, av
     // Mantle の表にはバッチ・キャッシュが並ぶことがあるので、Runtime に限った文言にする。
     notes.push(t(mantleRows.length > 0 ? "price.globalMissingRuntime" : "price.globalMissing"));
   }
-  // AC-016: 使えないレーンでも単価があれば表は出す。呼べないことを注記で足す。
-  if (!available) notes.push(t("price.unavailableLane"));
   section.appendChild(el("p", "detail-price-unit price-unit", notes.join(" ")));
   return section;
 }
@@ -515,6 +524,7 @@ function lanePanel(lane, { modelId, detail, regionNotes, prices, features, profi
       regionNotes,
       lane,
       available: summary.available,
+      summaries: detail.summaries,
     }),
   );
   return panel;

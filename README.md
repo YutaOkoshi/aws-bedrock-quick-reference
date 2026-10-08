@@ -112,6 +112,8 @@ Geoはプロファイルの推論先、In-Regionは起点内の経路、Global�
 Price List に載っていないモデル（Marketplace 経由の OpenAI モデルや Stability の画像編集系など）は、
 AWS Marketplace の offer の単価表（Bedrock の `ListFoundationModelAgreementOffers`）で補い、「出典: Marketplace」と表示します。
 それでも単価が無いモデルは「価格未収録」とし、docs のモデルカードへのリンクを付けます。
+Global のバッチ・キャッシュの単価も、Price List と Marketplace にあるものは詳細の Global のタブに出します。
+bedrock-runtime と bedrock-mantle の単価は別に持ち、詳細では表を分けて出します。
 長文コンテキストの料金が Price List にあるモデルは、詳細に「長文コンテキスト」の行として表示します。
 
 `amazon.titan-embed-g1-text-02` は公式料金SKUとの対応が未確認のため未収録です。

@@ -254,6 +254,8 @@ describe("Runtime と Mantle の価格を分けて出す", () => {
     mantle: { standard: { input: 0.168, output: 1.44 }, batch: { input: 0.084 } },
   } } } };
   const inRegionPrice = () => panelOf(CLAUDE).querySelector('[data-lane="inRegion"] .detail-price');
+  // fixture の Claude は東京で In-Region 不可・Geo 可。呼べるレーン (Geo) の価格の節で確かめる (AC-016)。
+  const geoPrice = () => panelOf(CLAUDE).querySelector('[data-lane="geo"] .detail-price');
 
   it("buildMantlePriceRows は mantle の種別を PRICE_KINDS の順で返し、Runtime の単価を含まない", () => {
     expect(buildMantlePriceRows(CLAUDE, { prices: both, region: TOKYO })).toEqual([
@@ -267,7 +269,7 @@ describe("Runtime と Mantle の価格を分けて出す", () => {
   it("詳細の価格の節に bedrock-runtime と bedrock-mantle の表が別々に出る", () => {
     mountFixtureApp({ prices: both });
     rowFor(CLAUDE).querySelector(".detail-toggle").click();
-    const section = inRegionPrice();
+    const section = geoPrice();
     const runtime = section.querySelector(".detail-price-runtime");
     const mantle = section.querySelector(".detail-price-mantle");
     expect(runtime.textContent).toContain("bedrock-runtime");
@@ -283,7 +285,7 @@ describe("Runtime と Mantle の価格を分けて出す", () => {
     mountFixtureApp({ prices: { byModel: { [CLAUDE]: { [TOKYO]: { mantle: { standard: { input: 2.2, output: 6.6 } } } } } } });
     expect(cells(rowFor(CLAUDE))[PRICE_INPUT].textContent).not.toContain("$2.20");
     rowFor(CLAUDE).querySelector(".detail-toggle").click();
-    const section = inRegionPrice();
+    const section = geoPrice();
     expect(section.querySelector(".detail-price-runtime").textContent).toContain("この起点リージョンの価格データがありません");
     expect(section.querySelector(".detail-price-mantle").textContent).toContain("$2.20");
   });
@@ -291,7 +293,8 @@ describe("Runtime と Mantle の価格を分けて出す", () => {
   it("Mantle の単価が無ければ Mantle の表は出さない", () => {
     mountFixtureApp({ prices: { byModel: { [CLAUDE]: { [TOKYO]: { standard: { input: 3, output: 15 } } } } } });
     rowFor(CLAUDE).querySelector(".detail-toggle").click();
-    expect(inRegionPrice().querySelector(".detail-price-mantle")).toBeNull();
+    expect(geoPrice().querySelector(".detail-price-table")).not.toBeNull();
+    expect(geoPrice().querySelector(".detail-price-mantle")).toBeNull();
   });
 });
 
@@ -324,12 +327,12 @@ describe("長文コンテキストの単価 (境界のトークン数が価格�
 });
 
 describe("詳細の価格: レビュー (2026-10-08) で見つかった表示の問題", () => {
-  it("In-Region の Runtime に priority / flex しか無くても表を出す (Qwen3 Next 80B の東京)", () => {
+  it("Runtime に priority / flex しか無くても標準系のレーンに表を出す (Qwen3 Next 80B の東京)", () => {
     const prices = { byModel: { [CLAUDE]: { [TOKYO]: { priority: { input: 0.32, output: 2.54 }, flex: { input: 0.09, output: 0.72 } } } } };
     expect(buildPriceRows(CLAUDE, { prices, region: TOKYO }).map((row) => row.kind)).toEqual(["priority", "flex"]);
     mountFixtureApp({ prices });
     rowFor(CLAUDE).querySelector(".detail-toggle").click();
-    const section = panelOf(CLAUDE).querySelector('[data-lane="inRegion"] .detail-price');
+    const section = panelOf(CLAUDE).querySelector('[data-lane="geo"] .detail-price');
     expect(section.textContent).toContain("優先");
     expect(section.textContent).toContain("$0.32");
     expect(section.textContent).not.toContain("この起点リージョンの価格データがありません");
@@ -369,7 +372,7 @@ describe("Marketplace の単価の出典と、価格未収録のときの docs �
   it("詳細の価格の節に、offer ID 付きの出典が出る", () => {
     mountFixtureApp({ prices: marketplace });
     rowFor(CLAUDE).querySelector(".detail-toggle").click();
-    const source = panelOf(CLAUDE).querySelector('[data-lane="inRegion"] .detail-price .detail-price-source');
+    const source = panelOf(CLAUDE).querySelector('[data-lane="geo"] .detail-price .detail-price-source');
     expect(source.textContent).toContain("AWS Marketplace");
     expect(source.textContent).toContain("offer-3dvyrx3okd4lq");
     expect(source.textContent).toContain("Price List");
