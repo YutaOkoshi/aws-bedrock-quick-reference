@@ -493,3 +493,67 @@ describe("resolveModelIds: bedrock-runtime の行が無いカードは bedrock-m
     expect(resolveModelIds("model-card-openai-gpt-54.html", parsed, { models: {}, map: {} })).toEqual([]);
   });
 });
+
+// In-Region / Geo / Global を接続先ごとに出す (2026-10-08): Regional Availability / Supported Regions の表を読む。
+describe("parseModelCard: 接続先ごとの地域の表 (regions)", () => {
+  const YES = "![Green circle with white checkmark icon.](https://docs.aws.amazon.com/bedrock/latest/userguide/images/icons/icon-yes.png)";
+  const NO = "![Red circle with white X icon.](https://docs.aws.amazon.com/bedrock/latest/userguide/images/icons/icon-no.png)";
+  const ids = (rows) => ["## Programmatic Access", "", "| **Endpoint** | **Model ID** | **In-Region endpoint URL** | **Geo inference ID** | **Global inference ID** | ", "| --- | --- | --- | --- | --- | ", ...rows, ""];
+
+  it("古い書式: 接続先の見出しごとの表。値はアイコン", () => {
+    const md = [
+      ...ids(["| bedrock-runtime | m | x | us.m | global.m | ", "| bedrock-mantle | m | x | N/A | N/A | "]),
+      "## Regional Availability", "", "Availability differs by endpoint.", "",
+      "**Availability using the `bedrock-runtime` endpoint**", "", "",
+      "| **Region** | **In-Region** | **Geo** | **Global** | ", "| --- | --- | --- | --- | ",
+      `| us-east-1 (N. Virginia) | ${YES} | ${YES} | ${YES} | `,
+      `| ap-northeast-1 (Tokyo) | ${NO} | ${NO} | ${YES} | `, "",
+      "**Availability using the `bedrock-mantle` endpoint**", "", "",
+      "| **Region** | **In-Region** | **Geo** | **Global** | ", "| --- | --- | --- | --- | ",
+      `| ap-northeast-1 (Tokyo) | ${YES} | ${NO} | ${NO} | `, "",
+      "## Quotas and Limits", "",
+    ].join("\n");
+    expect(parseModelCard(md).regions).toEqual({
+      "bedrock-runtime": { inRegion: ["us-east-1"], geo: ["us-east-1"], global: ["ap-northeast-1", "us-east-1"] },
+      "bedrock-mantle": { inRegion: ["ap-northeast-1"], geo: [], global: [] },
+    });
+  });
+
+  it("新しい書式: Supported Regions の節で、値は Supported / Not supported、列名は US Geo CRIS / Global CRIS", () => {
+    const md = [
+      ...ids(["| bedrock-mantle | m | x | Not supported | Not supported | ", "| bedrock-runtime | m | Not supported | us.m | global.m | "]),
+      "## Supported Regions", "",
+      "**The `bedrock-mantle` endpoint**", "", "",
+      "| **Region** | **In-Region** | **Geo** | **Global** | ", "| --- | --- | --- | --- | ",
+      "| us-east-1 (US East (N. Virginia)) | Supported | Not supported | Not supported | ", "",
+      "**The `bedrock-runtime` endpoint**", "", "",
+      "| **Source Region** | **In-Region** | **US Geo CRIS** | **Global CRIS** | ", "| --- | --- | --- | --- | ",
+      "| us-east-1 | Not supported | Supported | Supported | ",
+      "| eu-central-1 | Not supported | Not supported | Supported | ", "",
+    ].join("\n");
+    expect(parseModelCard(md).regions).toEqual({
+      "bedrock-mantle": { inRegion: ["us-east-1"], geo: [], global: [] },
+      "bedrock-runtime": { inRegion: [], geo: ["us-east-1"], global: ["eu-central-1", "us-east-1"] },
+    });
+  });
+
+  it("接続先の見出しが無い表は、Programmatic Access に接続先が 1 つだけならその接続先の表とする", () => {
+    const md = [
+      ...ids(["| bedrock-runtime | m | x | us.m | Not supported | "]),
+      "## Regional Availability", "",
+      "| **Region** | **In-Region** | **Geo** | **Global** | ", "| --- | --- | --- | --- | ",
+      `| us-east-1 (N. Virginia) | ${YES} | ${YES} | ${NO} | `, "",
+    ].join("\n");
+    expect(parseModelCard(md).regions).toEqual({ "bedrock-runtime": { inRegion: ["us-east-1"], geo: ["us-east-1"], global: [] } });
+  });
+
+  it("接続先が 2 つあるのに見出しの無い表は、どちらか決めず shared (接続先を分けていない表) として読む", () => {
+    const md = [
+      ...ids(["| bedrock-runtime | m | x | us.m | global.m | ", "| bedrock-mantle | m | x | N/A | N/A | "]),
+      "## Regional Availability", "",
+      "| **Region** | **In-Region** | **Geo** | **Global** | ", "| --- | --- | --- | --- | ",
+      `| us-east-1 (N. Virginia) | ${YES} | ${YES} | ${YES} | `, "",
+    ].join("\n");
+    expect(parseModelCard(md).regions).toEqual({ shared: { inRegion: ["us-east-1"], geo: ["us-east-1"], global: ["us-east-1"] } });
+  });
+});

@@ -155,6 +155,45 @@ function parseEndpoints(allSections) {
   return null;
 }
 
+// Regional Availability (新しい書式では Supported Regions) の表を接続先ごとに読む:
+// { "<endpoint>": { inRegion: [region], geo: [region], global: [region] } }。値はアイコン (icon-yes) か "Supported"。
+// 接続先の見出しが無い表は、Programmatic Access の接続先が 1 つだけならその接続先の表とする。
+// 2 つあるときはどちらか決めず "shared" (docs が接続先を分けていない表) として持つ。
+const REGION_CODE = /^([a-z]{2}(?:-gov)?-[a-z]+-\d+)\b/;
+function supported(cell) {
+  const text = String(cell ?? "");
+  return /icon-yes\.png/.test(text) || /^\s*supported\s*$/i.test(cleanCell(text));
+}
+
+function parseRegions(allSections, endpoints) {
+  const regions = {};
+  for (const section of allSections) {
+    if (!/^(regional availability|supported regions)$/i.test(section.title)) continue;
+    for (const table of headedTables(section.lines)) {
+      const regionCol = column(table.header, /region/i);
+      const inRegionCol = column(table.header, /^in-region$/i);
+      const geoCol = column(table.header, /geo/i);
+      const globalCol = column(table.header, /global/i);
+      if (regionCol !== 0 || inRegionCol < 0 || geoCol < 0 || globalCol < 0) continue;
+      const named = /bedrock-(runtime|mantle)/.exec(table.heading ?? "");
+      const only = Object.keys(endpoints ?? {});
+      const endpoint = named ? named[0] : only.length === 1 ? only[0] : "shared";
+      if (!endpoint || regions[endpoint]) continue;
+      const lanes = { inRegion: [], geo: [], global: [] };
+      for (const row of table.body) {
+        const code = REGION_CODE.exec(cleanCell(row[regionCol]));
+        if (!code) continue;
+        if (supported(row[inRegionCol])) lanes.inRegion.push(code[1]);
+        if (supported(row[geoCol])) lanes.geo.push(code[1]);
+        if (supported(row[globalCol])) lanes.global.push(code[1]);
+      }
+      for (const key of Object.keys(lanes)) lanes[key] = [...new Set(lanes[key])].sort();
+      regions[endpoint] = lanes;
+    }
+  }
+  return Object.keys(regions).length > 0 ? regions : null;
+}
+
 const ITEM =
   /icon-(yes|no)\.png\)\s*(?:\[([^\]]+)\]\(([^)\s]*)\)|([^<]+))/;
 
@@ -217,9 +256,11 @@ function parseComputerUse(table) {
 export function parseModelCard(markdown) {
   if (typeof markdown !== "string" || markdown.trim() === "") return null;
   const all = sections(markdown);
+  const endpoints = parseEndpoints(all);
   const parsed = {
     ids: parseIds(all),
-    endpoints: parseEndpoints(all),
+    endpoints,
+    regions: parseRegions(all, endpoints),
     runtime: null,
     mantle: null,
     promptCaching: null,
@@ -449,6 +490,7 @@ export function normalizeFeatures({ cards, models, names, map = {}, previous = n
       promptCaching: parsed.promptCaching,
       computerUse: parsed.computerUse,
       ...(parsed.endpoints ? { endpoints: parsed.endpoints } : {}),
+      ...(parsed.regions ? { regions: parsed.regions } : {}),
     };
 
     // 機能一覧に Explicit Prompt Caching が無いカードは、Prompt caching の表の値で補う。

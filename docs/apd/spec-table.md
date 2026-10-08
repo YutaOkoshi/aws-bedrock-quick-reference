@@ -1,7 +1,7 @@
 ---
 spec_id: "TABLE-001"
 context: "table"
-version: 11
+version: 12
 issue_ref: null
 title: "起点リージョン選択とメイン比較表"
 decision_refs:
@@ -239,6 +239,7 @@ decision_refs:
 
 ## 変更履歴
 
+- **version 12** (2026-10-08): In-Region / Geo / Global の各セルの下段に、bedrock-runtime と bedrock-mantle のどちらで使えるか（Runtime ✓/✕・Mantle ✓/✕/—）を出した。Runtime は API の判定、Mantle は docs のモデルカードの地域の表。上段の判定・並べ替え・絞り込みは変えない（D-020）
 - **version 11** (2026-10-08): 価格列に、AWS Marketplace の offer から補った単価の「出典: Marketplace」と、価格未収録のときの docs のモデルカード（無ければ料金ページ）へのリンクを足した（D-018）。価格列と並べ替えは bedrock-runtime の単価だけを使う（D-017）。Geo / Global の列に、docs のモデルカードと ListInferenceProfiles の推論 ID が食い違うときの「docs と相違」の注釈を足した。判定は API のまま変えない（D-019）
 - **version 10** (2026-10-06): 価格 2 列の右に、公式 docs のモデルカードから取った **機能列**（既定は全機能、列ピッカーで増減）を足した（AC-016 を追加、AC-006 / AC-008 に And を追記）。値は FEATURE-001 が作る `data/features.json` から取り、選んだ列は URL の `cols=` に載る（SHARE-001 v5 AC-014）。判定ルール・既存の列・絞り込み・価格・denied バナーは変更しない。理由: モデルカードを一枚ずつ開かずに「この接続先でどの機能が使えるか」を同じ表で比べられるようにするため（D-015 / D-016）
 - **version 9** (2026-09-15): 行の既定の並びを「Anthropic → OpenAI を先頭に固定し、残りのプロバイダを昇順」に変え、その並びを `alpha`（純粋な昇順）へ**切り替えられる**ようにした（AC-014 を追加、AC-006 の並びの記述を AC-014 に委譲）。固定しているプロバイダ名を脚注で明かす 1 文を足した（AC-015 を追加）。値は URL の `sort=` に載る（SHARE-001 v4 AC-013）。併せて Geo の判定を接頭辞の固定 5 種から「`global` 以外の接頭辞はすべて地理圏」に改めた（AC-004、D-012）。列構成・判定ルール・絞り込み・価格・denied バナーは変更しない。理由: よく参照される 2 社を既定で上に置きたいという編集上の判断を、隠さず・戻せる形（切り替え + 脚注）で入れるため（D-011）

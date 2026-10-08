@@ -369,3 +369,9 @@ td.feature-col { text-align: center; white-space: nowrap; padding-left: 6px; pad
 /* docs のモデルカードと ListInferenceProfiles の推論 ID の食い違い */
 .cell-with-mismatch { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 2px; }
 .docs-mismatch { font-size: 9px; color: var(--warn, #b45309); border-bottom: 1px dotted currentColor; cursor: help; white-space: nowrap; }
+
+/* 判定のセルの下段: bedrock-runtime / bedrock-mantle のどちらで使えるか */
+.cell-with-endpoints { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 3px; }
+.endpoint-marks { display: inline-flex; gap: 6px; font-size: 9px; color: var(--fg-muted); white-space: nowrap; }
+.endpoint-mark { cursor: help; }
+.endpoint-mark.is-yes { color: var(--ok, #15803d); }

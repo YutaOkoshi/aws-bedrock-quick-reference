@@ -1,6 +1,8 @@
 // モデル別 Capabilities and Features の画面用の組み立て (FEATURE-001)。純関数。DOM を触らない。
 // data/features.json の値は true / false / キーなし の 3 状態。「記載なし」を false に倒さない (D-003 と同じ方針)。
 
+import { judgeMantle } from "./mantle-model.mjs";
+
 export const DOCS_BASE = "https://docs.aws.amazon.com/bedrock/latest/userguide/";
 // モデルカードが分からないモデルの行き先 (D-018)。
 export const PRICING_PAGE_URL = "https://aws.amazon.com/bedrock/pricing/";
@@ -29,6 +31,38 @@ export function inferenceMismatches(features, profiles, modelId) {
     return a.length === d.length && a.every((id, index) => id === d[index]) ? null : { api: a, docs: d };
   };
   return { geo: compare("geo"), global: compare("global") };
+}
+
+/**
+ * In-Region / Geo / Global を、bedrock-runtime と bedrock-mantle のそれぞれで使えるか (2026-10-08)。
+ * - runtime: 表の判定と同じ API (ListFoundationModels / ListInferenceProfiles) の結果。row の inRegion / geo / global
+ * - mantle: docs のモデルカードの地域の表 (features.json の regions["bedrock-mantle"]。接続先を分けていない表なら shared)。
+ *   Programmatic Access に bedrock-mantle の行が無ければ不可。地域の表が無ければ In-Region だけ mantle.json で決める。
+ *   どれにも記載が無ければ null (画面では「—」)
+ * 戻り値: { inRegion | geo | global: { runtime: boolean, mantle: boolean | null, mantleShared: boolean } }
+ */
+export function endpointAvailability({ features, mantle, modelId, region, row }) {
+  const runtime = {
+    inRegion: Boolean(row?.inRegion),
+    geo: Array.isArray(row?.geo) ? row.geo.length > 0 : Boolean(row?.geo),
+    global: Boolean(row?.global),
+  };
+  const entry = features?.byModel?.[modelId];
+  const endpoints = entry?.endpoints;
+  const table = entry?.regions?.["bedrock-mantle"] ?? entry?.regions?.shared ?? null;
+  const shared = !entry?.regions?.["bedrock-mantle"] && Boolean(entry?.regions?.shared);
+  const fallback = judgeMantle(mantle, modelId, region);
+
+  const mantleFor = (lane) => {
+    if (endpoints && !endpoints["bedrock-mantle"]) return false;
+    if (endpoints?.["bedrock-mantle"] && table) return (table[lane] ?? []).includes(region);
+    if (lane === "inRegion" && fallback) return fallback.available;
+    return null;
+  };
+  const usedShared = (lane) => shared && Boolean(endpoints?.["bedrock-mantle"]) && mantleFor(lane) !== null;
+  return Object.fromEntries(
+    ["inRegion", "geo", "global"].map((lane) => [lane, { runtime: runtime[lane], mantle: mantleFor(lane), mantleShared: usedShared(lane) }]),
+  );
 }
 
 /** 価格未収録のときに案内する docs の URL。モデルカード (features.json の card) が無ければ料金ページ。 */

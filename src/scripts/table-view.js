@@ -262,6 +262,27 @@ export function mismatchText(mismatch) {
   });
 }
 
+// 判定のセルの下段に、bedrock-runtime / bedrock-mantle のどちらで使えるかを並べる (2026-10-08)。
+// Runtime は API の判定、Mantle は docs のモデルカードの地域の表。Mantle の記載が無ければ「—」。
+// 行数 × 3 列ぶん描くので、印は span 1 つ (テキストと class だけ) にして再描画を軽く保つ (AC-NFR-002)。
+const ENDPOINT_SYMBOL = { true: "✓", false: "✕", null: "—" };
+function endpointMark(label, value, title) {
+  const state = value === true ? "is-yes" : value === false ? "is-no" : "is-unknown";
+  const mark = el("span", `endpoint-mark ${state}`, `${label} ${ENDPOINT_SYMBOL[value ?? null]}`);
+  mark.title = title;
+  return mark;
+}
+
+function withEndpoints(node, lane) {
+  if (!lane) return node;
+  const wrap = el("span", "cell-with-endpoints");
+  const marks = el("span", "endpoint-marks");
+  const mantleTitle = lane.mantle == null ? "endpoint.mantleUnknown" : lane.mantleShared ? "endpoint.mantleShared" : "endpoint.mantleTitle";
+  marks.append(endpointMark("Runtime", lane.runtime, t("endpoint.runtimeTitle")), endpointMark("Mantle", lane.mantle, t(mantleTitle)));
+  wrap.append(node, marks);
+  return wrap;
+}
+
 function withMismatch(node, mismatch) {
   if (!mismatch) return node;
   const wrap = el("span", "cell-with-mismatch");
@@ -416,7 +437,7 @@ export function buildColumns(regionNotes, { features = {}, featureColumns: keys 
       group: "judge",
       labelKey: "table.inRegion",
       type: "flag",
-      format: (_value, row) => inRegionCell(row),
+      format: (_value, row) => withEndpoints(inRegionCell(row), row.endpoints?.inRegion),
     },
     {
       key: "geo",
@@ -424,7 +445,7 @@ export function buildColumns(regionNotes, { features = {}, featureColumns: keys 
       labelKey: "table.geo",
       type: "text",
       sortable: false,
-      format: (_value, row) => withMismatch(geoCell(row, regionNotes), row.inferenceMismatch?.geo),
+      format: (_value, row) => withEndpoints(withMismatch(geoCell(row, regionNotes), row.inferenceMismatch?.geo), row.endpoints?.geo),
     },
     {
       key: "global",
@@ -432,7 +453,7 @@ export function buildColumns(regionNotes, { features = {}, featureColumns: keys 
       labelKey: "table.global",
       type: "text",
       sortable: false,
-      format: (_value, row) => withMismatch(globalCell(row), row.inferenceMismatch?.global),
+      format: (_value, row) => withEndpoints(withMismatch(globalCell(row), row.inferenceMismatch?.global), row.endpoints?.global),
     },
     // 標準・Global の比較価格を入力 / 出力にまとめる (USD / 100 万トークン)。
     {

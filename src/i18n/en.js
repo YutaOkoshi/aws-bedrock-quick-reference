@@ -116,6 +116,13 @@ export const en = {
   },
 
   // PRICE-001: pricing. All unit prices are USD per 1M tokens.
+  endpoint: {
+    runtimeTitle: "bedrock-runtime: from the API (ListFoundationModels / ListInferenceProfiles)",
+    mantleTitle: "bedrock-mantle: from the regional table on the docs model card",
+    mantleShared: "bedrock-mantle: from the regional table on the docs model card (not split by endpoint)",
+    mantleUnknown: "bedrock-mantle: not listed in the docs",
+  },
+
   mismatch: {
     mark: "differs from docs",
     heading: "This differs from the docs model card (the table follows the API).",

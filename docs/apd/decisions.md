@@ -2,6 +2,7 @@
 
 技術選択の記録。**新しい判断ほど上に積む。** 最終決定はユーザーが行い、AI の推奨は参考情報。
 
+D-020 は同日、判定の列に接続先 (bedrock-runtime / bedrock-mantle) を出すためにオーナーが決定した。
 D-019 は同日、Global のバッチ・キャッシュの取り込みと、docs と API の食い違いの扱いとしてオーナーが決定した。
 D-018 は同日、Price List に無いモデルの単価の取り方としてオーナーが決定した。
 D-017 は 2026-10-08 の価格の取り直しで、Mantle と Runtime の単価が違うモデルが見つかったことを受けてオーナーが決定した。
@@ -12,6 +13,18 @@ D-009 は Design v2 で価格が範囲に入ったことを受けて 2026-09-14 
 D-001〜D-005 は brainstorming の対話で内容が固まり、技術設計
 （`docs/superpowers/specs/2026-09-14-bedrock-quick-reference-design.md`）から転記したものを
 2026-09-14 にユーザーが確定した。D-006・D-007 は Spec フェーズで決定した。D-008 は Build 中に発生した矛盾の解消で、暫定決定 B をオーナーの指示で D に差し替えた。
+
+---
+
+## D-020: In-Region / Geo / Global の列に、bedrock-runtime と bedrock-mantle のどちらで使えるかを出す
+
+- **Date**: 2026-10-08
+- **Context**: 表の In-Region / Geo / Global は bedrock-runtime の API（ListFoundationModels / ListInferenceProfiles）で判定している。bedrock-mantle で使えるかは、2026-09-14 に docs を手で転記した `mantle.json`（In-Region だけ、新しいモデルが載っていない）にしか無かった。docs のモデルカードの Regional Availability（新しい書式では Supported Regions）には、接続先ごと・リージョンごとに In-Region / Geo / Global の表がある
+- **Decision**（2026-10-08、オーナー指示「In-Region・Geo推論・Global推論それぞれ Runtime でできるのか Mantle でできるのかも列に記載してほしい」）:
+  - 判定の 3 列の各セルの下段に「Runtime ✓/✕」「Mantle ✓/✕/—」を出す。上段の判定・並べ替え・絞り込みは bedrock-runtime の API のまま
+  - Mantle の値は、機能表の取得処理がモデルカードの地域の表を接続先ごとに読んだもの（`features.json` の `regions`）。Programmatic Access に bedrock-mantle の行が無ければ不可。地域の表が無ければ In-Region だけ `mantle.json` で決める。どれにも記載が無ければ「—」
+  - 接続先の見出しが無く、接続先が 2 つあるカード（DeepSeek・Mistral・GLM など 30 件）の表は、どちらかに割り当てず `shared`（接続先を分けていない表）として持ち、Mantle の値に使うときは title にその旨を出す
+- **Refs**: `scripts/lib/features.mjs`（`parseRegions`）、`src/scripts/feature-model.mjs`（`endpointAvailability`）、`spec-table.md` v12
 
 ---
 

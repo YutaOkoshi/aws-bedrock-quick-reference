@@ -1,7 +1,7 @@
 // 起点リージョンから見た表の行を組み立てる純関数群 (TABLE-001 / D-003)。
 // DOM も i18n も知らない。入力は data/*.json をそのまま渡す形にしてある。
 
-import { inferenceMismatches, modelDocsUrl } from "./feature-model.mjs";
+import { endpointAvailability, inferenceMismatches, modelDocsUrl } from "./feature-model.mjs";
 import { isMantleRegion, judgeMantle, mantleEndpointOf } from "./mantle-model.mjs";
 
 // Global の接頭辞 (D-003)。これ以外の接頭辞はすべて地理圏 (Geo) として扱う (D-012)。
@@ -253,7 +253,10 @@ export function buildRow({ modelId, model, profiles, region, overrides, mantle =
   const globalProfile = judgeGlobal(profiles, modelId, region);
   const price = priceFor(prices, modelId, region);
   const comparison = comparisonPrices(prices, modelId, region, Boolean(globalProfile));
+  const inRegion = judgeInRegion({ [modelId]: model }, modelId, region);
   return {
+    // In-Region / Geo / Global を bedrock-runtime / bedrock-mantle ごとに (表のセルの下段に出す)。
+    endpoints: endpointAvailability({ features, mantle, modelId, region, row: { inRegion, geo, global: globalProfile } }),
     // MANTLE-001 AC-003。判定材料が無ければ null (画面では「—」)。
     mantle: judgeMantle(mantle, modelId, region),
     modelId,
@@ -267,7 +270,7 @@ export function buildRow({ modelId, model, profiles, region, overrides, mantle =
     streaming: model.streaming === true,
     lifecycle: model.lifecycle ?? "",
     availability: model.availability ?? {},
-    inRegion: judgeInRegion({ [modelId]: model }, modelId, region),
+    inRegion,
     geo,
     global: globalProfile,
     // 一覧は先頭に表示する比較価格で並べ替える。詳細は起点の価格を使う。

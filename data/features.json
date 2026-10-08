@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T04:40:38.708Z",
+  "generatedAt": "2026-10-08T05:04:22.860Z",
   "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/toc-contents.json",
   "cards": 137,
   "cardsWithFeatures": 122,
@@ -141,6 +141,15 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "us-east-1"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "amazon.nova-2-lite-v1:0": {
@@ -183,6 +192,54 @@
           ],
           "global": [
             "global.amazon.nova-2-lite-v1:0"
+          ]
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ap-northeast-1",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-3",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
           ]
         }
       }
@@ -229,6 +286,54 @@
             "global.amazon.nova-2-lite-v1:0"
           ]
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ap-northeast-1",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-3",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        }
       }
     },
     "amazon.nova-2-multimodal-embeddings-v1:0": {
@@ -255,6 +360,16 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "us-east-1",
+            "us-gov-west-1"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "amazon.nova-2-sonic-v1:0": {
@@ -278,6 +393,18 @@
       "endpoints": {
         "bedrock-runtime": {
           "modelId": "amazon.nova-2-sonic-v1:0",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-northeast-1",
+            "eu-north-1",
+            "us-east-1",
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -313,6 +440,42 @@
           ],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "eu-north-1",
+            "eu-west-2",
+            "me-central-1",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-west-1",
+            "us-west-2"
+          ],
+          "geo": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-3",
+            "il-central-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": []
+        }
       }
     },
     "amazon.nova-lite-v1:0:24k": {
@@ -342,6 +505,42 @@
           "geo": [
             "us.amazon.nova-lite-v1:0",
             "eu.amazon.nova-lite-v1:0"
+          ],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "eu-north-1",
+            "eu-west-2",
+            "me-central-1",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-west-1",
+            "us-west-2"
+          ],
+          "geo": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-3",
+            "il-central-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
           ],
           "global": []
         }
@@ -377,6 +576,42 @@
           ],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "eu-north-1",
+            "eu-west-2",
+            "me-central-1",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-west-1",
+            "us-west-2"
+          ],
+          "geo": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-3",
+            "il-central-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": []
+        }
       }
     },
     "amazon.nova-micro-v1:0": {
@@ -406,6 +641,34 @@
           "geo": [
             "us.amazon.nova-micro-v1:0",
             "eu.amazon.nova-micro-v1:0"
+          ],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-southeast-2",
+            "eu-west-2",
+            "us-east-1",
+            "us-gov-west-1"
+          ],
+          "geo": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-3",
+            "il-central-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
           ],
           "global": []
         }
@@ -441,6 +704,34 @@
           ],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-southeast-2",
+            "eu-west-2",
+            "us-east-1",
+            "us-gov-west-1"
+          ],
+          "geo": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-3",
+            "il-central-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "global": []
+        }
       }
     },
     "amazon.nova-micro-v1:0:24k": {
@@ -470,6 +761,34 @@
           "geo": [
             "us.amazon.nova-micro-v1:0",
             "eu.amazon.nova-micro-v1:0"
+          ],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-southeast-2",
+            "eu-west-2",
+            "us-east-1",
+            "us-gov-west-1"
+          ],
+          "geo": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-3",
+            "il-central-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
           ],
           "global": []
         }
@@ -515,6 +834,43 @@
           ],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "eu-west-2",
+            "me-central-1",
+            "us-east-1",
+            "us-gov-west-1"
+          ],
+          "geo": [
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-7",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": []
+        }
       }
     },
     "amazon.nova-pro-v1:0:24k": {
@@ -554,6 +910,43 @@
             "us.amazon.nova-pro-v1:0",
             "eu.amazon.nova-pro-v1:0",
             "apac.amazon.nova-pro-v1:0"
+          ],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "eu-west-2",
+            "me-central-1",
+            "us-east-1",
+            "us-gov-west-1"
+          ],
+          "geo": [
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-7",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
           ],
           "global": []
         }
@@ -599,6 +992,43 @@
           ],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "eu-west-2",
+            "me-central-1",
+            "us-east-1",
+            "us-gov-west-1"
+          ],
+          "geo": [
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-7",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": []
+        }
       }
     },
     "anthropic.claude-fable-5": {
@@ -636,6 +1066,61 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ca-central-1",
+            "ca-west-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        },
+        "bedrock-mantle": {
+          "inRegion": [
+            "us-east-1"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "anthropic.claude-fable-5-1": {
@@ -666,6 +1151,63 @@
         },
         "bedrock-mantle": {
           "modelId": "anthropic.claude-fable-5-1",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ca-central-1",
+            "ca-west-1",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-east-1",
+            "us-gov-west-1",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        },
+        "bedrock-mantle": {
+          "inRegion": [
+            "us-gov-west-1"
+          ],
           "geo": [],
           "global": []
         }
@@ -734,6 +1276,81 @@
         },
         "bedrock-mantle": {
           "modelId": "anthropic.claude-haiku-4-5",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ap-northeast-1",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-2",
+            "ap-southeast-4",
+            "ap-southeast-6",
+            "ca-central-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        },
+        "bedrock-mantle": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-southeast-4",
+            "eu-north-1",
+            "eu-west-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -810,6 +1427,75 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ap-northeast-1",
+            "ap-northeast-3",
+            "ap-southeast-2",
+            "ap-southeast-4",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-east-1",
+            "us-gov-west-1",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        },
+        "bedrock-mantle": {
+          "inRegion": [
+            "us-gov-west-1"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "anthropic.claude-opus-4-1-20250805-v1:0": {
@@ -851,6 +1537,17 @@
           "modelId": "anthropic.claude-opus-4-1-20250805-v1:0",
           "geo": [
             "us.anthropic.claude-opus-4-1-20250805-v1:0"
+          ],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
           ],
           "global": []
         }
@@ -906,6 +1603,61 @@
             "global.anthropic.claude-opus-4-5-20251101-v1:0"
           ]
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ca-central-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        }
       }
     },
     "anthropic.claude-opus-4-6-v1": {
@@ -953,6 +1705,67 @@
           ],
           "global": [
             "global.anthropic.claude-opus-4-6-v1"
+          ]
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "eu-west-2"
+          ],
+          "geo": [
+            "ap-southeast-2",
+            "ap-southeast-4",
+            "ap-southeast-6",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
           ]
         }
       }
@@ -1025,6 +1838,77 @@
         },
         "bedrock-mantle": {
           "modelId": "anthropic.claude-opus-4-7",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ap-northeast-1",
+            "ap-northeast-3",
+            "ap-southeast-2",
+            "ap-southeast-4",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        },
+        "bedrock-mantle": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-southeast-4",
+            "eu-north-1",
+            "eu-west-1",
+            "us-east-1"
+          ],
           "geo": [],
           "global": []
         }
@@ -1101,6 +1985,80 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ap-northeast-1",
+            "ap-northeast-3",
+            "ap-southeast-2",
+            "ap-southeast-4",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-east-1",
+            "us-gov-west-1",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        },
+        "bedrock-mantle": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-southeast-4",
+            "eu-north-1",
+            "eu-west-1",
+            "us-east-1",
+            "us-gov-west-1"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "anthropic.claude-opus-5": {
@@ -1171,6 +2129,81 @@
         },
         "bedrock-mantle": {
           "modelId": "anthropic.claude-opus-5",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-northeast-2"
+          ],
+          "geo": [
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-2",
+            "ap-southeast-4",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-east-1",
+            "us-gov-west-1",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        },
+        "bedrock-mantle": {
+          "inRegion": [
+            "ap-southeast-4",
+            "eu-north-1",
+            "eu-west-1",
+            "us-east-1",
+            "us-gov-west-1"
+          ],
           "geo": [],
           "global": []
         }
@@ -1247,6 +2280,79 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "eu-west-2"
+          ],
+          "geo": [
+            "ap-northeast-1",
+            "ap-northeast-3",
+            "ap-southeast-2",
+            "ap-southeast-4",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-east-1",
+            "us-gov-west-1",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        },
+        "bedrock-mantle": {
+          "inRegion": [
+            "ap-southeast-4",
+            "us-east-1",
+            "us-gov-west-1"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "anthropic.claude-sonnet-4-20250514-v1:0": {
@@ -1288,6 +2394,43 @@
           ],
           "global": [
             "global.anthropic.claude-sonnet-4-20250514-v1:0"
+          ]
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-7",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-3",
+            "il-central-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "ap-northeast-1",
+            "eu-west-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
           ]
         }
       }
@@ -1333,6 +2476,43 @@
             "global.anthropic.claude-sonnet-4-20250514-v1:0"
           ]
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-7",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-3",
+            "il-central-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "ap-northeast-1",
+            "eu-west-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ]
+        }
       }
     },
     "anthropic.claude-sonnet-4-20250514-v1:0:32k": {
@@ -1374,6 +2554,43 @@
           ],
           "global": [
             "global.anthropic.claude-sonnet-4-20250514-v1:0"
+          ]
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-7",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-3",
+            "il-central-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "ap-northeast-1",
+            "eu-west-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
           ]
         }
       }
@@ -1426,6 +2643,68 @@
             "global.anthropic.claude-sonnet-4-5-20250929-v1:0"
           ]
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ap-northeast-1",
+            "ap-northeast-3",
+            "ap-southeast-2",
+            "ap-southeast-4",
+            "ap-southeast-6",
+            "ca-central-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-east-1",
+            "us-gov-west-1",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        }
       }
     },
     "anthropic.claude-sonnet-4-6": {
@@ -1475,6 +2754,69 @@
           ],
           "global": [
             "global.anthropic.claude-sonnet-4-6"
+          ]
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "eu-west-2"
+          ],
+          "geo": [
+            "ap-northeast-1",
+            "ap-northeast-3",
+            "ap-southeast-2",
+            "ap-southeast-4",
+            "ap-southeast-6",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
           ]
         }
       }
@@ -1550,6 +2892,83 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-northeast-2",
+            "ap-southeast-1",
+            "eu-west-2"
+          ],
+          "geo": [
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-2",
+            "ap-southeast-4",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-east-1",
+            "us-gov-west-1",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        },
+        "bedrock-mantle": {
+          "inRegion": [
+            "ap-southeast-4",
+            "eu-north-1",
+            "eu-west-1",
+            "us-east-1",
+            "us-gov-west-1"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "anthropic.claude-sonnet-5-5": {
@@ -1621,6 +3040,71 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-east-1",
+            "us-gov-west-1",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        },
+        "bedrock-mantle": {
+          "inRegion": [
+            "us-gov-west-1"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "cohere.embed-v4:0": {
@@ -1652,6 +3136,54 @@
             "global.cohere.embed-v4:0"
           ]
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-northeast-1",
+            "eu-west-1",
+            "us-east-1"
+          ],
+          "geo": [
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ca-central-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        }
       }
     },
     "deepseek.r1-v1:0": {
@@ -1677,6 +3209,17 @@
           "modelId": "deepseek.r1-v1:0",
           "geo": [
             "us.deepseek.r1-v1:0"
+          ],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
           ],
           "global": []
         }
@@ -1717,6 +3260,23 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "eu-north-1",
+            "eu-west-2",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "deepseek.v3.2": {
@@ -1750,6 +3310,24 @@
         },
         "bedrock-mantle": {
           "modelId": "deepseek.v3.2",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "eu-north-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -1789,6 +3367,28 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "google.gemma-3-27b-it": {
@@ -1820,6 +3420,28 @@
         },
         "bedrock-mantle": {
           "modelId": "google.gemma-3-27b-it",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -1858,6 +3480,28 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "meta.llama3-1-70b-instruct-v1:0": {
@@ -1885,6 +3529,19 @@
           "modelId": "meta.llama3-1-70b-instruct-v1:0",
           "geo": [
             "us.meta.llama3-1-70b-instruct-v1:0"
+          ],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "us-west-2"
+          ],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
           ],
           "global": []
         }
@@ -1918,6 +3575,19 @@
           ],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "us-west-2"
+          ],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "global": []
+        }
       }
     },
     "meta.llama3-1-8b-instruct-v1:0": {
@@ -1945,6 +3615,19 @@
           "modelId": "meta.llama3-1-8b-instruct-v1:0",
           "geo": [
             "us.meta.llama3-1-8b-instruct-v1:0"
+          ],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "us-west-2"
+          ],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
           ],
           "global": []
         }
@@ -1978,6 +3661,19 @@
           ],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "us-west-2"
+          ],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "global": []
+        }
       }
     },
     "meta.llama3-3-70b-instruct-v1:0": {
@@ -2004,6 +3700,19 @@
           "modelId": "meta.llama3-3-70b-instruct-v1:0",
           "geo": [
             "us.meta.llama3-3-70b-instruct-v1:0"
+          ],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "us-east-2"
+          ],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
           ],
           "global": []
         }
@@ -2036,6 +3745,19 @@
           ],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "us-east-2"
+          ],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "global": []
+        }
       }
     },
     "meta.llama3-70b-instruct-v1:0": {
@@ -2062,6 +3784,20 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-south-1",
+            "ca-central-1",
+            "eu-west-2",
+            "us-east-1",
+            "us-gov-west-1",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "meta.llama3-8b-instruct-v1:0": {
@@ -2085,6 +3821,20 @@
       "endpoints": {
         "bedrock-runtime": {
           "modelId": "meta.llama3-8b-instruct-v1:0",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-south-1",
+            "ca-central-1",
+            "eu-west-2",
+            "us-east-1",
+            "us-gov-west-1",
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -2118,6 +3868,18 @@
           ],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": []
+        }
       }
     },
     "meta.llama4-maverick-17b-instruct-v1:0:128k": {
@@ -2145,6 +3907,18 @@
           "modelId": "meta.llama4-maverick-17b-instruct-v1:0",
           "geo": [
             "us.meta.llama4-maverick-17b-instruct-v1:0"
+          ],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
           ],
           "global": []
         }
@@ -2178,6 +3952,18 @@
           ],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": []
+        }
       }
     },
     "meta.llama4-scout-17b-instruct-v1:0": {
@@ -2204,6 +3990,18 @@
           "modelId": "meta.llama4-scout-17b-instruct-v1:0",
           "geo": [
             "us.meta.llama4-scout-17b-instruct-v1:0"
+          ],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
           ],
           "global": []
         }
@@ -2236,6 +4034,18 @@
           ],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": []
+        }
       }
     },
     "meta.llama4-scout-17b-instruct-v1:0:128k": {
@@ -2262,6 +4072,18 @@
           "modelId": "meta.llama4-scout-17b-instruct-v1:0",
           "geo": [
             "us.meta.llama4-scout-17b-instruct-v1:0"
+          ],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
           ],
           "global": []
         }
@@ -2298,6 +4120,28 @@
         },
         "bedrock-mantle": {
           "modelId": "minimax.minimax-m2",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -2338,6 +4182,28 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "minimax.minimax-m2.5": {
@@ -2371,6 +4237,28 @@
         },
         "bedrock-mantle": {
           "modelId": "minimax.minimax-m2.5",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -2410,6 +4298,27 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "mistral.magistral-small-2509": {
@@ -2443,6 +4352,28 @@
         },
         "bedrock-mantle": {
           "modelId": "mistral.magistral-small-2509",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -2480,6 +4411,28 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "mistral.ministral-3-3b-instruct": {
@@ -2511,6 +4464,28 @@
         },
         "bedrock-mantle": {
           "modelId": "mistral.ministral-3-3b-instruct",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -2550,6 +4525,24 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "mistral.mistral-7b-instruct-v0:2": {
@@ -2578,6 +4571,23 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-south-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "sa-east-1",
+            "us-east-1",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "mistral.mistral-large-2402-v1:0": {
@@ -2602,6 +4612,23 @@
       "endpoints": {
         "bedrock-runtime": {
           "modelId": "mistral.mistral-large-2402-v1:0",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-south-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "sa-east-1",
+            "us-east-1",
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -2642,6 +4669,21 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "mistral.mistral-small-2402-v1:0": {
@@ -2667,6 +4709,15 @@
       "endpoints": {
         "bedrock-runtime": {
           "modelId": "mistral.mistral-small-2402-v1:0",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "us-east-1"
+          ],
           "geo": [],
           "global": []
         }
@@ -2698,6 +4749,23 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-south-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "sa-east-1",
+            "us-east-1",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "mistral.pixtral-large-2502-v1:0": {
@@ -2726,6 +4794,21 @@
           "geo": [
             "us.mistral.pixtral-large-2502-v1:0",
             "eu.mistral.pixtral-large-2502-v1:0"
+          ],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "eu-central-1",
+            "eu-north-1",
+            "eu-west-1",
+            "eu-west-3",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
           ],
           "global": []
         }
@@ -2765,6 +4848,28 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "mistral.voxtral-small-24b-2507": {
@@ -2798,6 +4903,28 @@
         },
         "bedrock-mantle": {
           "modelId": "mistral.voxtral-small-24b-2507",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -2837,6 +4964,25 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-north-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "moonshotai.kimi-k2.5": {
@@ -2870,6 +5016,25 @@
         },
         "bedrock-mantle": {
           "modelId": "moonshotai.kimi-k2.5",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-north-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -2910,6 +5075,55 @@
             "global.moonshotai.kimi-k3"
           ]
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ap-south-1",
+            "ap-south-2",
+            "ca-central-1",
+            "ca-west-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        }
       }
     },
     "nvidia.nemotron-nano-12b-v2": {
@@ -2945,6 +5159,29 @@
         },
         "bedrock-mantle": {
           "modelId": "nvidia.nemotron-nano-12b-v2",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-west-1",
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -2986,6 +5223,29 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-west-1",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "nvidia.nemotron-nano-9b-v2": {
@@ -3021,6 +5281,29 @@
         },
         "bedrock-mantle": {
           "modelId": "nvidia.nemotron-nano-9b-v2",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-west-1",
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -3062,6 +5345,25 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-southeast-2",
+            "ap-southeast-4",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-west-1",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "openai.gpt-5.4": {
@@ -3080,6 +5382,18 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-mantle": {
+          "inRegion": [
+            "us-east-1",
+            "us-east-2",
+            "us-gov-west-1",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "openai.gpt-5.5": {
@@ -3095,6 +5409,16 @@
       "endpoints": {
         "bedrock-mantle": {
           "modelId": "openai.gpt-5.5",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-mantle": {
+          "inRegion": [
+            "us-east-1",
+            "us-east-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -3141,6 +5465,66 @@
             "global.openai.gpt-5.6-luna"
           ]
         }
+      },
+      "regions": {
+        "bedrock-mantle": {
+          "inRegion": [
+            "us-east-1",
+            "us-east-2",
+            "us-gov-east-1",
+            "us-gov-west-1",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        },
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ap-south-1",
+            "ap-south-2",
+            "ca-central-1",
+            "ca-west-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        }
       }
     },
     "openai.gpt-5.6-sol": {
@@ -3182,6 +5566,61 @@
           "modelId": "openai.gpt-5.6-sol",
           "geo": [],
           "global": []
+        }
+      },
+      "regions": {
+        "bedrock-mantle": {
+          "inRegion": [
+            "us-east-1",
+            "us-east-2"
+          ],
+          "geo": [],
+          "global": []
+        },
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ca-central-1",
+            "ca-west-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
         }
       }
     },
@@ -3226,6 +5665,66 @@
             "global.openai.gpt-5.6-terra"
           ]
         }
+      },
+      "regions": {
+        "bedrock-mantle": {
+          "inRegion": [
+            "us-east-1",
+            "us-east-2",
+            "us-gov-east-1",
+            "us-gov-west-1",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        },
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ap-south-1",
+            "ap-south-2",
+            "ca-central-1",
+            "ca-west-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        }
       }
     },
     "openai.gpt-6-astra": {
@@ -3264,6 +5763,47 @@
           ],
           "global": [
             "global.openai.gpt-6-astra"
+          ]
+        }
+      },
+      "regions": {
+        "bedrock-mantle": {
+          "inRegion": [
+            "us-east-1",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        },
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ca-central-1",
+            "ca-west-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
           ]
         }
       }
@@ -3317,6 +5857,59 @@
             "global.openai.gpt-6-luna"
           ]
         }
+      },
+      "regions": {
+        "bedrock-mantle": {
+          "inRegion": [
+            "us-east-1"
+          ],
+          "geo": [],
+          "global": []
+        },
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ca-central-1",
+            "ca-west-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        }
       }
     },
     "openai.gpt-6-sol": {
@@ -3367,6 +5960,59 @@
           "modelId": "openai.gpt-6-sol",
           "geo": [],
           "global": []
+        }
+      },
+      "regions": {
+        "bedrock-mantle": {
+          "inRegion": [
+            "us-east-1"
+          ],
+          "geo": [],
+          "global": []
+        },
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ca-central-1",
+            "ca-west-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
         }
       }
     },
@@ -3420,6 +6066,15 @@
             "global.openai.gpt-6.1-sol"
           ]
         }
+      },
+      "regions": {
+        "bedrock-mantle": {
+          "inRegion": [
+            "us-east-1"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "openai.gpt-oss-120b-1:0": {
@@ -3455,6 +6110,29 @@
         },
         "bedrock-mantle": {
           "modelId": "openai.gpt-oss-120b",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-west-1",
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -3496,6 +6174,29 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-west-1",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "openai.gpt-oss-safeguard-120b": {
@@ -3532,6 +6233,28 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "openai.gpt-oss-safeguard-20b": {
@@ -3565,6 +6288,28 @@
         },
         "bedrock-mantle": {
           "modelId": "openai.gpt-oss-safeguard-20b",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -3605,6 +6350,46 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-2",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        },
+        "bedrock-mantle": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "qwen.qwen3-32b-v1:0": {
@@ -3641,6 +6426,49 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        },
+        "bedrock-mantle": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "qwen.qwen3-coder-30b-a3b-v1:0": {
@@ -3674,6 +6502,49 @@
         },
         "bedrock-mantle": {
           "modelId": "qwen.qwen3-coder-30b-a3b-instruct",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        },
+        "bedrock-mantle": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -3714,6 +6585,41 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "eu-north-1",
+            "eu-west-2",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        },
+        "bedrock-mantle": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-north-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "qwen.qwen3-coder-next": {
@@ -3747,6 +6653,39 @@
         },
         "bedrock-mantle": {
           "modelId": "qwen.qwen3-coder-next",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-southeast-2",
+            "eu-west-2",
+            "us-east-1"
+          ],
+          "geo": [],
+          "global": []
+        },
+        "bedrock-mantle": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -3786,6 +6725,46 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        },
+        "bedrock-mantle": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "qwen.qwen3-vl-235b-a22b": {
@@ -3822,6 +6801,46 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        },
+        "bedrock-mantle": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "stability.sd3-5-large-v1:0": {
@@ -3845,6 +6864,15 @@
       "endpoints": {
         "bedrock-runtime": {
           "modelId": "stability.sd3-5-large-v1:0",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -3876,6 +6904,17 @@
           ],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "global": []
+        }
       }
     },
     "stability.stable-creative-upscale-v1:0": {
@@ -3901,6 +6940,17 @@
           "modelId": "stability.stable-creative-upscale-v1:0",
           "geo": [
             "us.stability.stable-creative-upscale-v1:0"
+          ],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
           ],
           "global": []
         }
@@ -3932,6 +6982,17 @@
           ],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "global": []
+        }
       }
     },
     "stability.stable-image-control-sketch-v1:0": {
@@ -3957,6 +7018,17 @@
           "modelId": "stability.stable-image-control-sketch-v1:0",
           "geo": [
             "us.stability.stable-image-control-sketch-v1:0"
+          ],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
           ],
           "global": []
         }
@@ -3988,6 +7060,17 @@
           ],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "global": []
+        }
       }
     },
     "stability.stable-image-core-v1:1": {
@@ -4011,6 +7094,15 @@
       "endpoints": {
         "bedrock-runtime": {
           "modelId": "stability.stable-image-core-v1:1",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -4042,6 +7134,17 @@
           ],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "global": []
+        }
       }
     },
     "stability.stable-image-inpaint-v1:0": {
@@ -4067,6 +7170,17 @@
           "modelId": "stability.stable-image-inpaint-v1:0",
           "geo": [
             "us.stability.stable-image-inpaint-v1:0"
+          ],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
           ],
           "global": []
         }
@@ -4098,6 +7212,17 @@
           ],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "global": []
+        }
       }
     },
     "stability.stable-image-search-recolor-v1:0": {
@@ -4123,6 +7248,17 @@
           "modelId": "stability.stable-image-search-recolor-v1:0",
           "geo": [
             "us.stability.stable-image-search-recolor-v1:0"
+          ],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
           ],
           "global": []
         }
@@ -4154,6 +7290,17 @@
           ],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "global": []
+        }
       }
     },
     "stability.stable-image-style-guide-v1:0": {
@@ -4182,6 +7329,17 @@
           ],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "global": []
+        }
       }
     },
     "stability.stable-image-ultra-v1:1": {
@@ -4205,6 +7363,15 @@
       "endpoints": {
         "bedrock-runtime": {
           "modelId": "stability.stable-image-ultra-v1:1",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -4236,6 +7403,17 @@
           ],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "global": []
+        }
       }
     },
     "stability.stable-style-transfer-v1:0": {
@@ -4261,6 +7439,17 @@
           "modelId": "stability.stable-style-transfer-v1:0",
           "geo": [
             "us.stability.stable-style-transfer-v1:0"
+          ],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
           ],
           "global": []
         }
@@ -4290,6 +7479,20 @@
           "geo": [
             "us.twelvelabs.marengo-embed-3-0-v1:0",
             "eu.twelvelabs.marengo-embed-3-0-v1:0"
+          ],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-northeast-2",
+            "eu-west-1",
+            "us-east-1"
+          ],
+          "geo": [
+            "eu-west-1",
+            "us-east-1"
           ],
           "global": []
         }
@@ -4323,6 +7526,63 @@
           ],
           "global": [
             "global.twelvelabs.pegasus-1-2-v1:0"
+          ]
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-northeast-2",
+            "us-east-1"
+          ],
+          "geo": [
+            "ap-northeast-2",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
           ]
         }
       }
@@ -4361,6 +7621,27 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "writer.palmyra-x4-v1:0": {
@@ -4390,6 +7671,18 @@
           ],
           "global": []
         }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": []
+        }
       }
     },
     "writer.palmyra-x5-v1:0": {
@@ -4416,6 +7709,18 @@
           "modelId": "writer.palmyra-x5-v1:0",
           "geo": [
             "us.writer.palmyra-x5-v1:0"
+          ],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
           ],
           "global": []
         }
@@ -4462,6 +7767,63 @@
             "global.xai.grok-4.6"
           ]
         }
+      },
+      "regions": {
+        "bedrock-mantle": {
+          "inRegion": [
+            "us-gov-east-1",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        },
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ca-central-1",
+            "ca-west-1",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-east-1",
+            "us-gov-west-1",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        }
       }
     },
     "xai.grok-4.7": {
@@ -4490,6 +7852,50 @@
           ],
           "global": [
             "global.xai.grok-4.7"
+          ]
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ca-central-1",
+            "ca-west-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
           ]
         }
       }
@@ -4525,6 +7931,25 @@
         },
         "bedrock-mantle": {
           "modelId": "zai.glm-4.7",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-north-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -4564,6 +7989,28 @@
           "geo": [],
           "global": []
         }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "geo": [],
+          "global": []
+        }
       }
     },
     "zai.glm-5": {
@@ -4597,6 +8044,25 @@
         },
         "bedrock-mantle": {
           "modelId": "zai.glm-5",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "shared": {
+          "inRegion": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-north-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
           "geo": [],
           "global": []
         }
@@ -4640,6 +8106,50 @@
           ],
           "global": [
             "global.zai.glm-5.3"
+          ]
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
           ]
         }
       }

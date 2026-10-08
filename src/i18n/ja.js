@@ -115,6 +115,14 @@ export const ja = {
     docs: "Endpoint availability (公式 docs)",
   },
 
+  // In-Region / Geo / Global を接続先ごとに (2026-10-08)。
+  endpoint: {
+    runtimeTitle: "bedrock-runtime: API (ListFoundationModels / ListInferenceProfiles) の判定",
+    mantleTitle: "bedrock-mantle: docs のモデルカードの地域の表",
+    mantleShared: "bedrock-mantle: docs のモデルカードの地域の表 (接続先を分けていない表)",
+    mantleUnknown: "bedrock-mantle: docs に記載なし",
+  },
+
   // docs のモデルカードと ListInferenceProfiles の推論 ID の食い違い。
   mismatch: {
     mark: "docs と相違",
