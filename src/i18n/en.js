@@ -138,6 +138,7 @@ export const en = {
     unit: "USD per 1M tokens ({place}); other units are shown per row. List price; discounts, commitments and free tiers not included",
     geoSame: "Geo inference profiles are billed at the standard price",
     globalMissing: "Global batch and cache prices are not included in this dataset",
+    globalMissingRuntime: "Global batch and cache prices for bedrock-runtime are not included in this dataset",
     unavailableLane: "Prices are published, but this model cannot be called this way",
     none: "No pricing data for this source Region",
     globalHint: "Input / output unit price when inferring globally (USD per 1M tokens)",

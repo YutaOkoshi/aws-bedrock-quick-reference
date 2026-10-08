@@ -20,10 +20,11 @@ export const LANE_GEO = "geo";
 export const LANE_GLOBAL = "global";
 export const LANE_ORDER = Object.freeze([LANE_IN_REGION, LANE_GEO, LANE_GLOBAL]);
 
-// レーンごとの価格の種別 (AC-013)。In-Region / Geo は標準系、Global は global 行のみ。
+// レーンごとの価格の種別 (AC-013)。In-Region / Geo は標準系 (サービス階層の priority / flex を含む)、
+// Global は global 行のみ。priority / flex しか無いモデル (Qwen3 Next 80B の東京) もある。
 const LANE_PRICE_KINDS = Object.freeze({
-  [LANE_IN_REGION]: Object.freeze(["standard", "batch", "cacheRead", "cacheWrite"]),
-  [LANE_GEO]: Object.freeze(["standard", "batch", "cacheRead", "cacheWrite"]),
+  [LANE_IN_REGION]: Object.freeze(["standard", "batch", "cacheRead", "cacheWrite", "priority", "flex"]),
+  [LANE_GEO]: Object.freeze(["standard", "batch", "cacheRead", "cacheWrite", "priority", "flex"]),
   [LANE_GLOBAL]: Object.freeze(["global"]),
 });
 

@@ -320,3 +320,26 @@ describe("長文コンテキストの単価 (境界のトークン数が価格�
     setLang("ja");
   });
 });
+
+describe("詳細の価格: レビュー (2026-10-08) で見つかった表示の問題", () => {
+  it("In-Region の Runtime に priority / flex しか無くても表を出す (Qwen3 Next 80B の東京)", () => {
+    const prices = { byModel: { [CLAUDE]: { [TOKYO]: { priority: { input: 0.32, output: 2.54 }, flex: { input: 0.09, output: 0.72 } } } } };
+    expect(buildPriceRows(CLAUDE, { prices, region: TOKYO }).map((row) => row.kind)).toEqual(["priority", "flex"]);
+    mountFixtureApp({ prices });
+    rowFor(CLAUDE).querySelector(".detail-toggle").click();
+    const section = panelOf(CLAUDE).querySelector('[data-lane="inRegion"] .detail-price');
+    expect(section.textContent).toContain("優先");
+    expect(section.textContent).toContain("$0.32");
+    expect(section.textContent).not.toContain("この起点リージョンの価格データがありません");
+  });
+
+  it("Mantle の表があるとき、Global のバッチ・キャッシュ未収録の注記は bedrock-runtime に限った文言にする", () => {
+    const prices = { byModel: { [CLAUDE]: { [TOKYO]: { mantle: { global: { input: 2, output: 6 }, batch: { input: 1.1 } } } } } };
+    mountFixtureApp({ prices });
+    rowFor(CLAUDE).querySelector(".detail-toggle").click();
+    const global = panelOf(CLAUDE).querySelector('[data-lane="global"] .detail-price');
+    const notes = global.querySelector(".detail-price-unit").textContent;
+    expect(notes).toContain("bedrock-runtime の Global 用のバッチ・キャッシュ価格は未収録");
+    expect(notes.split("Global 用のバッチ・キャッシュ価格は未収録")).toHaveLength(2);
+  });
+});

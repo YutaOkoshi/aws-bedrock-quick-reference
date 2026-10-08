@@ -138,6 +138,7 @@ export const ja = {
     unit: "USD / 100 万トークン（{place}）。画像・秒などは各行の単位。標準価格で、割引・契約価格・無料枠は含まない",
     geoSame: "Geo の推論プロファイルは標準価格と同じ",
     globalMissing: "Global 用のバッチ・キャッシュ価格は未収録",
+    globalMissingRuntime: "bedrock-runtime の Global 用のバッチ・キャッシュ価格は未収録",
     unavailableLane: "価格は掲載されているが、この使い方では呼べない",
     none: "この起点リージョンの価格データがありません",
     globalHint: "Global で推論したときの 入力 / 出力 の単価（USD / 100 万トークン）",

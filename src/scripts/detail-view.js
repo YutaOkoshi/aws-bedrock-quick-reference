@@ -272,7 +272,8 @@ function priceSection(modelId, { prices, region, regionNotes, lane, available })
   const notes = [t("price.unit", { place: regionName(region, getLang(), regionNotes) })];
   if (lane === LANE_GEO) notes.push(t("price.geoSame"));
   if (lane === LANE_GLOBAL && globalExtrasMissing(modelId, { prices, region })) {
-    notes.push(t("price.globalMissing"));
+    // Mantle の表にはバッチ・キャッシュが並ぶことがあるので、Runtime に限った文言にする。
+    notes.push(t(mantleRows.length > 0 ? "price.globalMissingRuntime" : "price.globalMissing"));
   }
   // AC-016: 使えないレーンでも単価があれば表は出す。呼べないことを注記で足す。
   if (!available) notes.push(t("price.unavailableLane"));
