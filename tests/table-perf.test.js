@@ -8,6 +8,7 @@ import fetchLog from "../data/fetch-log.json";
 import regionNotes from "../data/region-notes.json";
 import overrides from "../data/overrides.json";
 import { mountTableView } from "../src/scripts/table-view.js";
+import { buildViewModel } from "../src/scripts/bedrock-view-model.mjs";
 import { initI18n } from "../src/scripts/i18n.js";
 
 const TOKYO = "ap-northeast-1";
@@ -51,9 +52,11 @@ describe("AC-NFR-002 再描画性能", () => {
         `(全 5 回: ${samples.map((s) => s.toFixed(1)).join(", ")}ms, jsdom)`,
     );
 
-    // 行数はスナップショットの取り直しで変わるので固定しない。東京の表が空でなく、モデル数を超えないこと
-    expect(rows).toBeGreaterThan(0);
-    expect(rows).toBeLessThanOrEqual(Object.keys(models).length);
+    // 行数はスナップショットの取り直しで変わるので固定しない。描いた行がビューモデルの行と同数で、
+    // spec の規模 (68 モデル) 以上あること
+    const expected = buildViewModel({ models, profiles, fetchLog, regionNotes, overrides, region: TOKYO }).rows.length;
+    expect(rows).toBe(expected);
+    expect(rows).toBeGreaterThanOrEqual(68);
     expect(value).toBeLessThan(200);
   });
 });

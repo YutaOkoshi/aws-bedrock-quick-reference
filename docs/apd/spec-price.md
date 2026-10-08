@@ -1,13 +1,14 @@
 ---
 spec_id: "PRICE-001"
 context: "price"
-version: 1
+version: 2
 issue_ref: null
 title: "公開価格表の取り込みと、同じ行で見える価格の目安"
 decision_refs:
   - D-009
   - D-001
   - D-004
+  - D-017
 ---
 
 ## User Story
@@ -64,7 +65,7 @@ Design の「価格の目安が同じ行で分かる」に対応する。
 
   - 軸は `AmazonBedrock` では `inferenceType`（空なら `usagetype` の末尾）、`AmazonBedrockFoundationModels` では `usagetype` の寸法部分（`APN1-MP:APN1_<寸法>-Units`）から読む。`input_tokens_global_standard` の snake_case と `InputTokenCount_Global` の CamelCase の両方を扱う
   - 旗は `usagetype`（`cross-region-global` / `-batch` / `-flex` / `-priority`）、`service_tier`（`standard` / `flex` / `priority` / `batch` / `global-*`）、`feature`（`Batch Inference`）から読む
-  - **v1 の範囲外**（`outOfScope` に数え、`byModel` には載せない）: Global と batch / flex / priority の組み合わせ、1 時間 TTL のキャッシュ書き込み、音声・画像・動画のトークン、Speech Understanding、latency optimized、カスタムモデル、`-mantle-` の SKU（Mantle は同じ単価の別の接続先。Design FAQ Q14）
+  - **v1 の範囲外**（`outOfScope` に数え、`byModel` には載せない）: Global と batch / flex / priority の組み合わせ、1 時間 TTL のキャッシュ書き込み、音声・画像・動画のトークン、Speech Understanding、latency optimized、カスタムモデル
 
 ### AC-005 (SKU → モデル ID の対応)
 - **Given**: 価格表のモデル名（`AmazonBedrock` は `model` 属性、`AmazonBedrockFoundationModels` は `servicename`）
@@ -229,13 +230,14 @@ Design の「価格の目安が同じ行で分かる」に対応する。
 
 - 価格は**公開価格表の単価のみ**。利用量からの試算、プロビジョンドスループットの費用、割引・契約価格・無料枠は載せない（Design「What Not」1、FAQ Q13）
 - 価格表の発行日（`publicationDate`）と、このサイトが取り込んだ日（`generatedAt`）は別物なので両方を脚注に出す
-- Mantle の単価は通常の接続先と同じなので、`-mantle-` の SKU は取り込まない（Design FAQ Q14）。Mantle で使えるかどうかは別の列が扱う
+- `-mantle-` の SKU は bedrock-mantle の単価として `byModel[M][R].mantle` に別に入れる。Runtime の単価には混ぜない（D-017）。Mantle で使えるかどうかは別の列が扱う
 - `AmazonBedrockService` は Mantle / cross-region / 予約 TPM の offer で、トークン単価を持たないため v1 では取得しない
 - 価格表の SKU 構成は AWS 側の都合で変わる。未マッピングが増えたら `prices-unmapped.json` を見て `price-model-map.json` を直し、`--from-raw` で作り直す（取り直しは要らない）
 
 ## 変更履歴
 
 - **version 1** (2026-09-14): 初版
+- **version 2** (2026-10-08): 手書きの補完 (`price-supplements.json`) を廃止し、Price List の書き方の揺れを取り込み側で吸収する。bedrock-runtime と bedrock-mantle の単価を分けて持つ (D-017)
 
 ## Price List の書き方の揺れ (2026-10-07)
 
@@ -244,9 +246,14 @@ Design の「価格の目安が同じ行で分かる」に対応する。
 
 - 単位の大文字小文字は問わない (Nova 2.5 Sonic は `1k tokens`)
 - `model` 属性がモデル ID そのもの (`xai.grok-4.6`、`google.gemma-4-*`) でも引く。名前の先頭にプロバイダ名が付くもの (`OpenAI GPT-6 Astra`) も自動で引く
-- `-mantle-` の SKU は、同じモデル・リージョン・種別・軸に通常の SKU が無いときだけ使う (Grok 4.7・Kimi K3 は Mantle の SKU しか無い)。`models.json` に無い Mantle 専用モデルの SKU は `unmapped` に数えない
+- `-mantle-` の SKU は bedrock-mantle の単価として `byModel[M][R].mantle` に入れ、Runtime の単価とは混ぜない (D-017。Qwen3 Next 80B は値が違う)。
+  Grok 4.6 / 4.7・Kimi K3 は Mantle の SKU しか無いので、表の価格列 (Runtime) は価格未収録、詳細には Mantle の表だけが出る。
+  `models.json` に無い Mantle 専用モデルの SKU は `unmapped` に数えない
+- 単位が読めない SKU (`Units` など) と、地図が `models.json` に無い ID を指すもの (API から消えたモデル) は書き出さない
+- 安全弁: 価格のあるモデルが前回の `prices.json` の半分未満になったら、書き出さずに終了コード 1 で終わる
 - `long_ctx` の SKU は standard / global の `longContext` として読む。キャッシュの `long_ctx` は範囲外。境界のトークン数は Price List に無いので表示しない
 
 Price List に載っていないモデルは推測で埋めない。2026-10-07 時点で商用リージョンの AmazonBedrock / AmazonBedrockFoundationModels の全リージョンに
 無いと確認したもの: GPT-5.4 / 5.5 / 5.6 Luna / 5.6 Sol / 5.6 Terra / 6 Luna / 6 Sol / 6.1 Sol (Marketplace 製品。GPT-5.4 は GovCloud にだけある)、
-GLM-5.3、Stability の画像編集系 13 モデル。
+GLM-5.3、Stability の画像編集系 13 モデル。`amazon.titan-embed-g1-text-02` は API の名前が `amazon.titan-embed-text-v2:0` と同じで、
+Price List に別の SKU が無い (`TitanEmbeddingV2-Text` は `v2:0` に結び付く)。

@@ -36,6 +36,28 @@ export function buildPriceRows(modelId, { prices, region, lane = LANE_IN_REGION 
   const entry = priceFor(prices, modelId, region);
   if (!entry) return [];
   const kinds = LANE_PRICE_KINDS[lane] ?? LANE_PRICE_KINDS[LANE_IN_REGION];
+  const rows = tokenRows(entry, kinds);
+  for (const rate of entry.metered ?? []) {
+    if ((rate.scope ?? "standard") !== (lane === LANE_GLOBAL ? "global" : "standard")) continue;
+    rows.push({ kind: "metered", label: rate.label, unit: rate.unit, [rate.axis]: rate.value });
+  }
+  return rows;
+}
+
+// bedrock-mantle の単価の種別。Runtime とは別の SKU で、値も別に決まる。レーンには依らない。
+const MANTLE_PRICE_KINDS = Object.freeze(["standard", "global", "batch", "cacheRead", "cacheWrite", "priority", "flex"]);
+
+/**
+ * 起点 R のモデル M の bedrock-mantle の単価を行にする。Runtime の単価は含めない。
+ * 単価が無ければ空配列 (画面では Mantle の表を出さない)。
+ */
+export function buildMantlePriceRows(modelId, { prices, region } = {}) {
+  const mantle = priceFor(prices, modelId, region)?.mantle;
+  return mantle && typeof mantle === "object" ? tokenRows(mantle, MANTLE_PRICE_KINDS) : [];
+}
+
+// 種別ごとのトークン単価の行。長文コンテキストの単価は同じ種別の後ろにまとめて並べる。
+function tokenRows(entry, kinds) {
   const rows = kinds
     .filter((kind) => entry[kind] != null)
     .map((kind) => ({
@@ -43,16 +65,14 @@ export function buildPriceRows(modelId, { prices, region, lane = LANE_IN_REGION 
       input: entry[kind]?.input ?? null,
       output: entry[kind]?.output ?? null,
       ...(entry[kind]?.maxInputTokens ? { maxInputTokens: entry[kind].maxInputTokens } : {}),
-    }));
+    }))
+    // long_ctx だけで標準の単価が無い種別は、標準の行を出さない。
+    .filter((row) => row.input != null || row.output != null);
   for (const kind of kinds) {
     // 長文コンテキストの単価。境界のトークン数は価格表に無いので、あるときだけ添える。
     if (entry[kind]?.longContext) {
       rows.push({ kind, ...entry[kind].longContext, longContext: true, ...(entry[kind].maxInputTokens ? { minInputTokens: entry[kind].maxInputTokens } : {}) });
     }
-  }
-  for (const rate of entry.metered ?? []) {
-    if ((rate.scope ?? "standard") !== (lane === LANE_GLOBAL ? "global" : "standard")) continue;
-    rows.push({ kind: "metered", label: rate.label, unit: rate.unit, [rate.axis]: rate.value });
   }
   return rows;
 }

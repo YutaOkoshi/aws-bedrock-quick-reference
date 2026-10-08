@@ -2,6 +2,7 @@
 
 技術選択の記録。**新しい判断ほど上に積む。** 最終決定はユーザーが行い、AI の推奨は参考情報。
 
+D-017 は 2026-10-08 の価格の取り直しで、Mantle と Runtime の単価が違うモデルが見つかったことを受けてオーナーが決定した。
 D-015・D-016 はモデル別の機能表（FEATURE-001、設計 `docs/superpowers/specs/2026-10-06-model-features-design.md`）の取り込みに伴って 2026-10-06 に決定した。
 D-011〜D-014 は Design v3（画面ビュー・リージョン行列・データの流れ図・並び順）に伴って
 2026-09-15 に起案し、同日ユーザーが推奨案どおりに決定した。
@@ -9,6 +10,21 @@ D-009 は Design v2 で価格が範囲に入ったことを受けて 2026-09-14 
 D-001〜D-005 は brainstorming の対話で内容が固まり、技術設計
 （`docs/superpowers/specs/2026-09-14-bedrock-quick-reference-design.md`）から転記したものを
 2026-09-14 にユーザーが確定した。D-006・D-007 は Spec フェーズで決定した。D-008 は Build 中に発生した矛盾の解消で、暫定決定 B をオーナーの指示で D に差し替えた。
+
+---
+
+## D-017: bedrock-runtime と bedrock-mantle の価格を分けて持つ
+
+- **Date**: 2026-10-08
+- **Context**: D-009 では `-mantle-` の SKU を「通常の接続先と同じ単価の別 SKU」として取り込まなかった（Design FAQ Q14）。2026-10-08 の Price List で、Qwen3 Next 80B は Runtime と Mantle で単価が違った（ap-south-1 の standard: Runtime 0.18 / 1.41、Mantle 0.168 / 1.44）。また Grok 4.6 / 4.7 と Kimi K3 は `-mantle-` の SKU しか無い。手書きの補完 JSON は同日に廃止した（Price List の値だけを使う）
+- **Options**:
+  - A: `-mantle-` の SKU を捨てる（D-009 のまま）。Mantle の単価が見えず、Mantle しか SKU の無いモデルは価格未収録になる
+  - B: Runtime の SKU が無い軸だけ Mantle の単価で埋める。単価が違うモデルで、Mantle の値が Runtime の値として表に出る
+  - C: **Runtime と Mantle の単価を別々に持ち、別々に表示する**。`prices.json` の `byModel[M][R]` の種別は Runtime、`byModel[M][R].mantle` の種別は Mantle
+- **Decision**: **C**（2026-10-08、オーナー指示「Runtime と Mantle はそれぞれ別の価格、機能」）
+- **Reason**: Runtime と Mantle は別の接続先で、機能（FEATURE-001 の runtime / mantle）と同じく価格も別に決まる。混ぜると、片方の値をもう片方の値として見せてしまう
+- **運用**: 表の価格列・並べ替え・参考価格は Runtime の単価だけを使う。詳細パネルの価格の節に、bedrock-runtime と bedrock-mantle の表を分けて出す。Mantle の SKU しか無いモデル（Grok 4.6 / 4.7、Kimi K3）は、表では価格未収録、詳細では Mantle の表だけになる
+- **Refs**: `spec-price.md`（「Price List の書き方の揺れ」）、D-009、Design FAQ Q14
 
 ---
 
@@ -138,7 +154,7 @@ D-001〜D-005 は brainstorming の対話で内容が固まり、技術設計
 - **AI Recommendation**: **A**。AWS 自身が機械可読な形で配信しており、認証が要らないので CI からでも取れる。人の解釈を挟まない点で Success Criteria（人の解釈による差分ゼロ）とも合う
 - **Decision**: **A**
 - **Reason**: 公開・機械可読で、オーナーが 2026-09-14 に承認した。認証情報が要らないので取得の再現性が高い（D-002 の `aws` CLI 経路と違い、誰でも同じ結果を得られる）
-- **取り込みの範囲**: offer は `AmazonBedrock` と `AmazonBedrockFoundationModels` の 2 つ。`AmazonBedrockService`（Mantle / cross-region / 予約 TPM）と `AmazonBedrockAgentCore` はトークン単価を持たないため対象外。単価はすべて **USD / 100 万トークン**に揃える（`1K tokens` は 1000 倍）。`-mantle-` の SKU は通常の接続先と同じ単価の別 SKU なので載せない（Design FAQ Q14）
+- **取り込みの範囲**: offer は `AmazonBedrock` と `AmazonBedrockFoundationModels` の 2 つ。`AmazonBedrockService`（Mantle / cross-region / 予約 TPM）と `AmazonBedrockAgentCore` はトークン単価を持たないため対象外。単価はすべて **USD / 100 万トークン**に揃える（`1K tokens` は 1000 倍）。`-mantle-` の SKU は通常の接続先と同じ単価の別 SKU なので載せない（Design FAQ Q14）。**2026-10-08 に D-017 で変更**: 単価が違うモデルがあるため、bedrock-mantle の単価として別に持つ
 - **モデル名の対応**: `AmazonBedrockFoundationModels` には `model` 属性が無く、モデル名は `servicename`（`Claude Opus 5 (Amazon Bedrock Edition)`）に入る。自動一致（接尾辞を外して `models.json` の `name` と大文字小文字・記号を無視して比較）で当たらないものは、手書きの `data/price-model-map.json` で対応させる。どちらでも引けない SKU は `data/raw/<日付>/prices-unmapped.json` に書き出して `prices.json` の `unmapped` に数え、メンテナが地図を足せるようにする（推測で結び付けない）
 - **Refs**: `spec-price.md`（PRICE-001）、`spec-table.md`（TABLE-001 v8 AC-005 / AC-008 / AC-013）、`spec-detail.md`（DETAIL-001 v7 AC-013）、実装は `scripts/lib/prices.mjs` と `scripts/fetch-bedrock-prices.mjs`
 

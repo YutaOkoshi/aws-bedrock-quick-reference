@@ -122,6 +122,9 @@ export const ja = {
     "shortContext": "入力 {count} tokens 以下",
     "longContext": "入力 {count} tokens 超",
     "longContextTier": "長文コンテキスト",
+    runtimeHeading: "bedrock-runtime",
+    mantleHeading: "bedrock-mantle",
+    mantleNote: "bedrock-mantle の単価は価格表の Mantle 用 SKU の値で、bedrock-runtime とは別に決まる",
     "units": {"image": "画像", "second": "秒", "request": "リクエスト", "searchUnit": "検索単位"},
 
     unrecorded: "価格未収録",

@@ -11,7 +11,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { PRICE_OFFERS, normalizePrices, priceFileUrl } from "./lib/prices.mjs";
+import { PRICE_OFFERS, checkPriceGuard, normalizePrices, priceFileUrl } from "./lib/prices.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, "..");
@@ -151,6 +151,15 @@ async function main(argv) {
   // 未マッピングの SKU はメンテナが地図を足すための材料。生データ側に残す (AC-006)。
   mkdirSync(rawDir, { recursive: true });
   writeFileSync(join(rawDir, "prices-unmapped.json"), serialize(unmappedList));
+
+  // 安全弁: 価格のあるモデルが前回の半分未満なら書き出さずに失敗する。
+  const previousPath = join(dataDir, "prices.json");
+  const guard = checkPriceGuard(existsSync(previousPath) ? readJson(previousPath) : null, prices);
+  if (guard) {
+    log(`\n${guard}\n`);
+    process.exitCode = 1;
+    return;
+  }
 
   if (!options.dryRun) writeFileSync(join(dataDir, "prices.json"), serialize(prices));
 

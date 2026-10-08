@@ -136,8 +136,9 @@ node scripts/fetch-bedrock-prices.mjs
 - 取り込むのは 2 offer (`AmazonBedrock` / `AmazonBedrockFoundationModels`)。
   `AmazonBedrockService` と `AmazonBedrockAgentCore` はトークン単価を持たないので対象外
 - **価格は Price List の値だけを使う。手書きの補完 JSON は作らない**。載っていないモデルは「価格未収録」のままにし、
-  なぜ無いかは生 JSON の全文検索で確かめる (Marketplace 製品は掲載が遅れることがある)。Mantle の SKU は
-  通常の SKU が無い軸だけ使い、`long_ctx` は `longContext` として読む (spec-price.md の「Price List の書き方の揺れ」)
+  なぜ無いかは生 JSON の全文検索で確かめる (Marketplace 製品は掲載が遅れることがある)。`-mantle-` の SKU は
+  `byModel[M][R].mantle` に Runtime と分けて入れ (D-017)、`long_ctx` は `longContext` として読む
+  (spec-price.md の「Price List の書き方の揺れ」)。価格のあるモデルが前回の半分未満なら書き出さずに失敗する
 
 #### price-model-map.json を直すとき
 
@@ -269,7 +270,7 @@ source region R、モデル M について:
 | Geo | `profiles.json` に接頭辞が `global` **以外**で M を対象とし `sources[R]` を持つものがある（接頭辞の固定リストは持たない、D-012） |
 | Global | 同じく接頭辞 `global`。destination は API から取れないので `["*"]` で、画面では注記にする |
 | データなし | `fetch-log.json.regions[R].status` が `denied` |
-| 入力 / 出力 $/1M | `prices.json.byModel[M][R].standard` の `input` / `output`。無ければ「—」 |
+| 入力 / 出力 $/1M | `prices.json.byModel[M][R].standard` の `input` / `output` (bedrock-runtime)。無ければ「—」。`.mantle` の下は bedrock-mantle の単価で、詳細パネルにだけ出す (D-017) |
 | 機能列 | `features.json.byModel[M].runtime[K]` / `.mantle[K]` が true / false / キーなし (記載なし)。記載なしを false に倒さない。起点リージョンには依らない |
 
 `PROVISIONED` は `availability` に保持するが、3 列の判定には使わない。

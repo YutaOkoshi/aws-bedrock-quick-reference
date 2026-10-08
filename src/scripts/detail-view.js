@@ -8,6 +8,7 @@ import {
   LANE_ORDER,
   buildDestinationLines,
   buildDetail,
+  buildMantlePriceRows,
   buildPriceRows,
   globalExtrasMissing,
   resolveLane,
@@ -208,17 +209,8 @@ function destinationSection(lane, { destinations, region, regionNotes, available
   return section;
 }
 
-// AC-013: レーンごとの価格。
-function priceSection(modelId, { prices, region, regionNotes, lane, available }) {
-  const section = el("section", "detail-price");
-  section.appendChild(el("h4", null, t("price.heading")));
-  const rows = buildPriceRows(modelId, { prices, region, lane });
-
-  if (rows.length === 0) {
-    section.appendChild(el("p", "detail-no-price", t("price.none")));
-    return section;
-  }
-
+// 価格の行を表にする。Runtime と Mantle で同じ形を使う。
+function priceTable(rows) {
   const wrap = el("div", "price-wrap");
   const table = el("table", "detail-price-table price-table");
   const thead = document.createElement("thead");
@@ -248,7 +240,34 @@ function priceSection(modelId, { prices, region, regionNotes, lane, available })
   }
   table.append(thead, tbody);
   wrap.appendChild(table);
-  section.appendChild(wrap);
+  return wrap;
+}
+
+// AC-013: レーンごとの価格。bedrock-mantle の単価は Runtime と別に決まるので、別の表にする。
+function priceSection(modelId, { prices, region, regionNotes, lane, available }) {
+  const section = el("section", "detail-price");
+  section.appendChild(el("h4", null, t("price.heading")));
+  const rows = buildPriceRows(modelId, { prices, region, lane });
+  const mantleRows = buildMantlePriceRows(modelId, { prices, region });
+
+  if (rows.length === 0 && mantleRows.length === 0) {
+    section.appendChild(el("p", "detail-no-price", t("price.none")));
+    return section;
+  }
+
+  const runtime = el("div", "detail-price-runtime");
+  // Mantle の表があるときだけ、どちらの接続先の単価かを見出しで分ける。
+  if (mantleRows.length > 0) runtime.appendChild(el("h5", "detail-price-endpoint mono", t("price.runtimeHeading")));
+  runtime.appendChild(rows.length > 0 ? priceTable(rows) : el("p", "detail-no-price", t("price.none")));
+  section.appendChild(runtime);
+
+  if (mantleRows.length > 0) {
+    const mantle = el("div", "detail-price-mantle");
+    mantle.appendChild(el("h5", "detail-price-endpoint mono", t("price.mantleHeading")));
+    mantle.appendChild(priceTable(mantleRows));
+    mantle.appendChild(el("p", "note-muted detail-price-mantle-note", t("price.mantleNote")));
+    section.appendChild(mantle);
+  }
 
   const notes = [t("price.unit", { place: regionName(region, getLang(), regionNotes) })];
   if (lane === LANE_GEO) notes.push(t("price.geoSame"));

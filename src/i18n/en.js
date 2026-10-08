@@ -122,6 +122,9 @@ export const en = {
     "shortContext": "Input ≤ {count} tokens",
     "longContext": "Input > {count} tokens",
     "longContextTier": "long context",
+    runtimeHeading: "bedrock-runtime",
+    mantleHeading: "bedrock-mantle",
+    mantleNote: "bedrock-mantle prices come from the Mantle SKUs in the price list and are set separately from bedrock-runtime",
     "units": {"image": "image", "second": "second", "request": "request", "searchUnit": "search unit"},
 
     unrecorded: "Price not recorded",

@@ -189,7 +189,7 @@ export function readBedrockProduct(product) {
   const longContext = LONG_CONTEXT_USAGETYPE.test(usagetype);
   const kind = OUT_OF_SCOPE_USAGETYPE.test(usagetype) ? null : kindOf(axis, flags);
   return {
-    // Mantle の接続先は同じ単価の別 SKU (Design FAQ Q14)。通常の SKU が無い軸だけ埋めるのに使う。
+    // Mantle の接続先の SKU。Runtime とは別の単価として mantle の下に置く。
     mantle: lower.includes("-mantle-"),
     sourceName: attributes.model ? String(attributes.model) : null,
     // model 属性を持たない SKU (Titan 系) は usagetype から引ける鍵を作る。
@@ -311,23 +311,31 @@ function setPrice(bucket, kind, axis, value) {
   if (slot[axis] == null) slot[axis] = value;
 }
 
-// 通常の SKU が無い (モデル, リージョン, 種別, 軸) だけ Mantle の単価で埋める。
-function fillFromMantle(byModel, mantleByModel) {
-  for (const [modelId, regions] of Object.entries(mantleByModel)) {
-    for (const [region, mantleBucket] of Object.entries(regions)) {
-      const bucket = ((byModel[modelId] ??= {})[region] ??= {});
-      for (const [kind, values] of Object.entries(mantleBucket)) {
-        if (kind === "metered") continue;
-        if (kind === "longContext") {
-          for (const [lcKind, lcValues] of Object.entries(values)) {
-            for (const [axis, value] of Object.entries(lcValues)) setPrice((bucket.longContext ??= {}), lcKind, axis, value);
-          }
-          continue;
-        }
-        for (const [axis, value] of Object.entries(values)) setPrice(bucket, kind, axis, value);
-      }
-    }
+// 1 つの接続先 (Runtime / Mantle) の単価を種別ごとに並べ直す。
+// long_ctx だけで標準の SKU が無い種別も longContext だけを持つ種別として残す。
+function sortKinds(bucket) {
+  const kinds = {};
+  for (const kind of PRICE_KINDS) {
+    const base = bucket[kind];
+    const longContext = bucket.longContext?.[kind];
+    if (!base && !longContext) continue;
+    kinds[kind] = sortObject(base ?? {});
+    if (longContext) kinds[kind].longContext = sortObject(longContext);
   }
+  if (bucket.metered) kinds.metered = bucket.metered.sort((a, b) => a.axis.localeCompare(b.axis) || a.label.localeCompare(b.label) || a.value - b.value);
+  return kinds;
+}
+
+/**
+ * 安全弁: 価格のあるモデルが前回の半分未満なら、理由の文字列を返す (書き出さない)。
+ * 価格表の書式変更でパースが空振りしたときに、価格の消えたページを公開しないため。
+ * 前回が無ければ (初回) null。
+ */
+export function checkPriceGuard(previous, next) {
+  const before = Object.keys(previous?.byModel ?? {}).length;
+  const after = Object.keys(next?.byModel ?? {}).length;
+  if (before === 0 || after * 2 >= before) return null;
+  return `models with a price dropped from ${before} to ${after} (less than half). prices.json was not written.`;
 }
 
 function sortObject(value) {
@@ -346,7 +354,7 @@ function sortObject(value) {
 export function normalizePrices({ files, models, map = {}, generatedAt }) {
   const nameIndex = buildNameIndex(models);
   const byModel = {};
-  const mantleByModel = {};
+  const known = new Set(Object.keys(models ?? {}));
   const unmapped = new Map();
   let outOfScope = 0;
   let ignored = 0;
@@ -362,14 +370,20 @@ export function normalizePrices({ files, models, map = {}, generatedAt }) {
         const price = priceOf(file, product.sku);
         const perMillion = price ? toPerMillion(price.usd, price.unit) : null;
         const metered = perMillion == null ? meteredPriceOf(product, price) : null;
-        if (perMillion == null && !metered) continue;
+        if (perMillion == null && !metered) {
+          // 単価が読めない単位 (Units / hour など)。表にも詳細にも出さない。
+          outOfScope += 1;
+          continue;
+        }
         if (read.kind == null && !metered) {
           outOfScope += 1;
           continue;
         }
 
         const sourceKey = read.sourceName ?? read.fallbackKey;
-        const modelIds = resolveModelIds(sourceKey, { nameIndex, map });
+        const resolved = resolveModelIds(sourceKey, { nameIndex, map });
+        // 地図が models.json に無い ID (API から消えたモデル) を指していても書き出さない。
+        const modelIds = resolved && models ? resolved.filter((id) => known.has(id)) : resolved;
         if (Array.isArray(modelIds) && modelIds.length === 0) {
           // 地図に null と書いてある = models.json に該当モデルが無いと確認済み。
           ignored += 1;
@@ -391,10 +405,11 @@ export function normalizePrices({ files, models, map = {}, generatedAt }) {
 
         const axis = read.axis === "cacheRead" || read.axis === "cacheWrite" ? "input" : read.axis;
         for (const modelId of modelIds) {
-          // Mantle の SKU は別に貯め、通常の SKU が無い軸だけを最後に埋める。
-          const target = read.mantle ? mantleByModel : byModel;
-          const regions = (target[modelId] ??= {});
-          const bucket = (regions[region] ??= {});
+          // Runtime と Mantle は別の接続先で、単価も別に決まる (Qwen3 Next 80B は値が違う)。
+          // Mantle の SKU は mantle の下に置き、Runtime の単価には混ぜない。
+          const regions = (byModel[modelId] ??= {});
+          const entry = (regions[region] ??= {});
+          const bucket = read.mantle ? (entry.mantle ??= {}) : entry;
           if (read.longContext) {
             setPrice((bucket.longContext ??= {}), read.kind, axis, perMillion);
           } else if (metered) {
@@ -406,21 +421,17 @@ export function normalizePrices({ files, models, map = {}, generatedAt }) {
     }
   }
 
-  fillFromMantle(byModel, mantleByModel);
-
   // キー順を揃えて差分を読みやすくする。
   const sorted = {};
   for (const modelId of Object.keys(byModel).sort()) {
     const regions = {};
     for (const region of Object.keys(byModel[modelId]).sort()) {
       const bucket = byModel[modelId][region];
-      const kinds = {};
-      for (const kind of PRICE_KINDS) {
-        if (!bucket[kind]) continue;
-        kinds[kind] = sortObject(bucket[kind]);
-        if (bucket.longContext?.[kind]) kinds[kind].longContext = sortObject(bucket.longContext[kind]);
+      const kinds = sortKinds(bucket);
+      if (bucket.mantle) {
+        const mantle = sortKinds(bucket.mantle);
+        if (Object.keys(mantle).length > 0) kinds.mantle = mantle;
       }
-      if (bucket.metered) kinds.metered = bucket.metered.sort((a, b) => a.axis.localeCompare(b.axis) || a.label.localeCompare(b.label) || a.value - b.value);
       regions[region] = kinds;
     }
     sorted[modelId] = regions;

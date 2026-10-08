@@ -3,7 +3,7 @@ import { describe, it, expect, beforeEach } from "vitest";
 import { mountFixtureApp, rowFor, cells, buildPrices } from "./app-harness.js";
 import { panelId } from "../src/scripts/detail-view.js";
 import { formatPrice } from "../src/scripts/bedrock-view-model.mjs";
-import { buildPriceRows } from "../src/scripts/detail-model.mjs";
+import { buildMantlePriceRows, buildPriceRows } from "../src/scripts/detail-model.mjs";
 import { setLang } from "../src/scripts/i18n.js";
 import { TOKYO } from "./fixtures/bedrock-fixture.js";
 
@@ -242,5 +242,81 @@ describe("単位付き料金と長文条件の表示", () => {
     expect(global.textContent).toContain('入力 272,000 tokens 超');
     expect(global.textContent).toContain('$20.00');
     expect(global.textContent).toContain('$75.00');
+  });
+});
+
+// Runtime と Mantle は別の接続先で、単価も別に決まる。混ぜずにそれぞれ出す。
+describe("Runtime と Mantle の価格を分けて出す", () => {
+  const both = { byModel: { [CLAUDE]: { [TOKYO]: {
+    standard: { input: 0.18, output: 1.41 },
+    mantle: { standard: { input: 0.168, output: 1.44 }, batch: { input: 0.084 } },
+  } } } };
+  const inRegionPrice = () => panelOf(CLAUDE).querySelector('[data-lane="inRegion"] .detail-price');
+
+  it("buildMantlePriceRows は mantle の種別を PRICE_KINDS の順で返し、Runtime の単価を含まない", () => {
+    expect(buildMantlePriceRows(CLAUDE, { prices: both, region: TOKYO })).toEqual([
+      { kind: "standard", input: 0.168, output: 1.44 },
+      { kind: "batch", input: 0.084, output: null },
+    ]);
+    expect(buildPriceRows(CLAUDE, { prices: both, region: TOKYO })[0]).toEqual({ kind: "standard", input: 0.18, output: 1.41 });
+    expect(buildMantlePriceRows(CLAUDE, { prices: { byModel: {} }, region: TOKYO })).toEqual([]);
+  });
+
+  it("詳細の価格の節に bedrock-runtime と bedrock-mantle の表が別々に出る", () => {
+    mountFixtureApp({ prices: both });
+    rowFor(CLAUDE).querySelector(".detail-toggle").click();
+    const section = inRegionPrice();
+    const runtime = section.querySelector(".detail-price-runtime");
+    const mantle = section.querySelector(".detail-price-mantle");
+    expect(runtime.textContent).toContain("bedrock-runtime");
+    expect(runtime.textContent).toContain("$0.18");
+    expect(runtime.textContent).not.toContain("$0.168");
+    expect(mantle.textContent).toContain("bedrock-mantle");
+    expect(mantle.textContent).toContain("$0.168");
+    expect(mantle.textContent).toContain("$1.44");
+    expect(mantle.textContent).not.toContain("$1.41");
+  });
+
+  it("Mantle の単価しか無いモデルは、Runtime は「価格データなし」で Mantle の表だけ出る。一覧の価格列は Runtime のまま", () => {
+    mountFixtureApp({ prices: { byModel: { [CLAUDE]: { [TOKYO]: { mantle: { standard: { input: 2.2, output: 6.6 } } } } } } });
+    expect(cells(rowFor(CLAUDE))[PRICE_INPUT].textContent).not.toContain("$2.20");
+    rowFor(CLAUDE).querySelector(".detail-toggle").click();
+    const section = inRegionPrice();
+    expect(section.querySelector(".detail-price-runtime").textContent).toContain("この起点リージョンの価格データがありません");
+    expect(section.querySelector(".detail-price-mantle").textContent).toContain("$2.20");
+  });
+
+  it("Mantle の単価が無ければ Mantle の表は出さない", () => {
+    mountFixtureApp({ prices: { byModel: { [CLAUDE]: { [TOKYO]: { standard: { input: 3, output: 15 } } } } } });
+    rowFor(CLAUDE).querySelector(".detail-toggle").click();
+    expect(inRegionPrice().querySelector(".detail-price-mantle")).toBeNull();
+  });
+});
+
+describe("長文コンテキストの単価 (境界のトークン数が価格表に無いとき)", () => {
+  const prices = { byModel: { [CLAUDE]: { [TOKYO]: { global: { input: 10, output: 50, longContext: { input: 20, output: 75 } } } } } };
+
+  it("「長文コンテキスト」の行に単価が出て、トークン数の条件は出ない (ja)", () => {
+    mountFixtureApp({ prices });
+    rowFor(CLAUDE).querySelector(".detail-toggle").click();
+    const global = panelOf(CLAUDE).querySelector('[data-lane="global"] .detail-price');
+    const rows = [...global.querySelectorAll(".detail-price-row")].map((row) => row.textContent);
+    expect(rows).toHaveLength(2);
+    expect(rows[1]).toContain("長文コンテキスト");
+    expect(rows[1]).toContain("$20.00");
+    expect(rows[1]).toContain("$75.00");
+    expect(global.textContent).not.toContain("tokens 超");
+    expect(global.textContent).not.toContain("tokens 以下");
+  });
+
+  it("英語では long context と出る (en)", () => {
+    mountFixtureApp({ prices });
+    setLang("en");
+    rowFor(CLAUDE).querySelector(".detail-toggle").click();
+    const global = panelOf(CLAUDE).querySelector('[data-lane="global"] .detail-price');
+    expect(global.textContent).toContain("long context");
+    expect(global.textContent).not.toContain("Input >");
+    expect(global.textContent).not.toContain("Input ≤");
+    setLang("ja");
   });
 });

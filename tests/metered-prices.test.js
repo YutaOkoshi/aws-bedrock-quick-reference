@@ -3,7 +3,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { meteredPriceOf, normalizePrices } from '../scripts/lib/prices.mjs';
 import { comparisonPrices, buildRow } from '../src/scripts/bedrock-view-model.mjs';
-import { buildPriceRows } from '../src/scripts/detail-model.mjs';
+import { buildMantlePriceRows, buildPriceRows } from '../src/scripts/detail-model.mjs';
 
 const product = (attributes) => ({ sku: 'example', attributes });
 const rate = (attributes, usd, unit) => meteredPriceOf(product(attributes), { usd, unit });
@@ -56,14 +56,30 @@ describe('実データ (件数・モデル名を固定せず、取り直しに�
   const read = (name) => JSON.parse(readFileSync(new URL(`../data/${name}.json`, import.meta.url)));
   const models = read('models'), prices = read('prices');
 
-  it('価格が出ないモデルは、prices.json のどのリージョンにも単価が無い (Pricing API に未掲載のもの)', () => {
+  // bedrock-runtime の単価の種別。mantle の下は bedrock-mantle の単価で、一覧の価格列には使わない
+  const RUNTIME_KINDS = ['standard', 'global', 'batch', 'cacheRead', 'cacheWrite', 'priority', 'flex', 'metered'];
+  const hasRuntime = (id) => Object.values(prices.byModel[id] ?? {}).some((entry) => RUNTIME_KINDS.some((kind) => entry[kind]));
+  const hasMantle = (id) => Object.values(prices.byModel[id] ?? {}).some((entry) => entry.mantle);
+
+  it('一覧で価格が出ないモデルは、prices.json のどのリージョンにも Runtime の単価が無い (取り込みの不具合ではない)', () => {
     const missing = Object.keys(models).filter(id => comparisonPrices(prices, id, 'ap-northeast-1').length === 0);
-    if (missing.length > 0) console.info(`Pricing API に単価が無いモデル: ${missing.join(', ')}`);
-    for (const id of missing) expect(prices.byModel[id], id).toBeUndefined();
-    expect(missing.length).toBeLessThan(Object.keys(models).length / 2);
+    if (missing.length > 0) console.info(`Runtime の単価が無いモデル: ${missing.join(', ')}`);
+    for (const id of missing) expect(hasRuntime(id), id).toBe(false);
+  });
+
+  it('Runtime か Mantle の単価があるモデルが 4 分の 3 以上 (価格の大量消失を検出する)', () => {
+    const ids = Object.keys(models);
+    const priced = ids.filter((id) => hasRuntime(id) || hasMantle(id));
+    expect(priced.length / ids.length).toBeGreaterThanOrEqual(0.75);
+    expect(ids.filter(hasMantle).length).toBeGreaterThan(0);
+  });
+
+  it('prices.json のモデル ID はすべて models.json にある', () => {
+    for (const id of Object.keys(prices.byModel)) expect(models, id).toHaveProperty([id]);
   });
 
   it('長文コンテキストの単価があれば、詳細の価格行にそのまま出る', () => {
+    let checked = 0;
     for (const [id, regions] of Object.entries(prices.byModel)) {
       for (const [region, entry] of Object.entries(regions)) {
         for (const [kind, lane] of [['standard', 'inRegion'], ['global', 'global']]) {
@@ -71,8 +87,26 @@ describe('実データ (件数・モデル名を固定せず、取り直しに�
           if (!longContext) continue;
           expect(buildPriceRows(id, { prices, region, lane }), `${id} ${region} ${kind}`)
             .toContainEqual({ kind, ...longContext, longContext: true });
+          checked += 1;
         }
       }
     }
+    expect(checked).toBeGreaterThan(0);
+  });
+
+  it('Mantle の単価があれば、詳細の Mantle の価格行にそのまま出て、Runtime の行には混ざらない', () => {
+    let checked = 0;
+    for (const [id, regions] of Object.entries(prices.byModel)) {
+      for (const [region, entry] of Object.entries(regions)) {
+        if (!entry.mantle?.standard) continue;
+        const { longContext, ...standard } = entry.mantle.standard;
+        expect(buildMantlePriceRows(id, { prices, region }), `${id} ${region}`)
+          .toContainEqual({ kind: 'standard', input: standard.input ?? null, output: standard.output ?? null });
+        const runtime = buildPriceRows(id, { prices, region }).find((row) => row.kind === 'standard');
+        expect(runtime ?? null, `${id} ${region}`).toEqual(entry.standard ? expect.objectContaining({ input: entry.standard.input ?? null }) : null);
+        checked += 1;
+      }
+    }
+    expect(checked).toBeGreaterThan(0);
   });
 });

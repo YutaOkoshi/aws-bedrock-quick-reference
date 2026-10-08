@@ -10,6 +10,7 @@ import {
   bfmDimension,
   buildNameIndex,
   kindOf,
+  checkPriceGuard,
   normalizePrices,
   priceFileUrl,
   readProduct,
@@ -61,8 +62,11 @@ describe("AC-001 取得対象は fetch-log.json の status: ok のリージョ�
     expect(regions).toEqual(["ap-northeast-1", "us-east-1"]);
   });
 
-  it("実データの fetch-log.json では 17 リージョンが対象になる", () => {
-    expect(okRegions(read("../data/fetch-log.json"))).toHaveLength(17);
+  it("実データの fetch-log.json では status: ok のリージョンがすべて対象になる", () => {
+    const fetchLog = read("../data/fetch-log.json");
+    const ok = Object.entries(fetchLog.regions).filter(([, entry]) => entry.status === "ok").map(([region]) => region);
+    expect(okRegions(fetchLog)).toEqual(ok.sort());
+    expect(ok.length).toBeGreaterThan(0);
   });
 
   it("--regions で対象を絞れる。省くと既定 (ok のリージョン全件)", () => {
@@ -297,10 +301,11 @@ describe("AC-004 / AC-006 prices.json の中身", () => {
     expect(prices.byModel[TITAN][TOKYO].standard).toEqual({ input: 0.2 });
   });
 
-  it("Mantle の SKU と トークン以外の単位は載らない", () => {
-    // Mantle も NovaCanvas (image) も同じ fixture に入っているが byModel には現れない
-    const values = JSON.stringify(prices.byModel);
-    expect(values).not.toContain("mantle");
+  it("Mantle の SKU は Runtime の単価に混ざらず、mantle の下に別に入る", () => {
+    // fixture の Mantle SKU は NVIDIA Nemotron Nano 2 VL の 1 件
+    const entry = prices.byModel[NVIDIA][TOKYO];
+    expect(entry.standard).toEqual({ input: 0.24, output: 0.73 });
+    expect(Object.keys(entry.mantle ?? {}).length).toBeGreaterThan(0);
     expect(prices.outOfScope).toBeGreaterThan(0);
   });
 
@@ -386,28 +391,82 @@ describe("AC-004 / AC-005 価格表の揺れを API の値のまま取り込む"
     expect(resolveModelIds("xai.grok-4.6", { nameIndex: buildNameIndex(models) })).toEqual(["xai.grok-4.6"]);
   });
 
-  it("Mantle の SKU しか無い軸は Mantle の単価で埋め、通常の SKU があればそちらを採る", () => {
-    const sku = (model, tail, service_tier) => ({ model, usagetype: `USE1-${tail}`, service_tier });
+  it("Runtime と Mantle の単価は別々に持ち、値が違っても混ぜない (Qwen3 Next 80B)", () => {
+    const sku = (tail, service_tier) => ({ model: "Qwen3 Next 80B A3B", usagetype: `APS3-${tail}`, service_tier });
     const rows = [
-      [sku("Grok 4.7", "xai.grok-4.7-mantle-input-tokens-standard", "standard"), "2.2", "1M tokens"],
-      [sku("Grok 4.7", "xai.grok-4.7-mantle-output-tokens-standard", "standard"), "6.6", "1M tokens"],
-      [sku("Grok 4.7", "xai.grok-4.7-mantle-input-tokens-global-standard", "global-standard"), "2", "1M tokens"],
-      [sku("Grok 4.6", "xai.grok-4.6-mantle-input-tokens-standard", "standard"), "9.9", "1M tokens"],
-      [sku("Grok 4.6", "xai.grok-4.6-input-tokens-standard", "standard"), "1.1", "1M tokens"],
+      [sku("qwen.qwen3-next-80b-a3b-input-tokens-standard", "standard"), "0.18", "1M tokens"],
+      [sku("qwen.qwen3-next-80b-a3b-output-tokens-standard", "standard"), "1.41", "1M tokens"],
+      [sku("qwen.qwen3-next-80b-a3b-mantle-input-tokens-standard", "standard"), "0.168", "1M tokens"],
+      [sku("qwen.qwen3-next-80b-a3b-mantle-output-tokens-standard", "standard"), "1.44", "1M tokens"],
+      [sku("qwen.qwen3-next-80b-a3b-mantle-input-tokens-batch", "batch"), "0.084", "1M tokens"],
+    ];
+    const { prices } = normalize(
+      { AmazonBedrock: { "ap-south-1": offerFile(rows) } },
+      { "qwen.qwen3-next-80b-a3b": { provider: "Qwen", name: "Qwen3 Next 80B A3B" } },
+    );
+    expect(prices.byModel["qwen.qwen3-next-80b-a3b"]["ap-south-1"]).toEqual({
+      standard: { input: 0.18, output: 1.41 },
+      mantle: { standard: { input: 0.168, output: 1.44 }, batch: { input: 0.084 } },
+    });
+  });
+
+  it("Mantle の SKU しか無いモデルは Runtime の単価を持たず、mantle だけを持つ (Grok 4.7)", () => {
+    const sku = (tail, service_tier) => ({ model: "Grok 4.7", usagetype: `USE1-xai.grok-4.7-mantle-${tail}`, service_tier });
+    const rows = [
+      [sku("input-tokens-standard", "standard"), "2.2", "1M tokens"],
+      [sku("output-tokens-standard", "standard"), "6.6", "1M tokens"],
+      [sku("input-tokens-global-standard", "global-standard"), "2", "1M tokens"],
     ];
     const { prices } = normalize(
       { AmazonBedrock: { "us-east-1": offerFile(rows) } },
-      { "xai.grok-4.7": { provider: "xAI", name: "Grok 4.7" }, "xai.grok-4.6": { provider: "xAI", name: "Grok 4.6" } },
+      { "xai.grok-4.7": { provider: "xAI", name: "Grok 4.7" } },
     );
-    expect(prices.byModel["xai.grok-4.7"]["us-east-1"]).toEqual({ standard: { input: 2.2, output: 6.6 }, global: { input: 2 } });
-    expect(prices.byModel["xai.grok-4.6"]["us-east-1"]).toEqual({ standard: { input: 1.1 } });
+    expect(prices.byModel["xai.grok-4.7"]["us-east-1"]).toEqual({
+      mantle: { standard: { input: 2.2, output: 6.6 }, global: { input: 2 } },
+    });
+  });
+
+  it("Mantle の long_ctx も mantle の下の longContext に入る", () => {
+    const rows = [
+      [{ model: "M", usagetype: "USE1-x.m-mantle-input-tokens-standard", service_tier: "standard" }, "1", "1M tokens"],
+      [{ model: "M", usagetype: "USE1-x.m-mantle-input-tokens-long_ctx-standard", service_tier: "standard" }, "2", "1M tokens"],
+    ];
+    const { prices } = normalize({ AmazonBedrock: { "us-east-1": offerFile(rows) } }, { "x.m": { provider: "X", name: "M" } });
+    expect(prices.byModel["x.m"]["us-east-1"]).toEqual({ mantle: { standard: { input: 1, longContext: { input: 2 } } } });
   });
 
   it("models.json に無いモデルの Mantle の SKU は unmapped に数えない (Mantle 専用モデル)", () => {
     const rows = [[{ model: "xai.grok-4.3", usagetype: "USE1-xai.grok-4.3-mantle-input-tokens-standard", service_tier: "standard" }, "1", "1M tokens"]];
     const { prices } = normalize({ AmazonBedrock: { "us-east-1": offerFile(rows) } }, {});
     expect(prices.unmapped).toBe(0);
+    expect(prices.outOfScope).toBe(1);
     expect(prices.byModel).toEqual({});
+  });
+
+  it("地図が models.json に無い ID を指していても書き出さない (API から消えたモデル)", () => {
+    const rows = [[{ model: "Nova Canvas", usagetype: "USE1-NovaCanvas-input-tokens", inferenceType: "Input tokens" }, "0.001", "1K tokens"]];
+    const { prices } = normalizePrices({
+      files: { AmazonBedrock: { "us-east-1": offerFile(rows) } },
+      models: {},
+      map: { "Nova Canvas": ["amazon.nova-canvas-v1:0"] },
+      generatedAt: "x",
+    });
+    expect(prices.byModel).toEqual({});
+    expect(prices.ignored).toBe(1);
+    expect(prices.unmapped).toBe(0);
+  });
+
+  it("long_ctx だけで標準の SKU が無い組も longContext を残す", () => {
+    const rows = [[{ servicename: "M (Amazon Bedrock Edition)", usagetype: "USE1-MP:USE1_input_tokens_long_ctx_standard-Units" }, "2", "1M tokens"]];
+    const { prices } = normalize({ AmazonBedrockFoundationModels: { "us-east-1": offerFile(rows) } }, { "x.m": { provider: "X", name: "M" } });
+    expect(prices.byModel["x.m"]["us-east-1"]).toEqual({ standard: { longContext: { input: 2 } } });
+  });
+
+  it("単位が読めない SKU (Units など) は範囲外に数える", () => {
+    const rows = [[{ servicename: "M (Amazon Bedrock Edition)", usagetype: "USE1-MP:USE1_cache_write_tokens_long_ctx_standard-Units" }, "1", "Units"]];
+    const { prices } = normalize({ AmazonBedrockFoundationModels: { "us-east-1": offerFile(rows) } }, { "x.m": { provider: "X", name: "M" } });
+    expect(prices.byModel).toEqual({});
+    expect(prices.outOfScope).toBe(1);
   });
 
   it("単位が小文字の 1k tokens でも単価が入る (Nova 2.5 Sonic)", () => {
@@ -420,6 +479,24 @@ describe("AC-004 / AC-005 価格表の揺れを API の値のまま取り込む"
       { "amazon.nova-2-5-sonic": { provider: "Amazon", name: "Nova 2.5 Sonic" } },
     );
     expect(prices.byModel["amazon.nova-2-5-sonic"]["us-east-1"]).toEqual({ standard: { input: 0.33 } });
+  });
+});
+
+// --- 安全弁: 価格表の書式変更などで単価が大量に消えたら書き出さない ---
+describe("PRICE-001 安全弁 (checkPriceGuard)", () => {
+  const withModels = (n) => ({ byModel: Object.fromEntries(Array.from({ length: n }, (_, i) => [`m${i}`, {}])) });
+
+  it("価格のあるモデルが前回の半分以上なら通す", () => {
+    expect(checkPriceGuard(withModels(100), withModels(50))).toBeNull();
+    expect(checkPriceGuard(withModels(100), withModels(130))).toBeNull();
+  });
+
+  it("前回の半分未満なら理由を返す", () => {
+    expect(checkPriceGuard(withModels(100), withModels(49))).toMatch(/100.*49/);
+  });
+
+  it("前回が無い (初回) なら通す", () => {
+    expect(checkPriceGuard(null, withModels(1))).toBeNull();
   });
 });
 

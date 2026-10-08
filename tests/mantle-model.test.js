@@ -55,13 +55,20 @@ describe("data/mantle.json の形 (D-010)", () => {
 
   // mantle.json は docs の転記、models.json は API のスナップショットで、更新の時期が違う。
   // API から消えたモデル (2026-10-07 の Nova Canvas) のキーが残っても表には出ないので、
-  // 件数を固定せず、突き合うキーが大半であることと、残ったキーの一覧だけを確かめる。
+  // 件数を固定せず、残ったキーが少数でモデル ID の形をしていることを確かめ、一覧をログに出す。
   it("models のキーの大半が models.json に実在し、実在しないキーは一覧に出す", () => {
     const keys = Object.keys(mantle.models);
     const stale = keys.filter((modelId) => !(modelId in models));
     if (stale.length > 0) console.info(`mantle.json のキーで models.json に無いもの: ${stale.join(", ")}`);
     expect(keys.length).toBeGreaterThan(0);
-    expect(stale.length).toBeLessThan(keys.length / 2);
+    // 消えたモデルは少数に留まる。大量に外れたら転記かスナップショットの取り違え
+    expect(stale.length).toBeLessThanOrEqual(Math.ceil(keys.length * 0.1));
+    // 書き間違いを拾う: 残ったキーもモデル ID の形で、models.json にある接頭辞 (amazon. など) を持つ
+    const prefixes = new Set(Object.keys(models).map((id) => id.split(".")[0]));
+    for (const modelId of stale) {
+      expect(modelId, modelId).toMatch(/^[a-z0-9-]+\.[a-z0-9.:-]+$/);
+      expect(prefixes.has(modelId.split(".")[0]), modelId).toBe(true);
+    }
   });
 
   it("models の各エントリが runtime / mantle の真偽値を持つ", () => {
