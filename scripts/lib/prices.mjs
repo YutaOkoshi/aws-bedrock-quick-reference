@@ -35,6 +35,10 @@ export const PRICE_KINDS = Object.freeze([
   "cacheWrite",
   "priority",
   "flex",
+  // Global のバッチ・キャッシュ (2026-10-08 から取り込む)。
+  "globalBatch",
+  "globalCacheRead",
+  "globalCacheWrite",
 ]);
 
 // servicename から外す接尾辞。Anthropic / Cohere / TwelveLabs が付けている。
@@ -143,10 +147,12 @@ export function kindOf(axis, flags) {
   if (axis == null) return null;
   const { global, batch, priority, flex } = tierFlags(flags);
   if (axis === "cacheRead" || axis === "cacheWrite") {
-    // キャッシュは標準階層の単価だけを載せる。
-    return global || batch || priority || flex ? null : axis;
+    // キャッシュは標準階層の単価だけを載せる。Global のキャッシュは別の種別にする。
+    if (batch || priority || flex) return null;
+    return global ? (axis === "cacheRead" ? "globalCacheRead" : "globalCacheWrite") : axis;
   }
-  if (global) return batch || priority || flex ? null : "global";
+  // Global のバッチは別の種別。Global と priority / flex の組み合わせは範囲外。
+  if (global) return priority || flex ? null : batch ? "globalBatch" : "global";
   if (batch) return "batch";
   if (priority) return "priority";
   if (flex) return "flex";
@@ -336,7 +342,7 @@ function hasRuntimePrice(regions) {
 }
 
 // In-Region / Geo の単価 (global 以外) を当てる種別。
-const REGIONAL_KINDS = Object.freeze(PRICE_KINDS.filter((kind) => kind !== "global"));
+const REGIONAL_KINDS = Object.freeze(PRICE_KINDS.filter((kind) => !kind.startsWith("global")));
 
 /**
  * Price List の usagetype の先頭 (APN1- / USE1- / MP:USE1_) と regionCode を対にした索引。
@@ -394,7 +400,7 @@ export function applyMarketplacePrices(prices, { marketplace, models, profiles, 
       bucket[kind] = kind === "metered" ? [...values] : JSON.parse(JSON.stringify(values));
     };
     for (const [kind, values] of Object.entries(offer.kinds ?? {})) {
-      const where = kind === "global" ? global : REGIONAL_KINDS.includes(kind) || kind === "metered" ? regional : new Set();
+      const where = kind.startsWith("global") ? global : REGIONAL_KINDS.includes(kind) || kind === "metered" ? regional : new Set();
       for (const region of where) put(region, kind, values);
     }
     for (const [prefix, kinds] of Object.entries(offer.byPrefix ?? {})) {

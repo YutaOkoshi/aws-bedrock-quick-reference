@@ -157,6 +157,9 @@ export const en = {
       cacheWrite: "Cache write",
       priority: "Priority",
       flex: "Flex",
+      globalBatch: "Global batch",
+      globalCacheRead: "Global cache read",
+      globalCacheWrite: "Global cache write",
     },
   },
   // FEATURE-001: Capabilities and Features. Feature names stay in the docs' English, so they are not in the dictionary.

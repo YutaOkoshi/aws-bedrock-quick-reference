@@ -11,12 +11,24 @@
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APE2": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APN1": {
@@ -33,6 +45,12 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APN2": {
@@ -49,6 +67,12 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APN3": {
@@ -65,6 +89,12 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APS1": {
@@ -81,6 +111,12 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APS2": {
@@ -97,6 +133,12 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APS3": {
@@ -113,18 +155,36 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APS4": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APS5": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APS6": {
@@ -141,24 +201,48 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APS7": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APS8": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APS9": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "CAN1": {
@@ -175,6 +259,12 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "CAN2": {
@@ -191,6 +281,12 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "EUC1": {
@@ -207,6 +303,12 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "EUC2": {
@@ -223,6 +325,12 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "EUN1": {
@@ -239,6 +347,12 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "EUS1": {
@@ -255,6 +369,12 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "EUS2": {
@@ -271,6 +391,12 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "EUW2": {
@@ -287,6 +413,12 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "EUW3": {
@@ -303,36 +435,72 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "ILC1": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "MEC1": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "MES1": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "MXC1": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "SAE1": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "UGE1": {
@@ -373,6 +541,12 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "USE2": {
@@ -389,6 +563,12 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "USW1": {
@@ -405,6 +585,12 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "USW2": {
@@ -421,10 +607,16 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 1
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         }
       },
-      "outOfScope": 128
+      "outOfScope": 64
     },
     "anthropic.claude-fable-5-1": {
       "offerId": "offer-icq4574v6gz3i",
@@ -434,84 +626,168 @@
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APE2": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APN1": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APN2": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APN3": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APS1": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APS2": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APS3": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APS4": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APS5": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APS6": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APS7": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APS8": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "APS9": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "CAN1": {
@@ -528,6 +804,12 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "CAN2": {
@@ -544,78 +826,156 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "EUC1": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "EUC2": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "EUN1": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "EUS1": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "EUS2": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "EUW2": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "EUW3": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "ILC1": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "MEC1": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "MES1": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "MXC1": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "SAE1": {
           "global": {
             "input": 10,
             "output": 50
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "UGE1": {
@@ -656,6 +1016,12 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "USE2": {
@@ -672,6 +1038,12 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "USW1": {
@@ -688,6 +1060,12 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         },
         "USW2": {
@@ -704,10 +1082,16 @@
           },
           "cacheWrite": {
             "input": 13.75
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          },
+          "globalCacheWrite": {
+            "input": 12.5
           }
         }
       },
-      "outOfScope": 109
+      "outOfScope": 45
     },
     "anthropic.claude-haiku-4-5-20251001-v1:0": {
       "offerId": "offer-fudwqbphlos64",
@@ -717,12 +1101,32 @@
           "global": {
             "input": 1,
             "output": 5
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "APE2": {
           "global": {
             "input": 1,
             "output": 5
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "APN1": {
@@ -743,6 +1147,16 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "APN2": {
@@ -763,6 +1177,16 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "APN3": {
@@ -783,6 +1207,16 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "APS1": {
@@ -803,6 +1237,16 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "APS2": {
@@ -823,6 +1267,16 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "APS3": {
@@ -843,12 +1297,32 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "APS4": {
           "global": {
             "input": 1,
             "output": 5
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "APS5": {
@@ -869,6 +1343,16 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "APS6": {
@@ -889,12 +1373,32 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "APS7": {
           "global": {
             "input": 1,
             "output": 5
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "APS8": {
@@ -915,12 +1419,32 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "APS9": {
           "global": {
             "input": 1,
             "output": 5
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "CAN1": {
@@ -941,12 +1465,32 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "CAN2": {
           "global": {
             "input": 1,
             "output": 5
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "EUC1": {
@@ -967,6 +1511,16 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "EUC2": {
@@ -987,6 +1541,16 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "EUN1": {
@@ -1007,6 +1571,16 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "EUS1": {
@@ -1027,6 +1601,16 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "EUS2": {
@@ -1047,6 +1631,16 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "EUW2": {
@@ -1067,6 +1661,16 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "EUW3": {
@@ -1087,36 +1691,96 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "ILC1": {
           "global": {
             "input": 1,
             "output": 5
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "MEC1": {
           "global": {
             "input": 1,
             "output": 5
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "MES1": {
           "global": {
             "input": 1,
             "output": 5
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "MXC1": {
           "global": {
             "input": 1,
             "output": 5
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "SAE1": {
           "global": {
             "input": 1,
             "output": 5
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "USE1": {
@@ -1137,6 +1801,16 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "USE2": {
@@ -1157,6 +1831,16 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "USW1": {
@@ -1177,6 +1861,16 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         },
         "USW2": {
@@ -1197,10 +1891,20 @@
           },
           "cacheWrite": {
             "input": 1.375
+          },
+          "globalBatch": {
+            "input": 0.5,
+            "output": 2.5
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 1.25
           }
         }
       },
-      "outOfScope": 764
+      "outOfScope": 636
     },
     "anthropic.claude-haiku-5-5": {
       "offerId": "offer-u3aih6zr7uw5u",
@@ -1214,6 +1918,12 @@
               "input": 0.5,
               "output": 2.5
             }
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "APE2": {
@@ -1224,6 +1934,12 @@
               "input": 0.5,
               "output": 2.5
             }
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "APN1": {
@@ -1248,6 +1964,12 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "APN2": {
@@ -1272,6 +1994,12 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "APN3": {
@@ -1296,6 +2024,12 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "APS1": {
@@ -1320,6 +2054,12 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "APS2": {
@@ -1344,6 +2084,12 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "APS3": {
@@ -1368,6 +2114,12 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "APS4": {
@@ -1378,6 +2130,12 @@
               "input": 0.5,
               "output": 2.5
             }
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "APS5": {
@@ -1402,6 +2160,12 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "APS6": {
@@ -1426,6 +2190,12 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "APS7": {
@@ -1436,6 +2206,12 @@
               "input": 0.5,
               "output": 2.5
             }
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "APS8": {
@@ -1446,6 +2222,12 @@
               "input": 0.5,
               "output": 2.5
             }
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "APS9": {
@@ -1456,6 +2238,12 @@
               "input": 0.5,
               "output": 2.5
             }
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "CAN1": {
@@ -1480,6 +2268,12 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "CAN2": {
@@ -1504,6 +2298,12 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "EUC1": {
@@ -1528,6 +2328,12 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "EUC2": {
@@ -1552,6 +2358,12 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "EUN1": {
@@ -1576,6 +2388,12 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "EUS1": {
@@ -1600,6 +2418,12 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "EUS2": {
@@ -1624,6 +2448,12 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "EUW2": {
@@ -1648,6 +2478,12 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "EUW3": {
@@ -1672,6 +2508,12 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "ILC1": {
@@ -1682,6 +2524,12 @@
               "input": 0.5,
               "output": 2.5
             }
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "MEC1": {
@@ -1692,6 +2540,12 @@
               "input": 0.5,
               "output": 2.5
             }
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "MES1": {
@@ -1702,6 +2556,12 @@
               "input": 0.5,
               "output": 2.5
             }
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "MXC1": {
@@ -1712,6 +2572,12 @@
               "input": 0.5,
               "output": 2.5
             }
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "SAE1": {
@@ -1722,6 +2588,12 @@
               "input": 0.5,
               "output": 2.5
             }
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "UGE1": {
@@ -1778,6 +2650,12 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "USE2": {
@@ -1802,6 +2680,12 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "USW1": {
@@ -1826,6 +2710,12 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         },
         "USW2": {
@@ -1850,10 +2740,16 @@
           },
           "cacheWrite": {
             "input": 0.1375
+          },
+          "globalCacheRead": {
+            "input": 0.01
+          },
+          "globalCacheWrite": {
+            "input": 0.125
           }
         }
       },
-      "outOfScope": 304
+      "outOfScope": 240
     },
     "anthropic.claude-opus-4-7": {
       "offerId": "offer-sltne4evyuyeu",
@@ -1863,12 +2759,32 @@
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APE2": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APN1": {
@@ -1889,12 +2805,32 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APN2": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APN3": {
@@ -1915,12 +2851,32 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS1": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS2": {
@@ -1941,24 +2897,64 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS3": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS4": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS5": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS6": {
@@ -1979,24 +2975,64 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS7": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS8": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS9": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "CAN1": {
@@ -2017,6 +3053,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "CAN2": {
@@ -2037,6 +3083,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUC1": {
@@ -2057,6 +3113,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUC2": {
@@ -2077,6 +3143,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUN1": {
@@ -2097,6 +3173,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUS1": {
@@ -2117,6 +3203,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUS2": {
@@ -2137,6 +3233,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUW2": {
@@ -2157,6 +3263,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUW3": {
@@ -2177,36 +3293,96 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "ILC1": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "MEC1": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "MES1": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "MXC1": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "SAE1": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "USE1": {
@@ -2227,6 +3403,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "USE2": {
@@ -2247,6 +3433,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "USW1": {
@@ -2267,6 +3463,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "USW2": {
@@ -2287,10 +3493,20 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         }
       },
-      "outOfScope": 191
+      "outOfScope": 63
     },
     "anthropic.claude-opus-4-8": {
       "offerId": "offer-wdkl4yk6s7uu4",
@@ -2300,12 +3516,32 @@
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APE2": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APN1": {
@@ -2326,12 +3562,32 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APN2": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APN3": {
@@ -2352,12 +3608,32 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS1": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS2": {
@@ -2378,24 +3654,64 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS3": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS4": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS5": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS6": {
@@ -2416,24 +3732,64 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS7": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS8": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS9": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "CAN1": {
@@ -2454,6 +3810,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "CAN2": {
@@ -2474,6 +3840,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUC1": {
@@ -2494,6 +3870,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUC2": {
@@ -2514,6 +3900,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUN1": {
@@ -2534,6 +3930,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUS1": {
@@ -2554,6 +3960,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUS2": {
@@ -2574,6 +3990,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUW2": {
@@ -2594,6 +4020,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUW3": {
@@ -2614,36 +4050,96 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "ILC1": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "MEC1": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "MES1": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "MXC1": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "SAE1": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "UGE1": {
@@ -2696,6 +4192,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "USE2": {
@@ -2716,6 +4222,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "USW1": {
@@ -2736,6 +4252,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "USW2": {
@@ -2756,10 +4282,20 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         }
       },
-      "outOfScope": 193
+      "outOfScope": 65
     },
     "anthropic.claude-opus-5": {
       "offerId": "offer-f3u6lgbrem3zs",
@@ -2769,12 +4305,32 @@
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APE2": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APN1": {
@@ -2795,6 +4351,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APN2": {
@@ -2815,6 +4381,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APN3": {
@@ -2835,6 +4411,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS1": {
@@ -2855,6 +4441,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS2": {
@@ -2875,6 +4471,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS3": {
@@ -2895,12 +4501,32 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS4": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS5": {
@@ -2921,6 +4547,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS6": {
@@ -2941,24 +4577,64 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS7": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS8": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "APS9": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "CAN1": {
@@ -2979,6 +4655,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "CAN2": {
@@ -2999,6 +4685,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUC1": {
@@ -3019,6 +4715,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUC2": {
@@ -3039,6 +4745,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUN1": {
@@ -3059,6 +4775,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUS1": {
@@ -3079,6 +4805,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUS2": {
@@ -3099,6 +4835,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUW2": {
@@ -3119,6 +4865,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "EUW3": {
@@ -3139,36 +4895,96 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "ILC1": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "MEC1": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "MES1": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "MXC1": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "SAE1": {
           "global": {
             "input": 5,
             "output": 25
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "UGE1": {
@@ -3221,6 +5037,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "USE2": {
@@ -3241,6 +5067,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "USW1": {
@@ -3261,6 +5097,16 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         },
         "USW2": {
@@ -3281,10 +5127,20 @@
           },
           "cacheWrite": {
             "input": 6.875
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 12.5
+          },
+          "globalCacheRead": {
+            "input": 0.5
+          },
+          "globalCacheWrite": {
+            "input": 6.25
           }
         }
       },
-      "outOfScope": 197
+      "outOfScope": 69
     },
     "anthropic.claude-opus-5-5": {
       "offerId": "offer-7sp77cpl4rveu",
@@ -3294,12 +5150,24 @@
           "global": {
             "input": 4,
             "output": 20
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "APE2": {
           "global": {
             "input": 4,
             "output": 20
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "APN1": {
@@ -3316,12 +5184,24 @@
           },
           "cacheWrite": {
             "input": 5.5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "APN2": {
           "global": {
             "input": 4,
             "output": 20
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "APN3": {
@@ -3338,12 +5218,24 @@
           },
           "cacheWrite": {
             "input": 5.5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "APS1": {
           "global": {
             "input": 4,
             "output": 20
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "APS2": {
@@ -3360,24 +5252,48 @@
           },
           "cacheWrite": {
             "input": 5.5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "APS3": {
           "global": {
             "input": 4,
             "output": 20
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "APS4": {
           "global": {
             "input": 4,
             "output": 20
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "APS5": {
           "global": {
             "input": 4,
             "output": 20
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "APS6": {
@@ -3394,24 +5310,48 @@
           },
           "cacheWrite": {
             "input": 5.5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "APS7": {
           "global": {
             "input": 4,
             "output": 20
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "APS8": {
           "global": {
             "input": 4,
             "output": 20
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "APS9": {
           "global": {
             "input": 4,
             "output": 20
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "CAN1": {
@@ -3428,6 +5368,12 @@
           },
           "cacheWrite": {
             "input": 5.5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "CAN2": {
@@ -3444,6 +5390,12 @@
           },
           "cacheWrite": {
             "input": 5.5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "EUC1": {
@@ -3460,6 +5412,12 @@
           },
           "cacheWrite": {
             "input": 5.5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "EUC2": {
@@ -3476,6 +5434,12 @@
           },
           "cacheWrite": {
             "input": 5.5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "EUN1": {
@@ -3492,6 +5456,12 @@
           },
           "cacheWrite": {
             "input": 5.5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "EUS1": {
@@ -3508,6 +5478,12 @@
           },
           "cacheWrite": {
             "input": 5.5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "EUS2": {
@@ -3524,6 +5500,12 @@
           },
           "cacheWrite": {
             "input": 5.5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "EUW2": {
@@ -3540,6 +5522,12 @@
           },
           "cacheWrite": {
             "input": 5.5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "EUW3": {
@@ -3556,36 +5544,72 @@
           },
           "cacheWrite": {
             "input": 5.5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "ILC1": {
           "global": {
             "input": 4,
             "output": 20
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "MEC1": {
           "global": {
             "input": 4,
             "output": 20
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "MES1": {
           "global": {
             "input": 4,
             "output": 20
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "MXC1": {
           "global": {
             "input": 4,
             "output": 20
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "SAE1": {
           "global": {
             "input": 4,
             "output": 20
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "UGE1": {
@@ -3626,6 +5650,12 @@
           },
           "cacheWrite": {
             "input": 5.5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "USE2": {
@@ -3642,6 +5672,12 @@
           },
           "cacheWrite": {
             "input": 5.5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "USW1": {
@@ -3658,6 +5694,12 @@
           },
           "cacheWrite": {
             "input": 5.5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         },
         "USW2": {
@@ -3674,10 +5716,16 @@
           },
           "cacheWrite": {
             "input": 5.5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 5
           }
         }
       },
-      "outOfScope": 125
+      "outOfScope": 61
     },
     "anthropic.claude-sonnet-5": {
       "offerId": "offer-2ykemehpsyf7g",
@@ -3687,12 +5735,32 @@
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APE2": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APN1": {
@@ -3713,6 +5781,16 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APN2": {
@@ -3733,6 +5811,16 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APN3": {
@@ -3753,6 +5841,16 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APS1": {
@@ -3773,6 +5871,16 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APS2": {
@@ -3793,6 +5901,16 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APS3": {
@@ -3813,12 +5931,32 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APS4": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APS5": {
@@ -3839,6 +5977,16 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APS6": {
@@ -3859,24 +6007,64 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APS7": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APS8": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APS9": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "CAN1": {
@@ -3897,6 +6085,16 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "CAN2": {
@@ -3917,6 +6115,16 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "EUC1": {
@@ -3937,6 +6145,16 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "EUC2": {
@@ -3957,6 +6175,16 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "EUN1": {
@@ -3977,6 +6205,16 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "EUS1": {
@@ -3997,6 +6235,16 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "EUS2": {
@@ -4017,6 +6265,16 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "EUW2": {
@@ -4037,6 +6295,16 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "EUW3": {
@@ -4057,36 +6325,96 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "ILC1": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "MEC1": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "MES1": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "MXC1": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "SAE1": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "UGE1": {
@@ -4139,6 +6467,16 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "USE2": {
@@ -4159,6 +6497,16 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "USW1": {
@@ -4179,6 +6527,16 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "USW2": {
@@ -4199,10 +6557,20 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalBatch": {
+            "input": 1,
+            "output": 5
+          },
+          "globalCacheRead": {
+            "input": 0.2
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         }
       },
-      "outOfScope": 197
+      "outOfScope": 69
     },
     "anthropic.claude-sonnet-5-5": {
       "offerId": "offer-5fu2rhus3byrs",
@@ -4212,12 +6580,24 @@
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APE2": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APN1": {
@@ -4234,12 +6614,24 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APN2": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APN3": {
@@ -4256,12 +6648,24 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APS1": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APS2": {
@@ -4278,24 +6682,48 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APS3": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APS4": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APS5": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APS6": {
@@ -4312,24 +6740,48 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APS7": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APS8": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "APS9": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "CAN1": {
@@ -4346,6 +6798,12 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "CAN2": {
@@ -4362,6 +6820,12 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "EUC1": {
@@ -4378,6 +6842,12 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "EUC2": {
@@ -4394,6 +6864,12 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "EUN1": {
@@ -4410,6 +6886,12 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "EUS1": {
@@ -4426,6 +6908,12 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "EUS2": {
@@ -4442,6 +6930,12 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "EUW2": {
@@ -4458,6 +6952,12 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "EUW3": {
@@ -4474,36 +6974,72 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "ILC1": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "MEC1": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "MES1": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "MXC1": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "SAE1": {
           "global": {
             "input": 2,
             "output": 10
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "UGE1": {
@@ -4544,6 +7080,12 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "USE2": {
@@ -4560,6 +7102,12 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "USW1": {
@@ -4576,6 +7124,12 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         },
         "USW2": {
@@ -4592,10 +7146,16 @@
           },
           "cacheWrite": {
             "input": 2.75
+          },
+          "globalCacheRead": {
+            "input": 0.1
+          },
+          "globalCacheWrite": {
+            "input": 2.5
           }
         }
       },
-      "outOfScope": 125
+      "outOfScope": 61
     },
     "openai.gpt-5.4": {
       "offerId": "offer-5l5a5izq5fbec",
@@ -4632,6 +7192,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "APN1": {
@@ -4665,6 +7232,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "APN2": {
@@ -4698,6 +7272,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "APN3": {
@@ -4731,6 +7312,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "APS1": {
@@ -4764,6 +7352,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "APS2": {
@@ -4797,6 +7392,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "APS3": {
@@ -4830,6 +7432,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "APS4": {
@@ -4863,6 +7472,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "APS5": {
@@ -4896,6 +7512,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "APS6": {
@@ -4929,6 +7552,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "APS7": {
@@ -4962,6 +7592,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "APS9": {
@@ -4995,6 +7632,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "CAN1": {
@@ -5028,6 +7672,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "CAN2": {
@@ -5061,6 +7712,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "EUC1": {
@@ -5094,6 +7752,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "EUC2": {
@@ -5127,6 +7792,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "EUN1": {
@@ -5160,6 +7832,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "EUS1": {
@@ -5193,6 +7872,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "EUS2": {
@@ -5226,6 +7912,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "EUW2": {
@@ -5259,6 +7952,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "EUW3": {
@@ -5292,6 +7992,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "MEC1": {
@@ -5325,6 +8032,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "MES1": {
@@ -5358,6 +8072,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "MXC1": {
@@ -5391,6 +8112,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "SAE1": {
@@ -5424,6 +8152,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "USE1": {
@@ -5457,6 +8192,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "USE2": {
@@ -5490,6 +8232,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "USW1": {
@@ -5523,6 +8272,13 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         },
         "USW2": {
@@ -5556,10 +8312,17 @@
           "flex": {
             "input": 1.375,
             "output": 8.25
+          },
+          "globalBatch": {
+            "input": 1.25,
+            "output": 7.5
+          },
+          "globalCacheRead": {
+            "input": 0.25
           }
         }
       },
-      "outOfScope": 1022
+      "outOfScope": 935
     },
     "openai.gpt-5.5": {
       "offerId": "offer-rtwlbb46hcxpw",
@@ -5596,6 +8359,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "APN1": {
@@ -5629,6 +8399,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "APN2": {
@@ -5662,6 +8439,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "APN3": {
@@ -5695,6 +8479,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "APS1": {
@@ -5728,6 +8519,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "APS2": {
@@ -5761,6 +8559,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "APS3": {
@@ -5794,6 +8599,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "APS4": {
@@ -5827,6 +8639,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "APS5": {
@@ -5860,6 +8679,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "APS6": {
@@ -5893,6 +8719,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "APS7": {
@@ -5926,6 +8759,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "APS9": {
@@ -5959,6 +8799,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "CAN1": {
@@ -5992,6 +8839,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "CAN2": {
@@ -6025,6 +8879,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "EUC1": {
@@ -6058,6 +8919,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "EUC2": {
@@ -6091,6 +8959,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "EUN1": {
@@ -6124,6 +8999,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "EUS1": {
@@ -6157,6 +9039,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "EUS2": {
@@ -6190,6 +9079,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "EUW2": {
@@ -6223,6 +9119,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "EUW3": {
@@ -6256,6 +9159,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "MEC1": {
@@ -6289,6 +9199,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "MES1": {
@@ -6322,6 +9239,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "MXC1": {
@@ -6355,6 +9279,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "SAE1": {
@@ -6388,6 +9319,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "USE1": {
@@ -6421,6 +9359,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "USE2": {
@@ -6454,6 +9399,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "USW1": {
@@ -6487,6 +9439,13 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         },
         "USW2": {
@@ -6520,10 +9479,17 @@
           "flex": {
             "input": 2.75,
             "output": 16.5
+          },
+          "globalBatch": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
-      "outOfScope": 1005
+      "outOfScope": 918
     },
     "openai.gpt-5.6-luna": {
       "offerId": "offer-bklbyf2ewuawu",
@@ -6561,10 +9527,20 @@
         "flex": {
           "input": 0.11,
           "output": 0.66
+        },
+        "globalBatch": {
+          "input": 0.1,
+          "output": 0.6
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         }
       },
       "byPrefix": {},
-      "outOfScope": 66
+      "outOfScope": 60
     },
     "openai.gpt-5.6-sol": {
       "offerId": "offer-gnqokrqqvdbgw",
@@ -6602,10 +9578,20 @@
         "flex": {
           "input": 2.2,
           "output": 11
+        },
+        "globalBatch": {
+          "input": 2,
+          "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "byPrefix": {},
-      "outOfScope": 74
+      "outOfScope": 68
     },
     "openai.gpt-5.6-terra": {
       "offerId": "offer-3dvyrx3okd4lq",
@@ -6643,10 +9629,20 @@
         "flex": {
           "input": 1.1,
           "output": 6.6
+        },
+        "globalBatch": {
+          "input": 1,
+          "output": 6
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 3.125
         }
       },
       "byPrefix": {},
-      "outOfScope": 66
+      "outOfScope": 60
     },
     "openai.gpt-6-astra": {
       "offerId": "offer-7epta7rbw5aws",
@@ -6680,10 +9676,16 @@
         "flex": {
           "input": 5.5,
           "output": 27.5
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "byPrefix": {},
-      "outOfScope": 42
+      "outOfScope": 40
     },
     "openai.gpt-6-luna": {
       "offerId": "offer-gmo53nkzc5or6",
@@ -6717,10 +9719,16 @@
         "flex": {
           "input": 0.055,
           "output": 0.275
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         }
       },
       "byPrefix": {},
-      "outOfScope": 26
+      "outOfScope": 24
     },
     "openai.gpt-6-sol": {
       "offerId": "offer-pycji3sz5gpcc",
@@ -6754,10 +9762,16 @@
         "flex": {
           "input": 1.1,
           "output": 5.5
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "byPrefix": {},
-      "outOfScope": 26
+      "outOfScope": 24
     },
     "openai.gpt-6.1-sol": {
       "offerId": "offer-wbhj4kycntgkk",
@@ -6791,10 +9805,16 @@
         "flex": {
           "input": 1.1,
           "output": 5.5
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "byPrefix": {},
-      "outOfScope": 26
+      "outOfScope": 24
     },
     "stability.stable-conservative-upscale-v1:0": {
       "offerId": "offer-o5xgl2bohfa56",

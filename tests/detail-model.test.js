@@ -241,8 +241,11 @@ describe("AC-013 レーンごとの価格", () => {
     expect(rows.find((row) => row.kind === "cacheRead").output).toBeNull();
   });
 
-  it("Global にバッチ・キャッシュが無いことを判定できる", () => {
-    expect(globalExtrasMissing(CLAUDE_45, { prices, region: TOKYO })).toBe(false);
+  it("Global にバッチ・キャッシュが無いことを判定できる (In-Region のバッチ・キャッシュは数えない)", () => {
+    // fixture の Claude は In-Region のバッチ・キャッシュだけを持つ
+    expect(globalExtrasMissing(CLAUDE_45, { prices, region: TOKYO })).toBe(true);
+    const withGlobal = { byModel: { [CLAUDE_45]: { [TOKYO]: { global: { input: 3 }, globalCacheRead: { input: 0.3 } } } } };
+    expect(globalExtrasMissing(CLAUDE_45, { prices: withGlobal, region: TOKYO })).toBe(false);
     expect(globalExtrasMissing("no-such-model", { prices, region: TOKYO })).toBe(false);
   });
 });

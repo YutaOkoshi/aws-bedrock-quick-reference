@@ -157,6 +157,9 @@ export const ja = {
       cacheWrite: "キャッシュ書き",
       priority: "優先",
       flex: "Flex",
+      globalBatch: "Global バッチ",
+      globalCacheRead: "Global キャッシュ読み",
+      globalCacheWrite: "Global キャッシュ書き",
     },
   },
   // FEATURE-001: 機能 (Capabilities and Features)。機能名そのものは docs の英語名のまま出すので辞書に置かない。

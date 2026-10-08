@@ -28,7 +28,10 @@ describe("parseDimension: rateCard の dimension を種別と軸にする", () =
     expect(parseDimension("cache_read_tokens_standard")).toMatchObject({ kind: "cacheRead", axis: "input" });
     expect(parseDimension("cache_writes_tokens_standard")).toMatchObject({ kind: "cacheWrite", axis: "input" });
     expect(parseDimension("cache_write_tokens_30m_standard")).toMatchObject({ kind: "cacheWrite", axis: "input" });
-    expect(parseDimension("input_tokens_global_batch")).toBeNull();
+    expect(parseDimension("input_tokens_global_batch")).toMatchObject({ kind: "globalBatch", axis: "input" });
+    expect(parseDimension("cached_input_tokens_global_standard")).toMatchObject({ kind: "globalCacheRead", axis: "input" });
+    expect(parseDimension("cache_writes_tokens_global_standard")).toMatchObject({ kind: "globalCacheWrite", axis: "input" });
+    expect(parseDimension("input_tokens_global_priority")).toBeNull();
     expect(parseDimension("cached_input_tokens_flex")).toBeNull();
   });
 
@@ -106,9 +109,9 @@ describe("normalizeMarketplaceOffers: offer ごとの rateCard を models.json �
     const { byModel } = normalizeMarketplaceOffers(raw, models);
     expect(byModel["openai.gpt-5.6-terra"]).toEqual({
       offerId: "offer-terra",
-      kinds: { standard: { input: 2.2, output: 13.2, longContext: { input: 4.4 } }, global: { input: 2, output: 12 } },
+      kinds: { standard: { input: 2.2, output: 13.2, longContext: { input: 4.4 } }, global: { input: 2, output: 12 }, globalBatch: { input: 1 } },
       byPrefix: {},
-      outOfScope: 2,
+      outOfScope: 1,
     });
     expect(byModel["openai.gpt-5.4"]).toEqual({
       offerId: "offer-54",

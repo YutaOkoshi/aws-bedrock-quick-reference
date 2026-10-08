@@ -159,8 +159,13 @@ describe("AC-004 USD / 100 万トークンに揃える", () => {
     expect(kindOf("input", { flex: true })).toBe("flex");
     expect(kindOf("cacheRead", {})).toBe("cacheRead");
     // Global と batch / flex / priority の組み合わせは v1 の範囲外
-    expect(kindOf("input", { global: true, batch: true })).toBeNull();
-    expect(kindOf("cacheRead", { global: true })).toBeNull();
+    // Global のバッチ・キャッシュは別の種別として持つ。Global と priority / flex の組み合わせは範囲外
+    expect(kindOf("input", { global: true, batch: true })).toBe("globalBatch");
+    expect(kindOf("cacheRead", { global: true })).toBe("globalCacheRead");
+    expect(kindOf("cacheWrite", { global: true })).toBe("globalCacheWrite");
+    expect(kindOf("cacheRead", { global: true, batch: true })).toBeNull();
+    expect(kindOf("input", { global: true, priority: true })).toBeNull();
+    expect(kindOf("input", { global: true, flex: true })).toBeNull();
     expect(kindOf(null, {})).toBeNull();
   });
 

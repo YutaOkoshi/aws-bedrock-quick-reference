@@ -25,7 +25,7 @@ export const LANE_ORDER = Object.freeze([LANE_IN_REGION, LANE_GEO, LANE_GLOBAL])
 const LANE_PRICE_KINDS = Object.freeze({
   [LANE_IN_REGION]: Object.freeze(["standard", "batch", "cacheRead", "cacheWrite", "priority", "flex"]),
   [LANE_GEO]: Object.freeze(["standard", "batch", "cacheRead", "cacheWrite", "priority", "flex"]),
-  [LANE_GLOBAL]: Object.freeze(["global"]),
+  [LANE_GLOBAL]: Object.freeze(["global", "globalBatch", "globalCacheRead", "globalCacheWrite"]),
 });
 
 /**
@@ -46,7 +46,7 @@ export function buildPriceRows(modelId, { prices, region, lane = LANE_IN_REGION 
 }
 
 // bedrock-mantle の単価の種別。Runtime とは別の SKU で、値も別に決まる。レーンには依らない。
-const MANTLE_PRICE_KINDS = Object.freeze(["standard", "global", "batch", "cacheRead", "cacheWrite", "priority", "flex"]);
+const MANTLE_PRICE_KINDS = Object.freeze(["standard", "global", "batch", "cacheRead", "cacheWrite", "priority", "flex", "globalBatch", "globalCacheRead", "globalCacheWrite"]);
 
 /**
  * 起点 R のモデル M の bedrock-mantle の単価を行にする。Runtime の単価は含めない。
@@ -82,7 +82,7 @@ function tokenRows(entry, kinds) {
 export function globalExtrasMissing(modelId, { prices, region } = {}) {
   const entry = priceFor(prices, modelId, region);
   if (!entry) return false;
-  return ["batch", "cacheRead", "cacheWrite"].every((kind) => entry[kind] == null);
+  return ["globalBatch", "globalCacheRead", "globalCacheWrite"].every((kind) => entry[kind] == null);
 }
 
 /**

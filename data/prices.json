@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T04:04:56.335Z",
+  "generatedAt": "2026-10-08T04:36:31.550Z",
   "publicationDate": "2026-10-07T18:37:33Z",
   "source": {
     "index": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/index.json",
@@ -9,8 +9,8 @@
     }
   },
   "unmapped": 0,
-  "outOfScope": 4593,
-  "ignored": 541,
+  "outOfScope": 3655,
+  "ignored": 633,
   "byModel": {
     "ai21.jamba-1-5-large-v1:0": {
       "eu-central-1": {
@@ -93,30 +93,80 @@
         "flex": {
           "input": 0.198,
           "output": 1.6555
+        },
+        "globalBatch": {
+          "input": 0.18,
+          "output": 1.505
+        },
+        "globalCacheRead": {
+          "input": 0.09
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "ap-northeast-2": {
         "global": {
           "input": 0.36,
           "output": 2.96
+        },
+        "globalBatch": {
+          "input": 0.18,
+          "output": 1.48
+        },
+        "globalCacheRead": {
+          "input": 0.09
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "ap-south-1": {
         "global": {
           "input": 0.35,
           "output": 2.95
+        },
+        "globalBatch": {
+          "input": 0.175,
+          "output": 1.475
+        },
+        "globalCacheRead": {
+          "input": 0.0875
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "ap-southeast-1": {
         "global": {
           "input": 0.41,
           "output": 3.39
+        },
+        "globalBatch": {
+          "input": 0.205,
+          "output": 1.695
+        },
+        "globalCacheRead": {
+          "input": 0.1025
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "ap-southeast-2": {
         "global": {
           "input": 0.32,
           "output": 2.63
+        },
+        "globalBatch": {
+          "input": 0.16,
+          "output": 1.315
+        },
+        "globalCacheRead": {
+          "input": 0.08
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "ca-central-1": {
@@ -145,6 +195,16 @@
         "flex": {
           "input": 0.176,
           "output": 1.485
+        },
+        "globalBatch": {
+          "input": 0.16,
+          "output": 1.335
+        },
+        "globalCacheRead": {
+          "input": 0.08
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "eu-central-1": {
@@ -173,6 +233,16 @@
         "flex": {
           "input": 0.2145,
           "output": 1.7985
+        },
+        "globalBatch": {
+          "input": 0.195,
+          "output": 1.635
+        },
+        "globalCacheRead": {
+          "input": 0.0975
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "eu-north-1": {
@@ -201,6 +271,16 @@
         "flex": {
           "input": 0.1815,
           "output": 1.496
+        },
+        "globalBatch": {
+          "input": 0.195,
+          "output": 1.36
+        },
+        "globalCacheRead": {
+          "input": 0.0825
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "eu-west-1": {
@@ -229,12 +309,32 @@
         "flex": {
           "input": 0.187,
           "output": 1.5785
+        },
+        "globalBatch": {
+          "input": 0.17,
+          "output": 1.435
+        },
+        "globalCacheRead": {
+          "input": 0.085
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "eu-west-2": {
         "global": {
           "input": 0.42,
           "output": 3.52
+        },
+        "globalBatch": {
+          "input": 0.21,
+          "output": 1.76
+        },
+        "globalCacheRead": {
+          "input": 0.105
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "eu-west-3": {
@@ -263,6 +363,16 @@
         "flex": {
           "input": 0.242,
           "output": 2.0295
+        },
+        "globalBatch": {
+          "input": 0.22,
+          "output": 1.845
+        },
+        "globalCacheRead": {
+          "input": 0.11
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "us-east-1": {
@@ -291,6 +401,16 @@
         "flex": {
           "input": 0.165,
           "output": 1.375
+        },
+        "globalBatch": {
+          "input": 0.15,
+          "output": 1.25
+        },
+        "globalCacheRead": {
+          "input": 0.075
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "us-east-2": {
@@ -319,6 +439,16 @@
         "flex": {
           "input": 0.165,
           "output": 1.375
+        },
+        "globalBatch": {
+          "input": 0.15,
+          "output": 1.25
+        },
+        "globalCacheRead": {
+          "input": 0.075
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "us-west-1": {
@@ -347,6 +477,16 @@
         "flex": {
           "input": 0.2145,
           "output": 1.6755
+        },
+        "globalBatch": {
+          "input": 0.195,
+          "output": 1.605
+        },
+        "globalCacheRead": {
+          "input": 0.0975
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "us-west-2": {
@@ -375,6 +515,16 @@
         "flex": {
           "input": 0.165,
           "output": 1.375
+        },
+        "globalBatch": {
+          "input": 0.15,
+          "output": 1.25
+        },
+        "globalCacheRead": {
+          "input": 0.075
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       }
     },
@@ -405,30 +555,80 @@
         "flex": {
           "input": 0.198,
           "output": 1.6555
+        },
+        "globalBatch": {
+          "input": 0.18,
+          "output": 1.505
+        },
+        "globalCacheRead": {
+          "input": 0.09
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "ap-northeast-2": {
         "global": {
           "input": 0.36,
           "output": 2.96
+        },
+        "globalBatch": {
+          "input": 0.18,
+          "output": 1.48
+        },
+        "globalCacheRead": {
+          "input": 0.09
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "ap-south-1": {
         "global": {
           "input": 0.35,
           "output": 2.95
+        },
+        "globalBatch": {
+          "input": 0.175,
+          "output": 1.475
+        },
+        "globalCacheRead": {
+          "input": 0.0875
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "ap-southeast-1": {
         "global": {
           "input": 0.41,
           "output": 3.39
+        },
+        "globalBatch": {
+          "input": 0.205,
+          "output": 1.695
+        },
+        "globalCacheRead": {
+          "input": 0.1025
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "ap-southeast-2": {
         "global": {
           "input": 0.32,
           "output": 2.63
+        },
+        "globalBatch": {
+          "input": 0.16,
+          "output": 1.315
+        },
+        "globalCacheRead": {
+          "input": 0.08
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "ca-central-1": {
@@ -457,6 +657,16 @@
         "flex": {
           "input": 0.176,
           "output": 1.485
+        },
+        "globalBatch": {
+          "input": 0.16,
+          "output": 1.335
+        },
+        "globalCacheRead": {
+          "input": 0.08
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "eu-central-1": {
@@ -485,6 +695,16 @@
         "flex": {
           "input": 0.2145,
           "output": 1.7985
+        },
+        "globalBatch": {
+          "input": 0.195,
+          "output": 1.635
+        },
+        "globalCacheRead": {
+          "input": 0.0975
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "eu-north-1": {
@@ -513,6 +733,16 @@
         "flex": {
           "input": 0.1815,
           "output": 1.496
+        },
+        "globalBatch": {
+          "input": 0.195,
+          "output": 1.36
+        },
+        "globalCacheRead": {
+          "input": 0.0825
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "eu-west-1": {
@@ -541,12 +771,32 @@
         "flex": {
           "input": 0.187,
           "output": 1.5785
+        },
+        "globalBatch": {
+          "input": 0.17,
+          "output": 1.435
+        },
+        "globalCacheRead": {
+          "input": 0.085
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "eu-west-2": {
         "global": {
           "input": 0.42,
           "output": 3.52
+        },
+        "globalBatch": {
+          "input": 0.21,
+          "output": 1.76
+        },
+        "globalCacheRead": {
+          "input": 0.105
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "eu-west-3": {
@@ -575,6 +825,16 @@
         "flex": {
           "input": 0.242,
           "output": 2.0295
+        },
+        "globalBatch": {
+          "input": 0.22,
+          "output": 1.845
+        },
+        "globalCacheRead": {
+          "input": 0.11
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "us-east-1": {
@@ -603,6 +863,16 @@
         "flex": {
           "input": 0.165,
           "output": 1.375
+        },
+        "globalBatch": {
+          "input": 0.15,
+          "output": 1.25
+        },
+        "globalCacheRead": {
+          "input": 0.075
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "us-east-2": {
@@ -631,6 +901,16 @@
         "flex": {
           "input": 0.165,
           "output": 1.375
+        },
+        "globalBatch": {
+          "input": 0.15,
+          "output": 1.25
+        },
+        "globalCacheRead": {
+          "input": 0.075
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "us-west-1": {
@@ -659,6 +939,16 @@
         "flex": {
           "input": 0.2145,
           "output": 1.6755
+        },
+        "globalBatch": {
+          "input": 0.195,
+          "output": 1.605
+        },
+        "globalCacheRead": {
+          "input": 0.0975
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       },
       "us-west-2": {
@@ -687,6 +977,16 @@
         "flex": {
           "input": 0.165,
           "output": 1.375
+        },
+        "globalBatch": {
+          "input": 0.15,
+          "output": 1.25
+        },
+        "globalCacheRead": {
+          "input": 0.075
+        },
+        "globalCacheWrite": {
+          "input": 0
         }
       }
     },
@@ -4708,30 +5008,60 @@
         "global": {
           "input": 10,
           "output": 50
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "ap-northeast-2": {
         "global": {
           "input": 10,
           "output": 50
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "ap-northeast-3": {
         "global": {
           "input": 10,
           "output": 50
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "ap-south-1": {
         "global": {
           "input": 10,
           "output": 50
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "ap-southeast-1": {
         "global": {
           "input": 10,
           "output": 50
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "ap-southeast-2": {
@@ -4748,6 +5078,12 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "ca-central-1": {
@@ -4764,6 +5100,12 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "eu-central-1": {
@@ -4780,6 +5122,12 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "eu-north-1": {
@@ -4796,6 +5144,12 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "eu-west-1": {
@@ -4812,6 +5166,12 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "eu-west-2": {
@@ -4828,6 +5188,12 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "eu-west-3": {
@@ -4844,12 +5210,24 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "sa-east-1": {
         "global": {
           "input": 10,
           "output": 50
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "us-east-1": {
@@ -4866,6 +5244,12 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "us-east-2": {
@@ -4882,6 +5266,12 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "us-west-1": {
@@ -4898,6 +5288,12 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "us-west-2": {
@@ -4914,6 +5310,12 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       }
     },
@@ -4922,36 +5324,72 @@
         "global": {
           "input": 10,
           "output": 50
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "ap-northeast-2": {
         "global": {
           "input": 10,
           "output": 50
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "ap-northeast-3": {
         "global": {
           "input": 10,
           "output": 50
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "ap-south-1": {
         "global": {
           "input": 10,
           "output": 50
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "ap-southeast-1": {
         "global": {
           "input": 10,
           "output": 50
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "ap-southeast-2": {
         "global": {
           "input": 10,
           "output": 50
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "ca-central-1": {
@@ -4968,42 +5406,84 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "eu-central-1": {
         "global": {
           "input": 10,
           "output": 50
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "eu-north-1": {
         "global": {
           "input": 10,
           "output": 50
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "eu-west-1": {
         "global": {
           "input": 10,
           "output": 50
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "eu-west-2": {
         "global": {
           "input": 10,
           "output": 50
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "eu-west-3": {
         "global": {
           "input": 10,
           "output": 50
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "sa-east-1": {
         "global": {
           "input": 10,
           "output": 50
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "us-east-1": {
@@ -5020,6 +5500,12 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "us-east-2": {
@@ -5036,6 +5522,12 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "us-west-1": {
@@ -5052,6 +5544,12 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "us-west-2": {
@@ -5068,6 +5566,12 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       }
     },
@@ -5090,12 +5594,32 @@
         },
         "cacheWrite": {
           "input": 1.375
+        },
+        "globalBatch": {
+          "input": 0.5,
+          "output": 2.5
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         }
       },
       "ap-northeast-2": {
         "global": {
           "input": 1,
           "output": 5
+        },
+        "globalBatch": {
+          "input": 0.5,
+          "output": 2.5
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         }
       },
       "ap-northeast-3": {
@@ -5116,6 +5640,16 @@
         },
         "cacheWrite": {
           "input": 1.375
+        },
+        "globalBatch": {
+          "input": 0.5,
+          "output": 2.5
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         }
       },
       "ap-south-1": {
@@ -5136,12 +5670,32 @@
         },
         "cacheWrite": {
           "input": 1.375
+        },
+        "globalBatch": {
+          "input": 0.5,
+          "output": 2.5
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         }
       },
       "ap-southeast-1": {
         "global": {
           "input": 1,
           "output": 5
+        },
+        "globalBatch": {
+          "input": 0.5,
+          "output": 2.5
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         }
       },
       "ap-southeast-2": {
@@ -5162,6 +5716,16 @@
         },
         "cacheWrite": {
           "input": 1.375
+        },
+        "globalBatch": {
+          "input": 0.5,
+          "output": 2.5
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         }
       },
       "ca-central-1": {
@@ -5182,6 +5746,16 @@
         },
         "cacheWrite": {
           "input": 1.375
+        },
+        "globalBatch": {
+          "input": 0.5,
+          "output": 2.5
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         }
       },
       "eu-central-1": {
@@ -5202,6 +5776,16 @@
         },
         "cacheWrite": {
           "input": 1.375
+        },
+        "globalBatch": {
+          "input": 0.5,
+          "output": 2.5
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         }
       },
       "eu-north-1": {
@@ -5222,6 +5806,16 @@
         },
         "cacheWrite": {
           "input": 1.375
+        },
+        "globalBatch": {
+          "input": 0.5,
+          "output": 2.5
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         }
       },
       "eu-west-1": {
@@ -5242,6 +5836,16 @@
         },
         "cacheWrite": {
           "input": 1.375
+        },
+        "globalBatch": {
+          "input": 0.5,
+          "output": 2.5
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         }
       },
       "eu-west-2": {
@@ -5262,6 +5866,16 @@
         },
         "cacheWrite": {
           "input": 1.375
+        },
+        "globalBatch": {
+          "input": 0.5,
+          "output": 2.5
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         }
       },
       "eu-west-3": {
@@ -5282,12 +5896,32 @@
         },
         "cacheWrite": {
           "input": 1.375
+        },
+        "globalBatch": {
+          "input": 0.5,
+          "output": 2.5
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         }
       },
       "sa-east-1": {
         "global": {
           "input": 1,
           "output": 5
+        },
+        "globalBatch": {
+          "input": 0.5,
+          "output": 2.5
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         }
       },
       "us-east-1": {
@@ -5308,6 +5942,16 @@
         },
         "cacheWrite": {
           "input": 1.375
+        },
+        "globalBatch": {
+          "input": 0.5,
+          "output": 2.5
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         }
       },
       "us-east-2": {
@@ -5328,6 +5972,16 @@
         },
         "cacheWrite": {
           "input": 1.375
+        },
+        "globalBatch": {
+          "input": 0.5,
+          "output": 2.5
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         }
       },
       "us-west-1": {
@@ -5348,6 +6002,16 @@
         },
         "cacheWrite": {
           "input": 1.375
+        },
+        "globalBatch": {
+          "input": 0.5,
+          "output": 2.5
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         }
       },
       "us-west-2": {
@@ -5368,6 +6032,16 @@
         },
         "cacheWrite": {
           "input": 1.375
+        },
+        "globalBatch": {
+          "input": 0.5,
+          "output": 2.5
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         }
       }
     },
@@ -5394,6 +6068,12 @@
         },
         "cacheWrite": {
           "input": 0.1375
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         }
       },
       "ap-northeast-2": {
@@ -5404,6 +6084,12 @@
             "input": 0.5,
             "output": 2.5
           }
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         }
       },
       "ap-northeast-3": {
@@ -5428,6 +6114,12 @@
         },
         "cacheWrite": {
           "input": 0.1375
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         }
       },
       "ap-south-1": {
@@ -5438,6 +6130,12 @@
             "input": 0.5,
             "output": 2.5
           }
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         }
       },
       "ap-southeast-1": {
@@ -5448,6 +6146,12 @@
             "input": 0.5,
             "output": 2.5
           }
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         }
       },
       "ap-southeast-2": {
@@ -5472,6 +6176,12 @@
         },
         "cacheWrite": {
           "input": 0.1375
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         }
       },
       "ca-central-1": {
@@ -5496,6 +6206,12 @@
         },
         "cacheWrite": {
           "input": 0.1375
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         }
       },
       "eu-central-1": {
@@ -5520,6 +6236,12 @@
         },
         "cacheWrite": {
           "input": 0.1375
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         }
       },
       "eu-north-1": {
@@ -5544,6 +6266,12 @@
         },
         "cacheWrite": {
           "input": 0.1375
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         }
       },
       "eu-west-1": {
@@ -5568,6 +6296,12 @@
         },
         "cacheWrite": {
           "input": 0.1375
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         }
       },
       "eu-west-2": {
@@ -5592,6 +6326,12 @@
         },
         "cacheWrite": {
           "input": 0.1375
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         }
       },
       "eu-west-3": {
@@ -5616,6 +6356,12 @@
         },
         "cacheWrite": {
           "input": 0.1375
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         }
       },
       "sa-east-1": {
@@ -5626,6 +6372,12 @@
             "input": 0.5,
             "output": 2.5
           }
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         }
       },
       "us-east-1": {
@@ -5650,6 +6402,12 @@
         },
         "cacheWrite": {
           "input": 0.1375
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         }
       },
       "us-east-2": {
@@ -5674,6 +6432,12 @@
         },
         "cacheWrite": {
           "input": 0.1375
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         }
       },
       "us-west-1": {
@@ -5698,6 +6462,12 @@
         },
         "cacheWrite": {
           "input": 0.1375
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         }
       },
       "us-west-2": {
@@ -5722,6 +6492,12 @@
         },
         "cacheWrite": {
           "input": 0.1375
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         }
       }
     },
@@ -5768,18 +6544,48 @@
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-south-1": {
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-southeast-1": {
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ca-central-1": {
@@ -5800,6 +6606,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-central-1": {
@@ -5820,6 +6636,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-north-1": {
@@ -5840,6 +6666,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-west-1": {
@@ -5860,12 +6696,32 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-west-2": {
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-west-3": {
@@ -5886,12 +6742,32 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "sa-east-1": {
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "us-east-1": {
@@ -5912,6 +6788,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "us-east-2": {
@@ -5932,6 +6818,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "us-west-1": {
@@ -5952,6 +6848,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "us-west-2": {
@@ -5972,6 +6878,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       }
     },
@@ -5980,30 +6896,80 @@
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-northeast-2": {
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-northeast-3": {
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-south-1": {
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-southeast-1": {
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-southeast-2": {
@@ -6024,6 +6990,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ca-central-1": {
@@ -6044,6 +7020,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-central-1": {
@@ -6064,6 +7050,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-north-1": {
@@ -6084,6 +7080,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-west-1": {
@@ -6104,6 +7110,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-west-2": {
@@ -6124,6 +7140,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-west-3": {
@@ -6144,12 +7170,32 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "sa-east-1": {
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "us-east-1": {
@@ -6170,6 +7216,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "us-east-2": {
@@ -6190,6 +7246,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "us-west-1": {
@@ -6210,6 +7276,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "us-west-2": {
@@ -6230,6 +7306,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       }
     },
@@ -6248,12 +7334,24 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-northeast-2": {
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-northeast-3": {
@@ -6270,18 +7368,36 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-south-1": {
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-southeast-1": {
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-southeast-2": {
@@ -6298,6 +7414,12 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ca-central-1": {
@@ -6314,6 +7436,12 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-central-1": {
@@ -6330,6 +7458,12 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-north-1": {
@@ -6346,6 +7480,12 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-west-1": {
@@ -6362,6 +7502,12 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-west-2": {
@@ -6378,6 +7524,12 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-west-3": {
@@ -6394,12 +7546,24 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "sa-east-1": {
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "us-east-1": {
@@ -6416,6 +7580,12 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "us-east-2": {
@@ -6432,6 +7602,12 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "us-west-1": {
@@ -6448,6 +7624,12 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "us-west-2": {
@@ -6464,6 +7646,12 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       }
     },
@@ -6482,12 +7670,24 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-northeast-2": {
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-northeast-3": {
@@ -6504,18 +7704,36 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-south-1": {
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-southeast-1": {
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-southeast-2": {
@@ -6532,6 +7750,12 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ca-central-1": {
@@ -6548,6 +7772,12 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-central-1": {
@@ -6564,6 +7794,12 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-north-1": {
@@ -6580,6 +7816,12 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-west-1": {
@@ -6596,6 +7838,12 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-west-2": {
@@ -6612,6 +7860,12 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-west-3": {
@@ -6628,12 +7882,24 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "sa-east-1": {
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "us-east-1": {
@@ -6650,6 +7916,12 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "us-east-2": {
@@ -6666,6 +7938,12 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "us-west-1": {
@@ -6682,6 +7960,12 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "us-west-2": {
@@ -6698,6 +7982,12 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       }
     },
@@ -6720,6 +8010,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-northeast-2": {
@@ -6740,6 +8040,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-northeast-3": {
@@ -6760,6 +8070,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-south-1": {
@@ -6780,12 +8100,32 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-southeast-1": {
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ap-southeast-2": {
@@ -6806,6 +8146,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "ca-central-1": {
@@ -6826,6 +8176,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-central-1": {
@@ -6846,6 +8206,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-north-1": {
@@ -6866,6 +8236,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-west-1": {
@@ -6886,6 +8266,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-west-2": {
@@ -6906,6 +8296,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "eu-west-3": {
@@ -6926,12 +8326,32 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "sa-east-1": {
         "global": {
           "input": 5,
           "output": 25
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "us-east-1": {
@@ -6952,6 +8372,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "us-east-2": {
@@ -6972,6 +8402,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "us-west-1": {
@@ -6992,6 +8432,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       },
       "us-west-2": {
@@ -7012,6 +8462,16 @@
         },
         "cacheWrite": {
           "input": 6.875
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 12.5
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         }
       }
     },
@@ -7030,12 +8490,24 @@
         },
         "cacheWrite": {
           "input": 5.5
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 5
         }
       },
       "ap-northeast-2": {
         "global": {
           "input": 4,
           "output": 20
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 5
         }
       },
       "ap-northeast-3": {
@@ -7052,18 +8524,36 @@
         },
         "cacheWrite": {
           "input": 5.5
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 5
         }
       },
       "ap-south-1": {
         "global": {
           "input": 4,
           "output": 20
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 5
         }
       },
       "ap-southeast-1": {
         "global": {
           "input": 4,
           "output": 20
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 5
         }
       },
       "ap-southeast-2": {
@@ -7080,6 +8570,12 @@
         },
         "cacheWrite": {
           "input": 5.5
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 5
         }
       },
       "ca-central-1": {
@@ -7096,6 +8592,12 @@
         },
         "cacheWrite": {
           "input": 5.5
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 5
         }
       },
       "eu-central-1": {
@@ -7112,6 +8614,12 @@
         },
         "cacheWrite": {
           "input": 5.5
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 5
         }
       },
       "eu-north-1": {
@@ -7128,6 +8636,12 @@
         },
         "cacheWrite": {
           "input": 5.5
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 5
         }
       },
       "eu-west-1": {
@@ -7144,6 +8658,12 @@
         },
         "cacheWrite": {
           "input": 5.5
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 5
         }
       },
       "eu-west-2": {
@@ -7160,6 +8680,12 @@
         },
         "cacheWrite": {
           "input": 5.5
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 5
         }
       },
       "eu-west-3": {
@@ -7176,12 +8702,24 @@
         },
         "cacheWrite": {
           "input": 5.5
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 5
         }
       },
       "sa-east-1": {
         "global": {
           "input": 4,
           "output": 20
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 5
         }
       },
       "us-east-1": {
@@ -7198,6 +8736,12 @@
         },
         "cacheWrite": {
           "input": 5.5
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 5
         }
       },
       "us-east-2": {
@@ -7214,6 +8758,12 @@
         },
         "cacheWrite": {
           "input": 5.5
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 5
         }
       },
       "us-west-1": {
@@ -7230,6 +8780,12 @@
         },
         "cacheWrite": {
           "input": 5.5
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 5
         }
       },
       "us-west-2": {
@@ -7246,6 +8802,12 @@
         },
         "cacheWrite": {
           "input": 5.5
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 5
         }
       }
     },
@@ -7268,6 +8830,16 @@
         },
         "cacheWrite": {
           "input": 3.75
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "ap-northeast-2": {
@@ -7384,6 +8956,16 @@
         },
         "cacheWrite": {
           "input": 3.75
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "eu-west-3": {
@@ -7416,6 +8998,16 @@
         },
         "cacheWrite": {
           "input": 3.75
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "us-east-2": {
@@ -7435,6 +9027,16 @@
           "input": 0.3
         },
         "cacheWrite": {
+          "input": 3.75
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
           "input": 3.75
         }
       },
@@ -7471,6 +9073,16 @@
           "input": 0.3
         },
         "cacheWrite": {
+          "input": 3.75
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
           "input": 3.75
         }
       }
@@ -7494,6 +9106,16 @@
         },
         "cacheWrite": {
           "input": 3.75
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "ap-northeast-2": {
@@ -7610,6 +9232,16 @@
         },
         "cacheWrite": {
           "input": 3.75
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "eu-west-3": {
@@ -7642,6 +9274,16 @@
         },
         "cacheWrite": {
           "input": 3.75
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "us-east-2": {
@@ -7661,6 +9303,16 @@
           "input": 0.3
         },
         "cacheWrite": {
+          "input": 3.75
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
           "input": 3.75
         }
       },
@@ -7697,6 +9349,16 @@
           "input": 0.3
         },
         "cacheWrite": {
+          "input": 3.75
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
           "input": 3.75
         }
       }
@@ -7720,6 +9382,16 @@
         },
         "cacheWrite": {
           "input": 3.75
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "ap-northeast-2": {
@@ -7836,6 +9508,16 @@
         },
         "cacheWrite": {
           "input": 3.75
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "eu-west-3": {
@@ -7868,6 +9550,16 @@
         },
         "cacheWrite": {
           "input": 3.75
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "us-east-2": {
@@ -7887,6 +9579,16 @@
           "input": 0.3
         },
         "cacheWrite": {
+          "input": 3.75
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
           "input": 3.75
         }
       },
@@ -7923,6 +9625,16 @@
           "input": 0.3
         },
         "cacheWrite": {
+          "input": 3.75
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
           "input": 3.75
         }
       }
@@ -7946,12 +9658,32 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "ap-northeast-2": {
         "global": {
           "input": 3,
           "output": 15
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "ap-northeast-3": {
@@ -7972,18 +9704,48 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "ap-south-1": {
         "global": {
           "input": 3,
           "output": 15
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "ap-southeast-1": {
         "global": {
           "input": 3,
           "output": 15
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "ap-southeast-2": {
@@ -8004,6 +9766,16 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "ca-central-1": {
@@ -8024,6 +9796,16 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "eu-central-1": {
@@ -8044,6 +9826,16 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "eu-north-1": {
@@ -8064,6 +9856,16 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "eu-west-1": {
@@ -8084,6 +9886,16 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "eu-west-2": {
@@ -8104,6 +9916,16 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "eu-west-3": {
@@ -8124,12 +9946,32 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "sa-east-1": {
         "global": {
           "input": 3,
           "output": 15
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "us-east-1": {
@@ -8150,6 +9992,16 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "us-east-2": {
@@ -8170,6 +10022,16 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "us-west-1": {
@@ -8190,6 +10052,16 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "us-west-2": {
@@ -8210,6 +10082,16 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       }
     },
@@ -8232,12 +10114,32 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "ap-northeast-2": {
         "global": {
           "input": 3,
           "output": 15
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "ap-northeast-3": {
@@ -8258,18 +10160,48 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "ap-south-1": {
         "global": {
           "input": 3,
           "output": 15
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "ap-southeast-1": {
         "global": {
           "input": 3,
           "output": 15
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "ap-southeast-2": {
@@ -8290,6 +10222,16 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "ca-central-1": {
@@ -8310,6 +10252,16 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "eu-central-1": {
@@ -8330,6 +10282,16 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "eu-north-1": {
@@ -8350,6 +10312,16 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "eu-west-1": {
@@ -8370,6 +10342,16 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "eu-west-2": {
@@ -8390,6 +10372,16 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "eu-west-3": {
@@ -8410,12 +10402,32 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "sa-east-1": {
         "global": {
           "input": 3,
           "output": 15
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "us-east-1": {
@@ -8436,6 +10448,16 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "us-east-2": {
@@ -8456,6 +10478,16 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "us-west-1": {
@@ -8476,6 +10508,16 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       },
       "us-west-2": {
@@ -8496,6 +10538,16 @@
         },
         "cacheWrite": {
           "input": 4.125
+        },
+        "globalBatch": {
+          "input": 1.5,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.3
+        },
+        "globalCacheWrite": {
+          "input": 3.75
         }
       }
     },
@@ -8514,6 +10566,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "ap-northeast-2": {
@@ -8530,6 +10588,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "ap-northeast-3": {
@@ -8546,6 +10610,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "ap-south-1": {
@@ -8562,6 +10632,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "ap-southeast-1": {
@@ -8578,6 +10654,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "ap-southeast-2": {
@@ -8594,6 +10676,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "ca-central-1": {
@@ -8610,6 +10698,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "eu-central-1": {
@@ -8626,6 +10720,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "eu-north-1": {
@@ -8642,6 +10742,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "eu-west-1": {
@@ -8658,6 +10764,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "eu-west-2": {
@@ -8674,6 +10786,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "eu-west-3": {
@@ -8690,12 +10808,24 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "sa-east-1": {
         "global": {
           "input": 2,
           "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "us-east-1": {
@@ -8712,6 +10842,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "us-east-2": {
@@ -8728,6 +10864,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "us-west-1": {
@@ -8744,6 +10886,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "us-west-2": {
@@ -8760,6 +10908,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       }
     },
@@ -8768,18 +10922,36 @@
         "global": {
           "input": 2,
           "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "ap-south-1": {
         "global": {
           "input": 2,
           "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "ap-southeast-1": {
         "global": {
           "input": 2,
           "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "ap-southeast-2": {
@@ -8796,6 +10968,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "ca-central-1": {
@@ -8812,6 +10990,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "eu-central-1": {
@@ -8828,6 +11012,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "eu-north-1": {
@@ -8844,6 +11034,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "eu-west-1": {
@@ -8860,6 +11056,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "eu-west-2": {
@@ -8876,6 +11078,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "eu-west-3": {
@@ -8892,12 +11100,24 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "sa-east-1": {
         "global": {
           "input": 2,
           "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "us-east-1": {
@@ -8914,6 +11134,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "us-east-2": {
@@ -8930,6 +11156,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "us-west-1": {
@@ -8946,6 +11178,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       },
       "us-west-2": {
@@ -8962,6 +11200,12 @@
         },
         "cacheWrite": {
           "input": 2.75
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         }
       }
     },
@@ -17057,6 +19301,12 @@
           "flex": {
             "input": 1.65,
             "output": 8.25
+          },
+          "globalCacheRead": {
+            "input": 0.3
+          },
+          "globalCacheWrite": {
+            "input": 3.75
           }
         }
       },
@@ -17087,6 +19337,12 @@
           "flex": {
             "input": 1.65,
             "output": 8.25
+          },
+          "globalCacheRead": {
+            "input": 0.3
+          },
+          "globalCacheWrite": {
+            "input": 3.75
           }
         }
       },
@@ -17117,6 +19373,12 @@
           "flex": {
             "input": 1.65,
             "output": 8.25
+          },
+          "globalCacheRead": {
+            "input": 0.3
+          },
+          "globalCacheWrite": {
+            "input": 3.75
           }
         }
       },
@@ -17147,6 +19409,12 @@
           "flex": {
             "input": 1.65,
             "output": 8.25
+          },
+          "globalCacheRead": {
+            "input": 0.3
+          },
+          "globalCacheWrite": {
+            "input": 3.75
           }
         }
       },
@@ -17177,6 +19445,12 @@
           "flex": {
             "input": 1.65,
             "output": 8.25
+          },
+          "globalCacheRead": {
+            "input": 0.3
+          },
+          "globalCacheWrite": {
+            "input": 3.75
           }
         }
       },
@@ -17207,6 +19481,12 @@
           "flex": {
             "input": 1.65,
             "output": 8.25
+          },
+          "globalCacheRead": {
+            "input": 0.3
+          },
+          "globalCacheWrite": {
+            "input": 3.75
           }
         }
       },
@@ -17237,6 +19517,12 @@
           "flex": {
             "input": 1.65,
             "output": 8.25
+          },
+          "globalCacheRead": {
+            "input": 0.3
+          },
+          "globalCacheWrite": {
+            "input": 3.75
           }
         }
       },
@@ -17267,6 +19553,12 @@
           "flex": {
             "input": 1.65,
             "output": 8.25
+          },
+          "globalCacheRead": {
+            "input": 0.3
+          },
+          "globalCacheWrite": {
+            "input": 3.75
           }
         }
       },
@@ -17297,6 +19589,12 @@
           "flex": {
             "input": 1.65,
             "output": 8.25
+          },
+          "globalCacheRead": {
+            "input": 0.3
+          },
+          "globalCacheWrite": {
+            "input": 3.75
           }
         }
       },
@@ -17327,6 +19625,12 @@
           "flex": {
             "input": 1.65,
             "output": 8.25
+          },
+          "globalCacheRead": {
+            "input": 0.3
+          },
+          "globalCacheWrite": {
+            "input": 3.75
           }
         }
       },
@@ -17357,6 +19661,12 @@
           "flex": {
             "input": 1.65,
             "output": 8.25
+          },
+          "globalCacheRead": {
+            "input": 0.3
+          },
+          "globalCacheWrite": {
+            "input": 3.75
           }
         }
       },
@@ -17387,6 +19697,12 @@
           "flex": {
             "input": 1.65,
             "output": 8.25
+          },
+          "globalCacheRead": {
+            "input": 0.3
+          },
+          "globalCacheWrite": {
+            "input": 3.75
           }
         }
       },
@@ -17417,6 +19733,12 @@
           "flex": {
             "input": 1.65,
             "output": 8.25
+          },
+          "globalCacheRead": {
+            "input": 0.3
+          },
+          "globalCacheWrite": {
+            "input": 3.75
           }
         }
       },
@@ -17447,6 +19769,12 @@
           "flex": {
             "input": 1.65,
             "output": 8.25
+          },
+          "globalCacheRead": {
+            "input": 0.3
+          },
+          "globalCacheWrite": {
+            "input": 3.75
           }
         }
       },
@@ -17477,6 +19805,12 @@
           "flex": {
             "input": 1.65,
             "output": 8.25
+          },
+          "globalCacheRead": {
+            "input": 0.3
+          },
+          "globalCacheWrite": {
+            "input": 3.75
           }
         }
       },
@@ -17507,6 +19841,12 @@
           "flex": {
             "input": 1.65,
             "output": 8.25
+          },
+          "globalCacheRead": {
+            "input": 0.3
+          },
+          "globalCacheWrite": {
+            "input": 3.75
           }
         }
       },
@@ -17537,6 +19877,12 @@
           "flex": {
             "input": 1.65,
             "output": 8.25
+          },
+          "globalCacheRead": {
+            "input": 0.3
+          },
+          "globalCacheWrite": {
+            "input": 3.75
           }
         }
       }
@@ -19022,6 +21368,13 @@
           "input": 1.375,
           "output": 8.25
         },
+        "globalBatch": {
+          "input": 1.25,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-5l5a5izq5fbec"
@@ -19058,6 +21411,13 @@
         "flex": {
           "input": 1.375,
           "output": 8.25
+        },
+        "globalBatch": {
+          "input": 1.25,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.25
         },
         "source": {
           "type": "marketplace",
@@ -19096,6 +21456,13 @@
           "input": 1.375,
           "output": 8.25
         },
+        "globalBatch": {
+          "input": 1.25,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-5l5a5izq5fbec"
@@ -19132,6 +21499,13 @@
         "flex": {
           "input": 1.375,
           "output": 8.25
+        },
+        "globalBatch": {
+          "input": 1.25,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.25
         },
         "source": {
           "type": "marketplace",
@@ -19170,6 +21544,13 @@
           "input": 1.375,
           "output": 8.25
         },
+        "globalBatch": {
+          "input": 1.25,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-5l5a5izq5fbec"
@@ -19206,6 +21587,13 @@
         "flex": {
           "input": 1.375,
           "output": 8.25
+        },
+        "globalBatch": {
+          "input": 1.25,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.25
         },
         "source": {
           "type": "marketplace",
@@ -19244,6 +21632,13 @@
           "input": 1.375,
           "output": 8.25
         },
+        "globalBatch": {
+          "input": 1.25,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-5l5a5izq5fbec"
@@ -19280,6 +21675,13 @@
         "flex": {
           "input": 1.375,
           "output": 8.25
+        },
+        "globalBatch": {
+          "input": 1.25,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.25
         },
         "source": {
           "type": "marketplace",
@@ -19318,6 +21720,13 @@
           "input": 1.375,
           "output": 8.25
         },
+        "globalBatch": {
+          "input": 1.25,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-5l5a5izq5fbec"
@@ -19354,6 +21763,13 @@
         "flex": {
           "input": 1.375,
           "output": 8.25
+        },
+        "globalBatch": {
+          "input": 1.25,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.25
         },
         "source": {
           "type": "marketplace",
@@ -19392,6 +21808,13 @@
           "input": 1.375,
           "output": 8.25
         },
+        "globalBatch": {
+          "input": 1.25,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-5l5a5izq5fbec"
@@ -19428,6 +21851,13 @@
         "flex": {
           "input": 1.375,
           "output": 8.25
+        },
+        "globalBatch": {
+          "input": 1.25,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.25
         },
         "source": {
           "type": "marketplace",
@@ -19466,6 +21896,13 @@
           "input": 1.375,
           "output": 8.25
         },
+        "globalBatch": {
+          "input": 1.25,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-5l5a5izq5fbec"
@@ -19502,6 +21939,13 @@
         "flex": {
           "input": 1.375,
           "output": 8.25
+        },
+        "globalBatch": {
+          "input": 1.25,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.25
         },
         "source": {
           "type": "marketplace",
@@ -19540,6 +21984,13 @@
           "input": 1.375,
           "output": 8.25
         },
+        "globalBatch": {
+          "input": 1.25,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-5l5a5izq5fbec"
@@ -19576,6 +22027,13 @@
         "flex": {
           "input": 1.375,
           "output": 8.25
+        },
+        "globalBatch": {
+          "input": 1.25,
+          "output": 7.5
+        },
+        "globalCacheRead": {
+          "input": 0.25
         },
         "source": {
           "type": "marketplace",
@@ -19616,6 +22074,13 @@
           "input": 2.75,
           "output": 16.5
         },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 15
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-rtwlbb46hcxpw"
@@ -19652,6 +22117,13 @@
         "flex": {
           "input": 2.75,
           "output": 16.5
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 15
+        },
+        "globalCacheRead": {
+          "input": 0.5
         },
         "source": {
           "type": "marketplace",
@@ -19690,6 +22162,13 @@
           "input": 2.75,
           "output": 16.5
         },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 15
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-rtwlbb46hcxpw"
@@ -19726,6 +22205,13 @@
         "flex": {
           "input": 2.75,
           "output": 16.5
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 15
+        },
+        "globalCacheRead": {
+          "input": 0.5
         },
         "source": {
           "type": "marketplace",
@@ -19764,6 +22250,13 @@
           "input": 2.75,
           "output": 16.5
         },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 15
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-rtwlbb46hcxpw"
@@ -19800,6 +22293,13 @@
         "flex": {
           "input": 2.75,
           "output": 16.5
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 15
+        },
+        "globalCacheRead": {
+          "input": 0.5
         },
         "source": {
           "type": "marketplace",
@@ -19838,6 +22338,13 @@
           "input": 2.75,
           "output": 16.5
         },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 15
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-rtwlbb46hcxpw"
@@ -19874,6 +22381,13 @@
         "flex": {
           "input": 2.75,
           "output": 16.5
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 15
+        },
+        "globalCacheRead": {
+          "input": 0.5
         },
         "source": {
           "type": "marketplace",
@@ -19912,6 +22426,13 @@
           "input": 2.75,
           "output": 16.5
         },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 15
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-rtwlbb46hcxpw"
@@ -19948,6 +22469,13 @@
         "flex": {
           "input": 2.75,
           "output": 16.5
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 15
+        },
+        "globalCacheRead": {
+          "input": 0.5
         },
         "source": {
           "type": "marketplace",
@@ -19986,6 +22514,13 @@
           "input": 2.75,
           "output": 16.5
         },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 15
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-rtwlbb46hcxpw"
@@ -20022,6 +22557,13 @@
         "flex": {
           "input": 2.75,
           "output": 16.5
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 15
+        },
+        "globalCacheRead": {
+          "input": 0.5
         },
         "source": {
           "type": "marketplace",
@@ -20060,6 +22602,13 @@
           "input": 2.75,
           "output": 16.5
         },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 15
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-rtwlbb46hcxpw"
@@ -20096,6 +22645,13 @@
         "flex": {
           "input": 2.75,
           "output": 16.5
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 15
+        },
+        "globalCacheRead": {
+          "input": 0.5
         },
         "source": {
           "type": "marketplace",
@@ -20134,6 +22690,13 @@
           "input": 2.75,
           "output": 16.5
         },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 15
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-rtwlbb46hcxpw"
@@ -20170,6 +22733,13 @@
         "flex": {
           "input": 2.75,
           "output": 16.5
+        },
+        "globalBatch": {
+          "input": 2.5,
+          "output": 15
+        },
+        "globalCacheRead": {
+          "input": 0.5
         },
         "source": {
           "type": "marketplace",
@@ -20187,6 +22757,16 @@
           },
           "output": 1.2
         },
+        "globalBatch": {
+          "input": 0.1,
+          "output": 0.6
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-bklbyf2ewuawu"
@@ -20201,6 +22781,16 @@
           },
           "output": 1.2
         },
+        "globalBatch": {
+          "input": 0.1,
+          "output": 0.6
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-bklbyf2ewuawu"
@@ -20214,6 +22804,16 @@
             "output": 1.8
           },
           "output": 1.2
+        },
+        "globalBatch": {
+          "input": 0.1,
+          "output": 0.6
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         },
         "source": {
           "type": "marketplace",
@@ -20255,6 +22855,16 @@
           "input": 0.11,
           "output": 0.66
         },
+        "globalBatch": {
+          "input": 0.1,
+          "output": 0.6
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-bklbyf2ewuawu"
@@ -20269,6 +22879,16 @@
           },
           "output": 1.2
         },
+        "globalBatch": {
+          "input": 0.1,
+          "output": 0.6
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-bklbyf2ewuawu"
@@ -20282,6 +22902,16 @@
             "output": 1.8
           },
           "output": 1.2
+        },
+        "globalBatch": {
+          "input": 0.1,
+          "output": 0.6
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         },
         "source": {
           "type": "marketplace",
@@ -20323,6 +22953,16 @@
           "input": 0.11,
           "output": 0.66
         },
+        "globalBatch": {
+          "input": 0.1,
+          "output": 0.6
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-bklbyf2ewuawu"
@@ -20336,6 +22976,16 @@
             "output": 1.8
           },
           "output": 1.2
+        },
+        "globalBatch": {
+          "input": 0.1,
+          "output": 0.6
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         },
         "source": {
           "type": "marketplace",
@@ -20351,6 +23001,16 @@
           },
           "output": 1.2
         },
+        "globalBatch": {
+          "input": 0.1,
+          "output": 0.6
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-bklbyf2ewuawu"
@@ -20364,6 +23024,16 @@
             "output": 1.8
           },
           "output": 1.2
+        },
+        "globalBatch": {
+          "input": 0.1,
+          "output": 0.6
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         },
         "source": {
           "type": "marketplace",
@@ -20379,6 +23049,16 @@
           },
           "output": 1.2
         },
+        "globalBatch": {
+          "input": 0.1,
+          "output": 0.6
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-bklbyf2ewuawu"
@@ -20393,6 +23073,16 @@
           },
           "output": 1.2
         },
+        "globalBatch": {
+          "input": 0.1,
+          "output": 0.6
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-bklbyf2ewuawu"
@@ -20406,6 +23096,16 @@
             "output": 1.8
           },
           "output": 1.2
+        },
+        "globalBatch": {
+          "input": 0.1,
+          "output": 0.6
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         },
         "source": {
           "type": "marketplace",
@@ -20447,6 +23147,16 @@
           "input": 0.11,
           "output": 0.66
         },
+        "globalBatch": {
+          "input": 0.1,
+          "output": 0.6
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-bklbyf2ewuawu"
@@ -20486,6 +23196,16 @@
         "flex": {
           "input": 0.11,
           "output": 0.66
+        },
+        "globalBatch": {
+          "input": 0.1,
+          "output": 0.6
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         },
         "source": {
           "type": "marketplace",
@@ -20527,6 +23247,16 @@
           "input": 0.11,
           "output": 0.66
         },
+        "globalBatch": {
+          "input": 0.1,
+          "output": 0.6
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-bklbyf2ewuawu"
@@ -20566,6 +23296,16 @@
         "flex": {
           "input": 0.11,
           "output": 0.66
+        },
+        "globalBatch": {
+          "input": 0.1,
+          "output": 0.6
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 1.25
         },
         "source": {
           "type": "marketplace",
@@ -20583,6 +23323,16 @@
           },
           "output": 20
         },
+        "globalBatch": {
+          "input": 2,
+          "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-gnqokrqqvdbgw"
@@ -20596,6 +23346,16 @@
             "output": 30
           },
           "output": 20
+        },
+        "globalBatch": {
+          "input": 2,
+          "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         },
         "source": {
           "type": "marketplace",
@@ -20611,6 +23371,16 @@
           },
           "output": 20
         },
+        "globalBatch": {
+          "input": 2,
+          "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-gnqokrqqvdbgw"
@@ -20624,6 +23394,16 @@
             "output": 30
           },
           "output": 20
+        },
+        "globalBatch": {
+          "input": 2,
+          "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         },
         "source": {
           "type": "marketplace",
@@ -20639,6 +23419,16 @@
           },
           "output": 20
         },
+        "globalBatch": {
+          "input": 2,
+          "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-gnqokrqqvdbgw"
@@ -20652,6 +23442,16 @@
             "output": 30
           },
           "output": 20
+        },
+        "globalBatch": {
+          "input": 2,
+          "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         },
         "source": {
           "type": "marketplace",
@@ -20693,6 +23493,16 @@
           "input": 2.2,
           "output": 11
         },
+        "globalBatch": {
+          "input": 2,
+          "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-gnqokrqqvdbgw"
@@ -20706,6 +23516,16 @@
             "output": 30
           },
           "output": 20
+        },
+        "globalBatch": {
+          "input": 2,
+          "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         },
         "source": {
           "type": "marketplace",
@@ -20721,6 +23541,16 @@
           },
           "output": 20
         },
+        "globalBatch": {
+          "input": 2,
+          "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-gnqokrqqvdbgw"
@@ -20734,6 +23564,16 @@
             "output": 30
           },
           "output": 20
+        },
+        "globalBatch": {
+          "input": 2,
+          "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         },
         "source": {
           "type": "marketplace",
@@ -20749,6 +23589,16 @@
           },
           "output": 20
         },
+        "globalBatch": {
+          "input": 2,
+          "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-gnqokrqqvdbgw"
@@ -20763,6 +23613,16 @@
           },
           "output": 20
         },
+        "globalBatch": {
+          "input": 2,
+          "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-gnqokrqqvdbgw"
@@ -20776,6 +23636,16 @@
             "output": 30
           },
           "output": 20
+        },
+        "globalBatch": {
+          "input": 2,
+          "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         },
         "source": {
           "type": "marketplace",
@@ -20817,6 +23687,16 @@
           "input": 2.2,
           "output": 11
         },
+        "globalBatch": {
+          "input": 2,
+          "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-gnqokrqqvdbgw"
@@ -20856,6 +23736,16 @@
         "flex": {
           "input": 2.2,
           "output": 11
+        },
+        "globalBatch": {
+          "input": 2,
+          "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         },
         "source": {
           "type": "marketplace",
@@ -20897,6 +23787,16 @@
           "input": 2.2,
           "output": 11
         },
+        "globalBatch": {
+          "input": 2,
+          "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-gnqokrqqvdbgw"
@@ -20936,6 +23836,16 @@
         "flex": {
           "input": 2.2,
           "output": 11
+        },
+        "globalBatch": {
+          "input": 2,
+          "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.5
+        },
+        "globalCacheWrite": {
+          "input": 6.25
         },
         "source": {
           "type": "marketplace",
@@ -20953,6 +23863,16 @@
           },
           "output": 12
         },
+        "globalBatch": {
+          "input": 1,
+          "output": 6
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 3.125
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-3dvyrx3okd4lq"
@@ -20967,6 +23887,16 @@
           },
           "output": 12
         },
+        "globalBatch": {
+          "input": 1,
+          "output": 6
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 3.125
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-3dvyrx3okd4lq"
@@ -20980,6 +23910,16 @@
             "output": 18
           },
           "output": 12
+        },
+        "globalBatch": {
+          "input": 1,
+          "output": 6
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 3.125
         },
         "source": {
           "type": "marketplace",
@@ -21021,6 +23961,16 @@
           "input": 1.1,
           "output": 6.6
         },
+        "globalBatch": {
+          "input": 1,
+          "output": 6
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 3.125
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-3dvyrx3okd4lq"
@@ -21035,6 +23985,16 @@
           },
           "output": 12
         },
+        "globalBatch": {
+          "input": 1,
+          "output": 6
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 3.125
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-3dvyrx3okd4lq"
@@ -21048,6 +24008,16 @@
             "output": 18
           },
           "output": 12
+        },
+        "globalBatch": {
+          "input": 1,
+          "output": 6
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 3.125
         },
         "source": {
           "type": "marketplace",
@@ -21089,6 +24059,16 @@
           "input": 1.1,
           "output": 6.6
         },
+        "globalBatch": {
+          "input": 1,
+          "output": 6
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 3.125
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-3dvyrx3okd4lq"
@@ -21102,6 +24082,16 @@
             "output": 18
           },
           "output": 12
+        },
+        "globalBatch": {
+          "input": 1,
+          "output": 6
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 3.125
         },
         "source": {
           "type": "marketplace",
@@ -21117,6 +24107,16 @@
           },
           "output": 12
         },
+        "globalBatch": {
+          "input": 1,
+          "output": 6
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 3.125
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-3dvyrx3okd4lq"
@@ -21130,6 +24130,16 @@
             "output": 18
           },
           "output": 12
+        },
+        "globalBatch": {
+          "input": 1,
+          "output": 6
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 3.125
         },
         "source": {
           "type": "marketplace",
@@ -21145,6 +24155,16 @@
           },
           "output": 12
         },
+        "globalBatch": {
+          "input": 1,
+          "output": 6
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 3.125
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-3dvyrx3okd4lq"
@@ -21159,6 +24179,16 @@
           },
           "output": 12
         },
+        "globalBatch": {
+          "input": 1,
+          "output": 6
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 3.125
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-3dvyrx3okd4lq"
@@ -21172,6 +24202,16 @@
             "output": 18
           },
           "output": 12
+        },
+        "globalBatch": {
+          "input": 1,
+          "output": 6
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 3.125
         },
         "source": {
           "type": "marketplace",
@@ -21213,6 +24253,16 @@
           "input": 1.1,
           "output": 6.6
         },
+        "globalBatch": {
+          "input": 1,
+          "output": 6
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 3.125
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-3dvyrx3okd4lq"
@@ -21252,6 +24302,16 @@
         "flex": {
           "input": 1.1,
           "output": 6.6
+        },
+        "globalBatch": {
+          "input": 1,
+          "output": 6
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 3.125
         },
         "source": {
           "type": "marketplace",
@@ -21293,6 +24353,16 @@
           "input": 1.1,
           "output": 6.6
         },
+        "globalBatch": {
+          "input": 1,
+          "output": 6
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 3.125
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-3dvyrx3okd4lq"
@@ -21332,6 +24402,16 @@
         "flex": {
           "input": 1.1,
           "output": 6.6
+        },
+        "globalBatch": {
+          "input": 1,
+          "output": 6
+        },
+        "globalCacheRead": {
+          "input": 0.25
+        },
+        "globalCacheWrite": {
+          "input": 3.125
         },
         "source": {
           "type": "marketplace",
@@ -21348,6 +24428,12 @@
             "input": 20,
             "output": 75
           }
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "ap-northeast-2": {
@@ -21358,6 +24444,12 @@
             "input": 20,
             "output": 75
           }
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "ap-northeast-3": {
@@ -21368,6 +24460,12 @@
             "input": 20,
             "output": 75
           }
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "ap-south-1": {
@@ -21378,6 +24476,12 @@
             "input": 20,
             "output": 75
           }
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "ap-southeast-1": {
@@ -21388,6 +24492,12 @@
             "input": 20,
             "output": 75
           }
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "ap-southeast-2": {
@@ -21398,6 +24508,12 @@
             "input": 20,
             "output": 75
           }
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "ca-central-1": {
@@ -21422,6 +24538,12 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "eu-central-1": {
@@ -21432,6 +24554,12 @@
             "input": 20,
             "output": 75
           }
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "eu-north-1": {
@@ -21442,6 +24570,12 @@
             "input": 20,
             "output": 75
           }
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "eu-west-1": {
@@ -21452,6 +24586,12 @@
             "input": 20,
             "output": 75
           }
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "eu-west-2": {
@@ -21462,6 +24602,12 @@
             "input": 20,
             "output": 75
           }
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "eu-west-3": {
@@ -21472,6 +24618,12 @@
             "input": 20,
             "output": 75
           }
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "sa-east-1": {
@@ -21482,6 +24634,12 @@
             "input": 20,
             "output": 75
           }
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "us-east-1": {
@@ -21506,6 +24664,12 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "us-east-2": {
@@ -21530,6 +24694,12 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "us-west-1": {
@@ -21554,6 +24724,12 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       },
       "us-west-2": {
@@ -21578,6 +24754,12 @@
         },
         "cacheWrite": {
           "input": 13.75
+        },
+        "globalCacheRead": {
+          "input": 1
+        },
+        "globalCacheWrite": {
+          "input": 12.5
         }
       }
     },
@@ -21591,6 +24773,12 @@
           },
           "output": 0.5
         },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-gmo53nkzc5or6"
@@ -21604,6 +24792,12 @@
             "output": 0.75
           },
           "output": 0.5
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         },
         "source": {
           "type": "marketplace",
@@ -21619,6 +24813,12 @@
           },
           "output": 0.5
         },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-gmo53nkzc5or6"
@@ -21632,6 +24832,12 @@
             "output": 0.75
           },
           "output": 0.5
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         },
         "source": {
           "type": "marketplace",
@@ -21647,6 +24853,12 @@
           },
           "output": 0.5
         },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-gmo53nkzc5or6"
@@ -21660,6 +24872,12 @@
             "output": 0.75
           },
           "output": 0.5
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         },
         "source": {
           "type": "marketplace",
@@ -21697,6 +24915,12 @@
           "input": 0.055,
           "output": 0.275
         },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-gmo53nkzc5or6"
@@ -21710,6 +24934,12 @@
             "output": 0.75
           },
           "output": 0.5
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         },
         "source": {
           "type": "marketplace",
@@ -21725,6 +24955,12 @@
           },
           "output": 0.5
         },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-gmo53nkzc5or6"
@@ -21738,6 +24974,12 @@
             "output": 0.75
           },
           "output": 0.5
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         },
         "source": {
           "type": "marketplace",
@@ -21753,6 +24995,12 @@
           },
           "output": 0.5
         },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-gmo53nkzc5or6"
@@ -21767,6 +25015,12 @@
           },
           "output": 0.5
         },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-gmo53nkzc5or6"
@@ -21780,6 +25034,12 @@
             "output": 0.75
           },
           "output": 0.5
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         },
         "source": {
           "type": "marketplace",
@@ -21817,6 +25077,12 @@
           "input": 0.055,
           "output": 0.275
         },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-gmo53nkzc5or6"
@@ -21852,6 +25118,12 @@
         "flex": {
           "input": 0.055,
           "output": 0.275
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         },
         "source": {
           "type": "marketplace",
@@ -21889,6 +25161,12 @@
           "input": 0.055,
           "output": 0.275
         },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-gmo53nkzc5or6"
@@ -21924,6 +25202,12 @@
         "flex": {
           "input": 0.055,
           "output": 0.275
+        },
+        "globalCacheRead": {
+          "input": 0.01
+        },
+        "globalCacheWrite": {
+          "input": 0.125
         },
         "source": {
           "type": "marketplace",
@@ -21941,6 +25225,12 @@
           },
           "output": 10
         },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-pycji3sz5gpcc"
@@ -21954,6 +25244,12 @@
             "output": 15
           },
           "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         },
         "source": {
           "type": "marketplace",
@@ -21969,6 +25265,12 @@
           },
           "output": 10
         },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-pycji3sz5gpcc"
@@ -21982,6 +25284,12 @@
             "output": 15
           },
           "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         },
         "source": {
           "type": "marketplace",
@@ -21997,6 +25305,12 @@
           },
           "output": 10
         },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-pycji3sz5gpcc"
@@ -22010,6 +25324,12 @@
             "output": 15
           },
           "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         },
         "source": {
           "type": "marketplace",
@@ -22047,6 +25367,12 @@
           "input": 1.1,
           "output": 5.5
         },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-pycji3sz5gpcc"
@@ -22060,6 +25386,12 @@
             "output": 15
           },
           "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         },
         "source": {
           "type": "marketplace",
@@ -22075,6 +25407,12 @@
           },
           "output": 10
         },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-pycji3sz5gpcc"
@@ -22088,6 +25426,12 @@
             "output": 15
           },
           "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         },
         "source": {
           "type": "marketplace",
@@ -22103,6 +25447,12 @@
           },
           "output": 10
         },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-pycji3sz5gpcc"
@@ -22117,6 +25467,12 @@
           },
           "output": 10
         },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-pycji3sz5gpcc"
@@ -22130,6 +25486,12 @@
             "output": 15
           },
           "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         },
         "source": {
           "type": "marketplace",
@@ -22167,6 +25529,12 @@
           "input": 1.1,
           "output": 5.5
         },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-pycji3sz5gpcc"
@@ -22202,6 +25570,12 @@
         "flex": {
           "input": 1.1,
           "output": 5.5
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         },
         "source": {
           "type": "marketplace",
@@ -22239,6 +25613,12 @@
           "input": 1.1,
           "output": 5.5
         },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-pycji3sz5gpcc"
@@ -22274,6 +25654,12 @@
         "flex": {
           "input": 1.1,
           "output": 5.5
+        },
+        "globalCacheRead": {
+          "input": 0.2
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         },
         "source": {
           "type": "marketplace",
@@ -22291,6 +25677,12 @@
           },
           "output": 10
         },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-wbhj4kycntgkk"
@@ -22304,6 +25696,12 @@
             "output": 15
           },
           "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         },
         "source": {
           "type": "marketplace",
@@ -22319,6 +25717,12 @@
           },
           "output": 10
         },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-wbhj4kycntgkk"
@@ -22332,6 +25736,12 @@
             "output": 15
           },
           "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         },
         "source": {
           "type": "marketplace",
@@ -22347,6 +25757,12 @@
           },
           "output": 10
         },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-wbhj4kycntgkk"
@@ -22360,6 +25776,12 @@
             "output": 15
           },
           "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         },
         "source": {
           "type": "marketplace",
@@ -22397,6 +25819,12 @@
           "input": 1.1,
           "output": 5.5
         },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-wbhj4kycntgkk"
@@ -22410,6 +25838,12 @@
             "output": 15
           },
           "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         },
         "source": {
           "type": "marketplace",
@@ -22425,6 +25859,12 @@
           },
           "output": 10
         },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-wbhj4kycntgkk"
@@ -22438,6 +25878,12 @@
             "output": 15
           },
           "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         },
         "source": {
           "type": "marketplace",
@@ -22453,6 +25899,12 @@
           },
           "output": 10
         },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-wbhj4kycntgkk"
@@ -22467,6 +25919,12 @@
           },
           "output": 10
         },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-wbhj4kycntgkk"
@@ -22480,6 +25938,12 @@
             "output": 15
           },
           "output": 10
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         },
         "source": {
           "type": "marketplace",
@@ -22517,6 +25981,12 @@
           "input": 1.1,
           "output": 5.5
         },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-wbhj4kycntgkk"
@@ -22552,6 +26022,12 @@
         "flex": {
           "input": 1.1,
           "output": 5.5
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         },
         "source": {
           "type": "marketplace",
@@ -22589,6 +26065,12 @@
           "input": 1.1,
           "output": 5.5
         },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
+        },
         "source": {
           "type": "marketplace",
           "offerId": "offer-wbhj4kycntgkk"
@@ -22624,6 +26106,12 @@
         "flex": {
           "input": 1.1,
           "output": 5.5
+        },
+        "globalCacheRead": {
+          "input": 0.1
+        },
+        "globalCacheWrite": {
+          "input": 2.5
         },
         "source": {
           "type": "marketplace",
@@ -28195,6 +31683,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28218,6 +31709,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28241,6 +31735,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28264,6 +31761,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28287,6 +31787,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28310,6 +31813,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28333,6 +31839,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28356,6 +31865,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28379,6 +31891,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28402,6 +31917,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28425,6 +31943,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28448,6 +31969,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28471,6 +31995,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28494,6 +32021,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28517,6 +32047,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28540,6 +32073,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28563,6 +32099,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       }
@@ -28592,6 +32131,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28619,6 +32161,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28646,6 +32191,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28673,6 +32221,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28700,6 +32251,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28727,6 +32281,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28754,6 +32311,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28781,6 +32341,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28808,6 +32371,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28835,6 +32401,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28862,6 +32431,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28889,6 +32461,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28916,6 +32491,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28943,6 +32521,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28970,6 +32551,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -28997,6 +32581,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       },
@@ -29024,6 +32611,9 @@
           "flex": {
             "input": 1.1,
             "output": 3.3
+          },
+          "globalCacheRead": {
+            "input": 0.5
           }
         }
       }

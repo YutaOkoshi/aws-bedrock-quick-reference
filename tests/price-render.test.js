@@ -392,3 +392,33 @@ describe("Marketplace の単価の出典と、価格未収録のときの docs �
     expect(link.href).toBe("https://aws.amazon.com/bedrock/pricing/");
   });
 });
+
+describe("Global のバッチ・キャッシュ (2026-10-08 から取り込む)", () => {
+  const prices = { byModel: { [CLAUDE]: { [TOKYO]: {
+    global: { input: 5, output: 25 },
+    globalBatch: { input: 2.5, output: 12.5 },
+    globalCacheRead: { input: 0.5 },
+    globalCacheWrite: { input: 6.25 },
+  } } } };
+
+  it("buildPriceRows の Global のレーンに、Global のバッチ・キャッシュの行が並ぶ", () => {
+    expect(buildPriceRows(CLAUDE, { prices, region: TOKYO, lane: "global" }).map((row) => row.kind)).toEqual([
+      "global", "globalBatch", "globalCacheRead", "globalCacheWrite",
+    ]);
+  });
+
+  it("詳細の Global のタブに出て、「未収録」の注記は出ない", () => {
+    mountFixtureApp({ prices });
+    rowFor(CLAUDE).querySelector(".detail-toggle").click();
+    const global = panelOf(CLAUDE).querySelector('[data-lane="global"] .detail-price');
+    expect(global.textContent).toContain("Global バッチ");
+    expect(global.textContent).toContain("$12.50");
+    expect(global.textContent).toContain("Global キャッシュ読み");
+    expect(global.textContent).toContain("Global キャッシュ書き");
+    expect(global.textContent).not.toContain("バッチ・キャッシュ価格は未収録");
+  });
+
+  it("In-Region のタブには Global の行を出さない", () => {
+    expect(buildPriceRows(CLAUDE, { prices, region: TOKYO, lane: "inRegion" })).toEqual([]);
+  });
+});
