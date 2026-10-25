@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-06T08:02:50.232Z",
+  "generatedAt": "2026-10-25T22:55:42.832Z",
   "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/toc-contents.json",
-  "cards": 134,
-  "cardsWithFeatures": 118,
+  "cards": 137,
+  "cardsWithFeatures": 124,
   "failedCards": 0,
   "features": {
     "streaming": {
@@ -96,6 +96,22 @@
     "projectsDefaultOnly": {
       "label": "Projects (default project only)",
       "docs": "projects.html"
+    },
+    "unknown:asynchronous-tool-calling": {
+      "label": "Asynchronous tool calling",
+      "docs": null
+    },
+    "unknown:prompt-caching": {
+      "label": "Prompt caching",
+      "docs": "prompt-caching.html"
+    },
+    "unknown:reasoning-summaries": {
+      "label": "Reasoning Summaries",
+      "docs": "https://developers.openai.com/api/docs/guides/reasoning#reasoning-summaries"
+    },
+    "unknown:tool-use-function-calling": {
+      "label": "Tool use (function calling)",
+      "docs": null
     }
   },
   "defaultColumns": [
@@ -121,7 +137,11 @@
     "applicationInferenceProfiles",
     "invocationLogs",
     "projects",
-    "projectsDefaultOnly"
+    "projectsDefaultOnly",
+    "unknown:asynchronous-tool-calling",
+    "unknown:prompt-caching",
+    "unknown:reasoning-summaries",
+    "unknown:tool-use-function-calling"
   ],
   "byModel": {
     "ai21.jamba-1-5-large-v1:0": {
@@ -464,10 +484,36 @@
     "anthropic.claude-fable-5": {
       "card": "model-card-anthropic-claude-fable-5.html",
       "runtime": {
-        "explicitPromptCaching": true
+        "streaming": true,
+        "implicitPromptCaching": false,
+        "explicitPromptCaching": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": true,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": true
       },
       "mantle": {
-        "explicitPromptCaching": true
+        "streaming": true,
+        "implicitPromptCaching": false,
+        "explicitPromptCaching": true,
+        "structuredOutputs": true,
+        "countTokens": true,
+        "guardrails": false,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
       },
       "promptCaching": {
         "explicit": true,
@@ -484,8 +530,26 @@
     },
     "anthropic.claude-fable-5-1": {
       "card": "model-card-anthropic-claude-fable-5-1.html",
-      "runtime": {},
-      "mantle": {},
+      "runtime": {
+        "implicitPromptCaching": false,
+        "structuredOutputs": true
+      },
+      "mantle": {
+        "streaming": true,
+        "implicitPromptCaching": false,
+        "structuredOutputs": true,
+        "countTokens": true,
+        "guardrails": false,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false,
+        "unknown:prompt-caching": true
+      },
       "promptCaching": {
         "explicit": null,
         "minTokens": "512",
@@ -519,7 +583,7 @@
       },
       "mantle": {
         "streaming": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
         "computerUse": true,
         "countTokens": true,
         "guardrails": false,
@@ -662,9 +726,9 @@
       "card": "model-card-anthropic-claude-opus-4-7.html",
       "runtime": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
         "computerUse": true,
         "countTokens": false,
         "guardrails": true,
@@ -679,9 +743,9 @@
       },
       "mantle": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
         "computerUse": true,
         "countTokens": true,
         "guardrails": false,
@@ -716,9 +780,9 @@
       "card": "model-card-anthropic-claude-opus-4-8.html",
       "runtime": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
         "computerUse": true,
         "countTokens": false,
         "guardrails": true,
@@ -733,9 +797,9 @@
       },
       "mantle": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
         "computerUse": true,
         "countTokens": true,
         "guardrails": false,
@@ -770,9 +834,9 @@
       "card": "model-card-anthropic-claude-opus-5.html",
       "runtime": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
         "computerUse": true,
         "countTokens": false,
         "guardrails": true,
@@ -787,9 +851,9 @@
       },
       "mantle": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
         "computerUse": true,
         "countTokens": true,
         "guardrails": false,
@@ -987,9 +1051,9 @@
       "card": "model-card-anthropic-claude-sonnet-5.html",
       "runtime": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
         "computerUse": true,
         "countTokens": false,
         "guardrails": true,
@@ -1004,9 +1068,9 @@
       },
       "mantle": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
         "computerUse": true,
         "countTokens": true,
         "guardrails": false,
@@ -1900,14 +1964,18 @@
         "explicitPromptCaching": true,
         "structuredOutputs": true,
         "clientToolCalling": true,
+        "reasoning": true,
+        "countTokens": false,
+        "guardrails": true,
         "knowledgeBase": false,
         "promptRouting": false,
+        "applicationInferenceProfiles": true,
         "invocationLogs": true
       },
       "mantle": null,
       "promptCaching": {
         "explicit": true,
-        "minTokens": "1,024",
+        "minTokens": "256",
         "maxCheckpoints": null,
         "ttl": "At least 30 minutes",
         "fields": null,
@@ -2027,14 +2095,16 @@
         "promptRouting": false,
         "applicationInferenceProfiles": true,
         "invocationLogs": true,
-        "projectsDefaultOnly": true
+        "projectsDefaultOnly": true,
+        "unknown:reasoning-summaries": true
       },
       "mantle": {
         "implicitPromptCaching": true,
         "explicitPromptCaching": true,
         "serverToolCalling": true,
         "applicationInferenceProfiles": false,
-        "projects": true
+        "projects": true,
+        "unknown:reasoning-summaries": true
       },
       "promptCaching": null,
       "computerUse": null
@@ -2053,14 +2123,16 @@
         "promptRouting": false,
         "applicationInferenceProfiles": true,
         "invocationLogs": true,
-        "projectsDefaultOnly": true
+        "projectsDefaultOnly": true,
+        "unknown:reasoning-summaries": true
       },
       "mantle": {
         "implicitPromptCaching": true,
         "explicitPromptCaching": true,
         "serverToolCalling": true,
         "applicationInferenceProfiles": false,
-        "projects": true
+        "projects": true,
+        "unknown:reasoning-summaries": true
       },
       "promptCaching": null,
       "computerUse": null
@@ -2079,14 +2151,16 @@
         "promptRouting": false,
         "applicationInferenceProfiles": true,
         "invocationLogs": true,
-        "projectsDefaultOnly": true
+        "projectsDefaultOnly": true,
+        "unknown:reasoning-summaries": true
       },
       "mantle": {
         "implicitPromptCaching": true,
         "explicitPromptCaching": true,
         "serverToolCalling": true,
         "applicationInferenceProfiles": false,
-        "projects": true
+        "projects": true,
+        "unknown:reasoning-summaries": true
       },
       "promptCaching": null,
       "computerUse": null
@@ -2095,6 +2169,8 @@
       "card": "model-card-openai-gpt-6-astra.html",
       "runtime": {
         "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
         "structuredOutputs": true,
         "serverToolCalling": false,
         "countTokens": false,
@@ -2103,14 +2179,17 @@
         "promptRouting": false,
         "applicationInferenceProfiles": true,
         "invocationLogs": true,
-        "projectsDefaultOnly": true
+        "projectsDefaultOnly": true,
+        "unknown:reasoning-summaries": true
       },
       "mantle": {
         "implicitPromptCaching": true,
         "explicitPromptCaching": true,
+        "structuredOutputs": true,
         "serverToolCalling": true,
         "applicationInferenceProfiles": false,
-        "projects": true
+        "projects": true,
+        "unknown:reasoning-summaries": true
       },
       "promptCaching": null,
       "computerUse": null
@@ -2119,7 +2198,6 @@
       "card": "model-card-openai-gpt-oss-120b.html",
       "runtime": {
         "streaming": true,
-        "structuredOutputs": true,
         "countTokens": false,
         "guardrails": true,
         "abuseDetection": false,
@@ -2381,6 +2459,25 @@
       "promptCaching": null,
       "computerUse": null
     },
+    "stability.sd3-5-large-v1:0": {
+      "card": "model-card-stability-ai-stable-diffusion-3-5-large.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
     "stability.stable-conservative-upscale-v1:0": {
       "card": "model-card-stability-ai-stable-image-conservative-upscale.html",
       "runtime": {
@@ -2459,6 +2556,25 @@
     },
     "stability.stable-image-control-structure-v1:0": {
       "card": "model-card-stability-ai-stable-image-control-structure.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "stability.stable-image-core-v1:1": {
+      "card": "model-card-stability-ai-stable-image-core-1-0.html",
       "runtime": {
         "streaming": false,
         "countTokens": false,
@@ -2573,6 +2689,25 @@
     },
     "stability.stable-image-style-guide-v1:0": {
       "card": "model-card-stability-ai-stable-image-style-guide.html",
+      "runtime": {
+        "streaming": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null
+    },
+    "stability.stable-image-ultra-v1:1": {
+      "card": "model-card-stability-ai-stable-image-ultra-1-0.html",
       "runtime": {
         "streaming": false,
         "countTokens": false,
@@ -2739,6 +2874,7 @@
         "serverToolCalling": false,
         "reasoning": true,
         "countTokens": false,
+        "guardrails": true,
         "promptRouting": false,
         "applicationInferenceProfiles": true,
         "invocationLogs": true,
@@ -2832,6 +2968,16 @@
   },
   "unmatchedCards": [
     {
+      "card": "model-card-amazon-nova-2-5-sonic.html",
+      "modelId": "amazon.nova-2-5-sonic",
+      "reason": "not-found"
+    },
+    {
+      "card": "model-card-anthropic-claude-haiku-5-5.html",
+      "modelId": "anthropic.claude-haiku-5-5",
+      "reason": "not-found"
+    },
+    {
       "card": "model-card-anthropic-claude-mythos-5-1.html",
       "modelId": "anthropic.claude-mythos-5-1",
       "reason": "not-found"
@@ -2903,13 +3049,13 @@
     },
     {
       "card": "model-card-openai-gpt-54.html",
-      "modelId": null,
-      "reason": "no-runtime-id"
+      "modelId": "openai.gpt-5.4",
+      "reason": "not-found"
     },
     {
       "card": "model-card-openai-gpt-55.html",
-      "modelId": null,
-      "reason": "no-runtime-id"
+      "modelId": "openai.gpt-5.5",
+      "reason": "not-found"
     },
     {
       "card": "model-card-openai-gpt-56-cyber.html",
@@ -2937,6 +3083,11 @@
       "reason": "no-runtime-id"
     },
     {
+      "card": "model-card-twelvelabs-pegasus-v1-5.html",
+      "modelId": "twelvelabs.pegasus-1-5-v1:0",
+      "reason": "not-found"
+    },
+    {
       "card": "model-card-xai-grok-4-3.html",
       "modelId": null,
       "reason": "no-runtime-id"
@@ -2952,5 +3103,10 @@
       "reason": "not-found"
     }
   ],
-  "unknownFeatures": []
+  "unknownFeatures": [
+    "Asynchronous tool calling",
+    "Prompt caching",
+    "Reasoning Summaries",
+    "Tool use (function calling)"
+  ]
 }
