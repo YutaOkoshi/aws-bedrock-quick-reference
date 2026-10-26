@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T04:02:24.477Z",
+  "generatedAt": "2026-10-26T04:09:24.152Z",
   "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/toc-contents.json",
   "cards": 137,
   "cardsWithFeatures": 124,
@@ -1221,8 +1221,20 @@
     "anthropic.claude-fable-5-1": {
       "card": "model-card-anthropic-claude-fable-5-1.html",
       "runtime": {
+        "streaming": true,
         "implicitPromptCaching": false,
-        "structuredOutputs": true
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": true,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": true,
+        "promptCaching": true
       },
       "mantle": {
         "streaming": true,

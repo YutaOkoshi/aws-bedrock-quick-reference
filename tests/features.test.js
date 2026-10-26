@@ -557,3 +557,35 @@ describe("parseModelCard: 接続先ごとの地域の表 (regions)", () => {
     expect(parseModelCard(md).regions).toEqual({ shared: { inRegion: ["us-east-1"], geo: ["us-east-1"], global: ["us-east-1"] } });
   });
 });
+
+// アイコンの無い項目 (2026-10-26、Fable 5.1 の bedrock-runtime の表): 置かれた列 (Supported / Not Supported) で決める。
+describe("parseModelCard: アイコンの無い機能の項目", () => {
+  const YES = "![Green circle with white checkmark icon.](https://docs.aws.amazon.com/bedrock/latest/userguide/images/icons/icon-yes.png)";
+  const NO = "![Red circle with white X icon.](https://docs.aws.amazon.com/bedrock/latest/userguide/images/icons/icon-no.png)";
+  const card = (supportedCell, notSupportedCell) => [
+    "## Capabilities and features", "",
+    "**Features supported using `bedrock-runtime` endpoint**", "", "",
+    "| **Supported** | **Not Supported** | ", "| --- | --- | ",
+    `| ${supportedCell} | ${notSupportedCell} | `, "",
+  ].join("\n");
+
+  it("アイコンが無ければ列で真偽を決め、リンクも拾う", () => {
+    const parsed = parseModelCard(card(
+      `+ [Response streaming](/bedrock/latest/APIReference/x.html)<br />+ Prompt caching<br />+ ${YES} [Structured outputs](structured-output.html)`,
+      `+ [Count tokens](count-tokens.html)<br />+ ${NO} Implicit Prompt Caching`,
+    ));
+    expect(parsed.runtime).toEqual({
+      "Response streaming": true,
+      "Prompt caching": true,
+      "Structured outputs": true,
+      "Count tokens": false,
+      "Implicit Prompt Caching": false,
+    });
+    expect(parsed.links["Count tokens"]).toBe("count-tokens.html");
+  });
+
+  it("アイコンがあれば列よりアイコンを優先する", () => {
+    const parsed = parseModelCard(card(`+ ${NO} Guardrails`, `+ ${YES} Agents`));
+    expect(parsed.runtime).toEqual({ Guardrails: false, Agents: true });
+  });
+});

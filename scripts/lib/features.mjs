@@ -196,21 +196,36 @@ function parseRegions(allSections, endpoints) {
 
 const ITEM =
   /icon-(yes|no)\.png\)\s*(?:\[([^\]]+)\]\(([^)\s]*)\)|([^<]+))/;
+// アイコンの無い項目 ("+ [名前](リンク)" / "+ 名前")。Fable 5.1 の bedrock-runtime の表 (2026-10-26)。
+const BARE_ITEM = /^\s*\+\s*(?:\[([^\]]+)\]\(([^)\s]*)\)|([^<]+))/;
 
 // Supported / Not Supported の 2 セル。値はアイコンで決める (列の位置には頼らない)。
+// アイコンの無い項目だけ、置かれた列の見出しで決める。
 function parseFeatureTable(table, links) {
   const result = {};
+  const columnValue = table.header.map((name) =>
+    /^not supported$/i.test(name) ? false : /^supported$/i.test(name) ? true : null,
+  );
   for (const row of table.body) {
-    for (const cell of row) {
+    row.forEach((cell, index) => {
       for (const item of cell.split(/<br\s*\/?>/)) {
-        const match = item.match(ITEM);
-        if (!match) continue;
-        const name = unescape(match[2] ?? match[4]).trim();
+        let value, label, link, plain;
+        const icon = item.match(ITEM);
+        if (icon) {
+          [, label, link, plain] = icon.slice(1);
+          value = icon[1] === "yes";
+        } else {
+          const bare = columnValue[index] === null ? null : item.match(BARE_ITEM);
+          if (!bare) continue;
+          [label, link, plain] = bare.slice(1);
+          value = columnValue[index];
+        }
+        const name = unescape(label ?? plain).trim();
         if (!name) continue;
-        result[name] = match[1] === "yes";
-        if (match[3] && !(name in links)) links[name] = match[3];
+        result[name] = value;
+        if (link && !(name in links)) links[name] = link;
       }
-    }
+    });
   }
   return result;
 }
