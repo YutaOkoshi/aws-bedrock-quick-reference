@@ -118,6 +118,18 @@ describe("AC-002 生データからの再正規化 (--from-raw)", () => {
     expect(readFileSync(join(rawDir, "summary.md"), "utf8")).toContain("No changes.");
   });
 
+  // 同じ日付で取り直しを繰り返しても、summary は取り直す前の版と比べる (2026-10-26)。
+  it("同じ日付の 2 回目以降も、summary はその日の初回に控えた features.json と比べる", () => {
+    writeFileSync(join(dataDir, "features.json"), json({ byModel: {}, features: {} }));
+    buildFromRaw({ rawDir, dataDir, generatedAt: "2026-10-06T00:00:00.000Z", log: silent });
+    buildFromRaw({ rawDir, dataDir, generatedAt: "2026-10-07T00:00:00.000Z", log: silent });
+    const summary = readFileSync(join(rawDir, "summary.md"), "utf8");
+    expect(summary).not.toContain("No changes.");
+    expect(summary).toContain("- anthropic.claude-sonnet-5-5: (new)");
+    expect(readJson(join(rawDir, "features-baseline.json"))).toEqual({ byModel: {}, features: {} });
+    expect(readJson(join(dataDir, "features.json")).generatedAt).toBe("2026-10-06T00:00:00.000Z");
+  });
+
   it("toc にあって .md が無いカードは failedCards に数える", () => {
     rmSync(join(rawDir, rawCardName(CARDS[0])));
     buildFromRaw({ rawDir, dataDir, generatedAt: "2026-10-06T00:00:00.000Z", log: silent });

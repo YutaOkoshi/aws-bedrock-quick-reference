@@ -192,6 +192,8 @@ node scripts/fetch-bedrock-features.mjs
 - `--dry-run` は取得と生データの保存だけ行い `data/features.json` を書かない
 - 生データは `data/raw/<日付>/features/` (`toc-contents.json` と `<カード名>.md`、gitignore 対象)。
   機能の増減の要約は同じ場所の `summary.md` に書かれ、定期実行の PR 本文になる。
+  要約の比較相手は、その日の初回に控えた取り直す前の `data/features.json` (`features-baseline.json`)。
+  同じ日付で取り直しや `--from-raw` を繰り返しても、要約は取り直す前の版との差分になる。
   パースの規則や対応表を変えたときは、取り直さずに作り直せる:
 
   ```

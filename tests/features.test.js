@@ -365,6 +365,17 @@ describe("summary (PR 本文)", () => {
     const first = build().features;
     expect(build({ previous: first }).summary).toContain("No changes.");
   });
+
+  // 手元で取り直しを繰り返すと previous (作業ツリー) は前回の出力になる。summary はコミット済みの baseline と比べる (2026-10-26)。
+  it("baseline があれば previous ではなく baseline と比べる", () => {
+    const first = build().features;
+    const { summary } = build({ previous: first, baseline: null });
+    expect(summary).toContain("No changes.");
+    const committed = { ...first, byModel: {} };
+    const result = build({ previous: first, baseline: committed });
+    expect(result.summary).toContain("- anthropic.claude-sonnet-5-5: (new)");
+    expect(result.features.generatedAt).toBe(first.generatedAt);
+  });
 });
 
 // 機能一覧に Explicit Prompt Caching が無く、Prompt caching の表にだけ Yes があるカード (sonnet-4-5 相当)。

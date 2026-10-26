@@ -80,6 +80,17 @@ function readJsonIfExists(path, fallback) {
   return existsSync(path) ? readJson(path) : fallback;
 }
 
+// summary.md の比較相手。その日の初回に、取り直す前の data/features.json を raw に控える。
+// 同じ日付で取り直しや --from-raw を繰り返しても、summary は控え (= 取り直す前の版) との差分になる。
+function readBaseline(rawDir, previousPath) {
+  const baselinePath = join(rawDir, "features-baseline.json");
+  if (!existsSync(baselinePath) && existsSync(previousPath)) {
+    mkdirSync(rawDir, { recursive: true });
+    writeFileSync(baselinePath, readFileSync(previousPath, "utf8"));
+  }
+  return readJsonIfExists(baselinePath, null);
+}
+
 // 正規化して書き出す。summary.md は常に raw に書き、安全弁が働いたら data/features.json は書かない。
 function buildAndWrite({ cards, rawDir, dataDir, generatedAt, dryRun, log }) {
   const previousPath = join(dataDir, "features.json");
@@ -89,6 +100,7 @@ function buildAndWrite({ cards, rawDir, dataDir, generatedAt, dryRun, log }) {
     names: readJson(join(dataDir, "feature-names.json")),
     map: readJsonIfExists(join(dataDir, "feature-model-map.json"), {}),
     previous: readJsonIfExists(previousPath, null),
+    baseline: readBaseline(rawDir, previousPath),
     generatedAt,
   });
 

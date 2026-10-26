@@ -459,7 +459,9 @@ function buildSummary({ previous, features, failedList, filled, conflicts }) {
 }
 
 // cards: { [card]: markdown | null }。null は取得失敗で、例外にせず failedCards に数える。
-export function normalizeFeatures({ cards, models, names, map = {}, previous = null, generatedAt }) {
+// previous は前回の出力 (generatedAt の据え置きと安全弁に使う)。baseline は summary の比較相手で、
+// 省くと previous と比べる。手元で取り直しを繰り返すときは取り直す前の版を渡す。
+export function normalizeFeatures({ cards, models, names, map = {}, previous = null, baseline = null, generatedAt }) {
   const labels = names?.labels ?? {};
   const byModel = {};
   const unmatchedCards = [];
@@ -584,5 +586,5 @@ export function normalizeFeatures({ cards, models, names, map = {}, previous = n
   const guardTripped =
     Number(previous?.cardsWithFeatures) > 0 && cardsWithFeatures < previous.cardsWithFeatures / 2;
 
-  return { features: result, summary: buildSummary({ previous, features: result, failedList, filled, conflicts }), guardTripped };
+  return { features: result, summary: buildSummary({ previous: baseline ?? previous, features: result, failedList, filled, conflicts }), guardTripped };
 }
