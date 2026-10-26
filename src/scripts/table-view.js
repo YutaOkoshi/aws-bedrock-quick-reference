@@ -188,7 +188,14 @@ function geoCell(row, notes) {
   const verdict = laneVerdict(row.endpoints?.geo ?? { runtime: row.geo.length > 0, mantle: null });
   if (!verdict.available) return markNo();
   // Mantle の Geo は推論プロファイルの宛先が分からないので、地名は出さずに判定だけ出す。
-  if (row.geo.length === 0) return laneMarkYes(verdict);
+  if (row.geo.length === 0) {
+    const mark = laneMarkYes(verdict);
+    // 宛先が分からないので、Global と同じく限定が付いていれば満たさない (D-021)。
+    if (!limitActive(row)) return mark;
+    const wrap = el("span", "cell-geo out-of-limit");
+    wrap.append(mark, limitBadge());
+    return wrap;
+  }
   const lang = getLang();
   const separator = t("geo.separator");
   const wrap = el("span", "cell-geo");

@@ -381,5 +381,5 @@ td.feature-col { text-align: center; white-space: nowrap; padding-left: 6px; pad
 .lane-only { font-size: 10px; color: var(--warn-fg); white-space: nowrap; }
 
 /* 機能列: 起点で使えない接続先の値は薄くする。値は変えない (D-021) */
-.feature-mark.endpoint-off { flex-wrap: wrap; opacity: .45; filter: grayscale(1); cursor: help; }
+.feature-mark.endpoint-off { display: inline-flex; flex-wrap: wrap; opacity: .45; filter: grayscale(1); cursor: help; }
 .feature-mark.endpoint-off::after { content: attr(data-off-note); flex-basis: 100%; font-size: 9px; color: var(--fg-muted); white-space: nowrap; }

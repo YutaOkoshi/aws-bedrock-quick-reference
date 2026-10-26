@@ -119,3 +119,25 @@ describe("機能列の注記", () => {
     expect(mark.dataset.offNote).toBe("この起点では Mantle 不可");
   });
 });
+
+// レビューの指摘 (2026-10-26): Mantle の Geo は宛先が分からないので、限定が付けば Global と同じく満たさない。
+describe("Mantle だけの Geo と推論先の限定", () => {
+  const TITAN = "amazon.titan-embed-text-v1:2:8k"; // 東京で Runtime の In-Region / Geo / Global がすべて不可
+  const features = { byModel: { [TITAN]: { card: "x.html", runtime: {}, mantle: {},
+    endpoints: { "bedrock-runtime": {}, "bedrock-mantle": {} },
+    regions: { "bedrock-mantle": { inRegion: [TOKYO], geo: [TOKYO], global: [] } } } } };
+
+  it("限定が無ければ「✓ Mantle のみ」だけ", () => {
+    mountFixtureApp({ features });
+    const geo = cells(rowFor(TITAN))[GEO];
+    expect(geo.textContent).toContain("Mantle のみ");
+    expect(geo.querySelector(".out-of-limit")).toBeNull();
+  });
+
+  it("限定が付くと Geo は限定外の印が付き、In-Region (推論先は起点) は満たす", () => {
+    mountFixtureApp({ features, search: "?limit=geo:jp" });
+    const row = cells(rowFor(TITAN));
+    expect(row[GEO].querySelector(".out-of-limit")).toBeTruthy();
+    expect(row[IN_REGION].querySelector(".out-of-limit")).toBeNull();
+  });
+});
