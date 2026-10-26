@@ -93,6 +93,7 @@ export const en = {
     outsideMark: "Outside the source Region's country",
   },
   value: {
+    only: { runtime: "Runtime only", mantle: "Mantle only" },
     yes: "Yes",
     no: "No",
     globalNote: "all supported Regions worldwide, may grow",
@@ -198,6 +199,8 @@ export const en = {
     pickerGroup: "Feature columns shown in the table",
     pickerReset: "Reset to default",
     sideAria: "{endpoint}: {state}",
+    endpointOffShort: "{endpoint} unavailable here",
+    endpointOff: "{endpoint} is not available from this source Region. The value applies in Regions where {endpoint} is available",
     legend: {
       prefix: "Features: ",
       yes: " = marked supported on the official model card / ",

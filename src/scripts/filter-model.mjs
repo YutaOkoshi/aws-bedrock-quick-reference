@@ -326,9 +326,10 @@ function inRegionSatisfiesLimit(region, limitRegions) {
   return limitRegions.has(region);
 }
 
-/** 3 区分のいずれかが「可」か (AC-004)。 */
+/** 3 区分のいずれかが「可」か (AC-004)。bedrock-mantle だけで呼べる場合も数える (D-021)。 */
 export function isCallable(row) {
-  return row.inRegion === true || (row.geo?.length ?? 0) > 0 || row.global != null;
+  const mantle = ["inRegion", "geo", "global"].some((lane) => row.endpoints?.[lane]?.mantle === true);
+  return row.inRegion === true || (row.geo?.length ?? 0) > 0 || row.global != null || mantle;
 }
 
 function matchesModality(row, modalities) {
@@ -357,7 +358,9 @@ export function annotateRow(row, { region, limitRegions = null } = {}) {
       active ? satisfiesLimit(entry.destinations, limitRegions) : true,
     ]),
   );
-  const inRegion = row.inRegion === true && inRegionSatisfiesLimit(region, limitRegions);
+  // bedrock-mantle の In-Region も推論先は起点だけなので、同じ規則で数える (D-021)。
+  const inRegionAvailable = row.inRegion === true || row.endpoints?.inRegion?.mantle === true;
+  const inRegion = inRegionAvailable && inRegionSatisfiesLimit(region, limitRegions);
   // Global は destination が ["*"] なので、限定があるときは常に満たさない (AC-008)。
   const global = row.global != null && !active;
   const any = active

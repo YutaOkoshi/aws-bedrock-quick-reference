@@ -1,7 +1,7 @@
 // @vitest-environment node
 // In-Region / Geo / Global を bedrock-runtime / bedrock-mantle ごとに出す (2026-10-08)。
 import { describe, expect, it } from "vitest";
-import { endpointAvailability } from "../src/scripts/feature-model.mjs";
+import { endpointAvailability, endpointUnavailable, laneVerdict } from "../src/scripts/feature-model.mjs";
 
 const R = "ap-northeast-1";
 const runtimeRow = { inRegion: false, geo: [{ profileId: "jp.m" }], global: { profileId: "global.m" } };
@@ -46,5 +46,44 @@ describe("endpointAvailability", () => {
   it("docs にも mantle.json にも無ければ、Mantle はすべて null (記載なし)", () => {
     const result = endpointAvailability({ features: {}, mantle: null, modelId: "m", region: R, row: runtimeRow });
     expect([result.inRegion.mantle, result.geo.mantle, result.global.mantle]).toEqual([null, null, null]);
+  });
+});
+
+// 上段の判定は接続先をまとめる (D-021)。どちらかで使えれば可、片方だけなら only に接続先を入れる。
+describe("laneVerdict", () => {
+  it("両方使えるなら only は null", () => {
+    expect(laneVerdict({ runtime: true, mantle: true })).toEqual({ available: true, only: null });
+  });
+  it("Runtime だけ (Mantle は不可と分かっている)", () => {
+    expect(laneVerdict({ runtime: true, mantle: false })).toEqual({ available: true, only: "runtime" });
+  });
+  it("Mantle だけ", () => {
+    expect(laneVerdict({ runtime: false, mantle: true })).toEqual({ available: true, only: "mantle" });
+  });
+  it("Mantle が記載なし (null) なら、Runtime だけでも only を付けない", () => {
+    expect(laneVerdict({ runtime: true, mantle: null })).toEqual({ available: true, only: null });
+  });
+  it("どちらも不可", () => {
+    expect(laneVerdict({ runtime: false, mantle: false })).toEqual({ available: false, only: null });
+    expect(laneVerdict({ runtime: false, mantle: null })).toEqual({ available: false, only: null });
+    expect(laneVerdict(undefined)).toEqual({ available: false, only: null });
+  });
+});
+
+// 機能列を薄くするのは、起点で 3 区分とも不可と分かっている接続先だけ (記載なしは薄くしない)。
+describe("endpointUnavailable", () => {
+  const lanes = (runtime, mantle) => ({
+    inRegion: { runtime: runtime[0], mantle: mantle[0] },
+    geo: { runtime: runtime[1], mantle: mantle[1] },
+    global: { runtime: runtime[2], mantle: mantle[2] },
+  });
+  it("3 区分とも false なら不可", () => {
+    expect(endpointUnavailable(lanes([true, true, true], [false, false, false]), "mantle")).toBe(true);
+    expect(endpointUnavailable(lanes([false, false, false], [true, false, false]), "runtime")).toBe(true);
+  });
+  it("1 つでも使えるか、記載なしがあれば不可としない", () => {
+    expect(endpointUnavailable(lanes([true, true, true], [true, false, false]), "mantle")).toBe(false);
+    expect(endpointUnavailable(lanes([true, true, true], [false, null, null]), "mantle")).toBe(false);
+    expect(endpointUnavailable(null, "mantle")).toBe(false);
   });
 });

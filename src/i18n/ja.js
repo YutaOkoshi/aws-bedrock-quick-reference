@@ -93,6 +93,7 @@ export const ja = {
     outsideMark: "起点リージョンの国の外",
   },
   value: {
+    only: { runtime: "Runtime のみ", mantle: "Mantle のみ" },
     yes: "可",
     no: "提供なし",
     globalNote: "全世界の対応リージョン、増えうる",
@@ -200,6 +201,8 @@ export const ja = {
     pickerGroup: "表に出す機能の列",
     pickerReset: "既定に戻す",
     sideAria: "{endpoint}: {state}",
+    endpointOffShort: "この起点では {endpoint} 不可",
+    endpointOff: "この起点リージョンでは {endpoint} を使えません。値は {endpoint} を使えるリージョンでの対応です",
     legend: {
       prefix: "機能: ",
       yes: " = 公式 docs のモデルカードに対応と明記 / ",

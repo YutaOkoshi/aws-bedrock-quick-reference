@@ -239,6 +239,7 @@ decision_refs:
 
 ## 変更履歴
 
+- **version 13** (2026-10-26): 上段の判定を bedrock-runtime と bedrock-mantle をまとめたものにした。どちらかで使えれば可、片方だけなら「Runtime のみ / Mantle のみ」を添える。In-Region 列の並べ替え・「この起点リージョンから呼べるものだけ」・推論先の限定の In-Region も同じ判定にする。機能列は、起点で 3 区分とも使えない接続先の側を薄くし「この起点では Mantle 不可」と添える（値は変えない）（D-021）
 - **version 12** (2026-10-08): In-Region / Geo / Global の各セルの下段に、bedrock-runtime と bedrock-mantle のどちらで使えるか（Runtime ✓/✕・Mantle ✓/✕/—）を出した。Runtime は API の判定、Mantle は docs のモデルカードの地域の表。上段の判定・並べ替え・絞り込みは変えない（D-020）
 - **version 11** (2026-10-08): 価格列に、AWS Marketplace の offer から補った単価の「出典: Marketplace」と、価格未収録のときの docs のモデルカード（無ければ料金ページ）へのリンクを足した（D-018）。価格列と並べ替えは bedrock-runtime の単価だけを使う（D-017）。Geo / Global の列に、docs のモデルカードと ListInferenceProfiles の推論 ID が食い違うときの「docs と相違」の注釈を足した。判定は API のまま変えない（D-019）
 - **version 10** (2026-10-06): 価格 2 列の右に、公式 docs のモデルカードから取った **機能列**（既定は全機能、列ピッカーで増減）を足した（AC-016 を追加、AC-006 / AC-008 に And を追記）。値は FEATURE-001 が作る `data/features.json` から取り、選んだ列は URL の `cols=` に載る（SHARE-001 v5 AC-014）。判定ルール・既存の列・絞り込み・価格・denied バナーは変更しない。理由: モデルカードを一枚ずつ開かずに「この接続先でどの機能が使えるか」を同じ表で比べられるようにするため（D-015 / D-016）

@@ -23,9 +23,11 @@ import { regionName, regionOptionLabel } from "./region-names.js";
 import {
   MODEL_CARDS_URL,
   defaultFeatureColumns,
+  endpointUnavailable,
   featureCell,
   featureOptions,
   featureStateRank,
+  laneVerdict,
 } from "./feature-model.mjs";
 import { createFeaturePicker } from "./feature-picker.js";
 
@@ -156,13 +158,21 @@ function modelNameCell(row) {
   return wrap;
 }
 
+// 上段の判定 (D-021)。Runtime と Mantle のどちらかで使えれば可。片方だけなら「Runtime のみ / Mantle のみ」。
+function laneMarkYes(verdict) {
+  const mark = markYes(verdict.only ? `value.only.${verdict.only}` : "value.yes");
+  if (verdict.only) mark.classList.add("is-partial");
+  return mark;
+}
+
 function inRegionCell(row) {
   const wrap = el("span", "cell-inregion");
-  if (!row.inRegion) {
+  const verdict = laneVerdict(row.endpoints?.inRegion ?? { runtime: row.inRegion, mantle: null });
+  if (!verdict.available) {
     wrap.appendChild(markNo());
     return wrap;
   }
-  wrap.appendChild(markYes());
+  wrap.appendChild(laneMarkYes(verdict));
   // 起点 R が限定集合 L に入っていなければ In-Region は限定を満たさない (AC-007)。
   if (limitActive(row) && row.limit.inRegion !== true) {
     wrap.classList.add("out-of-limit");
@@ -175,7 +185,10 @@ function inRegionCell(row) {
 // (FILTER-001 / REGIONS-001 / FLOW-001 と共有)。使う側はそちらから import する。
 
 function geoCell(row, notes) {
-  if (row.geo.length === 0) return markNo();
+  const verdict = laneVerdict(row.endpoints?.geo ?? { runtime: row.geo.length > 0, mantle: null });
+  if (!verdict.available) return markNo();
+  // Mantle の Geo は推論プロファイルの宛先が分からないので、地名は出さずに判定だけ出す。
+  if (row.geo.length === 0) return laneMarkYes(verdict);
   const lang = getLang();
   const separator = t("geo.separator");
   const wrap = el("span", "cell-geo");
@@ -207,6 +220,7 @@ function geoCell(row, notes) {
     line.appendChild(list);
     wrap.appendChild(line);
   }
+  if (verdict.only) wrap.appendChild(el("span", "lane-only", t(`value.only.${verdict.only}`)));
   return wrap;
 }
 
@@ -293,9 +307,10 @@ function withMismatch(node, mismatch) {
 }
 
 function globalCell(row) {
-  if (!row.global) return markNo();
+  const verdict = laneVerdict(row.endpoints?.global ?? { runtime: Boolean(row.global), mantle: null });
+  if (!verdict.available) return markNo();
   const wrap = el("span", "cell-global");
-  wrap.appendChild(markYes());
+  wrap.appendChild(laneMarkYes(verdict));
   const note = el("span", "global-note");
   note.append(el("span", "global-note-text", t("value.globalNote")), document.createTextNode(" "));
   const link = el("a", "global-note-link", t("value.globalDocs"));
@@ -336,7 +351,7 @@ export function featureLegend(className = "feature-legend") {
   return line;
 }
 
-function featureMark(endpoint, state) {
+function featureMark(endpoint, state, off = false) {
   const mark =
     state === "yes"
       ? markYes("feature.mark.yes")
@@ -348,6 +363,13 @@ function featureMark(endpoint, state) {
     "aria-label",
     t("feature.sideAria", { endpoint, state: t(`feature.state.${state}`) }),
   );
+  // 起点で 3 区分ともこの接続先を使えない。値は変えずに薄くし、理由を title に出す (D-021)。
+  if (off) {
+    mark.classList.add("endpoint-off");
+    mark.title = t("feature.endpointOff", { endpoint });
+    // セルの下に出す短い注記は CSS の ::after で描く (DOM を増やさず再描画を軽く保つ。AC-NFR-002)。
+    mark.dataset.offNote = t("feature.endpointOffShort", { endpoint: endpoint === "bedrock-mantle" ? "Mantle" : "Runtime" });
+  }
   return mark;
 }
 
@@ -370,7 +392,8 @@ function featureColumns(features, keys) {
         align: "left",
         className: `feature-col feature-col-${side}`,
         sortValue: (row) => featureStateRank(featureCell(features, row.modelId, key)[side]),
-        format: (_value, row) => featureMark(endpoint, featureCell(features, row.modelId, key)[side]),
+        format: (_value, row) =>
+          featureMark(endpoint, featureCell(features, row.modelId, key)[side], endpointUnavailable(row.endpoints, side)),
       })),
     );
 }
@@ -437,6 +460,8 @@ export function buildColumns(regionNotes, { features = {}, featureColumns: keys 
       group: "judge",
       labelKey: "table.inRegion",
       type: "flag",
+      // 並べ替えも上段と同じ、接続先をまとめた判定で比べる (D-021)。
+      sortValue: (row) => laneVerdict(row.endpoints?.inRegion ?? { runtime: row.inRegion, mantle: null }).available,
       format: (_value, row) => withEndpoints(inRegionCell(row), row.endpoints?.inRegion),
     },
     {

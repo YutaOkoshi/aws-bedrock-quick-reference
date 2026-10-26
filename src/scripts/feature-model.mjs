@@ -65,6 +65,24 @@ export function endpointAvailability({ features, mantle, modelId, region, row })
   );
 }
 
+/**
+ * 判定のセルの上段 (D-021)。bedrock-runtime と bedrock-mantle のどちらかで使えれば可。
+ * 片方だけで使え、もう片方が不可と分かっているときだけ only にその接続先を入れる (記載なしの Mantle には付けない)。
+ * 戻り値: { available: boolean, only: "runtime" | "mantle" | null }
+ */
+export function laneVerdict(lane) {
+  const runtime = lane?.runtime === true;
+  const mantle = lane?.mantle === true;
+  const only = runtime && lane?.mantle === false ? "runtime" : !runtime && mantle ? "mantle" : null;
+  return { available: runtime || mantle, only };
+}
+
+/** 起点で In-Region / Geo / Global の 3 区分とも不可と分かっている接続先か (機能列を薄くする。D-021)。 */
+export function endpointUnavailable(endpoints, side) {
+  if (!endpoints) return false;
+  return ["inRegion", "geo", "global"].every((lane) => endpoints[lane]?.[side] === false);
+}
+
 /** 価格未収録のときに案内する docs の URL。モデルカード (features.json の card) が無ければ料金ページ。 */
 export function modelDocsUrl(features, modelId) {
   const card = features?.byModel?.[modelId]?.card;

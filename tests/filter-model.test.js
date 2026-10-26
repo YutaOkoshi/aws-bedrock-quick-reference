@@ -608,3 +608,23 @@ describe("FILTER-001 AC-017 カスタム集合に未知のリージョンコー�
     expect(satisfiesLimit(["ap-northeast-1", "ap-northeast-3"], L)).toBe(false);
   });
 });
+
+// D-021: 「呼べるものだけ」と In-Region の限定は、bedrock-mantle で呼べる場合も数える。
+describe("D-021 bedrock-mantle だけで呼べる行", () => {
+  const titan = () => rows.find((row) => row.modelId === "amazon.titan-embed-text-v1:2:8k");
+  const withMantle = (row, lane) => ({
+    ...row,
+    endpoints: { inRegion: { runtime: false, mantle: lane === "inRegion" }, geo: { runtime: false, mantle: lane === "geo" }, global: { runtime: false, mantle: lane === "global" } },
+  });
+
+  it("Mantle の In-Region だけで呼べる行は「呼べるものだけ」に残る", () => {
+    expect(isCallable(withMantle(titan(), "inRegion"))).toBe(true);
+    expect(isCallable(withMantle(titan(), null))).toBe(false);
+  });
+
+  it("Mantle の In-Region は推論先が起点だけなので、R ∈ L なら限定を満たす", () => {
+    const row = withMantle(titan(), "inRegion");
+    expect(annotateRow(row, { region: TOKYO, limitRegions: setFor("country:jp") }).limit.inRegion).toBe(true);
+    expect(annotateRow(row, { region: TOKYO, limitRegions: setFor("country:us") }).limit.inRegion).toBe(false);
+  });
+});

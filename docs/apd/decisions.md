@@ -2,6 +2,7 @@
 
 技術選択の記録。**新しい判断ほど上に積む。** 最終決定はユーザーが行い、AI の推奨は参考情報。
 
+D-021 は 2026-10-26、上段の判定が Runtime だけを見て Mantle で使えるのに「提供なし」と出る食い違いを受けて、モックを見たオーナーが決定した。
 D-020 は同日、判定の列に接続先 (bedrock-runtime / bedrock-mantle) を出すためにオーナーが決定した。
 D-019 は同日、Global のバッチ・キャッシュの取り込みと、docs と API の食い違いの扱いとしてオーナーが決定した。
 D-018 は同日、Price List に無いモデルの単価の取り方としてオーナーが決定した。
@@ -13,6 +14,19 @@ D-009 は Design v2 で価格が範囲に入ったことを受けて 2026-09-14 
 D-001〜D-005 は brainstorming の対話で内容が固まり、技術設計
 （`docs/superpowers/specs/2026-09-14-bedrock-quick-reference-design.md`）から転記したものを
 2026-09-14 にユーザーが確定した。D-006・D-007 は Spec フェーズで決定した。D-008 は Build 中に発生した矛盾の解消で、暫定決定 B をオーナーの指示で D に差し替えた。
+
+---
+
+## D-021: 上段の判定は bedrock-runtime と bedrock-mantle をまとめる。起点で使えない接続先の機能セルは薄くする
+
+- **Date**: 2026-10-26
+- **Context**: D-020 で上段の判定・並べ替え・絞り込みを bedrock-runtime の API のままにしたため、us-east-1 の Claude Opus 5.5 のように Mantle の In-Region で呼べる（実際の `/v1/models` にもある）モデルが、上段で「✕ 提供なし」、下段で「Mantle ✓」と食い違って見えた。機能列は起点リージョンに依らないので、東京のように Mantle をどこでも呼べない起点でも Mantle の機能が「✓ 対応」と出ていた
+- **Decision**（2026-10-26、オーナーがモック `mantle-verdict-mock.html` の案 1 と「起点で使えない接続先を薄く」を採用）:
+  - 上段はどちらかの接続先で使えれば「✓ 可」。片方だけで使え、もう片方が不可と分かっているときは「Runtime のみ / Mantle のみ」と添える（Mantle が記載なし「—」のときは添えない）。両方不可のときだけ「提供なし」
+  - In-Region 列の並べ替え、「この起点リージョンから呼べるものだけ」、推論先の限定の In-Region も同じ判定にする。Mantle の In-Region は推論先が起点だけなので、限定の規則は Runtime と同じ。Mantle の Geo / Global は宛先が分からないので限定を満たさない扱い
+  - 機能列は、起点で In-Region / Geo / Global の 3 区分とも不可と分かっている接続先の側を薄くし、「この起点では Mantle 不可」と添える。値は変えない。記載なし（—）が混じる接続先は薄くしない
+  - `row.inRegion` / `geo` / `global` は bedrock-runtime の API の判定のまま残す（詳細パネルの流れ図・推論先はこれを使う）
+- **Refs**: `src/scripts/feature-model.mjs`（`laneVerdict` / `endpointUnavailable`）、`src/scripts/table-view.js`、`src/scripts/filter-model.mjs`（`isCallable` / `annotateRow`）、`spec-table.md` v13
 
 ---
 

@@ -292,11 +292,12 @@ source region R、モデル M について:
 | In-Region | R の `models.json[M].availability[R]` が `ON_DEMAND` を含む |
 | Geo | `profiles.json` に接頭辞が `global` **以外**で M を対象とし `sources[R]` を持つものがある（接頭辞の固定リストは持たない、D-012） |
 | Global | 同じく接頭辞 `global`。destination は API から取れないので `["*"]` で、画面では注記にする |
+| 上段の判定 | 下段の Runtime / Mantle のどちらかが ✓ なら可。片方だけ ✓ でもう片方が ✕ なら「Runtime のみ / Mantle のみ」を添える (Mantle が「—」なら添えない)。並べ替え・「呼べるものだけ」・限定の In-Region も同じ判定 (D-021)。`row.inRegion` / `geo` / `global` は Runtime の判定のまま |
 | 接続先 (セルの下段) | Runtime は上の判定と同じ API。Mantle は `features.json` の `regions["bedrock-mantle"]` (無ければ `shared`)、Programmatic Access に mantle の行が無ければ不可、地域の表が無ければ In-Region だけ `mantle.json`。記載なしは「—」(D-020) |
 | docs と相違 | Geo / Global の推論 ID が、`features.json` の `endpoints` (docs のモデルカードの Programmatic Access の bedrock-runtime の行) と食い違う。判定は API のまま変えず、注釈だけ出す (D-019) |
 | データなし | `fetch-log.json.regions[R].status` が `denied` |
 | 入力 / 出力 $/1M | `prices.json.byModel[M][R].standard` の `input` / `output` (bedrock-runtime)。無ければ「—」。`.mantle` の下は bedrock-mantle の単価で、詳細パネルにだけ出す (D-017) |
-| 機能列 | `features.json.byModel[M].runtime[K]` / `.mantle[K]` が true / false / キーなし (記載なし)。記載なしを false に倒さない。起点リージョンには依らない |
+| 機能列 | `features.json.byModel[M].runtime[K]` / `.mantle[K]` が true / false / キーなし (記載なし)。記載なしを false に倒さない。値は起点リージョンには依らないが、起点で 3 区分とも ✕ の接続先の側は薄くする (D-021) |
 
 `PROVISIONED` は `availability` に保持するが、3 列の判定には使わない。
 `inferenceTypesSupported` には API Reference の enum に無い `INFERENCE_PROFILE` が返るので、
