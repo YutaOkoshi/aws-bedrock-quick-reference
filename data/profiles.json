@@ -337,73 +337,6 @@
       ]
     }
   },
-  "apac.anthropic.claude-sonnet-4-20250514-v1:0": {
-    "prefix": "apac",
-    "modelId": "anthropic.claude-sonnet-4-20250514-v1:0",
-    "name": "APAC Claude Sonnet 4",
-    "sources": {
-      "ap-northeast-1": [
-        "ap-northeast-1",
-        "ap-northeast-2",
-        "ap-northeast-3",
-        "ap-south-1",
-        "ap-south-2",
-        "ap-southeast-1",
-        "ap-southeast-2",
-        "ap-southeast-4"
-      ],
-      "ap-northeast-2": [
-        "ap-northeast-1",
-        "ap-northeast-2",
-        "ap-northeast-3",
-        "ap-south-1",
-        "ap-south-2",
-        "ap-southeast-1",
-        "ap-southeast-2",
-        "ap-southeast-4"
-      ],
-      "ap-northeast-3": [
-        "ap-northeast-1",
-        "ap-northeast-2",
-        "ap-northeast-3",
-        "ap-south-1",
-        "ap-south-2",
-        "ap-southeast-1",
-        "ap-southeast-2",
-        "ap-southeast-4"
-      ],
-      "ap-south-1": [
-        "ap-northeast-1",
-        "ap-northeast-2",
-        "ap-northeast-3",
-        "ap-south-1",
-        "ap-south-2",
-        "ap-southeast-1",
-        "ap-southeast-2",
-        "ap-southeast-4"
-      ],
-      "ap-southeast-1": [
-        "ap-northeast-1",
-        "ap-northeast-2",
-        "ap-northeast-3",
-        "ap-south-1",
-        "ap-south-2",
-        "ap-southeast-1",
-        "ap-southeast-2",
-        "ap-southeast-4"
-      ],
-      "ap-southeast-2": [
-        "ap-northeast-1",
-        "ap-northeast-2",
-        "ap-northeast-3",
-        "ap-south-1",
-        "ap-south-2",
-        "ap-southeast-1",
-        "ap-southeast-2",
-        "ap-southeast-4"
-      ]
-    }
-  },
   "apac.twelvelabs.marengo-embed-2-7-v1:0": {
     "prefix": "apac",
     "modelId": "twelvelabs.marengo-embed-2-7-v1:0",
@@ -542,6 +475,17 @@
     "prefix": "au",
     "modelId": "anthropic.claude-sonnet-5",
     "name": "AU Anthropic Claude Sonnet 5",
+    "sources": {
+      "ap-southeast-2": [
+        "ap-southeast-2",
+        "ap-southeast-4"
+      ]
+    }
+  },
+  "au.anthropic.claude-sonnet-5-5": {
+    "prefix": "au",
+    "modelId": "anthropic.claude-sonnet-5-5",
+    "name": "AU Anthropic Claude Sonnet 5.5",
     "sources": {
       "ap-southeast-2": [
         "ap-southeast-2",
@@ -1108,45 +1052,6 @@
         "eu-south-2",
         "eu-west-1",
         "eu-west-2",
-        "eu-west-3"
-      ],
-      "eu-west-3": [
-        "eu-central-1",
-        "eu-north-1",
-        "eu-south-1",
-        "eu-south-2",
-        "eu-west-1",
-        "eu-west-3"
-      ]
-    }
-  },
-  "eu.anthropic.claude-sonnet-4-20250514-v1:0": {
-    "prefix": "eu",
-    "modelId": "anthropic.claude-sonnet-4-20250514-v1:0",
-    "name": "EU Claude Sonnet 4",
-    "sources": {
-      "eu-central-1": [
-        "eu-central-1",
-        "eu-north-1",
-        "eu-south-1",
-        "eu-south-2",
-        "eu-west-1",
-        "eu-west-3"
-      ],
-      "eu-north-1": [
-        "eu-central-1",
-        "eu-north-1",
-        "eu-south-1",
-        "eu-south-2",
-        "eu-west-1",
-        "eu-west-3"
-      ],
-      "eu-west-1": [
-        "eu-central-1",
-        "eu-north-1",
-        "eu-south-1",
-        "eu-south-2",
-        "eu-west-1",
         "eu-west-3"
       ],
       "eu-west-3": [
@@ -2195,9 +2100,6 @@
       "eu-west-1": [
         "*"
       ],
-      "us-east-1": [
-        "*"
-      ],
       "us-east-2": [
         "*"
       ],
@@ -3134,6 +3036,64 @@
       ]
     }
   },
+  "global.twelvelabs.pegasus-1-5-v1:0": {
+    "prefix": "global",
+    "modelId": "twelvelabs.pegasus-1-5-v1:0",
+    "name": "Global TwelveLabs Pegasus v1.5",
+    "sources": {
+      "ap-northeast-1": [
+        "*"
+      ],
+      "ap-northeast-2": [
+        "*"
+      ],
+      "ap-northeast-3": [
+        "*"
+      ],
+      "ap-south-1": [
+        "*"
+      ],
+      "ap-southeast-1": [
+        "*"
+      ],
+      "ap-southeast-2": [
+        "*"
+      ],
+      "ca-central-1": [
+        "*"
+      ],
+      "eu-central-1": [
+        "*"
+      ],
+      "eu-north-1": [
+        "*"
+      ],
+      "eu-west-1": [
+        "*"
+      ],
+      "eu-west-2": [
+        "*"
+      ],
+      "eu-west-3": [
+        "*"
+      ],
+      "sa-east-1": [
+        "*"
+      ],
+      "us-east-1": [
+        "*"
+      ],
+      "us-east-2": [
+        "*"
+      ],
+      "us-west-1": [
+        "*"
+      ],
+      "us-west-2": [
+        "*"
+      ]
+    }
+  },
   "global.xai.grok-4.6": {
     "prefix": "global",
     "modelId": "xai.grok-4.6",
@@ -3998,34 +3958,6 @@
         "us-east-2",
         "us-west-2"
       ],
-      "us-east-1": [
-        "us-east-1",
-        "us-east-2",
-        "us-west-2"
-      ],
-      "us-east-2": [
-        "us-east-1",
-        "us-east-2",
-        "us-west-2"
-      ],
-      "us-west-1": [
-        "us-east-1",
-        "us-east-2",
-        "us-west-1",
-        "us-west-2"
-      ],
-      "us-west-2": [
-        "us-east-1",
-        "us-east-2",
-        "us-west-2"
-      ]
-    }
-  },
-  "us.anthropic.claude-sonnet-4-20250514-v1:0": {
-    "prefix": "us",
-    "modelId": "anthropic.claude-sonnet-4-20250514-v1:0",
-    "name": "US Claude Sonnet 4",
-    "sources": {
       "us-east-1": [
         "us-east-1",
         "us-east-2",
@@ -5124,6 +5056,34 @@
         "us-east-1",
         "us-east-2",
         "us-west-1",
+        "us-west-2"
+      ],
+      "us-east-2": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-2"
+      ],
+      "us-west-1": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-1",
+        "us-west-2"
+      ],
+      "us-west-2": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-2"
+      ]
+    }
+  },
+  "us.twelvelabs.pegasus-1-5-v1:0": {
+    "prefix": "us",
+    "modelId": "twelvelabs.pegasus-1-5-v1:0",
+    "name": "US TwelveLabs Pegasus v1.5",
+    "sources": {
+      "us-east-1": [
+        "us-east-1",
+        "us-east-2",
         "us-west-2"
       ],
       "us-east-2": [

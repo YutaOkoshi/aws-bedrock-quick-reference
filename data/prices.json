@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-08T04:36:31.550Z",
-  "publicationDate": "2026-10-07T18:37:33Z",
+  "generatedAt": "2026-10-26T04:03:05.268Z",
+  "publicationDate": "2026-10-16T21:08:06Z",
   "source": {
     "index": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/index.json",
     "offers": {
@@ -10,7 +10,7 @@
   },
   "unmapped": 0,
   "outOfScope": 3655,
-  "ignored": 633,
+  "ignored": 737,
   "byModel": {
     "ai21.jamba-1-5-large-v1:0": {
       "eu-central-1": {
@@ -8808,834 +8808,6 @@
         },
         "globalCacheWrite": {
           "input": 5
-        }
-      }
-    },
-    "anthropic.claude-sonnet-4-20250514-v1:0": {
-      "ap-northeast-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        },
-        "globalBatch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "globalCacheRead": {
-          "input": 0.3
-        },
-        "globalCacheWrite": {
-          "input": 3.75
-        }
-      },
-      "ap-northeast-2": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "ap-northeast-3": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "ap-south-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "ap-southeast-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "ap-southeast-2": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "eu-central-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "eu-north-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "eu-west-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        },
-        "globalBatch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "globalCacheRead": {
-          "input": 0.3
-        },
-        "globalCacheWrite": {
-          "input": 3.75
-        }
-      },
-      "eu-west-3": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "us-east-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        },
-        "globalBatch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "globalCacheRead": {
-          "input": 0.3
-        },
-        "globalCacheWrite": {
-          "input": 3.75
-        }
-      },
-      "us-east-2": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        },
-        "globalBatch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "globalCacheRead": {
-          "input": 0.3
-        },
-        "globalCacheWrite": {
-          "input": 3.75
-        }
-      },
-      "us-west-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "us-west-2": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        },
-        "globalBatch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "globalCacheRead": {
-          "input": 0.3
-        },
-        "globalCacheWrite": {
-          "input": 3.75
-        }
-      }
-    },
-    "anthropic.claude-sonnet-4-20250514-v1:0:200k": {
-      "ap-northeast-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        },
-        "globalBatch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "globalCacheRead": {
-          "input": 0.3
-        },
-        "globalCacheWrite": {
-          "input": 3.75
-        }
-      },
-      "ap-northeast-2": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "ap-northeast-3": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "ap-south-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "ap-southeast-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "ap-southeast-2": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "eu-central-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "eu-north-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "eu-west-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        },
-        "globalBatch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "globalCacheRead": {
-          "input": 0.3
-        },
-        "globalCacheWrite": {
-          "input": 3.75
-        }
-      },
-      "eu-west-3": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "us-east-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        },
-        "globalBatch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "globalCacheRead": {
-          "input": 0.3
-        },
-        "globalCacheWrite": {
-          "input": 3.75
-        }
-      },
-      "us-east-2": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        },
-        "globalBatch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "globalCacheRead": {
-          "input": 0.3
-        },
-        "globalCacheWrite": {
-          "input": 3.75
-        }
-      },
-      "us-west-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "us-west-2": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        },
-        "globalBatch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "globalCacheRead": {
-          "input": 0.3
-        },
-        "globalCacheWrite": {
-          "input": 3.75
-        }
-      }
-    },
-    "anthropic.claude-sonnet-4-20250514-v1:0:32k": {
-      "ap-northeast-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        },
-        "globalBatch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "globalCacheRead": {
-          "input": 0.3
-        },
-        "globalCacheWrite": {
-          "input": 3.75
-        }
-      },
-      "ap-northeast-2": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "ap-northeast-3": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "ap-south-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "ap-southeast-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "ap-southeast-2": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "eu-central-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "eu-north-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "eu-west-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        },
-        "globalBatch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "globalCacheRead": {
-          "input": 0.3
-        },
-        "globalCacheWrite": {
-          "input": 3.75
-        }
-      },
-      "eu-west-3": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "us-east-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        },
-        "globalBatch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "globalCacheRead": {
-          "input": 0.3
-        },
-        "globalCacheWrite": {
-          "input": 3.75
-        }
-      },
-      "us-east-2": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        },
-        "globalBatch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "globalCacheRead": {
-          "input": 0.3
-        },
-        "globalCacheWrite": {
-          "input": 3.75
-        }
-      },
-      "us-west-1": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        }
-      },
-      "us-west-2": {
-        "standard": {
-          "input": 3,
-          "output": 15
-        },
-        "global": {
-          "input": 3,
-          "output": 15
-        },
-        "batch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "cacheRead": {
-          "input": 0.3
-        },
-        "cacheWrite": {
-          "input": 3.75
-        },
-        "globalBatch": {
-          "input": 1.5,
-          "output": 7.5
-        },
-        "globalCacheRead": {
-          "input": 0.3
-        },
-        "globalCacheWrite": {
-          "input": 3.75
         }
       }
     },
@@ -30045,7 +29217,7 @@
       "us-east-1": {
         "metered": [
           {
-            "label": "Image",
+            "label": "Output image",
             "axis": "output",
             "unit": "image",
             "value": 0.08,
@@ -30056,7 +29228,7 @@
       "us-west-2": {
         "metered": [
           {
-            "label": "Image",
+            "label": "Output image",
             "axis": "output",
             "unit": "image",
             "value": 0.08,
@@ -30304,7 +29476,7 @@
       "us-east-1": {
         "metered": [
           {
-            "label": "Image",
+            "label": "Output image",
             "axis": "output",
             "unit": "image",
             "value": 0.04,
@@ -30315,7 +29487,7 @@
       "us-west-2": {
         "metered": [
           {
-            "label": "Image",
+            "label": "Output image",
             "axis": "output",
             "unit": "image",
             "value": 0.04,
@@ -30610,7 +29782,7 @@
       "us-east-1": {
         "metered": [
           {
-            "label": "Image",
+            "label": "Output image",
             "axis": "output",
             "unit": "image",
             "value": 0.14,
@@ -30621,7 +29793,7 @@
       "us-west-2": {
         "metered": [
           {
-            "label": "Image",
+            "label": "Output image",
             "axis": "output",
             "unit": "image",
             "value": 0.14,
@@ -31202,6 +30374,286 @@
           "output": 7.5
         },
         "metered": [
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "standard"
+          }
+        ]
+      }
+    },
+    "twelvelabs.pegasus-1-5-v1:0": {
+      "ap-northeast-1": {
+        "global": {
+          "output": 7.5
+        },
+        "metered": [
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "global"
+          }
+        ]
+      },
+      "ap-northeast-2": {
+        "global": {
+          "output": 7.5
+        },
+        "metered": [
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "global"
+          }
+        ]
+      },
+      "ap-northeast-3": {
+        "global": {
+          "output": 7.5
+        },
+        "metered": [
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "global"
+          }
+        ]
+      },
+      "ap-south-1": {
+        "global": {
+          "output": 7.5
+        },
+        "metered": [
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "global"
+          }
+        ]
+      },
+      "ap-southeast-1": {
+        "global": {
+          "output": 7.5
+        },
+        "metered": [
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "global"
+          }
+        ]
+      },
+      "ap-southeast-2": {
+        "global": {
+          "output": 7.5
+        },
+        "metered": [
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "global"
+          }
+        ]
+      },
+      "ca-central-1": {
+        "global": {
+          "output": 7.5
+        },
+        "metered": [
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "global"
+          }
+        ]
+      },
+      "eu-central-1": {
+        "global": {
+          "output": 7.5
+        },
+        "metered": [
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "global"
+          }
+        ]
+      },
+      "eu-north-1": {
+        "global": {
+          "output": 7.5
+        },
+        "metered": [
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "global"
+          }
+        ]
+      },
+      "eu-west-1": {
+        "global": {
+          "output": 7.5
+        },
+        "metered": [
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "global"
+          }
+        ]
+      },
+      "eu-west-2": {
+        "global": {
+          "output": 7.5
+        },
+        "metered": [
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "global"
+          }
+        ]
+      },
+      "eu-west-3": {
+        "global": {
+          "output": 7.5
+        },
+        "metered": [
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "global"
+          }
+        ]
+      },
+      "sa-east-1": {
+        "global": {
+          "output": 7.5
+        },
+        "metered": [
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "global"
+          }
+        ]
+      },
+      "us-east-1": {
+        "standard": {
+          "output": 7.5
+        },
+        "global": {
+          "output": 7.5
+        },
+        "metered": [
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "global"
+          },
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "standard"
+          }
+        ]
+      },
+      "us-east-2": {
+        "standard": {
+          "output": 7.5
+        },
+        "global": {
+          "output": 7.5
+        },
+        "metered": [
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "global"
+          },
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "standard"
+          }
+        ]
+      },
+      "us-west-1": {
+        "standard": {
+          "output": 7.5
+        },
+        "global": {
+          "output": 7.5
+        },
+        "metered": [
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "standard"
+          },
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "global"
+          }
+        ]
+      },
+      "us-west-2": {
+        "standard": {
+          "output": 7.5
+        },
+        "global": {
+          "output": 7.5
+        },
+        "metered": [
+          {
+            "label": "Video",
+            "axis": "input",
+            "unit": "second",
+            "value": 0.00049,
+            "scope": "global"
+          },
           {
             "label": "Video",
             "axis": "input",
@@ -33814,7 +33266,7 @@
     }
   },
   "marketplace": {
-    "fetchedAt": "2026-10-08T04:03:18.793Z",
+    "fetchedAt": "2026-10-26T04:01:50.912Z",
     "models": [
       "openai.gpt-5.4",
       "openai.gpt-5.5",

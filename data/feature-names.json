@@ -23,7 +23,11 @@
     "applicationInferenceProfiles": "Application inference profiles",
     "invocationLogs": "Invocation logs",
     "projects": "Projects",
-    "projectsDefaultOnly": "Projects (default project only)"
+    "projectsDefaultOnly": "Projects (default project only)",
+    "promptCaching": "Prompt caching",
+    "toolUse": "Tool use (function calling)",
+    "asyncToolCalling": "Asynchronous tool calling",
+    "reasoningSummaries": "Reasoning Summaries"
   },
   "names": {
     "Response streaming": "streaming",
@@ -51,7 +55,11 @@
     "Application inference profiles": "applicationInferenceProfiles",
     "Invocation logs": "invocationLogs",
     "Projects": "projects",
-    "Projects (default project only)": "projectsDefaultOnly"
+    "Projects (default project only)": "projectsDefaultOnly",
+    "Prompt caching": "promptCaching",
+    "Tool use (function calling)": "toolUse",
+    "Asynchronous tool calling": "asyncToolCalling",
+    "Reasoning Summaries": "reasoningSummaries"
   },
   "defaultColumns": "all"
 }

@@ -780,7 +780,7 @@
       "TEXT"
     ],
     "streaming": true,
-    "lifecycle": "ACTIVE",
+    "lifecycle": "LEGACY",
     "releasedAt": "2024-06-20T08:00:00.000Z",
     "availability": {
       "ap-northeast-2": [
@@ -805,7 +805,7 @@
       "TEXT"
     ],
     "streaming": true,
-    "lifecycle": "ACTIVE",
+    "lifecycle": "LEGACY",
     "releasedAt": "2024-10-22T08:00:00.000Z",
     "availability": {
       "ap-northeast-2": [
@@ -830,7 +830,7 @@
       "TEXT"
     ],
     "streaming": true,
-    "lifecycle": "ACTIVE",
+    "lifecycle": "LEGACY",
     "releasedAt": "2025-02-19T08:00:00.000Z",
     "availability": {
       "ap-south-1": [
@@ -852,7 +852,7 @@
       "TEXT"
     ],
     "streaming": true,
-    "lifecycle": "ACTIVE",
+    "lifecycle": "LEGACY",
     "releasedAt": "2024-03-13T08:00:00.000Z",
     "availability": {
       "ap-northeast-2": [
@@ -883,7 +883,7 @@
       "TEXT"
     ],
     "streaming": true,
-    "lifecycle": "ACTIVE",
+    "lifecycle": "LEGACY",
     "releasedAt": "2024-03-13T08:00:00.000Z",
     "availability": {
       "ap-northeast-2": []
@@ -900,7 +900,7 @@
       "TEXT"
     ],
     "streaming": true,
-    "lifecycle": "ACTIVE",
+    "lifecycle": "LEGACY",
     "releasedAt": "2024-03-13T08:00:00.000Z",
     "availability": {
       "ap-south-1": [
@@ -919,7 +919,7 @@
       "TEXT"
     ],
     "streaming": true,
-    "lifecycle": "ACTIVE",
+    "lifecycle": "LEGACY",
     "releasedAt": "2024-03-04T08:00:00.000Z",
     "availability": {
       "ap-south-1": [
@@ -950,7 +950,7 @@
       "TEXT"
     ],
     "streaming": true,
-    "lifecycle": "ACTIVE",
+    "lifecycle": "LEGACY",
     "releasedAt": "2024-03-04T08:00:00.000Z",
     "availability": {
       "ap-southeast-1": []
@@ -967,7 +967,7 @@
       "TEXT"
     ],
     "streaming": true,
-    "lifecycle": "ACTIVE",
+    "lifecycle": "LEGACY",
     "releasedAt": "2024-03-04T08:00:00.000Z",
     "availability": {
       "ap-south-1": [
@@ -1674,98 +1674,6 @@
       ]
     }
   },
-  "anthropic.claude-sonnet-4-20250514-v1:0": {
-    "provider": "Anthropic",
-    "name": "Claude Sonnet 4",
-    "input": [
-      "TEXT",
-      "IMAGE"
-    ],
-    "output": [
-      "TEXT"
-    ],
-    "streaming": true,
-    "lifecycle": "LEGACY",
-    "releasedAt": "2025-05-22T00:00:00.000Z",
-    "availability": {
-      "ap-northeast-1": [
-        "INFERENCE_PROFILE"
-      ],
-      "ap-northeast-2": [
-        "INFERENCE_PROFILE"
-      ],
-      "ap-northeast-3": [
-        "INFERENCE_PROFILE"
-      ],
-      "ap-south-1": [
-        "INFERENCE_PROFILE"
-      ],
-      "ap-southeast-1": [
-        "INFERENCE_PROFILE"
-      ],
-      "ap-southeast-2": [
-        "INFERENCE_PROFILE"
-      ],
-      "eu-central-1": [
-        "INFERENCE_PROFILE"
-      ],
-      "eu-north-1": [
-        "INFERENCE_PROFILE"
-      ],
-      "eu-west-1": [
-        "INFERENCE_PROFILE"
-      ],
-      "eu-west-3": [
-        "INFERENCE_PROFILE"
-      ],
-      "us-east-1": [
-        "INFERENCE_PROFILE"
-      ],
-      "us-east-2": [
-        "INFERENCE_PROFILE"
-      ],
-      "us-west-1": [
-        "INFERENCE_PROFILE"
-      ],
-      "us-west-2": [
-        "INFERENCE_PROFILE"
-      ]
-    }
-  },
-  "anthropic.claude-sonnet-4-20250514-v1:0:200k": {
-    "provider": "Anthropic",
-    "name": "Claude Sonnet 4",
-    "input": [
-      "TEXT",
-      "IMAGE"
-    ],
-    "output": [
-      "TEXT"
-    ],
-    "streaming": true,
-    "lifecycle": "LEGACY",
-    "releasedAt": "2025-05-22T08:00:00.000Z",
-    "availability": {
-      "us-west-1": []
-    }
-  },
-  "anthropic.claude-sonnet-4-20250514-v1:0:32k": {
-    "provider": "Anthropic",
-    "name": "Claude Sonnet 4",
-    "input": [
-      "TEXT",
-      "IMAGE"
-    ],
-    "output": [
-      "TEXT"
-    ],
-    "streaming": true,
-    "lifecycle": "LEGACY",
-    "releasedAt": "2025-05-22T08:00:00.000Z",
-    "availability": {
-      "us-west-1": []
-    }
-  },
   "anthropic.claude-sonnet-4-5-20250929-v1:0": {
     "provider": "Anthropic",
     "name": "Claude Sonnet 4.5",
@@ -1777,7 +1685,7 @@
       "TEXT"
     ],
     "streaming": true,
-    "lifecycle": "ACTIVE",
+    "lifecycle": "LEGACY",
     "releasedAt": "2025-09-29T00:00:00.000Z",
     "availability": {
       "ap-northeast-1": [
@@ -5346,7 +5254,7 @@
       "EMBEDDING"
     ],
     "streaming": false,
-    "lifecycle": "ACTIVE",
+    "lifecycle": "LEGACY",
     "releasedAt": "2025-10-28T21:41:50.000Z",
     "availability": {
       "ap-northeast-2": [
@@ -5372,7 +5280,7 @@
       "TEXT"
     ],
     "streaming": true,
-    "lifecycle": "ACTIVE",
+    "lifecycle": "LEGACY",
     "releasedAt": "2025-10-31T00:00:00.000Z",
     "availability": {
       "ap-northeast-1": [
@@ -5430,6 +5338,73 @@
       ]
     }
   },
+  "twelvelabs.pegasus-1-5-v1:0": {
+    "provider": "TwelveLabs",
+    "name": "Pegasus v1.5",
+    "input": [
+      "TEXT",
+      "VIDEO"
+    ],
+    "output": [
+      "TEXT"
+    ],
+    "streaming": true,
+    "lifecycle": "ACTIVE",
+    "releasedAt": "2026-09-18T10:00:00.000Z",
+    "availability": {
+      "ap-northeast-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-northeast-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-northeast-3": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-south-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-southeast-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "ap-southeast-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "ca-central-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-central-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-north-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "eu-west-3": [
+        "INFERENCE_PROFILE"
+      ],
+      "sa-east-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-east-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-east-2": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-west-1": [
+        "INFERENCE_PROFILE"
+      ],
+      "us-west-2": [
+        "INFERENCE_PROFILE"
+      ]
+    }
+  },
   "writer.palmyra-vision-7b": {
     "provider": "Writer",
     "name": "Writer Palmyra Vision 7B",
@@ -5465,7 +5440,7 @@
       "TEXT"
     ],
     "streaming": true,
-    "lifecycle": "ACTIVE",
+    "lifecycle": "LEGACY",
     "releasedAt": "2025-04-28T08:00:00.000Z",
     "availability": {
       "us-east-1": [
@@ -5492,7 +5467,7 @@
       "TEXT"
     ],
     "streaming": true,
-    "lifecycle": "ACTIVE",
+    "lifecycle": "LEGACY",
     "releasedAt": "2025-04-28T08:00:00.000Z",
     "availability": {
       "us-east-1": [

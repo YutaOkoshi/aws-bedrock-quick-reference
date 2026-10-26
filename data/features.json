@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-08T05:04:22.860Z",
+  "generatedAt": "2026-10-26T04:02:24.477Z",
   "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/toc-contents.json",
   "cards": 137,
-  "cardsWithFeatures": 122,
+  "cardsWithFeatures": 124,
   "failedCards": 0,
   "features": {
     "streaming": {
@@ -96,6 +96,22 @@
     "projectsDefaultOnly": {
       "label": "Projects (default project only)",
       "docs": "projects.html"
+    },
+    "promptCaching": {
+      "label": "Prompt caching",
+      "docs": "prompt-caching.html"
+    },
+    "toolUse": {
+      "label": "Tool use (function calling)",
+      "docs": null
+    },
+    "asyncToolCalling": {
+      "label": "Asynchronous tool calling",
+      "docs": null
+    },
+    "reasoningSummaries": {
+      "label": "Reasoning Summaries",
+      "docs": "https://developers.openai.com/api/docs/guides/reasoning#reasoning-summaries"
     }
   },
   "defaultColumns": [
@@ -121,7 +137,11 @@
     "applicationInferenceProfiles",
     "invocationLogs",
     "projects",
-    "projectsDefaultOnly"
+    "projectsDefaultOnly",
+    "promptCaching",
+    "toolUse",
+    "asyncToolCalling",
+    "reasoningSummaries"
   ],
   "byModel": {
     "ai21.jamba-1-5-large-v1:0": {
@@ -146,6 +166,46 @@
         "bedrock-runtime": {
           "inRegion": [
             "us-east-1"
+          ],
+          "geo": [],
+          "global": []
+        }
+      }
+    },
+    "amazon.nova-2-5-sonic": {
+      "card": "model-card-amazon-nova-2-5-sonic.html",
+      "runtime": {
+        "streaming": true,
+        "countTokens": false,
+        "guardrails": false,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false,
+        "toolUse": true,
+        "asyncToolCalling": true
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null,
+      "endpoints": {
+        "bedrock-runtime": {
+          "modelId": "amazon.nova-2-5-sonic",
+          "geo": [],
+          "global": []
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [
+            "ap-northeast-1",
+            "eu-north-1",
+            "us-east-1",
+            "us-west-2"
           ],
           "geo": [],
           "global": []
@@ -436,7 +496,9 @@
           "modelId": "amazon.nova-lite-v1:0",
           "geo": [
             "us.amazon.nova-lite-v1:0",
-            "eu.amazon.nova-lite-v1:0"
+            "ca.amazon.nova-lite-v1:0",
+            "eu.amazon.nova-lite-v1:0",
+            "apac.amazon.nova-lite-v1:0"
           ],
           "global": []
         }
@@ -462,6 +524,7 @@
             "ap-southeast-1",
             "ap-southeast-2",
             "ca-central-1",
+            "ca-west-1",
             "eu-central-1",
             "eu-north-1",
             "eu-south-1",
@@ -504,7 +567,9 @@
           "modelId": "amazon.nova-lite-v1:0",
           "geo": [
             "us.amazon.nova-lite-v1:0",
-            "eu.amazon.nova-lite-v1:0"
+            "ca.amazon.nova-lite-v1:0",
+            "eu.amazon.nova-lite-v1:0",
+            "apac.amazon.nova-lite-v1:0"
           ],
           "global": []
         }
@@ -530,6 +595,7 @@
             "ap-southeast-1",
             "ap-southeast-2",
             "ca-central-1",
+            "ca-west-1",
             "eu-central-1",
             "eu-north-1",
             "eu-south-1",
@@ -572,7 +638,9 @@
           "modelId": "amazon.nova-lite-v1:0",
           "geo": [
             "us.amazon.nova-lite-v1:0",
-            "eu.amazon.nova-lite-v1:0"
+            "ca.amazon.nova-lite-v1:0",
+            "eu.amazon.nova-lite-v1:0",
+            "apac.amazon.nova-lite-v1:0"
           ],
           "global": []
         }
@@ -598,6 +666,7 @@
             "ap-southeast-1",
             "ap-southeast-2",
             "ca-central-1",
+            "ca-west-1",
             "eu-central-1",
             "eu-north-1",
             "eu-south-1",
@@ -1034,10 +1103,36 @@
     "anthropic.claude-fable-5": {
       "card": "model-card-anthropic-claude-fable-5.html",
       "runtime": {
-        "explicitPromptCaching": true
+        "streaming": true,
+        "implicitPromptCaching": false,
+        "explicitPromptCaching": true,
+        "structuredOutputs": true,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "knowledgeBase": true,
+        "agents": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": true,
+        "promptRouting": false,
+        "modelEvaluation": true
       },
       "mantle": {
-        "explicitPromptCaching": true
+        "streaming": true,
+        "implicitPromptCaching": false,
+        "explicitPromptCaching": true,
+        "structuredOutputs": true,
+        "countTokens": true,
+        "guardrails": false,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
       },
       "promptCaching": {
         "explicit": true,
@@ -1125,8 +1220,26 @@
     },
     "anthropic.claude-fable-5-1": {
       "card": "model-card-anthropic-claude-fable-5-1.html",
-      "runtime": {},
-      "mantle": {},
+      "runtime": {
+        "implicitPromptCaching": false,
+        "structuredOutputs": true
+      },
+      "mantle": {
+        "streaming": true,
+        "implicitPromptCaching": false,
+        "structuredOutputs": true,
+        "countTokens": true,
+        "guardrails": false,
+        "abuseDetection": true,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false,
+        "promptCaching": true
+      },
       "promptCaching": {
         "explicit": null,
         "minTokens": "512",
@@ -1233,7 +1346,7 @@
       },
       "mantle": {
         "streaming": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
         "computerUse": true,
         "countTokens": true,
         "guardrails": false,
@@ -1302,6 +1415,8 @@
             "eu-west-3",
             "us-east-1",
             "us-east-2",
+            "us-gov-east-1",
+            "us-gov-west-1",
             "us-west-1",
             "us-west-2"
           ],
@@ -1349,6 +1464,7 @@
             "eu-west-1",
             "us-east-1",
             "us-east-2",
+            "us-gov-west-1",
             "us-west-2"
           ],
           "geo": [],
@@ -1360,9 +1476,11 @@
       "card": "model-card-anthropic-claude-haiku-5-5.html",
       "runtime": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
+        "clientToolCalling": true,
+        "serverToolCalling": true,
         "computerUse": true,
         "countTokens": false,
         "guardrails": true,
@@ -1373,13 +1491,15 @@
         "promptManagement": true,
         "promptOptimization": true,
         "promptRouting": false,
-        "modelEvaluation": true
+        "modelEvaluation": true,
+        "applicationInferenceProfiles": true,
+        "invocationLogs": true
       },
       "mantle": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
         "computerUse": true,
         "countTokens": true,
         "guardrails": false,
@@ -1774,9 +1894,9 @@
       "card": "model-card-anthropic-claude-opus-4-7.html",
       "runtime": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
         "computerUse": true,
         "countTokens": false,
         "guardrails": true,
@@ -1791,9 +1911,9 @@
       },
       "mantle": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
         "computerUse": true,
         "countTokens": true,
         "guardrails": false,
@@ -1918,9 +2038,9 @@
       "card": "model-card-anthropic-claude-opus-4-8.html",
       "runtime": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
         "computerUse": true,
         "countTokens": false,
         "guardrails": true,
@@ -1935,9 +2055,9 @@
       },
       "mantle": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
         "computerUse": true,
         "countTokens": true,
         "guardrails": false,
@@ -1974,7 +2094,8 @@
             "us.anthropic.claude-opus-4-8",
             "eu.anthropic.claude-opus-4-8",
             "jp.anthropic.claude-opus-4-8",
-            "au.anthropic.claude-opus-4-8"
+            "au.anthropic.claude-opus-4-8",
+            "us-gov.anthropic.claude-opus-4-8"
           ],
           "global": [
             "global.anthropic.claude-opus-4-8"
@@ -2065,9 +2186,9 @@
       "card": "model-card-anthropic-claude-opus-5.html",
       "runtime": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
         "computerUse": true,
         "countTokens": false,
         "guardrails": true,
@@ -2082,9 +2203,9 @@
       },
       "mantle": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
         "computerUse": true,
         "countTokens": true,
         "guardrails": false,
@@ -2213,9 +2334,11 @@
       "card": "model-card-anthropic-claude-opus-5-5.html",
       "runtime": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
+        "clientToolCalling": true,
+        "serverToolCalling": true,
         "computerUse": true,
         "countTokens": false,
         "guardrails": true,
@@ -2226,13 +2349,17 @@
         "promptManagement": true,
         "promptOptimization": true,
         "promptRouting": false,
-        "modelEvaluation": true
+        "modelEvaluation": true,
+        "applicationInferenceProfiles": true,
+        "invocationLogs": true
       },
       "mantle": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
+        "clientToolCalling": true,
+        "serverToolCalling": true,
         "computerUse": true,
         "countTokens": true,
         "guardrails": false,
@@ -2243,7 +2370,9 @@
         "promptManagement": false,
         "promptOptimization": false,
         "promptRouting": false,
-        "modelEvaluation": false
+        "modelEvaluation": false,
+        "applicationInferenceProfiles": false,
+        "invocationLogs": false
       },
       "promptCaching": {
         "explicit": true,
@@ -2352,246 +2481,6 @@
           ],
           "geo": [],
           "global": []
-        }
-      }
-    },
-    "anthropic.claude-sonnet-4-20250514-v1:0": {
-      "card": "model-card-anthropic-claude-sonnet-4.html",
-      "runtime": {
-        "streaming": true,
-        "explicitPromptCaching": true,
-        "clientToolCalling": true,
-        "countTokens": true,
-        "guardrails": true,
-        "abuseDetection": true,
-        "knowledgeBase": true,
-        "agents": false,
-        "flows": false,
-        "promptManagement": true,
-        "promptOptimization": true,
-        "promptRouting": false,
-        "modelEvaluation": true
-      },
-      "mantle": null,
-      "promptCaching": {
-        "explicit": true,
-        "minTokens": "1,024",
-        "maxCheckpoints": "4",
-        "ttl": "5 minutes",
-        "fields": "system, messages, and tools",
-        "endpoints": [
-          "runtime"
-        ]
-      },
-      "computerUse": null,
-      "endpoints": {
-        "bedrock-runtime": {
-          "modelId": "anthropic.claude-sonnet-4-20250514-v1:0",
-          "geo": [
-            "us.anthropic.claude-sonnet-4-20250514-v1:0",
-            "eu.anthropic.claude-sonnet-4-20250514-v1:0",
-            "apac.anthropic.claude-sonnet-4-20250514-v1:0"
-          ],
-          "global": [
-            "global.anthropic.claude-sonnet-4-20250514-v1:0"
-          ]
-        }
-      },
-      "regions": {
-        "bedrock-runtime": {
-          "inRegion": [],
-          "geo": [
-            "ap-east-2",
-            "ap-northeast-1",
-            "ap-northeast-2",
-            "ap-northeast-3",
-            "ap-south-1",
-            "ap-south-2",
-            "ap-southeast-1",
-            "ap-southeast-2",
-            "ap-southeast-3",
-            "ap-southeast-4",
-            "ap-southeast-5",
-            "ap-southeast-7",
-            "eu-central-1",
-            "eu-north-1",
-            "eu-south-1",
-            "eu-south-2",
-            "eu-west-1",
-            "eu-west-3",
-            "il-central-1",
-            "us-east-1",
-            "us-east-2",
-            "us-west-1",
-            "us-west-2"
-          ],
-          "global": [
-            "ap-northeast-1",
-            "eu-west-1",
-            "us-east-1",
-            "us-east-2",
-            "us-west-2"
-          ]
-        }
-      }
-    },
-    "anthropic.claude-sonnet-4-20250514-v1:0:200k": {
-      "card": "model-card-anthropic-claude-sonnet-4.html",
-      "runtime": {
-        "streaming": true,
-        "explicitPromptCaching": true,
-        "clientToolCalling": true,
-        "countTokens": true,
-        "guardrails": true,
-        "abuseDetection": true,
-        "knowledgeBase": true,
-        "agents": false,
-        "flows": false,
-        "promptManagement": true,
-        "promptOptimization": true,
-        "promptRouting": false,
-        "modelEvaluation": true
-      },
-      "mantle": null,
-      "promptCaching": {
-        "explicit": true,
-        "minTokens": "1,024",
-        "maxCheckpoints": "4",
-        "ttl": "5 minutes",
-        "fields": "system, messages, and tools",
-        "endpoints": [
-          "runtime"
-        ]
-      },
-      "computerUse": null,
-      "endpoints": {
-        "bedrock-runtime": {
-          "modelId": "anthropic.claude-sonnet-4-20250514-v1:0",
-          "geo": [
-            "us.anthropic.claude-sonnet-4-20250514-v1:0",
-            "eu.anthropic.claude-sonnet-4-20250514-v1:0",
-            "apac.anthropic.claude-sonnet-4-20250514-v1:0"
-          ],
-          "global": [
-            "global.anthropic.claude-sonnet-4-20250514-v1:0"
-          ]
-        }
-      },
-      "regions": {
-        "bedrock-runtime": {
-          "inRegion": [],
-          "geo": [
-            "ap-east-2",
-            "ap-northeast-1",
-            "ap-northeast-2",
-            "ap-northeast-3",
-            "ap-south-1",
-            "ap-south-2",
-            "ap-southeast-1",
-            "ap-southeast-2",
-            "ap-southeast-3",
-            "ap-southeast-4",
-            "ap-southeast-5",
-            "ap-southeast-7",
-            "eu-central-1",
-            "eu-north-1",
-            "eu-south-1",
-            "eu-south-2",
-            "eu-west-1",
-            "eu-west-3",
-            "il-central-1",
-            "us-east-1",
-            "us-east-2",
-            "us-west-1",
-            "us-west-2"
-          ],
-          "global": [
-            "ap-northeast-1",
-            "eu-west-1",
-            "us-east-1",
-            "us-east-2",
-            "us-west-2"
-          ]
-        }
-      }
-    },
-    "anthropic.claude-sonnet-4-20250514-v1:0:32k": {
-      "card": "model-card-anthropic-claude-sonnet-4.html",
-      "runtime": {
-        "streaming": true,
-        "explicitPromptCaching": true,
-        "clientToolCalling": true,
-        "countTokens": true,
-        "guardrails": true,
-        "abuseDetection": true,
-        "knowledgeBase": true,
-        "agents": false,
-        "flows": false,
-        "promptManagement": true,
-        "promptOptimization": true,
-        "promptRouting": false,
-        "modelEvaluation": true
-      },
-      "mantle": null,
-      "promptCaching": {
-        "explicit": true,
-        "minTokens": "1,024",
-        "maxCheckpoints": "4",
-        "ttl": "5 minutes",
-        "fields": "system, messages, and tools",
-        "endpoints": [
-          "runtime"
-        ]
-      },
-      "computerUse": null,
-      "endpoints": {
-        "bedrock-runtime": {
-          "modelId": "anthropic.claude-sonnet-4-20250514-v1:0",
-          "geo": [
-            "us.anthropic.claude-sonnet-4-20250514-v1:0",
-            "eu.anthropic.claude-sonnet-4-20250514-v1:0",
-            "apac.anthropic.claude-sonnet-4-20250514-v1:0"
-          ],
-          "global": [
-            "global.anthropic.claude-sonnet-4-20250514-v1:0"
-          ]
-        }
-      },
-      "regions": {
-        "bedrock-runtime": {
-          "inRegion": [],
-          "geo": [
-            "ap-east-2",
-            "ap-northeast-1",
-            "ap-northeast-2",
-            "ap-northeast-3",
-            "ap-south-1",
-            "ap-south-2",
-            "ap-southeast-1",
-            "ap-southeast-2",
-            "ap-southeast-3",
-            "ap-southeast-4",
-            "ap-southeast-5",
-            "ap-southeast-7",
-            "eu-central-1",
-            "eu-north-1",
-            "eu-south-1",
-            "eu-south-2",
-            "eu-west-1",
-            "eu-west-3",
-            "il-central-1",
-            "us-east-1",
-            "us-east-2",
-            "us-west-1",
-            "us-west-2"
-          ],
-          "global": [
-            "ap-northeast-1",
-            "eu-west-1",
-            "us-east-1",
-            "us-east-2",
-            "us-west-2"
-          ]
         }
       }
     },
@@ -2825,9 +2714,9 @@
       "card": "model-card-anthropic-claude-sonnet-5.html",
       "runtime": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
         "computerUse": true,
         "countTokens": false,
         "guardrails": true,
@@ -2842,9 +2731,9 @@
       },
       "mantle": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
         "computerUse": true,
         "countTokens": true,
         "guardrails": false,
@@ -2975,9 +2864,11 @@
       "card": "model-card-anthropic-claude-sonnet-5-5.html",
       "runtime": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
+        "clientToolCalling": true,
+        "serverToolCalling": true,
         "computerUse": true,
         "countTokens": false,
         "guardrails": true,
@@ -2988,13 +2879,15 @@
         "promptManagement": true,
         "promptOptimization": true,
         "promptRouting": false,
-        "modelEvaluation": true
+        "modelEvaluation": true,
+        "applicationInferenceProfiles": true,
+        "invocationLogs": true
       },
       "mantle": {
         "streaming": true,
-        "implicitPromptCaching": true,
+        "implicitPromptCaching": false,
         "explicitPromptCaching": true,
-        "structuredOutputs": false,
+        "structuredOutputs": true,
         "computerUse": true,
         "countTokens": true,
         "guardrails": false,
@@ -3029,7 +2922,8 @@
           "modelId": "anthropic.claude-sonnet-5-5",
           "geo": [
             "us.anthropic.claude-sonnet-5-5",
-            "eu.anthropic.claude-sonnet-5-5"
+            "eu.anthropic.claude-sonnet-5-5",
+            "au.anthropic.claude-sonnet-5-5"
           ],
           "global": [
             "global.anthropic.claude-sonnet-5-5"
@@ -3045,6 +2939,8 @@
         "bedrock-runtime": {
           "inRegion": [],
           "geo": [
+            "ap-southeast-2",
+            "ap-southeast-4",
             "ca-central-1",
             "ca-west-1",
             "eu-central-1",
@@ -3265,11 +3161,15 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
+            "ap-southeast-4",
             "eu-north-1",
             "eu-west-2",
+            "sa-east-1",
             "us-east-1",
             "us-east-2",
             "us-west-2"
@@ -3318,9 +3218,12 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
+            "ap-southeast-4",
             "eu-north-1",
             "eu-west-2",
             "sa-east-1",
@@ -3372,7 +3275,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -3428,7 +3333,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -3485,7 +3392,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -4128,7 +4037,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -4187,7 +4098,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -4245,7 +4158,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -4303,6 +4218,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -4360,7 +4278,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -4416,7 +4336,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -4472,7 +4394,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -4530,8 +4454,14 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
             "eu-south-1",
             "eu-west-1",
             "eu-west-2",
@@ -4674,8 +4604,14 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "eu-north-1",
+            "eu-west-2",
             "sa-east-1",
             "us-east-1",
             "us-east-2",
@@ -4853,7 +4789,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -4911,7 +4849,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -4969,7 +4909,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -5024,7 +4966,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -5048,14 +4992,18 @@
         "explicitPromptCaching": true,
         "structuredOutputs": true,
         "clientToolCalling": true,
+        "reasoning": true,
+        "countTokens": false,
+        "guardrails": true,
         "knowledgeBase": false,
         "promptRouting": false,
+        "applicationInferenceProfiles": true,
         "invocationLogs": true
       },
       "mantle": null,
       "promptCaching": {
         "explicit": true,
-        "minTokens": "1,024",
+        "minTokens": "256",
         "maxCheckpoints": null,
         "ttl": "At least 30 minutes",
         "fields": null,
@@ -5167,7 +5115,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -5228,7 +5178,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -5289,7 +5241,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -5350,8 +5304,14 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
+            "ap-southeast-3",
             "ap-southeast-4",
+            "eu-central-1",
+            "eu-north-1",
             "eu-south-1",
             "eu-west-1",
             "eu-west-2",
@@ -5368,15 +5328,39 @@
     },
     "openai.gpt-5.4": {
       "card": "model-card-openai-gpt-54.html",
-      "runtime": null,
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": false,
+        "structuredOutputs": true,
+        "serverToolCalling": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "promptRouting": false,
+        "applicationInferenceProfiles": true,
+        "invocationLogs": true,
+        "projectsDefaultOnly": true,
+        "reasoningSummaries": true
+      },
       "mantle": {
         "clientToolCalling": true,
         "serverToolCalling": true,
-        "projects": true
+        "projects": true,
+        "reasoningSummaries": true
       },
       "promptCaching": null,
       "computerUse": null,
       "endpoints": {
+        "bedrock-runtime": {
+          "modelId": "openai.gpt-5.4",
+          "geo": [
+            "us.openai.gpt-5.4"
+          ],
+          "global": [
+            "global.openai.gpt-5.4"
+          ]
+        },
         "bedrock-mantle": {
           "modelId": "openai.gpt-5.4",
           "geo": [],
@@ -5393,20 +5377,90 @@
           ],
           "geo": [],
           "global": []
+        },
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ca-central-1",
+            "ca-west-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
         }
       }
     },
     "openai.gpt-5.5": {
       "card": "model-card-openai-gpt-55.html",
-      "runtime": null,
+      "runtime": {
+        "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": false,
+        "structuredOutputs": true,
+        "serverToolCalling": false,
+        "countTokens": false,
+        "guardrails": true,
+        "abuseDetection": true,
+        "promptRouting": false,
+        "applicationInferenceProfiles": true,
+        "invocationLogs": true,
+        "projectsDefaultOnly": true,
+        "reasoningSummaries": true
+      },
       "mantle": {
         "clientToolCalling": true,
         "serverToolCalling": true,
-        "projects": true
+        "projects": true,
+        "reasoningSummaries": true
       },
       "promptCaching": null,
       "computerUse": null,
       "endpoints": {
+        "bedrock-runtime": {
+          "modelId": "openai.gpt-5.5",
+          "geo": [
+            "us.openai.gpt-5.5"
+          ],
+          "global": [
+            "global.openai.gpt-5.5"
+          ]
+        },
         "bedrock-mantle": {
           "modelId": "openai.gpt-5.5",
           "geo": [],
@@ -5421,6 +5475,52 @@
           ],
           "geo": [],
           "global": []
+        },
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "ca-central-1",
+            "ca-west-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
         }
       }
     },
@@ -5438,14 +5538,16 @@
         "promptRouting": false,
         "applicationInferenceProfiles": true,
         "invocationLogs": true,
-        "projectsDefaultOnly": true
+        "projectsDefaultOnly": true,
+        "reasoningSummaries": true
       },
       "mantle": {
         "implicitPromptCaching": true,
         "explicitPromptCaching": true,
         "serverToolCalling": true,
         "applicationInferenceProfiles": false,
-        "projects": true
+        "projects": true,
+        "reasoningSummaries": true
       },
       "promptCaching": null,
       "computerUse": null,
@@ -5541,14 +5643,16 @@
         "promptRouting": false,
         "applicationInferenceProfiles": true,
         "invocationLogs": true,
-        "projectsDefaultOnly": true
+        "projectsDefaultOnly": true,
+        "reasoningSummaries": true
       },
       "mantle": {
         "implicitPromptCaching": true,
         "explicitPromptCaching": true,
         "serverToolCalling": true,
         "applicationInferenceProfiles": false,
-        "projects": true
+        "projects": true,
+        "reasoningSummaries": true
       },
       "promptCaching": null,
       "computerUse": null,
@@ -5638,14 +5742,16 @@
         "promptRouting": false,
         "applicationInferenceProfiles": true,
         "invocationLogs": true,
-        "projectsDefaultOnly": true
+        "projectsDefaultOnly": true,
+        "reasoningSummaries": true
       },
       "mantle": {
         "implicitPromptCaching": true,
         "explicitPromptCaching": true,
         "serverToolCalling": true,
         "applicationInferenceProfiles": false,
-        "projects": true
+        "projects": true,
+        "reasoningSummaries": true
       },
       "promptCaching": null,
       "computerUse": null,
@@ -5731,6 +5837,8 @@
       "card": "model-card-openai-gpt-6-astra.html",
       "runtime": {
         "streaming": true,
+        "implicitPromptCaching": true,
+        "explicitPromptCaching": true,
         "structuredOutputs": true,
         "serverToolCalling": false,
         "countTokens": false,
@@ -5739,14 +5847,17 @@
         "promptRouting": false,
         "applicationInferenceProfiles": true,
         "invocationLogs": true,
-        "projectsDefaultOnly": true
+        "projectsDefaultOnly": true,
+        "reasoningSummaries": true
       },
       "mantle": {
         "implicitPromptCaching": true,
         "explicitPromptCaching": true,
+        "structuredOutputs": true,
         "serverToolCalling": true,
         "applicationInferenceProfiles": false,
-        "projects": true
+        "projects": true,
+        "reasoningSummaries": true
       },
       "promptCaching": null,
       "computerUse": null,
@@ -5823,7 +5934,8 @@
         "promptRouting": false,
         "applicationInferenceProfiles": true,
         "invocationLogs": true,
-        "projectsDefaultOnly": true
+        "projectsDefaultOnly": true,
+        "reasoningSummaries": true
       },
       "mantle": {
         "streaming": true,
@@ -5838,7 +5950,8 @@
         "promptRouting": false,
         "applicationInferenceProfiles": false,
         "invocationLogs": false,
-        "projects": true
+        "projects": true,
+        "reasoningSummaries": true
       },
       "promptCaching": null,
       "computerUse": null,
@@ -5927,7 +6040,8 @@
         "promptRouting": false,
         "applicationInferenceProfiles": true,
         "invocationLogs": true,
-        "projectsDefaultOnly": true
+        "projectsDefaultOnly": true,
+        "reasoningSummaries": true
       },
       "mantle": {
         "streaming": true,
@@ -5942,7 +6056,8 @@
         "promptRouting": false,
         "applicationInferenceProfiles": false,
         "invocationLogs": false,
-        "projects": true
+        "projects": true,
+        "reasoningSummaries": true
       },
       "promptCaching": null,
       "computerUse": null,
@@ -6032,7 +6147,8 @@
         "promptRouting": false,
         "applicationInferenceProfiles": true,
         "invocationLogs": true,
-        "projectsDefaultOnly": true
+        "projectsDefaultOnly": true,
+        "reasoningSummaries": true
       },
       "mantle": {
         "streaming": true,
@@ -6047,7 +6163,8 @@
         "promptRouting": false,
         "applicationInferenceProfiles": false,
         "invocationLogs": false,
-        "projects": true
+        "projects": true,
+        "reasoningSummaries": true
       },
       "promptCaching": null,
       "computerUse": null,
@@ -6081,7 +6198,6 @@
       "card": "model-card-openai-gpt-oss-120b.html",
       "runtime": {
         "streaming": true,
-        "structuredOutputs": true,
         "countTokens": false,
         "guardrails": true,
         "abuseDetection": false,
@@ -6118,7 +6234,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -6179,7 +6297,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -6238,7 +6358,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -6296,7 +6418,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -7587,6 +7711,80 @@
         }
       }
     },
+    "twelvelabs.pegasus-1-5-v1:0": {
+      "card": "model-card-twelvelabs-pegasus-v1-5.html",
+      "runtime": {
+        "streaming": true,
+        "countTokens": false,
+        "guardrails": false,
+        "abuseDetection": false,
+        "knowledgeBase": false,
+        "agents": false,
+        "flows": false,
+        "promptManagement": false,
+        "promptOptimization": false,
+        "promptRouting": false,
+        "modelEvaluation": false
+      },
+      "mantle": null,
+      "promptCaching": null,
+      "computerUse": null,
+      "endpoints": {
+        "bedrock-runtime": {
+          "modelId": "twelvelabs.pegasus-1-5-v1:0",
+          "geo": [
+            "us.twelvelabs.pegasus-1-5-v1:0"
+          ],
+          "global": [
+            "global.twelvelabs.pegasus-1-5-v1:0"
+          ]
+        }
+      },
+      "regions": {
+        "bedrock-runtime": {
+          "inRegion": [],
+          "geo": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "global": [
+            "af-south-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        }
+      }
+    },
     "writer.palmyra-vision-7b": {
       "card": "model-card-writer-palmyra-vision-7b.html",
       "runtime": {
@@ -7626,6 +7824,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -7735,6 +7936,7 @@
         "serverToolCalling": false,
         "reasoning": true,
         "countTokens": false,
+        "guardrails": true,
         "promptRouting": false,
         "applicationInferenceProfiles": true,
         "invocationLogs": true,
@@ -7831,12 +8033,18 @@
       "runtime": {
         "streaming": true,
         "implicitPromptCaching": true,
+        "explicitPromptCaching": false,
         "structuredOutputs": true,
+        "clientToolCalling": true,
         "serverToolCalling": false,
         "reasoning": true,
         "countTokens": false,
         "guardrails": true,
+        "flows": true,
+        "promptManagement": true,
+        "promptOptimization": true,
         "promptRouting": false,
+        "modelEvaluation": true,
         "applicationInferenceProfiles": true,
         "invocationLogs": true,
         "projectsDefaultOnly": true
@@ -7863,6 +8071,8 @@
             "ca-west-1",
             "us-east-1",
             "us-east-2",
+            "us-gov-east-1",
+            "us-gov-west-1",
             "us-west-1",
             "us-west-2"
           ],
@@ -7880,7 +8090,6 @@
             "ap-southeast-5",
             "ap-southeast-7",
             "ca-central-1",
-            "ca-west-1",
             "eu-central-1",
             "eu-central-2",
             "eu-north-1",
@@ -7939,7 +8148,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -7994,7 +8205,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -8052,7 +8265,9 @@
         "shared": {
           "inRegion": [
             "ap-northeast-1",
+            "ap-northeast-2",
             "ap-south-1",
+            "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
@@ -8075,6 +8290,9 @@
         "implicitPromptCaching": true,
         "explicitPromptCaching": true,
         "structuredOutputs": true,
+        "clientToolCalling": true,
+        "serverToolCalling": false,
+        "reasoning": true,
         "countTokens": false,
         "guardrails": true,
         "abuseDetection": false,
@@ -8084,7 +8302,8 @@
         "promptManagement": true,
         "promptOptimization": false,
         "promptRouting": false,
-        "modelEvaluation": true
+        "modelEvaluation": true,
+        "applicationInferenceProfiles": true
       },
       "mantle": null,
       "promptCaching": {
@@ -8165,6 +8384,11 @@
       "card": "model-card-anthropic-claude-mythos-5.html",
       "modelId": null,
       "reason": "no-runtime-id"
+    },
+    {
+      "card": "model-card-anthropic-claude-sonnet-4.html",
+      "modelId": "anthropic.claude-sonnet-4-20250514-v1:0",
+      "reason": "not-found"
     },
     {
       "card": "model-card-cohere-command-r-plus.html",

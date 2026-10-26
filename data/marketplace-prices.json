@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-08T04:03:18.793Z",
+  "fetchedAt": "2026-10-26T04:01:50.912Z",
   "source": "bedrock:ListFoundationModelAgreementOffers",
   "unmatchedImages": [],
   "byModel": {
@@ -8001,6 +8001,15 @@
             "input": 0.25
           }
         },
+        "ILC1": {
+          "global": {
+            "input": 2.5,
+            "output": 15
+          },
+          "globalCacheRead": {
+            "input": 0.25
+          }
+        },
         "MEC1": {
           "standard": {
             "longContext": {
@@ -8322,7 +8331,7 @@
           }
         }
       },
-      "outOfScope": 935
+      "outOfScope": 937
     },
     "openai.gpt-5.5": {
       "offerId": "offer-rtwlbb46hcxpw",
@@ -9814,7 +9823,7 @@
         }
       },
       "byPrefix": {},
-      "outOfScope": 24
+      "outOfScope": 40
     },
     "stability.stable-conservative-upscale-v1:0": {
       "offerId": "offer-o5xgl2bohfa56",
