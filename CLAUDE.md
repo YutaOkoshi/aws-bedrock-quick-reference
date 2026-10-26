@@ -279,8 +279,8 @@ Endpoint availability を転記した手書きファイルが正 (D-010)。出�
 **記憶で足さず、必ず doc を読んでから転記する。**
 
 - `geo` は推論プロファイルの接頭辞の地理圏に合わせる
-  (`jp` = ap-northeast-1/3、`au` = ap-southeast-2/4/6、`us` / `eu` = 各リージョン、
-  それ以外のアジア太平洋が `apac`、どの接頭辞にも属さないものが `other`)
+  (`jp` = ap-northeast-1/3、`au` = ap-southeast-2/4/6、`in` = ap-south-1/2、`ca` = ca-central-1 / ca-west-1、
+  `us` / `eu` = 各リージョン、それ以外のアジア太平洋が `apac`、どの接頭辞にも属さないものが `other`)
 - GovCloud (`us-gov-*`) は `aws-us-gov` パーティションで商用アカウントから呼べないため対象外
 
 ## 判定ルール (技術設計 §3)

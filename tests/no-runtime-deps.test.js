@@ -47,7 +47,7 @@ describe("data/region-notes.json の形", () => {
   const notes = JSON.parse(readFileSync(join(ROOT, "data", "region-notes.json"), "utf8"));
 
   it("_source に出典 URL と日付がある", () => {
-    expect(notes._source.date).toBe("2026-09-14");
+    expect(notes._source.date).toBe("2026-10-26");
     expect(notes._source.urls).toContain("https://docs.aws.amazon.com/general/latest/gr/bedrock.html");
     expect(notes._source.urls).toContain(
       "https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html",

@@ -16,7 +16,7 @@ const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const mantle = JSON.parse(readFileSync(join(ROOT, "data", "mantle.json"), "utf8"));
 const models = JSON.parse(readFileSync(join(ROOT, "data", "models.json"), "utf8"));
 
-// docs の「Supported Regions and Endpoints」を転記した 14 リージョン (D-010)。
+// docs の「Regional availability by endpoints」を転記した 15 リージョン (D-010)。
 const DOCS_REGIONS = [
   "us-east-1",
   "us-east-2",
@@ -31,25 +31,26 @@ const DOCS_REGIONS = [
   "eu-south-1",
   "eu-north-1",
   "sa-east-1",
+  "us-gov-east-1",
   "us-gov-west-1",
 ];
 
 describe("data/mantle.json の形 (D-010)", () => {
   it("_source に転記元の URL 3 本と日付がある", () => {
-    expect(mantle._source.date).toBe("2026-09-14");
+    expect(mantle._source.date).toBe("2026-10-26");
     expect(mantle._source.urls).toHaveLength(3);
     expect(mantle._source.urls).toContain(
       "https://docs.aws.amazon.com/bedrock/latest/userguide/endpoints.html",
     );
     expect(mantle._source.urls).toContain(
-      "https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-mantle.html",
+      "https://docs.aws.amazon.com/bedrock/latest/userguide/endpoints-region-availability.html",
     );
     expect(mantle._source.urls).toContain(
       "https://docs.aws.amazon.com/bedrock/latest/userguide/models-endpoint-availability.html",
     );
   });
 
-  it("regions が docs の 14 リージョンと過不足なく一致する", () => {
+  it("regions が docs の 15 リージョンと過不足なく一致する", () => {
     expect([...mantle.regions].sort()).toEqual([...DOCS_REGIONS].sort());
   });
 

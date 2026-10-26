@@ -32,7 +32,7 @@ decision_refs:
 出典（`data/mantle.json` の `_source` と同じ）:
 
 - <https://docs.aws.amazon.com/bedrock/latest/userguide/endpoints.html>
-- <https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-mantle.html>
+- <https://docs.aws.amazon.com/bedrock/latest/userguide/endpoints-region-availability.html> (旧 `bedrock-mantle.html`。2026-10-26 時点で Responses API のページへ転送されるため差し替えた)
 - <https://docs.aws.amazon.com/bedrock/latest/userguide/models-endpoint-availability.html>
 
 ## Acceptance Criteria
@@ -145,7 +145,7 @@ decision_refs:
 | AC-005 | integration (jsdom, vitest) | 見出し行の項目が モデル ID / bedrock-runtime / bedrock-mantle の順に並び、mantle の項目に `InvokeModel` / `Converse` が現れないこと、Mantle のモデル ID がコピーボタン付きで出ること、非対応モデルでは理由が出ること、mantle が無い起点では項目ごと消えて `bedrock-runtime` の項目は残ることを検証 |
 | AC-006 | integration (jsdom, vitest) | 脚注リンクの `href` と `rel` を検証 |
 | AC-007 | unit + integration (vitest, jsdom) | `judgeMantle(null, ...)` / `isMantleRegion(null, ...)` が落ちないこと、mantle を渡さずに組み立てた表で全行が「—」になることを検証 |
-| データの形 | unit (vitest, node) | `data/mantle.json` の `_source`（URL 3 本・日付）、`regions` が docs の 14 件と一致、`models` のキーが `models.json` に実在、`_unmatched` / `mantleOnly` の性質を検証 |
+| データの形 | unit (vitest, node) | `data/mantle.json` の `_source`（URL 3 本・日付）、`regions` が docs の 15 件と一致、`models` のキーが `models.json` に実在、`_unmatched` / `mantleOnly` の性質を検証 |
 
 ## Deliverable Previews
 

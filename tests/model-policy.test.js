@@ -9,7 +9,7 @@ const models = read('models.json');
 describe('model-specific abuse retention', () => {
   it('registers only exact existing model IDs with sourced, structured policies', () => {
     const retained = Object.entries(policies.models).filter(([, entry]) => entry.abuseDetectionRetention);
-    expect(retained).toHaveLength(5);
+    expect(retained).toHaveLength(11);
     for (const [id, entry] of retained) {
       expect(models[id]).toBeDefined();
       expect(['all', 'flagged']).toContain(entry.abuseDetectionRetention.traffic);
@@ -19,7 +19,7 @@ describe('model-specific abuse retention', () => {
       expect(entry.abuseDetectionRetention.verifiedAt).toMatch(/^\d{4}-\d{2}-\d{2}$/);
     }
   });
-  it.each(['amazon.nova-lite-v1:0', 'anthropic.claude-haiku-4-5-20251001-v1:0', 'openai.gpt-6-astra', 'unknown', undefined])('does not assert a retention exception for %s', id => {
+  it.each(['amazon.nova-lite-v1:0', 'anthropic.claude-haiku-4-5-20251001-v1:0', 'openai.gpt-oss-120b-1:0', 'openai.gpt-oss-20b-1:0', 'openai.gpt-oss-safeguard-120b', 'openai.gpt-oss-safeguard-20b', 'unknown', undefined])('does not assert a retention exception for %s', id => {
     expect(retentionNotice(id, policies)).toBeNull();
   });
   it('does not accidentally match profile IDs or model family prefixes', () => {
