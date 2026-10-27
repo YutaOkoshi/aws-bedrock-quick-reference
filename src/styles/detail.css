@@ -290,4 +290,8 @@ tr.expanded > td {
 .inference-mismatch { margin: 8px 0 0; font-size: 0.85em; color: var(--warn, #b45309); }
 
 /* D-021: 詳細パネルのタブで、片方の接続先だけで使えるとき */
-.lane-sum.is-partial { color: var(--warn-fg); font-weight: 600; }
+.lane-sum.is-partial,
+.lane-tabs [role="tab"][aria-selected="true"] .lane-sum.is-partial { color: var(--warn-fg); font-weight: 600; }
+/* Mantle だけのタブには流れ図が無い。流れ図用のグリッド (reference-layout.css) の固定位置を外し、ID と推論先を並べる */
+.detail-panel .lane-block.lane-block-mantle { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.detail-panel .lane-block.lane-block-mantle > section { grid-row: auto; grid-column: auto; }
