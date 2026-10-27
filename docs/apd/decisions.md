@@ -26,7 +26,8 @@ D-001〜D-005 は brainstorming の対話で内容が固まり、技術設計
   - In-Region 列の並べ替え、「この起点リージョンから呼べるものだけ」、推論先の限定の In-Region も同じ判定にする。Mantle の In-Region は推論先が起点だけなので、限定の規則は Runtime と同じ。Mantle の Geo / Global は宛先が分からないので限定を満たさない扱い
   - 機能列は、起点で In-Region / Geo / Global の 3 区分とも不可と分かっている接続先の側を薄くし、「この起点では Mantle 不可」と添える。値は変えない。記載なし（—）が混じる接続先は薄くしない
   - `row.inRegion` / `geo` / `global` は bedrock-runtime の API の判定のまま残す（詳細パネルの流れ図・推論先はこれを使う）
-- **Refs**: `src/scripts/feature-model.mjs`（`laneVerdict` / `endpointUnavailable`）、`src/scripts/table-view.js`、`src/scripts/filter-model.mjs`（`isCallable` / `annotateRow`）、`spec-table.md` v13
+  - 詳細パネルのタブも同じ判定にする（2026-10-27、オーナーがモック `detail-lane-mock.html` の案 1 を採用）。Mantle だけで使えるタブは淡色にせず「Mantle のみ」と出し、注記・bedrock-mantle の呼び出し ID・推論先・Mantle の単価を出して Runtime の流れ図は出さない。Runtime だけで使えるタブには「Runtime のみ」を添える。既定のタブと「提供状況を確認してください」もこの判定に従う
+- **Refs**: `src/scripts/feature-model.mjs`（`laneVerdict` / `endpointUnavailable`）、`src/scripts/table-view.js`、`src/scripts/filter-model.mjs`（`isCallable` / `annotateRow`）、`spec-table.md` v13、`src/scripts/detail-model.mjs`（`buildDetail`）、`src/scripts/detail-view.js`、`spec-detail.md` v12
 
 ---
 

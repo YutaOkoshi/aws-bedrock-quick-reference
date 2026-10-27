@@ -13,6 +13,7 @@ import {
 } from "./bedrock-view-model.mjs";
 import { isMantleRegion, judgeMantle, mantleEndpointOf } from "./mantle-model.mjs";
 import { splitDestinations } from "./flow-model.mjs";
+import { endpointAvailability, laneVerdict } from "./feature-model.mjs";
 
 // レーン。この順が「使えるレーンのうち最も狭いもの」の優先順でもある (AC-015)。
 export const LANE_IN_REGION = "inRegion";
@@ -155,13 +156,18 @@ export function buildLaneSummaries(
   };
 }
 
+// そのレーンが Runtime か Mantle のどちらかで使えるか (D-021)。usable が無ければ Runtime の available。
+function usable(summary) {
+  return Boolean(summary?.usable ?? summary?.available);
+}
+
 /**
  * 既定で選ばれるレーン (AC-015)。
  * 使えるレーンのうち最も狭いもの。3 つとも使えないときは In-Region。
  */
 export function defaultLane(summaries) {
   for (const lane of LANE_ORDER) {
-    if (summaries?.[lane]?.available) return lane;
+    if (usable(summaries?.[lane])) return lane;
   }
   return LANE_IN_REGION;
 }
@@ -171,7 +177,7 @@ export function defaultLane(summaries) {
  * そのレーンがこの行で使えなければ既定に戻す。
  */
 export function resolveLane(remembered, summaries) {
-  if (remembered && summaries?.[remembered]?.available) return remembered;
+  if (remembered && usable(summaries?.[remembered])) return remembered;
   return defaultLane(summaries);
 }
 
@@ -239,9 +245,28 @@ export function buildDestinationLines(
  */
 export function buildDetail(
   modelId,
-  { models, profiles, regionNotes, prices, region, mantle = null, lang = "ja" } = {},
+  { models, profiles, regionNotes, prices, region, mantle = null, features = {}, lang = "ja" } = {},
 ) {
-  const summaries = buildLaneSummaries(modelId, { models, profiles, region, regionNotes, lang });
+  const runtimeOnly = buildLaneSummaries(modelId, { models, profiles, region, regionNotes, lang });
+  // D-021: タブの可否は表と同じく Runtime と Mantle をまとめる。available は Runtime の判定のまま残し
+  // (流れ図・推論先・価格はこれを使う)、usable と only を足す。
+  const endpoints = endpointAvailability({
+    features,
+    mantle,
+    modelId,
+    region,
+    row: {
+      inRegion: runtimeOnly[LANE_IN_REGION].available,
+      geo: runtimeOnly[LANE_GEO].available,
+      global: runtimeOnly[LANE_GLOBAL].available,
+    },
+  });
+  const summaries = Object.fromEntries(
+    LANE_ORDER.map((lane) => {
+      const verdict = laneVerdict(endpoints[lane]);
+      return [lane, { ...runtimeOnly[lane], usable: verdict.available, only: verdict.only }];
+    }),
+  );
   return {
     modelId,
     region,
@@ -253,7 +278,9 @@ export function buildDetail(
     mantle: judgeMantle(mantle, modelId, region),
     summaries,
     defaultLane: defaultLane(summaries),
-    anyLane: LANE_ORDER.some((lane) => summaries[lane].available),
+    anyLane: LANE_ORDER.some((lane) => summaries[lane].usable),
+    // Mantle だけで使えるタブに出す bedrock-mantle の呼び出し ID (docs のモデルカード。無ければ Runtime と同じ ID)。
+    mantleModelId: features?.byModel?.[modelId]?.endpoints?.["bedrock-mantle"]?.modelId ?? modelId,
     prices,
   };
 }

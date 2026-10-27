@@ -112,8 +112,9 @@ describe("AC-014 レーンのタブと常時見える要約", () => {
   });
 
   it("In-Region 可のときは「国内に留まる」", () => {
+    // D-021: fixture の mantle.json では Nova Lite は東京の Mantle で不可なので、表と同じく「Runtime のみ」を添える。
     expect(tabFor(open(NOVA), "inRegion").querySelector(".lane-sum").textContent).toBe(
-      "国内に留まる",
+      "国内に留まる ・ Runtime のみ",
     );
   });
 

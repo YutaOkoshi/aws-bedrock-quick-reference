@@ -125,6 +125,15 @@ function laneTitle(lane, summary) {
 }
 
 function laneSummaryText(lane, summary) {
+  // D-021: Mantle だけで使えるタブ。Runtime の推論先 (件数) は無いので、Mantle で使えることだけ書く。
+  if (summary.only === "mantle") {
+    return { text: t(lane === LANE_IN_REGION ? "detail.sumMantleOnlyInRegion" : "detail.sumMantleOnly"), warn: false, partial: true };
+  }
+  const base = runtimeSummaryText(lane, summary);
+  return summary.only === "runtime" ? { ...base, text: `${base.text}${t("detail.sumRuntimeOnlySuffix")}` } : base;
+}
+
+function runtimeSummaryText(lane, summary) {
   if (!summary.available) return { text: t("detail.sumUnavailable"), warn: false };
   if (lane === LANE_IN_REGION) return { text: t("detail.sumInRegion"), warn: false };
   if (lane === LANE_GLOBAL) return { text: t("detail.sumGlobal"), warn: true };
@@ -476,6 +485,14 @@ function lanePanel(lane, { modelId, detail, regionNotes, prices, features, profi
     panel.appendChild(el("p", "detail-no-lane", t("detail.noLane")));
   }
 
+  if (summary.only === "mantle") {
+    // D-021: Mantle だけで使えるタブ。下の流れ図は bedrock-runtime の経路なので出さず、Mantle の ID と推論先を出す。
+    panel.appendChild(el("p", "note-warn detail-mantle-only", t("detail.mantleOnlyNote")));
+    panel.appendChild(mantleLaneBlock(lane, { detail, regionNotes }));
+    panel.appendChild(mantlePriceSection(detail.modelId, { prices, features, region: detail.region }));
+    return panel;
+  }
+
   if (lane === LANE_GEO && summary.available) {
     // AC-018: プロファイルごとに 図 + ID + 推論先 を 1 ブロックとして縦に積む。
     for (const profile of summary.profiles) {
@@ -530,6 +547,41 @@ function lanePanel(lane, { modelId, detail, regionNotes, prices, features, profi
   return panel;
 }
 
+// Mantle だけで使えるタブの中身。In-Region の推論先は起点そのもの。Geo / Global の宛先は docs に無い。
+function mantleLaneBlock(lane, { detail, regionNotes }) {
+  const block = el("div", "lane-block lane-block-mantle");
+  block.appendChild(idSection(detail.mantleModelId, { profile: false, label: t("detail.mantleSpecifiedId") }));
+  const section = el("section", "detail-dest");
+  section.appendChild(el("h4", null, t("detail.destinations")));
+  const list = el("ul", "dest-list");
+  const item = el("li", "dest-line");
+  item.textContent = lane === LANE_IN_REGION
+    ? regionName(detail.region, getLang(), regionNotes)
+    : t("detail.mantleDestUnknown");
+  list.appendChild(item);
+  section.appendChild(list);
+  block.appendChild(section);
+  return block;
+}
+
+// Mantle だけで使えるタブの価格。この使い方では Runtime の単価は当てはまらないので、Mantle の単価だけを出す。
+function mantlePriceSection(modelId, { prices, features, region }) {
+  const section = el("section", "detail-price");
+  section.appendChild(el("h4", null, t("price.heading")));
+  const rows = buildMantlePriceRows(modelId, { prices, region });
+  if (rows.length === 0) {
+    section.appendChild(el("p", "detail-no-price", t("price.none")));
+    section.appendChild(docsLink(modelId, features));
+    return section;
+  }
+  const mantle = el("div", "detail-price-mantle");
+  mantle.appendChild(el("h5", "detail-price-endpoint mono", t("price.mantleHeading")));
+  mantle.appendChild(priceTable(rows));
+  mantle.appendChild(el("p", "note-muted detail-price-mantle-note", t("price.mantleNote")));
+  section.appendChild(mantle);
+  return section;
+}
+
 function laneTabs(modelId, detail, { onSelect }) {
   const tablist = el("div", "lane-tabs");
   tablist.setAttribute("role", "tablist");
@@ -545,11 +597,12 @@ function laneTabs(modelId, detail, { onSelect }) {
     button.setAttribute("role", "tab");
     button.setAttribute("aria-controls", laneId(modelId, lane));
     // AC-016: 使えないレーンは淡色にするが disabled にはしない。
-    if (!summary.available) button.classList.add("is-dim");
+    if (!(summary.usable ?? summary.available)) button.classList.add("is-dim");
     button.appendChild(el("span", "lane-title", laneTitle(lane, summary)));
-    const { text, warn } = laneSummaryText(lane, summary);
+    const { text, warn, partial } = laneSummaryText(lane, summary);
     const sum = el("span", "lane-sum", text);
     if (warn) sum.classList.add("is-warn");
+    if (partial) sum.classList.add("is-partial");
     button.appendChild(sum);
     button.addEventListener("click", (event) => {
       event.stopPropagation();
@@ -602,6 +655,7 @@ export function mountDetailView({
       regionNotes,
       mantle,
       prices,
+      features,
       region: view.getRegion(),
       lang: getLang(),
     });

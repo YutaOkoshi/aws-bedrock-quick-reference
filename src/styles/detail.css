@@ -288,3 +288,6 @@ tr.expanded > td {
 .detail-feature-source { margin-top: 6px; }
 
 .inference-mismatch { margin: 8px 0 0; font-size: 0.85em; color: var(--warn, #b45309); }
+
+/* D-021: 詳細パネルのタブで、片方の接続先だけで使えるとき */
+.lane-sum.is-partial { color: var(--warn-fg); font-weight: 600; }
